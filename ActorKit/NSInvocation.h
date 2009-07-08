@@ -5,8 +5,8 @@
 
 #import <Foundation/NSInvocation.h>
 
+@class NSInvocationUnifier;
 
 @interface NSInvocation (NSInvocationAdditions)
--(id)withProtocol:(id)protocol;
+-(NSInvocationUnifier*)withProtocol:(Protocol*)protocol;
 @end
-

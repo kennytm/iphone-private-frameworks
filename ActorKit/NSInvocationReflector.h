@@ -11,7 +11,8 @@
 }
 -(id)initWithTarget:(id)target;
 -(void)dealloc;
--(void)forwardInvocation:(id)invocation;
--(id)methodSignatureForSelector:(SEL)selector;
+-(void)forwardInvocation:(NSInvocation*)invocation;
+-(NSMethodSignature*)methodSignatureForSelector:(SEL)selector;
 @end
 
+extern NSInvocationReflector* NSInvocationOf(id target);

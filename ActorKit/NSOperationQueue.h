@@ -3,10 +3,19 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
-#import <Foundation/NSOperationQueue.h>
+#import <Foundation/NSOperation.h>
 
 
 @interface NSOperationQueue (NSInvocationAdditions)
--(void)addInvocation:(id)invocation;
+/** Add an invocation to an operation queue.
+ 
+ This function is equivalent to:
+ \code
+ NSInvocationOperation* operation = [[NSInvocationOperation alloc] initWithInvocation:invocation];
+ [self addOperation:operation];
+ [operation release];
+ \endcode
+ */
+-(void)addInvocation:(NSInvocation*)invocation;
 @end
 

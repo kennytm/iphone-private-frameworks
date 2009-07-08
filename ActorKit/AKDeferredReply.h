@@ -11,15 +11,16 @@
 	NSInvocation* _invocation;
 	NSConditionLock* _blockingLock;
 }
-+(id)currentReply;
++(AKDeferredReply*)currentReply;
 +(void)initialize;
 -(void)becomeCurrentReply;
 -(void)resignCurrentReply;
--(id)invocation;
+-(NSInvocation*)invocation;
 -(void)setReturnValue:(void*)value;
 -(void)sendReply;
+/// Raise exception.
 -(id)init;
--(id)initWithInvocation:(id)invocation andBlockingLock:(id)lock;
+-(id)initWithInvocation:(NSInvocation*)invocation andBlockingLock:(NSConditionLock*)lock;
 -(void)dealloc;
 @end
 

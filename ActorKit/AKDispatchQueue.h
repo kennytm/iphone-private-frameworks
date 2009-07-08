@@ -8,6 +8,14 @@
 
 @class NSThread, NSConditionLock;
 
+enum AKDispatchQueueState {
+	AKDispatchQueueState_Initialized = 0,
+	AKDispatchQueueState_Start = 1,
+	AKDispatchQueueState_Running = 2,
+	AKDispatchQueueState_Stop = 5,
+	AKDispatchQueueState_Destroyed = 6
+};
+
 @interface AKDispatchQueue : NSObject {
 	int _kqueueFD;
 	int _keventFDs[2];
@@ -15,16 +23,35 @@
 	qed_queue_u* _queue;
 	NSConditionLock* _runStateLock;
 }
+/** Return a shared instance of the dispatch queue of the current run loop. */
 +(id)currentRunLoopDispatchQueue;
+
+/// Create a thread for a migrant dispatch queue. (?)
 +(id)migrantDispatchQueue;
-+(id)newThreadRunLoopDispatchQueue;
--(void)switchToState:(id)state;
+
+/** Create a thread and dispatch queue, and call runThreadDispatchQueue: on that queue. */
++(AKDispatchQueue*)newThreadRunLoopDispatchQueue;
+
+//----- The following methods, except -start and -stop, shouldn't be called.
+
+/** The state must be 1, 2 or 5. */
+-(void)switchToState:(NSNumber*)state;
 -(id)init;
 -(void)dealloc;
+
+/** Returns the low-level queue object. */
 -(qed_queue_u*)queue;
--(void)_afterStartedAddRunLoopSourceTo:(id)to;
--(void)runThreadDispatchQueue:(id)queue;
+
+/// \internal
+-(void)_afterStartedAddRunLoopSourceTo:(NSRunLoop*)runLoop;
+
+/** Create a run loop and associate with the internal thread. */
+-(void)runThreadDispatchQueue:(NSThread*)thread;
+
+/// Start the dispatch queue run loop.
 -(void)start;
+
+/// Stop the dispatch queue run loop.
 -(void)stop;
 @end
 

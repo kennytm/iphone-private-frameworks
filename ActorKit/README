@@ -1,0 +1,3 @@
+ActorKit is Apple's Objective-C-based implementation for Action-oriented programming.
+
+It is used in DataAccess.framework, Message.framework and searchd.

@@ -6,11 +6,11 @@
 #import "AKActor.h"
 #import <Foundation/NSObject.h>
 
-@class AKMailbox;
+@class AKMailbox, AKDeferedReply, AKDispatchQueue;
 
 @protocol AKActor
--(id)send;
--(id)mailbox;
+-(AKMailbox*)send;
+-(AKMailbox*)mailbox;
 @end
 
 @interface AKActor : NSObject <AKActor> {
@@ -18,10 +18,14 @@
 }
 -(id)init;
 -(void)dealloc;
--(id)send;
--(id)mailbox;
--(id)deferredReply;
--(id)startMigrantDispatchQueue;
--(id)startThreadDispatchQueue;
+
+/// Returns the mailbox.
+-(AKMailbox*)send;
+
+-(AKMailbox*)mailbox;
+-(AKDeferredReply*)deferredReply;
+
+-(AKDispatchQueue*)startMigrantDispatchQueue;
+-(AKDispatchQueue*)startThreadDispatchQueue;
 @end
 

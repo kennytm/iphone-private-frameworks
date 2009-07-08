@@ -16,17 +16,32 @@
 	qed_queue_u* _queue;
 }
 @property(assign, nonatomic) id target;
+
+/// Create a mailbox with target and public protocol.
 +(id)mailboxWithTarget:(id)target protocol:(id)protocol;
 -(id)initWithTarget:(id)target protocol:(id)protocol;
 -(void)dealloc;
--(BOOL)conformsToProtocol:(id)protocol;
+
+/// Checks whether the mailbox conforms to the specific protocol (either privately or publicly).
+-(BOOL)conformsToProtocol:(Protocol*)protocol;
+
+
 -(BOOL)respondsToSelector:(SEL)selector;
--(void)forwardInvocation:(id)invocation;
--(id)methodSignatureForSelector:(SEL)selector;
--(id)send;
--(void)setDispatchQueue:(id)queue;
--(id)dispatchQueue;
--(void)setPrivateMessages:(id)messages;
+/// Send a message to target, and block the thread until the message returns (except when it's oneway).
+-(void)forwardInvocation:(NSInvocation*)invocation;
+-(NSMessageSignature*)methodSignatureForSelector:(SEL)selector;
+
+/// Return self.
+-(AKMailbox*)send;
+
+/// Get/set dispatch queue.
+-(void)setDispatchQueue:(AKDispatchQueue*)queue;
+-(AKDispatchQueue*)dispatchQueue;
+
+/// Set protocol of private messages.
+-(void)setPrivateMessages:(Protocol*)messages;
+
+/// Atomically swap the targets.
 -(BOOL)swapCurrentTarget:(id)target forNewTarget:(id)newTarget;
 @end
 
