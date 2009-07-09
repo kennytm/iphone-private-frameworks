@@ -29,7 +29,7 @@
 -(BOOL)respondsToSelector:(SEL)selector;
 /// Send a message to target, and block the thread until the message returns (except when it's oneway).
 -(void)forwardInvocation:(NSInvocation*)invocation;
--(NSMessageSignature*)methodSignatureForSelector:(SEL)selector;
+-(NSMethodSignature*)methodSignatureForSelector:(SEL)selector;
 
 /// Return self.
 -(AKMailbox*)send;

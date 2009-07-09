@@ -6,7 +6,7 @@
 #import "AKActor.h"
 #import <Foundation/NSObject.h>
 
-@class AKMailbox, AKDeferedReply, AKDispatchQueue;
+@class AKMailbox, AKDeferredReply, AKDispatchQueue;
 
 @protocol AKActor
 -(AKMailbox*)send;
@@ -20,7 +20,7 @@
 -(void)dealloc;
 
 /// Returns the mailbox.
--(AKMailbox*)send;
+-(id)send;
 
 -(AKMailbox*)mailbox;
 -(AKDeferredReply*)deferredReply;

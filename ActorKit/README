@@ -1,3 +1,70 @@
+/*
+
 ActorKit is Apple's Objective-C-based implementation for Action-oriented programming.
 
 It is used in DataAccess.framework, Message.framework and searchd.
+
+Sample Usage:
+
+*/
+
+#import <ActorKit/ActorKit.h>
+
+// You must provide a protocol on the messages that the actor can receive.
+@protocol SlowActor
+-(oneway void)doWorkWithConditionLock:(NSConditionLock*)lock;	// oneway is important here. Without it, calls will be synchronous.
+@end
+
+
+@interface SlowActor : AKActor<SlowActor> {
+	int actor_id;
+}
+-(id)initWithID:(int)_id;
+-(oneway void)doWorkWithConditionLock:(NSConditionLock*)lock;
+@end
+
+
+@implementation SlowActor
+-(id)initWithID:(int)_id {
+	if ((self = [super init]))
+		actor_id = _id;
+	return self;
+}
+-(oneway void)doWorkWithConditionLock:(NSConditionLock*)lock; {
+	printf("Worker %d is doing work...\n", actor_id);
+	usleep(actor_id*actor_id*100000);
+	[lock lock];
+	[lock unlockWithCondition:[lock condition]+1];
+	printf("Worker %d has done.\n", actor_id);
+}
+@end
+
+
+
+int main () {
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	
+	SlowActor* actors[10];
+	for (unsigned i = 0; i < 10; ++ i)  {
+		actors[i] = [[[SlowActor alloc] initWithID:i] autorelease];
+		// You must call -startThreadDispatchQueue before sending any works to the actors.
+		[actors[i] startThreadDispatchQueue];
+	}
+		
+	NSConditionLock* lock = [[NSConditionLock alloc] initWithCondition:0];
+	
+	for (unsigned i = 0; i < 10; ++ i)
+		// Use -send to obtain the actor's mailbox. Send messages to their mailboxes to allow asynchronous messages.
+		[[actors[i] send] doWorkWithConditionLock:lock];
+	
+	printf("Waiting for all workers...\n");
+	
+	[lock lockWhenCondition:10];
+	[lock unlock];
+	
+	printf("All workers done...\n");
+
+	[pool drain];
+	
+	return 0;
+}
