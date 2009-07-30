@@ -19,9 +19,9 @@
 @property(retain, nonatomic) UIImage* backgroundImage;
 @property(assign, nonatomic) BOOL usesEmbeddedAppearance;
 @property(assign, nonatomic, getter=isTranslucent) BOOL translucent;
-@property(assign, nonatomic) int barStyle;
--(void)dealloc;
+@property(assign, nonatomic) UIBarStyle barStyle;
+//-(void)dealloc;
 -(BOOL)_canDrawContent;
--(void)drawRect:(CGRect)rect;
+//-(void)drawRect:(CGRect)rect;
 @end
 

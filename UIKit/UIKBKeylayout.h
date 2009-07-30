@@ -17,12 +17,12 @@
 @property(retain, nonatomic) NSString* name;
 @property(retain, nonatomic) UIKBKeyset* keyset;
 @property(readonly, assign, nonatomic) NSArray* references;
-+(id)keylayout;
++(UIKBKeylayout*)keylayout;
 -(id)init;
 -(void)dealloc;
 -(id)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
--(id)description;
+-(NSString*)description;
 -(void)setReferenceWithName:(id)name value:(id)value flags:(unsigned)flags;
 -(id)referenceWithName:(id)name;
 -(void)setRef:(id)ref;

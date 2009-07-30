@@ -6,7 +6,7 @@
 #import "UIKeyboardLayout.h"
 #import "UIKit-Structs.h"
 
-@class UIKBKeyplaneView, NSMutableArray, NSMutableDictionary, UIKBKey, NSMutableSet, UIKBKeyboard, NSTimer, UIKBKeyplane, NSString;
+@class UIKBKeyplaneView, NSMutableArray, NSMutableDictionary, UIKBKey, NSMutableSet, UIKBKeyboard, NSTimer, UIKBKeyplane, NSString, NSLocale;
 
 @interface UIKeyboardLayoutStar : UIKeyboardLayout {
 	UIKBKeyboard* m_keyboard;
@@ -18,7 +18,9 @@
 	CGPoint m_dragPoint;
 	UIKBKeyplaneView* m_keyplaneView;
 	int m_keyboardType;
+@package
 	NSMutableDictionary* m_keyboards;
+@protected
 	NSMutableDictionary* m_states;
 	NSMutableDictionary* m_allKeys;
 	NSMutableDictionary* m_renderedKeys;
@@ -55,57 +57,57 @@
 @property(retain, nonatomic) UIKBKey* activeKey;
 @property(assign, nonatomic) BOOL shift;
 @property(assign, nonatomic) BOOL didLongPress;
--(id)initWithFrame:(CGRect)frame;
--(void)dealloc;
--(void)setKeyboardName:(id)name appearance:(int)appearance;
--(void)setReturnKeyType:(int)type;
--(void)setCurrencyKeysForCurrentLocale:(id)currentLocale;
+//-(id)initWithFrame:(CGRect)frame;
+//-(void)dealloc;
+-(void)setKeyboardName:(NSString*)name appearance:(UIKeyboardAppearance)appearance;
+-(void)setReturnKeyType:(UIReturnKeyType)type;
+-(void)setCurrencyKeysForCurrentLocale:(NSLocale*)currentLocale;
 -(int)displayTypeHintForMoreKey;
 -(int)displayTypeHintForShiftKey;
 -(void)updateMoreAndInternationalKeys;
--(void)setState:(int)state forKey:(id)key;
+-(void)setState:(int)state forKey:(UIKBKey*)key;
 -(void)addKeyToActivatedSet:(id)activatedSet;
 -(void)removeKeyFromActivatedSet:(id)activatedSet;
 -(void)schedulePeriodicProcessActivatedSet;
 -(void)cancelPeriodicProcessActivatedSet;
 -(void)periodicProcessActivatedSet:(id)set;
 -(void)deactivateAllInActivatedSet;
--(id)cacheIdentifierForState:(int)state ofKey:(id)key;
--(id)cacheIdentifierForKeyplaneNamed:(id)keyplaneNamed withVisualStyle:(id)visualStyle;
--(void)showKeyboardType:(int)type appearance:(int)appearance orientation:(id)orientation;
+-(id)cacheIdentifierForState:(int)state ofKey:(UIKBKey*)key;
+-(id)cacheIdentifierForKeyplaneNamed:(NSString*)keyplaneNamed withVisualStyle:(NSString*)visualStyle;
+-(void)showKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance orientation:(NSString*)orientation;
 -(void)deactivateActiveKeys;
--(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
+//-(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(id)keyHitTestContainingPoint:(CGPoint)point;
 -(id)keyHitTestClosestToPoint:(CGPoint)point;
 -(id)keyHitTestWithoutCharging:(CGPoint)charging;
 -(id)keyHitTest:(CGPoint)test;
 -(id)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(XXStruct__FxRIA*)pathInfo;
--(void)sendStringAction:(id)action forKey:(id)key;
--(void)deleteAction;
--(void)setLabel:(id)label forKey:(id)key;
--(void)setTarget:(id)target forKey:(id)key;
--(void)setAction:(SEL)action forKey:(id)key;
--(void)setLongPressAction:(SEL)action forKey:(id)key;
--(void)restoreDefaultsForKey:(id)key;
--(void)restoreDefaultsForAllKeys;
--(void)nextCandidatesAction;
--(void)confirmAction;
--(BOOL)isShiftKeyPlaneChooser;
--(BOOL)isLongPressedKey:(id)key;
--(void)longPressAction;
--(void)showPopupVariantsForKey:(id)key;
--(void)touchDown:(GSEventRef)down withPathInfo:(XXStruct__FxRIA*)pathInfo;
--(void)touchDownWithKey:(id)key atPoint:(CGPoint)point;
--(void)touchDragged:(GSEventRef)dragged withPathInfo:(XXStruct__FxRIA*)pathInfo;
--(void)touchUp:(GSEventRef)up withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)sendStringAction:(id)action forKey:(id)key;
+//-(void)deleteAction;
+//-(void)setLabel:(id)label forKey:(id)key;
+//-(void)setTarget:(id)target forKey:(id)key;
+//-(void)setAction:(SEL)action forKey:(id)key;
+//-(void)setLongPressAction:(SEL)action forKey:(id)key;
+//-(void)restoreDefaultsForKey:(id)key;
+//-(void)restoreDefaultsForAllKeys;
+//-(void)nextCandidatesAction;
+//-(void)confirmAction;
+//-(BOOL)isShiftKeyPlaneChooser;
+//-(BOOL)isLongPressedKey:(id)key;
+//-(void)longPressAction;
+//-(void)showPopupVariantsForKey:(id)key;
+//-(void)touchDown:(GSEventRef)down withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)touchDownWithKey:(id)key atPoint:(CGPoint)point;
+//-(void)touchDragged:(GSEventRef)dragged withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)touchUp:(GSEventRef)up withPathInfo:(XXStruct__FxRIA*)pathInfo;
 -(BOOL)keyHasAccentedVariants:(id)variants;
--(unsigned)downActionFlagsForKey:(id)key;
--(unsigned)upActionFlagsForKey:(id)key;
--(void)updateReturnKey;
--(BOOL)usesAutoShift;
--(BOOL)isShiftKeyBeingHeld;
+//-(unsigned)downActionFlagsForKey:(id)key;
+//-(unsigned)upActionFlagsForKey:(id)key;
+//-(void)updateReturnKey;
+//-(BOOL)usesAutoShift;
+//-(BOOL)isShiftKeyBeingHeld;
 -(void)updateKeyCentroids:(BOOL)centroids;
--(void)didRotate;
--(id)scriptingInfoWithChildren;
+//-(void)didRotate;
+//-(id)scriptingInfoWithChildren;
 @end
 

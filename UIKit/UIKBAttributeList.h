@@ -8,7 +8,7 @@
 #import <Foundation/NSObject.h>
 #import "UIKit-Structs.h"
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, UIKBAttribute;
 
 @interface UIKBAttributeList : NSObject <NSCoding, NSCopying> {
 	NSString* m_name;
@@ -20,19 +20,19 @@
 @property(assign, nonatomic) BOOL explicit;
 @property(readonly, assign, nonatomic) unsigned count;
 @property(readonly, assign, nonatomic) NSArray* names;
--(id)init;
--(void)dealloc;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(id)copyWithZone:(NSZone*)zone;
--(id)description;
--(void)setAttribute:(id)attribute;
--(void)setValue:(id)value forName:(id)name;
--(void)setBoolValueForName:(BOOL)name forName:(id)name2;
--(void)mergeAttributes:(id)attributes;
--(id)valueForName:(id)name;
--(id)stringValueForName:(id)name;
--(BOOL)boolValueForName:(id)name;
--(id)arrayValueForName:(id)name;
+//-(id)init;
+//-(void)dealloc;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+//-(id)copyWithZone:(NSZone*)zone;
+//-(id)description;
+-(void)setAttribute:(UIKBAttribute*)attribute;
+-(void)setValue:(id)value forName:(NSString*)name;
+-(void)setBoolValueForName:(BOOL)boolValue forName:(NSString*)name2;
+-(void)mergeAttributes:(UIKBAttributeList*)other;
+-(id)valueForName:(NSString*)name;
+-(NSString*)stringValueForName:(NSString*)name;
+-(BOOL)boolValueForName:(NSString*)name;
+-(NSArray*)arrayValueForName:(NSString*)name;
 @end
 

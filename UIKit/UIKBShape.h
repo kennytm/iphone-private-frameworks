@@ -21,13 +21,13 @@
 @property(readonly, assign, nonatomic) CGRect originalFrame;
 @property(assign, nonatomic) CGRect paddedFrame;
 @property(readonly, assign, nonatomic) unsigned uid;
-+(id)shape;
--(id)init;
--(void)dealloc;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
++(UIKBShape*)shape;
+//-(id)init;
+//-(void)dealloc;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
 -(unsigned)hash;
--(BOOL)isEqual:(id)equal;
--(void)setFrameOnly:(CGRect)only;
+//-(BOOL)isEqual:(id)equal;
+-(void)setFrameOnly:(CGRect)frame;
 @end
 

@@ -12,34 +12,34 @@
 
 @interface UIKBGeometry : NSObject <NSCoding, NSCopying> {
 	NSString* m_name;
-	XXStruct_tp$7nC m_x;
-	XXStruct_tp$7nC m_y;
-	XXStruct_tp$7nC m_w;
-	XXStruct_tp$7nC m_h;
-	XXStruct_tp$7nC m_paddingTop;
-	XXStruct_tp$7nC m_paddingLeft;
-	XXStruct_tp$7nC m_paddingBottom;
-	XXStruct_tp$7nC m_paddingRight;
+	UIKBLength m_x;
+	UIKBLength m_y;
+	UIKBLength m_w;
+	UIKBLength m_h;
+	UIKBLength m_paddingTop;
+	UIKBLength m_paddingLeft;
+	UIKBLength m_paddingBottom;
+	UIKBLength m_paddingRight;
 	BOOL m_explicit;
 }
 @property(retain, nonatomic) NSString* name;
-@property(assign, nonatomic, setter=setX:) XXStruct_tp$7nC x;
-@property(assign, nonatomic, setter=setY:) XXStruct_tp$7nC y;
-@property(assign, nonatomic, setter=setW:) XXStruct_tp$7nC w;
-@property(assign, nonatomic, setter=setH:) XXStruct_tp$7nC h;
-@property(assign, nonatomic, setter=setPaddingTop:) XXStruct_tp$7nC paddingTop;
-@property(assign, nonatomic, setter=setPaddingLeft:) XXStruct_tp$7nC paddingLeft;
-@property(assign, nonatomic, setter=setPaddingBottom:) XXStruct_tp$7nC paddingBottom;
-@property(assign, nonatomic, setter=setPaddingRight:) XXStruct_tp$7nC paddingRight;
+@property(assign, nonatomic, setter=setX:) UIKBLength x;
+@property(assign, nonatomic, setter=setY:) UIKBLength y;
+@property(assign, nonatomic, setter=setW:) UIKBLength w;
+@property(assign, nonatomic, setter=setH:) UIKBLength h;
+@property(assign, nonatomic, setter=setPaddingTop:) UIKBLength paddingTop;
+@property(assign, nonatomic, setter=setPaddingLeft:) UIKBLength paddingLeft;
+@property(assign, nonatomic, setter=setPaddingBottom:) UIKBLength paddingBottom;
+@property(assign, nonatomic, setter=setPaddingRight:) UIKBLength paddingRight;
 @property(assign, nonatomic) BOOL explicit;
-+(id)geometry;
-+(id)geometryWithRect:(CGRect)rect;
--(id)init;
--(void)dealloc;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(id)copyWithZone:(NSZone*)zone;
--(id)description;
++(UIKBGeometry*)geometry;
++(UIKBGeometry*)geometryWithRect:(CGRect)rect;
+//-(id)init;
+//-(void)dealloc;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+//-(id)copyWithZone:(NSZone*)zone;
+//-(id)description;
 -(CGRect)frame;
 -(CGRect)frameWithContainingFrame:(CGRect)containingFrame;
 -(CGRect)paddedFrameWithContainingFrame:(CGRect)containingFrame;
@@ -47,3 +47,13 @@
 -(id)overrideGeometry:(id)geometry;
 @end
 
+static inline UIKBGeometry* UIKBGeometryForKeyWithPercentages(float x, float y, float w, float h) {
+	UIKBGeometry* geom = [UIKBGeometry geometry];
+	geom.x = UIKBLengthMakePercentage(x);
+	geom.y = UIKBLengthMakePercentage(y);
+	geom.w = UIKBLengthMakePercentage(w);
+	geom.h = UIKBLengthMakePercentage(h);
+	geom.paddingLeft = UIKBLengthMakePixel(1);
+	geom.paddingRight = UIKBLengthMakePixel(1);
+	return geom;
+}

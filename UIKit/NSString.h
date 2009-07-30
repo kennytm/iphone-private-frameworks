@@ -27,8 +27,8 @@
 +(id)stringWithUnichar:(unsigned short)unichar;
 -(id)stringByTrimmingCharactersInCFCharacterSet:(CFCharacterSetRef)cfcharacterSet;
 -(id)stringByTrimmingLastCharacter;
--(id)stringByReplacingCharactersInSet:(CFCharacterSetRef)set withCharacter:(unsigned short)character;
--(id)stringByReplacingCharacter:(unsigned short)character withCharacter:(unsigned short)character2;
+-(id)stringByReplacingCharactersInSet:(CFCharacterSetRef)set withCharacter:(UniChar)character;
+-(id)stringByReplacingCharacter:(UniChar)character withCharacter:(UniChar)character2;
 -(BOOL)endsSentence;
 -(BOOL)endsWord;
 -(BOOL)isDottedURLDomain;

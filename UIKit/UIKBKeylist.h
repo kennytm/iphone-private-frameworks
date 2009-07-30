@@ -6,7 +6,7 @@
 #import "NSCoding.h"
 #import <Foundation/NSObject.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, UIKBKey;
 
 @interface UIKBKeylist : NSObject <NSCoding> {
 	NSString* m_name;
@@ -15,12 +15,12 @@
 @property(retain, nonatomic) NSString* name;
 @property(retain, nonatomic) NSMutableArray* keys;
 @property(readonly, assign, nonatomic) unsigned count;
-+(id)keylist;
--(id)init;
--(void)dealloc;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(id)keyWithName:(id)name;
--(id)description;
++(UIKBKeylist*)keylist;
+//-(id)init;
+//-(void)dealloc;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+-(UIKBKey*)keyWithName:(NSString*)name;
+//-(id)description;
 @end
 

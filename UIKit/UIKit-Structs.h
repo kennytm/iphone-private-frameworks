@@ -139,10 +139,33 @@ typedef struct {
 	double height;
 } XXStruct_meWoWB;
 
+#pragma mark UIKBLength, for use in UIKBGeometry only.
+
+enum UIKBLengthUnit {
+	UIKBLengthUnitPixel = 1,
+	UIKBLengthUnitPercentage = 2,
+};
+
 typedef struct {
 	float amount;
 	int unit;
-} XXStruct_tp$7nC;
+} UIKBLength;
+
+static inline UIKBLength UIKBLengthMakePixel(float x) {
+	UIKBLength r;
+	r.amount = x;
+	r.unit = UIKBLengthUnitPixel;
+	return r;
+}
+static inline UIKBLength UIKBLengthMakePercentage(float x) {
+	UIKBLength r;
+	r.amount = x;
+	r.unit = UIKBLengthUnitPercentage;
+	return r;
+}
+static const UIKBLength UIKBLengthZero = {0, 0};
+
+#pragma mark -
 
 typedef struct {
 	id _field1;
@@ -176,4 +199,13 @@ typedef struct UIKeyboardAnimationGeometry {
 	CGAffineTransform _field4;
 } UIKeyboardAnimationGeometry;
 
+//---------
 
+/** Draw the keyboard background in the specified rectangle.
+ @param style iPhone-Standard or iPhone-Alert
+ */
+extern void UIKBDrawKeyboardBackground(CGContextRef context, CGRect region, NSString* style);
+/// Currently draws nothing.
+extern void UIKBDrawKeyboardOverlay(CGContextRef context, CGRect region, NSString* style);
+@class UIKBKeyboard, UIKBKey;
+extern void UIKBDrawKey(CGContextRef context, UIKBKeyboard* keyboard, UIKBKey* key, int x);

@@ -7,7 +7,7 @@
 #import "UIKit-Structs.h"
 #import "UIKBShape.h"
 
-@class NSArray, NSString, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSString, NSDictionary, NSMutableArray, NSMutableDictionary, UIKBKey, UIKBKeyplane;
 
 @interface UIKBKeyboard : UIKBShape <NSCoding> {
 	NSString* m_name;
@@ -19,14 +19,13 @@
 @property(retain, nonatomic) NSString* visualStyle;
 @property(retain, nonatomic) NSArray* keyplanes;
 @property(retain, nonatomic) NSDictionary* keyCache;
-+(id)keyboard;
--(id)init;
--(void)dealloc;
--(void)cacheKey:(id)key onKeyplane:(id)keyplane;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(id)keyplaneWithName:(id)name;
--(id)description;
++(UIKBKeyboard*)keyboard;
+//-(id)init;
+//-(void)dealloc;
+-(void)cacheKey:(UIKBKey*)key onKeyplane:(UIKBKeyplane*)keyplane;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+-(UIKBKeyplane*)keyplaneWithName:(NSString*)name;
+//-(id)description;
 -(void)layout;
 @end
-
