@@ -7,7 +7,7 @@
 #import "NSCoding.h"
 #import "UIKBShape.h"
 
-@class UIKBKeyset, NSArray, NSMutableArray, NSString;
+@class UIKBKeyset, NSArray, NSMutableArray, NSString, UIKBKeylistReference;
 
 @interface UIKBKeylayout : UIKBShape <NSCoding> {
 	NSString* m_name;
@@ -18,14 +18,14 @@
 @property(retain, nonatomic) UIKBKeyset* keyset;
 @property(readonly, assign, nonatomic) NSArray* references;
 +(UIKBKeylayout*)keylayout;
--(id)init;
--(void)dealloc;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(NSString*)description;
--(void)setReferenceWithName:(id)name value:(id)value flags:(unsigned)flags;
--(id)referenceWithName:(id)name;
--(void)setRef:(id)ref;
+//-(id)init;
+//-(void)dealloc;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+//-(NSString*)description;
+-(void)setReferenceWithName:(NSString*)name value:(id)value flags:(unsigned)flags;
+-(UIKBKeylistReference*)referenceWithName:(NSString*)name;
+-(void)setRef:(NSArray*)ref;
 -(void)layoutInRect:(CGRect)rect;
 @end
 

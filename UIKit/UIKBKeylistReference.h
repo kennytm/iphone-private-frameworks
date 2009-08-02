@@ -32,15 +32,15 @@
 @property(readonly, assign, nonatomic) BOOL isKeysetReference;
 @property(readonly, assign, nonatomic) NSString* keyName;
 @property(readonly, assign, nonatomic) NSString* keylistName;
-+(id)referenceWithName:(id)name value:(id)value flags:(unsigned)flags;
--(id)initWithName:(id)name value:(id)value flags:(unsigned)flags;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(void)dealloc;
--(id)description;
++(UIKBKeylistReference*)referenceWithName:(NSString*)name value:(id)value flags:(unsigned)flags;
+-(id)initWithName:(NSString*)name value:(id)value flags:(unsigned)flags;
+//-(id)initWithCoder:(id)coder;
+//-(void)encodeWithCoder:(id)coder;
+//-(void)dealloc;
+//-(id)description;
 -(unsigned)startIndexForListCount:(unsigned)listCount;
 -(unsigned)endIndexForListCount:(unsigned)listCount;
--(void)setFlags:(unsigned)flags setStartKeyIndex:(int)index setEndKeyIndex:(int)index3;
--(void)setNameElements:(id)elements;
+-(void)setFlags:(unsigned)flags setStartKeyIndex:(int)startIndex setEndKeyIndex:(int)endIndex;
+-(void)setNameElements:(NSArray*)elements;
 @end
 
