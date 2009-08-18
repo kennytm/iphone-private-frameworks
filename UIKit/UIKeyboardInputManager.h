@@ -6,70 +6,292 @@
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
 
+@class CandWord, UIKeyboardLayout;
 
+/*! UIKeyboardInputManager is an abstract class that every concrete implementation should inherit.
+ 
+ In the iPhoneOS, the input manager is a class that corrects and extends user input. It is responsible for:
+  - Autocorrection.
+  - IME.
+  - Key charging.
+ */
 @interface UIKeyboardInputManager : NSObject {
 }
-+(id)sharedInstanceForInputMode:(id)inputMode;
-+(id)activeInstance;
+//! Returns an input manager for a specific input mode.
++(UIKeyboardInputManager*)sharedInstanceForInputMode:(NSString*)inputMode;
+
+//! Returns the currently active input manager.
++(UIKeyboardInputManager*)activeInstance;
+
+//! Release the input manager singleton. Do not call in your code.
 +(void)releaseSharedInstance;
-+(id)keyboardUserDirectory;
-+(id)dynamicDictionaryFilePathForInputMode:(id)inputMode;
-+(void)removeDynamicDictionaryForInputMode:(id)inputMode;
+
+//! Return the complete path for the folder containing keyboard info. By default it is ~/Library/Keyboard/
++(NSString*)keyboardUserDirectory;
+
+//! Return the complete path for the file recording dynamic dictionary of input mode.
++(NSString*)dynamicDictionaryFilePathForInputMode:(NSString*)inputMode;
+
+//! Remove the dynamic dictionary corresponding to the input mode.
++(void)removeDynamicDictionaryForInputMode:(NSString*)inputMode;
+
+//! Remove all dynamic dictionaries.
 +(void)removeAllDynamicDictionaries;
+
+//! Registers centroid for the active input manager.
 +(void)registerCentroid:(CGPoint)centroid forKey:(id)key;
+
+//! Clear all centroids for the active input manager.
 +(void)clearAllCentroids;
--(id)addInput:(id)input flags:(unsigned)flags point:(CGPoint)point firstDelete:(unsigned*)aDelete fromVariantKey:(BOOL)variantKey;
--(void)setInput:(id)input;
--(id)deleteFromInput:(unsigned*)input;
+
+/*!
+ Tells the input manager an input is made and should be appended to the input string.
+ 
+ @param input	The string to be appended.
+ @param flags	Flags about the state that the input is produced. 1 = Shift, 2 = Autoshift.
+ @param point	At which point on the keyboard the touch was made.
+ @param charsToDelete	Returns how many characters will be deleted after this method is completed, although it seems there're no effects.
+ @param fromVariantKey	Whether the input was made from a variant key.
+ @return The actual string to insert.
+ 
+ @p charsToDelete and the return value are ignored when there are candidates. The default behavior sets @p charsToDelete points to zero and returns @p input.
+ 
+ Called from -[UIKeyboardImpl addInputString:fromVariantKey:].
+ */
+-(NSString*)addInput:(NSString*)input flags:(unsigned)flags point:(CGPoint)point firstDelete:(unsigned*)charsToDelete fromVariantKey:(BOOL)fromVariantKey;
+
+/*!
+ Tells the input manager to replace the input string with the argument.
+ 
+ This method is called only when some abrupt changes is made that the whole input string becomes invalid. Normally the 
+ @p input is the word containing the selected text / caret.
+ */
+-(void)setInput:(NSString*)input;
+
+/*!
+ Tells the input manager characters should be deleted from the input string.
+ 
+ @param charsToDelete	How many characters should the input delegate actually deleted. Default should store 1.
+ @return The string to insert after this method is completed. Default to nil.
+ 
+ Called from  -[UIKeyboardImpl handleDeleteWithNonZeroInputCount]. 
+ */
+-(NSString*)deleteFromInput:(unsigned*)charsToDelete;
+
+/*!
+ Tells the input manager to clear the input string.
+ 
+ It is called when the input string will no longer be valid (e.g. on switching input modes and changing selections).
+ */
 -(void)clearInput;
+
+/*!
+ Informs the input manager that an autocorrection is accepted. 
+ 
+ Called from -[UIKeyboardImpl fadeAutocorrectPrompt]
+ */
 -(void)acceptInput;
--(void)setInputIndex:(unsigned)index;
--(unsigned)inputIndex;
+
+/*!
+ Sets the cursor position of the input string.
+ 
+ Whenever it is called, there will be a setInput: call happening immediately before it.
+ */
+-(void)setInputIndex:(NSUInteger)index;
+
+//! Get the current index of input string.
+-(NSUInteger)inputIndex;
+
+//! The the length of input string. It is used to determine if an input string exists.
 -(unsigned)inputCount;
--(id)inputString;
+
+//! Get the current input string from the input manager.
+-(NSString*)inputString;
+
+//! Unknown. It is relevant only when there is a "textSuggestionDelegate".
 -(BOOL)inputEmpty;
+
+//! Tells the input manager that the input location (i.e. selection) is changed.
 -(void)inputLocationChanged;
--(BOOL)stringEndsWord:(id)word;
--(BOOL)acceptInputString:(id)string;
--(id)autocorrection;
--(id)candidates;
--(id)remainingInput;
+
+/*! Asks if a string is a word separator.
+ 
+ Called from -[UIKeyboardImpl addInputString:fromVariantKey:]
+ */
+-(BOOL)stringEndsWord:(NSString*)string;
+
+/*! Asks if the string can be entered or not.
+ 
+ If NO is returned, the string will be discarded everywhere.
+ */
+-(BOOL)acceptInputString:(NSString*)string;
+
+/*! Returns the autocorrection string, if any.
+ 
+ Called from  -[UIKeyboardImpl generateCandidates:].
+ */
+-(NSString*)autocorrection;
+
+/*! Returns the list of candidates, if any.
+ 
+ Called from  -[UIKeyboardImpl generateCandidates:].
+ */
+-(NSArray*)candidates;
+
+/*! The remaining input string that will be set as input string once the candidate is accepted.
+ 
+ Called from -[UIKeyboardImpl acceptCandidate:atIndex:]
+ */
+-(NSString*)remainingInput;
+
+/*! Set the phrase boundary.
+ 
+ Called (indirectly) from -[UITextInteractionAssistant phraseBoundaryGesture:]
+ */
 -(void)setPhraseBoundary:(unsigned)boundary;
+
+//! Get the phrase boundary
 -(unsigned)phraseBoundary;
+
+//! Returns if this input manager supports phrase boundary. It is NO by default.
 -(BOOL)supportsSetPhraseBoundary;
+
+/*! Returns if candidate selection is supported. 
+ 
+ Returns YES if the input manager is an IME, NO if it autocorrection engine.
+ */
 -(BOOL)usesCandidateSelection;
+
+/*! Returns if auto deletion (long-holding ⌫) can delete one word per deletion 
+ 
+ Default to YES.
+ */ 
 -(BOOL)usesAutoDeleteWord;
+
+//! Returns if candidates is temporarily disabled.
 -(BOOL)suppressesCandidateDisplay;
--(id)defaultCandidate;
--(unsigned)defaultCandidateIndex;
--(id)searchStringForMarkedText;
+
+/*! Returns the default candidate in a candidate list.
+ 
+ The return value is used only when nothing is selected on the candidate list.
+ 
+ Called from -[UIKeyboardImpl acceptCurrentCandidate].
+ */
+-(CandWord*)defaultCandidate;
+
+/*! Returns the index for the default candidate.
+ 
+ Default to NSNotFound.
+ */
+-(NSUInteger)defaultCandidateIndex;
+
+//! ???
+-(NSString*)searchStringForMarkedText;
+
+//! Returns if there can be phrase completions. Only relevant for IME.
 -(BOOL)suppliesCompletions;
+
+//! Equivalent to suppliesCompletions, but designed for field editors (i.e. UITextField).
 -(BOOL)suppressCompletionsForFieldEditor;
--(id)stringForDoubleKey:(id)doubleKey;
--(BOOL)isSentenceDelimiter:(unsigned short)delimiter;
--(BOOL)setInputMode:(id)mode;
--(void)setAutoCorrects:(BOOL)corrects;
+
+/*! The string to replace when @p doubleKey is entered twice.
+
+ Usually @p doubleKey is a space character and the return value is ". ".
+ */
+-(NSString*)stringForDoubleKey:(NSString*)doubleKey;
+
+/*! Returns if a character separates sentences.
+ 
+ By default, '.', '!' and '?' are sentence delimiters.
+ */
+-(BOOL)isSentenceDelimiter:(unichar)delimiter;
+
+//! Not used?
+-(BOOL)setInputMode:(NSString*)mode;
+
+//! Tell the input manager whether autocorrects is enabled.
+-(void)setAutoCorrects:(BOOL)autoCorrects;
+
+//! Tell the input manager if shift is on.
 -(void)setShift:(BOOL)shift;
+
+//! Tell the input manager if autoshift is on.
 -(void)setAutoShift:(BOOL)shift;
+
+/*! Returns if the word before the caret should be counted to the input string.
+
+ This is enable some cases where -setInput: will be invoked.
+ */
 -(BOOL)shouldExtendPriorWord;
--(void)configureKeyboard:(id)keyboard forCandidates:(id)candidates;
--(void)configureKeyboard:(id)keyboard forAutocorrection:(id)autocorrection;
--(void)addToTypingHistory:(id)typingHistory;
--(void)textAccepted:(id)accepted;
--(void)candidateAccepted:(id)accepted;
--(void)increaseUserFrequency:(id)frequency;
--(void)decreaseUserFrequency:(id)frequency;
+
+/*! Change the keyboard layout for candidate list.
+ 
+ Usually you will set the Space key to select the next candidate and the Return key to confirm / dismiss the candidate list, e.g.
+ @code
+ [keyboard setLabel:UIKeyboardStringConfirm forKey:UIKeyboardKeyReturn];
+ [keyboard setTarget:[UIKeyboardImpl sharedInstance] forKey:UIKeyboardKeyReturn];
+ [keyboard setAction:@selector(acceptCurrentCandidate) forKey:UIKeyboardKeyReturn];
+ @endcode
+ */
+-(void)configureKeyboard:(UIKeyboardLayout*)keyboard forCandidates:(NSArray*)candidates;
+
+//! Change the keyboard layout for autocorrection string.
+-(void)configureKeyboard:(UIKeyboardLayout*)keyboard forAutocorrection:(NSString*)autocorrection;
+
+/*! Adds an input string to typing history.
+ 
+ Called from -[UIKeyboardImpl acceptWord:firstDelete:addString:].
+ */
+-(void)addToTypingHistory:(NSString*)input;
+
+//! An input string has been accepted. (?)
+-(void)textAccepted:(NSString*)text;
+
+/*! A candidate has been accepted by the user.
+ 
+ Called from -[UIKeyboardImpl acceptCandidate:atIndex:].
+ */
+-(void)candidateAccepted:(CandWord*)candidate;
+
+/*! Increase the input's user frequency.
+ 
+ Called from -[UIKeyboardImpl acceptWord:firstDelete:addString:].
+ */
+-(void)increaseUserFrequency:(NSString*)input;
+
+//! Decrease the input's user frequency.
+-(void)decreaseUserFrequency:(NSString*)input;
+
+//! Clear the dynamic dictionary.
 -(void)clearDynamicDictionary;
--(id)shadowTyping;
+
+//! ???
+-(NSString*)shadowTyping;
+
+//! Tells the input manager to charge keys or not.
 -(void)setCalculatesChargedKeyProbabilities:(BOOL)probabilities;
+
+//! Returns an array of chargeable keys. Not used in UIKit itself.
 -(CFArrayRef)chargeableKeys;
+
+/*! Returns the probability of each charged key. Not used in 3.0 anymore.
+ 
+ Each entry should be (unichar => float). 
+ */
 -(CFDictionaryRef)chargedKeyProbabilities;
+
+//! Add an input object. Not used in UIKit anymore.
 -(id)addInputObject:(id)object;
+
+//! Set an input object. Not used in UIKit anymore.
 -(id)setInputObject:(id)object;
+
+//! Returns if the input manager can handle key hit test in place of the UIKeyboardLayout. New in 3.0.
 -(BOOL)canHandleKeyHitTest;
+
 -(void)clearKeyAreas;
 -(void)registerKeyArea:(CGPoint)area withRadii:(CGPoint)radii forKeyCode:(unsigned short)keyCode forLowerKey:(id)lowerKey forUpperKey:(id)upperKey;
--(int)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(XXStruct__FxRIA*)pathInfo forceShift:(BOOL)shift;
+-(int)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(UIPathInfo*)pathInfo forceShift:(BOOL)shift;
 -(BOOL)keySlidIntoSwipe;
 -(int)keyCancel:(CGPoint)cancel atTime:(double)time fromPath:(int)path withIdentity:(int)identity forceShift:(BOOL)shift;
 -(void)deleteFromStrokeHistory:(BOOL)strokeHistory;

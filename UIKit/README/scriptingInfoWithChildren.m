@@ -1,6 +1,6 @@
 /*
 
-FILE_NAME ... DESCRIPTION
+scriptingInfoWithChildren.m ... Explanation of the scriptingInfoWithChildren method
  
 Copyright (c) 2009, KennyTM~
 All rights reserved.
@@ -30,18 +30,31 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 */
 
-mach_port_t GSGetPurpleApplicationPort();
-Boolean GSGetTimeEventHandling();
-void GSSetTimeEventHandling(Boolean doHandleEvents);
+#if 0
+/*
+In the UIView(SyntheticEvents) category there is a -scriptingInfoWithChildren method. What does it do? If we look at the
+decompiled code, we get
+*/
+#import <UIKit/UIView2.h>
 
-CGFloat GSStatusBarHeight();
-CGFloat GSDefaultStatusBarHeight();	// = 20
-CGFloat GSSetStatusBarHeight(CGFloat newHeight);
+@implementation UIView (SyntheticEvents)
+-(NSDictionary*)_scriptingInfo {
+	
+}
 
-void GSSetMainScreenInfo(CGFloat screenWidth, CGFloat screenHeight, CGFloat screenScale, int screenOrientation);
-CGRect GSFullScreenApplicationContentRect();
-CGAffineTransform GSMainScreenPositionTransform();
-CGAffineTransform GSMainScreenWindowTransform();
-int GSMainScreenOrientation();
-CGFloat GSMainScreenScaleFactor();
-CGSize GSMainScreenSize();
+-(NSArray*)scriptingInfoWithChildren {
+	NSMutableArray* res = [NSMutableArray array];
+	NSMutableDictionary* info = [self _scriptingInfo];
+	NSArray* sublayers = [_layer.sublayers copy];
+	if ([sublayers count] != 0) {
+		for (CALayer* sublayer in sublayers) {
+			UIView* view = _UIView(sublayer);
+			if (view != nil && !view.hidden)
+				[res addObjectsFromArray:[view scriptingInfoWithChildren]];
+		}
+		[info setValue:res forKey:@"Children"];
+	}
+	[sublayers release];
+	return [NSArray arrayWithObject:info];
+}
+@end

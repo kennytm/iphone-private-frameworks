@@ -9,7 +9,7 @@
 #import <UIKit/UIResponder.h>
 #import "UITextEffectsOrdering.h"
 
-@class NSMutableArray, CALayer, NSArray;
+@class NSMutableArray, CALayer, NSArray, UIScrollView;
 
 @interface UIView ()
 +(Class)layerClass;
@@ -77,7 +77,7 @@
 +(void)_setIsResponderAncestorOfFirstResponder:(BOOL)firstResponder startingAtFirstResponder:(id)firstResponder2;
 -(BOOL)_subclassImplementsDrawRect;
 -(id)_layer;
--(id)_scroller;
+-(UIScrollView*)_scroller;
 -(void)_didScroll;
 -(void)_invalidateSubviewCache;
 -(void)_invalidateLayerContents;
@@ -175,18 +175,8 @@
 
 @interface UIView (Hierarchy)
 -(BOOL)containsView:(id)view;
--(id)superview;
--(id)subviews;
--(id)window;
--(void)removeFromSuperview;
--(void)insertSubview:(id)subview atIndex:(int)index;
 -(void)exchangeSubviewAtIndex:(int)index withSubviewAtIndex:(int)index2;
--(void)addSubview:(id)subview;
--(void)insertSubview:(id)subview belowSubview:(id)subview2;
--(void)insertSubview:(id)subview aboveSubview:(id)subview2;
 -(void)_movedToFront;
--(void)bringSubviewToFront:(id)front;
--(void)sendSubviewToBack:(id)back;
 -(void)didAddSubview:(id)subview;
 -(void)willRemoveSubview:(id)subview;
 -(void)willMoveToSuperview:(id)superview;

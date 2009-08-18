@@ -15,7 +15,7 @@
 	int m_swipePathIndex;
 }
 -(id)initWithFrame:(CGRect)frame;
--(void)showKeyboardType:(int)type withAppearance:(int)appearance;
+-(void)showKeyboardType:(UIKeyboardType)type withAppearance:(UIKeyboardAppearance)appearance;
 -(void)deactivateActiveKeys;
 -(void)updateReturnKey;
 -(void)updateLocalizedKeys;

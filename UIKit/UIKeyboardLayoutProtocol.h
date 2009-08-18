@@ -8,7 +8,7 @@
 
 
 @protocol UIKeyboardLayoutProtocol <NSObject>
--(void)showKeyboardType:(int)type withAppearance:(int)appearance;
+-(void)showKeyboardType:(UIKeyboardAppearance)type withAppearance:(UIKeyboardAppearance)appearance;
 -(void)deactivateActiveKeys;
 -(void)updateReturnKey;
 -(void)updateLocalizedKeys;

@@ -17,7 +17,8 @@ typedef struct {
 	float pathMajorRadius;
 	CGPoint pathLocation;
 	void* pathWindow;
-} XXStruct__FxRIA;
+} UIPathInfo;
+typedef UIPathInfo XXStruct__FxRIA;
 
 typedef struct {
 	int _field1;
@@ -201,11 +202,31 @@ typedef struct UIKeyboardAnimationGeometry {
 
 //---------
 
-/** Draw the keyboard background in the specified rectangle.
+@class UIKBKeyboard, UIKBKey, NSArray, NSString, NSBundle;
+
+
+
+/*! Draw the keyboard background in the specified rectangle.
  @param style iPhone-Standard or iPhone-Alert
  */
-extern void UIKBDrawKeyboardBackground(CGContextRef context, CGRect region, NSString* style);
+UIKIT_EXTERN void UIKBDrawKeyboardBackground(CGContextRef context, CGRect region, NSString* style);
 /// Currently draws nothing.
-extern void UIKBDrawKeyboardOverlay(CGContextRef context, CGRect region, NSString* style);
-@class UIKBKeyboard, UIKBKey;
-extern void UIKBDrawKey(CGContextRef context, UIKBKeyboard* keyboard, UIKBKey* key, int x);
+UIKIT_EXTERN void UIKBDrawKeyboardOverlay(CGContextRef context, CGRect region, NSString* style);
+UIKIT_EXTERN void UIKBDrawKey(CGContextRef context, UIKBKeyboard* keyboard, UIKBKey* key, int x);
+
+UIKIT_EXTERN NSArray* UIKeyboardGetActiveInputModes();
+UIKIT_EXTERN NSString* UIKeyboardGetCurrentInputMode();
+UIKIT_EXTERN void UIKeyboardSetCurrentInputMode(NSString* mode);
+UIKIT_EXTERN NSString* UIKeyboardLocalizedInputModeName(NSString* mode);
+UIKIT_EXTERN NSString* UIKeyboardLocalizedString(NSString* theString, NSString* language, NSString* passNil);
+UIKIT_EXTERN NSObject* UIKeyboardLocalizedObject(NSString* key, NSString* language, NSString* passNil, NSString* alsoPassNil);
+UIKIT_EXTERN NSString* UIKeyboardGetCurrentUILanguage();
+UIKIT_EXTERN NSArray* UIKeyboardGetSupportedInputModes();
+UIKIT_EXTERN void UIKeyboardSetActiveInputModes(NSArray* modes);
+UIKIT_EXTERN NSBundle* UIKeyboardBundleForInputMode(NSString* mode);
+
+UIKIT_EXTERN NSString* UIKeyboardStringDismiss;
+UIKIT_EXTERN NSString* UIKeyboardStringConfirm;
+UIKIT_EXTERN NSString* UIKeyboardKeyReturn;
+UIKIT_EXTERN NSString* UIKeyboardKeySpace;
+	
