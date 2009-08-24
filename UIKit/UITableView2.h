@@ -82,6 +82,8 @@
 -(void)setShowsVerticalScrollIndicator:(BOOL)indicator;
 -(void)setContentOffset:(CGPoint)offset;
 -(void)setContentInset:(UIEdgeInsets)inset;
+
+-(NSArray*)indexPathsForSelectedRows;
 @end
 
 @interface UITableView (UITableViewInternal)

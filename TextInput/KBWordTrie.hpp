@@ -102,7 +102,8 @@ namespace KB {
 		Word(ReadOnlyDataFile& dat_file, unsigned x, const String& sort_key, const SortKeyByteConverter&, unsigned flag);
 		
 		const String& string() const { return m_string; }
-		const float probability() const { return word.probability; }
+		float probability() const { return word.probability; }
+		void set_probability(float new_prob) { word.probability = new_prob; }
 		
 	private:
 		String m_string;

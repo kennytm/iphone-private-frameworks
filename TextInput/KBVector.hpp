@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TEXTINPUT_KBVECTOR_HPP
 
 #include <algorithm>
+#include <cassert>
 
 namespace KB {
 
@@ -53,7 +54,7 @@ namespace KB {
 	private:
 		/// Fill a range with null value.
 		void fill(size_t start, size_t length) {
-			for (int i = 0; i < length; ++ i)
+			for (size_t i = 0; i < length; ++ i)
 				m_elements[start + i] = null_value();
 		}
 		
@@ -87,7 +88,7 @@ namespace KB {
 		/// Empty the vector.
 		void clear() {
 			if (m_elements != NULL) {
-				for (int i = 0; i < m_size; ++ i)
+				for (size_t i = 0; i < m_size; ++ i)
 					m_elements[i] = null_value();
 				m_size = 0;
 			} else {
@@ -223,7 +224,7 @@ namespace KB {
 		/// Copy from a raw array. Assume count <= m_size.
 		void copy_from(T* raw, size_t count) {
 			fill(0, m_size);
-			for (int i = 0; i != count; ++ i)
+			for (size_t i = 0; i != count; ++ i)
 				m_elements[i] = raw[i];
 		}
 		
@@ -261,6 +262,16 @@ namespace KB {
 		T back() const {
 			return T(m_size != 0 ? m_elements[m_size-1] : null_value());
 		}
+		
+		typedef const T* const_iterator;
+		typedef T* iterator;
+		
+		const_iterator begin() const { return m_elements; }
+		const_iterator end() const { return m_elements + m_size; }
+		const_iterator cbegin() const { return m_elements; }
+		const_iterator cend() const { return m_elements + m_size; }
+		iterator begin() { return m_elements; }
+		iterator end() { return m_elements + m_size; }
 		
 	private:
 		size_t m_size;	// 0

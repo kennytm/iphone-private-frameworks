@@ -227,6 +227,7 @@ UIKIT_EXTERN NSBundle* UIKeyboardBundleForInputMode(NSString* mode);
 
 UIKIT_EXTERN NSString* UIKeyboardStringDismiss;
 UIKIT_EXTERN NSString* UIKeyboardStringConfirm;
+UIKIT_EXTERN NSString* UIKeyboardStringNextCandidate;
 UIKIT_EXTERN NSString* UIKeyboardKeyReturn;
 UIKIT_EXTERN NSString* UIKeyboardKeySpace;
 	

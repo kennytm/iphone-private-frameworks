@@ -161,7 +161,7 @@ namespace KB {
 			printf("%s\tm_buffer_type:     %u,\n", prefix, m_buffer_type);
 			printf("%s\tm_buffer:          \"%s\", // %p\n", prefix, m_buffer, m_buffer);
 			printf("%s\tm_static_buffer:   \"%s\"\n", prefix, m_static_buffer);
-			printf("%s}\n");
+			printf("%s}\n", prefix);
 		}
 		friend class Word;
 	};
