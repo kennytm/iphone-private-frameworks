@@ -5,27 +5,9 @@
  * Source: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-typedef struct _NSZone NSZone;
-
-typedef struct _NSRange {
-	unsigned _field1;
-	unsigned _field2;
-} NSRange;
-
-typedef struct __CFRunLoopSource* CFRunLoopSourceRef;
-
-typedef struct __CFMachPort* CFMachPortRef;
+#include <SystemConfiguration/SystemConfiguration.h>
 
 typedef struct {
 	unsigned _field1[8];
 } XXStruct_kUSYWB;
-
-typedef struct __CFRunLoop* CFRunLoopRef;
-
-typedef struct __SCNetworkReachability* SCNetworkReachabilityRef;
-
-typedef struct __CFDictionary* CFDictionaryRef;
-
-typedef struct __SCPreferences* SCPreferencesRef;
-
 

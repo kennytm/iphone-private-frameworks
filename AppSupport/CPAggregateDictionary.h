@@ -9,16 +9,23 @@
 
 @class CPDistributedMessagingCenter;
 
+/*!
+ 
+ CPAggregateDictionary is an object to control a globally-shared dictionary. 
+ Unless the Enabled key is set to "true" in ~/Library/com.apple.aggregated.plist, this class cannot be used. 
+ 
+ */
+
 @interface CPAggregateDictionary : NSObject {
 	CPDistributedMessagingCenter* _center;
 }
 @property(readonly, assign, nonatomic, getter=isEnabled) BOOL enabled;
-+(id)sharedAggregateDictionary;
++(CPAggregateDictionary*)sharedAggregateDictionary;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(void)sendMessageName:(id)name key:(id)key arguments:(id)arguments;
--(void)sendMessageName:(id)name key:(id)key argument:(id)argument;
--(void)sendMessageName:(id)name key:(id)key;
+-(void)sendMessageName:(NSString*)name key:(NSString*)key arguments:(id)arguments;
+-(void)sendMessageName:(NSString*)name key:(NSString*)key argument:(id)argument;
+-(void)sendMessageName:(NSString*)name key:(NSString*)key;
 -(void)clearKey:(id)key;
 -(void)setValue:(int)value forScalarKey:(id)scalarKey;
 -(void)incrementKey:(id)key;

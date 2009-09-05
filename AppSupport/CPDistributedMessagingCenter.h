@@ -26,7 +26,7 @@
 -(id)name;
 -(unsigned)_sendPort;
 -(void)_serverPortInvalidated;
--(BOOL)sendMessageName:(id)name userInfo:(id)info;
+-(BOOL)sendMessageName:(NSString*)name userInfo:(NSDictionary*)info;
 -(id)sendMessageAndReceiveReplyName:(id)name userInfo:(id)info;
 -(id)sendMessageAndReceiveReplyName:(id)name userInfo:(id)info error:(id*)error;
 -(void)sendMessageAndReceiveReplyName:(id)name userInfo:(id)info toTarget:(id)target selector:(SEL)selector context:(void*)context;

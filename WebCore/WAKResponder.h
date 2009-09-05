@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GraphicsServices/GSBase.h>
+#import <GraphicsServices/GraphicsServices.h>
 #import <JavaScriptCore/Platform.h>
 #import "WKTypes.h"
 

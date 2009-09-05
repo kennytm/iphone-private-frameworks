@@ -72,10 +72,10 @@
 	BOOL m_shiftHeldDownNeedsUpdated;
 }
 @property(assign, nonatomic) BOOL shouldSkipCandidateSelection;
-+(id)sharedInstance;
-+(id)activeInstance;
++(UIKeyboardImpl*)sharedInstance;
++(UIKeyboardImpl*)activeInstance;
 +(void)releaseSharedInstance;
-+(void)applicationWillSuspend:(id)application;
++(void)applicationWillSuspend:(UIApplication*)application;
 +(CGSize)defaultSize;
 +(CGSize)defaultSizeForOrientation:(int)orientation;
 +(CGSize)defaultSizeForInterfaceOrientation:(int)interfaceOrientation;

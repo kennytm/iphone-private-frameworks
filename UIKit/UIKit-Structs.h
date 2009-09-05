@@ -231,3 +231,20 @@ UIKIT_EXTERN NSString* UIKeyboardStringNextCandidate;
 UIKIT_EXTERN NSString* UIKeyboardKeyReturn;
 UIKIT_EXTERN NSString* UIKeyboardKeySpace;
 	
+typedef struct _UIKBTheme {
+	// Foreground Gradient: For the background of the key.
+	CGGradientRef backgroundGradient, foregroundGradient, shadowGradient;
+	// Symbol color: For the font color of the key.
+	CGColorRef backgroundColor, foregroundColor, highlightColor, symbolColor, symbolSecondaryColor;
+	// Etch color: For the color of the key's label's shadow.
+	CGColorRef etchColor, separatorLightColor, separatorMidColor, separatorDarkColor;
+	
+	uint32_t _30, _34, _38, _3c, _40, _44;
+	
+	CFStringRef fontName, fontSecondaryName;
+	// Font size: the maximum font size.
+	CGFloat fontSize, fontSecondarySize, fontKern, fontSecondaryKern, minFontSize;
+	CGFloat keyRoundRectRadius;
+	NSUInteger UID;
+}* UIKBThemeRef;
+UIKBThemeRef UIKBThemeCreate(UIKBKeyboard* keyboard, UIKBKey* key, int x);

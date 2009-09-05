@@ -291,6 +291,7 @@
 
 -(void)clearKeyAreas;
 -(void)registerKeyArea:(CGPoint)area withRadii:(CGPoint)radii forKeyCode:(unsigned short)keyCode forLowerKey:(id)lowerKey forUpperKey:(id)upperKey;
+// Returns the actual key code the user has hit.
 -(int)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(UIPathInfo*)pathInfo forceShift:(BOOL)shift;
 -(BOOL)keySlidIntoSwipe;
 -(int)keyCancel:(CGPoint)cancel atTime:(double)time fromPath:(int)path withIdentity:(int)identity forceShift:(BOOL)shift;

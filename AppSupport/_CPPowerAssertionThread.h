@@ -15,6 +15,6 @@
 }
 // inherited: -(void)main;
 -(void)addAssertion:(id)assertion;
--(void)didTimeOut:(id)out;
+-(void)didTimeOut:(id)anOut;
 @end
 

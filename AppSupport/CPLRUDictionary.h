@@ -8,6 +8,29 @@
 #import "CPLRUDictionary.h"
 #import <Foundation/NSObject.h>
 
+/*!
+ 
+ CPLRUDictionary is a dictionary storing limited set of data, with extra data filted out by last accessed time. LRU stands
+ for Least Recently Used.
+ 
+ @code
+ CPLRUDictionary* dict = [[CPLRUDictionary alloc] initWithMaximumCapacity:4];
+ 
+ [dict setObject:@"1" forKey:@"first"];
+ [dict setObject:@"2" forKey:@"second"];
+ [dict setObject:@"3" forKey:@"third"];
+ [dict setObject:@"4" forKey:@"fourth"];
+ [dict objectForKey:@"first"];	// Bump "first" as most recently used.
+ [dict setObject:@"5" forKey:@"fifth"];
+ [dict setObject:@"6" forKey:@"sixth"]; 
+ 
+ NSLog(@"%@", [dict allKeys]);	// Should have "first", "fourth", "fifth" and "sixth" in any order.
+ 
+ [dict release];
+ @endcode
+ 
+ */
+
 @class CPLRUDictionaryNode, NSMutableDictionary;
 
 @interface CPLRUDictionary : NSObject {
@@ -16,8 +39,8 @@
 	CPLRUDictionaryNode* _head;
 	CPLRUDictionaryNode* _tail;
 }
--(id)initWithMaximumCapacity:(unsigned)maximumCapacity;
--(unsigned)count;
+-(id)initWithMaximumCapacity:(NSUInteger)maximumCapacity;
+-(NSUInteger)count;
 -(id)allKeys;
 -(id)objectForKey:(id)key;
 -(void)setObject:(id)object forKey:(id)key;

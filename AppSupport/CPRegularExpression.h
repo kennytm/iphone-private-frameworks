@@ -12,25 +12,60 @@
 
 @class NSString;
 
+/*!
+ 
+ CPRegularExpression is a wrapper around the POSIX regex.h library. Example use:
+ 
+ @code
+NSString* test = [NSString stringWithContentsOfFile:@"TestFile.txt"];
+
+CPRegularExpression* re = [CPRegularExpression regularExpressionWithString:@"([-_[:alpha:]]+)=['\"]?([^'\">[:blank:]]*)['\"]?"];
+NSRange curRange = NSMakeRange(0, [test length]);
+NSUInteger subexprCount = [re numberOfSubexpressions];
+NSRange subexprs[subexprCount];
+while (1) {
+	NSRange newRange = [re matchedRangeForString:test range:curRange subexpressionRanges:subexprs count:subexprCount];
+	if (newRange.location == NSNotFound)
+		break;
+	else {
+		NSLog(@"%@ -> %@", [test substringWithRange:subexprs[0]], [test substringWithRange:subexprs[1]]);
+		
+		// Changing the range alone is buggy.
+		test = [test substringFromIndex:newRange.location + newRange.length];
+		curRange.length = [test length];
+	}
+}
+ @endcode
+ 
+ */
+
+enum {
+	CPRegularExpressionOptionCaseInsensitive = 1,
+	CPRegularExpressionOptionSingleLine = 2,
+	CPRegularExpressionOptionBRESyntax = 4
+	
+};
+typedef NSUInteger CPRegularExpressionOptions;
+
 @interface CPRegularExpression : NSObject <NSCopying, NSCoding> {
 @private
 	NSString* _expressionString;
 	void* _reserved;
 }
 // inherited: +(void)initialize;
-+(id)regularExpressionWithString:(id)string;
-+(const char*)getBytesForString:(id)string lossByte:(unsigned char)byte;
++(CPRegularExpression*)regularExpressionWithString:(NSString*)string;
++(const char*)getBytesForString:(NSString*)string lossByte:(unsigned char)byte;
 // inherited: -(void)dealloc;
--(id)initWithExpressionString:(id)expressionString;
--(id)initWithExpressionString:(id)expressionString options:(unsigned)options;
+-(id)initWithExpressionString:(NSString*)expressionString;
+-(id)initWithExpressionString:(NSString*)expressionString options:(CPRegularExpressionOptions)options;
 -(unsigned)numberOfSubexpressions;
 // inherited: -(id)init;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(BOOL)isEqual:(id)equal;
 // inherited: -(unsigned)hash;
--(id)expressionString;
--(NSRange)matchedRangeForCString:(const char*)cstring range:(NSRange)range subexpressionRanges:(NSRange*)ranges count:(unsigned)count;
--(NSRange)matchedRangeForString:(id)string range:(NSRange)range subexpressionRanges:(NSRange*)ranges count:(unsigned)count;
+-(NSString*)expressionString;
+-(NSRange)matchedRangeForCString:(const char*)cstring range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
+-(NSRange)matchedRangeForString:(NSString*)string range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
 // in a protocol: -(id)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 @end

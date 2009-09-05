@@ -8,7 +8,3 @@
 #import "AppSupport-Structs.h"
 
 
-@protocol NSCopying
--(id)copyWithZone:(NSZone*)zone;
-@end
-

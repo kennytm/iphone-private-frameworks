@@ -103,11 +103,66 @@ extern "C" {
 		kGSEventMouseMoved       = 5,
 		kGSEventLeftMouseDragged = 6,
 		
+		kGSEventHardwareKeyDown = 13,
+		kGSEventKeyDown = kGSEventHardwareKeyDown,
 		kGSEventScrollWheel = 22,
+		kGSEventAccelerate = 23,
+		kGSEventProximityStateChanged = 24,
+		kGSEventDeviceOrientationChanged = 50,
+		kGSEventUserDefaultsDidChange = 60,
+		
+		kGSEventResetIdleTimer = 100,
+		kGSEventResetIdleDuration = 101,
+		kGSEventProcessScript = 200,
+		kGSEventDumpUIHierarchy = 500,
+		kGSEventDumpScreenContents = 501,
+		
+		kGSEventMenuButtonDown = 1000,
+		
+		kGSEventVolumeChanged = 1006,
+		kGSEventVolumeUpButtonDown = 1006,
+		kGSEventVolumeUpButtonUp = 1007,
+		kGSEventVolumeDownButtonDown = 1008,
+		kGSEventVolumeDownButtonUp = 1009,
+		kGSEventLockButtonDown = 1010,
+		kGSEventLockButtonUp = 1011,
+		kGSEventRingerOff = 1012,
+		kGSEventRingerChanged = 1013,
+		kGSEventLockDevice = 1014,
+		kGSEventStatusBarMouseDragged = 1016,
+		kGSEventStatusBarMouseUp = 1017,
+		kGSEventHeadsetButtonDown = 1018,
+		kGSEventHeadsetButtonUp = 1019,
+		
+		kGSEventMotionBegin = 1020,
+		
+		kGSEventVibrate = 1100,
+		kGSEventSetBacklightFactor = 1102,
+		kGSEventSetBacklightLevel = 1103,
+		
+		kGSEventApplicationLaunch = 2000,
+		kGSEventApplicationAnimateSuspensionOrResumption = 2001,
+		kGSEventAnotherApplicationFinishedLaunching = 2002,
+		kGSEventApplicationResume = 2003,
+		kGSEventApplicationEndResumeAnimation = 2004,
+		kGSEventApplicationBeginSuspendAnimation = 2005,
+		kGSEventApplicationHandleTestURL = 2006,
+		kGSEventApplicationSuspendEventsOnly = 2007,
+		kGSEventApplicationSuspend = 2008,
+		kGSEventApplicationExit = 2009,
+		kGSEventQuitTopApplication = 2010,
+		kGSEventApplicationUpdateSuspendedSettings = 2011,
 		
 		kGSEventHand = 3001,
 		
-		kGSEventAccessoryKeyState = 4001,
+		kGSEventAccessoryAvailabilityChanged = 4000,
+		kGSEventAccessoryKeyStateChanged = 4001,
+		kGSEventAccessory = 4002,
+		
+		kGSEventOutOfLineDataRequest = 5000,
+		kGSEventOutOfLineDataResponse = 5001,
+		
+		kGSEventUrgentMemoryWarning = 6000,
 		
 		kGSEventShouldRouteToFrontMost = 1<<17
 	} GSEventType;

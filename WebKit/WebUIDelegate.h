@@ -26,7 +26,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <Foundation/NSURLRequest.h>
 
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
@@ -227,7 +227,7 @@ typedef enum {
     on the real NSWindow would. It's OK to return either nil or the
     real first responder if some control not in the window has focus.
 */
-- (NSResponder *)webViewFirstResponder:(WebView *)sender;
+- (WAKResponder*)webViewFirstResponder:(WebView *)sender;
 
 /*!
     @method webView:makeFirstResponder:
@@ -240,7 +240,7 @@ typedef enum {
     hierarchy, it may be desirable to save the first responder
     elsewhere, or possibly ignore this call.
 */
-- (void)webView:(WebView *)sender makeFirstResponder:(NSResponder *)responder;
+- (void)webView:(WebView *)sender makeFirstResponder:(UIResponder *)responder;
 
 /*!
     @method webView:setStatusText:
@@ -330,7 +330,7 @@ typedef enum {
     this method is provided so implementors of this protocol can do special
     things on programmatic move/resize, like avoiding autosaving of the size.
 */
-- (void)webView:(WebView *)sender setFrame:(NSRect)frame;
+- (void)webView:(WebView *)sender setFrame:(CGRect)frame;
 
 /*!
     @method webViewFrame:
@@ -338,7 +338,7 @@ typedef enum {
     @abstract REturn the window's frame rect
     @discussion 
 */
-- (NSRect)webViewFrame:(WebView *)sender;
+- (CGRect)webViewFrame:(WebView *)sender;
 
 /*!
     @method webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:
@@ -432,7 +432,7 @@ typedef enum {
     See WebView.h to see the methods to that WebView can currently validate. See NSUserInterfaceValidations and
     NSValidatedUserInterfaceItem for information about UI validation.
 */
-- (BOOL)webView:(WebView *)webView validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)item defaultValidation:(BOOL)defaultValidation;
+- (BOOL)webView:(WebView *)webView validateUserInterfaceItem:(id /*<NSValidatedUserInterfaceItem>*/)item defaultValidation:(BOOL)defaultValidation;
 
 /*!
     @method webView:shouldPerformAction:fromSender:
@@ -456,7 +456,7 @@ typedef enum {
     indicating which drag destination actions can occur, WebDragDestinationActionAny to allow any kind of action or
     WebDragDestinationActionNone to not accept the drag.
 */
-- (WebNSUInteger)webView:(WebView *)webView dragDestinationActionMaskForDraggingInfo:(id <NSDraggingInfo>)draggingInfo;
+- (WebNSUInteger)webView:(WebView *)webView dragDestinationActionMaskForDraggingInfo:(id /*<NSDraggingInfo>*/)draggingInfo;
 
 /*!
     @method webView:willPerformDragDestinationAction:forDraggingInfo:
@@ -467,7 +467,7 @@ typedef enum {
     @discussion This method is called after the last call to webView:dragDestinationActionMaskForDraggingInfo: after something is dropped on a WebView.
     This method informs the UI delegate of the drag destination action that WebView will perform.
 */
-- (void)webView:(WebView *)webView willPerformDragDestinationAction:(WebDragDestinationAction)action forDraggingInfo:(id <NSDraggingInfo>)draggingInfo;
+- (void)webView:(WebView *)webView willPerformDragDestinationAction:(WebDragDestinationAction)action forDraggingInfo:(id /*<NSDraggingInfo>*/)draggingInfo;
 
 /*!
     @method webView:dragSourceActionMaskForPoint:
@@ -477,7 +477,7 @@ typedef enum {
     @discussion This method is called after the user has begun a drag from a WebView. The UI delegate can return a mask indicating
     which drag source actions can occur, WebDragSourceActionAny to allow any kind of action or WebDragSourceActionNone to not begin a drag.
 */
-- (WebNSUInteger)webView:(WebView *)webView dragSourceActionMaskForPoint:(NSPoint)point;
+- (WebNSUInteger)webView:(WebView *)webView dragSourceActionMaskForPoint:(CGPoint)point;
 
 /*!
     @method webView:willPerformDragSourceAction:fromPoint:withPasteboard:
@@ -490,7 +490,7 @@ typedef enum {
     This method informs the UI delegate of the drag source action that will be performed and gives the delegate an opportunity to modify
     the contents of the dragging pasteboard.
 */
-- (void)webView:(WebView *)webView willPerformDragSourceAction:(WebDragSourceAction)action fromPoint:(NSPoint)point withPasteboard:(NSPasteboard *)pasteboard;
+- (void)webView:(WebView *)webView willPerformDragSourceAction:(WebDragSourceAction)action fromPoint:(CGPoint)point withPasteboard:(id)pasteboard;
 
 /*!
     @method webView:printFrameView:
@@ -528,18 +528,18 @@ typedef enum {
 /*!
     @method webView:drawHeaderInRect:
     @param webView The WebView sending the delegate method
-    @param rect The NSRect reserved for the header of the page
+    @param rect The CGRect reserved for the header of the page
     @abstract The delegate should draw a header for the sender in the supplied rect.
 */
-- (void)webView:(WebView *)sender drawHeaderInRect:(NSRect)rect;
+- (void)webView:(WebView *)sender drawHeaderInRect:(CGRect)rect;
 
 /*!
     @method webView:drawFooterInRect:
     @param webView The WebView sending the delegate method
-    @param rect The NSRect reserved for the footer of the page
+    @param rect The CGRect reserved for the footer of the page
     @abstract The delegate should draw a footer for the sender in the supplied rect.
 */
-- (void)webView:(WebView *)sender drawFooterInRect:(NSRect)rect;
+- (void)webView:(WebView *)sender drawFooterInRect:(CGRect)rect;
 
 // The following delegate methods are deprecated in favor of the ones above that specify
 // the WebFrame whose JavaScript initiated this call.
@@ -548,8 +548,8 @@ typedef enum {
 - (NSString *)webView:(WebView *)sender runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText;
 
 // The following delegate methods are deprecated. Content rect calculations are now done automatically.
-- (void)webView:(WebView *)sender setContentRect:(NSRect)frame;
-- (NSRect)webViewContentRect:(WebView *)sender;
+- (void)webView:(WebView *)sender setContentRect:(CGRect)frame;
+- (CGRect)webViewContentRect:(WebView *)sender;
 
 @end
 

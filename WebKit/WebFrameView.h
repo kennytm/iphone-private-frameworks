@@ -26,7 +26,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Cocoa/Cocoa.h>
+#import <WebCore/WAKView.h>
 
 @class WebDataSource;
 @class WebFrame;
@@ -37,7 +37,7 @@
 /*!
     @class WebFrameView
 */
-@interface WebFrameView : NSView
+@interface WebFrameView : WAKView
 {
 @private
     WebFrameViewPrivate *_private;
@@ -55,7 +55,7 @@
     @abstract Returns the WebFrameView's document subview
     @result The subview that renders the WebFrameView's contents
 */
-- (NSView <WebDocumentView> *)documentView;
+- (WAKView <WebDocumentView> *)documentView;
 
 /*!
     @method setAllowsScrolling:
@@ -83,7 +83,7 @@
     @abstract Creates a print operation set up to print this frame
     @result A newly created print operation object
 */
-- (NSPrintOperation *)printOperationWithPrintInfo:(NSPrintInfo *)printInfo;
+//- (NSPrintOperation *)printOperationWithPrintInfo:(NSPrintInfo *)printInfo;
 
 /*!
     @method documentViewShouldHandlePrint

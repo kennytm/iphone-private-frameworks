@@ -35,6 +35,6 @@
 -(void)postNotificationName:(id)name userInfo:(id)info;
 -(BOOL)postNotificationName:(id)name userInfo:(id)info toBundleIdentifier:(id)bundleIdentifier;
 -(void)_receivedCheckIn:(unsigned)anIn auditToken:(XXStruct_kUSYWB*)token;
--(void)_receivedCheckOut:(CFMachPortRef)out;
+-(void)_receivedCheckOut:(CFMachPortRef)anOut;
 @end
 
