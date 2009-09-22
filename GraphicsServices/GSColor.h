@@ -100,7 +100,7 @@ extern "C" {
 	CGColorRef GSColorCreateWithDeviceWhite(CGFloat white, CGFloat alpha);
 	
 	/// Create an RGBA cached CGColor.
-	CGColorRef GSColorCreateColorWithDeviceRGBA(CGFloat r, CGFloat r, CGFloat b, CGFloat a);
+	CGColorRef GSColorCreateColorWithDeviceRGBA(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
 	
 	/// Create a new color by blending two colors together.
 	/// The resulting color = first * (1 - fraction) + second * fraction.

@@ -248,3 +248,5 @@ typedef struct _UIKBTheme {
 	NSUInteger UID;
 }* UIKBThemeRef;
 UIKBThemeRef UIKBThemeCreate(UIKBKeyboard* keyboard, UIKBKey* key, int x);
+
+UIKIT_EXTERN UIImage* _UIImageWithName(NSString* filename);
