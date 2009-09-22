@@ -8,7 +8,7 @@
 #import "AppSupport-Structs.h"
 #import <Foundation/NSObject.h>
 
-@class NSLock, NSMutableDictionary, NSOperationQueue, NSString;
+@class NSLock, NSMutableDictionary, NSOperationQueue, NSString, NSDictionary, NSError;
 
 @interface CPDistributedMessagingCenter : NSObject {
 	NSString* _centerName;
