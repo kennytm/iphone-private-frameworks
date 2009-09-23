@@ -51,6 +51,9 @@ extern "C" {
 	/// Returns true, or MapsVisibleGreenTea from com.apple.GMM if the system has green-tea capability.
 	/// This value will be refreshed when the carrier changes.
 	Boolean GSMapsVisible();
+	
+	extern CFStringRef kGSMapsVisibilityChangedNotification;
+
 
 #if __cplusplus
 }

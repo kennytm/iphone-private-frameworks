@@ -54,7 +54,76 @@ extern "C" {
 	
 	/// If the capability is a dictionary (e.g. the "screen-dimensions" capability), copy the value of a key in that dictionary.
 	CFPropertyListRef GSSystemCopySubcapability(CFStringRef capability, CFStringRef subcapability);
-	CFPropertyListRef GSSystemCopyCapability(CFStringRef capability);	///< Copy the value of a capability.	
+	CFPropertyListRef GSSystemCopyCapability(CFStringRef capability);	///< Copy the value of a capability.
+	
+	extern CFStringRef kGSCapabilityChangedNotification;
+
+	extern CFStringRef kGSCameraRestriction;
+	extern CFStringRef kGSInAppPurchasesRestriction;
+	extern CFStringRef kGSVolumeLimitRestriction;
+
+	extern CFStringRef kGSDeviceNameString;
+	extern CFStringRef kGSLocalizedDeviceNameString;
+
+	extern CFStringRef kGSTelephonyMaximumGeneration;
+	
+	extern CFStringRef kGSARMV6ExecutionCapability;
+	extern CFStringRef kGSARMV7ExecutionCapability;
+	extern CFStringRef kGSAccelerometerCapability;
+	extern CFStringRef kGSAccessibilityCapability;
+	extern CFStringRef kGSAppleInternalInstallCapability;
+	extern CFStringRef kGSApplicationInstallationCapability;
+	extern CFStringRef kGSAutoFocusCameraCapability;
+	extern CFStringRef kGSBluetoothCapability;
+	extern CFStringRef kGSCameraCapability;
+	extern CFStringRef kGSDelaySleepForHeadsetClickCapability;
+	extern CFStringRef kGSDisplayFCCLogosViaSoftwareCapability;
+	extern CFStringRef kGSDisplayIdentifiersCapability;
+	extern CFStringRef kGSEncodeAACCapability;
+	extern CFStringRef kGSEncryptedDataPartitionCapability;
+	extern CFStringRef kGSExplicitContentRestriction;
+	extern CFStringRef kGSGPSCapability;
+	extern CFStringRef kGSGasGaugeBatteryCapability;
+	extern CFStringRef kGSGreenTeaDeviceCapability;
+	extern CFStringRef kGSHasAllFeaturesCapability;
+	extern CFStringRef kGSInternationalSettingsCapability;
+	extern CFStringRef kGSLaunchApplicationsWhileAnimatingCapability;
+	extern CFStringRef kGSLoadThumbnailsWhileScrollingCapability;
+	extern CFStringRef kGSLocationServicesCapability;
+	extern CFStringRef kGSMMSCapability;
+	extern CFStringRef kGSMagnetometerCapability;
+	extern CFStringRef kGSMarketingNameString;
+	extern CFStringRef kGSMicrophoneCapability;
+	extern CFStringRef kGSNikeIpodCapability;
+	extern CFStringRef kGSNotGreenTeaDeviceCapability;
+	extern CFStringRef kGSOpenGLES1Capability;
+	extern CFStringRef kGSOpenGLES2Capability;
+	extern CFStringRef kGSPeer2PeerCapability;
+	extern CFStringRef kGSPiezoClickerCapability;
+	extern CFStringRef kGSPlatformStandAloneContactsCapability;
+	extern CFStringRef kGSProximitySensorCapability;
+	extern CFStringRef kGSRingerSwitchCapability;
+	extern CFStringRef kGSSMSCapability;
+	extern CFStringRef kGSScreenDimensionsCapability;
+	extern CFStringRef kGSSensitiveUICapability;
+	extern CFStringRef kGSTVOutSettingsCapability;
+	extern CFStringRef kGSTelephonyCapability;
+	extern CFStringRef kGSUnifiedIPodCapability;
+	extern CFStringRef kGSVideoCameraCapability;
+	extern CFStringRef kGSVoiceControlCapability;
+	extern CFStringRef kGSVolumeButtonCapability;
+	extern CFStringRef kGSWiFiCapability;
+	extern CFStringRef kGSYouTubeCapability;
+	extern CFStringRef kGSYouTubePluginCapability;
+	
+	/// Subcapabilities
+	extern CFStringRef kGSMainScreenHeight;
+	extern CFStringRef kGSMainScreenOrientation;
+	extern CFStringRef kGSMainScreenScale;
+	extern CFStringRef kGSMainScreenWidth;	
+	
+	extern CFStringRef kGSEnforceGoogleMail;
+
 	
 #if __cplusplus
 }
