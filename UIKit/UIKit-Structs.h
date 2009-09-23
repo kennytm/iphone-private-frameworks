@@ -8,6 +8,7 @@
 #import <WebCore/WKTypes.h>
 #import <WebCore/WKUtilities.h>
 #import <GraphicsServices/GSEvent.h>
+#import <GraphicsServices/GSHeartbeat.h>
 
 typedef struct {
 	unsigned char pathIndex;
@@ -34,8 +35,6 @@ typedef struct {
 	unsigned char _field11;
 	XXStruct__FxRIA _field12[0];
 } XXStruct_$jUSvD;
-
-typedef struct __GSHeartbeat* GSHeartbeatRef;
 
 typedef struct {
 	float _field1;

@@ -1,6 +1,6 @@
 /*
 
-FILE_NAME ... DESCRIPTION
+GSMaps.h ... Graphics Service Maps.
  
 Copyright (c) 2009, KennyTM~
 All rights reserved.
@@ -30,8 +30,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 */
 
-#ifndef GSBASE_H
-#define GSBASE_H
+#ifndef GSMAPS_H
+#define GSMAPS_H
 
 #include <CoreFoundation/CoreFoundation.h>
 
@@ -39,12 +39,21 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-	void GSLog(CFStringRef format, ...);
-	void GSInitialize();
+	/// Synchronize the com.apple.GMM preferences.
+	void GSUpdateMapsVisibilityPrefs();
 	
+	/// Returns the MapKitUserShifting[Non]GreenTea setting from com.apple.GMM.
+	Boolean GSMapKitUserShifting();
+	/// Returns the MapsUserShifting[Non]GreenTea setting from com.apple.GMM.
+	Boolean GSMapsUserShifting();
+	/// Return true, or MapKitAvailableGreenTea setting from com.apple.GMM if the system has green-tea capability.
+	Boolean GSMapKitAvailable();
+	/// Returns true, or MapsVisibleGreenTea from com.apple.GMM if the system has green-tea capability.
+	/// This value will be refreshed when the carrier changes.
+	Boolean GSMapsVisible();
+
 #if __cplusplus
 }
 #endif
 
 #endif
-

@@ -1,6 +1,6 @@
 /*
 
-FILE_NAME ... DESCRIPTION
+GSCapability.h ... Graphics Service Capability.
  
 Copyright (c) 2009, KennyTM~
 All rights reserved.
@@ -30,8 +30,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 */
 
-#ifndef GSBASE_H
-#define GSBASE_H
+#ifndef GSCAPABILITY_H
+#define GSCAPABILITY_H
 
 #include <CoreFoundation/CoreFoundation.h>
 
@@ -39,12 +39,25 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-	void GSLog(CFStringRef format, ...);
-	void GSInitialize();
+	/*! @brief Get the raw value of a key in the capability plist.
+	 The capability plist can be read from a shared memory region named "GSCapability"
+	 */
+	CFPropertyListRef _getCapability(CFStringRef capability);
+	
+	CFStringRef GSGetLocalizedDeviceName();	///< Get the localized device name (which is the "device-name-localized" capability).
+	CFStringRef GSGetDeviceName();	///< Get the device name (which is the "device-name" capability).
+	Boolean GSSystemHasCapability(CFStringRef capability);	///< Check if the system has the specified capability.
+	
+	
+	Boolean GSSystemCanTakePhoto();	///< Returns if the device can take photos (i.e. have "still-camera" but not "cameraRestriction" capabilities).
+	Boolean GSSystemHasTelephonyCapability();	///< Returns if the device has "telephony" capability.
+	
+	/// If the capability is a dictionary (e.g. the "screen-dimensions" capability), copy the value of a key in that dictionary.
+	CFPropertyListRef GSSystemCopySubcapability(CFStringRef capability, CFStringRef subcapability);
+	CFPropertyListRef GSSystemCopyCapability(CFStringRef capability);	///< Copy the value of a capability.	
 	
 #if __cplusplus
 }
 #endif
 
 #endif
-
