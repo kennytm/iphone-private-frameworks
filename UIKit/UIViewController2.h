@@ -133,7 +133,7 @@
 -(void)getRotationContentSettings:(XXStruct_TF$i3B*)settings forWindow:(id)window;
 -(void)_getRotationContentSettings:(XXStruct_TF$i3B*)settings;
 -(void)window:(id)window willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+//-(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)window:(id)window willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)window:(id)window didAnimateFirstHalfOfRotationToInterfaceOrientation:(int)interfaceOrientation;
@@ -141,7 +141,7 @@
 -(void)window:(id)window willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)window:(id)window didRotateFromInterfaceOrientation:(int)interfaceOrientation;
--(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+//-(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
 -(id)defaultPNGName;
 -(void)_setSearchDisplayController:(id)controller retain:(BOOL)retain;
 -(void)_setSearchDisplayControllerUnretained:(id)unretained;

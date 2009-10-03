@@ -8,6 +8,11 @@
 #import "AppSupport-Structs.h"
 #import <Foundation/NSObject.h>
 
+/*!
+ CPNetworkObserver is a singleton class that allows the application to query or observe the network status. This is an
+ Objective-C wrapper of the SCNetworkReachability module of the SystemConfiguration framework.
+*/
+
 @class NSLock, NSMutableDictionary;
 
 @interface CPNetworkObserver : NSObject {
@@ -24,21 +29,21 @@
 	BOOL _wifiNotified;
 	BOOL _wifiEnabled;
 }
-+(id)sharedNetworkObserver;
++(CPNetworkObserver*)sharedNetworkObserver;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(void)addObserver:(id)observer selector:(SEL)selector forHostname:(id)hostname;
+-(void)addObserver:(id)observer selector:(SEL)selector forHostname:(NSString*)hostname;
 -(void)removeObserver:(id)observer;
--(void)removeObserver:(id)observer forHostname:(id)hostname;
--(void)_networkObserversInitialize;
--(void)_networkReachableCallBack:(unsigned)back;
--(void)_networkReachableFirstCallBack:(id)back;
+-(void)removeObserver:(id)observer forHostname:(NSString*)hostname;
+//-(void)_networkObserversInitialize;
+//-(void)_networkReachableCallBack:(unsigned)back;
+//-(void)_networkReachableFirstCallBack:(id)back;
 -(BOOL)isNetworkReachable;
 -(void)addNetworkReachableObserver:(id)observer selector:(SEL)selector;
 -(void)removeNetworkReachableObserver:(id)observer;
--(void)_wifiObserversInitialize;
--(void)_wifiCallBack:(unsigned)back;
--(void)_wifiFirstCallBack:(id)back;
+//-(void)_wifiObserversInitialize;
+//-(void)_wifiCallBack:(unsigned)back;
+//-(void)_wifiFirstCallBack:(id)back;
 -(BOOL)isWiFiEnabled;
 -(void)addWiFiObserver:(id)observer selector:(SEL)selector;
 -(void)removeWiFiObserver:(id)observer;
