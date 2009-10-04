@@ -52,6 +52,15 @@ extern "C" {
 	
 	extern VMURange VMUUnionRange(VMURange a, VMURange b);
 	
+	static inline VMURange VMURangeMake(unsigned long long location, unsigned long long length) {
+		VMURange retval;
+		retval.location = location;
+		retval.length = length;
+		return retval;
+	}
+	
+	static const VMURange VMURangeZero = {0, 0};
+	
 	extern NSString* VMUSignatureArchitecture;
 	extern NSString* VMUSignatureHeaders;
 	extern NSString* VMUSignatureModifiedTime;

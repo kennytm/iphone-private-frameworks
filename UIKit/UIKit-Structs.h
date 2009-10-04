@@ -203,49 +203,65 @@ typedef struct UIKeyboardAnimationGeometry {
 
 @class UIKBKeyboard, UIKBKey, NSArray, NSString, NSBundle;
 
-
+#if __cplusplus
+extern "C" {
+#endif
 
 /*! Draw the keyboard background in the specified rectangle.
  @param style iPhone-Standard or iPhone-Alert
  */
-UIKIT_EXTERN void UIKBDrawKeyboardBackground(CGContextRef context, CGRect region, NSString* style);
+	void UIKBDrawKeyboardBackground(CGContextRef context, CGRect region, NSString* style);
 /// Currently draws nothing.
-UIKIT_EXTERN void UIKBDrawKeyboardOverlay(CGContextRef context, CGRect region, NSString* style);
-UIKIT_EXTERN void UIKBDrawKey(CGContextRef context, UIKBKeyboard* keyboard, UIKBKey* key, int x);
+	void UIKBDrawKeyboardOverlay(CGContextRef context, CGRect region, NSString* style);
+	void UIKBDrawKey(CGContextRef context, UIKBKeyboard* keyboard, UIKBKey* key, int x);
 
-UIKIT_EXTERN NSArray* UIKeyboardGetActiveInputModes();
-UIKIT_EXTERN NSString* UIKeyboardGetCurrentInputMode();
-UIKIT_EXTERN void UIKeyboardSetCurrentInputMode(NSString* mode);
-UIKIT_EXTERN NSString* UIKeyboardLocalizedInputModeName(NSString* mode);
-UIKIT_EXTERN NSString* UIKeyboardLocalizedString(NSString* theString, NSString* language, NSString* passNil);
-UIKIT_EXTERN NSObject* UIKeyboardLocalizedObject(NSString* key, NSString* language, NSString* passNil, NSString* alsoPassNil);
-UIKIT_EXTERN NSString* UIKeyboardGetCurrentUILanguage();
-UIKIT_EXTERN NSArray* UIKeyboardGetSupportedInputModes();
-UIKIT_EXTERN void UIKeyboardSetActiveInputModes(NSArray* modes);
-UIKIT_EXTERN NSBundle* UIKeyboardBundleForInputMode(NSString* mode);
+	NSArray* UIKeyboardGetActiveInputModes();
+	NSString* UIKeyboardGetCurrentInputMode();
+	void UIKeyboardSetCurrentInputMode(NSString* mode);
+	NSString* UIKeyboardLocalizedInputModeName(NSString* mode);
+	NSString* UIKeyboardLocalizedString(NSString* theString, NSString* language, NSString* passNil);
+	NSObject* UIKeyboardLocalizedObject(NSString* key, NSString* language, NSString* passNil, NSString* alsoPassNil);
+	NSString* UIKeyboardGetCurrentUILanguage();
+	NSArray* UIKeyboardGetSupportedInputModes();
+	void UIKeyboardSetActiveInputModes(NSArray* modes);
+	NSBundle* UIKeyboardBundleForInputMode(NSString* mode);
 
-UIKIT_EXTERN NSString* UIKeyboardStringDismiss;
-UIKIT_EXTERN NSString* UIKeyboardStringConfirm;
-UIKIT_EXTERN NSString* UIKeyboardStringNextCandidate;
-UIKIT_EXTERN NSString* UIKeyboardKeyReturn;
-UIKIT_EXTERN NSString* UIKeyboardKeySpace;
+	extern NSString* UIKeyboardStringDismiss;
+	extern NSString* UIKeyboardStringConfirm;
+	extern NSString* UIKeyboardStringNextCandidate;
+	extern NSString* UIKeyboardKeyReturn;
+	extern NSString* UIKeyboardKeySpace;
 	
-typedef struct _UIKBTheme {
-	// Foreground Gradient: For the background of the key.
-	CGGradientRef backgroundGradient, foregroundGradient, shadowGradient;
-	// Symbol color: For the font color of the key.
-	CGColorRef backgroundColor, foregroundColor, highlightColor, symbolColor, symbolSecondaryColor;
-	// Etch color: For the color of the key's label's shadow.
-	CGColorRef etchColor, separatorLightColor, separatorMidColor, separatorDarkColor;
-	
-	uint32_t _30, _34, _38, _3c, _40, _44;
-	
-	CFStringRef fontName, fontSecondaryName;
-	// Font size: the maximum font size.
-	CGFloat fontSize, fontSecondarySize, fontKern, fontSecondaryKern, minFontSize;
-	CGFloat keyRoundRectRadius;
-	NSUInteger UID;
-}* UIKBThemeRef;
-UIKBThemeRef UIKBThemeCreate(UIKBKeyboard* keyboard, UIKBKey* key, int x);
+	typedef struct _UIKBTheme {
+		// Foreground Gradient: For the background of the key.
+		CGGradientRef backgroundGradient, foregroundGradient, shadowGradient;
+		// Symbol color: For the font color of the key.
+		CGColorRef backgroundColor, foregroundColor, highlightColor, symbolColor, symbolSecondaryColor;
+		// Etch color: For the color of the key's label's shadow.
+		CGColorRef etchColor, separatorLightColor, separatorMidColor, separatorDarkColor;
+		
+		uint32_t _30, _34, _38, _3c, _40, _44;
+		
+		CFStringRef fontName, fontSecondaryName;
+		// Font size: the maximum font size.
+		CGFloat fontSize, fontSecondarySize, fontKern, fontSecondaryKern, minFontSize;
+		CGFloat keyRoundRectRadius;
+		NSUInteger UID;
+	}* UIKBThemeRef;
+	UIKBThemeRef UIKBThemeCreate(UIKBKeyboard* keyboard, UIKBKey* key, int x);
 
-UIKIT_EXTERN UIImage* _UIImageWithName(NSString* filename);
+	UIImage* _UIImageWithName(NSString* filename);
+	
+	/// Check the version of UIKit the application is linked to
+	typedef enum {
+		UIKitVersion2_0 = 0,
+		UIKitVersion2_1 = 1,	// I'm not sure about these 3.
+		UIKitVersion2_2 = 2,
+		UIKitVersion3_0 = 3,
+		UIKitVersion3_1 = 4,
+	} UIKitVersion;
+	BOOL _UIApplicationLinkedOnOrAfter(UIKitVersion version);
+
+#if __cplusplus
+}
+#endif
