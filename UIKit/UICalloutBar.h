@@ -61,3 +61,9 @@
 -(void)clearEvadeRects;
 @end
 
+@protocol UICalloutBarDelegate
+@optional
+-(void)calloutBarWillStartAnimation:(UICalloutBar*)calloutBar;
+-(void)calloutBarDidFinishAnimation:(UICalloutBar*)calloutBar;
+@end
+

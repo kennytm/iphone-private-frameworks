@@ -7,6 +7,20 @@
 #import "UIBezierPath.h"
 #import <Foundation/NSObject.h>
 
+typedef enum {
+	UIBezierPathRoundedLeftEdge = 1,
+	UIBezierPathRoundedTopEdge = 2,
+	UIBezierPathRoundedRightEdge = 4,
+	UIBezierPathRoundedBottomEdge = 8,
+} UIBezierPathRoundedEdges;
+
+typedef enum {
+	UIBezierPathRoundedTopLeftCorner = 1,
+	UIBezierPathRoundedTopRightCorner = 2,
+	UIBezierPathRoundedBottomLeftCorner = 4,
+	UIBezierPathRoundedBottomRightCorner = 8,
+} UIBezierPathRoundedCorners;
+
 
 @interface UIBezierPath : NSObject {
 	CGPathRef _pathRef;
@@ -17,10 +31,10 @@
 +(id)bezierPathForTopOfRect:(CGRect)rect withCornerRadius:(float)cornerRadius;
 +(id)bezierPathKnockingOutTopOfRect:(CGRect)rect withCornerRadius:(float)cornerRadius;
 +(id)bezierPathKnockingOutBottomOfRect:(CGRect)rect withCornerRadius:(float)cornerRadius;
-+(id)roundedRectBezierPath:(CGRect)path withRoundedEdges:(int)roundedEdges;
-+(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(int)roundedCorners withCornerRadius:(float)cornerRadius;
-+(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(int)roundedCorners withCornerRadii:(id)cornerRadii;
-+(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(int)roundedCorners visibleEdges:(int)edges cornerRadius:(float)radius;
++(id)roundedRectBezierPath:(CGRect)path withRoundedEdges:(UIBezierPathRoundedEdges)roundedEdges;
++(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadius:(float)cornerRadius;
++(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadii:(NSArray*)cornerRadii;
++(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners visibleEdges:(UIBezierPathRoundedEdges)edges cornerRadius:(float)radius;
 -(id)init;
 -(void)dealloc;
 -(void)moveToPoint:(CGPoint)point;
@@ -38,7 +52,7 @@
 @end
 
 @interface UIBezierPath (UIInternal)
-+(id)roundedRectBezierPath:(CGRect)path withTopCornerRadius:(float)topCornerRadius withBottomCornerRadius:(float)bottomCornerRadius;
++(UIBezierPath*)roundedRectBezierPath:(CGRect)path withTopCornerRadius:(float)topCornerRadius withBottomCornerRadius:(float)bottomCornerRadius;
 -(CGPathRef)_pathRef;
 @end
 
