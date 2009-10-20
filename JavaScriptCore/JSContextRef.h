@@ -1,4 +1,3 @@
-// -*- mode: c++; c-basic-offset: 4 -*-
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  *
@@ -29,8 +28,11 @@
 
 #include <JavaScriptCore/JSObjectRef.h>
 #include <JavaScriptCore/JSValueRef.h>
+#include <JavaScriptCore/WebKitAvailability.h>
 
+#ifndef __cplusplus
 #include <stdbool.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -38,14 +40,59 @@ extern "C" {
 
 /*!
 @function
+@abstract Creates a JavaScript context group.
+@discussion A JSContextGroup associates JavaScript contexts with one another.
+ Contexts in the same group may share and exchange JavaScript objects. Sharing and/or exchanging
+ JavaScript objects between contexts in different groups will produce undefined behavior.
+ When objects from the same context group are used in multiple threads, explicit
+ synchronization is required.
+@result The created JSContextGroup.
+*/
+JS_EXPORT JSContextGroupRef JSContextGroupCreate() AVAILABLE_AFTER_WEBKIT_VERSION_3_1;
+
+/*!
+@function
+@abstract Retains a JavaScript context group.
+@param group The JSContextGroup to retain.
+@result A JSContextGroup that is the same as group.
+*/
+JS_EXPORT JSContextGroupRef JSContextGroupRetain(JSContextGroupRef group) AVAILABLE_AFTER_WEBKIT_VERSION_3_1;
+
+/*!
+@function
+@abstract Releases a JavaScript context group.
+@param group The JSContextGroup to release.
+*/
+JS_EXPORT void JSContextGroupRelease(JSContextGroupRef group) AVAILABLE_AFTER_WEBKIT_VERSION_3_1;
+
+/*!
+@function
 @abstract Creates a global JavaScript execution context.
 @discussion JSGlobalContextCreate allocates a global object and populates it with all the
  built-in JavaScript objects, such as Object, Function, String, and Array.
+
+ In WebKit version 4.0 and later, the context is created in a unique context group.
+ Therefore, scripts may execute in it concurrently with scripts executing in other contexts.
+ However, you may not use values created in the context in other contexts.
 @param globalObjectClass The class to use when creating the global object. Pass 
  NULL to use the default object class.
 @result A JSGlobalContext with a global object of class globalObjectClass.
 */
-JSGlobalContextRef JSGlobalContextCreate(JSClassRef globalObjectClass);
+JS_EXPORT JSGlobalContextRef JSGlobalContextCreate(JSClassRef globalObjectClass) AVAILABLE_WEBKIT_VERSION_3_0_AND_LATER;
+
+/*!
+@function
+@abstract Creates a global JavaScript execution context in the context group provided.
+@discussion JSGlobalContextCreateInGroup allocates a global object and populates it with
+ all the built-in JavaScript objects, such as Object, Function, String, and Array.
+@param globalObjectClass The class to use when creating the global object. Pass
+ NULL to use the default object class.
+@param group The context group to use. The created global context retains the group.
+ Pass NULL to create a unique group for the context.
+@result A JSGlobalContext with a global object of class globalObjectClass and a context
+ group equal to group.
+*/
+JS_EXPORT JSGlobalContextRef JSGlobalContextCreateInGroup(JSContextGroupRef group, JSClassRef globalObjectClass) AVAILABLE_AFTER_WEBKIT_VERSION_3_1;
 
 /*!
 @function
@@ -53,14 +100,14 @@ JSGlobalContextRef JSGlobalContextCreate(JSClassRef globalObjectClass);
 @param ctx The JSGlobalContext to retain.
 @result A JSGlobalContext that is the same as ctx.
 */
-JSGlobalContextRef JSGlobalContextRetain(JSGlobalContextRef ctx);
+JS_EXPORT JSGlobalContextRef JSGlobalContextRetain(JSGlobalContextRef ctx);
 
 /*!
 @function
 @abstract Releases a global JavaScript execution context.
 @param ctx The JSGlobalContext to release.
 */
-void JSGlobalContextRelease(JSGlobalContextRef ctx);
+JS_EXPORT void JSGlobalContextRelease(JSGlobalContextRef ctx);
 
 /*!
 @function
@@ -68,10 +115,18 @@ void JSGlobalContextRelease(JSGlobalContextRef ctx);
 @param ctx The JSContext whose global object you want to get.
 @result ctx's global object.
 */
-JSObjectRef JSContextGetGlobalObject(JSContextRef ctx);
+JS_EXPORT JSObjectRef JSContextGetGlobalObject(JSContextRef ctx);
+
+/*!
+@function
+@abstract Gets the context group to which a JavaScript execution context belongs.
+@param ctx The JSContext whose group you want to get.
+@result ctx's group.
+*/
+JS_EXPORT JSContextGroupRef JSContextGetGroup(JSContextRef ctx) AVAILABLE_AFTER_WEBKIT_VERSION_3_1;
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // JSContextRef_h
+#endif /* JSContextRef_h */
