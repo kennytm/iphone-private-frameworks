@@ -5,7 +5,7 @@
  * Source: (null)
  */
 
-#import <Foundation/NSMutableArray.h>
+#import <Foundation/NSArray.h>
 
 
 @interface NSMutableArray (SBArrayStackAdditions)

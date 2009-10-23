@@ -288,7 +288,7 @@ extern "C" {
 	GSPathInfo GSEventGetPathInfoAtIndex(GSEventRef event, CFIndex index);
 	void GSEventSetPathInfoAtIndex(GSEventRef event, GSPathInfo pathInfo, CFIndex index);
 	
-	void GSEventSetHandInfoScale(GSEventRef event, CGFloat denominator) __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_1);
+	void GSEventSetHandInfoScale(GSEventRef event, CGFloat denominator) __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0);
 	void GSEventChangeHandInfoToCancel(GSEventRef event) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
 	
 	void GSEventDisableHandEventCoalescing(Boolean disableHandCoalescing);

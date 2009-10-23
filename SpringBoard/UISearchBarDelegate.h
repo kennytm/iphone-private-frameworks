@@ -7,19 +7,3 @@
 
 #import "NSObject.h"
 #import "SpringBoard-Structs.h"
-
-
-@protocol UISearchBarDelegate <NSObject>
-@optional
--(BOOL)searchBarShouldBeginEditing:(id)searchBar;
--(void)searchBarTextDidBeginEditing:(id)searchBarText;
--(BOOL)searchBarShouldEndEditing:(id)searchBar;
--(void)searchBarTextDidEndEditing:(id)searchBarText;
--(void)searchBar:(id)bar textDidChange:(id)text;
--(BOOL)searchBar:(id)bar shouldChangeTextInRange:(NSRange)range replacementText:(id)text;
--(void)searchBarSearchButtonClicked:(id)clicked;
--(void)searchBarBookmarkButtonClicked:(id)clicked;
--(void)searchBarCancelButtonClicked:(id)clicked;
--(void)searchBar:(id)bar selectedScopeButtonIndexDidChange:(int)selectedScopeButtonIndex;
-@end
-

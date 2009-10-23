@@ -8,17 +8,3 @@
 #import "NSObject.h"
 
 
-@protocol UIScrollViewDelegate <NSObject>
-@optional
--(void)scrollViewDidScroll:(id)scrollView;
--(void)scrollViewWillBeginDragging:(id)scrollView;
--(void)scrollViewDidEndDragging:(id)scrollView willDecelerate:(BOOL)decelerate;
--(void)scrollViewWillBeginDecelerating:(id)scrollView;
--(void)scrollViewDidEndDecelerating:(id)scrollView;
--(void)scrollViewDidEndScrollingAnimation:(id)scrollView;
--(id)viewForZoomingInScrollView:(id)scrollView;
--(void)scrollViewDidEndZooming:(id)scrollView withView:(id)view atScale:(float)scale;
--(BOOL)scrollViewShouldScrollToTop:(id)scrollView;
--(void)scrollViewDidScrollToTop:(id)scrollView;
-@end
-

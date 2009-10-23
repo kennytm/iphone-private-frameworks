@@ -7,8 +7,3 @@
 
 
 
-@protocol NSCoding
--(void)encodeWithCoder:(id)coder;
--(id)initWithCoder:(id)coder;
-@end
-

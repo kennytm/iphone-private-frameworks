@@ -5,42 +5,12 @@
  * Source: (null)
  */
 
-typedef struct _NSRange {
-	unsigned location;
-	unsigned length;
-} NSRange;
-
-typedef struct _NSZone NSZone;
-
-typedef struct CGImage* CGImageRef;
-
-typedef struct CGPoint {
-	float x;
-	float y;
-} CGPoint;
-
-typedef struct CGSize {
-	float width;
-	float height;
-} CGSize;
-
-typedef struct CGRect {
-	CGPoint origin;
-	CGSize size;
-} CGRect;
-
-typedef struct __GSEvent* GSEventRef;
-
-typedef struct __CFDictionary* CFDictionaryRef;
-
-typedef struct CGAffineTransform {
-	float _field1;
-	float _field2;
-	float _field3;
-	float _field4;
-	float _field5;
-	float _field6;
-} CGAffineTransform;
+#import <CoreFoundation/CoreFoundation.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <GraphicsServices/GraphicsServices.h>
+#import <UIKit/UIKit.h>
+#import <TelephonyUI/TelephonyUI.h>
 
 typedef struct __CTCall* CTCallRef;
 
@@ -67,27 +37,17 @@ typedef struct {
 
 typedef struct __CTServerConnection* CTServerConnectionRef;
 
-typedef struct __GSFont* GSFontRef;
-
-typedef struct __CFString* CFStringRef;
-
 typedef struct __WiFiManagerClient WiFiManagerClient;
 
 typedef struct __WiFiDeviceClient WiFiDeviceClient;
 
 typedef struct __WiFiNetwork WiFiNetwork;
 
-typedef struct __CFArray* CFArrayRef;
-
-typedef struct __CFMachPort* CFMachPortRef;
-
 typedef struct {
 	unsigned char voicemailAvailable;
 	int voicemailCount;
 	long long voicemailID;
 } XXStruct_EX3dgA;
-
-typedef struct __CFDateFormatter* CFDateFormatterRef;
 
 typedef struct {
 	int _field1;
@@ -98,38 +58,11 @@ typedef struct {
 	double _field6;
 } XXStruct_fhKmAA;
 
-typedef struct __CFTimeZone* CFTimeZoneRef;
-
-typedef struct __CFDate* CFDateRef;
-
 typedef struct CalEventExpirationMonitor CalEventExpirationMonitor;
 
 typedef struct CalAlarmEngine CalAlarmEngine;
 
 typedef struct CalDatabase CalDatabase;
-
-typedef struct __CFBundle* CFBundleRef;
-
-typedef struct CGPath* CGPathRef;
-
-typedef struct __CFBoolean* CFBooleanRef;
-
-typedef struct CGColor* CGColorRef;
-
-typedef struct CGContext* CGContextRef;
-
-typedef struct {
-	CGRect _field1;
-	CGRect _field2;
-	CGRect _field3;
-} XXStruct_SIyEID;
-
-typedef struct UIEdgeInsets {
-	float top;
-	float left;
-	float bottom;
-	float right;
-} UIEdgeInsets;
 
 typedef struct {
 	unsigned long _field1;
@@ -142,7 +75,5 @@ typedef struct {
 	double _field1;
 	double _field2;
 } XXStruct_UNJ7RC;
-
-typedef struct __CFCharacterSet* CFCharacterSetRef;
 
 
