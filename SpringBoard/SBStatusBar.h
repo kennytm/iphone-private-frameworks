@@ -38,7 +38,7 @@
 -(int)mode;
 -(int)orientation;
 -(CGAffineTransform)distantStatusWindowTransform;
--(id)contentsView;
+-(SBStatusBarContentsView*)contentsView;
 -(id)airplaneView;
 -(void)drawRect:(CGRect)rect;
 -(void)setFrame:(CGRect)frame;

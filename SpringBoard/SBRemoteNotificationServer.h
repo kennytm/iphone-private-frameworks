@@ -16,10 +16,10 @@
 	unsigned _lastPlayedAlertSound;
 	NSString* _lastNotificationReceivedBundleIdentifier;
 }
-+(id)sharedInstance;
++(SBRemoteNotificationServer*)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(id)_clientsArchivePath;
+-(NSString*)_clientsArchivePath;
 -(void)saveClientState;
 -(void)_purgeMissingClients;
 -(void)run;
@@ -41,6 +41,6 @@
 -(void)setSystemwideEnabled:(BOOL)enabled;
 -(BOOL)hasRegisteredBundleIdentifiers;
 -(void)setSettingsTypes:(int)types forBundleIdentifier:(id)bundleIdentifier;
--(id)getMessageUserInfoForBundleIdentifier:(id)bundleIdentifier;
+-(NSDictionary*)getMessageUserInfoForBundleIdentifier:(NSString*)bundleIdentifier;
 @end
 

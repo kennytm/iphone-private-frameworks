@@ -47,27 +47,30 @@
 	int _airPortSignalStrength;
 	NSMutableArray* _doubleHeightInfos;
 }
-+(id)sharedStatusBarController;
++(SBStatusBarController*)sharedStatusBarController;
 +(BOOL)isLikeAFullScreenStatusBar:(int)bar;
-+(id)statusBarImageNamed:(id)named forMode:(int)mode;
++(UIImage*)statusBarImageNamed:(NSString*)named forMode:(int)mode;
 // inherited: -(id)init;
 -(BOOL)_enteringAirplaneMode;
 // inherited: -(void)dealloc;
 -(void)preheatStatusBarForMode:(int)mode orientation:(int)orientation;
--(id)statusBarWindow;
--(id)statusBarView;
+-(SBStatusWindow*)statusBarWindow;
+-(SBStatusBar*)statusBarView;
 -(id)transitioningStatusBarView;
--(void)addStatusBarItem:(id)item;
+-(void)addStatusBarItem:(NSString*)item;
 -(void)setIsLockVisible:(BOOL)visible isTimeVisible:(BOOL)visible2;
 -(BOOL)isLockVisible;
 -(BOOL)isTimeVisible;
 -(BOOL)isLockOrTimeVisibleChanging;
 -(void)setDimmed:(BOOL)dimmed;
 -(BOOL)dimmed;
+
+/// Overlay the status bar with a translucent color.
 -(BOOL)showDimmerOverlay;
 -(void)setShowDimmerOverlay:(BOOL)overlay;
--(id)dimmerOverlayColor;
--(void)setDimmerOverlayColor:(id)color;
+-(UIColor*)dimmerOverlayColor;
+-(void)setDimmerOverlayColor:(UIColor*)color;
+
 -(void)tearDownWindowForSlidingStatusBar:(id)slidingStatusBar overStatusBar:(id)bar;
 -(void)setupWindowForSlidingStatusBar:(id)slidingStatusBar overStatusBar:(id)bar;
 -(void)endDoubleHeightStatusBarAnimationFinished;
@@ -88,17 +91,17 @@
 -(void)setDoubleHeightStatusText:(id)text bundleID:(id)anId;
 -(id)doubleHeightStatusText;
 -(BOOL)_isServiceAvailable;
--(id)_SIMStatus;
+-(NSString*)_SIMStatus;
 -(void)_SIMOrServiceStatusChanged;
 -(void)_SIMStatusChanged:(id)changed;
 -(void)_serviceStatusChanged:(id)changed;
 -(void)setAirplaneModeIsEnabled:(BOOL)enabled;
 -(BOOL)airplaneModeIsEnabled;
--(void)removeStatusBarItem:(id)item;
+-(void)removeStatusBarItem:(NSString*)item;
 -(id)statusBarIndicatorNames;
 -(id)customText;
 -(void)setCustomText:(id)text;
--(void)setAirPortStrength:(int)strength;
+-(void)setAirPortStrength:(int)strength;	// 0 ~ 3
 -(void)setShowsAirPort:(BOOL)port;
 -(void)dataConnectionTypeChanged;
 -(BOOL)showsAirPort;
@@ -130,3 +133,6 @@
 -(void)loopCarrierNameIfNecessary;
 @end
 
+// Status Bar Item could be one of:
+//  - airplaneMode
+//  - (XXX for any Default_XXX.png in SpringBoard.app)

@@ -36,7 +36,7 @@
 -(void)_indicateConnectedToPower;
 // inherited: -(void)dealloc;
 // inherited: -(id)init;
--(void)animateAppleDown:(BOOL)down;
+-(void)animateAppleDown:(BOOL)animated;	// Zoom out the Apple logo.
 -(BOOL)launchedAfterLanguageRestart;
 -(void)clearLaunchedAfterLanguageRestart;
 -(void)localeChanged;
@@ -44,21 +44,21 @@
 -(void)finishLaunching;
 -(void)systemControllerRouteChanged:(id)changed;
 -(void)lock:(BOOL)lock;
--(void)lock;
+-(void)lock;	// Simulate pressing the "lock" button.
 -(void)clearZoomLayer;
 -(id)contentView;
 -(id)window;
 -(void)launchIcon:(id)icon;
--(void)activateApplicationAnimated:(id)animated;
+-(void)activateApplicationAnimated:(SBApplication*)application;
 -(void)showZoomLayerWithDefaultImageOfApp:(id)app;
 -(void)showZoomLayerWithIOSurfaceSnapshotOfApp:(id)app includeStatusWindow:(id)window;
--(void)scatterIconListAndBar:(BOOL)bar;
+-(void)scatterIconListAndBar:(BOOL)animated;
 -(void)insertAndOrderIconListsForReordering:(BOOL)reordering;
--(void)restoreIconList:(BOOL)list;
+-(void)restoreIconList:(BOOL)animated;
 -(void)animateApplicationActivation:(id)activation animateDefaultImage:(BOOL)image scatterIcons:(BOOL)icons;
 -(void)animateApplicationActivationDidStop:(id)animateApplicationActivation finished:(id)finished context:(void*)context;
 -(void)tearDownIconListAndBar;
--(void)animateApplicationSuspend:(id)suspend;
+-(void)animateApplicationSuspend:(SBApplication*)suspend;	// Zoom out and suspend the app
 -(void)applicationSuspendAnimationDidStop:(id)applicationSuspendAnimation finished:(id)finished context:(void*)context;
 -(void)animateApplicationSuspendFlip:(id)flip;
 -(void)applicationSuspendFlipDidStop:(id)applicationSuspendFlip;

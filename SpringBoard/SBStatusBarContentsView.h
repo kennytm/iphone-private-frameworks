@@ -32,7 +32,7 @@
 +(float)contentAlphaForMode:(int)mode;
 -(id)initWithStatusBar:(id)statusBar mode:(int)mode;
 // inherited: -(void)dealloc;
--(id)statusBar;
+-(SBStatusBar*)statusBar;
 -(void)buildContentViews;
 -(void)updateContentViewsAlpha;
 -(void)reflowContentViewsNow;

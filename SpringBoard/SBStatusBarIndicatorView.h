@@ -14,12 +14,12 @@
 	BOOL _showIndicatorView;
 	NSString* _indicatorName;
 }
--(id)initWithName:(id)name andMode:(int)mode;
+-(id)initWithName:(NSString*)name andMode:(int)mode;
 // inherited: -(void)dealloc;
 // inherited: -(int)priority;
 // inherited: -(void)setVisible:(BOOL)visible;
 // inherited: -(BOOL)isVisible;
--(id)indicatorName;
+-(NSString*)indicatorName;
 // inherited: -(id)description;
 // inherited: -(float)padding;
 @end

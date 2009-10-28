@@ -89,11 +89,11 @@
 -(void)setSystemVolumeHUDEnabled:(BOOL)enabled forCategory:(id)category;
 -(BOOL)showSystemVolumeHUDForCategory:(id)category;
 // inherited: -(id)description;
--(id)descriptionForDisplaySettings:(unsigned)displaySettings;
--(id)displaySettingsDescription;
--(id)descriptionForActivationSettings:(unsigned)activationSettings;
--(id)activationSettingsDescription;
--(id)descriptionForDeactivationSettings:(unsigned)deactivationSettings;
--(id)deactivationSettingsDescription;
+-(NSString*)descriptionForDisplaySettings:(unsigned)displaySettings;
+-(NSString*)displaySettingsDescription;
+-(NSString*)descriptionForActivationSettings:(unsigned)activationSettings;
+-(NSString*)activationSettingsDescription;
+-(NSString*)descriptionForDeactivationSettings:(unsigned)deactivationSettings;
+-(NSString*)deactivationSettingsDescription;
 @end
 
