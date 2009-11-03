@@ -16,7 +16,7 @@
 -(void)dealloc;
 -(BOOL)_canDrawContent;
 -(void)updatePatternColor;
--(id)checkerColor;
--(void)setCheckerColor:(id)color;
+-(UIColor*)checkerColor;
+-(void)setCheckerColor:(UIColor*)color;
 @end
 
