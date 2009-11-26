@@ -22,16 +22,16 @@
 }
 +(id)messageWithLibraryID:(unsigned)libraryID;
 -(id)initWithLibraryID:(unsigned)libraryID;
--(id)library;
+-(MailMessageLibrary*)library;
 -(void)setLibraryID:(unsigned)anId;
-// inherited: -(id)messageID;
-// inherited: -(id)persistentID;
+// inherited: -(NSString*)messageID;
+// inherited: -(NSString*)persistentID;
 -(unsigned)libraryID;
 -(unsigned)mailboxID;
 -(void)setMailboxID:(unsigned)anId;
 -(unsigned)originalMailboxID;
 -(void)setOriginalMailboxID:(unsigned)anId;
-// inherited: -(id)originalMailboxURL;
+// inherited: -(NSURL*)originalMailboxURL;
 // inherited: -(unsigned)messageSize;
 -(void)setMessageSize:(unsigned)size;
 // inherited: -(id)messageStore;

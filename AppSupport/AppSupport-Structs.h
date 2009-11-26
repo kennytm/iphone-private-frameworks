@@ -6,8 +6,23 @@
  */
 
 #include <SystemConfiguration/SystemConfiguration.h>
+#include <mach/message.h>
 
+typedef audit_token_t XXStruct_kUSYWB;
+
+/*
 typedef struct {
 	unsigned _field1[8];
 } XXStruct_kUSYWB;
+ 
+ [0] -> audit user ID
+ [1] -> effective user ID
+ [2] -> effective group ID
+ [3] -> real user ID
+ [4] -> real group ID
+[5] -> process ID
+ [6] -> task or sender's audit session ID
+ [7] -> task or sender's terminal ID
+ 
+ */
 

@@ -6,8 +6,9 @@
  */
 
 #import <Foundation/NSObject.h>
+#include <sys/types.h>
 
-@class NSMutableDictionary, NSDictionary, SBApplication, NSOperationQueue;
+@class NSMutableDictionary, NSDictionary, SBApplication, NSOperationQueue, NSArray;
 
 @interface SBApplicationController : NSObject {
 	NSDictionary* _pendingApplicationDictionaries;
@@ -18,21 +19,21 @@
 	NSOperationQueue* _backgroundOperationQueue;
 }
 @property(retain) NSDictionary* pendingApplicationDictionaries;
-+(id)sharedInstance;
++(SBApplicationController*)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(id)allApplications;
--(id)applicationsWithBundleIdentifier:(id)bundleIdentifier;
--(id)applicationWithDisplayIdentifier:(id)displayIdentifier;
--(id)applicationWithPid:(int)pid;
--(id)springBoard;
--(id)iPod;
+-(NSArray*)allApplications;
+-(NSArray*)applicationsWithBundleIdentifier:(NSString*)bundleIdentifier;
+-(SBApplication*)applicationWithDisplayIdentifier:(NSString*)displayIdentifier;
+-(SBApplication*)applicationWithPid:(pid_t)pid;
+-(SBApplication*)springBoard;
+-(SBApplication*)iPod;
 -(id)loadApplications;
 -(void)loadApplicationsAndIcons:(id)icons reveal:(BOOL)reveal popIn:(BOOL)anIn;
 -(void)removeApplicationsFromModelWithBundleIdentifier:(id)bundleIdentifier;
 -(void)uninstallApplication:(id)application;
 -(void)waitForOperationsToComplete;
--(Class)applicationClassForBundleIdentifier:(id)bundleIdentifier;
+-(Class)applicationClassForBundleIdentifier:(NSString*)bundleIdentifier;
 -(void)loadRolesWithBundle:(id)bundle bundlePath:(id)path isSystemApplication:(BOOL)application defaultTags:(id)tags signerIdentity:(id)identity provisioningProfileValidated:(BOOL)validated seatbeltEnvironmentVariables:(id)variables;
 -(void)updateSchemesForRoleDefinition:(id)roleDefinition displayIdentifier:(id)identifier application:(id)application;
 -(id)rolesForInfoPlist:(id)infoPlist;

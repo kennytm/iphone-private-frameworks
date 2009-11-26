@@ -42,3 +42,10 @@
 -(void)_addPresetMessagePart:(id)part;
 @end
 
+@protocol CKSMSComposeControllerDelegate
+@optional
+-(void)smsComposeControllerCancelled:(CKSMSComposeController*)controller;
+-(BOOL)smsComposeControllerSendStarted:(CKSMSComposeController*)controller;
+-(void)smsComposeControllerAppeared:(CKSMSComposeController*)controller;
+-(void)smsComposeControllerDataInserted:(CKSMSComposeController*)controller;
+@end

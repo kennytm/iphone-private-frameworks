@@ -964,6 +964,6 @@ namespace WTF {
 
 } // namespace WTF
 
-using WTF::Vector;
+// using WTF::Vector;
 
 #endif // WTF_Vector_h

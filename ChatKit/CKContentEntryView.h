@@ -43,7 +43,7 @@
 -(BOOL)textContentViewShouldEndEditing:(id)textContentView;
 -(BOOL)textContentView:(id)view shouldChangeSizeForContentSize:(CGSize)contentSize;
 -(void)textContentView:(id)view didChangeSize:(CGSize)size;
--(id)supportedPasteboardTypesInTextContentView:(id)textContentView;
+-(NSArray*)supportedPasteboardTypesInTextContentView:(id)textContentView;
 -(id)documentFragmentForPasteboardItemAtIndex:(int)index inTextContentView:(id)textContentView;
 -(void)attachmentsDidChange;
 -(void)reflowContent;
@@ -53,7 +53,7 @@
 -(void)clearMessage;
 -(BOOL)hasContent;
 -(void)setMessageComposition:(id)composition;
--(id)messageComposition;
+-(CKMessageComposition*)messageComposition;
 -(void)setMessageParts:(id)parts;
 -(id)messageParts;
 -(void)insertMessagePart:(id)part;
@@ -79,5 +79,15 @@
 -(void)_adjustAllContent;
 -(void)_setupGestureRecognizers;
 -(BOOL)canPasteObject:(id)object;
+@end
+
+@protocol CKContentEntryFieldDelegate
+@required
+-(BOOL)entryField:(CKContentEntryView*)entryField shouldInsertMediaObject:(CKMediaObject*)mediaObject;
+-(void)entryFieldAttachmentsChanged:(CKContentEntryView*)entryField;
+-(void)entryFieldSubjectChanged:(CKContentEntryView*)entryField;
+-(void)entryFieldDidBecomeActive:(CKContentEntryView*)entryField;
+-(BOOL)entryFieldShouldBecomeActive:(CKContentEntryView*)entryField;
+-(void)entryFieldContentChanged:(CKContentEntryView*)entryField;
 @end
 

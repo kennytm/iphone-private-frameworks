@@ -78,8 +78,8 @@
 @property(retain, nonatomic) CKMessage* messageToThrow;
 @property(retain, nonatomic) CKMessage* smartForwardMessage;
 @property(assign, nonatomic) id composeDelegate;
-+(id)tableColor;
--(id)initWithNavigationController:(id)navigationController;
++(UIColor*)tableColor;
+-(id)initWithNavigationController:(UINavigationController*)navigationController;
 -(void)dealloc;
 -(void)loadView;
 -(BOOL)_canReloadView;
@@ -87,7 +87,7 @@
 -(void)viewDidAppear:(BOOL)view;
 -(void)viewWillDisappear:(BOOL)view;
 -(void)viewDidDisappear:(BOOL)view;
--(BOOL)shouldAutorotateToInterfaceOrientation:(int)interfaceOrientation;
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(void)_getRotationContentSettings:(XXStruct_TF$i3B*)settings;
 -(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;

@@ -8,16 +8,33 @@
 #import <UIKit/UIKit.h>
 #import <GraphicsServices/GSEvent.h>
 #import <UIKit/UIKit-Structs.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <AddressBook/AddressBook.h>
 
 typedef struct __CKSMSRecord* CKSMSRecordRef;
-
-typedef struct {
-	int _field1;
-	int _field2;
-} XXStruct_K5nmsA;
 
 typedef struct __CKSMSAddress* CKSMSAddressRef;
 
 typedef struct CGImageSource* CGImageSourceRef;
 
-
+#if __cplusplus
+extern "C" {
+#endif
+	
+	BOOL isEmoji(unichar character);
+	
+	CGFloat CKGetMaxPreviewImageDimensionLength();	// == 129
+	UIColor* CKGetTextEntryBackgroundColor();
+	NSString* CKLocalizedSMSActionString();
+	NSString* CKLocalizedMMSActionString(NSString* who);
+	
+	BOOL CKDeviceSupportsVideo();
+	void CKLog(NSString* context, NSString* format, ...);
+	BOOL CKShouldPlaySMSSounds();
+	ABAddressBookRef CKGetAddressBook();
+	BOOL CKMMSEnabled();
+	BOOL CKShowSubjectEnabled();
+	
+#if __cplusplus
+}
+#endif

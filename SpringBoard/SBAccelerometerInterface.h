@@ -18,11 +18,17 @@
 	NSMutableArray* _clients;
 }
 // inherited: +(void)initialize;
-+(id)sharedInstance;
++(SBAccelerometerInterface*)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)updateSettings;
--(void)clientRequestedAccelerometerEvents:(unsigned)events updateInterval:(double)interval xThreshold:(float)threshold yThreshold:(float)threshold4 zThreshold:(float)threshold5 auditToken:(XXStruct_kUSYWB*)token;
+
+// set up a client to the mach port "port".
+
+-(void)clientRequestedAccelerometerEvents:(mach_port_t)port
+						   updateInterval:(NSTimeInterval)interval
+							   xThreshold:(float)xThreshold yThreshold:(float)yThreshold zThreshold:(float)zThreshold
+							   auditToken:(audit_token_t*)token;
 -(void)_clientInvalidated:(id)invalidated;
 -(void)accelerometerDataReceived:(double)received x:(float)x y:(float)y z:(float)z type:(unsigned)type;
 @end

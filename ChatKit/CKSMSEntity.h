@@ -15,7 +15,7 @@
 	CKSMSAddressRef _smsAddress;
 }
 @property(readonly, assign, nonatomic) CKSMSAddressRef smsAddress;
-+(id)copyAllSMSEntities;
++(NSArray*)copyAllSMSEntities;
 -(void)resetCaches;
 -(void)_addToSharedSet;
 -(void)_removeFromSharedSet;

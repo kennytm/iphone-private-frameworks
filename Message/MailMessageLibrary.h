@@ -32,7 +32,7 @@
 	/*function-pointer*/ void* _busyHandler;
 	void* _busyHandlerContext;
 }
-+(id)defaultInstance;
++(MailMessageLibrary*)defaultInstance;
 // inherited: +(void)initialize;
 +(void)_invalidateActiveAccountsClause;
 // inherited: -(id)initWithPath:(id)path;
@@ -76,7 +76,7 @@
 // inherited: -(unsigned)deletedCountForMailbox:(id)mailbox;
 // inherited: -(unsigned)nonDeletedCountForMailbox:(id)mailbox;
 // inherited: -(unsigned)totalCountForMailbox:(id)mailbox;
-// inherited: -(id)oldestMessageInMailbox:(id)mailbox;
+// inherited: -(LibraryMessage*)oldestMessageInMailbox:(NSString*)mailbox;
 // inherited: -(id)messageWithRemoteID:(id)remoteID inRemoteMailbox:(id)remoteMailbox;
 // inherited: -(unsigned)maximumRemoteIDForMailbox:(id)mailbox;
 // inherited: -(unsigned)minimumRemoteIDForMailbox:(id)mailbox;
@@ -84,13 +84,13 @@
 // inherited: -(void)setSequenceIdentifier:(id)identifier forMailbox:(id)mailbox;
 // inherited: -(id)getDetailsForMessagesWithRemoteIDInRange:(NSRange)range fromMailbox:(id)mailbox;
 // inherited: -(id)getDetailsForAllMessagesFromMailbox:(id)mailbox;
-// inherited: -(id)messageWithMessageID:(id)messageID;
+// inherited: -(LibraryMessage*)messageWithMessageID:(NSString*)messageID;
 // inherited: -(id)messagesWithMessageIDHeader:(id)messageIDHeader;
 // inherited: -(id)messageWithLibraryID:(unsigned)libraryID options:(unsigned)options;
 // inherited: -(id)messageWithLibraryID:(unsigned)libraryID;
 // inherited: -(id)urlForMailboxID:(unsigned)mailboxID;
--(id)pathForMailboxURL:(id)mailboxURL;
--(id)mailboxURLForMessage:(id)message;
+-(NSString*)pathForMailboxURL:(NSString*)mailboxURL;
+-(NSString*)mailboxURLForMessage:(MailMessage*)message;
 // inherited: -(id)mailboxUidForMessage:(id)message;
 // inherited: -(id)remoteStoreForMessage:(id)message;
 // inherited: -(id)accountForMessage:(id)message;
@@ -136,8 +136,8 @@
 // inherited: -(id)messagesMatchingCriterion:(id)criterion options:(unsigned)options range:(NSRange)range;
 // inherited: -(id)messagesMatchingCriterion:(id)criterion options:(unsigned)options;
 // inherited: -(id)filterContiguousMessages:(id)messages forCriterion:(id)criterion options:(unsigned)options;
--(void)setDatabasePath:(id)path;
--(id)defaultDatabasePath;
+-(void)setDatabasePath:(NSString*)path;
+-(NSString*)defaultDatabasePath;
 // inherited: -(BOOL)isBusy;
 // inherited: -(void)setBusyTimeoutInterval:(double)interval;
 // inherited: -(void)cleanOldDatabases;
@@ -160,6 +160,6 @@
 // inherited: -(void)lockDBForWriting;
 -(void)_yieldDBToOtherProcess;
 -(void)setMailboxPathProvider:(id)provider;
--(id)allMailboxURLStrings;
+-(NSArray*)allMailboxURLStrings;
 @end
 

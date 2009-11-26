@@ -8,7 +8,7 @@
 #import "Message-Structs.h"
 #import <MIME/Message.h>
 
-
+@class MailAccount, NSString, MailboxUid;
 @interface MailMessage : Message {
 	unsigned _messageFlags;
 	XXStruct_CIR1YD _flags;
@@ -35,16 +35,16 @@
 -(void)markAsNotViewed;
 -(void)markAsReplied;
 -(void)markAsForwarded;
--(id)mailbox;
+-(MailboxUid*)mailbox;
 -(id)subjectAndPrefixLength:(unsigned*)length;
--(id)subjectNotIncludingReAndFwdPrefix;
+-(NSString*)subjectNotIncludingReAndFwdPrefix;
 // inherited: -(id)subject;
 // inherited: -(void)setSubject:(id)subject;
 -(id)loadMeetingExternalID;
 -(id)loadMeetingData;
--(id)account;
+-(MailAccount*)account;
 -(id)remoteMailboxURL;
--(id)originalMailboxURL;
+-(NSURL*)originalMailboxURL;
 -(id)URL;
 // inherited: -(unsigned short)numberOfAttachments;
 -(void)setMutableInfoFromMessage:(id)message;

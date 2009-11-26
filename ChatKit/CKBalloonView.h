@@ -28,10 +28,10 @@
 @property(copy, nonatomic) NSString* subject;
 @property(assign, nonatomic) id delegate;
 @property(assign, nonatomic) id tapDelegate;
-+(float)fixedHeight;
++(CGFloat)fixedHeight;
 +(BOOL)shouldHaveAccessoryDiclosure;
 +(CGSize)defaultSize;
-+(id)defaultFont;
++(UIFont*)defaultFont;
 +(BOOL)showsSubject;
 +(CGSize)sizeForMessagePart:(id)messagePart width:(float)width;
 +(float)heightForText:(id)text width:(float)width subject:(id)subject;
@@ -89,3 +89,6 @@
 -(void)dealloc;
 @end
 
+@protocol CKBalloonViewTapDelegate
+-(void)didTapBalloon:(CKBalloonView*)view;
+@end

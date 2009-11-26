@@ -7,18 +7,7 @@
 
 #import <GraphicsServices/GSEvent.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-
-typedef struct {
-	unsigned long _field1;
-	id* _field2;
-	unsigned long* _field3;
-	unsigned long _field4[5];
-} XXStruct_kFm5bA;
-
-typedef struct {
-	int _field1;
-	int _field2;
-} XXStruct_K5nmsA;
+#import <QuartzCore/QuartzCore2.h>
 
 #if __cplusplus
 extern "C" {

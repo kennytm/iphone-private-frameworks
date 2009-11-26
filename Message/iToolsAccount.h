@@ -16,8 +16,8 @@
 	BOOL _subscribed;
 }
 // inherited: +(id)basicAccountProperties;
-+(id)emailAddressHostPart;
-+(id)deliveryHostName;
++(NSString*)emailAddressHostPart;	// = mac.com
++(NSString*)deliveryHostName;		// = smtp.mac.com
 // inherited: +(id)defaultPathNameForAccountWithHostname:(id)hostname username:(id)username;
 // inherited: +(id)displayedAccountTypeString;
 // inherited: +(id)hostname;

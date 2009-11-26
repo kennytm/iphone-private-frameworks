@@ -8,13 +8,13 @@
 #import "Message-Structs.h"
 #import <Foundation/NSObject.h>
 
-@class NSString;
+@class NSString, LibraryMessage;
 
 @interface MessageLibrary : NSObject {
 	NSString* _path;
 }
 // inherited: +(void)initialize;
--(id)initWithPath:(id)path;
+-(id)initWithPath:(NSString*)path;
 // inherited: -(void)dealloc;
 -(void)flagsChangedForMessages:(id)messages flags:(id)flags oldFlagsByMessage:(id)message;
 -(void)commit;
@@ -31,18 +31,18 @@
 -(int)threadPriority;
 -(unsigned)updateSequenceNumber;
 -(unsigned)accessSequenceNumber;
--(id)messagesForMailbox:(id)mailbox olderThanNumberOfDays:(int)days;
+-(NSArray*)messagesForMailbox:(NSString*)mailbox olderThanNumberOfDays:(int)days;
 -(id)serverSearchResultMessagesForMailbox:(id)mailbox;
 -(id)dateOfOldestNonSearchResultMessageInMailbox:(id)mailbox;
--(id)messagesWithSummariesForMailbox:(id)mailbox range:(NSRange)range;
--(id)messagesWithoutSummariesForMailbox:(id)mailbox;
--(id)messagesWithSummariesForMailbox:(id)mailbox fromRowID:(unsigned)rowID limit:(unsigned)limit;
--(id)messagesWithoutSummariesForMailbox:(id)mailbox fromRowID:(unsigned)rowID limit:(unsigned)limit;
--(unsigned)unreadCountForMailbox:(id)mailbox;
--(unsigned)deletedCountForMailbox:(id)mailbox;
--(unsigned)nonDeletedCountForMailbox:(id)mailbox;
--(unsigned)totalCountForMailbox:(id)mailbox;
--(id)oldestMessageInMailbox:(id)mailbox;
+-(NSArray*)messagesWithSummariesForMailbox:(NSString*)mailbox range:(NSRange)range;
+-(NSArray*)messagesWithoutSummariesForMailbox:(NSString*)mailbox;
+-(NSArray*)messagesWithSummariesForMailbox:(NSString*)mailbox fromRowID:(unsigned)rowID limit:(unsigned)limit;
+-(NSArray*)messagesWithoutSummariesForMailbox:(NSString*)mailbox fromRowID:(unsigned)rowID limit:(unsigned)limit;
+-(unsigned)unreadCountForMailbox:(NSString*)mailbox;
+-(unsigned)deletedCountForMailbox:(NSString*)mailbox;
+-(unsigned)nonDeletedCountForMailbox:(NSString*)mailbox;
+-(unsigned)totalCountForMailbox:(NSString*)mailbox;
+-(LibraryMessage*)oldestMessageInMailbox:(NSString*)mailbox;
 -(id)messageWithRemoteID:(id)remoteID inRemoteMailbox:(id)remoteMailbox;
 -(unsigned)maximumRemoteIDForMailbox:(id)mailbox;
 -(unsigned)minimumRemoteIDForMailbox:(id)mailbox;
@@ -50,7 +50,7 @@
 -(void)setSequenceIdentifier:(id)identifier forMailbox:(id)mailbox;
 -(id)getDetailsForMessagesWithRemoteIDInRange:(NSRange)range fromMailbox:(id)mailbox;
 -(id)getDetailsForAllMessagesFromMailbox:(id)mailbox;
--(id)messageWithMessageID:(id)messageID;
+-(LibraryMessage*)messageWithMessageID:(NSString*)messageID;
 -(id)messagesWithMessageIDHeader:(id)messageIDHeader;
 -(id)messageWithLibraryID:(unsigned)libraryID options:(unsigned)options;
 -(id)messageWithLibraryID:(unsigned)libraryID;

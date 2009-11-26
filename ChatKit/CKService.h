@@ -5,7 +5,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class CKConversationList, NSString;
+@class CKConversationList, NSString, CKEntity;
 
 @interface CKService : NSObject {
 	NSString* _serviceID;
@@ -39,7 +39,7 @@
 -(BOOL)canAcceptMediaObject:(id)object givenMediaObjects:(id)objects;
 -(BOOL)canAcceptMediaObjectType:(int)type givenMediaObjects:(id)objects;
 -(double)maxTrimDurationForMediaType:(int)mediaType;
--(id)copyEntityForAddressString:(id)addressString;
+-(CKEntity*)copyEntityForAddressString:(NSString*)addressString;
 -(id)unknownEntity;
 -(id)abPropertyTypes;
 -(BOOL)isValidAddress:(id)address;

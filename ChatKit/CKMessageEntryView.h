@@ -30,7 +30,7 @@
 -(void)fadeToSendingState:(BOOL)sendingState withDuration:(float)duration;
 -(void)dealloc;
 -(void)send:(id)send;
--(id)entryField;
+-(CKContentEntryView*)entryField;
 -(CGRect)contentEntryFrame:(BOOL)frame;
 -(void)enableSendButton;
 -(void)disableSendButton;

@@ -37,7 +37,7 @@
 +(id)accountDirectoryPrefix;
 // inherited: +(id)displayedAccountTypeString;
 // inherited: +(id)displayedShortAccountTypeString;
-+(id)_URLScheme;
++(NSString*)_URLScheme;	// as
 +(void)removeStaleExchangeDBRows;
 +(void)_removeStaleExchangeDirectories:(id)directories;
 +(id)accountIDForDirectoryName:(id)directoryName isAccountDirectory:(BOOL*)directory;

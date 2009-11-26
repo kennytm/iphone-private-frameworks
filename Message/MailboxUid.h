@@ -94,7 +94,7 @@ typedef enum {
 -(NSURL*)URL;
 -(id)URLStringWithAccount:(id)account;
 -(id)oldURLString;
--(id)URLString;
+-(NSString*)URLString;
 -(id)URLStringNonNil;
 -(int)compareWithMailboxUid:(id)mailboxUid;
 -(int)indexToInsertChildMailboxUid:(id)insertChildMailboxUid;
