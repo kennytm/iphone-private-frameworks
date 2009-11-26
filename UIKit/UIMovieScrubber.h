@@ -7,6 +7,7 @@
 #import "UIMovieScrubberTrackViewDataSource.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIControl.h>
+#import <Availability.h>
 
 @class UIMovieScrubberEditingView, UILabel, UIImage, UIImageView, UIMovieScrubberTrackView;
 @protocol UIMovieScrubberDataSource, UIMovieScrubberDelegate;
@@ -37,6 +38,10 @@
 	double _trimEndValue;
 	double _minTrimmedLength;
 	double _maxTrimmedLength;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	double _zoomAnimationDuration;
+	double _zoomAnimationDelay;
+#endif
 	struct {
 		unsigned continuous : 1;
 		unsigned animating : 1;
@@ -48,6 +53,9 @@
 		unsigned zoomed : 1;
 		unsigned zoomAnimating : 1;
 		unsigned trackIsPressed : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+		unsigned trackAnimating : 1;
+#endif
 		unsigned thumbIsVisible : 1;
 		unsigned handleIsPressed : 1;
 		unsigned willBeginEditing : 1;
@@ -82,6 +90,8 @@
 -(id)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)reloadData;
+-(id)_scriptingInfo __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(id)scriptingInfoWithChildren __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)editable;
 -(void)_animateAfterEdit:(BOOL)edit;
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated;

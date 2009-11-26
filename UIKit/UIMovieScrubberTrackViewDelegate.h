@@ -4,14 +4,17 @@
  */
 
 #import "NSObject.h"
-
+#import <Availability.h>
 
 @protocol UIMovieScrubberTrackViewDelegate <NSObject>
 @optional
--(void)movieScrubberTrackView:(id)view sizeWidthDelta:(float)delta originXDelta:(float)delta3 minimumVisibleValue:(float)value maximumVisibleValue:(float)value5;
+-(void)movieScrubberTrackView:(id)view sizeWidthDelta:(float)delta originXDelta:(float)delta3 minimumVisibleValue:(float)value maximumVisibleValue:(float)value5 __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_3_0, __IPHONE_3_1);
+-(void)movieScrubberTrackView:(id)view clampedSizeWidthDelta:(float)delta actualSizeWidthDelta:(float)delta3 originXDelta:(float)delta4 minimumVisibleValue:(float)value maximumVisibleValue:(float)value6 __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)movieScrubberTrackViewDidExpand:(id)movieScrubberTrackView;
 -(void)movieScrubberTrackViewDidCollapse:(id)movieScrubberTrackView;
 -(void)movieScrubberTrackViewWillBeginRequestingThumbnails:(id)movieScrubberTrackView;
 -(void)movieScrubberTrackViewDidFinishRequestingThumbnails:(id)movieScrubberTrackView;
+-(float)movieScrubberTrackViewZoomAnimationDuration:(id)duration __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(float)movieScrubberTrackViewZoomAnimationDelay:(id)delay __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

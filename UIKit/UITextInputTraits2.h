@@ -44,16 +44,16 @@
 @property(assign, nonatomic) id textSuggestionDelegate;
 @property(assign, nonatomic) BOOL contentsIsSingleValue;
 @property(assign, nonatomic) BOOL acceptsEmoji;
-+(id)defaultTextInputTraits;
++(UITextInputTraits*)defaultTextInputTraits;
 +(BOOL)keyboardTypeRequiresASCIICapable:(int)capable;
 -(void)setToSecureValues;
--(id)dictionaryRepresentation;
+-(NSDictionary*)dictionaryRepresentation;
 -(id)init;
 -(void)dealloc;
 -(void)setToDefaultValues;
 -(void)takeTraitsFrom:(id)from;
 -(id)copyWithZone:(NSZone*)zone;
--(id)description;
+-(NSString*)description;
 -(BOOL)isEqual:(id)equal;
 @end
 

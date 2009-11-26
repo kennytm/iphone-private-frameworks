@@ -5,9 +5,13 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UIImage;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+__attribute__((visibility("hidden")))
+#endif
 @interface UISelectionIndicatorView : UIView {
 	UIImage* _image;
 	XXStruct_4cr1oD _slices;

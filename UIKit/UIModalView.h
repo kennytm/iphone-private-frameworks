@@ -7,6 +7,7 @@
 #import "UIModalView.h"
 #import "UITextFieldDelegate.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UILabel, NSMutableArray, UIWindow, UIToolbar, NSString;
 @protocol UIModalViewDelegate;
@@ -200,6 +201,7 @@
 -(float)_maxHeight;
 -(float)_buttonHeight;
 -(void)layout;
+-(int)numberOfLinesInTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)presentSheetFromButtonBar:(id)buttonBar;
 -(id)bodyTextView;
 -(id)taglineTextView;

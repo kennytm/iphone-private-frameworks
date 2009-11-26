@@ -8,6 +8,7 @@
 #import "UITextContentView.h"
 #import "UITextSelectingContainer.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UIDelayedAction, DOMHTMLElement, WebFrame, NSString, UITextInteractionAssistant, UITextSelectionView, UIColor, UITouch, UIFont, UIWebDocumentView;
 @protocol UITextSelectingContent, UITextContentViewDelegate;
@@ -88,6 +89,7 @@
 -(void)ensureSelection;
 -(CGPoint)constrainedPoint:(CGPoint)point;
 -(void)textLoupeTimerAction;
+-(id)automaticallySelectedOverlay  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)_syntheticTouch;
 -(void)callSuperTouchBegan:(XXStruct_CKAdxD*)began;
 -(void)callSuperTouchMoved:(XXStruct_CKAdxD*)moved;
@@ -159,6 +161,7 @@
 -(void)webViewDidChange:(id)webView;
 -(void)performBecomeEditableTasks;
 -(void)setFrame:(CGRect)frame;
+-(BOOL)isSMSTextView  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)setSelectionWithPoint:(CGPoint)point;
 -(void)setSelectionToStart;
 -(void)setSelectionToEnd;
@@ -223,5 +226,19 @@
 
 @interface UITextContentView (SyntheticEvents)
 -(id)_automationValue;
+@end
+
+@protocol UITextContentViewDelegate <NSObject>
+@optional
+-(BOOL)textContentViewShouldBeginEditing:(id)textContentView;
+-(BOOL)textContentViewShouldEndEditing:(id)textContentView;
+-(void)textContentViewDidBeginEditing:(id)textContentView;
+-(void)textContentViewDidEndEditing:(id)textContentView;
+-(BOOL)textContentView:(id)view shouldChangeTextInRange:(NSRange)range replacementText:(id)text;
+-(void)textContentViewDidChange:(id)textContentView;
+-(void)textContentViewDidChangeSelection:(id)textContentView;
+-(BOOL)textContentView:(id)view shouldScrollForPendingContentSize:(CGSize)pendingContentSize;
+-(BOOL)textContentView:(id)view shouldChangeSizeForContentSize:(CGSize)contentSize;
+-(void)textContentView:(id)view didChangeSize:(CGSize)size;
 @end
 

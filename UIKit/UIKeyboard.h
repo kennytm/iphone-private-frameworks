@@ -18,8 +18,8 @@
 +(void)initImplementationNow;
 +(void)removeAllDynamicDictionaries;
 +(CGSize)defaultSize;
-+(CGSize)defaultSizeForInterfaceOrientation:(int)interfaceOrientation;
-+(CGRect)defaultFrameForInterfaceOrientation:(int)interfaceOrientation;
++(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
++(CGRect)defaultFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGSize)defaultSizeForOrientation:(int)orientation;
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithDefaultSize;
@@ -37,8 +37,8 @@
 -(void)setCaretVisible:(BOOL)visible;
 -(BOOL)returnKeyEnabled;
 -(void)setReturnKeyEnabled:(BOOL)enabled;
--(id)defaultTextInputTraits;
--(void)setDefaultTextInputTraits:(id)traits;
+-(UITextInputTraits*)defaultTextInputTraits;
+-(void)setDefaultTextInputTraits:(UITextInputTraits*)traits;
 -(id)delegate;
 -(void)clearSnapshot;
 -(void)takeSnapshot;

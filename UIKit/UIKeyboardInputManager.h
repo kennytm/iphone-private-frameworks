@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability.h>
 
 @class CandWord, UIKeyboardLayout;
 
@@ -209,35 +210,6 @@
 //! Not used?
 -(BOOL)setInputMode:(NSString*)mode;
 
-//! Tell the input manager whether autocorrects is enabled.
--(void)setAutoCorrects:(BOOL)autoCorrects;
-
-//! Tell the input manager if shift is on.
--(void)setShift:(BOOL)shift;
-
-//! Tell the input manager if autoshift is on.
--(void)setAutoShift:(BOOL)shift;
-
-/*! Returns if the word before the caret should be counted to the input string.
-
- This is enable some cases where -setInput: will be invoked.
- */
--(BOOL)shouldExtendPriorWord;
-
-/*! Change the keyboard layout for candidate list.
- 
- Usually you will set the Space key to select the next candidate and the Return key to confirm / dismiss the candidate list, e.g.
- @code
- [keyboard setLabel:UIKeyboardStringConfirm forKey:UIKeyboardKeyReturn];
- [keyboard setTarget:[UIKeyboardImpl sharedInstance] forKey:UIKeyboardKeyReturn];
- [keyboard setAction:@selector(acceptCurrentCandidate) forKey:UIKeyboardKeyReturn];
- @endcode
- */
--(void)configureKeyboard:(UIKeyboardLayout*)keyboard forCandidates:(NSArray*)candidates;
-
-//! Change the keyboard layout for autocorrection string.
--(void)configureKeyboard:(UIKeyboardLayout*)keyboard forAutocorrection:(NSString*)autocorrection;
-
 /*! Adds an input string to typing history.
  
  Called from -[UIKeyboardImpl acceptWord:firstDelete:addString:].
@@ -299,5 +271,38 @@
 -(void)setKeyboardMatchType:(int)type;
 -(void)registerCentroid:(CGPoint)centroid forKey:(id)key;
 -(void)clearAllCentroids;
+@end
+
+@interface UIKeyboardInputManager (FeatureSpecializations)
+//! Tell the input manager whether autocorrects is enabled.
+-(void)setAutoCorrects:(BOOL)autoCorrects;
+
+-(void)setShallowPrediction:(BOOL)prediction;
+
+//! Tell the input manager if shift is on.
+-(void)setShift:(BOOL)shift;
+
+//! Tell the input manager if autoshift is on.
+-(void)setAutoShift:(BOOL)shift;
+
+/*! Returns if the word before the caret should be counted to the input string.
+ 
+ This is enable some cases where -setInput: will be invoked.
+ */
+-(BOOL)shouldExtendPriorWord;
+
+/*! Change the keyboard layout for candidate list.
+ 
+ Usually you will set the Space key to select the next candidate and the Return key to confirm / dismiss the candidate list, e.g.
+ @code
+ [keyboard setLabel:UIKeyboardStringConfirm forKey:UIKeyboardKeyReturn];
+ [keyboard setTarget:[UIKeyboardImpl sharedInstance] forKey:UIKeyboardKeyReturn];
+ [keyboard setAction:@selector(acceptCurrentCandidate) forKey:UIKeyboardKeyReturn];
+ @endcode
+ */
+-(void)configureKeyboard:(id)keyboard forCandidates:(id)candidates;
+
+//! Change the keyboard layout for autocorrection string.
+-(void)configureKeyboard:(id)keyboard forAutocorrection:(id)autocorrection;
 @end
 

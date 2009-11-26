@@ -7,26 +7,30 @@
 #import "NSCoding.h"
 #import <Foundation/NSObject.h>
 #import <UIKit/UIColor.h>
+#import <Availability.h>
 
+@class NSString;
 
 @interface UIColor ()
 +(void)initialize;
 +(id)allocWithZone:(NSZone*)zone;
-+(id)lightTextColor;
-+(id)darkTextColor;
-+(id)tableSeparatorDarkColor;
-+(id)tableSeparatorLightColor;
-+(id)tableBackgroundColor;
-+(id)tableSelectionColor;
-+(id)sectionListBorderColor;
-+(id)sectionHeaderBackgroundColor;
-+(id)sectionHeaderOpaqueBackgroundColor;
-+(id)sectionHeaderBorderColor;
-+(id)tableCellBlueTextColor;
-+(id)tableCellGrayTextColor;
-+(id)textFieldAtomBlueColor;
-+(id)textFieldAtomPurpleColor;
-+(id)infoTextOverPinStripeTextColor;
++(UIColor*)lightTextColor;
++(UIColor*)darkTextColor;
++(UIColor*)tableSeparatorDarkColor;
++(UIColor*)tableSeparatorLightColor;
++(UIColor*)tableBackgroundColor;
++(UIColor*)tableSelectionColor;
++(UIColor*)sectionListBorderColor;
++(UIColor*)sectionHeaderBackgroundColor;
++(UIColor*)sectionHeaderOpaqueBackgroundColor;
++(UIColor*)sectionHeaderBorderColor;
++(UIColor*)tableCellBlueTextColor;
++(UIColor*)tableCellValue1BlueColor __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
++(UIColor*)tableCellValue2BlueColor __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
++(UIColor*)tableCellGrayTextColor;
++(UIColor*)textFieldAtomBlueColor;
++(UIColor*)textFieldAtomPurpleColor;
++(UIColor*)infoTextOverPinStripeTextColor;
 -(Class)classForCoder;
 -(id)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
@@ -36,11 +40,11 @@
 -(BOOL)isEqual:(id)equal;
 -(unsigned)hash;
 -(CGColorRef)cgColor;
--(id)styleString;
+-(NSString*)styleString;
 @end
 
 @interface UIColor (UIColorSystemColorsPrivate)
-+(id)underPageBackgroundColor;
++(UIColor*)underPageBackgroundColor;
 @end
 
 

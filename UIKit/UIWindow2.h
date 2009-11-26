@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIWindow.h>
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class NSUndoManager;
 
@@ -65,13 +66,13 @@
 -(void)_slideHeaderView:(id)view andFooterView:(id)view2 offScreen:(BOOL)screen forInterfaceOrientation:(int)interfaceOrientation;
 -(void)_positionHeaderView:(id)view andFooterView:(id)view2 outsideContentViewForInterfaceOrientation:(int)interfaceOrientation;
 -(void)_clearPendingKeyboardChanges;
--(BOOL)_shouldAutorotateToInterfaceOrientation:(int)interfaceOrientation;
+-(BOOL)_shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(void)_handleStatusBarOrientationChange:(id)change;
 -(void)_handleDeviceOrientationChange:(id)change;
 -(void)_applicationDidBeginIgnoringInteractionEvents:(id)_application;
 -(void)_applicationDidEndIgnoringInteractionEvents:(id)_application;
--(void)_updateToInterfaceOrientation:(int)interfaceOrientation animated:(BOOL)animated;
--(void)_updateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration force:(BOOL)force;
+-(void)_updateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation animated:(BOOL)animated;
+-(void)_updateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration force:(BOOL)force;
 -(void)_updateInterfaceOrientationFromDeviceOrientation;
 -(void)beginDisablingInterfaceAutorotation;
 -(BOOL)isInterfaceAutorotationDisabled;
@@ -110,8 +111,8 @@
 -(void)_registerScrollToTopView:(id)topView;
 -(void)_unregisterScrollToTopView:(id)topView;
 -(void)_setFirstResponder:(id)responder;
--(id)firstResponder;
--(id)_firstResponder;
+-(UIResponder*)firstResponder;
+-(UIResponder*)_firstResponder;
 -(BOOL)_becomeFirstResponderWhenPossible;
 -(id)undoManager;
 -(void)undo:(id)undo;
@@ -137,5 +138,26 @@
 
 @interface UIWindow (UIKitAccessibilityInterfaceBuilderSupport)
 -(BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+@end
+
+@protocol UIWindowDelegate 
+@optional
+-(BOOL)window:(UIWindow*)window shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(void)window:(UIWindow*)window willRotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)window:(UIWindow*)window willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)window:(UIWindow*)window willAnimateFromContentFrame:(CGRect)fromFrame toContentFrame:(CGRect)toFrame;
+-(void)window:(UIWindow*)window willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)window:(UIWindow*)window didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(void)window:(UIWindow*)window willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)window:(UIWindow*)window didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(UIWindow*)window;
+-(void)getRotationContentSettings:(XXStruct_TF$i3B*)settings forWindow:(UIWindow*)window;
+-(UIView*)rotatingContentViewForWindow:(UIWindow*)window;
+-(UIView*)rotatingHeaderViewForWindow:(UIWindow*)window;
+-(UIView*)rotatingFooterViewForWindow:(UIWindow*)window;
+@end
+
+@interface UIWindow (UITextEffectsWindowAdditions)
+-(BOOL)_isTextEffectsWindow __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

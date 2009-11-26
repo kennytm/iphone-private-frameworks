@@ -49,7 +49,8 @@
 -(BOOL)isAcceptableTextEffectsFrame:(CGRect)frame afterScrollBy:(float)by;
 -(float)maximumCandidateWidth;
 -(CGRect)horizontallySquishedCorrectionFrame:(CGRect)frame;
--(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height;
+-(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_1, __IPHONE_3_1);
+-(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height withExtraGap:(float)extraGap __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)correction;
 -(id)typedText;
 -(id)typedTextView;
@@ -57,6 +58,7 @@
 -(id)correctionAnimationView;
 -(id)typedTextAnimationView;
 -(id)correctionShadowView;
+-(CGRect)_calculateRectForExpandedHitRegion __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)pointInside:(CGPoint)inside forEvent:(GSEventRef)event;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(void)dismiss;

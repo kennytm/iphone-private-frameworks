@@ -7,6 +7,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import <UIKit/UITableViewCell.h>
+#import <Availability.h>
 
 @class UILabel, UIButton, NSTimer, UIImageView, NSString, UITextField, UIColor, _UITableViewCellOldEditingData;
 
@@ -14,6 +15,7 @@
 -(void)_updateSeparatorContent;
 -(id)init;
 -(id)initWithFrame:(CGRect)frame;
+-(void)_setupTableViewCellCommon __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
 -(id)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
@@ -54,6 +56,7 @@
 -(id)_multiselectBackgroundColor;
 -(void)_setOpaque:(BOOL)opaque forSubview:(id)subview;
 -(void)showSelectedBackgroundView:(BOOL)view animated:(BOOL)animated;
+-(void)_cancelInternalPerformRequests __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
 -(void)_deselectAnimationFinished;
 -(void)_delayedDeselect;
@@ -196,6 +199,14 @@
 -(CGSize)_textInsetSize;
 -(CGSize)_imageInsetSize;
 -(void)_editingTransitionAnimationDidStop:(id)_editingTransitionAnimation finished:(id)finished context:(void*)context;
+-(BOOL)longPressGestureCanTransitionToRecognizedState:(id)recognizedState __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_longPressGestureRecognized:(id)recognized __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_menuDismissed:(id)dismissed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+// inherited: -(BOOL)canPerformAction:(SEL)action withSender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_performAction:(SEL)action sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)cut:(id)cut __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)copy:(id)copy __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)paste:(id)paste __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 
 @interface UITableViewCell (UIKitAccessibilityInterfaceBuilderSupport)

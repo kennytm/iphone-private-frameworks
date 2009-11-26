@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UILabel.h>
-
+#import <Availability.h>
 
 @interface UIDateLabel : UILabel {
 	double _date;
@@ -31,5 +31,6 @@
 -(id)timeDesignatorFont;
 -(void)drawTextInRect:(CGRect)rect;
 -(void)drawRect:(CGRect)rect;
+-(id)_dateLabelCache __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

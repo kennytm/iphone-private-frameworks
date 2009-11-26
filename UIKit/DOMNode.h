@@ -7,6 +7,7 @@
 #import "UIKeyboardInput.h"
 #import <WebKit/DOMNode.h>
 #import "UIKit-Structs.h"
+#import <Availability.h>
 
 
 @interface DOMNode (UIWebFormAssistantExtras)
@@ -116,6 +117,7 @@
 -(CGRect)convertRect:(CGRect)rect toView:(id)view;
 -(BOOL)isTextControl;
 -(BOOL)isSecure;
+-(int)keyboardType __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 
 @interface DOMNode (UIWebFormsDOMApprovedFocus)

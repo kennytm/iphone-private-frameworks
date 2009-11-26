@@ -5,6 +5,7 @@
 
 #import "UIFormAssistantDelegate.h"
 #import <Foundation/NSObject.h>
+#import <Availability.h>
 
 @class NSURLRequest, UIScroller, UIWebDocumentView, UICheckeredPatternView, UIWebViewWebViewDelegate;
 @protocol UIWebViewDelegate;
@@ -20,10 +21,15 @@
 	unsigned usedGeolocation : 1;
 	unsigned webSelectionEnabled : 1;
 	unsigned drawInWebThread : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	unsigned allowsPopUps : 1;
+#endif
 	NSURLRequest* request;
 	int clickedAlertButtonIndex;
 	UIWebViewWebViewDelegate* webViewDelegate;
 }
+-(void)_updateScrollerIndicatorSubrectForEditingForms:(BOOL)editingForms __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_updateScrollerContentSize:(BOOL)size __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)formAssistant:(id)assistant didBeginEditingFormNode:(id)node;
 -(void)formAssistant:(id)assistant didEndEditingFormNode:(id)node;
 @end

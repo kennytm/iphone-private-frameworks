@@ -7,6 +7,7 @@
 #import "NSCoding.h"
 #import <UIKit/UIScrollView.h>
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class NSArray, UIImageView;
 @protocol UIScrollViewDelegate;
@@ -37,8 +38,10 @@
 -(void)delayed:(id)delayed;
 -(void)setUsesGestureRecognizers:(BOOL)recognizers;
 -(void)flashScrollIndicators;
+-(void)_setShowsBackgroundShadow:(BOOL)shadow __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(BOOL)_showsBackgroundShadow __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)setShowBackgroundShadow:(BOOL)shadow;
--(BOOL)showBackgroundShadow;
+-(BOOL)showBackgroundShadow __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
 -(id)commonHitTest:(id)test;
 -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;

@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class NSArray, NSMutableArray, UICalloutBarOverlay;
 
@@ -15,12 +16,18 @@
 	BOOL m_pointPositionedBelowControls;
 	BOOL m_fadeAfterCommand;
 	BOOL m_updateVisibleItems;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	BOOL m_shouldAppear;
+#endif
 	CGRect m_controlFrame;
 	CGRect m_targetRect;
 	NSMutableArray* m_buttons;
 	NSMutableArray* m_rectsToEvade;
 	UICalloutBarOverlay* m_overlay;
 	double m_fadedTime;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	id m_responderTarget;
+#endif
 }
 @property(assign, nonatomic) CGPoint pointAboveControls;
 @property(assign, nonatomic) CGPoint pointBelowControls;
@@ -29,14 +36,17 @@
 @property(assign, nonatomic) id delegate;
 @property(readonly, assign, nonatomic) NSArray* rectsToEvade;
 @property(assign, nonatomic) CGRect targetRect;
+@property(assign, nonatomic) UIResponder* responderTarget __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @property(readonly, assign, nonatomic) BOOL visible;
-+(id)sharedCalloutBar;
++(UICalloutBar*)sharedCalloutBar;
 +(BOOL)sharedCalloutBarIsVisible;
 +(void)fadeSharedCalloutBar;
 +(void)hideSharedCalloutBar;
 +(BOOL)sharedCalloutBarWasRecentlyFaded;
 -(id)initWithFrame:(CGRect)frame;
 -(void)dealloc;
+-(void)flattenForAlertOrResignActive:(id)alertOrResignActive __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)expandAfterAlertOrBecomeActive:(id)active __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)targetForAction:(SEL)action;
 -(void)buttonPressed:(id)pressed;
 -(void)removeFromSuperview;

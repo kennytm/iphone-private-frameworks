@@ -158,6 +158,19 @@
 -(void)_updateToolbarItemsFromViewController:(id)viewController animated:(BOOL)animated;
 @end
 
+@interface UIViewController (UINavigationControllerItem2)
+-(void)_toggleEditing:(id)editing;
+-(BOOL)canHandleSnapbackIdentifier:(id)identifier animated:(BOOL)animated;
+@end
+
+@interface UIViewController (UITabBarControllerItem2)
+-(void)updateTabBarItemForViewController:(id)viewController;
+-(id)_moreListTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(id)moreListImage;
+-(id)moreListSelectedImage;
+-(id)moreListTableCell;
+@end
+
 @interface UIViewController (PLImagePickerViewControllerInterface)
 -(void)_setUseTelephonyUI:(BOOL)ui;
 -(void)_setImagePickerMediaTypes:(id)types;

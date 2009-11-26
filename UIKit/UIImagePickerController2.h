@@ -6,12 +6,13 @@
 #import "UIKit-Structs.h"
 #import "NSCoding.h"
 #import <UIKit/UINavigationController.h>
+#import <Availability.h>
 
 @class NSArray, NSDictionary;
 @protocol UIImagePickerControllerDelegate, UINavigationControllerDelegate;
 
 @interface UIImagePickerController ()
-+(BOOL)_loadPhotoLibraryIfNecessary;
++(BOOL)_loadPhotoLibraryIfNecessary __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
 +(BOOL)isSourceTypeAvailable:(unsigned)available;
 +(BOOL)_isMediaTypeAvailable:(id)available forSource:(unsigned)source;
 -(id)init;
@@ -20,12 +21,21 @@
 -(void)dealloc;
 -(void)_populateArchivedChildViewControllers:(id)controllers;
 -(void)encodeWithCoder:(id)coder;
+-(void)_setAllowsImageEditing:(BOOL)editing __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(BOOL)_allowsImageEditing __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_setProperties:(id)properties __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_initializeProperties __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(id)_properties __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_setValue:(id)value forProperty:(id)property __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(id)_valueForProperty:(id)property __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_setImagePickerSavingOptions:(unsigned)options;
 -(unsigned)_imagePickerSavingOptions;
--(void)_setUsesTelephonyUI:(BOOL)ui;
--(BOOL)_usesTelephonyUI;
--(void)_setImagePickerOptions:(id)options;
--(id)_imagePickerOptions;
+-(void)_setUsesTelephonyUI:(BOOL)ui __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_3_0, __IPHONE_3_1);
+-(BOOL)_usesTelephonyUI __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
+-(void)_setImagePickerOptions:(id)options __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
+-(id)_imagePickerOptions __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
+-(BOOL)_sourceTypeIsCamera __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(id)_cameraViewController __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)setParentViewController:(id)controller;
 -(void)viewWillAppear:(BOOL)view;
 -(void)viewWillDisappear:(BOOL)view;

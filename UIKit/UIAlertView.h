@@ -4,6 +4,7 @@
  */
 
 #import <UIKit/UIAlert.h>
+#import <Availability.h>
 
 @class NSString, UILabel, NSMutableArray, UIWindow, UIToolbar, UIAlertSheetTextField;
 @protocol UIAlertViewDelegate;
@@ -137,6 +138,7 @@
 -(CGRect)titleRect;
 -(float)_maxHeight;
 -(float)_buttonHeight;
+-(int)numberOfLinesInTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)layout;
 -(void)presentSheetFromButtonBar:(id)buttonBar;
 -(void)_prepareForDisplay;

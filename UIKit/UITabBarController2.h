@@ -7,6 +7,7 @@
 #import "UITabBarDelegate.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIViewController.h>
+#import <Availability.h>
 
 @class UITabBar, NSMutableArray, UINavigationController, NSArray, UIView;
 @protocol UITabBarControllerDelegate;
@@ -32,6 +33,7 @@
 -(void)updateTabBarItemForViewController:(id)viewController;
 -(BOOL)_reallyWantsFullScreenLayout;
 -(void)_configureTargetActionForTabBarItem:(id)tabBarItem;
+-(void)_rebuildTabBarItemsIfNeeded __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_rebuildTabBarItemsAnimated:(BOOL)animated;
 -(id)_selectedViewControllerInTabBar;
 -(BOOL)_allowSelectionWithinMoreList;

@@ -5,6 +5,7 @@
 
 #import <UIKit/UILocalizedIndexedCollation.h>
 #import <Foundation/NSObject.h>
+#import <Availability.h>
 
 @class NSArray, NSLocale;
 
@@ -18,5 +19,6 @@
 @interface UILocalizedIndexedCollation (UIKitInternal)
 +(id)collationWithDictionary:(id)dictionary;
 -(id)initWithDictionary:(id)dictionary;
+-(id)transformedCollationStringForString:(id)string __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

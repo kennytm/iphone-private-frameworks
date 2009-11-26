@@ -89,6 +89,7 @@
 -(void)lockButtonUp:(GSEventRef)up;
 -(void)headsetButtonDown:(GSEventRef)down;
 -(void)headsetButtonUp:(GSEventRef)up;
+-(void)headsetAvailabilityChanged:(GSEventRef)changed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)menuButtonDown:(GSEventRef)down;
 -(void)menuButtonUp:(GSEventRef)up;
 -(void)statusBarMouseDown:(GSEventRef)down;
@@ -113,6 +114,7 @@
 -(void)setSimpleRemoteRoutingPriority:(unsigned)priority;
 -(void)_postSimpleRemoteNotificationForAction:(int)action;
 -(void)_handleHeadsetButtonUp:(GSEventRef)up;
+-(void)_handleHeadsetButtonDown:(GSEventRef)down __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_handleHeadsetButtonClick;
 -(void)_handleHeadsetButtonDoubleClick;
 -(void)_handleHeadsetButtonTripleClick;
@@ -148,6 +150,7 @@
 -(void)removeDefaultImage:(id)image;
 -(BOOL)_isInteractionEvent:(GSEventRef)event;
 -(BOOL)_isTouchEvent:(GSEventRef)event;
+-(BOOL)_isSimulatorMotionEvent:(GSEventRef)event __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)launchApplicationWithIdentifier:(id)identifier suspended:(BOOL)suspended;
 -(void)_runSpringboardCommand:(id)command;
 -(void)addStatusBarImageNamed:(id)named removeOnExit:(BOOL)exit;
@@ -164,6 +167,7 @@
 -(int)_frontMostAppOrientation;
 -(void)_setTouchMap:(CFDictionaryRef)map;
 -(CFDictionaryRef)_touchMap;
+-(id)_event __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)_touchesEvent;
 -(id)_motionEvent;
 -(void)_sendMotionBegan:(int)began;
@@ -171,6 +175,7 @@
 -(void)_sendMotionCancelled:(int)cancelled;
 -(void)_showEditAlertView;
 -(void)alertView:(id)view clickedButtonAtIndex:(int)index;
+-(void)alertView:(id)view didDismissWithButtonIndex:(int)buttonIndex __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)alertViewCancel:(id)cancel;
 -(void)motionEnded:(int)ended withEvent:(id)event;
 -(id)_exclusiveTouchWindows;
@@ -241,7 +246,7 @@
 -(BOOL)handleEvent:(GSEventRef)event withNewEvent:(id)newEvent;
 -(void)setUIOrientation:(int)orientation;
 -(void)setExpectsFaceContact:(BOOL)contact;
--(void)setRelaunchesAfterAbnormalExit:(BOOL)exit;
+-(void)setRelaunchesAfterAbnormalExit:(BOOL)exit __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
 -(void)applicationWillOrderInContext:(unsigned)application windowLevel:(float)level windowOutput:(int)anOutput;
 -(void)applicationDidOrderOutContext:(unsigned)application;
 -(void)_sendOrderedOutContexts;
@@ -276,6 +281,7 @@
 -(void*)_getSymbol:(id)symbol forFramework:(id)framework;
 -(BOOL)isRunningTest;
 -(void)startedTest:(id)test;
+-(CFMessagePortRef)_purplePPTServerPort __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_reportResults:(id)results;
 -(void)finishedTest:(id)test extraResults:(id)results;
 -(void)finishedTest:(id)test;
@@ -312,4 +318,6 @@
 -(void)endRemoteSheet:(id)sheet returnCode:(int)code;
 -(void)_sheetWithRemoteIdentifierDidDismiss:(id)_sheetWithRemoteIdentifier;
 @end
+
+UIKIT_EXTERN UIApplication* UIApp;
 

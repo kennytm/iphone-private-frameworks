@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIControl.h>
+#import <Availability.h>
 
 @class UILabel, NSMutableArray, NSTimer, UIImageView;
 
@@ -43,6 +44,8 @@
 @property(retain, nonatomic) UIView* leftView;
 @property(retain, nonatomic) UIView* rightView;
 @property(assign, nonatomic) BOOL canAnchorFromBottom;
+@property(assign, nonatomic) int subtitleTextAlignment __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+@property(assign, nonatomic) int titleTextAlignment __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @property(assign, nonatomic) int subtitleLineBreakMode;
 @property(assign, nonatomic) int titleLineBreakMode;
 +(id)_backgroundImage;

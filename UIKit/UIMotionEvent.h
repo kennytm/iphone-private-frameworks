@@ -4,10 +4,16 @@
  */
 
 #import <UIKit/UIEvent.h>
+#import <UIKit/UIInternalEvent.h>
+#import <Availability.h>
 
 @class NSTimer;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+@interface UIMotionEvent : UIInternalEvent {
+#else
 @interface UIMotionEvent : UIEvent {
+#endif
 	id _motionAccelerometer;
 	int _subtype;
 	int _shakeState;
@@ -22,6 +28,9 @@
 	unsigned _lowPassStateIndex;
 	unsigned _highPassStateIndex;
 	float _highPassState[2];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	int notifyToken;
+#endif
 }
 @property(assign, nonatomic) int shakeState;
 -(id)_init;
@@ -41,5 +50,6 @@
 -(float)_lowPass:(float)pass;
 -(float)_determineShakeLevelX:(float)x y:(float)y currentState:(int)state;
 -(int)_shakeState;
++(void)_enablePeakDetectionIfNecessary __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

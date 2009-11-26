@@ -507,3 +507,11 @@
 #import "UIKBKeyplane.h"
 #import "UITableViewCellLayoutManagerEditable1.h"
 #import "UILayoutContainerView.h"
+
+#import "UIInternalEvent.h"
+#import "UINibDecoder.h"
+#import "UINibStringIDTable.h"
+#import "UITableScrollViewTestParameters.h"
+#import "UIVideoEditorController2.h"
+#import "_UIGroupTableViewCellBackgroundImageKey.h"
+

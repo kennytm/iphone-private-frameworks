@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class InlineCandidateCell, NSArray, NSMutableArray;
 
@@ -40,7 +41,9 @@
 -(void)redrawArrow;
 -(void)mouseDown:(GSEventRef)down;
 -(void)mouseDragged:(GSEventRef)dragged;
+-(void)_mouseUp:(GSEventRef)up wasCancelled:(BOOL)cancelled __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)mouseUp:(GSEventRef)up;
+-(CGRect)_calculateRectForExpandedHitRegion __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)pointInside:(CGPoint)inside forEvent:(GSEventRef)event;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;

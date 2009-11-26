@@ -22,7 +22,7 @@
 @property(readonly, assign, nonatomic) SEL action;
 @property(readonly, assign, nonatomic) float contentWidth;
 @property(readonly, assign, nonatomic) float contentScale;
-+(id)buttonWithTitle:(id)title action:(SEL)action inView:(id)view;
++(id)buttonWithTitle:(NSString*)title action:(SEL)action inView:(id)view;
 +(id)buttonWithImage:(id)image action:(SEL)action inView:(id)view;
 -(void)setupWithTitle:(id)title action:(SEL)action;
 -(void)setupWithImage:(id)image action:(SEL)action;

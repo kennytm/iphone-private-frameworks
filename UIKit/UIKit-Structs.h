@@ -9,6 +9,7 @@
 #import <WebCore/WKUtilities.h>
 #import <GraphicsServices/GSEvent.h>
 #import <GraphicsServices/GSHeartbeat.h>
+#import <QuartzCore/QuartzCore.h>
 
 typedef struct {
 	unsigned char pathIndex;
@@ -172,7 +173,60 @@ typedef struct {
 	unsigned _field2;
 } XXStruct_HeigOC;
 
-typedef struct __IOSurface* IOSurfaceRef;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_3_0
+typedef struct UINibDecoderObjectEntry {
+	unsigned _field1;
+	unsigned _field2;
+} UINibDecoderObjectEntry;
+
+typedef struct UINibDecoderValue {
+	unsigned _field1;
+	unsigned _field2;
+} UINibDecoderValue;
+
+typedef struct UINibArchiveTableInfo {
+	unsigned count;
+	unsigned offset;
+} UINibArchiveTableInfo;
+
+typedef struct UINibDecoderHeader {
+	unsigned char type[10];
+	unsigned formatVersion;
+	unsigned coderVersion;
+	UINibArchiveTableInfo objects;
+	UINibArchiveTableInfo keys;
+	UINibArchiveTableInfo values;
+	UINibArchiveTableInfo classes;
+} UINibDecoderHeader;
+
+typedef struct UINibDecoderRecursiveState {
+	int objectID;
+	int nextGenericKey;
+	unsigned nextValueSearchIndex;
+	BOOL replaced;
+} UINibDecoderRecursiveState;
+
+typedef struct UIKeyToKeyIDCache {
+	NSString* previousKey[64];
+	void* previousKeyID[64];
+	BOOL previousKeyExists[64];
+	int hashHits;
+	int hashHotMisses;
+	int hashColdMisses;
+} UIKeyToKeyIDCache;
+
+typedef struct UIKeyAndScopeToValueCache {
+	unsigned previousScope;
+	unsigned previousKey;
+	UINibDecoderValue* previousValue;
+} UIKeyAndScopeToValueCache;
+
+typedef struct UIStringIDTableBucket {
+	NSString* _field1;
+	unsigned _field2;
+	UIStringIDTableBucket* _field3;
+} UIStringIDTableBucket;
+#endif
 
 typedef struct {
 	id _field1;

@@ -6,6 +6,7 @@
 #import "UIScroller.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UIScrollerIndicator;
 
@@ -224,6 +225,7 @@
 -(BOOL)_scrollsToMakeFirstResponderVisible;
 -(BOOL)_alwaysHandleInteractionEvents;
 -(BOOL)_isUserScrolling;
+-(CGPoint)_initialTouchPosition  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)_topSpecialView;
 -(id)_bottomSpecialView;
 -(id)_bottomShadowView;

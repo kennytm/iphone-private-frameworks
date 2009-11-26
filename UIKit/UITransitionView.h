@@ -14,10 +14,18 @@
 	UIResponder* _firstResponderToRemember;
 	id _delegate;
 	struct {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+		unsigned shouldSendTouchPauseUp : 1;
+		unsigned delegateViewHandleTapWithCountEvent : 1;
+		unsigned delegateViewHandleTapWithCountEventFingerCount : 1;
+		unsigned delegateViewHandleTouchPauseIsDown : 1;
+		unsigned reserved : 28;
+#else
 		unsigned animationInProgress : 1;
 		unsigned ignoresInteractionEvents : 1;
 		unsigned shouldNotifyDidCompleteImmediately : 1;
 		unsigned reserved : 29;
+#endif
 	} _transitionViewFlags;
 }
 @property(assign, nonatomic) BOOL shouldNotifyDidCompleteImmediately;

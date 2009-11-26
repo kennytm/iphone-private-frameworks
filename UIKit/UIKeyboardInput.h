@@ -7,7 +7,7 @@
 #import <UIKit/UITextInputTraits.h>
 #import "UITextSelectingContainer.h"
 #import "UITextInputTraits_Private.h"
-
+#import <Availability.h>
 
 @protocol UIKeyboardInput <UITextInputTraits, UITextInputTraits_Private, UITextSelectingContainer>
 -(id)delegate;
@@ -25,6 +25,7 @@
 -(CGRect)rectForNSRange:(NSRange)nsrange;
 -(id)rectsForNSRange:(NSRange)nsrange;
 -(id)wordRangeContainingCaretSelection;
+-(BOOL)shouldEnableAutoShift __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)rangeByMovingCurrentSelection:(int)selection;
 -(id)rangeByExtendingCurrentSelection:(int)selection;
 -(void)extendCurrentSelection:(int)selection;
@@ -39,7 +40,7 @@
 -(void)replaceRangeWithText:(NSRange)text replacementText:(id)text2;
 -(void)replaceCurrentWordWithText:(id)text;
 -(void)replaceRangeWithTextWithoutClosingTyping:(NSRange)textWithoutClosingTyping replacementText:(id)text;
--(BOOL)rangeAtSentenceStart:(id)sentenceStart;
+-(BOOL)rangeAtSentenceStart:(id)sentenceStart __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
 -(NSRange)selectionRange;
 -(id)selectedDOMRange;
 -(void)setSelectedDOMRange:(id)range affinityDownstream:(BOOL)downstream;

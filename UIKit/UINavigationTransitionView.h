@@ -6,7 +6,7 @@
 #import "UIKit-Structs.h"
 #import "NSCoding.h"
 #import <UIKit/UIView.h>
-
+#import <Availability.h>
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
 	id _delegate;
@@ -14,6 +14,9 @@
 	UIView* _toView;
 	int _transition;
 	UIView* _firstResponderToRestore;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	float _fromViewAlpha;
+#endif
 	unsigned _isTransitioning : 1;
 }
 @property(assign, nonatomic) id delegate;

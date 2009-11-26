@@ -12,6 +12,7 @@
 #import "BrowserDocumentController.h"
 #import "UITextSelectingContent.h"
 #import "UIWebTiledView.h"
+#import <Availability.h>
 
 @class UITextInputTraits, UIWebSelectionAssistant, WebViewReachabilityObserver, WebThreadSafeUndoManager, UIAutoscroll, WebView, DOMHTMLElement, UITextInteractionAssistant, UITextSelectionView, UIColor, CALayer, UIWebFormDelegate, UIInformalDelegate, WebPDFView, DOMNode;
 @protocol UIFormAssistantDelegate;
@@ -86,6 +87,10 @@
 			BOOL active;
 			BOOL defaultPrevented;
 			NSMutableArray* regions;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+			float originalGestureDistance;
+			float originalGestureAngle;
+#endif
 		} directEvents;
 	} _interaction;
 	struct {
@@ -234,6 +239,8 @@
 -(void)webView:(id)view saveStateToHistoryItem:(id)historyItem forFrame:(id)frame;
 -(void)webView:(id)view restoreStateFromHistoryItem:(id)historyItem forFrame:(id)frame force:(BOOL)force;
 -(BOOL)webView:(id)view shouldScrollToPoint:(CGPoint)point forFrame:(id)frame;
+-(CGPoint)contentsPointForWebView:(id)webView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(CGRect)documentVisibleRectForWebView:(id)webView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(CGPoint)contentsPointForWebView:(id)webView;
 -(CGRect)documentVisibleRectForWebView:(id)webView;
 -(void)_didMoveFromWindow:(id)window toWindow:(id)window2;

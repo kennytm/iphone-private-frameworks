@@ -5,8 +5,19 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UIToolbar;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+__attribute__((visibility("hidden")))
+@interface _UISwappableImageViewAnimationProxy : NSObject {
+@private
+	id _originalObject;
+}
+-(void)animationDidStop:(id)animation finished:(BOOL)finished;
+@end
+#endif
 
 @interface UISwappableImageView : UIView {
 	id _value;
@@ -19,6 +30,9 @@
 	int _currentAnimation;
 	UIToolbar* _buttonBar;
 	int _buttonTag;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	_UISwappableImageViewAnimationProxy* _proxy;
+#endif
 	id _didFinishTarget;
 	SEL _didFinishSelector;
 }

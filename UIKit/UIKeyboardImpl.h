@@ -6,9 +6,10 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import "UIKeyboardImpl.h"
+#import <Availability.h>
 
 @class UIKeyboardLayout, UIKeyboardInputManager, UIDelayedAction, NSMutableDictionary, UITextInputTraits, NSArray, NSTimer, UIKeyboardLanguageIndicator, CandWord, NSString, UIAutocorrectInlinePrompt;
-@protocol UIKeyboardCandidateList, UIKeyboardInput;
+@protocol UIKeyboardCandidateList, UIKeyboardInput, UIKeyboardRecording, UIApplicationEventRecording;
 
 @interface UIKeyboardImpl : UIView {
 	id<UIKeyboardInput> m_delegate;
@@ -20,6 +21,9 @@
 	UIDelayedAction* m_autocorrectPromptAction;
 	NSArray* m_candidates;
 	id<UIKeyboardCandidateList> m_candidateList;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_3_0
+	NSObject<UIKeyboardRecording, UIApplicationEventRecording>* m_recorder;
+#endif
 	UIKeyboardLayout* m_layout;
 	NSMutableDictionary* m_keyedLayouts;
 	NSString* m_inputModeLastChosen;
@@ -71,6 +75,7 @@
 	BOOL m_shiftPreventAutoshift;
 	BOOL m_shiftHeldDownNeedsUpdated;
 }
+@property(retain, nonatomic) id<UIKeyboardRecording, UIApplicationEventRecording> recorder __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @property(assign, nonatomic) BOOL shouldSkipCandidateSelection;
 +(UIKeyboardImpl*)sharedInstance;
 +(UIKeyboardImpl*)activeInstance;
@@ -162,6 +167,7 @@
 -(void)setSelectionWithPoint:(CGPoint)point;
 -(void)updateForChangedSelection;
 -(void)updateInputManagerAutoShiftFlag;
+-(BOOL)shouldSwitchInputMode:(id)mode __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)recomputeActiveInputModes;
 -(void)notifyShiftState;
 -(void)updateShiftState;
@@ -214,6 +220,7 @@
 -(void)acceptWord:(id)word firstDelete:(unsigned)aDelete addString:(id)string;
 -(BOOL)displaysCandidates;
 -(void)updateCandidateDisplayAsyncWithCandidates:(id)candidates forInputManager:(id)inputManager;
+-(BOOL)needsToDeferUpdateTextCandidateView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)updateCandidateDisplay;
 -(void)setAutocorrection:(id)autocorrection;
 -(id)autocorrectPrompt;
@@ -282,5 +289,12 @@
 -(void)callLayoutSetShift:(BOOL)shift;
 -(void)callLayoutLongPressAction;
 -(void)callLayoutUpdateLocalizedKeys;
+@end
+
+@interface UIKeyboardImpl (UIKeyboardRecording)
+-(BOOL)keyboardRecordingEnabled __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)installRecorder __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)startKeyboardRecording __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)stopKeyboardRecording __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability.h>
 
 @class NSString, UILabel, UITableView, UIViewController, UISearchBar, UIView;
 @protocol UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate;
@@ -14,6 +15,8 @@
 -(id)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
+-(void)_configureSearchBarForTableView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_cleanUpSearchBar __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_configureNewSearchBar;
 -(void)setSearchBar:(id)bar;
 -(void)setSearchContentsController:(id)controller;
@@ -26,6 +29,8 @@
 -(void)_setTableViewVisible:(BOOL)visible inView:(id)view;
 -(void)_updateSearchBarForTableViewIndexBar:(id)tableViewIndexBar;
 -(void)_indexBarFrameChanged:(id)changed;
+-(void)_searchBarSuperviewWillChange __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_searchBarSuperviewChanged __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)showHideAnimationDidFinish;
 -(void)setActive:(BOOL)active animated:(BOOL)animated;
 -(void)_keyboardWillShow:(id)_keyboard;

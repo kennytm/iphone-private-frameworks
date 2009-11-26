@@ -4,11 +4,15 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability.h>
 
-@class NSData;
+@class NSData, UINibDecoder;
 
 @interface UINib : NSObject {
 	NSData* archiveData;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	UINibDecoder* nibDecoder;
+#endif
 	BOOL instantiatingForSimulator;
 }
 -(id)initWithData:(id)data;
@@ -18,6 +22,7 @@
 -(BOOL)instantiatingForSimulator;
 -(void)setInstantiatingForSimulator:(BOOL)simulator;
 -(id)instantiateWithOwner:(id)owner loadingResourcesFromBundle:(id)bundle;
+-(id)unarchiverForInstantiatingReturningError:(id*)instantiatingReturningError __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)instantiateWithOptions:(id)options owner:(id)owner loadingResourcesFromBundle:(id)bundle;
 @end
 

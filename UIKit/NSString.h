@@ -16,7 +16,7 @@
 -(CGSize)drawInRect:(CGRect)rect withFont:(id)font lineBreakMode:(int)mode alignment:(int)alignment lineSpacing:(int)spacing includeEmoji:(BOOL)emoji;
 -(CGSize)drawAtPoint:(CGPoint)point forWidth:(float)width withFont:(id)font fontSize:(float)size lineBreakMode:(int)mode baselineAdjustment:(int)adjustment includeEmoji:(BOOL)emoji;
 -(CGSize)drawAtPoint:(CGPoint)point forWidth:(float)width withFont:(id)font minFontSize:(float)size actualFontSize:(float*)size5 lineBreakMode:(int)mode baselineAdjustment:(int)adjustment includeEmoji:(BOOL)emoji;
--(id)securedStringIncludingLastCharacter:(BOOL)character;
+-(NSString*)securedStringIncludingLastCharacter:(BOOL)character;
 @end
 
 @interface NSString (UICalloutViewAdditions)

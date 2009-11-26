@@ -7,6 +7,7 @@
 #import <UIKit/UINavigationBar.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class NSArray, UIColor, UINavigationItem, NSMutableArray;
 
@@ -33,7 +34,9 @@
 -(void)setAccessoryView:(id)view animate:(BOOL)animate;
 -(void)_prepareForPushAnimationWithItems:(id)items;
 -(void)pushNavigationItem:(id)item;
+-(void)_pushNavigationItem:(id)item transition:(int)transition __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_prepareForPopAnimationWithNewTopItem:(id)newTopItem;
+-(id)_popNavigationItemWithTransition:(int)transition __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)popNavigationItem;
 -(int)_transitionForOldItems:(id)oldItems newItems:(id)items;
 -(BOOL)_didVisibleItemsChangeWithNewItems:(id)newItems oldItems:(id)items;

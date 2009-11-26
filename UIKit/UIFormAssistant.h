@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability.h>
 
 @class UITransitionView, UIImageView, WebView, UIButton, UISegmentedControl, UIPeripheralTransition;
 @protocol UIFormPeripheral;
@@ -19,6 +20,9 @@
 	UIPeripheralTransition* _helper;
 	int _orientation;
 	WebView* _webView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	BOOL _autoFillAllowed;
+#endif
 }
 @property(retain, nonatomic) UIView<UIFormPeripheral>* _currentPeripheral;
 @property(retain, nonatomic) UIPeripheralTransition* _helper;
@@ -44,6 +48,7 @@
 -(void)animationDidStop:(id)animation;
 -(void)transitionViewDidComplete:(id)transitionView;
 -(void)assistView:(id)view;
+-(BOOL)autoFillAllowed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)startAssistingFormNode:(id)node;
 -(id)assistedFormNode;
 -(void)displayFormAssistant;

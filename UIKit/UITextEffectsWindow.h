@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIWindow.h>
+#import <Availability.h>
 
 @class NSMutableArray;
 
@@ -13,8 +14,8 @@
 	int _interfaceOrientation;
 	NSMutableArray* _touchableSubviews;
 }
-+(id)sharedTextEffectsWindow;
-+(id)sharedTextEffectsWindowAboveStatusBar;
++(UITextEffectsWindow*)sharedTextEffectsWindow;
++(UITextEffectsWindow*)sharedTextEffectsWindowAboveStatusBar;
 -(BOOL)acceptsGlobalPoint:(CGPoint)point;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;
 -(id)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
@@ -27,5 +28,6 @@
 -(void)sortSubviews;
 -(void)updateForOrientation:(int)orientation;
 -(void)matchDeviceOrientation;
+-(BOOL)_isTextEffectsWindow __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

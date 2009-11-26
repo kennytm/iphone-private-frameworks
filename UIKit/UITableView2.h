@@ -7,11 +7,13 @@
 #import <UIKit/UITableView.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UIScrollView.h>
+#import <Availability.h>
 
 @class NSMutableArray, NSIndexPath, NSMutableDictionary, NSArray, UITableViewCell, UIColor;
 @protocol UITableViewDelegate, UITableViewDataSource;
 
 @interface UITableView ()
+@property(retain, nonatomic) id scrollTestParameters __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCommon;
 -(void)_populateArchivedSubviews:(id)subviews;
@@ -94,7 +96,9 @@
 -(BOOL)_delegateWantsCustomHeaderForSection:(int)section;
 -(BOOL)_delegateWantsHeaderTitleForSection:(int)section;
 -(BOOL)_delegateImplementsHeightForRowsInSection;
--(BOOL)_delegateWantsFooterForSection:(int)section;
+-(BOOL)_delegateWantsFooterForSection:(int)section __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(BOOL)_delegateWantsFooterTitleForSection:(int)section __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(BOOL)_delegateWantsCustomFooterForSection:(int)section;
 -(BOOL)_delegateImplementsHeightForHeaderInSection;
 -(BOOL)_delegateImplementsHeightForFooterInSection;
 -(BOOL)_dataSourceImplementsTitleForHeaderInSection;
@@ -155,9 +159,15 @@
 -(BOOL)_wantsSwipes;
 -(BOOL)_isTableHeaderViewHidden;
 -(float)_spacingForExtraSeparators;
+-(BOOL)_shouldShowMenuForCell:(id)cell __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(BOOL)_canPerformAction:(SEL)action forCell:(id)cell sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_performAction:(SEL)action forCell:(id)cell sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 
 @interface UITableView (_UITableViewPrivate)
+-(void)_performScrollTest:(id)test iterations:(int)iterations delta:(int)delta __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_performScrollTest:(id)test iterations:(int)iterations delta:(int)delta length:(int)length __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_scroll __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)_swipeGestureRecognizer;
 -(void)setUsesGestureRecognizers:(BOOL)recognizers;
 -(float)_animationDuration;

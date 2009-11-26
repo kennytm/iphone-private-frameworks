@@ -281,8 +281,9 @@
 -(void)_setZoomAnimationProgress:(id)progress;
 -(float)_internalScaleForScale:(float)scale;
 -(float)_scaleForInternalScale:(float)internalScale;
+-(float)_minimumZoomScaleDelta __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(float)_rubberBandScaleForScale:(float)scale;
--(void)_zoomWithEvent:(GSEventRef)event;
+-(BOOL)_zoomWithEvent:(GSEventRef)event;
 -(BOOL)_canStartZoomFromEvent:(GSEventRef)event;
 -(BOOL)_startZoomFromEvent:(GSEventRef)event;
 -(void)_stopZoomFromEvent:(GSEventRef)event;

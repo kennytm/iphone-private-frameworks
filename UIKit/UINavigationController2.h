@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIViewController.h>
+#import <Availability.h>
 
 @class UINavigationBar, UINavigationTransitionView, NSMutableArray, NSArray, UIView, UIToolbar;
 @protocol UINavigationControllerDelegate;
@@ -116,6 +117,7 @@
 -(id)defaultPNGName;
 -(id)tabBarItem;
 -(void)updateTabBarItemForViewController:(id)viewController;
+-(id)_moreListTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)moreListImage;
 -(id)moreListSelectedImage;
 -(id)moreListTableCell;
