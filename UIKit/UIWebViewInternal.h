@@ -5,7 +5,7 @@
 
 #import "UIFormAssistantDelegate.h"
 #import <Foundation/NSObject.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSURLRequest, UIScroller, UIWebDocumentView, UICheckeredPatternView, UIWebViewWebViewDelegate;
 @protocol UIWebViewDelegate;

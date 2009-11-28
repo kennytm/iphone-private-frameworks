@@ -3,7 +3,7 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
-#import <Availability.h>
+#import <Availability2.h>
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
 
 #import <Foundation/NSObject.h>

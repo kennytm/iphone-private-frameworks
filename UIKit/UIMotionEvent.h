@@ -5,7 +5,7 @@
 
 #import <UIKit/UIEvent.h>
 #import <UIKit/UIInternalEvent.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSTimer;
 

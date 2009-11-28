@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSString, UILabel, UITableView, UIViewController, UISearchBar, UIView;
 @protocol UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate;

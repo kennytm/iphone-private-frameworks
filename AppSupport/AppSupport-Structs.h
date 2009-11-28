@@ -7,6 +7,7 @@
 
 #include <SystemConfiguration/SystemConfiguration.h>
 #include <mach/message.h>
+#include <CoreFoundation/CoreFoundation.h>
 
 typedef audit_token_t XXStruct_kUSYWB;
 
@@ -26,3 +27,20 @@ typedef struct {
  
  */
 
+#if __cplusplus
+extern "C" {
+#endif
+	
+	CFStringRef CPSystemRootDirectory();	// "/"
+	CFStringRef CPMailComposeControllerAutosavePath();	// ~/Library/Mail/OrphanedDraft-com.yourcompany.appName
+	bool CPMailComposeControllerHasAutosavedMessage();
+	CFStringRef CPCopyBundleIdentifierFromAuditToken(audit_token_t* token, bool* unknown);
+	CFStringRef CPSharedResourcesDirectory();	// "/var/mobile", or value of envvar IPHONE_SHARED_RESOURCES_DIRECTORY
+	bool CPCanSendMMS();
+	CFStringRef CPCopySharedResourcesPreferencesDomainForDomain(CFStringRef domain);	// /var/mobile/Library/Preferences/domain
+	CFStringRef CPGetDeviceRegionCode();
+	bool CPCanSendMail();
+
+#if __cplusplus
+}
+#endif

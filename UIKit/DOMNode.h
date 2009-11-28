@@ -7,7 +7,7 @@
 #import "UIKeyboardInput.h"
 #import <WebKit/DOMNode.h>
 #import "UIKit-Structs.h"
-#import <Availability.h>
+#import <Availability2.h>
 
 
 @interface DOMNode (UIWebFormAssistantExtras)

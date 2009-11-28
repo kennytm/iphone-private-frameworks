@@ -7,7 +7,7 @@
 #import <UIKit/UITextInputTraits.h>
 #import "UITextSelectingContainer.h"
 #import "UITextInputTraits_Private.h"
-#import <Availability.h>
+#import <Availability2.h>
 
 @protocol UIKeyboardInput <UITextInputTraits, UITextInputTraits_Private, UITextSelectingContainer>
 -(id)delegate;

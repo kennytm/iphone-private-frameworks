@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIControl.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UILabel, NSMutableArray, NSTimer, UIImageView;
 

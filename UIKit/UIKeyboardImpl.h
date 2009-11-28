@@ -6,10 +6,15 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import "UIKeyboardImpl.h"
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UIKeyboardLayout, UIKeyboardInputManager, UIDelayedAction, NSMutableDictionary, UITextInputTraits, NSArray, NSTimer, UIKeyboardLanguageIndicator, CandWord, NSString, UIAutocorrectInlinePrompt;
 @protocol UIKeyboardCandidateList, UIKeyboardInput, UIKeyboardRecording, UIApplicationEventRecording;
+
+@protocol UIKeyboardRecording
+-(void)startKeyboardRecording:(UITextInputTraits*)traits withInputMode:(NSString*)mode withString:(NSString*)str withIndex:(int)index withKeyboard:(BOOL)keyboardCanHandleKeyHitTest;
+@end
+
 
 @interface UIKeyboardImpl : UIView {
 	id<UIKeyboardInput> m_delegate;

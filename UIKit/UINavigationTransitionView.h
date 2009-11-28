@@ -6,7 +6,7 @@
 #import "UIKit-Structs.h"
 #import "NSCoding.h"
 #import <UIKit/UIView.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
 	id _delegate;

@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIViewController.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UINavigationBar, UINavigationTransitionView, NSMutableArray, NSArray, UIView, UIToolbar;
 @protocol UINavigationControllerDelegate;

@@ -4,7 +4,7 @@
  */
 
 #import <Foundation/NSObject.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UIWebView;
 

@@ -30,7 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#import <Availability.h>
+#import <Availability2.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 

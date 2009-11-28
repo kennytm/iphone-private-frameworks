@@ -5,7 +5,7 @@
 
 #import <UIKit/UILocalizedIndexedCollation.h>
 #import <Foundation/NSObject.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSArray, NSLocale;
 

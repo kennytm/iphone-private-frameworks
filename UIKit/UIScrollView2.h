@@ -7,7 +7,7 @@
 #import "NSCoding.h"
 #import <UIKit/UIScrollView.h>
 #import <UIKit/UIView.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSArray, UIImageView;
 @protocol UIScrollViewDelegate;

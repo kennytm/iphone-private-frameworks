@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UIWebSelectionGraph, UIWebSelectionNode, UIWebTextRangeView, UIWebSelectionOutline, UIWebSelectionHandle, UIWebSelection, UIWebDocumentView;
 

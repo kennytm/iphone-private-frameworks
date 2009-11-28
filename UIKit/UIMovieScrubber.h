@@ -7,7 +7,7 @@
 #import "UIMovieScrubberTrackViewDataSource.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIControl.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UIMovieScrubberEditingView, UILabel, UIImage, UIImageView, UIMovieScrubberTrackView;
 @protocol UIMovieScrubberDataSource, UIMovieScrubberDelegate;

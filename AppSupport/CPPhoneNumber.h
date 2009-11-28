@@ -33,6 +33,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef CPPHONENUMBER_H
 #define CPPHONENUMBER_H
 
+__IPHONE_NA
+
 #include <CoreFoundation/CoreFoundation.h>
 
 #if __cplusplus
@@ -41,8 +43,7 @@ extern "C" {
 #include <stdbool.h>
 #endif
 	
-//	void* CopyCallInfo(CFAllocatorRef allocator, CFStringRef str);
-	char _digitForAlpha(char alphabet);
+	char _digitForAlpha(char alphabet);	// alphabet must be in uppercase.
 	
 	
 #if __cplusplus

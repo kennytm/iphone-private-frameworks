@@ -11,6 +11,10 @@
 @class UIWindow, NSMutableSet, NSArray, NSTimer, UIEvent;
 @protocol UIApplicationDelegate;
 
+@protocol UIApplicationEventRecording
+-(void)recordApplicationEvent:(NSDictionary*)event;
+@end
+
 @interface UIApplication ()
 +(BOOL)isRunningInStoreDemoMode;
 +(BOOL)shouldMakeUIForDefaultPNG;
@@ -89,7 +93,7 @@
 -(void)lockButtonUp:(GSEventRef)up;
 -(void)headsetButtonDown:(GSEventRef)down;
 -(void)headsetButtonUp:(GSEventRef)up;
--(void)headsetAvailabilityChanged:(GSEventRef)changed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)headsetAvailability2.hanged:(GSEventRef)changed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)menuButtonDown:(GSEventRef)down;
 -(void)menuButtonUp:(GSEventRef)up;
 -(void)statusBarMouseDown:(GSEventRef)down;
@@ -100,7 +104,7 @@
 -(void)acceleratedInX:(float)x Y:(float)y Z:(float)z;
 -(void)deviceOrientationChanged:(GSEventRef)changed;
 -(void)proximityStateChanged:(BOOL)changed;
--(void)accessoryAvailabilityChanged:(GSEventRef)changed;
+-(void)accessoryAvailability2.hanged:(GSEventRef)changed;
 -(void)_handleAccessoryKeyStateChanged:(GSEventRef)changed;
 -(void)accessoryKeyStateChanged:(GSEventRef)changed;
 -(void)accessoryEvent:(GSEventRef)event;

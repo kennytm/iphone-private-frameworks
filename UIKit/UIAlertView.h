@@ -4,7 +4,7 @@
  */
 
 #import <UIKit/UIAlert.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSString, UILabel, NSMutableArray, UIWindow, UIToolbar, UIAlertSheetTextField;
 @protocol UIAlertViewDelegate;

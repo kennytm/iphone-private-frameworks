@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UILabel.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @interface UIDateLabel : UILabel {
 	double _date;

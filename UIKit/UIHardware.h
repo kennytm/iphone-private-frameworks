@@ -24,7 +24,7 @@
 +(BOOL)TVOutCapable;
 +(void)TVOutResetPreferred;
 +(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
-+(void)accessoryAvailabilityChanged;
++(void)accessoryAvailability2.hanged;
 +(id)deviceName;
 +(id)localizedDeviceName;
 +(void)_updateSystemSoundActiveStatus:(id)status;

@@ -7,7 +7,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import <UIKit/UITableViewCell.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UILabel, UIButton, NSTimer, UIImageView, NSString, UITextField, UIColor, _UITableViewCellOldEditingData;
 

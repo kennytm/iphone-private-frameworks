@@ -7,7 +7,7 @@
 #import <UIKit/UITableView.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UIScrollView.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSMutableArray, NSIndexPath, NSMutableDictionary, NSArray, UITableViewCell, UIColor;
 @protocol UITableViewDelegate, UITableViewDataSource;

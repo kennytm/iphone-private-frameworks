@@ -7,7 +7,7 @@
 #import "NSCoding.h"
 #import <Foundation/NSObject.h>
 #import <UIKit/UIColor.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class NSString;
 

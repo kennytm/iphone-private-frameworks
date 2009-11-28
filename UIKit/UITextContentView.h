@@ -8,7 +8,7 @@
 #import "UITextContentView.h"
 #import "UITextSelectingContainer.h"
 #import <UIKit/UIView.h>
-#import <Availability.h>
+#import <Availability2.h>
 
 @class UIDelayedAction, DOMHTMLElement, WebFrame, NSString, UITextInteractionAssistant, UITextSelectionView, UIColor, UITouch, UIFont, UIWebDocumentView;
 @protocol UITextSelectingContent, UITextContentViewDelegate;
