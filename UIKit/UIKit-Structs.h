@@ -224,7 +224,7 @@ typedef struct UIKeyAndScopeToValueCache {
 typedef struct UIStringIDTableBucket {
 	NSString* _field1;
 	unsigned _field2;
-	UIStringIDTableBucket* _field3;
+	struct UIStringIDTableBucket* _field3;
 } UIStringIDTableBucket;
 #endif
 
