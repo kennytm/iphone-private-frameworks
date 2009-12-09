@@ -78,7 +78,7 @@
 -(BOOL)useDoubleHeightSizeForMode:(int)mode orientation:(int)orientation;
 -(BOOL)useDoubleHeightStyle;
 -(BOOL)useDoubleHeightSize;
--(void)setIsInCall:(BOOL)call;
+-(void)setIsInCall:(BOOL)isInCall;	// equivaent to [self setDoubleHeightMode:isInCall glowAnimationEnabled:YES bundleID:@"com.apple.mobilephone" priority:10];
 -(BOOL)isInCall;
 -(void)updateDoubleHeightStatusBarState;
 -(id)doubleHeightInfoForBundleID:(id)bundleID createIfNeeded:(BOOL)needed;

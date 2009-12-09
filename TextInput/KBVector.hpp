@@ -43,8 +43,8 @@ namespace KB {
 	private:
 		/// Return the value representing the NULL of type T.
 		static T& null_value() {
-			static T null_value;
-			return null_value;
+			static T __null_value = T();
+			return __null_value;
 		}
 		
 	public:
@@ -54,6 +54,7 @@ namespace KB {
 	private:
 		/// Fill a range with null value.
 		void fill(size_t start, size_t length) {
+			memset(m_elements+start, 0, length*sizeof(*m_elements));
 			for (size_t i = 0; i < length; ++ i)
 				m_elements[start + i] = null_value();
 		}

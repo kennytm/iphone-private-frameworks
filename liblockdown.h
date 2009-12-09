@@ -104,7 +104,25 @@ extern "C" {
 #endif
 	
 #pragma mark -
-#pragma mark Misc.
+#pragma mark Domains
+	extern CFStringRef kLockdownDiskUsageDomainKey;	// com.apple.disk_usage
+	extern CFStringRef kLockdownCheckpointDomainKey;	// com.apple.mobile.iTunes
+	extern CFStringRef kLockdownDataSyncDomainKey;	// com.apple.data_sync
+	extern CFStringRef kLockdownDebugDomainKey;	// com.apple.mobile.debug
+	extern CFStringRef kLockdownFairPlayDomainKey;	// com.apple.fairplay
+	extern CFStringRef kLockdownInternalDomainKey;	// com.apple.mobile.internal
+	extern CFStringRef kLockdownInternationalDomainKey;	// com.apple.international
+	extern CFStringRef kLockdownRestrictionDomainKey;	// com.apple.mobile.restriction
+	extern CFStringRef kLockdownSoftwareBehaviorDomainKey;	// com.apple.mobile.software_behavior
+	extern CFStringRef kLockdownStoreDomainKey;	// com.apple.mobile.iTunes.store
+	extern CFStringRef kLockdownSyncDataClassDomainKey;	// com.apple.mobile.sync_data_class
+	extern CFStringRef kLockownSQLMusicLibraryPostProcessCommandsDomainKey;	// com.apple.mobile.iTunes.SQLMusicLibraryPostProcessCommands
+	static const CFStringRef kLockdowniTunesDomainKey = CFSTR("com.apple.iTunes");
+	static const CFStringRef kLockdowniTunesStoredDomainKey = CFSTR("com.apple.itunesstored");
+	static const CFStringRef kLockdownXcodeDeveloperDomainKey = CFSTR("com.apple.xcode.developerdomain");
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
+	extern CFStringRef kLockdownUserPreferencesDomainKey;	// com.apple.mobile.user_preferences
+#endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_2
 	extern CFStringRef kLockdownProtocolVersion;	// "2"
 	extern CFStringRef kLockdownPrefApplicationID;	// com.apple.mobile.lockdownd
@@ -112,183 +130,246 @@ extern "C" {
 	extern CFStringRef kLockdownThirdPartyTerminationMapDomain;	// com.apple.mobile.third_party_termination
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownBackupDomainKey;	// com.apple.mobile.backup
 	extern CFStringRef kLockdownIQAgentApplicationID;	// com.apple.iqagent
 #endif
 	
 #pragma mark -
-#pragma mark Keys
-	extern CFStringRef kLockdownActivationInfoCompleteKey;
-	extern CFStringRef kLockdownActivationInfoErrorsKey;
+#pragma mark : (nil-Domain Keys)
 	extern CFStringRef kLockdownActivationInfoKey;
 	extern CFStringRef kLockdownActivationRandomnessKey;
 	extern CFStringRef kLockdownActivationStateKey;
-	extern CFStringRef kLockdownActivationTicketKey;
-	extern CFStringRef kLockdownAmountCameraAvailableKey;
-	extern CFStringRef kLockdownAmountDataAvailableKey;
-	extern CFStringRef kLockdownAmountDataReservedKey;
-	extern CFStringRef kLockdownBasebandBootloaderVersionKey;
-	extern CFStringRef kLockdownBasebandMasterKeyHashKey;
-	extern CFStringRef kLockdownBasebandThumbprintKey;
-	extern CFStringRef kLockdownBasebandVersionKey;
-	extern CFStringRef kLockdownBluetoothAddressKey;
-	extern CFStringRef kLockdownBrickStateKey;
 	extern CFStringRef kLockdownBuildVersionKey;
-	extern CFStringRef kLockdownCalendarUsageKey;
-	extern CFStringRef kLockdownCameraUsageKey;
-	extern CFStringRef kLockdownCarrierBundleInfoKey;
-	extern CFStringRef kLockdownCheckpointDomainKey;
-	extern CFStringRef kLockdownColorSyncProfileKey;
-	extern CFStringRef kLockdownDataSyncDomainKey;
-	extern CFStringRef kLockdownDebugDockPresentKey;
-	extern CFStringRef kLockdownDebugDomainKey;
+	extern CFStringRef kLockdownBrickStateKey;
 	extern CFStringRef kLockdownDeviceCertificateKey;
 	extern CFStringRef kLockdownDeviceClassKey;
 	extern CFStringRef kLockdownDeviceNameKey;
 	extern CFStringRef kLockdownDevicePrivateKey;
 	extern CFStringRef kLockdownDevicePublicKey;
-	extern CFStringRef kLockdownDiskUsageDomainKey;
-	extern CFStringRef kLockdownEnable8021XLogsKey;
-	extern CFStringRef kLockdownEnableVPNLogsKey;
-	extern CFStringRef kLockdownFairPlayCertificateKey;
-	extern CFStringRef kLockdownFairPlayContextIDKey;
-	extern CFStringRef kLockdownFairPlayDomainKey;
-	extern CFStringRef kLockdownFairPlayGUIDKey;
-	extern CFStringRef kLockdownFairPlayIDKey;
-	extern CFStringRef kLockdownFairPlayKeyDataKey;
 	extern CFStringRef kLockdownFirmwareVersionKey;
 	extern CFStringRef kLockdownHostAttachedKey;
-	extern CFStringRef kLockdownICCIDKey;
-	extern CFStringRef kLockdownIMEIKey;
-	extern CFStringRef kLockdownIMSIKey;
-	extern CFStringRef kLockdownInternalDomainKey;
-	extern CFStringRef kLockdownInternationalDomainKey;
 	extern CFStringRef kLockdownInverseDeviceIDKey;
-	extern CFStringRef kLockdownIsInternalKey;
-	extern CFStringRef kLockdownKeyboardKey;
-	extern CFStringRef kLockdownLanguageKey;
-	extern CFStringRef kLockdownLocaleKey;
-	extern CFStringRef kLockdownMediaCacheUsageKey;
 	extern CFStringRef kLockdownModelNumberKey;
-	extern CFStringRef kLockdownNANDInfoKey;
-	extern CFStringRef kLockdownNotesUsageKey;
 	extern CFStringRef kLockdownPasswordProtectedKey;
-	extern CFStringRef kLockdownPhoneNumberKey;
-	extern CFStringRef kLockdownPhotoUsageKey;
 	extern CFStringRef kLockdownProductTypeKey;
 	extern CFStringRef kLockdownProductVersionKey;
-	extern CFStringRef kLockdownProhibitAppInstallKey;
-	extern CFStringRef kLockdownProposedTicketKey;
 	extern CFStringRef kLockdownProtocolVersionKey;
 	extern CFStringRef kLockdownRegionInfoKey;
-	extern CFStringRef kLockdownReleaseTypeKey;
-	extern CFStringRef kLockdownRentalBagRequestKey;
-	extern CFStringRef kLockdownRentalBagRequestVersionKey;
-	extern CFStringRef kLockdownRentalBagResponseKey;
-	extern CFStringRef kLockdownRentalCheckinAckRequestKey;
-	extern CFStringRef kLockdownRentalCheckinAckResponseKey;
-	extern CFStringRef kLockdownReservedBytesKey;
-	extern CFStringRef kLockdownRestrictionDomainKey;
-	extern CFStringRef kLockdownSIMGID1Key;
-	extern CFStringRef kLockdownSIMGID2Key;
+	extern CFStringRef kLockdownSIMGID1Key;	// ?
+	extern CFStringRef kLockdownSIMGID2Key;	// ?
 	extern CFStringRef kLockdownSIMStatusKey;
 	extern CFStringRef kLockdownSerialNumberKey;
-	extern CFStringRef kLockdownShutterClickKey;
-	extern CFStringRef kLockdownSoftwareBehaviorDomainKey;
 	extern CFStringRef kLockdownSoftwareBehaviorKey;
 	extern CFStringRef kLockdownSomebodySetTimeZoneKey;
-	extern CFStringRef kLockdownStoreDomainKey;
-	extern CFStringRef kLockdownSupportedKeyboardsKey;
-	extern CFStringRef kLockdownSupportedLanguagesKey;
-	extern CFStringRef kLockdownSupportedLocalesKey;
-	extern CFStringRef kLockdownSupportsAccessibilityKey;
-	extern CFStringRef kLockdownSyncDataClassDomainKey;
-	extern CFStringRef kLockdownSyncSupportsCalDAV;
 	extern CFStringRef kLockdownTimeIntervalSince1970Key;
 	extern CFStringRef kLockdownTimeZoneKey;
 	extern CFStringRef kLockdownTimeZoneOffsetFromUTCKey;
-	extern CFStringRef kLockdownTotalDataAvailableKey;
-	extern CFStringRef kLockdownTotalDataCapacityKey;
-	extern CFStringRef kLockdownTotalDiskCapacityKey;
-	extern CFStringRef kLockdownTotalSystemAvailableKey;
-	extern CFStringRef kLockdownTotalSystemCapacityKey;
 	extern CFStringRef kLockdownTrustedHostAttachedKey;
 	extern CFStringRef kLockdownUniqueChipIDKey;
 	extern CFStringRef kLockdownUniqueDeviceIDKey;
-	extern CFStringRef kLockdownUnlockCodeKey;
 	extern CFStringRef kLockdownUses24HourClockKey;
-	extern CFStringRef kLockdownVoicemailUsageKey;
-	extern CFStringRef kLockdownVoidWarrantyKey;
-	extern CFStringRef kLockdownVolumeLimitKey;
-	extern CFStringRef kLockdownWebAppCacheUsageKey;
 	extern CFStringRef kLockdownWifiAddressKey;
-	extern CFStringRef kLockdownWildcardTicketKey;
 	extern CFStringRef kLockdowniTunesHasConnectedKey;
-	extern CFStringRef kLockownSQLMusicLibraryPostProcessCommandsDomainKey;
-	extern CFStringRef kLockdownBatteryCurrentCapacity;
-	extern CFStringRef kLockdownBatteryIsCharging;
-	extern CFStringRef kLockdownDeviceHandlesDefaultCalendar;
-	extern CFStringRef kLockdownFairPlayRentalClockBias;
-	extern CFStringRef kLockdownRemoveWiFiManagerLogs;
-	extern CFStringRef kLockdownSupportsEncryptedBackups;	
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
 	extern CFStringRef kLockdownActivationStateAcknowledgedKey;
-	extern CFStringRef kLockdownDBVersionKey;
-	extern CFStringRef kLockdownFamilyIDKey;
-	extern CFStringRef kLockdownMinimumiTunesVersionKey;
-	extern CFStringRef kLockdownMobileApplicationUsageKey;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownActivationPrivateKey;
+	extern CFStringRef kLockdownActivationPublicKey;
+	extern CFStringRef kLockdownCPUArchitectureKey;
+	extern CFStringRef kLockdownHardwareModelKey;
+	extern CFStringRef kLockdownMLBSerialNumberKey;
+	extern CFStringRef kLockdownProductionSOCKey;
+#endif
+	
+#pragma mark : (Unknown domain Keys)
+	extern CFStringRef kLockdownActivationInfoCompleteKey;
+	extern CFStringRef kLockdownActivationInfoErrorsKey;
+	extern CFStringRef kLockdownActivationTicketKey;
+	extern CFStringRef kLockdownBasebandBootloaderVersionKey;
+	extern CFStringRef kLockdownBasebandMasterKeyHashKey;
+	extern CFStringRef kLockdownBasebandThumbprintKey;
+	extern CFStringRef kLockdownBasebandVersionKey;	
+	extern CFStringRef kLockdownBluetoothAddressKey;
+	extern CFStringRef kLockdownCarrierBundleInfoKey;
+	extern CFStringRef kLockdownICCIDKey;	// IntegratedCircuitCardIdentity
+	extern CFStringRef kLockdownIMEIKey;	// InternationalMobileEquipmentIdentity
+	extern CFStringRef kLockdownIMSIKey;	// InternationalMobileSubscriberIdentity
+	extern CFStringRef kLockdownIsInternalKey;
+	extern CFStringRef kLockdownPhoneNumberKey;
+	extern CFStringRef kLockdownProposedTicketKey;
+	extern CFStringRef kLockdownReleaseTypeKey;
+	extern CFStringRef kLockdownReservedBytesKey;
+	extern CFStringRef kLockdownShutterClickKey;
+	extern CFStringRef kLockdownUnlockCodeKey;
+	extern CFStringRef kLockdownVolumeLimitKey;
+	extern CFStringRef kLockdownWildcardTicketKey;
+	extern CFStringRef kLockdownBatteryCurrentCapacity;
+	extern CFStringRef kLockdownBatteryIsCharging;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
 	extern CFStringRef kLockdownSupportsCarrierBundleInstallKey;
-	extern CFStringRef kLockdownUserPreferencesDomainKey;
-	extern CFStringRef kLockdownUserSetLanguageKey;
-	extern CFStringRef kLockdownUserSetLocaleKey;	
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_2
-	extern CFStringRef kLockdownEnableLockdownExtendedLoggingKey;
-	extern CFStringRef kLockdownEnableLockdownLogToDiskKey;
 	extern CFStringRef kLockdownExtendedLoggingPrefKey;
 	extern CFStringRef kLockdownLogToDiskPrefKey;
-	extern CFStringRef kLockdownRemove8021XLogs;
-	extern CFStringRef kLockdownRemoveLockdownLog;
-	extern CFStringRef kLockdownRemoveVPNLogs;	
 #else
 	extern CFStringRef kLockdownCaptureSyslogKey;
 	extern CFStringRef kLockdownLogToDiskKey;
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
 	extern CFStringRef kLockdownAccessibilityLanguagesKey;
-	extern CFStringRef kLockdownActivationPrivateKey;
-	extern CFStringRef kLockdownActivationPublicKey;
-	extern CFStringRef kLockdownAmountCameraUsageChangedKey;
-	extern CFStringRef kLockdownBackupDomainKey;
-	extern CFStringRef kLockdownBackupWillEncrypt;
-	extern CFStringRef kLockdownBehaviorsValidKey;
-	extern CFStringRef kLockdownCPUArchitectureKey;
 	extern CFStringRef kLockdownChinaBrickKey;
-	extern CFStringRef kLockdownDSPersonIDKey;
-	extern CFStringRef kLockdownDiagnosticsAllowedKey;
-	extern CFStringRef kLockdownEnableWiFiManagerLogsKey;
 	extern CFStringRef kLockdownGoogleMailKey;
-	extern CFStringRef kLockdownHardwareModelKey;
-	extern CFStringRef kLockdownMLBSerialNumberKey;
 	extern CFStringRef kLockdownNTSCKey;
 	extern CFStringRef kLockdownNVRAMKey;
 	extern CFStringRef kLockdownNoWiFiKey;	
-	extern CFStringRef kLockdownProductionSOCKey;
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	extern CFStringRef kLockdownAMRKey;
-	extern CFStringRef kLockdownAudioCodecsKey;
-	extern CFStringRef kLockdownDeviceSupportsClearingDataKey;
 	extern CFStringRef kLockdownEnableLockdownNetworkConnectKey;
 	extern CFStringRef kLockdownH263Key;
 	extern CFStringRef kLockdownH264HKey;
 	extern CFStringRef kLockdownH264MKey;
 	extern CFStringRef kLockdownSNUMKey;
 	extern CFStringRef kLockdownServiceToken;
-	extern CFStringRef kLockdownVideoCodecsKey;
-#else
+#endif
+	
+#pragma mark : Disk Usage Domain Keys
+	extern CFStringRef kLockdownAmountCameraAvailableKey;
+	extern CFStringRef kLockdownAmountDataAvailableKey;
+	extern CFStringRef kLockdownAmountDataReservedKey;
+	extern CFStringRef kLockdownCalendarUsageKey;
+	extern CFStringRef kLockdownCameraUsageKey;
+	extern CFStringRef kLockdownMediaCacheUsageKey;
+	extern CFStringRef kLockdownNANDInfoKey;
+	extern CFStringRef kLockdownNotesUsageKey;
+	extern CFStringRef kLockdownPhotoUsageKey;
+	extern CFStringRef kLockdownTotalDataAvailableKey;
+	extern CFStringRef kLockdownTotalDataCapacityKey;
+	extern CFStringRef kLockdownTotalDiskCapacityKey;
+	extern CFStringRef kLockdownTotalSystemAvailableKey;
+	extern CFStringRef kLockdownTotalSystemCapacityKey;
+	extern CFStringRef kLockdownVoicemailUsageKey;
+	extern CFStringRef kLockdownWebAppCacheUsageKey;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
+	extern CFStringRef kLockdownMobileApplicationUsageKey;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownAmountCameraUsageChangedKey;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
 	extern CFStringRef kLockdownAmountCameraReservedKey;
 	extern CFStringRef kLockdownAmountSongsReservedKey;
 #endif
+
+#pragma mark : Checkpoint Domain Keys
+	extern CFStringRef kLockdownColorSyncProfileKey;
+	extern CFStringRef kLockdownFairPlayCertificateKey;
+	extern CFStringRef kLockdownFairPlayGUIDKey;
+	extern CFStringRef kLockdownFairPlayIDKey;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
+	extern CFStringRef kLockdownDBVersionKey;
+	extern CFStringRef kLockdownFamilyIDKey;
+	extern CFStringRef kLockdownMinimumiTunesVersionKey;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	extern CFStringRef kLockdownAudioCodecsKey;
+	extern CFStringRef kLockdownVideoCodecsKey;
+#endif
+	
+#pragma mark : Debug Domain Keys
+	extern CFStringRef kLockdownDebugDockPresentKey;
+	extern CFStringRef kLockdownEnableVPNLogsKey;
+	extern CFStringRef kLockdownRemoveWiFiManagerLogs;	
+	extern CFStringRef kLockdownEnable8021XLogsKey;
+	static const CFStringRef kLockdownStoreIdentityCookieKey = CFSTR("StoreIdentityCookie");
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_2
+	extern CFStringRef kLockdownRemoveVPNLogs;
+	extern CFStringRef kLockdownRemove8021XLogs;
+	extern CFStringRef kLockdownEnableLockdownLogToDiskKey;	
+	extern CFStringRef kLockdownEnableLockdownExtendedLoggingKey;
+	extern CFStringRef kLockdownRemoveLockdownLog;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownEnableWiFiManagerLogsKey;
+#endif
+	
+
+#pragma mark : FairPlay Domain Keys
+	extern CFStringRef kLockdownFairPlayContextIDKey;
+	extern CFStringRef kLockdownFairPlayKeyDataKey;	// ?
+	extern CFStringRef kLockdownRentalBagRequestKey;
+	extern CFStringRef kLockdownRentalBagRequestVersionKey;
+	extern CFStringRef kLockdownRentalBagResponseKey;
+	extern CFStringRef kLockdownRentalCheckinAckRequestKey;
+	extern CFStringRef kLockdownRentalCheckinAckResponseKey;	// ?
+	extern CFStringRef kLockdownFairPlayRentalClockBias;
+
+#pragma mark : International Domain Keys
+	extern CFStringRef kLockdownKeyboardKey;	// CFString.
+	extern CFStringRef kLockdownLanguageKey;	// CFString.
+	extern CFStringRef kLockdownLocaleKey;	// CFString.
+	extern CFStringRef kLockdownSupportedKeyboardsKey;
+	extern CFStringRef kLockdownSupportedLanguagesKey;
+	extern CFStringRef kLockdownSupportedLocalesKey;
+	extern CFStringRef kLockdownSupportsAccessibilityKey;	
+
+#pragma mark : Restriction Domain Keys
+	extern CFStringRef kLockdownProhibitAppInstallKey;
+	
+#pragma mark : Data Sync Domain Keys
+	extern CFStringRef kLockdownSyncSupportsCalDAV;
+	extern CFStringRef kLockdownDeviceHandlesDefaultCalendar;
+	extern CFStringRef kLockdownSupportsEncryptedBackups;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+	extern CFStringRef kLockdownDeviceSupportsClearingDataKey;
+#endif
+
+#pragma mark : iTunes Keys
+	static const CFStringRef kLockdownLibraryApplicationsKey = CFSTR("LibraryApplications");
+	static const CFStringRef kLockdownSyncedApplicationsKey = CFSTR("SyncedApplications");
+
+#pragma mark : itunesstored Keys
+	static const CFStringRef kLockdownSoftwareCUIDKey = CFSTR("SoftwareCUID");
+	
+	
+#pragma mark : User Preferences Domain Keys
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_1
+	extern CFStringRef kLockdownUserSetLanguageKey;
+	extern CFStringRef kLockdownUserSetLocaleKey;	// ?
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownDiagnosticsAllowedKey;
+#endif
+	
+#pragma mark : Backup Domain Keys
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownBackupWillEncrypt;	// ?
+#endif
+	
+#pragma mark : Software Behavior Domain Keys
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownBehaviorsValidKey;
+#endif
+	
+#pragma mark : Store Domain Keys
+	static const CFStringRef kLockdownAccountKindKey = CFSTR("AccountKind");
+	static const CFStringRef kLockdownAppleIDKey = CFSTR("AppleID");
+	static const CFStringRef kLockdownCreditDisplayStringKey = CFSTR("CreditDisplayString");
+	static const CFStringRef kLockdownKnownAccountsKey = CFSTR("KnownAccounts");	
+	static const CFStringRef kLockdownPreferHQTracksKey = CFSTR("PreferHQTracks");	
+	static const CFStringRef kLockdownPurchaseTypesKey = CFSTR("PurchaseTypes");	
+	static const CFStringRef kLockdownStorefrontKey = CFSTR("Storefront");	
+	static const CFStringRef kLockdownUserNameKey = CFSTR("UserName");	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+	extern CFStringRef kLockdownDSPersonIDKey;
+#endif
+	
+#pragma mark : Internal Domain Keys
+	extern CFStringRef kLockdownVoidWarrantyKey;
+	
+#pragma mark : Xcode Developer Domain Keys
+	static const CFStringRef kLockdownDeveloperStatusKey = CFSTR("DeveloperStatus");
 	
 #pragma mark -
 #pragma mark Functions
