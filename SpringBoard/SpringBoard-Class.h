@@ -205,7 +205,7 @@
 -(unsigned)simpleRemoteRoutingPriorityForApplication:(id)application;
 -(id)formattedDecimalStringForNumber:(id)number;
 -(id)formattedPercentStringForNumber:(id)number;
--(id)_accessibilityRunningApplications;
+-(NSArray*)_accessibilityRunningApplications;
 -(void)_accessibilitySetEventTapCallback:(void*)callback;
 -(void*)_accessibilityEventTapCallback;
 -(double)_accessibilityActivationAnimationStartDelay;
