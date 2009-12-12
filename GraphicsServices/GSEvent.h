@@ -119,6 +119,7 @@ extern "C" {
 		
 		kGSEventKeyDown = 10,
 		kGSEventKeyUp = 11,
+		kGSEventSimulatorKeyDown = 12,	// Maybe?
 		kGSEventHardwareKeyDown = 13,
 		kGSEventScrollWheel = 22,
 		kGSEventAccelerate = 23,
@@ -134,7 +135,7 @@ extern "C" {
 		kGSEventDumpScreenContents = 501,
 		
 		kGSEventMenuButtonDown = 1000,
-		
+		kGSEventMenuButtonUp = 1001,
 		kGSEventVolumeChanged = 1006,
 		kGSEventVolumeUpButtonDown = 1006,
 		kGSEventVolumeUpButtonUp = 1007,
@@ -143,24 +144,26 @@ extern "C" {
 		kGSEventLockButtonDown = 1010,
 		kGSEventLockButtonUp = 1011,
 		kGSEventRingerOff = 1012,
-		kGSEventRingerChanged = 1013,
+		kGSEventRingerOn = 1013,
+		kGSEventRingerChanged = 1013,	// backward compatibility.
 		kGSEventLockDevice = 1014,
+		kGSEventStatusBarMouseDown = 1015,
 		kGSEventStatusBarMouseDragged = 1016,
 		kGSEventStatusBarMouseUp = 1017,
 		kGSEventHeadsetButtonDown = 1018,
 		kGSEventHeadsetButtonUp = 1019,
-		
 		kGSEventMotionBegin = 1020,
+		kGSEventHeadsetAvailabilityChanged = 1021,
 		
 		kGSEventVibrate = 1100,
 		kGSEventSetBacklightFactor = 1102,
 		kGSEventSetBacklightLevel = 1103,
 		
 		kGSEventApplicationLaunch = 2000,
-		kGSEventApplicationAnimateSuspensionOrResumption = 2001,
-		kGSEventAnotherApplicationFinishedLaunching = 2002,
-		kGSEventApplicationResume = 2003,
-		kGSEventApplicationEndResumeAnimation = 2004,
+		kGSEventAnotherApplicationFinishedLaunching = 2001,
+		kGSEventSetAppThreadPriority = 2002,
+		kGSEventApplicationResume = 2003,		
+		kGSEventApplicationDidEndResumeAnimation = 2004,
 		kGSEventApplicationBeginSuspendAnimation = 2005,
 		kGSEventApplicationHandleTestURL = 2006,
 		kGSEventApplicationSuspendEventsOnly = 2007,

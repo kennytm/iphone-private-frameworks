@@ -196,7 +196,7 @@
 -(void)_tearDownNow;
 -(void)tearDown;
 -(BOOL)isMusicPlayerInNowPlayingView;
--(id)nowPlayingApp;
+-(SBApplication*)nowPlayingApp;
 -(BOOL)isNowPlayingAppPlaying;
 -(BOOL)isMusicPlayerPlaying;
 -(void)setNowPlayingInfo:(id)info forApplication:(id)application;
