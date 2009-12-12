@@ -4,31 +4,89 @@
  */
 
 #import "UIKit-Structs.h"
-#import "UITableViewCellLayoutManager.h"
 #import <Foundation/NSObject.h>
+#import <UIKit/UITableViewCell.h>
 
+@class UIImageView;
 
 @interface UITableViewCellLayoutManager : NSObject {
 }
-+(id)layoutManagerForTableViewCellStyle:(int)tableViewCellStyle;
--(float)defaultTextLabelFontSizeForCell:(id)cell;
--(float)defaultDetailTextLabelFontSizeForCell:(id)cell;
--(id)defaultImageViewForCell:(id)cell;
--(id)defaultLabelForCell:(id)cell;
--(id)defaultEditableTextFieldForCell:(id)cell;
--(id)imageViewForCell:(id)cell;
--(id)textLabelForCell:(id)cell;
--(id)detailTextLabelForCell:(id)cell;
--(id)editableTextFieldForCell:(id)cell;
--(float)contentIndentationForCell:(id)cell;
--(void)layoutSubviewsOfCell:(id)cell;
--(void)cell:(id)cell willTransitionToState:(unsigned)state;
--(void)cell:(id)cell didTransitionToState:(unsigned)state;
--(CGRect)contentRectForCell:(id)cell forState:(unsigned)state;
--(BOOL)editControlShouldAppearForCell:(id)editControl;
--(CGRect)editControlStartingRectForCell:(id)cell forNewEditingState:(BOOL)newEditingState;
--(CGRect)editControlEndingRectForCell:(id)cell forNewEditingState:(BOOL)newEditingState;
--(BOOL)editControlShouldFadeForCell:(id)editControl;
++(UITableViewCell*)layoutManagerForTableViewCellStyle:(UITableViewCellStyle)tableViewCellStyle;
+
+// called by -[UITableViewCellLayoutManager layoutSubviewsOfCell:].
+// returns the font size of the default text label. 
+-(CGFloat)defaultTextLabelFontSizeForCell:(UITableViewCell*)cell;
+
+// called by -[UITableViewCellLayoutManagerValue1 layoutSubviewsOfCell:], etc.
+// returns the font size of the detail text label. 
+-(CGFloat)defaultDetailTextLabelFontSizeForCell:(UITableViewCell*)cell;
+
+// to be used by -imageViewForCell:.
+// gives the default "imageView" property of a UITableViewCell.
+// Do not overload.
+-(UIImageView*)defaultImageViewForCell:(UITableViewCell*)cell;
+
+// to be used by -textLabelForCell:.
+// gives the default "textLabel" property of a UITableViewCell.
+// Do not overload.
+-(UILabel*)defaultLabelForCell:(UITableViewCell*)cell;
+
+// to be used by -editableTextFieldForCell:.
+// gives the default "editableTextField" property of a UITableViewCell.
+// Do not overload.
+-(UITextField*)defaultEditableTextFieldForCell:(UITableViewCell*)cell;
+
+// returns the expected result of "imageView" of the cell.
+// you should either return nil, or modify the result of -defaultImageViewForCell:.
+-(UIImageView*)imageViewForCell:(UITableViewCell*)cell;
+
+// returns the expected result of "textLabel" of the cell.
+// you should either return nil, or modify the result of -defaultTextLabelForCell:.
+-(UILabel*)textLabelForCell:(UITableViewCell*)cell;
+
+// returns the expected result of the "detailTextLabel" of the cell.
+// you should either return nil, or modify the result of -defaultTextLabelForCell:.
+-(UILabel*)detailTextLabelForCell:(UITableViewCell*)cell;
+
+// returns the expected result of the "editableTextField" of the cell.
+// you should either return nil, or modify the result of -defaultEditableTextFieldForCell:.
+-(UITextField*)editableTextFieldForCell:(UITableViewCell*)cell;
+
+// called by -[UITableViewCellLayoutManager layoutSubviewsOfCell:].
+// returns the default identation (left padding) of the content view.
+-(CGFloat)contentIndentationForCell:(UITableViewCell*)cell;
+
+// called by -[UITableViewCell layoutSubviews].
+// layout different subviews of the cell.
+// subclasses must call [super layoutSubviewsOfCell:cell].
+-(void)layoutSubviewsOfCell:(UITableViewCell*)cell;
+
+// called by -[UITableViewCell willTransitionToState:].
+// the cell will be transitioning the a new editing state. Change the layout for it.
+// Do not overload.
+-(void)cell:(UITableViewCell*)cell willTransitionToState:(UITableViewCellStateMask)stateMask;
+
+// called by -[UITableViewCell didTransitionToState:].
+// the cell has been transitioned the a new editing state. Change the layout for it.
+// Do not overload.
+-(void)cell:(UITableViewCell*)cell didTransitionToState:(UITableViewCellStateMask)state;
+
+// called by -[UITableViewCell contentRectForState:]
+// Not used anywhere. Do not overload.
+-(CGRect)contentRectForCell:(UITableViewCell*)cell forState:(UITableViewCellStateMask)state;
+
+// called by -cell:willTransitionToState:.
+// should an edit control appear by transitioning to the new state?
+// by default, returns YES if (!cell.wasSwiped && (cell.editingStyle != 0 || cell.shouldIndentWhileEditing)).
+-(BOOL)editControlShouldAppearForCell:(UITableViewCell*)cell;
+
+// called by cell:willTransitionToState:.
+// should an edit control fade out to transparent when requested?
+// by default, always returns YES.
+-(BOOL)editControlShouldFadeForCell:(UITableViewCell*)editControl;
+
+-(CGRect)editControlStartingRectForCell:(UITableViewCell*)cell forNewEditingState:(BOOL)newEditingState;
+-(CGRect)editControlEndingRectForCell:(UITableViewCell*)cell forNewEditingState:(BOOL)newEditingState;
 -(BOOL)reorderControlShouldAppearForCell:(id)reorderControl;
 -(CGRect)reorderControlStartingRectForCell:(id)cell forNewEditingState:(BOOL)newEditingState;
 -(CGRect)reorderControlEndingRectForCell:(id)cell forNewEditingState:(BOOL)newEditingState;
