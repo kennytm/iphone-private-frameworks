@@ -7,6 +7,7 @@
 #import <UIKit/UIWindow.h>
 #import <UIKit/UIView.h>
 #import <Availability2.h>
+#import <IOSurface/IOSurface.h>
 
 @class NSUndoManager;
 
@@ -14,10 +15,10 @@
 +(CGRect)constrainFrameToScreen:(CGRect)screen;
 +(id)keyWindow;
 +(void)_noteStatusBarHeightChanged:(float)changed oldHeight:(float)height fence:(int)fence;
-+(id)_ioSurfacePropertyDictionaryForRect:(CGRect)rect;
-+(void*)createIOSurfaceWithContextId:(unsigned)contextId frame:(CGRect)frame;
-+(void*)createIOSurfaceWithContextIds:(const unsigned*)contextIds count:(unsigned)count frame:(CGRect)frame;
-+(void*)createScreenIOSurface;
++(CFDictionaryRef)_ioSurfacePropertyDictionaryForRect:(CGRect)rect;
++(IOSurfaceRef)createIOSurfaceWithContextId:(unsigned)contextId frame:(CGRect)frame;
++(IOSurfaceRef)createIOSurfaceWithContextIds:(const unsigned*)contextIds count:(size_t)count frame:(CGRect)frame;
++(IOSurfaceRef)createScreenIOSurface;
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithFrame:(CGRect)frame output:(int)anOutput;
 -(void)_commonInit;
@@ -122,8 +123,8 @@
 -(void)_setMouseEnteredView:(id)view;
 -(BOOL)_clearMouseView;
 -(BOOL)_allowsContextHosting;
--(void*)createIOSurfaceWithFrame:(CGRect)frame;
--(void*)createIOSurface;
+-(IOSurfaceRef)createIOSurfaceWithFrame:(CGRect)frame;
+-(IOSurfaceRef)createIOSurface;
 -(void)_setCancelScroller:(BOOL)scroller;
 -(BOOL)acceptsGlobalPoint:(CGPoint)point;
 -(BOOL)_isLayerHidden;
