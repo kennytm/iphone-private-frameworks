@@ -88,8 +88,6 @@
 @property(assign, nonatomic) CGPoint targetPoint;
 @property(assign, nonatomic) int targetDirection;
 @property(assign, nonatomic) int arrowDirection;
-@property(copy, nonatomic) NSArray* replacements;
-@property(copy, nonatomic) NSArray* extraItems;
 -(void)_showMoreItems:(id)items;
 -(BOOL)_updateVisibleItems;
 -(void)setTargetRect:(CGRect)rect arrowDirection:(int)direction;

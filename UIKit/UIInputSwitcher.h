@@ -3,7 +3,7 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 
 #import <Foundation/NSObject.h>
-@class UIDelayedAction, UIInputSwticherView, NSString;
+@class UIDelayedAction, UIInputSwitcherView, NSString;
 
 __attribute__((visibility("hidden")))
 @interface UIInputSwitcher : NSObject {

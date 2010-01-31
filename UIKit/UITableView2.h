@@ -231,7 +231,6 @@
 -(int)_accessoryTypeForCell:(id)cell forRowAtIndexPath:(id)indexPath;
 -(BOOL)_canMoveRowAtIndexPath:(id)indexPath;
 -(id)_reorderingSupport;
--(id)_newSectionViewWithFrame:(CGRect)frame isHeader:(BOOL)header;
 -(void)_reuseTableViewCell:(id)cell;
 -(void)_reuseHeaderView:(id)view;
 -(void)_reuseFooterView:(id)view;
@@ -256,6 +255,10 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_updateBackgroundViewFrame;
 -(void)_updateBackgroundView;
+-(id)_newSectionViewWithFrame:(CGRect)frame forSection:(int)section isHeader:(BOOL)header;
+-(id)_defaultBackgroundView;
+#else
+-(id)_newSectionViewWithFrame:(CGRect)frame isHeader:(BOOL)header;
 #endif
 @end
 

@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIWindow.h>
 #import <Availability2.h>
+#import "UIAutoRotatingWindow.h"
 
 @class NSMutableArray;
 

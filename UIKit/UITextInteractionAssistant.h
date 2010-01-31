@@ -98,4 +98,10 @@ __attribute__((visibility("hidden")))
 -(BOOL)swallowsDoubleTapWithScale:(float)scale atPoint:(CGPoint)point;
 -(void)willRotate:(id)rotate;
 -(void)didRotate:(id)rotate;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)selectWordWithoutShowingCommands;
+-(void)scheduleReplacementsWithOptions:(unsigned)options;
+-(id)wordForTextReplacement;
+-(void)showReplacementsWithOptions:(unsigned)options;
+#endif
 @end

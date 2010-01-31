@@ -8,17 +8,28 @@
 #import <Foundation/NSObject.h>
 #import <Availability2.h>
 
+__attribute__((visibility("hidden")))
 @interface UISectionRowData : NSObject <NSCopying> {
 	BOOL _valid;
 	float _headerHeight;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	float _maxHeaderTitleWidth;
+#endif
 	float _footerHeight;
 	float _headerOffset;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	float _maxFooterTitleWidth;
+#endif
 	float _footerOffset;
 	int _numRows;
 	int _arrayLength;
 	float* _rowHeights;
 	float* _rowOffsets;
 	float _sectionHeight;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _headerAlignment;
+	int _footerAlignment;
+#endif
 	BOOL _sectionOffsetValid;
 	float _sectionOffset;
 }

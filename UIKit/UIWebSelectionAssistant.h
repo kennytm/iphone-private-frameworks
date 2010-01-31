@@ -7,7 +7,7 @@
 #import <Foundation/NSObject.h>
 #import <Availability2.h>
 
-@class UIWebDocumentView, UIWebSelectionView, UIWebSelection;
+@class UIWebDocumentView, UIWebSelectionView, UIWebSelection, UILongPressGestureRecognizer, UITapAndAHalfRecognizer;
 
 @interface UIWebSelectionAssistant : NSObject 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2

@@ -56,5 +56,3 @@
 // inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 // inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
 @end
-
-#endif

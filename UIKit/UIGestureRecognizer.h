@@ -7,8 +7,7 @@
 #import <Foundation/NSObject.h>
 #import <Availability2.h>
 
-
-@class NSMutableSet, NSMutableArray, UIView, UIEvent, NSSet;
+@class NSMutableSet, NSMutableArray, UIView, UIEvent, NSSet, UIGestureRecognizer, UITouch;
 
 @protocol UIGestureRecognizerDelegate <NSObject>
 @optional

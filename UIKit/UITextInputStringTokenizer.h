@@ -8,10 +8,7 @@
 
 @class UIResponder;
 
-@interface UITextInputStringTokenizer : NSObject <UITextInputTokenizer> {
-	UIResponder<UITextInput>* _textInput;
-}
--(id)initWithTextInput:(id)textInput;
+@interface UITextInputStringTokenizer ()
 -(NSRange)_getClosestTokenRangeForPosition:(id)position granularity:(int)granularity downstream:(BOOL)downstream;
 // in a protocol: -(BOOL)isPosition:(id)position atBoundary:(int)boundary inDirection:(int)direction;
 // in a protocol: -(id)positionFromPosition:(id)position toBoundary:(int)boundary inDirection:(int)direction;

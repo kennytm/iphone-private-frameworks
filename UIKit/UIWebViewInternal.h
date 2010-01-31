@@ -7,7 +7,7 @@
 #import <Foundation/NSObject.h>
 #import <Availability2.h>
 
-@class NSURLRequest, UIScroller, UIWebDocumentView, UICheckeredPatternView, UIWebViewWebViewDelegate;
+@class NSURLRequest, UIScroller, UIWebDocumentView, UICheckeredPatternView, UIWebViewWebViewDelegate, UIWebBrowserView;
 @protocol UIWebViewDelegate;
 
 @interface UIWebViewInternal : NSObject

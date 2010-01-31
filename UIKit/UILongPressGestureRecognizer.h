@@ -44,8 +44,8 @@
 @property(retain, nonatomic) NSArray* touches;
 @property(assign, nonatomic) int numberOfFingers;
 @property(assign, nonatomic) float allowableMovement;
-#endif
 @property(assign, nonatomic) double delay;
+#endif
 @property(readonly, assign, nonatomic) CGPoint centroid;
 @property(readonly, assign, nonatomic) CGPoint startPoint;
 @property(assign, nonatomic) id<UILongPressGestureRecognizerDelegate> delegate;
@@ -61,5 +61,3 @@
 // inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
 -(CGPoint)centroidScreen;
 @end
-
-#endif

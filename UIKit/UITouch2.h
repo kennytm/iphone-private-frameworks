@@ -51,5 +51,9 @@
 -(void)_pushPhase:(int)phase;
 -(void)_popPhase;
 -(CGPoint)_locationInWindow:(id)window;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_phaseDescription;
+-(int)_compareIndex:(id)index;
+#endif
 @end
 

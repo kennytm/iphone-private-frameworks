@@ -31,7 +31,7 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	CandWord* m_autocorrection;
 #else
-	UIKeyboardCandidate* m_autocorrection
+	UIKeyboardCandidate* m_autocorrection;
 #endif
 	UIAutocorrectInlinePrompt* m_autocorrectPrompt;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2

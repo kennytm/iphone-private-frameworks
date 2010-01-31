@@ -7,6 +7,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import <Availability2.h>
+#import "UIKeyboardImplGeometryDelegate.h"
 
 @class UIImage, UITextInputTraits;
 
@@ -105,6 +106,4 @@
 -(void)keyboardAutomaticOrderIn:(id)anIn finished:(id)finished;
 -(void)keyboardAutomaticOrderOut:(id)anOut finished:(id)finished;
 @end
-#else
-
 #endif

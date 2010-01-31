@@ -4,6 +4,7 @@
  */
 
 #import "UIKit-Structs.h"
+#import <Availability2.h>
 
 @class UIView, UITextInteractionAssistant, UITextSelectionView;
 @protocol UITextSelectingContent;
@@ -18,7 +19,7 @@
 -(void)endSelectionChange;
 -(CGRect)selectionClipRect;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
--(void)updateSelection
+-(void)updateSelection;
 -(void)detachSelectionView;
 -(void)detachInteractionAssistant;
 #endif

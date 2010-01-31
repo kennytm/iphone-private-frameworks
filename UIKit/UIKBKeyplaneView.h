@@ -6,7 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 
-@class NSString, UIKBKeyplane, UIKBKeyboard;
+@class NSString, UIKBKeyplane, UIKBKeyboard, UIKBHandwritingView, UIKBCandidateView;
 
 @interface UIKBKeyplaneView : UIView {
 	UIKBKeyboard* m_keyboard;

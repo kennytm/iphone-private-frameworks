@@ -295,6 +295,11 @@
  */
 -(BOOL)shouldExtendPriorWord;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setKeyboardEventsLagging:(BOOL)lagging;
+-(void)configureInputModeSpecificFeatures:(id)features;
+#endif
+
 /*! Change the keyboard layout for candidate list.
  
  Usually you will set the Space key to select the next candidate and the Return key to confirm / dismiss the candidate list, e.g.
@@ -308,11 +313,6 @@
 
 //! Change the keyboard layout for autocorrection string.
 -(void)configureKeyboard:(id)keyboard forAutocorrection:(id)autocorrection;
-
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
--(void)setKeyboardEventsLagging:(BOOL)lagging;
--(void)configureInputModeSpecificFeatures:(id)features;
-#endif
 
 @end
 

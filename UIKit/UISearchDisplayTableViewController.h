@@ -2,7 +2,7 @@
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 
-#import <UIKit/UITablViewController.h>
+#import <UIKit/UITableViewController.h>
 
 @class UISearchDisplayController;
 
