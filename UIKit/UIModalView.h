@@ -35,6 +35,9 @@
 	UIView* _keyboard;
 	UIView* _table;
 	UIView* _dimView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIView* _sheetView;
+#endif
 	struct {
 		unsigned numberOfRows : 7;
 		unsigned delegateAlertSheetButtonClicked : 1;
@@ -69,6 +72,9 @@
 		unsigned delegateDidDismiss : 1;
 		unsigned popupFromPoint : 1;
 		unsigned extra : 20;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+		unsigned dontCallDismissDelegate : 1;
+#endif
 	} _modalViewFlags;
 }
 @property(readonly, assign, nonatomic, getter=isVisible) BOOL visible;
@@ -164,7 +170,11 @@
 -(void)_adjustLabelFontSizes;
 -(void)popupAlertAnimated:(BOOL)animated atOffset:(float)offset;
 -(void)popupAlertAnimated:(BOOL)animated fromBarButtonItem:(id)barButtonItem;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)userDidCancelPopoverView:(id)user;
+#else
 -(void)dimmingViewWasTapped:(id)tapped;
+#endif
 -(void)popupAlertAnimated:(BOOL)animated;
 -(void)_presentSheetFromView:(id)view above:(BOOL)above;
 -(void)presentSheetFromBehindView:(id)behindView;

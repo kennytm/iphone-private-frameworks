@@ -5,9 +5,11 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface KBCandidateCell : UIView {
 	NSString* _candidate;
 	unsigned _index;
@@ -19,6 +21,9 @@
 	SEL _action;
 	BOOL _drawDone;
 	BOOL _stringMayBeTooLong;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _drawLeftBoundary;
+#endif
 }
 +(id)font;
 -(id)initWithCandidate:(id)candidate andIndex:(unsigned)index target:(id)target action:(SEL)action;
@@ -30,10 +35,11 @@
 -(void)setLastInLine:(BOOL)line;
 -(void)setStringMayBeTooLong:(BOOL)aLong;
 -(void)setAtBottom:(BOOL)bottom;
+-(void)setDrawLeftBoundary:(BOOL)boundary __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)drawRect:(CGRect)rect;
 -(void)setHighlighted:(BOOL)highlighted;
 -(void)selected;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 @end
 

@@ -12,12 +12,13 @@
 #import "BrowserDocumentController.h"
 #import "UITextSelectingContent.h"
 #import "UIWebTiledView.h"
+#import "UILongPressGestureRecognizer.h"
 #import <Availability2.h>
 
 @class UITextInputTraits, UIWebSelectionAssistant, WebViewReachabilityObserver, WebThreadSafeUndoManager, UIAutoscroll, WebView, DOMHTMLElement, UITextInteractionAssistant, UITextSelectionView, UIColor, CALayer, UIWebFormDelegate, UIInformalDelegate, WebPDFView, DOMNode;
 @protocol UIFormAssistantDelegate;
 
-@interface UIWebDocumentView : UIWebTiledView <UIKeyboardInput, UIModalViewDelegate> {
+@interface UIWebDocumentView : UIWebTiledView <UIKeyboardInput, UIModalViewDelegate, UILongPressGestureRecognizerDelegate> {
 	int _retainCount;
 	WKWindow* _wkWindow;
 	WebView* _webView;
@@ -26,7 +27,9 @@
 	id _delegate;
 	id _textSuggestionDelegate;
 	id _editingDelegate;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	float _doubleTapDelay;
+#endif
 	CGRect _doubleTapRect;
 	CGRect _mainDocumentDoubleTapRect;
 	CGPoint _scrollPoint;
@@ -43,6 +46,15 @@
 	BOOL m_selectionGranularityIncreasing;
 	CALayer* _contentLayersHostingLayer;
 	UITextInputTraits* _traits;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	id<UITextInputDelegate> _inputDelegate;
+	UITapGestureRecognizer* _singleTapGestureRecognizer;
+	UITapGestureRecognizer* _doubleTapGestureRecognizer;
+	UITapGestureRecognizer* _twoFingerDoubleTapGestureRecognizer;
+	UILongPressGestureRecognizer* _highlightLongPressGestureRecognizer;
+	UILongPressGestureRecognizer* _longPressGestureRecognizer;
+	UIPanGestureRecognizer* _twoFingerPanGestureRecognizer;
+#else	
 	struct {
 		NSMutableArray* all;
 		NSMutableArray* html;
@@ -60,6 +72,7 @@
 		id<UIFormAssistantDelegate> delegate;
 		UIWebFormDelegate* formDelegate;
 	} _forms;
+#endif
 	struct {
 		NSTimer* timer;
 		CGPoint location;
@@ -72,10 +85,12 @@
 		CGPoint gestureScrollPoint;
 		CGPoint gestureCurrentPoint;
 		BOOL hasAttemptedGestureScrolling;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 		UIView* candidate;
 		BOOL forwardingGuard;
 		SEL mouseUpForwarder;
 		SEL mouseDraggedForwarder;
+#endif
 		DOMNode* element;
 		BOOL defersCallbacksState;
 		UIInformalDelegate* delegate;
@@ -83,6 +98,7 @@
 		UIActionSheet* interactionSheet;
 		BOOL allowsImageSheet;
 		BOOL allowsDataDetectorsSheet;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 		struct {
 			BOOL active;
 			BOOL defaultPrevented;
@@ -92,11 +108,14 @@
 			float originalGestureAngle;
 #endif
 		} directEvents;
+#endif
 	} _interaction;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	struct {
 		WebPDFView* view;
 		NSTimer* timer;
 	} _pdf;
+#endif
 	struct {
 		CGSize size;
 		float initialScale;
@@ -118,6 +137,9 @@
 	unsigned _ignoresKeyEvents : 1;
 	unsigned _autoresizes : 1;
 	unsigned _scalesToFit : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _updatesScrollView : 1;
+#endif
 	unsigned _hasCustomScale : 1;
 	unsigned _userScrolled : 1;
 	unsigned _pageNeedsReset : 1;
@@ -141,46 +163,66 @@
 	unsigned _didFirstVisuallyNonEmptyLayout : 1;
 	unsigned _loadInProgress : 1;
 	unsigned _uiwdvIsResigningFirstResponder : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _classicMode : 1;
+	unsigned _sizeUpdatesSuspended : 1;
+	unsigned _sizeUpdateOccurredWhileSuspended : 1;
+#endif	
 	WebThreadSafeUndoManager* _undoManager;
 	UIWebSelectionAssistant* _webSelectionAssistant;
 	UITextInteractionAssistant* _textSelectionAssistant;
 	UITextSelectionView* _textSelectionView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UITextChecker* _textChecker;
+#endif
 	UIEdgeInsets _caretInsets;
 }
-@property(assign, nonatomic) UITextAutocapitalizationType autocapitalizationType;
-@property(assign, nonatomic) UITextAutocorrectionType autocorrectionType;
-@property(assign, nonatomic) UIKeyboardType keyboardType;
-@property(assign, nonatomic) UIKeyboardAppearance keyboardAppearance;
-@property(assign, nonatomic) UIReturnKeyType returnKeyType;
-@property(assign, nonatomic) BOOL enablesReturnKeyAutomatically;
-@property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
-@property(assign, nonatomic) CFCharacterSetRef textTrimmingSet;
-@property(retain, nonatomic) UIColor* insertionPointColor;
-@property(assign, nonatomic) unsigned insertionPointWidth;
-@property(assign, nonatomic) int textLoupeVisibility;
-@property(assign, nonatomic) int textSelectionBehavior;
-@property(assign, nonatomic) id textSuggestionDelegate;
-@property(assign, nonatomic) BOOL contentsIsSingleValue;
-@property(assign, nonatomic) BOOL acceptsEmoji;
-@property(readonly, assign, nonatomic) UITextSelectionView* selectionView;
-@property(readonly, assign, nonatomic) UITextInteractionAssistant* interactionAssistant;
-@property(readonly, assign, nonatomic) UIView<UITextSelectingContent>* content;
-@property(readonly, assign, nonatomic, getter=isEditable) BOOL editable;
-@property(readonly, assign, nonatomic, getter=isEditing) BOOL editing;
-+(Class)layerClass;
+// in a protocol: @property(assign, nonatomic) UITextAutocapitalizationType autocapitalizationType;
+// in a protocol: @property(assign, nonatomic) UITextAutocorrectionType autocorrectionType;
+// in a protocol: @property(assign, nonatomic) UIKeyboardType keyboardType;
+// in a protocol: @property(assign, nonatomic) UIKeyboardAppearance keyboardAppearance;
+// in a protocol: @property(assign, nonatomic) UIReturnKeyType returnKeyType;
+// in a protocol: @property(assign, nonatomic) BOOL enablesReturnKeyAutomatically;
+// in a protocol: @property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
+// in a protocol: @property(assign, nonatomic) CFCharacterSetRef textTrimmingSet;
+// in a protocol: @property(retain, nonatomic) UIColor* insertionPointColor;
+// in a protocol: @property(assign, nonatomic) unsigned insertionPointWidth;
+// in a protocol: @property(assign, nonatomic) int textLoupeVisibility;
+// in a protocol: @property(assign, nonatomic) int textSelectionBehavior;
+// in a protocol: @property(assign, nonatomic) id textSuggestionDelegate;
+// in a protocol: @property(assign, nonatomic) BOOL contentsIsSingleValue;
+// in a protocol: @property(assign, nonatomic) BOOL acceptsEmoji;
+// in a protocol: @property(readonly, assign, nonatomic) UITextSelectionView* selectionView;
+// in a protocol: @property(readonly, assign, nonatomic) UITextInteractionAssistant* interactionAssistant;
+// in a protocol: @property(readonly, assign, nonatomic) UIView<UITextSelectingContent>* content;
+// in a protocol: @property(readonly, assign, nonatomic, getter=isEditable) BOOL editable;
+// in a protocol: @property(readonly, assign, nonatomic, getter=isEditing) BOOL editing;
+/* since 3.2:
+ // in a protocol: @property(assign, nonatomic) int emptyContentReturnKeyType;
+ // in a protocol: @property(copy) UITextRange* selectedTextRange;
+ // in a protocol: @property(readonly, assign, nonatomic) UITextRange* markedTextRange;
+ // in a protocol: @property(copy, nonatomic) NSDictionary* markedTextStyle;
+ // in a protocol: @property(readonly, assign, nonatomic) UITextPosition* beginningOfDocument;
+ // in a protocol: @property(readonly, assign, nonatomic) UITextPosition* endOfDocument;
+ // in a protocol: @property(assign, nonatomic) id<UITextInputDelegate> inputDelegate;
+ // in a protocol: @property(readonly, assign, nonatomic) id<UITextInputTokenizer> tokenizer;
+ // in a protocol: @property(readonly, assign, nonatomic) UIView* textInputView; 
+ */
+// inherited: +(Class)layerClass;
 +(id)standardTextViewPreferences;
--(id)_doubleTapSpeedFromDefaults;
 -(void)_restoreViewportSettingsWithSize:(CGSize)size;
 -(id)initSimpleHTMLDocumentWithStyle:(id)style editable:(BOOL)editable withFrame:(CGRect)frame withPreferences:(id)preferences;
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(id)commonInitWithFrame:(CGRect)frame;
 -(void)enableReachability;
--(void)dealloc;
--(id)retain;
--(void)release;
--(unsigned)retainCount;
+// inherited: -(void)dealloc;
+// inherited: -(id)retain;
+// inherited: -(void)release;
+// inherited: -(unsigned)retainCount;
 -(void)_reachabilityManagerNotifiedIsReachable:(BOOL)reachable;
--(void)removeFromSuperview;
+// inherited: -(void)removeFromSuperview;
+// inherited: -(void)willMoveToSuperview:(id)superview;
+// inherited: -(void)didMoveToSuperview;
 -(void)stopLoading:(id)loading;
 -(void)setDelegate:(id)delegate;
 -(void)loadRequest:(id)request;
@@ -232,7 +274,6 @@
 -(void)setMinimumScale:(float)scale forDocumentTypes:(int)documentTypes;
 -(void)setMaximumScale:(float)scale forDocumentTypes:(int)documentTypes;
 -(void)setAllowsUserScaling:(BOOL)scaling forDocumentTypes:(int)documentTypes;
--(BOOL)_updatesScroller;
 -(void)_setScrollerOffset:(CGPoint)offset;
 -(void)_restoreScrollPointForce:(BOOL)force;
 -(void)_resetForNewPage;
@@ -245,30 +286,20 @@
 -(CGRect)documentVisibleRectForWebView:(id)webView;
 -(void)_didMoveFromWindow:(id)window toWindow:(id)window2;
 -(void)forceLayout;
--(void)layoutSubviews;
--(void)setNeedsDisplayInRect:(CGRect)rect;
--(void)setNeedsDisplay;
+// inherited: -(void)layoutSubviews;
+// inherited: -(void)setNeedsDisplayInRect:(CGRect)rect;
+// inherited: -(void)setNeedsDisplay;
 -(void)setSmoothsFonts:(BOOL)fonts;
 -(void)setDrawsBackground:(BOOL)background;
 -(void)setOpaque:(BOOL)opaque;
 -(CGImageRef)createSnapshotWithRect:(CGRect)rect;
--(BOOL)cancelMouseTracking;
--(BOOL)cancelTouchTracking;
+// inherited: -(BOOL)cancelMouseTracking;
+// inherited: -(BOOL)cancelTouchTracking;
 -(void)setIgnoresFocusingMouse:(BOOL)mouse;
 -(void)setIgnoresKeyEvents:(BOOL)events;
--(void)setTilingArea:(int)area;
--(void)_didScroll;
--(void)_sendInternalEvent:(GSEventRef)event;
--(CGPoint)_viewportLocationForEvent:(GSEventRef)event;
+// inherited: -(void)setTilingArea:(int)area;
+// inherited: -(void)_didScroll;
 -(BOOL)_isSubviewOfPlugInView:(id)view;
--(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
--(void)setDoubleTapDelay:(float)delay;
--(float)doubleTapDelay;
--(void)keyUp:(GSEventRef)up;
--(void)keyDown:(GSEventRef)down;
--(void)gestureStarted:(GSEventRef)started;
--(void)gestureChanged:(GSEventRef)changed;
--(void)gestureEnded:(GSEventRef)ended;
 -(void)_notifyPlugInViewsOfScaleChange;
 -(void)_notifyContentHostingLayersOfScaleChange;
 -(void)revealedSelectionByScrollingWebFrame:(id)frame;
@@ -276,16 +307,9 @@
 -(void)zoomToScale:(float)scale;
 -(void)_reshapePlugInViews;
 -(void)redrawScaledDocument;
--(void)setOrientation:(int)orientation;
--(void)_zoomToNode:(id)node;
--(void)scrollCaretToVisible:(id)visible;
--(CGPoint)_centeredScrollPointForPoint:(CGPoint)point scale:(float)scale;
--(CGPoint)_doubleTapScrollPointForRect:(CGRect)rect scale:(float)scale event:(GSEventRef)event;
 -(float)_doubleTapScaleForSize:(float)size isWidth:(BOOL)width;
--(BOOL)_doubleTapZoomToRect:(CGRect)rect scale:(float)scale fromEvent:(GSEventRef)event;
 -(void)_handleDoubleTapAtPoint:(CGPoint)point inWebHTMLView:(id)webHTMLView outRenderRect:(CGRect*)rect;
 -(void)_handleDoubleTapAtPoint:(CGPoint)point inWebPDFView:(id)webPDFView outRenderRect:(CGRect*)rect;
--(void)doubleTap:(GSEventRef)tap;
 -(CGRect)doubleTapRect;
 -(BOOL)doubleTapRectIsReplaced;
 -(void)setIsStandaloneEditableView:(BOOL)view;
@@ -317,51 +341,51 @@
 -(id)delegate;
 -(void)addInputString:(id)string;
 -(void)deleteFromInput;
--(void)deleteBackward;
--(void)insertText:(id)text;
--(void)replaceRangeWithTextWithoutClosingTyping:(NSRange)textWithoutClosingTyping replacementText:(id)text;
+// in a protocol: -(void)deleteBackward;
+// in a protocol: -(void)insertText:(id)text;
+// in a protocol: -(void)replaceRangeWithTextWithoutClosingTyping:(NSRange)textWithoutClosingTyping replacementText:(id)text;
 -(void)replaceRangeWithText:(NSRange)text replacementText:(id)text2;
 -(void)replaceCurrentWordWithText:(id)text;
--(void)setMarkedText:(id)text;
--(void)setMarkedText:(id)text selectedRange:(NSRange)range;
+// in a protocol: -(void)setMarkedText:(id)text;
+// in a protocol: -(void)setMarkedText:(id)text selectedRange:(NSRange)range;
 -(void)confirmMarkedText:(id)text;
--(id)markedText;
+// in a protocol: -(id)markedText;
 -(unsigned short)characterInRelationToCaretSelection:(int)caretSelection;
--(unsigned short)characterBeforeCaretSelection;
+// in a protocol: -(unsigned short)characterBeforeCaretSelection;
 -(unsigned short)characterAfterCaretSelection;
--(id)fontForCaretSelection;
--(id)textColorForCaretSelection;
--(CGRect)rectForNSRange:(NSRange)nsrange;
+// in a protocol: -(id)fontForCaretSelection;
+// in a protocol: -(id)textColorForCaretSelection;
+// in a protocol: -(CGRect)rectForNSRange:(NSRange)nsrange;
 -(id)rectsForNSRange:(NSRange)nsrange;
--(CGRect)rectContainingCaretSelection;
--(id)wordRangeContainingCaretSelection;
--(id)wordContainingCaretSelection;
--(id)wordInRange:(id)range;
+// in a protocol: -(CGRect)rectContainingCaretSelection;
+// in a protocol: -(id)wordRangeContainingCaretSelection;
+// in a protocol: -(id)wordContainingCaretSelection;
+// in a protocol: -(id)wordInRange:(id)range;
 -(void)expandSelectionToStartOfWordContainingCaretSelection;
 -(int)wordOffsetInRange:(id)range;
 -(void)replaceSelectionWithWebArchive:(id)webArchive selectReplacement:(BOOL)replacement smartReplace:(BOOL)replace;
--(NSRange)markedTextRange;
--(NSRange)selectionRange;
--(id)selectedDOMRange;
--(void)setSelectedDOMRange:(id)range affinityDownstream:(BOOL)downstream;
+// in a protocol: -(NSRange)markedTextRange;
+// in a protocol: -(NSRange)selectionRange;
+// in a protocol: -(id)selectedDOMRange;
+// in a protocol: -(void)setSelectedDOMRange:(id)range affinityDownstream:(BOOL)downstream;
 -(id)rangeByMovingCurrentSelection:(int)selection;
 -(id)rangeByExtendingCurrentSelection:(int)selection;
 -(void)extendCurrentSelection:(int)selection;
--(BOOL)hasSelection;
+// in a protocol: -(BOOL)hasSelection;
 -(BOOL)hasSelectionInPlainTextRegion;
 -(BOOL)selectionAtDocumentStart;
--(BOOL)selectionAtSentenceStart;
+// in a protocol: -(BOOL)selectionAtSentenceStart;
 -(BOOL)selectionAtWordStart;
 -(BOOL)rangeAtSentenceStart:(id)sentenceStart;
--(void)moveBackward:(unsigned)backward;
--(void)moveForward:(unsigned)forward;
--(void)selectAll;
+// in a protocol: -(void)moveBackward:(unsigned)backward;
+// in a protocol: -(void)moveForward:(unsigned)forward;
+// in a protocol: -(void)selectAll;
 -(void)setText:(id)text;
 -(id)text;
--(BOOL)hasContent;
+// in a protocol: -(BOOL)hasContent;
 -(void)setCaretChangeListener:(id)listener;
 -(CGRect)convertCaretRect:(CGRect)rect;
--(id)keyboardInputView;
+// in a protocol: -(id)keyboardInputView;
 -(id)implementationWebView;
 -(BOOL)keyboardInput:(id)input shouldReplaceTextInRange:(NSRange)range replacementText:(id)text;
 -(BOOL)keyboardInput:(id)input shouldInsertText:(id)text isMarkedText:(BOOL)text3;
@@ -370,32 +394,33 @@
 -(void)keyboardInputChangedSelection:(id)selection;
 -(id)automaticallySelectedOverlay;
 -(void)setBottomBufferHeight:(float)height;
--(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
--(BOOL)isProxyFor:(id)aFor;
+// in a protocol: -(BOOL)isProxyFor:(id)aFor;
 -(BOOL)requiresKeyEvents;
--(void)handleKeyEvent:(GSEventRef)event;
+// in a protocol: -(void)handleKeyEvent:(GSEventRef)event;
 -(void)setPaused:(BOOL)paused;
 -(id)webView:(id)view plugInViewWithArguments:(id)arguments fromPlugInPackage:(id)package;
 -(void)webView:(id)view willShowFullScreenForPlugInView:(id)view2;
 -(void)webView:(id)view didHideFullScreenForPlugInView:(id)view2;
 -(void)didRemovePlugInView:(id)view;
 -(BOOL)isShowingFullScreenPlugInUI;
--(id)textInputTraits;
--(void)forwardInvocation:(id)invocation;
--(id)methodSignatureForSelector:(SEL)selector;
--(void)takeTraitsFrom:(id)from;
--(void)endSelectionChange;
--(void)beginSelectionChange;
+// in a protocol: -(id)textInputTraits;
+// inherited: -(void)forwardInvocation:(id)invocation;
+// inherited: -(id)methodSignatureForSelector:(SEL)selector;
+// in a protocol: -(void)takeTraitsFrom:(id)from;
+// in a protocol: -(void)endSelectionChange;
+// in a protocol: -(void)beginSelectionChange;
 -(void)updateSelection;
--(CGRect)selectionClipRect;
--(void)cut:(id)cut;
--(void)copy:(id)copy;
+// in a protocol: -(CGRect)selectionClipRect;
+// inherited: -(void)cut:(id)cut;
+// inherited: -(void)copy:(id)copy;
 -(id)_supportedPasteboardTypesForCurrentSelection;
 -(id)_documentFragmentForPasteboardItemAtIndex:(int)index;
--(void)paste:(id)paste;
--(void)select:(id)select;
--(void)selectAll:(id)all;
--(BOOL)canPerformAction:(SEL)action withSender:(id)sender;
+// inherited: -(void)paste:(id)paste;
+// inherited: -(void)select:(id)select;
+// inherited: -(void)selectAll:(id)all;
+// inherited: -(BOOL)canPerformAction:(SEL)action withSender:(id)sender;
+// inherited: -(void)replace:(id)replace;
+// inherited: -(void)promptForReplace:(id)replace;
 -(CGRect)visibleFrame;
 -(CGRect)visibleContentFrame;
 -(CGRect)autoscrollDragFrame;
@@ -413,6 +438,82 @@
 -(void)detachSelectionView;
 -(void)detachInteractionAssistant;
 -(int)selectionState;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL sizeUpdatesSuspended;
+@property(assign, nonatomic, getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
++(double)getTimestamp;
+-(void)setUsesUIScrollView;
+-(float)_documentScale;
+-(void)_updateScrollViewBoundaryZoomScales;
+-(BOOL)isClassicMode;
+-(void)setUpdatesScrollView:(BOOL)view;
+-(BOOL)updatesScrollView;
+-(CGImageRef)newSnapshotWithRect:(CGRect)rect;
+-(void)_notifyPlugInViewsOfWillBeginZooming;
+-(void)_notifyPlugInViewsOfDidZoom;
+-(id)checkSpellingOfString:(id)string;
+-(void)sendOrientationEventForOrientation:(int)orientation;
+-(void)_handleDoubleTapAtLocation:(CGPoint)location;
+-(void)_handleTwoFingerDoubleTapAtLocation:(CGPoint)location;
+-(void)assistFormNode:(id)node;
+-(void)_resetFormDataForFrame:(id)frame;
+-(void)_clearAllConsoleMessages;
+-(void)_setPDFView:(id)view;
+-(void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)userScrolling;
+-(void)_cleanUpPDF;
+-(id)formElement;
+-(void)setContinuousSpellCheckingEnabled:(BOOL)enabled;
+-(BOOL)hasPlugInSubviews;
+-(void)webView:(id)view willAddPlugInView:(id)view2;
+-(void)didZoom;
+// in a protocol: -(BOOL)hasText;
+-(void)_setMarkedText:(id)text selectedRange:(NSRange)range;
+// in a protocol: -(void)unmarkText;
+// in a protocol: -(id)textInRange:(id)range;
+// in a protocol: -(id)textRangeFromPosition:(id)position toPosition:(id)position2;
+-(id)rangeOfEnclosingWord:(id)enclosingWord;
+// in a protocol: -(void)replaceRange:(id)range withText:(id)text;
+// in a protocol: -(int)comparePosition:(id)position toPosition:(id)position2;
+// in a protocol: -(int)offsetFromPosition:(id)position toPosition:(id)position2;
+// in a protocol: -(id)positionFromPosition:(id)position offset:(int)offset;
+// in a protocol: -(id)positionFromPosition:(id)position inDirection:(int)direction offset:(int)offset;
+// in a protocol: -(BOOL)isPosition:(id)position atBoundary:(int)boundary inDirection:(int)direction;
+// in a protocol: -(id)positionFromPosition:(id)position toBoundary:(int)boundary inDirection:(int)direction;
+// in a protocol: -(BOOL)isPosition:(id)position withinTextUnit:(int)unit inDirection:(int)direction;
+-(void)_scrollRectToVisible:(CGRect)visible animated:(BOOL)animated;
+// in a protocol: -(id)rangeEnclosingPosition:(id)position withGranularity:(int)granularity inDirection:(int)direction;
+// in a protocol: -(CGRect)firstRectForRange:(id)range;
+-(CGRect)_lastRectForRange:(id)range;
+// in a protocol: -(CGRect)caretRectForPosition:(id)position;
+// in a protocol: -(id)closestPositionToPoint:(CGPoint)point;
+// in a protocol: -(id)closestPositionToPoint:(CGPoint)point withinRange:(id)range;
+// in a protocol: -(id)characterRangeAtPoint:(CGPoint)point;
+// in a protocol: -(id)positionWithinRange:(id)range farthestInDirection:(int)direction;
+// in a protocol: -(id)characterRangeByExtendingPosition:(id)position inDirection:(int)direction;
+// in a protocol: -(int)baseWritingDirectionForPosition:(id)position inDirection:(int)direction;
+// in a protocol: -(void)setBaseWritingDirection:(int)direction forRange:(id)range;
+#else
+-(id)_doubleTapSpeedFromDefaults;
+-(BOOL)_updatesScroller;
+-(void)_sendInternalEvent:(GSEventRef)event;
+-(CGPoint)_viewportLocationForEvent:(GSEventRef)event;
+-(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+-(void)setDoubleTapDelay:(float)delay;
+-(float)doubleTapDelay;
+// inherited: -(void)keyUp:(GSEventRef)up;
+// inherited: -(void)keyDown:(GSEventRef)down;
+// inherited: -(void)gestureStarted:(GSEventRef)started;
+// inherited: -(void)gestureChanged:(GSEventRef)changed;
+// inherited: -(void)gestureEnded:(GSEventRef)ended;
+-(void)setOrientation:(int)orientation;
+-(void)_zoomToNode:(id)node;
+-(void)scrollCaretToVisible:(id)visible;
+-(CGPoint)_centeredScrollPointForPoint:(CGPoint)point scale:(float)scale;
+-(CGPoint)_doubleTapScrollPointForRect:(CGRect)rect scale:(float)scale event:(GSEventRef)event;
+-(BOOL)_doubleTapZoomToRect:(CGRect)rect scale:(float)scale fromEvent:(GSEventRef)event;
+-(void)doubleTap:(GSEventRef)tap;
+-(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
+#endif
 @end
 
 @interface UIWebDocumentView (SyntheticEvents)
@@ -421,6 +522,7 @@
 -(id)scriptingInfoWithChildren;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 @interface UIWebDocumentView (FieldEditorSupport)
 -(id)_parentTextViewForLoupe;
 -(BOOL)_usesSingleLineSelectionBehavior;
@@ -445,6 +547,7 @@
 -(void)webView:(id)view didFinishDocumentLoadForFrame:(id)frame;
 -(void)webView:(id)view didFirstLayoutInFrame:(id)frame;
 @end
+#endif
 
 @interface UIWebDocumentView (InteractionPrivate)
 -(BOOL)canOpenNewPageForURL:(id)url;
@@ -458,11 +561,6 @@
 +(id)_highlightView;
 -(void)clearInteractionTimer;
 -(void)performInteractionSelector:(SEL)selector afterDelay:(double)delay;
--(CGPoint)convertWindowPointToViewport:(CGPoint)viewport;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseUp:(GSEventRef)up;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)interactionMouseUp:(GSEventRef)up;
 -(void)_resetInteractionWithLocation:(CGPoint)location;
 -(void)startInteractionWithLocation:(CGPoint)location;
 -(void)continueInteractionWithLocation:(CGPoint)location;
@@ -471,26 +569,6 @@
 -(BOOL)startActionSheet;
 -(BOOL)isInInteraction;
 -(BOOL)willInteractWithLocation:(CGPoint)location;
--(void)interactionMouseDown:(GSEventRef)down;
--(void)defaultMouseDragged:(GSEventRef)dragged;
--(void)defaultMouseUp:(GSEventRef)up;
--(BOOL)canHandleHandEvent:(GSEventRef)event;
--(BOOL)handleHandEvent:(GSEventRef)event;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(void)webView:(id)view eventRegionsChanged:(id)changed;
--(BOOL)_directEventsHitTest:(CGPoint)test;
--(BOOL)_directEventsCheckEvent:(GSEventRef)event;
--(BOOL)_directEventsProcessEvent:(GSEventRef)event;
--(void)cancelInteractionWithCandidate;
--(BOOL)_interactionCandidateHasCustomHandlerForSelector:(SEL)selector;
--(void)_generateAndForwardUIEventForGSEvent:(GSEventRef)gsevent withTouchPhase:(int)touchPhase;
--(void)forwardMouseUpToInteractionCandidate:(GSEventRef)interactionCandidate;
--(void)forwardMouseDraggedToInteractionCandidate:(GSEventRef)interactionCandidate;
--(void)forwardEventsToInteractionCandidate;
--(void)performCandidateClick:(id)click;
 -(void)performClick:(id)click;
 -(void)_sendMouseMoveAndAttemptClick:(id)click;
 -(void)attemptClick:(id)click;
@@ -522,8 +600,51 @@
 -(void)hideBrowserSheet:(id)sheet;
 -(void)actionWillStart;
 -(void)actionDidFinish;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)installGestureRecognizers;
+-(BOOL)gestureRecognizer:(id)recognizer shouldReceiveTouch:(id)touch;
+-(BOOL)gestureRecognizer:(id)recognizer canPreventGestureRecognizer:(id)recognizer2;
+-(void)_singleTapRecognized:(id)recognized;
+-(void)_doubleTapRecognized:(id)recognized;
+-(void)_twoFingerDoubleTapRecognized:(id)recognized;
+-(BOOL)gestureRecognizerShouldBegin:(id)gestureRecognizer;
+-(void)_highlightLongPressRecognized:(id)recognized;
+-(void)_longPressRecognized:(id)recognized;
+-(void)_twoFingerPanRecognized:(id)recognized;
+-(BOOL)eventCanTriggerGestureScrolling:(GSEventRef)scrolling;
+-(BOOL)supportsTwoFingerScrollingAtTouchLocation:(CGPoint)touchLocation andLocation:(CGPoint)location;
+-(void)showBrowserSheet:(id)sheet shouldShowFromPoint:(BOOL)point point:(CGPoint)point3;
+-(void)showBrowserSheet:(id)sheet atPoint:(CGPoint)point;
+#else
+-(CGPoint)convertWindowPointToViewport:(CGPoint)viewport;
+-(void)mouseDown:(GSEventRef)down;
+-(void)mouseUp:(GSEventRef)up;
+-(void)mouseDragged:(GSEventRef)dragged;
+-(void)interactionMouseUp:(GSEventRef)up;
+-(void)interactionMouseDown:(GSEventRef)down;
+-(void)defaultMouseDragged:(GSEventRef)dragged;
+-(void)defaultMouseUp:(GSEventRef)up;
+-(BOOL)canHandleHandEvent:(GSEventRef)event;
+-(BOOL)handleHandEvent:(GSEventRef)event;
+-(void)touchesBegan:(id)began withEvent:(id)event;
+-(void)touchesMoved:(id)moved withEvent:(id)event;
+-(void)touchesEnded:(id)ended withEvent:(id)event;
+-(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+-(void)webView:(id)view eventRegionsChanged:(id)changed;
+-(BOOL)_directEventsHitTest:(CGPoint)test;
+-(BOOL)_directEventsCheckEvent:(GSEventRef)event;
+-(BOOL)_directEventsProcessEvent:(GSEventRef)event;
+-(void)cancelInteractionWithCandidate;
+-(BOOL)_interactionCandidateHasCustomHandlerForSelector:(SEL)selector;
+-(void)_generateAndForwardUIEventForGSEvent:(GSEventRef)gsevent withTouchPhase:(int)touchPhase;
+-(void)forwardMouseUpToInteractionCandidate:(GSEventRef)interactionCandidate;
+-(void)forwardMouseDraggedToInteractionCandidate:(GSEventRef)interactionCandidate;
+-(void)forwardEventsToInteractionCandidate;
+-(void)performCandidateClick:(id)click;
+#endif
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 @interface UIWebDocumentView (Messaging)
 -(void)webView:(id)view didReceiveMessage:(id)message;
 -(void)setAllowsMessaging:(BOOL)messaging;
@@ -531,6 +652,7 @@
 -(id)messagesMatchingMask:(int)mask;
 -(void)clearMessagesMatchingMask:(int)mask;
 @end
+#endif
 
 @interface UIWebDocumentView (PDF)
 +(id)_PDFPageNumberLabel;
@@ -540,9 +662,10 @@
 
 @interface UIWebDocumentView (Selecting)
 -(BOOL)mouseEventsChangeSelection;
--(BOOL)shouldChangeSelectionForEvent:(GSEventRef)event;
 -(CGRect)visibleRectForSelecting;
 -(CGPoint)constrainedPoint:(CGPoint)point;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)shouldChangeSelectionForEvent:(GSEventRef)event;
 -(void)textLoupeTimerAction;
 -(void)selectionMouseDown:(GSEventRef)down;
 -(void)selectionMouseDragged:(GSEventRef)dragged;
@@ -550,11 +673,14 @@
 -(BOOL)shouldUseTextLoupe;
 -(void)updateTextLoupe:(CGPoint)loupe;
 -(BOOL)autocorrectPromptCapturedMouseDown:(GSEventRef)down;
+#endif
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 @interface UIWebDocumentView (Style)
 -(id)createCSSStyleDeclaration;
 @end
+#endif
 
 @interface UIWebDocumentView (UIWebDocumentViewTextSelecting) <UITextSelectingContent, UIAutoscrollContainer>
 -(void)selectWord;
@@ -562,56 +688,71 @@
 -(CGPoint)convertPointToSelectedFrameCoordinates:(CGPoint)selectedFrameCoordinates;
 -(void)selectionChanged;
 -(void)selectionChanged:(id)changed;
--(void)clearSelection;
+// in a protocol: -(void)clearSelection;
 -(void)alterSelection:(CGPoint)selection granularity:(int)granularity;
--(void)setSelectionToNextGranularity:(CGPoint)nextGranularity;
--(int)selectionGranularity;
--(void)setSelectionGranularity:(int)granularity;
--(BOOL)selectionGranularityIncreasing;
--(void)setSelectionGranularityIncreasing:(BOOL)increasing;
--(BOOL)hasSelection;
--(BOOL)hasEditableSelection;
--(BOOL)hasMarkedText;
--(CGRect)closestCaretRectInMarkedTextRangeForPoint:(CGPoint)point;
--(unsigned)selectionOffsetInMarkedText;
--(int)selectionState;
--(void)collapseSelection;
+// in a protocol: -(void)setSelectionToNextGranularity:(CGPoint)nextGranularity;
+// in a protocol: -(int)selectionGranularity;
+// in a protocol: -(void)setSelectionGranularity:(int)granularity;
+// in a protocol: -(BOOL)selectionGranularityIncreasing;
+// in a protocol: -(void)setSelectionGranularityIncreasing:(BOOL)increasing;
+// in a protocol: -(BOOL)hasSelection;
+// in a protocol: -(BOOL)hasEditableSelection;
+// in a protocol: -(BOOL)hasMarkedText;
+// in a protocol: -(CGRect)closestCaretRectInMarkedTextRangeForPoint:(CGPoint)point;
+// in a protocol: -(unsigned)selectionOffsetInMarkedText;
+// in a protocol: -(int)selectionState;
+// in a protocol: -(void)collapseSelection;
 -(void)setCaretInsets:(UIEdgeInsets)insets;
 -(UIEdgeInsets)caretInsets;
--(CGRect)caretRect;
--(CGRect)closestCaretRectForPoint:(CGPoint)point inSelection:(BOOL)selection;
--(BOOL)pointAtStartOfLine:(CGPoint)line;
--(BOOL)pointAtEndOfLine:(CGPoint)line;
--(BOOL)isPoint:(CGPoint)point inRange:(id)range;
--(int)selectionBaseWritingDirection:(BOOL*)direction;
--(void)toggleBaseWritingDirection;
--(void)setBaseWritingDirection:(int)direction;
--(void)setRangedSelectionBaseToCurrentSelection;
--(void)setRangedSelectionBaseToCurrentSelectionStart;
--(void)setRangedSelectionBaseToCurrentSelectionEnd;
--(void)clearRangedSelectionInitialExtent;
--(void)setRangedSelectionInitialExtentToCurrentSelectionStart;
--(void)setRangedSelectionInitialExtentToCurrentSelectionEnd;
--(BOOL)setRangedSelectionExtentPoint:(CGPoint)point baseIsStart:(BOOL)start;
+// in a protocol: -(CGRect)caretRect;
+// in a protocol: -(CGRect)closestCaretRectForPoint:(CGPoint)point inSelection:(BOOL)selection;
+// in a protocol: -(BOOL)pointAtStartOfLine:(CGPoint)line;
+// in a protocol: -(BOOL)pointAtEndOfLine:(CGPoint)line;
+// in a protocol: -(BOOL)isPoint:(CGPoint)point inRange:(id)range;
+// in a protocol: -(int)selectionBaseWritingDirection:(BOOL*)direction;
+// in a protocol: -(void)toggleBaseWritingDirection;
+// in a protocol: -(void)setBaseWritingDirection:(int)direction;
+// in a protocol: -(void)setRangedSelectionBaseToCurrentSelection;
+// in a protocol: -(void)setRangedSelectionBaseToCurrentSelectionStart;
+// in a protocol: -(void)setRangedSelectionBaseToCurrentSelectionEnd;
+// in a protocol: -(void)clearRangedSelectionInitialExtent;
+// in a protocol: -(void)setRangedSelectionInitialExtentToCurrentSelectionStart;
+// in a protocol: -(void)setRangedSelectionInitialExtentToCurrentSelectionEnd;
+// in a protocol: -(BOOL)setRangedSelectionExtentPoint:(CGPoint)point baseIsStart:(BOOL)start;
 -(void)setRangedSelectionExtentPoint:(CGPoint)point baseIsStart:(BOOL)start allowFlipping:(BOOL)flipping;
--(void)setSelectionWithFirstPoint:(CGPoint)firstPoint secondPoint:(CGPoint)point;
--(id)wordAtPoint:(CGPoint)point;
--(void)moveSelectionToStartOrEndOfCurrentWord;
--(id)selectionRectsForRange:(id)range;
--(id)selectionRects;
--(void)smartExtendRangedSelection:(int)selection;
--(void)setRangedSelectionWithExtentPoint:(CGPoint)extentPoint;
--(void)setSelectionToEnd;
--(void)setSelectionToStart;
--(void)selectAll;
+// in a protocol: -(void)setSelectionWithFirstPoint:(CGPoint)firstPoint secondPoint:(CGPoint)point;
+// in a protocol: -(id)wordAtPoint:(CGPoint)point;
+// in a protocol: -(void)moveSelectionToStartOrEndOfCurrentWord;
+// in a protocol: -(id)selectionRectsForRange:(id)range;
+// in a protocol: -(id)selectionRects;
+// in a protocol: -(void)smartExtendRangedSelection:(int)selection;
+// in a protocol: -(void)setRangedSelectionWithExtentPoint:(CGPoint)extentPoint;
+// in a protocol: -(void)setSelectionToEnd;
+// in a protocol: -(void)setSelectionToStart;
+// in a protocol: -(void)selectAll;
 -(BOOL)selectionIsCaretInDisplayBlockElementAtOffset:(int)offset;
--(void)setAutoscrollContentOffset:(CGPoint)offset;
--(CGPoint)autoscrollContentOffset;
--(CGRect)contentFrameForView:(id)view;
--(void)startAutoscroll:(CGPoint)autoscroll;
--(void)cancelAutoscroll;
--(void)scrollSelectionToVisible:(BOOL)visible;
--(void)setSelectionWithPoint:(CGPoint)point;
--(CGRect)visibleBounds;
+// in a protocol: -(void)setAutoscrollContentOffset:(CGPoint)offset;
+// in a protocol: -(CGPoint)autoscrollContentOffset;
+// in a protocol: -(CGRect)contentFrameForView:(id)view;
+// in a protocol: -(void)startAutoscroll:(CGPoint)autoscroll;
+// in a protocol: -(void)cancelAutoscroll;
+// in a protocol: -(void)scrollSelectionToVisible:(BOOL)visible;
+// in a protocol: -(void)setSelectionWithPoint:(CGPoint)point;
+// in a protocol: -(CGRect)visibleBounds;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+// in a protocol: @property(assign, nonatomic) CGPoint autoscrollContentOffset;
+// in a protocol: @property(readonly, assign, nonatomic) int selectionState;
+// in a protocol: @property(assign, nonatomic) int selectionGranularity;
+// in a protocol: @property(assign, nonatomic) BOOL selectionGranularityIncreasing;
+// in a protocol: -(id)wordContainingCaretSelection;
+#else
+// in a protocol: -(int)selectionGranularity;
+// in a protocol: -(void)setSelectionGranularity:(int)granularity;
+// in a protocol: -(BOOL)selectionGranularityIncreasing;
+// in a protocol: -(void)setSelectionGranularityIncreasing:(BOOL)increasing;
+// in a protocol: -(int)selectionState;
+// in a protocol: -(void)setAutoscrollContentOffset:(CGPoint)offset;
+// in a protocol: -(CGPoint)autoscrollContentOffset;
+#endif
 @end
 

@@ -9,6 +9,7 @@
 
 @class UIWebSelectionGraph, UIWebSelectionNode, UIWebTextRangeView, UIWebSelectionOutline, UIWebSelectionHandle, UIWebSelection, UIWebDocumentView;
 
+__attribute__((visibility("hidden")))
 @interface UIWebSelectionView : UIView {
 	UIView* _center;
 	CGRect _selectionFrame;
@@ -90,6 +91,7 @@
 -(void)animateSloppyReleaseOfHandleInText:(id)text withMagnifier:(id)magnifier;
 -(CGRect)desiredBox;
 -(void)removeFromSuperview;
+-(void)updateSelectionRects __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)selectionChanged;
 -(id)nodeInPristineGraphAtPoint:(CGPoint)point;
 -(void)startSelectionCreationWithPoint:(CGPoint)point;

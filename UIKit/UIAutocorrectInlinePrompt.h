@@ -6,10 +6,13 @@
 #import "UIKeyboardCandidateList.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
+@private
 	CGRect m_originalTypedTextRect;
 	NSString* m_typedText;
 	NSString* m_correction;
@@ -24,33 +27,37 @@
 	unsigned m_index;
 	int m_promptTextType;
 }
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(int)textEffectsVisibilityLevel;
--(void)dealloc;
+// inherited: -(void)dealloc;
 -(void)removePromptSubviews;
 -(CGRect)shadowFrameForFrame:(CGRect)frame;
--(void)setUIKeyboardCandidateListDelegate:(id)delegate;
--(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
--(void)setCandidates:(id)candidates type:(int)type inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
--(unsigned)currentIndex;
--(void)candidateAcceptedAtIndex:(unsigned)index;
--(unsigned)count;
--(void)configureKeyboard:(id)keyboard;
--(void)layout;
--(void)showCandidateAtIndex:(unsigned)index;
--(void)showNextCandidate;
--(void)showPageAtIndex:(unsigned)index;
--(void)showNextPage;
--(void)showPreviousPage;
--(id)currentCandidate;
--(id)candidateAtIndex:(unsigned)index;
+// in a protocol: -(void)setUIKeyboardCandidateListDelegate:(id)delegate;
+// in a protocol: -(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
+// in a protocol: -(void)setCandidates:(id)candidates type:(int)type inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
+// in a protocol: -(unsigned)currentIndex;
+// in a protocol: -(void)candidateAcceptedAtIndex:(unsigned)index;
+// in a protocol: -(unsigned)count;
+// in a protocol: -(void)configureKeyboard:(id)keyboard;
+// in a protocol: -(void)layout;
+// in a protocol: -(void)showCandidateAtIndex:(unsigned)index;
+// in a protocol (since 3.2): -(void)showPreviousCandidate;
+// in a protocol: -(void)showNextCandidate;
+// in a protocol: -(void)showPageAtIndex:(unsigned)index;
+// in a protocol: -(void)showNextPage;
+// in a protocol: -(void)showPreviousPage;
+// in a protocol: -(id)currentCandidate;
+// in a protocol: -(id)candidateAtIndex:(unsigned)index;
 -(void)setCorrection:(id)correction typedText:(id)text inRect:(CGRect)rect maxX:(float)x;
 -(void)setCandidateObject:(id)object type:(int)type typedText:(id)text inRect:(CGRect)rect maxX:(float)x;
 -(BOOL)isAcceptableTextEffectsFrame:(CGRect)frame afterScrollBy:(float)by;
 -(float)maximumCandidateWidth;
 -(CGRect)horizontallySquishedCorrectionFrame:(CGRect)frame;
--(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_1, __IPHONE_3_1);
--(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height withExtraGap:(float)extraGap __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+-(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height withExtraGap:(float)extraGap;
+#else
+-(CGRect)correctionFrameFromDesiredFrame:(CGRect)desiredFrame textHeight:(int)height;
+#endif
 -(id)correction;
 -(id)typedText;
 -(id)typedTextView;
@@ -62,17 +69,24 @@
 -(BOOL)pointInside:(CGPoint)inside forEvent:(GSEventRef)event;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(void)dismiss;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 -(void)_candidateSelected:(id)selected;
 -(unsigned)index;
 -(unsigned)numberOfShownItems;
 -(void)setSelectedItem:(unsigned)item;
 -(BOOL)prepareForAnimation:(CGRect)animation;
 -(BOOL)needsWebDocumentViewEventsDirectly;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(float)minimumWidthForCorrection;
+-(void)accept;
+-(void)updateHighlighting:(GSEventRef)highlighting;
+#endif
 @end
+
+
 

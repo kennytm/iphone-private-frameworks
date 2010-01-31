@@ -6,7 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIColor.h>
 
-
+__attribute__((visibility("hidden")))
 @interface UIDeviceRGBColor : UIColor {
 	float redComponent;
 	float greenComponent;
@@ -14,19 +14,20 @@
 	float alphaComponent;
 	CGColorRef cachedColor;
 }
--(id)initWithHue:(float)hue saturation:(float)saturation brightness:(float)brightness alpha:(float)alpha;
--(id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
--(id)initWithCGColor:(CGColorRef)cgcolor;
--(void)dealloc;
--(id)colorWithAlphaComponent:(float)alphaComponent;
+// inherited: -(id)initWithHue:(float)hue saturation:(float)saturation brightness:(float)brightness alpha:(float)alpha;
+// inherited: -(id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+// inherited: -(id)initWithCGColor:(CGColorRef)cgcolor;
+// inherited: -(void)dealloc;
+// inherited: -(id)colorWithAlphaComponent:(float)alphaComponent;
 -(CGColorRef)_createCGColorWithAlpha:(float)alpha;
--(void)set;
--(void)setFill;
--(void)setStroke;
+// inherited: -(void)set;
+// inherited: -(void)setFill;
+// inherited: -(void)setStroke;
 -(id)colorSpaceName;
--(id)description;
--(BOOL)isEqual:(id)equal;
--(unsigned)hash;
--(CGColorRef)CGColor;
+// inherited: -(id)description;
+// inherited: -(BOOL)isEqual:(id)equal;
+// inherited: -(unsigned)hash;
+// inherited: -(CGColorRef)CGColor;
+// inherited (since 3.2): -(float)alphaComponent;
 @end
 

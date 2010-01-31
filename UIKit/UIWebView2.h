@@ -38,11 +38,6 @@
 -(void)setOpaque:(BOOL)opaque;
 -(void)setBackgroundColor:(id)color;
 -(void)view:(id)view didSetFrame:(CGRect)frame oldFrame:(CGRect)frame3;
--(void)willStartGesturesInView:(id)view forEvent:(GSEventRef)event;
--(void)didFinishGesturesInView:(id)view forEvent:(GSEventRef)event;
--(void)scrollerWillStartDragging:(id)scroller;
--(void)scrollerDidEndDragging:(id)scroller willSmoothScroll:(BOOL)scroll;
--(void)scrollerDidEndSmoothScrolling:(id)scroller;
 -(void)_reportError:(id)error;
 -(void)webView:(id)view decidePolicyForNewWindowAction:(id)newWindowAction request:(id)request newFrameName:(id)name decisionListener:(id)listener;
 -(void)webView:(id)view decidePolicyForNavigationAction:(id)navigationAction request:(id)request frame:(id)frame decisionListener:(id)listener;
@@ -69,12 +64,36 @@
 -(CGImageRef)createSnapshotWithRect:(CGRect)rect;
 -(void)saveGeolocation:(id)geolocation;
 -(id)_documentView;
--(id)_scroller;
 -(void)_setDrawsCheckeredPattern:(BOOL)pattern;
 -(void)_setWebSelectionEnabled:(BOOL)enabled;
 -(void)_setDrawInWebThread:(BOOL)webThread;
 -(void)_setAllowsPopUps:(BOOL)ups __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)_allowsPopUps __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_keyboardDidShow:(id)_keyboard;
+-(void)_keyboardDidHide:(id)_keyboard;
+// in a protocol: -(id)viewForZoomingInScrollView:(id)scrollView;
+// in a protocol: -(void)scrollViewWillBeginZooming:(id)scrollView withView:(id)view;
+// in a protocol: -(void)scrollViewDidZoom:(id)scrollView;
+// in a protocol: -(void)scrollViewDidEndZooming:(id)scrollView withView:(id)view atScale:(float)scale;
+// in a protocol: -(void)scrollViewWillBeginDragging:(id)scrollView;
+// in a protocol: -(void)scrollViewDidEndDragging:(id)scrollView willDecelerate:(BOOL)decelerate;
+// in a protocol: -(void)scrollViewDidEndDecelerating:(id)scrollView;
+-(void)webView:(id)view didReceiveTitle:(id)title forFrame:(id)frame;
+-(id)webView:(id)view connectionPropertiesForResource:(id)resource dataSource:(id)source;
+-(CGImageRef)newSnapshotWithRect:(CGRect)rect;
+-(id)_browserView;
+-(id)_scrollView;
+-(void)_setAutomaticallyUpdatesScrollerView:(BOOL)view;
+-(void)_updateScrollerViewForInputView;
+#else
+-(void)willStartGesturesInView:(id)view forEvent:(GSEventRef)event;
+-(void)didFinishGesturesInView:(id)view forEvent:(GSEventRef)event;
+-(void)scrollerWillStartDragging:(id)scroller;
+-(void)scrollerDidEndDragging:(id)scroller willSmoothScroll:(BOOL)scroll;
+-(void)scrollerDidEndSmoothScrolling:(id)scroller;
+-(id)_scroller;
+#endif
 @end
 
 @interface UIWebView (UIKitAccessibilityInterfaceBuilderSupport)

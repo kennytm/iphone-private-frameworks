@@ -9,25 +9,37 @@
 
 @class NSMutableArray;
 
-@interface UITextEffectsWindow : UIWindow {
+@interface UITextEffectsWindow : 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+UIAutoRotatingWindow
+#else
+UIWindow 
+#endif
+{
 	unsigned _activeEffectsCount;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	int _interfaceOrientation;
+#endif
 	NSMutableArray* _touchableSubviews;
 }
 +(UITextEffectsWindow*)sharedTextEffectsWindow;
 +(UITextEffectsWindow*)sharedTextEffectsWindowAboveStatusBar;
--(BOOL)acceptsGlobalPoint:(CGPoint)point;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
--(id)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
--(void)dealloc;
--(void)_didRemoveSubview:(id)subview;
--(void)didAddSubview:(id)subview;
--(void)_subviewInteractivityChanged:(id)changed;
--(void)bringSubviewToFront:(id)front;
--(void)sendSubviewToBack:(id)back;
--(void)sortSubviews;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_earlyReturnHitTest:(CGPoint)test withEvent:(id)event;
+#else
+// inherited: -(BOOL)acceptsGlobalPoint:(CGPoint)point;
 -(void)updateForOrientation:(int)orientation;
 -(void)matchDeviceOrientation;
+#endif
+// inherited: -(id)hitTest:(CGPoint)test withEvent:(id)event;
+// inherited: -(id)initWithFrame:(CGRect)frame output:(int)output bitsPerComponent:(int)component;
+// inherited: -(void)dealloc;
+// inherited: -(void)_didRemoveSubview:(id)subview;
+-(void)didAddSubview:(id)subview;
+-(void)_subviewInteractivityChanged:(id)changed;
+// -(void)bringSubviewToFront:(id)front;
+// -(void)sendSubviewToBack:(id)back;
+-(void)sortSubviews;
 -(BOOL)_isTextEffectsWindow __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

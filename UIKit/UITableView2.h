@@ -14,12 +14,12 @@
 
 @interface UITableView ()
 @property(retain, nonatomic) id scrollTestParameters __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCommon;
 -(void)_populateArchivedSubviews:(id)subviews;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(void)dealloc;
+// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(void)encodeWithCoder:(id)coder;
+// inherited: -(void)dealloc;
 -(void)reloadData;
 -(void)reloadSectionIndexTitles;
 -(void)noteNumberOfRowsChanged;
@@ -54,38 +54,53 @@
 -(BOOL)showsSelectionImmediatelyOnTouchBegin;
 -(unsigned)maximumNumberOfSectionIndexTitlesWithoutTruncation;
 -(void)setBackgroundColor:(id)color;
--(BOOL)canHandleSwipes;
--(int)swipe:(int)swipe withEvent:(GSEventRef)event;
+// inherited: -(BOOL)canHandleSwipes;
+// inherited: -(int)swipe:(int)swipe withEvent:(GSEventRef)event;
 -(int)swipeCell:(int)cell atPoint:(CGPoint)point;
 -(void)handleSwipe:(id)swipe;
 -(BOOL)_canSelectRowContainingHitView:(id)view;
 -(void)_tableViewDeferredTouchesBegan:(id)began;
--(BOOL)_resetScrollingForGestureEvent:(id)gestureEvent;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;
 -(void)_beginTouchesInContentView:(id)contentView touches:(id)touches withEvent:(id)event;
 -(void)_updateTableHeaderViewForAutoHide;
--(void)handlePan:(id)pan;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
--(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
--(BOOL)touchesShouldCancelInContentView:(id)touches;
+// inherited: -(void)handlePan:(id)pan;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+// inherited: -(id)hitTest:(CGPoint)test withEvent:(id)event;
+// inherited: -(BOOL)touchesShouldCancelInContentView:(id)touches;
 -(BOOL)_scrollsToMakeFirstResponderVisible;
 -(void)layoutSubviews;
 -(void)_rectChangedWithNewSize:(CGSize)newSize oldSize:(CGSize)size;
--(void)setFrame:(CGRect)frame;
--(void)setBounds:(CGRect)bounds;
+// inherited: -(void)setFrame:(CGRect)frame;
+// inherited: -(void)setBounds:(CGRect)bounds;
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated;
--(void)setShowsHorizontalScrollIndicator:(BOOL)indicator;
--(void)setShowsVerticalScrollIndicator:(BOOL)indicator;
--(void)setContentOffset:(CGPoint)offset;
--(void)setContentInset:(UIEdgeInsets)inset;
-
+// inherited: -(void)setShowsHorizontalScrollIndicator:(BOOL)indicator;
+// inherited: -(void)setShowsVerticalScrollIndicator:(BOOL)indicator;
+// inherited: -(void)setContentOffset:(CGPoint)offset;
+// inherited: -(void)setContentInset:(UIEdgeInsets)inset;
 -(NSArray*)indexPathsForSelectedRows;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)rowDataDescription;
+-(void)_selectAllSelectedRows;
+-(void)setSeparatorTopShadowColor:(id)color;
+-(id)separatorTopShadowColor;
+-(void)setSeparatorBottomShadowColor:(id)color;
+-(id)separatorBottomShadowColor;
+-(void)setUsesVariableMargins:(BOOL)margins;
+-(BOOL)usesVariableMargins;
+-(void)_backgroundColorAnimationDidStop;
+-(void)_setBackgroundColor:(id)color animated:(BOOL)animated;
+-(BOOL)_beginTrackingWithEvent:(id)event;
+-(BOOL)_cancelContentTouchWithEvent:(id)event forced:(BOOL)forced;
+-(void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)_scrollView;
+#else
+-(BOOL)_resetScrollingForGestureEvent:(id)gestureEvent;
+#endif
 @end
 
 @interface UITableView (UITableViewInternal)
@@ -162,6 +177,14 @@
 -(BOOL)_shouldShowMenuForCell:(id)cell __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(BOOL)_canPerformAction:(SEL)action forCell:(id)cell sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_performAction:(SEL)action forCell:(id)cell sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)_delegateImplementsTitleWidthForHeaderInSection;
+-(BOOL)_delegateImplementsAlignmentForHeaderInSection;
+-(BOOL)_delegateImplementsTitleWidthForFooterInSection;
+-(BOOL)_delegateImplementsAlignmentForFooterInSection;
+-(float)_heightForSeparator;
+-(float)_backgroundInset;
+#endif
 @end
 
 @interface UITableView (_UITableViewPrivate)
@@ -230,6 +253,10 @@
 -(void)setDeleteConfirmationIndexPath:(id)path animated:(BOOL)animated;
 -(void)_scrollToTopHidingTableHeader:(BOOL)topHidingTableHeader;
 -(void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)topHidingTableHeaderIfNecessary;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_updateBackgroundViewFrame;
+-(void)_updateBackgroundView;
+#endif
 @end
 
 @interface UITableView (SyntheticEvents)

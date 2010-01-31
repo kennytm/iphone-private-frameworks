@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
 #import <UIKit/UIToolbar.h>
+#import <Availability2.h>
 
 @class NSArray, UIBarButtonItem, UIColor;
 
@@ -33,6 +34,11 @@
 -(BOOL)endCustomizingAnimated:(BOOL)animated;
 -(BOOL)isCustomizing;
 -(void)animateToolbarItemIndex:(unsigned)index duration:(double)duration target:(id)target didFinishSelector:(SEL)selector;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setExtraEdgeInsets:(float)insets;
+-(float)extraEdgeInsets;
+-(void)setBarStyle:(int)style force:(BOOL)force;
+#endif
 @end
 
 @interface UIToolbar (SynthEvents)
@@ -61,12 +67,18 @@
 -(void)_customizeWithAvailableItems:(id)availableItems;
 -(void)_configureToolbarReplacingItem:(id)item withNewItem:(id)newItem dragging:(BOOL)dragging swapping:(BOOL)swapping;
 -(void)_updateItemsForNewFrame:(id)newFrame;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(float)_edgeMarginForBorderedItem:(BOOL)borderedItem;
+#endif
 @end
 
 @interface UIToolbar (UIButtonBarInternal)
 +(float)_buttonGap;
 -(void)_alertWillShow:(BOOL)_alert duration:(float)duration;
 -(void)_alertDidHide;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_positionToolbarButtons:(id)buttons ignoringItem:(id)item actuallyRepositionButtons:(BOOL)buttons3;
+#endif
 -(void)_positionToolbarButtons:(id)buttons ignoringItem:(id)item;
 @end
 
@@ -111,13 +123,17 @@
 -(BOOL)onStateForButton:(int)button;
 -(void)setOnStateForButton:(BOOL)button forButton:(int)button2;
 -(void)animateWithDuration:(float)duration forButton:(int)button;
--(void)setHasRoundedCorners:(BOOL)corners;
--(BOOL)hasRoundedCorners;
 -(void)setBounds:(CGRect)bounds;
 -(void)setFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 -(id)buttonItems;
 -(void)setButtonItems:(id)items;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_setForceTopBarAppearance:(BOOL)appearance;
+#else
+-(void)setHasRoundedCorners:(BOOL)corners;
+-(BOOL)hasRoundedCorners;
+#endif
 @end
 
 @interface UIToolbar (UIKitAccessibilityInterfaceBuilderSupport)

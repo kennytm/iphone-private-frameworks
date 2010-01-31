@@ -15,4 +15,3 @@
 @property(readonly, retain, nonatomic) UIKBKeyplane* keyplane;
 -(id)initWithKey:(id)key keyPlane:(id)plane;
 @end
-

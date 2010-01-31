@@ -8,12 +8,11 @@
 
 @class UIWebView;
 
+__attribute__((visibility("hidden")))
 @interface UIWebViewWebViewDelegate : NSObject {
 	UIWebView* uiWebView;
 }
 -(id)initWithUIWebView:(id)uiwebView;
--(id)webView:(id)view createWebViewWithRequest:(id)request userGesture:(BOOL)gesture __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(id)webView:(id)view createWebViewWithRequest:(id)request __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)webView:(id)view decidePolicyForNewWindowAction:(id)newWindowAction request:(id)request newFrameName:(id)name decisionListener:(id)listener;
 -(void)webView:(id)view decidePolicyForNavigationAction:(id)navigationAction request:(id)request frame:(id)frame decisionListener:(id)listener;
 -(void)webView:(id)view unableToImplementPolicyWithError:(id)error frame:(id)frame;
@@ -22,7 +21,6 @@
 -(void)webView:(id)view didCommitLoadForFrame:(id)frame;
 -(void)webView:(id)view didReceiveServerRedirectForProvisionalLoadForFrame:(id)frame;
 -(void)webView:(id)view didFailProvisionalLoadWithError:(id)error forFrame:(id)frame;
--(void)webView:(id)view decidePolicyForMIMEType:(id)mimetype request:(id)request frame:(id)frame decisionListener:(id)listener __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)webView:(id)view didFinishLoadForFrame:(id)frame;
 -(void)webView:(id)view didFailLoadWithError:(id)error forFrame:(id)frame;
 -(void)webView:(id)view didFirstLayoutInFrame:(id)frame;
@@ -36,5 +34,15 @@
 -(void)webView:(id)view resource:(id)resource didReceiveAuthenticationChallenge:(id)challenge fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didCancelAuthenticationChallenge:(id)challenge fromDataSource:(id)dataSource;
 -(void)_clearUIWebView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)webView:(id)view didReceiveTitle:(id)title forFrame:(id)frame;
+-(id)webView:(id)view connectionPropertiesForResource:(id)resource dataSource:(id)source;
+#else
+-(id)webView:(id)view createWebViewWithRequest:(id)request userGesture:(BOOL)gesture;
+#endif
+-(id)webView:(id)view createWebViewWithRequest:(id)request;
+-(void)webView:(id)view decidePolicyForMIMEType:(id)mimetype request:(id)request frame:(id)frame decisionListener:(id)listener;
+#endif
 @end
 

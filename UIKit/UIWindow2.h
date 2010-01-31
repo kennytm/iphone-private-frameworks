@@ -21,14 +21,12 @@
 +(IOSurfaceRef)createScreenIOSurface;
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithFrame:(CGRect)frame output:(int)anOutput;
--(void)_commonInit;
 -(id)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
 -(id)initWithContentRect:(CGRect)contentRect;
 -(id)initWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setContentView:(id)view;
 -(id)representation;
--(void)_createWindow;
 -(BOOL)_ignoresHitTest;
 -(BOOL)_disableGroupOpacity;
 -(BOOL)_disableEdgeAntialiasing;
@@ -64,14 +62,10 @@
 -(void)setLevel:(float)level;
 -(float)level;
 -(void)setBecomeKeyOnOrderFront:(BOOL)front;
--(void)_slideHeaderView:(id)view andFooterView:(id)view2 offScreen:(BOOL)screen forInterfaceOrientation:(int)interfaceOrientation;
--(void)_positionHeaderView:(id)view andFooterView:(id)view2 outsideContentViewForInterfaceOrientation:(int)interfaceOrientation;
 -(void)_clearPendingKeyboardChanges;
 -(BOOL)_shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(void)_handleStatusBarOrientationChange:(id)change;
 -(void)_handleDeviceOrientationChange:(id)change;
--(void)_applicationDidBeginIgnoringInteractionEvents:(id)_application;
--(void)_applicationDidEndIgnoringInteractionEvents:(id)_application;
 -(void)_updateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation animated:(BOOL)animated;
 -(void)_updateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration force:(BOOL)force;
 -(void)_updateInterfaceOrientationFromDeviceOrientation;
@@ -86,12 +80,9 @@
 -(void)_updateStatusBarToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration fenceID:(int)id animation:(int)animation;
 -(void)_updateStatusBarToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 -(void)_setRotatableViewOrientation:(int)orientation duration:(double)duration force:(BOOL)force;
--(void)_finishedFirstHalfRotation:(id)rotation finished:(id)finished context:(void*)context;
--(void)_finishedFullRotation:(id)rotation finished:(id)finished context:(void*)context;
 -(BOOL)autorotates;
 -(BOOL)isRotating;
 -(BOOL)isUsingOnePartRotationAnimation;
--(BOOL)isHandlingContentRotation;
 -(int)interfaceOrientation;
 -(void)synchronizeDrawingWithID:(int)id;
 -(void)synchronizeDrawingWithID:(int)id count:(unsigned)count;
@@ -122,14 +113,42 @@
 -(void)_setMouseDownView:(id)view withEvent:(GSEventRef)event;
 -(void)_setMouseEnteredView:(id)view;
 -(BOOL)_clearMouseView;
--(BOOL)_allowsContextHosting;
 -(IOSurfaceRef)createIOSurfaceWithFrame:(CGRect)frame;
 -(IOSurfaceRef)createIOSurface;
 -(void)_setCancelScroller:(BOOL)scroller;
--(BOOL)acceptsGlobalPoint:(CGPoint)point;
 -(BOOL)_isLayerHidden;
 -(void)_setLayerHidden:(BOOL)hidden;
 -(id)_touchData;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(void*)createRotatedCGImageFromIOSurface:(void*)iosurface;
++(void*)createIOSurfaceWithContextIds:(const unsigned*)contextIds count:(unsigned)count frame:(CGRect)frame outTransform:(CGAffineTransform*)transform;
++(id)_hitTestToPoint:(CGPoint)point pathIndex:(int)index forEvent:(id)event;
++(id)_findWithDisplayPoint:(CGPoint)displayPoint;
+-(void)_resetWindowGeometryForClassicController;
+-(void)_updateTransformLayer;
+-(void)_createContext;
+-(void)_destroyContext;
+-(void)_createContextIfNecessary;
+-(float)_contentsScale;
+-(void)_setContentsScale:(float)scale;
+-(void)_updateInterfaceOrientationFromDeviceOrientation:(BOOL)deviceOrientation;
+-(void)_setRotatableClient:(id)client toOrientation:(int)orientation duration:(double)duration force:(BOOL)force;
+-(void)_finishedFirstHalfRotation:(id)rotation finished:(id)finished context:(id)context;
+-(void)_finishedFullRotation:(id)rotation finished:(id)finished context:(id)context;
+-(int)_windowOutput;
+-(CGPoint)_transformDisplayToWindowCoordinates:(CGPoint)windowCoordinates;
+#else
+-(void)_commonInit;
+-(void)_createWindow;
+-(void)_slideHeaderView:(id)view andFooterView:(id)view2 offScreen:(BOOL)screen forInterfaceOrientation:(int)interfaceOrientation;
+-(void)_positionHeaderView:(id)view andFooterView:(id)view2 outsideContentViewForInterfaceOrientation:(int)interfaceOrientation;
+-(void)_applicationDidBeginIgnoringInteractionEvents:(id)_application;
+-(void)_applicationDidEndIgnoringInteractionEvents:(id)_application;
+-(void)_finishedFirstHalfRotation:(id)rotation finished:(id)finished context:(void*)context;
+-(void)_finishedFullRotation:(id)rotation finished:(id)finished context:(void*)context;
+-(BOOL)isHandlingContentRotation;
+-(BOOL)acceptsGlobalPoint:(CGPoint)point;
+#endif
 @end
 
 @interface UIWindow (UITextEffectsWindow)

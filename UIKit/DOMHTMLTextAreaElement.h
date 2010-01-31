@@ -4,18 +4,29 @@
  */
 
 #import <WebKit/DOMHTMLTextAreaElement.h>
+#import <Availability2.h>
 
-
-@interface DOMHTMLTextAreaElement (UIWebFormAssistantExtras)
--(id)createPeripheral;
-@end
-
-@interface DOMHTMLTextAreaElement (UIWebViewAdditions)
+@interface DOMHTMLTextAreaElement (UIWebViewAdditions)	// note: the category name is UITextInputAdditions in 3.2.
 -(id)textInputTraits;
 -(BOOL)isTextControl;
+-(void)setSelectionWithPoint:(CGPoint)point __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
 
 @interface DOMHTMLTextAreaElement (UIWebInteraction)
 -(BOOL)nodeCanBecomeFirstResponder;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface DOMHTMLTextAreaElement (UIWebBrowserViewPrivate)
+-(void)_startAssistingDocumentView:(id)view;
+-(void)_stopAssistingDocumentView:(id)view;
+-(BOOL)_isAssistable;
+-(BOOL)_requiresAccessoryView;
+-(BOOL)_requiresInputView;
+-(BOOL)_supportsAutoFill;
+@end
+#else
+@interface DOMHTMLTextAreaElement (UIWebFormAssistantExtras)
+-(id)createPeripheral;
+@end
+#endif

@@ -6,19 +6,24 @@
 #import "UIKit-Structs.h"
 #import "UITextFieldDelegate.h"
 #import "UITableViewCellLayoutManager.h"
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface UITableViewCellLayoutManagerEditable1 : UITableViewCellLayoutManager <UITextFieldDelegate> {
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(float)defaultTextFieldFontSizeForCell:(id)cell;
+#else
 +(id)layoutTextfield;
--(void)layoutSubviewsOfCell:(id)cell;
--(id)detailTextLabelForCell:(id)cell;
--(id)textLabelForCell:(id)cell;
--(id)editableTextFieldForCell:(id)cell;
--(void)textFieldDidBeginEditing:(id)textField;
--(void)textFieldDidEndEditing:(id)textField;
--(BOOL)textFieldShouldBeginEditing:(id)textField;
--(BOOL)textFieldShouldReturn:(id)textField;
+#endif
+// inherited: -(void)layoutSubviewsOfCell:(id)cell;
+// inherited: -(id)detailTextLabelForCell:(id)cell;
+// inherited: -(id)textLabelForCell:(id)cell;
+// inherited: -(id)editableTextFieldForCell:(id)cell;
+// in a protocol: -(void)textFieldDidBeginEditing:(id)textField;
+// in a protocol: -(void)textFieldDidEndEditing:(id)textField;
+// in a protocol: -(BOOL)textFieldShouldBeginEditing:(id)textField;
+// in a protocol: -(BOOL)textFieldShouldReturn:(id)textField;
 -(void)_textFieldStartEditing:(id)editing;
 -(void)_textFieldEndEditing:(id)editing;
 -(void)_textFieldEndEditingOnReturn:(id)aReturn;

@@ -3,10 +3,12 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+
 #import "NSCopying.h"
 #import "NSCoding.h"
 #import <Foundation/NSObject.h>
 #import "UIKit-Structs.h"
+#import <Availability2.h>
 
 @class NSArray, NSMutableArray, NSString, UIKBAttribute;
 
@@ -34,5 +36,9 @@
 -(NSString*)stringValueForName:(NSString*)name;
 -(BOOL)boolValueForName:(NSString*)name;
 -(NSArray*)arrayValueForName:(NSString*)name;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setIntValueForName:(int)name forName:(id)name2;
+-(int)intValueForName:(id)name;
+#endif
 @end
 

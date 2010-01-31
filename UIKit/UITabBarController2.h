@@ -65,6 +65,7 @@
 -(void)revealTabBarSelection;
 -(void)setShowsEditButtonOnLeft:(BOOL)left;
 -(BOOL)showsEditButtonOnLeft;
+-(void)_setMaximumNumberOfItems:(unsigned)items __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(BOOL)_allowsAutorotation;
 -(BOOL)_doAllViewControllersSupportInterfaceOrientation:(int)orientation;
 -(BOOL)shouldAutorotateToInterfaceOrientation:(int)interfaceOrientation;

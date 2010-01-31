@@ -5,13 +5,14 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSString.h>
-
+#import <Availability2.h>
 
 @interface NSString (UISafeInstantiators)
 -(id)_initWithUTF8String:(const char*)utf8String maxLength:(unsigned)length;
 @end
 
 @interface NSString (UIStringDrawing2)
+-(CGSize)_drawInRect:(CGRect)rect withFont:(id)font lineBreakMode:(int)mode alignment:(int)alignment lineSpacing:(int)spacing includeEmoji:(BOOL)emoji truncationRect:(CGRect*)rect7 __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(CGSize)drawAtPoint:(CGPoint)point forWidth:(float)width withFont:(id)font lineBreakMode:(int)mode letterSpacing:(float)spacing includeEmoji:(BOOL)emoji;
 -(CGSize)drawInRect:(CGRect)rect withFont:(id)font lineBreakMode:(int)mode alignment:(int)alignment lineSpacing:(int)spacing includeEmoji:(BOOL)emoji;
 -(CGSize)drawAtPoint:(CGPoint)point forWidth:(float)width withFont:(id)font fontSize:(float)size lineBreakMode:(int)mode baselineAdjustment:(int)adjustment includeEmoji:(BOOL)emoji;
@@ -31,7 +32,6 @@
 -(id)stringByReplacingCharacter:(UniChar)character withCharacter:(UniChar)character2;
 -(BOOL)endsSentence;
 -(BOOL)endsWord;
--(BOOL)isDottedURLDomain;
 -(BOOL)isLeftAssociative;
 -(BOOL)isTripledPunctuation;
 -(BOOL)isSpaceOrReturn;
@@ -41,6 +41,14 @@
 -(BOOL)looksLikeNumberInput;
 -(BOOL)looksLikeURL;
 -(BOOL)isNaturallyRTL;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)isDelete;
+-(BOOL)isNewlineOrReturn;
+-(BOOL)containsSubstring:(id)substring;
+-(unsigned)editDistanceFrom:(id)from;
+#else
+-(BOOL)isDottedURLDomain;
+#endif
 @end
 
 @interface NSString (UIKitAdditions)

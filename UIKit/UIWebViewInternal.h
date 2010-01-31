@@ -10,9 +10,18 @@
 @class NSURLRequest, UIScroller, UIWebDocumentView, UICheckeredPatternView, UIWebViewWebViewDelegate;
 @protocol UIWebViewDelegate;
 
-@interface UIWebViewInternal : NSObject <UIFormAssistantDelegate> {
+@interface UIWebViewInternal : NSObject
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+<UIFormAssistantDelegate> 
+#endif
+{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIScrollView* scroller;
+	UIWebBrowserView* browserView;
+#else
 	UIScroller* scroller;
 	UIWebDocumentView* documentView;
+#endif
 	UICheckeredPatternView* checkeredPatternView;
 	id<UIWebViewDelegate> delegate;
 	unsigned scalesPageToFit : 1;
@@ -24,13 +33,20 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	unsigned allowsPopUps : 1;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned automaticallyUpdatesScrollerView : 1;
+#endif
 	NSURLRequest* request;
 	int clickedAlertButtonIndex;
 	UIWebViewWebViewDelegate* webViewDelegate;
 }
--(void)_updateScrollerIndicatorSubrectForEditingForms:(BOOL)editingForms __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)_updateScrollerContentSize:(BOOL)size __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)formAssistant:(id)assistant didBeginEditingFormNode:(id)node;
--(void)formAssistant:(id)assistant didEndEditingFormNode:(id)node;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+-(void)_updateScrollerIndicatorSubrectForEditingForms:(BOOL)editingForms;
+-(void)_updateScrollerContentSize:(BOOL)size;
+#endif
+// in a protocol: -(void)formAssistant:(id)assistant didBeginEditingFormNode:(id)node;
+// in a protocol: -(void)formAssistant:(id)assistant didEndEditingFormNode:(id)node;
+#endif
 @end
 

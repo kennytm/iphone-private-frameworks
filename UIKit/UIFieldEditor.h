@@ -6,9 +6,11 @@
 #import "UIAutoscrollContainer.h"
 #import "UIKit-Structs.h"
 #import "UIWebDocumentView.h"
+#import <Availability2.h>
 
 @class NSString, DOMDocument, DOMHTMLElement, UIView;
 
+__attribute__((visibility("hidden")))
 @interface UIFieldEditor : UIWebDocumentView <UIAutoscrollContainer> {
 	DOMDocument* _document;
 	DOMHTMLElement* _textElement;
@@ -19,7 +21,9 @@
 	unsigned _changingView : 1;
 	unsigned _mouseWasDragged : 1;
 	unsigned _disableNotifications : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	unsigned _shouldMaintainFirstResponderWhenEndEditing : 1;
+#endif
 	unsigned _isResigningFirstResponder : 1;
 	unsigned _delegateRespondsToFieldEditorDidChange : 1;
 	unsigned _delegateRespondsToShouldInsertText : 1;
@@ -27,38 +31,42 @@
 	unsigned _fieldEditorReentrancyGuard : 1;
 	unsigned _reserved : 22;
 }
-@property(assign, nonatomic) CGPoint autoscrollContentOffset;
+// in a protocol: @property(assign, nonatomic) CGPoint autoscrollContentOffset;
 +(id)activeFieldEditor;
 +(id)sharedFieldEditor;
 +(void)releaseSharedInstance;
--(id)initWithFrame:(CGRect)frame;
--(void)dealloc;
--(void)selectAll;
--(BOOL)canResignFirstResponder;
--(BOOL)becomeFirstResponder;
--(BOOL)resignFirstResponder;
--(id)_responderForBecomeFirstResponder;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(void)dealloc;
+// inherited: -(void)selectAll;
+// inherited: -(BOOL)canResignFirstResponder;
+// inherited (N/A on 3.2): -(BOOL)becomeFirstResponder;
+// inherited (N/A on 3.2): -(BOOL)resignFirstResponder;
+// inherited (N/A on 3.2): -(id)_responderForBecomeFirstResponder;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(BOOL)shouldChangeSelectionForEvent:(GSEventRef)event;
--(NSRange)selectionRange;
+#endif
+// inherited: -(NSRange)selectionRange;
 -(void)setSelection:(NSRange)selection;
 -(void)revealSelection;
 -(void)setTextSelectionBehavior:(int)behavior;
 -(unsigned)characterOffsetAtPoint:(CGPoint)point;
--(id)textInputTraits;
--(BOOL)keyboardInput:(id)input shouldInsertText:(id)text isMarkedText:(BOOL)text3;
--(BOOL)keyboardInputShouldDelete:(id)keyboardInput;
--(BOOL)keyboardInputChanged:(id)changed;
--(void)keyboardInputChangedSelection:(id)selection;
--(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
+// inherited: -(id)textInputTraits;
+// inherited: -(BOOL)keyboardInput:(id)input shouldInsertText:(id)text isMarkedText:(BOOL)text3;
+// inherited: -(BOOL)keyboardInputShouldDelete:(id)keyboardInput;
+// inherited: -(BOOL)keyboardInputChanged:(id)changed;
+// inherited: -(void)keyboardInputChangedSelection:(id)selection;
+// inherited (N/A on 3.2): -(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
 -(void)becomeFieldEditorForView:(id)view;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(void)maintainFieldEditorWhenEndEditingForView:(id)view;
+#endif
 -(void)_setTextElementStyle:(id)style;
 -(void)setStyle:(id)style;
 -(id)style;
--(id)textColorForCaretSelection;
+// inherited: -(id)textColorForCaretSelection;
 -(void)_setTextElementString:(id)string;
 -(void)setText:(id)text andSetCaretSelectionAfterText:(BOOL)text2;
--(id)text;
+// inherited: -(id)text;
 -(void)setCaretColor:(id)color;
 -(int)scrollXOffset;
 -(int)scrollYOffset;
@@ -73,25 +81,27 @@
 -(BOOL)webView:(id)view shouldDeleteDOMRange:(id)range;
 -(BOOL)hasMarkedText;
 -(id)proxiedView;
--(void)setFrame:(CGRect)frame;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(BOOL)isProxyFor:(id)aFor;
+// inherited: -(void)setFrame:(CGRect)frame;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// inherited (N/A on 3.2): -(BOOL)isProxyFor:(id)aFor;
 -(void)resumeWithNotification:(id)notification;
 -(id)customOverlayContainer;
--(id)automaticallySelectedOverlay;
+// inherited: -(id)automaticallySelectedOverlay;
 -(void)setNotificationsDisabled:(BOOL)disabled;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(id)_parentTextViewForLoupe;
 -(BOOL)_usesSingleLineSelectionBehavior;
+#endif
 -(BOOL)mouseEventsChangeSelection;
--(id)selectionView;
--(CGRect)selectionClipRect;
+// inherited: -(id)selectionView;
+// inherited: -(CGRect)selectionClipRect;
 -(void)selectionChanged;
 -(void)startAutoscroll:(CGPoint)autoscroll;
 -(void)updateAutoscroll:(id)autoscroll;
 -(void)autoscrollWillNotStart;
--(CGRect)contentFrameForView:(id)view;
+// in a protocol: -(CGRect)contentFrameForView:(id)view;
 @end
 

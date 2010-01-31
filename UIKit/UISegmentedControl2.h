@@ -7,6 +7,7 @@
 #import "NSCoding.h"
 #import <UIKit/UISegmentedControl.h>
 #import "UIKit-Structs.h"
+#import <Availability2.h>
 
 @class UIColor, NSMutableArray;
 
@@ -52,6 +53,11 @@
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_resetForAppearanceChange;
+-(void)_setSegmentedControlAppearance:(XXStruct_wXTbsB*)appearance;
+-(BOOL)useBlockyMagnificationInClassic;
+#endif
 @end
 
 @interface UISegmentedControl (SynthEvents)

@@ -14,17 +14,24 @@
 	UIView* _toView;
 	int _transition;
 	UIView* _firstResponderToRestore;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIWindow* _originalWindow;
+#endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	float _fromViewAlpha;
 #endif
 	unsigned _isTransitioning : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _usesRoundedCorners;
+#endif
 }
 @property(assign, nonatomic) id delegate;
+@property(assign, nonatomic) BOOL usesRoundedCorners __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 +(double)defaultDurationForTransition:(int)transition;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(void)dealloc;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(void)encodeWithCoder:(id)coder;
+// inherited: -(void)dealloc;
 -(BOOL)transition:(int)transition toView:(id)view;
 -(BOOL)transition:(int)transition fromView:(id)view toView:(id)view3;
 -(BOOL)isTransitioning;

@@ -3,9 +3,23 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#include_next <UIKit/UISwipeGestureRecognizer.h>
+
+@interface UISwipeGestureRecognizer()
+@property(assign, nonatomic) float minimumPrimaryMovement;
+@property(assign, nonatomic) float maximumPrimaryMovement;
+@property(assign, nonatomic) float minimumSecondaryMovement;
+@property(assign, nonatomic) float maximumSecondaryMovement;
+-(BOOL)_checkForSwipeWithDelta:(CGPoint)delta time:(double)time;
+
+#else
+
 #import "UIGestureRecognizer.h"
 #import "UIKit-Structs.h"
-
 
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
 	double _maximumDuration;
@@ -21,17 +35,18 @@
 	unsigned _trackingTouch : 1;
 	unsigned _tableViewGesture : 1;
 }
-@property(assign, nonatomic) double maximumDuration;
 @property(assign, nonatomic) float minimumHorizontalMovement;
 @property(assign, nonatomic) float maximumHorizontalMovement;
 @property(assign, nonatomic) float minimumVerticalMovement;
 @property(assign, nonatomic) float maximumVerticalMovement;
+-(BOOL)isTableViewGesture;
+-(void)setTableViewGesture:(BOOL)gesture;
+#endif
+@property(assign, nonatomic) double maximumDuration;
 @property(assign, nonatomic) float rateOfMinimumMovementDecay;
 @property(assign, nonatomic) float rateOfMaximumMovementDecay;
 @property(readonly, assign, nonatomic) CGPoint startPoint;
 -(id)initWithTarget:(id)target action:(SEL)action;
--(BOOL)isTableViewGesture;
--(void)setTableViewGesture:(BOOL)gesture;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;

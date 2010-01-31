@@ -6,29 +6,39 @@
 #import "UIKeyboard.h"
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class UIImage, UITextInputTraits;
 
-@interface UIKeyboard : UIView {
+@interface UIKeyboard : UIView
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+<UIKeyboardImplGeometryDelegate>
+#endif
+{
 	UIImage* m_snapshot;
 	UITextInputTraits* m_defaultTraits;
 	BOOL m_typingDisabled;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL m_minimized;
+	BOOL m_respondingToImplGeometryChange;
+#endif
 }
-+(id)activeKeyboard;
+// in a protocol: @property(assign, nonatomic, getter=isMinimized) BOOL minimized;
++(UIKeyboard*)activeKeyboard;
 +(void)initImplementationNow;
 +(void)removeAllDynamicDictionaries;
 +(CGSize)defaultSize;
 +(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGRect)defaultFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGSize)defaultSizeForOrientation:(int)orientation;
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(id)initWithDefaultSize;
--(void)dealloc;
--(void)setFrame:(CGRect)frame;
+// inherited: -(void)dealloc;
+// inherited: -(void)setFrame:(CGRect)frame;
 -(void)updateLayout;
 -(int)orientation;
--(BOOL)pointInside:(CGPoint)inside forEvent:(GSEventRef)event;
--(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
+// inherited: -(BOOL)pointInside:(CGPoint)inside forEvent:(GSEventRef)event;
+// inherited: -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(void)prepareForGeometryChange;
 -(void)geometryChangeDone:(BOOL)done;
 -(void)removeAutocorrectPrompt;
@@ -45,21 +55,43 @@
 -(void)activate;
 -(void)deactivate;
 -(void)movedFromSuperview:(id)superview;
--(void)removeFromSuperview;
--(void)drawRect:(CGRect)rect;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseUp:(GSEventRef)up;
--(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)removeFromSuperview;
+// inherited: -(void)drawRect:(CGRect)rect;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
 -(int)textEffectsVisibilityLevel;
+-(id)hitTest:(CGPoint)test withEvent:(id)event;
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(CGSize)sizeForInterfaceOrientation:(int)interfaceOrientation;
+-(void)setTypingEnabled:(BOOL)enabled;
+-(UIPeripheralAnimationGeometry)geometryForMinimize:(BOOL)minimize;
+-(void)minimize;
+-(void)maximize;
+-(void)keyboardMinMaximized:(id)maximized finished:(id)finished context:(id)context;
+-(UIPeripheralAnimationGeometry)geometryForImplHeightDelta:(float)implHeightDelta;
+// in a protocol: -(void)prepareForImplBoundsHeightChange:(float)implBoundsHeightChange suppressNotification:(BOOL)notification;
+// in a protocol: -(void)implBoundsHeightChangeDone:(float)done suppressNotification:(BOOL)notification;
+// in a protocol: -(BOOL)canDismiss;
+#else
 -(void)_setTypingEnabled:(BOOL)enabled;
 -(BOOL)_typingEnabled;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+#endif
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UIKeyboard (UIManualKeyboardAdditions)
+-(void)manualKeyboardWasOrderedIn;
+@end
+
+@interface UIKeyboard (UIPeripheralHostAdditions)
+-(BOOL)_isAutomaticKeyboard;
+@end
+#else
 @interface UIKeyboard (UIKeyboardAutomaticAppearance)
 +(id)automaticKeyboard;
 +(id)containerWindow;
@@ -73,4 +105,6 @@
 -(void)keyboardAutomaticOrderIn:(id)anIn finished:(id)finished;
 -(void)keyboardAutomaticOrderOut:(id)anOut finished:(id)finished;
 @end
+#else
 
+#endif

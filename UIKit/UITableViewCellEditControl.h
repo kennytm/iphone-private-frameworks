@@ -32,8 +32,17 @@
 @end
 
 @interface UITableViewCellEditControl (UITableViewCellEditControlStatic)
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(id)_minusImage;
 +(id)_plusImage;
+#else
++(CGRect)_minusRect;
++(id)_deleteImageBackground;
++(id)_deleteImage;
++(id)_insertImage;
+-(id)_minusView;
+-(void)_updateImageView;
+#endif
 +(id)_multiSelectNotSelectedImage;
 +(id)_multiSelectSelectedImage;
 +(id)_multiSelectHighlightedImage;

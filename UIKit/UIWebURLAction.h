@@ -4,14 +4,20 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface UIWebURLAction : NSObject {
 }
 +(id)sharedInstance;
 +(BOOL)performDefaultActionForURL:(id)url withAllowedTypes:(unsigned)allowedTypes inFrame:(id)frame;
 +(id)actionSheeForURL:(id)url withAllowedTypes:(unsigned)allowedTypes inFrame:(id)frame;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(BOOL)performActionWithTag:(int)tag forURL:(id)url forFrame:(id)frame inView:(id)view interactionDelegate:(id)delegate;
++(BOOL)performActionWithTag:(int)tag forURL:(id)url forFrame:(id)frame withPopoverController:(id)popoverController interactionDelegate:(id)delegate;
+#else
 +(BOOL)performActionWithTag:(int)tag forURL:(id)url withAllowedTypes:(unsigned)allowedTypes forFrame:(id)frame inView:(id)view interactionDelegate:(id)delegate;
+#endif
 +(BOOL)shouldImmediatelyShowActionSheetForURL:(id)url;
 -(void)dealloc;
 -(BOOL)performDefaultActionForURL:(id)url withAllowedTypes:(unsigned)allowedTypes inFrame:(id)frame;

@@ -12,12 +12,21 @@
 	UIKBKeyboard* m_keyboard;
 	UIKBKeyplane* m_keyplane;
 	NSString* m_visualStyle;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIKBHandwritingView* m_handwritingView;
+	UIKBCandidateView* m_candidateView;
+#endif
 }
 @property(retain, nonatomic) UIKBKeyplane* keyplane;
 @property(readonly, assign, nonatomic) NSString* visualStyle;
 -(id)initWithFrame:(CGRect)frame keyboard:(id)keyboard keyplane:(id)keyplane;
--(void)dealloc;
+// -(void)dealloc;
 -(BOOL)validForKeyplane:(id)keyplane withVisualStyle:(id)visualStyle;
--(void)drawRect:(CGRect)rect;
+// -(void)drawRect:(CGRect)rect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) UIKBCandidateView* candidateView;
+@property(assign, nonatomic) UIKBHandwritingView* handwritingView;
+// -(id)hitTest:(CGPoint)test withEvent:(id)event;
+#endif
 @end
 

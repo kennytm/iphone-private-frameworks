@@ -18,20 +18,30 @@ __attribute__((visibility("hidden")))
 #endif
 	NSMutableSet* _touches;
 	CFDictionaryRef _keyedTouches;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	CFDictionaryRef _sortedGestureRecognizersByWindow;
+#endif
 }
+#if 0
+}
+#endif
 -(int)type;
 -(id)_init;
 -(id)_initWithEvent:(GSEventRef)event touches:(id)touches;
 -(id)_initWithTouches:(id)touches keyedTouches:(CFDictionaryRef)touches2;
--(void)_setGSEvent:(GSEventRef)event __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_3_0, __IPHONE_3_1);
 -(void)dealloc;
 -(id)allTouches;
 -(id)_allTouches;
 -(id)touchesForWindow:(id)window;
 -(id)touchesForView:(id)view;
 -(id)_touchesForGestureRecognizer:(id)gestureRecognizer;
+// inherited (since 3.2): -(id)touchesForGestureRecognizer:(id)gestureRecognizer;
 -(BOOL)_addGestureRecognizersForView:(id)view toTouch:(id)touch;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_addTouch:(id)touch forDelayedDelivery:(BOOL)delayedDelivery;
+#else
 -(void)_addTouch:(id)touch;
+#endif
 -(void)_clearViewForTouch:(id)touch;
 -(void)_removeTouch:(id)touch;
 -(void)_removeTouch:(id)touch fromGestureRecognizer:(id)gestureRecognizer;
@@ -48,7 +58,10 @@ __attribute__((visibility("hidden")))
 -(id)_firstTouchForView:(id)view;
 -(void)_moveTouchesFromView:(id)view toView:(id)view2;
 -(id)_cloneEvent;
--(GSEventRef)_gsEvent __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_3_0, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
+-(void)_setGSEvent:(GSEventRef)event;
+-(GSEventRef)_gsEvent;
+#endif
 -(id)description;
 @end
 

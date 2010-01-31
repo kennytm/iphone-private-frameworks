@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UIResponder.h>
+#import <Availability2.h>
 
 @class UINavigationItem, UITabBarItem, NSBundle, NSHashTable, UINavigationController, UITabBarController, UITransitionView, NSArray, UIView, UIBarButtonItem, NSString, UISearchDisplayController;
 
@@ -103,9 +104,7 @@
 -(void)dismissModalViewControllerWithTransition:(int)transition;
 -(void)dismissModalViewControllerAnimated:(BOOL)animated;
 -(void)transitionViewDidComplete:(id)transitionView fromView:(id)view toView:(id)view3;
--(void)_didFinishPresentModalTransition;
 -(void)_legacyModalPresentTransitionDidComplete;
--(void)_didFinishDismissModalTransition;
 -(void)_legacyModalDismissTransitionDidComplete;
 -(double)durationForTransition:(int)transition;
 -(id)viewControllerForRotation;
@@ -145,6 +144,38 @@
 -(id)defaultPNGName;
 -(void)_setSearchDisplayController:(id)controller retain:(BOOL)retain;
 -(void)_setSearchDisplayControllerUnretained:(id)unretained;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(float)heightForViewInPopoverView;
+-(CGSize)_sizeForViewInPopoverView;
+-(CGSize)contentSizeForViewInPopoverView;
+-(BOOL)isSheet;
+-(void)setIsSheet:(BOOL)sheet;
+-(void)_sheetPresentAnimationDidStop;
+-(void)_setPopoverController:(id)controller;
+-(id)_popoverController;
+-(void)presentModalViewController:(id)controller fromRect:(CGRect)rect inView:(id)view direction:(int)direction allowInteractionWithViews:(id)views backgroundStyle:(int)style animated:(BOOL)animated;
+-(void)presentModalViewController:(id)controller fromRect:(CGRect)rect inView:(id)view animated:(BOOL)animated;
+-(void)userDidCancelPopoverView:(id)user;
+-(void)_notifyPopOverThatView:(id)view isTransitioning:(BOOL)transitioning;
+-(void)_dismissModalOverlayViewControllerAnimated:(BOOL)animated;
+-(void)_sheetDismissAnimationDidStop;
+-(void)_keyboardWillShow:(id)_keyboard;
+-(void)_keyboardWillHide:(id)_keyboard;
+-(void)_viewWillStartPresentCustomTransition;
+-(void)_startPresentCustomTransitionWithDuration:(double)duration;
+-(void)_didFinishPresentTransition;
+-(void)_didFinishDismissTransition;
+-(void)_addDismissButton;
+-(void)_clearDismissButton;
+-(void)_handleDismiss;
+-(BOOL)_coversApplicationFrame;
+-(id)clientsForRotationForWindow:(id)window;
+-(CGAffineTransform)tranformForScreenOriginRotation:(float)screenOriginRotation;
+-(void)window:(id)window resizeFromOrientation:(int)orientation;
+#else
+-(void)_didFinishPresentModalTransition;
+-(void)_didFinishDismissModalTransition;
+#endif
 @end
 
 @interface UIViewController (UIViewControllerClassDumpWarning)
@@ -161,6 +192,9 @@
 @interface UIViewController (UINavigationControllerItem2)
 -(void)_toggleEditing:(id)editing;
 -(BOOL)canHandleSnapbackIdentifier:(id)identifier animated:(BOOL)animated;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_editingAnimationFinished;
+#endif
 @end
 
 @interface UIViewController (UITabBarControllerItem2)

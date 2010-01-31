@@ -3,11 +3,21 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#import "UITextInputPrivate.h"
+
+@protocol UIKeyboardInput <UITextInputPrivate>
+@end
+
+#else
+
 #import "UIKit-Structs.h"
 #import <UIKit/UITextInputTraits.h>
 #import "UITextSelectingContainer.h"
 #import "UITextInputTraits_Private.h"
-#import <Availability2.h>
 
 @protocol UIKeyboardInput <UITextInputTraits, UITextInputTraits_Private, UITextSelectingContainer>
 -(id)delegate;
@@ -65,3 +75,4 @@
 -(id)window;
 @end
 
+#endif

@@ -13,6 +13,9 @@
 	UIView* _toView;
 	UIResponder* _firstResponderToRemember;
 	id _delegate;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIWindow* _originalWindow;
+#endif
 	struct {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 		unsigned shouldSendTouchPauseUp : 1;

@@ -6,6 +6,7 @@
 #import <UIKit/UIControl.h>
 #import "UIKit-Structs.h"
 #import "UITableViewIndex.h"
+#import <Availability2.h>
 
 @class NSString, NSArray, UIFont;
 
@@ -24,20 +25,25 @@
 @property(readonly, assign, nonatomic) NSString* selectedSectionTitle;
 @property(retain, nonatomic) UIFont* font;
 @property(retain, nonatomic) NSArray* titles;
--(id)initWithFrame:(CGRect)frame;
--(void)dealloc;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(void)dealloc;
 -(CGSize)sizeThatFits:(CGSize)fits;
 -(unsigned)maximumNumberOfTitlesWithoutTruncationForHeight:(float)height;
 -(void)drawRect:(CGRect)rect;
 -(void)_selectSectionForTouch:(id)touch withEvent:(id)event;
--(BOOL)beginTrackingWithTouch:(id)touch withEvent:(id)event;
--(BOOL)continueTrackingWithTouch:(id)touch withEvent:(id)event;
--(void)endTrackingWithTouch:(id)touch withEvent:(id)event;
--(void)cancelTrackingWithEvent:(id)event;
+// inherited: -(BOOL)beginTrackingWithTouch:(id)touch withEvent:(id)event;
+// inherited: -(BOOL)continueTrackingWithTouch:(id)touch withEvent:(id)event;
+// inherited: -(void)endTrackingWithTouch:(id)touch withEvent:(id)event;
+// inherited: -(void)cancelTrackingWithEvent:(id)event;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@end
+
+@interface UITableViewIndex (UITableViewIndex_LegacyEventSystemSupport)
+#endif
 -(id)_createTouchesWithMouseEvent:(GSEventRef)mouseEvent phase:(int)phase;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
 @end
 
 @interface UITableViewIndex (UITableViewIndexInternal)

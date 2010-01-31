@@ -6,37 +6,37 @@
 #import <UIKit/UITextInputTraits.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UITextField.h>
+#import <Availability2.h>
 
 @class UITextSelectionView, UIColor, UITextFieldAtomBackgroundView, UITextFieldBorderView, UITextFieldLabel, NSString, UITextInputTraits, UIImage, UIImageView, UITextFieldBackgroundView, UIFont, UILabel, UITextInteractionAssistant;
 @protocol UITextFieldDelegate;
 
 @interface UITextField ()
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// in a protocol: -(id)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
--(void)encodeWithCoder:(id)coder;
--(void)dealloc;
+// in a protocol: -(void)encodeWithCoder:(id)coder;
+// inherited: -(void)dealloc;
 -(void)_clearStyle;
 -(void)_setNeedsStyleRecalc;
 -(void)_sizeChanged:(BOOL)changed;
--(void)setFrame:(CGRect)frame;
--(void)setBounds:(CGRect)bounds;
+// inherited: -(void)setFrame:(CGRect)frame;
+// inherited: -(void)setBounds:(CGRect)bounds;
 -(void)setAnimating:(BOOL)animating;
 -(CGSize)_textSize;
--(CGSize)sizeThatFits:(CGSize)fits;
--(BOOL)canBecomeFirstResponder;
--(BOOL)canResignFirstResponder;
--(BOOL)becomeFirstResponder;
--(BOOL)isFirstResponder;
--(id)_firstResponder;
--(BOOL)resignFirstResponder;
+// inherited: -(CGSize)sizeThatFits:(CGSize)fits;
+// inherited: -(BOOL)canBecomeFirstResponder;
+// inherited: -(BOOL)canResignFirstResponder;
+// inherited: -(BOOL)becomeFirstResponder;
+// inherited: -(BOOL)isFirstResponder;
+// inherited: -(BOOL)resignFirstResponder;
 -(BOOL)_sendInitialMouseEvents;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+// inherited: -(id)hitTest:(CGPoint)test withEvent:(id)event;
 -(void)setFont:(id)font fullFontSize:(float)size;
 -(id)_copyFont:(id)font newSize:(float)size maxSize:(float)size3;
 -(float)_marginTopForText:(id)text;
@@ -97,17 +97,12 @@
 -(BOOL)keyboardInputChanged:(id)changed;
 -(void)keyboardInputChangedSelection:(id)selection;
 -(id)customOverlayContainer;
--(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
--(BOOL)fieldEditorShouldEndEditing:(id)fieldEditor;
--(void)fieldEditorDidBecomeFirstResponder:(id)fieldEditor;
--(void)fieldEditorDidResignFirstResponder:(id)fieldEditor;
 -(void)fieldEditorDidChange:(id)fieldEditor;
 -(void)selectAllFromFieldEditor:(id)fieldEditor;
 -(NSRange)fieldEditor:(id)editor willChangeSelectionFromCharacterRange:(NSRange)characterRange toCharacterRange:(NSRange)characterRange3;
 -(void)fieldEditorDidChangeSelection:(id)fieldEditor;
 -(BOOL)fieldEditor:(id)editor shouldInsertText:(id)text replacingRange:(NSRange)range;
 -(BOOL)fieldEditor:(id)editor shouldReplaceWithText:(id)text;
--(BOOL)webView:(id)view shouldInsertText:(id)text replacingDOMRange:(id)range givenAction:(int)action;
 -(id)supportedPasteboardTypesForCurrentSelection;
 -(id)documentFragmentForPasteboardItemAtIndex:(int)index;
 -(void)setAutoresizesTextToFit:(BOOL)fit;
@@ -116,7 +111,7 @@
 -(CGRect)clearButtonRect;
 -(CGRect)textRect;
 -(CGRect)editRect;
--(void)drawRect:(CGRect)rect;
+// inherited: -(void)drawRect:(CGRect)rect;
 -(void)drawBorder:(CGRect)border;
 -(void)setPaddingTop:(float)top paddingLeft:(float)left;
 -(void)setPaddingLeft:(float)left;
@@ -196,15 +191,34 @@
 -(void)setSelectionWithPoint:(CGPoint)point;
 -(CGPoint)constrainedPoint:(CGPoint)point;
 -(id)webView;
--(void)cut:(id)cut;
--(void)copy:(id)copy;
+// inherited: -(void)cut:(id)cut;
+// inherited: -(void)copy:(id)copy;
 -(id)supportedPasteboardTypes;
--(void)paste:(id)paste;
--(void)select:(id)select;
--(void)selectAll:(id)all;
+// inherited: -(void)paste:(id)paste;
+// inherited: -(void)select:(id)select;
+// inherited: -(void)selectAll:(id)all;
 -(void)_setRtoLTextDirection:(id)direction;
 -(void)_setLtoRTextDirection:(id)direction;
--(BOOL)canPerformAction:(SEL)action withSender:(id)sender;
+// inherited: -(BOOL)canPerformAction:(SEL)action withSender:(id)sender;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_keyboardResponder;
+-(BOOL)_requiresKeyboardResetOnReload;
+-(void)_becomeFirstResponderAndMakeVisible;
+-(void)_becomeFirstResponder;
+-(void)_resignFirstResponder;
+-(id)_createCSSStyleDeclarationForWebView:(id)webView;
+-(id)_placeholderColor;
+-(void)replace:(id)replace;
+-(void)promptForReplace:(id)replace;
+#else
+-(id)_firstResponder;
+-(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
+-(BOOL)fieldEditorShouldEndEditing:(id)fieldEditor;
+-(void)fieldEditorDidBecomeFirstResponder:(id)fieldEditor;
+-(void)fieldEditorDidResignFirstResponder:(id)fieldEditor;
+-(BOOL)webView:(id)view shouldInsertText:(id)text replacingDOMRange:(id)range givenAction:(int)action;
+#endif
 @end
 
 @interface UITextField (SyntheticEvents)

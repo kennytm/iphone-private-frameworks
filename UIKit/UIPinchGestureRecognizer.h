@@ -3,9 +3,18 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#include_next <UIKit/UIPinchGestureRecognizer.h>
+
+@interface UIPinchGestureRecognizer ()
+
+#else
+
 #import "UIKit-Structs.h"
 #import "UIGestureRecognizer.h"
-
 
 @interface UIPinchGestureRecognizer : UIGestureRecognizer {
 	float _lastTouchDistance;
@@ -17,19 +26,19 @@
 	CGPoint _anchorPoint;
 	unsigned _scrollViewGesture : 1;
 }
+@property(readonly, assign, nonatomic) float velocity;
+@property(readonly, assign, nonatomic) float scale;
+#endif
 @property(readonly, assign, nonatomic) CGAffineTransform transform;
 @property(assign, nonatomic) float scaleThreshold;
 @property(assign, nonatomic, getter=isScrollViewGesture) BOOL scrollViewGesture;
-@property(readonly, assign, nonatomic) float velocity;
-@property(readonly, assign, nonatomic) float scale;
 @property(readonly, assign, nonatomic) CGPoint anchorPoint;
--(id)initWithTarget:(id)target action:(SEL)action;
--(void)reset;
+// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(void)reset;
 -(float)_distanceBetweenTouches:(id)touches;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// inherited: -(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
 @end
-

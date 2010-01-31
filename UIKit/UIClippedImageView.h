@@ -5,9 +5,13 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class UIImageView;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+__attribute__((visibility("hidden")))
+#endif
 @interface UIClippedImageView : UIView {
 	UIImageView* m_imageView;
 	CGRect m_originalFrame;

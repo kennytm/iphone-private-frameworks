@@ -48,7 +48,6 @@
 -(BOOL)_usesDifferentHitTestForGestures;
 -(id)_gestureTargetHitTest:(CGPoint)test withEvent:(id)event;
 -(void)_scrollViewWillBeginDragging;
--(void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)_scrollView;
 -(void)_scrollViewDidEndDecelerating;
 -(CGPoint)_touchPositionForTouches:(id)touches;
 -(BOOL)_updatePanWithStartDelta:(CGSize)startDelta event:(id)event gesture:(id)gesture ignoringDirectionalScroll:(BOOL)scroll;
@@ -66,12 +65,43 @@
 -(BOOL)cancelTouchTracking;
 -(BOOL)cancelMouseTracking;
 -(void)cancelNextContentTouchEnded;
--(CGPoint)_centeredScrollPointForPoint:(CGPoint)point scale:(float)scale;
--(CGPoint)_zoomScrollPointForRect:(CGRect)rect scale:(float)scale;
 -(float)_zoomRubberBandScaleForScale:(float)scale;
--(void)setZoomScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint validatingScrollOffset:(BOOL)offset allowRubberbanding:(BOOL)rubberbanding animated:(BOOL)animated;
 -(void)setZoomScale:(float)scale animated:(BOOL)animated;
 -(void)zoomToRect:(CGRect)rect animated:(BOOL)animated;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_centerContentIfNecessary;
+// -(void)layoutSubviews;
+-(void)_updatePagingGesture;
+-(void)setZoomEnabled:(BOOL)enabled;
+-(BOOL)isZoomEnabled;
+-(void)setAllowsMultipleFingers:(BOOL)fingers;
+-(BOOL)allowsMultipleFingers;
+-(void)willRotateToInterfaceOrientation:(id)interfaceOrientation;
+-(void)willAnimateRotationToInterfaceOrientation:(id)interfaceOrientation;
+-(void)_registerForRotation:(BOOL)rotation ofWindow:(id)window;
+-(BOOL)preservesCenterDuringRotation;
+-(void)setPreservesCenterDuringRotation:(BOOL)rotation;
+-(void)_willMoveToWindow:(id)window;
+-(CADoublePoint)_rubberBandContentOffsetForOffset:(CADoublePoint)offset outsideX:(BOOL*)x outsideY:(BOOL*)y;
+-(void)_setZoomAnchorPoint:(CADoublePoint)point;
+-(CADoublePoint)_zoomAnchorPoint;
+-(void)_updatePinch:(id)pinch forState:(int)state;
+-(BOOL)gestureRecognizer:(id)recognizer shouldReceiveTouch:(id)touch;
+-(void)gestureRecognizerFailed:(id)failed;
+-(void)_handleSwipe:(id)swipe;
+-(void)_zoomToCenter:(CGPoint)center scale:(float)scale duration:(double)duration;
+-(void)_zoomToCenter:(CGPoint)center scale:(float)scale duration:(double)duration force:(BOOL)force;
+-(float)_zoomAnimationDurationForScale:(float)scale;
+-(void)_zoomAnimationDidStop;
+-(void)_adjustContentSizeForView:(id)view atScale:(float)scale;
+-(void)setZoomScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint validatingScrollOffset:(BOOL)offset allowRubberbanding:(BOOL)rubberbanding animated:(BOOL)animated duration:(double)duration notifyDelegate:(BOOL)delegate;
+-(void)setZoomScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint validatingScrollOffset:(BOOL)offset allowRubberbanding:(BOOL)rubberbanding animated:(BOOL)animated duration:(double)duration notifyDelegate:(BOOL)delegate force:(BOOL)force;
+#else
+-(void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)_scrollView;
+-(CGPoint)_centeredScrollPointForPoint:(CGPoint)point scale:(float)scale;
+-(CGPoint)_zoomScrollPointForRect:(CGRect)rect scale:(float)scale;
+-(void)setZoomScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint validatingScrollOffset:(BOOL)offset allowRubberbanding:(BOOL)rubberbanding animated:(BOOL)animated;
+#endif
 @end
 
 @interface UIScrollView (Static)
@@ -85,17 +115,21 @@
 -(void)_adjustScrollerIndicators:(BOOL)indicators alwaysShowingThem:(BOOL)them;
 -(void)_adjustContentOffsetIfNecessary;
 -(void)_hideScrollIndicators;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)_getPagingDecelerationOffset:(CADoublePoint*)offset forTimeInterval:(double)timeInterval;
+-(BOOL)_getBouncingDecelerationOffset:(CADoublePoint*)offset forTimeInterval:(double)timeInterval;
+-(BOOL)_getStandardDecelerationOffset:(CADoublePoint*)offset forTimeInterval:(double)timeInterval;
+-(void)_prepareToPageWithHorizontalVelocity:(float)horizontalVelocity verticalVelocity:(float)velocity;
+#endif
 @end
 
 @interface UIScrollView (UIScrollViewInternal)
 @property(assign, nonatomic, getter=isProgrammaticScrollEnabled) BOOL programmaticScrollEnabled;
--(void)_adjustBackgroundShadowsForContentSize;
 -(void)_stopScrollDecelerationNotify:(BOOL)notify;
 -(void)_stopScrollingNotify:(BOOL)notify dealloc:(BOOL)dealloc pin:(BOOL)pin;
 -(void)_resetScrollingWithEvent:(GSEventRef)event;
 -(void)_resetScrollingWithUIEvent:(id)uievent;
 -(BOOL)_resetScrollingForGestureEvent:(id)gestureEvent;
--(void)_scrollGestureFailed;
 -(void)_addScrollNotificationView:(id)view;
 -(void)_removeScrollNotificationView:(id)view;
 -(BOOL)_canCancelContentTouches:(id)touches;
@@ -126,6 +160,25 @@
 -(CGPoint)autoscrollContentOffset;
 -(void)setAutoscrollContentOffset:(CGPoint)offset;
 -(CGRect)contentFrameForView:(id)view;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(float)_cancelSelectDistance;
+-(void)_adjustBackgroundShadowsForContentSizeForcedVisible:(BOOL)contentSizeForcedVisible;
+-(BOOL)_beginTrackingWithEvent:(id)event;
+-(void)_clearContentOffsetAnimation;
+-(void)_forceDelegateScrollViewDidZoom:(BOOL)_forceDelegateScrollView;
+-(void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)_scrollView;
+-(id)_parentScrollView;
+-(void)_notifyPopOverIsScrolling:(BOOL)scrolling;
+-(void)_notifyPopOverStoppedScrolling;
+-(void)_notifyPopOverStoppedScrollingLater;
+-(BOOL)_pagingLeft;
+-(BOOL)_pagingRight;
+-(void)_skipNextStartOffsetAdjustment;
+-(BOOL)_isAnimatingContentOffset;
+#else
+-(void)_adjustBackgroundShadowsForContentSize;
+-(void)_scrollGestureFailed;
+#endif
 @end
 
 @interface UIScrollView (UIScrollViewGestures)
@@ -150,4 +203,11 @@
 -(void)_enableScrollingIfNecessary;
 -(void)_disableScrollingIfNecessary;
 @end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UIScrollView (UIWebSelectionAutoscroll)
+-(int)scrollableDirections;
+-(float)maxVelocityInDirection:(int)direction;
+@end
+#endif
 

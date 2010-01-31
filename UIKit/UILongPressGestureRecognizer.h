@@ -4,10 +4,30 @@
  */
 
 #import "UIKit-Structs.h"
-#import "UIGestureRecognizer.h"
+#import <UIKit/UIGestureRecognizer.h>
 
 @class NSMutableSet, UIDelayedAction, NSArray;
-@protocol UILongPressGestureRecognizerDelegate;
+
+@protocol UILongPressGestureRecognizerDelegate <NSObject, UIGestureRecognizerDelegate>
+@optional
+-(BOOL)longPressGestureCanTransitionToRecognizedState:(id)recognizedState;
+@end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#include_next <UIKit/UILongPressGestureRecognizer.h>
+
+@interface UILongPressGestureRecognizer()
+@property(readonly, retain, nonatomic) NSArray* touches;
+@property(assign, nonatomic) double delay;
+-(BOOL)cancelPastAllowableMovement;
+-(void)setCancelPastAllowableMovement:(BOOL)movement;
+-(void)setTouches:(id)touches;
+// inherited: -(CGPoint)locationInView:(id)view;
+// inherited: -(unsigned)numberOfTouches;
+// inherited: -(CGPoint)locationOfTouch:(unsigned)touch inView:(id)view;
+
+#else
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
 	NSArray* _touches;
@@ -23,21 +43,23 @@
 }
 @property(retain, nonatomic) NSArray* touches;
 @property(assign, nonatomic) int numberOfFingers;
-@property(assign, nonatomic) double delay;
 @property(assign, nonatomic) float allowableMovement;
-@property(assign, nonatomic) id<UILongPressGestureRecognizerDelegate> delegate;
+#endif
+@property(assign, nonatomic) double delay;
 @property(readonly, assign, nonatomic) CGPoint centroid;
 @property(readonly, assign, nonatomic) CGPoint startPoint;
--(id)initWithTarget:(id)target action:(SEL)action;
--(void)dealloc;
--(void)reset;
+@property(assign, nonatomic) id<UILongPressGestureRecognizerDelegate> delegate;
+// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(void)dealloc;
+// inherited: -(void)reset;
 -(void)enoughTimeElapsed:(id)elapsed;
 -(void)clearTimer;
 -(void)startTimer;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
 -(CGPoint)centroidScreen;
 @end
 
+#endif

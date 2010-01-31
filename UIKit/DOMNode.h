@@ -8,9 +8,9 @@
 #import <WebKit/DOMNode.h>
 #import "UIKit-Structs.h"
 #import <Availability2.h>
+#import <UIKit/UIKit.h>
 
-
-@interface DOMNode (UIWebFormAssistantExtras)
+@interface DOMNode (UIWebFormAssistantExtras)	// note: On 3.2 this method belongs to the UIWebFormExtensions category.
 -(id)createPeripheral;
 @end
 
@@ -25,17 +25,46 @@
 @end
 
 @interface DOMNode (UITextInputAdditions) <UIKeyboardInput>
+@property(readonly, assign, nonatomic) UITextInteractionAssistant* interactionAssistant;
+@property(readonly, assign, nonatomic) UIView<UITextSelectingContent>* content;
+@property(assign, nonatomic) BOOL contentsIsSingleValue;
+@property(readonly, assign, nonatomic, getter=isEditable) BOOL editable;
+@property(readonly, assign, nonatomic, getter=isEditing) BOOL editing;
+@property(assign, nonatomic) UIReturnKeyType returnKeyType;
+@property(readonly, assign, nonatomic) UITextSelectionView* selectionView;
+@property(assign, nonatomic) int textLoupeVisibility;
+@property(assign, nonatomic) id textSuggestionDelegate;
+@property(assign, nonatomic) CFCharacterSetRef textTrimmingSet;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(retain, nonatomic) UIColor* insertionPointColor;
+@property(assign, nonatomic) unsigned insertionPointWidth;
+@property(assign, nonatomic) int textSelectionBehavior;
+@property(assign, nonatomic) BOOL acceptsEmoji;
+@property(assign, nonatomic) int emptyContentReturnKeyType;
+@property(assign, nonatomic) int autocapitalizationType;
+@property(assign, nonatomic) int autocorrectionType;
+@property(assign, nonatomic) int keyboardType;
+@property(assign, nonatomic) int keyboardAppearance;
+@property(assign, nonatomic) BOOL enablesReturnKeyAutomatically;
+@property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
+@property(copy) UITextRange* selectedTextRange;
+@property(readonly, assign, nonatomic) UITextRange* markedTextRange;
+@property(copy, nonatomic) NSDictionary* markedTextStyle;
+@property(readonly, assign, nonatomic) UITextPosition* beginningOfDocument;
+@property(readonly, assign, nonatomic) UITextPosition* endOfDocument;
+@property(assign, nonatomic) id<UITextInputDelegate> inputDelegate;
+@property(readonly, assign, nonatomic) id<UITextInputTokenizer> tokenizer;
+@property(readonly, assign, nonatomic) UIView* textInputView;
+#endif
 -(void)takeTraitsFrom:(id)from;
 -(BOOL)hasContent;
 -(void)setupPlaceholderTextIfNeeded;
 -(id)textInputTraits;
 -(void)setSecure:(BOOL)secure;
 -(id)delegate;
--(BOOL)isProxyFor:(id)aFor;
+-(BOOL)isProxyFor:(id)aFor __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_2);
 -(BOOL)requiresKeyEvents;
--(void)handleKeyEvent:(GSEventRef)event;
--(CFCharacterSetRef)textTrimmingSet;
--(void)setTextTrimmingSet:(CFCharacterSetRef)set;
+-(void)handleKeyEvent:(GSEventRef)event __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_2);
 -(void)deleteBackward;
 -(void)insertText:(id)text;
 -(unsigned short)characterInRelationToCaretSelection:(int)caretSelection;
@@ -48,7 +77,6 @@
 -(id)markedText;
 -(void)replaceRangeWithText:(NSRange)text replacementText:(id)text2;
 -(void)replaceCurrentWordWithText:(id)text;
--(void)replaceRangeWithTextWithoutClosingTyping:(NSRange)textWithoutClosingTyping replacementText:(id)text;
 -(unsigned short)characterAfterCaretSelection;
 -(id)fontForCaretSelection;
 -(id)textColorForCaretSelection;
@@ -58,7 +86,6 @@
 -(id)wordInRange:(id)range;
 -(void)expandSelectionToStartOfWordContainingCaretSelection;
 -(int)wordOffsetInRange:(id)range;
--(NSRange)markedTextRange;
 -(NSRange)selectionRange;
 -(id)selectedDOMRange;
 -(void)setSelectedDOMRange:(id)range affinityDownstream:(BOOL)downstream;
@@ -67,7 +94,7 @@
 -(void)extendCurrentSelection:(int)selection;
 -(BOOL)hasSelection;
 -(BOOL)selectionAtDocumentStart;
--(BOOL)selectionAtSentenceStart;
+-(BOOL)selectionAtSentenceStart __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_2);
 -(BOOL)selectionAtWordStart;
 -(BOOL)rangeAtSentenceStart:(id)sentenceStart;
 -(void)moveBackward:(unsigned)backward;
@@ -76,19 +103,12 @@
 -(int)selectionState;
 -(void)setText:(id)text;
 -(id)text;
+-(void)setSelectionWithPoint:(CGPoint)point inset:(float)inset __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)setSelectionWithPoint:(CGPoint)point;
 -(CGRect)caretRect;
 -(CGRect)convertCaretRect:(CGRect)rect;
--(id)keyboardInputView;
+-(id)keyboardInputView __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_2);
 -(BOOL)isShowingPlaceholder;
--(id)textSuggestionDelegate;
--(void)setTextSuggestionDelegate:(id)delegate;
--(BOOL)contentsIsSingleValue;
--(void)setContentsIsSingleValue:(BOOL)value;
--(int)textLoupeVisibility;
--(void)setTextLoupeVisibility:(int)visibility;
--(UIReturnKeyType)returnKeyType;
--(void)setReturnKeyType:(UIReturnKeyType)type;
 -(int)initialSelectionBehavior;
 -(void)setInitialSelectionBehavior:(int)behavior;
 -(id)editingDelegate;
@@ -101,16 +121,47 @@
 -(void)beginSelectionChange;
 -(void)endSelectionChange;
 -(void)updateSelection;
--(id)selectionView;
 -(CGRect)selectionClipRect;
--(id)content;
--(id)interactionAssistant;
--(BOOL)isEditable;
--(BOOL)isEditing;
 -(BOOL)becomesEditableWithGestures;
 -(void)setBecomesEditableWithGestures:(BOOL)gestures;
 -(void)detachInteractionAssistant;
 -(void)detachSelectionView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)textInRange:(id)range;
+-(id)textRangeFromPosition:(id)position toPosition:(id)position2;
+-(id)rangeOfEnclosingWord:(id)enclosingWord;
+-(void)replaceRange:(id)range withText:(id)text;
+-(CGRect)firstRectForRange:(id)range;
+-(CGRect)_lastRectForRange:(id)range;
+-(void)moveRight;
+-(void)moveLeft;
+-(void)moveUp;
+-(void)moveDown;
+-(void)_setMarkedText:(id)text selectedRange:(NSRange)range;
+-(void)unmarkText;
+-(BOOL)hasText;
+-(int)comparePosition:(id)position toPosition:(id)position2;
+-(int)offsetFromPosition:(id)position toPosition:(id)position2;
+-(id)positionFromPosition:(id)position offset:(int)offset;
+-(id)positionFromPosition:(id)position inDirection:(int)direction offset:(int)offset;
+-(BOOL)isPosition:(id)position atBoundary:(int)boundary inDirection:(int)direction;
+-(id)positionFromPosition:(id)position toBoundary:(int)boundary inDirection:(int)direction;
+-(BOOL)isPosition:(id)position withinTextUnit:(int)unit inDirection:(int)direction;
+-(id)rangeEnclosingPosition:(id)position withGranularity:(int)granularity inDirection:(int)direction;
+-(CGRect)caretRectForPosition:(id)position;
+-(id)closestPositionToPoint:(CGPoint)point;
+-(id)closestPositionToPoint:(CGPoint)point withinRange:(id)range;
+-(id)characterRangeAtPoint:(CGPoint)point;
+-(id)positionWithinRange:(id)range farthestInDirection:(int)direction;
+-(id)characterRangeByExtendingPosition:(id)position inDirection:(int)direction;
+-(int)baseWritingDirectionForPosition:(id)position inDirection:(int)direction;
+-(void)setBaseWritingDirection:(int)direction forRange:(id)range;
+-(NSRange)_markedTextNSRange;
+-(void)replaceRangeWithTextWithoutClosingTyping:(id)textWithoutClosingTyping replacementText:(id)text;
+#else
+-(NSRange)markedTextRange;
+-(void)replaceRangeWithTextWithoutClosingTyping:(NSRange)textWithoutClosingTyping replacementText:(id)text;
+#endif
 @end
 
 @interface DOMNode (UIWebViewAdditions)
@@ -121,9 +172,12 @@
 @end
 
 @interface DOMNode (UIWebFormsDOMApprovedFocus)
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
 +(id)approvedFocusNode;
 -(void)setApprovedFocus:(BOOL)focus;
 -(BOOL)hasApprovedFocus;
+#endif
+-(id)itemTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);	// on 3.2 this belongs to the UIWebFormExtensions category.
 @end
 
 @interface DOMNode (UIWebInteraction)
@@ -160,4 +214,25 @@
 -(id)firstDescendantOfAboutTheSameWidthOrHeight;
 -(id)lastDescendantOfAboutTheSameWidthOrHeight;
 @end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface DOMNode (UIThreadSafeNodeAdditions)
+-(id)_realNode;
+@end
+
+@interface DOMNode (UIWebBrowserViewPrivate)
+-(void)_startAssistingDocumentView:(id)view;
+-(void)_stopAssistingDocumentView:(id)view;
+-(BOOL)_isAssistable;
+-(BOOL)_requiresAccessoryView;
+-(BOOL)_requiresInputView;
+-(BOOL)_supportsAutoFill;
+-(id)_nextAssistedNode;
+-(id)_previousAssistedNode;
+@end
+
+@interface DOMNode (UITextInputView)
+-(id)textInputView;
+@end
+#endif
 

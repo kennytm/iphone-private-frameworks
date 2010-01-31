@@ -33,11 +33,18 @@ __attribute__((visibility("hidden")))
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	_UISwappableImageViewAnimationProxy* _proxy;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _barButtonItemStyle;
+#endif
 	id _didFinishTarget;
 	SEL _didFinishSelector;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)initWithImage:(id)image alternateImage:(id)image2 barStyle:(int)style barButtonItemStyle:(int)style4 tintColor:(id)color bezel:(BOOL)bezel;
+#else
 -(id)initWithImage:(id)image alternateImage:(id)image2 barStyle:(int)style tintColor:(id)color bezel:(BOOL)bezel;
--(void)dealloc;
+#endif
+// inherited: -(void)dealloc;
 -(void)setBezelStyleForBarStyle:(int)barStyle tintColor:(id)color;
 -(void)updateImageIfNeeded;
 -(void)showAlternateImage:(BOOL)image;

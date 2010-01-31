@@ -5,19 +5,23 @@
 
 #import "UIKit-Structs.h"
 #import "UIPushButton.h"
-
+#import <Availability2.h>
 
 @interface UIThreePartButton : UIPushButton {
 	XXStruct_UUz0SD _bkgndSlices;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	CGSize _titleOffset;
+#endif
 }
-+(id)defaultFont;
--(id)initWithFrame:(CGRect)frame;
+@property(assign, nonatomic) CGSize titleOffset __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
+// inherited: +(id)defaultFont;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(void)setBackgroundSlices:(XXStruct_UUz0SD)slices;
 -(void)setBackgroundImage:(id)image;
 -(void)setPressedBackgroundImage:(id)image;
 -(id)background;
--(XXStruct_UUz0SD)_backgroundSlices:(CGSize)slices;
+// inherited: -(XXStruct_UUz0SD)_backgroundSlices:(CGSize)slices;
 -(float)minTitleMargin;
--(void)drawTitleAtPoint:(CGPoint)point width:(float)width;
+// inherited: -(void)drawTitleAtPoint:(CGPoint)point width:(float)width;
 @end
 

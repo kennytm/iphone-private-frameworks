@@ -5,13 +5,18 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSArray, UITextSelectionView, NSMutableArray, UISelectionGrabber, UITouch;
 @protocol UITextSelectingContainer;
 
+__attribute__((visibility("hidden")))
 @interface UITextRangeView : UIView {
 	UITextSelectionView* m_selectionView;
 	UIView<UITextSelectingContainer>* m_container;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int m_mode;
+#endif
 	NSArray* m_rects;
 	NSMutableArray* m_rectViews;
 	UITouch* m_activeTouch;
@@ -35,6 +40,7 @@
 	BOOL m_scaling;
 	BOOL m_rotating;
 }
+@property(assign, nonatomic) int mode __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @property(copy, nonatomic) NSArray* rects;
 @property(retain, nonatomic) UITouch* activeTouch;
 @property(assign, nonatomic) BOOL baseIsStart;

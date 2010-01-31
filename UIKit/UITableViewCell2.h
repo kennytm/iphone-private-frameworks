@@ -108,6 +108,25 @@
 -(void)_setupSelectedBackgroundView;
 -(void)setSectionLocation:(int)location;
 -(void)setSectionLocation:(int)location animated:(BOOL)animated;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_setupMenuGesture;
+-(void)selectedBackgroundViewChange:(id)change finished:(id)finished context:(id)context;
+-(void)setSelectedBackgroundView:(id)view animated:(BOOL)animated;
+-(void)setTopShadowColor:(id)color;
+-(id)topShadowColor;
+-(void)setBottomShadowColor:(id)color;
+-(id)bottomShadowColor;
+-(void)_clearOpaqueViewState:(id)state;
+-(void)_setUnhighlightedBackgroundColor:(id)color forSubview:(id)subview;
+-(int)style;
+-(void)setClipsContents:(BOOL)contents;
+-(BOOL)clipsContents;
+-(void)setSelectionFadeDuration:(float)duration;
+-(float)selectionFadeDuration;
+-(void)setAllowsIsolatedLayout:(BOOL)layout;
+-(BOOL)allowsIsolatedLayout;
+#endif
 @end
 
 @interface UITableViewCell (UITableViewEditableTextFieldCell)
@@ -169,6 +188,14 @@
 -(id)_scriptingInfo;
 -(void)_startToEditTextField;
 -(void)_multiselectColorChanged;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(float)_backgroundInset;
+-(id)_backgroundView:(BOOL)view;
+-(id)_selectedBackgroundView:(BOOL)view;
+-(id)_topShadowView:(BOOL)view;
+-(void)_didAddContentSubview:(id)subview;
+-(void)_willRemoveContentSubview:(id)subview;
+#endif
 @end
 
 @interface UITableViewCell (UITableViewCellStatic)
@@ -189,7 +216,6 @@
 -(void)_updateHighlightColorsForView:(id)view highlighted:(BOOL)highlighted;
 -(BOOL)_isCurrentlyConsideredHighlighted;
 -(void)_updateHighlightColorsForAnimationHalfwayPoint;
--(void)_updateAndCacheBackgroundColorForHighlight;
 -(void)_showReorderControl;
 -(id)_defaultFont;
 -(id)_textLabel;
@@ -207,6 +233,14 @@
 -(void)cut:(id)cut __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)copy:(id)copy __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)paste:(id)paste __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_updateAndCacheBackgroundColorForHighlightIgnoringSelection:(BOOL)highlightIgnoringSelection;
+-(void)_updateContentClip;
+-(void)_updateTopShadowView;
+-(void)_resetSelectionTimer;
+#else
+-(void)_updateAndCacheBackgroundColorForHighlight;
+#endif
 @end
 
 @interface UITableViewCell (UIKitAccessibilityInterfaceBuilderSupport)

@@ -6,6 +6,7 @@
 #import <UIKit/UIResponder.h>
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSUndoManager;
 
@@ -17,8 +18,13 @@
 -(void)mouseExited:(GSEventRef)exited;
 -(void)mouseMoved:(GSEventRef)moved;
 -(void)scrollWheel:(GSEventRef)wheel;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_nextKeyResponder;
+-(id)_previousKeyResponder;
+#else
 -(void)keyDown:(GSEventRef)down;
 -(void)keyUp:(GSEventRef)up;
+#endif
 -(void)gestureStarted:(GSEventRef)started;
 -(void)gestureEnded:(GSEventRef)ended;
 -(void)gestureChanged:(GSEventRef)changed;
@@ -49,5 +55,19 @@
 -(void)_controlTouchMoved:(id)moved withEvent:(id)event;
 -(void)_controlTouchEnded:(id)ended withEvent:(id)event;
 -(id)_targetForAction:(SEL)action withSender:(id)sender;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)_requiresKeyboardWhenFirstResponder;
+-(BOOL)_requiresKeyboardResetOnReload;
+-(id)_keyboardResponder;
+-(void)_becomeFirstResponder;
+-(void)_resignFirstResponder;
+-(void)_becomeFirstResponderAndMakeVisible;
+#endif
 @end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UIResponder (UITextInputAdditions)
+-(id)textInputView;
+@end
+#endif
 

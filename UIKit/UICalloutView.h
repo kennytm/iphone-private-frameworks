@@ -48,6 +48,16 @@
 @property(assign, nonatomic) int titleTextAlignment __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @property(assign, nonatomic) int subtitleLineBreakMode;
 @property(assign, nonatomic) int titleLineBreakMode;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(readonly, assign, nonatomic) float UICalloutViewMinimumWidth;
+@property(readonly, assign, nonatomic) float UICalloutViewVerticalMargin;
+@property(readonly, assign, nonatomic) float UICalloutViewHorizontalPadding;
+@property(readonly, assign, nonatomic) float UICalloutViewHorizontalMargin;
+@property(readonly, assign, nonatomic) float UICalloutViewButtonPadding;
+@property(readonly, assign, nonatomic) float UICalloutViewLayoutDuration;
+@property(readonly, assign, nonatomic) float UICalloutViewCapPaddingTop;
+@property(readonly, assign, nonatomic) float UICalloutViewCapHeight;
+#endif
 +(id)_backgroundImage;
 +(id)_leftCapImage;
 +(id)_rightCapImage;

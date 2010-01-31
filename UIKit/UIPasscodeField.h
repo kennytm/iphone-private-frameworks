@@ -7,6 +7,7 @@
 #import "UITextFieldDelegate.h"
 #import <UIKit/UIView.h>
 #import <UIKit/UITextInputTraits.h>
+#import <Availability2.h>
 
 @class NSMutableArray, UIPushButton, NSMutableString, NSString;
 
@@ -19,10 +20,13 @@
 	BOOL _centerHorizontally;
 	int _keyboardType;
 	int _keyboardAppearance;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _emptyContentReturnKeyType;
+#endif
 	id _delegate;
 }
 +(CGFloat)defaultHeight;
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(void)setKeyboardType:(UIKeyboardType)type;
 -(void)setKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance;
 -(void)dealloc;
@@ -46,6 +50,10 @@
 // -(void)textFieldDidResignFirstResponder:(id)textField;
 // -(void)okButtonClicked:(id)clicked;
 // -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(Class)textFieldClass;
+-(void)setKeyboardType:(int)type appearance:(int)appearance emptyContentReturnKeyType:(int)type3;
+#endif
 @end
 
 

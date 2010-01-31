@@ -3,11 +3,12 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
-#import "UIGestureRecognizer.h"
 #import <Availability2.h>
+#import <UIKit/UIGestureRecognizer.h>
 
 @class UIDelayedAction;
 
+__attribute__((visibility("hidden")))
 @interface UIScrollViewDelayedTouchesBeganGestureRecognizer : UIGestureRecognizer {
 	UIDelayedAction* _touchDelay;
 }
@@ -15,12 +16,16 @@
 -(void)sendTouchesShouldBegin __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_3_0, __IPHONE_3_1);
 -(void)sendTouchesShouldBeginForTouches:(id)sendTouches withEvent:(id)event __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)sendTouchesShouldBeginForDelayedTouches:(id)sendTouches __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)sendDelayedTouches;
+// inherited: -(BOOL)canPreventGestureRecognizer:(id)recognizer;
+#else
 -(void)enoughTimeElapsed:(id)elapsed;
--(void)dealloc;
--(void)reset;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
+#endif
+// -(void)dealloc;
+// -(void)reset;
+// -(void)touchesBegan:(id)began withEvent:(id)event;
+// -(void)touchesEnded:(id)ended withEvent:(id)event;
+// -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// -(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
 @end
-

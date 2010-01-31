@@ -41,4 +41,3 @@
 -(BOOL)usesAdaptiveKeys;
 -(BOOL)supportsType:(int)type;
 @end
-

@@ -4,8 +4,9 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface _UIAlertManager : NSObject {
 }
 +(void)hideTopmostMiniAlert:(int)alert;
@@ -15,7 +16,6 @@
 +(id)topMostAlert;
 +(id)visibleAlert;
 +(void)noteOrientationChangingTo:(int)to;
-+(void)reorientAlertWindowTo:(int)to animated:(BOOL)animated;
 +(void)addToStack:(id)stack dontDimBackground:(BOOL)background;
 +(void)removeFromStack:(id)stack;
 +(BOOL)stackContainsAlert:(id)alert;
@@ -23,5 +23,12 @@
 +(void)tellSpringboardHidingAlert:(id)alert animated:(BOOL)animated;
 +(void)createAlertWindowIfNeeded:(BOOL)needed;
 +(void)sizeAlertWindowForCurrentOrientation;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(void)alertWindowAnimationDidStop:(id)alertWindowAnimation finished:(id)finished context:(void*)context;
++(void)reorientAlertWindowTo:(int)to animated:(BOOL)animated keyboard:(id)keyboard;
++(void)createAlertWindowIfNeeded:(BOOL)needed normalizeScaleInClassic:(BOOL)classic;
+#else
++(void)reorientAlertWindowTo:(int)to animated:(BOOL)animated;
+#endif
 @end
 

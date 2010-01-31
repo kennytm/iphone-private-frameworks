@@ -5,7 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import "NSObject.h"
-
+#import <Availability2.h>
 
 @protocol UIKeyboardCandidateList <NSObject>
 -(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
@@ -16,6 +16,7 @@
 -(void)showPageAtIndex:(unsigned)index;
 -(void)showNextPage;
 -(void)showPreviousPage;
+-(void)showPreviousCandidate __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(id)currentCandidate;
 -(unsigned)currentIndex;
 -(id)candidateAtIndex:(unsigned)index;

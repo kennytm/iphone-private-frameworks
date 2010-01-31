@@ -28,4 +28,3 @@
 -(void)setRef:(NSArray*)ref;
 -(void)layoutInRect:(CGRect)rect;
 @end
-

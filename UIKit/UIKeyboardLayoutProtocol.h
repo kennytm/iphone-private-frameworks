@@ -5,7 +5,7 @@
 
 #import "NSObject.h"
 #import "UIKit-Structs.h"
-
+#import <Availability2.h>
 
 @protocol UIKeyboardLayoutProtocol <NSObject>
 -(void)showKeyboardType:(UIKeyboardAppearance)type withAppearance:(UIKeyboardAppearance)appearance;
@@ -16,8 +16,10 @@
 -(void)setShift:(BOOL)shift;
 -(BOOL)isShiftKeyBeingHeld;
 -(void)longPressAction;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(BOOL)canHandleHandEvent:(GSEventRef)event;
 -(BOOL)handleHandEvent:(GSEventRef)event;
+#endif
 -(void)didClearInput;
 -(id)candidateList;
 -(void)setLabel:(id)label forKey:(id)key;
@@ -29,5 +31,10 @@
 -(id)activationIndicatorView;
 -(BOOL)shouldShowIndicator;
 -(void)phraseBoundaryDidChange;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setAutoshift:(BOOL)autoshift;
+@optional
+-(void)setReturnKeyEnabled:(BOOL)enabled withDisplayName:(id)displayName withType:(int)type;
+#endif
 @end
 

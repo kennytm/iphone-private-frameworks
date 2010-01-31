@@ -4,12 +4,15 @@
  */
 
 #import <UIKit/UILabel.h>
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface UISegmentLabel : UILabel {
 	int _style;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(id)initWithSegmentedControlStyle:(int)segmentedControlStyle;
--(id)_disabledFontColor;
+#endif
+// inherited: -(id)_disabledFontColor;
 @end
 

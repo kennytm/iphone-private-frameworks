@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UIBarButtonItem.h>
 #import <UIKit/UIBarItem.h>
+#import <Availability2.h>
 
 @class NSString, UIToolbarButton, UIImage, NSSet, UIView;
 
@@ -33,8 +34,10 @@
 -(void)_getSystemItemStyle:(int*)style title:(id*)title image:(id*)image selectedImage:(id*)image4 action:(SEL*)action forBarStyle:(int)barStyle landscape:(BOOL)landscape alwaysBordered:(BOOL)bordered;
 -(void)_getNavBarEdgeSizeAdjust:(CGSize*)adjust imageInsets:(UIEdgeInsets*)insets landscape:(BOOL)landscape;
 -(void)_getToolbarEdgeInsets:(UIEdgeInsets*)insets imageInsets:(UIEdgeInsets*)insets2 glowInsets:(UIEdgeInsets*)insets3 forBarStyle:(int)barStyle landscape:(BOOL)landscape alwaysBordered:(BOOL)bordered;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(id)createViewForNavigationItem:(id)navigationItem;
 -(id)createViewForToolbar:(id)toolbar;
+#endif
 -(void)_updateView;
 @end
 
@@ -52,5 +55,12 @@
 @interface UIBarButtonItem (UIBarButtonItemPrivate)
 @property(readonly, assign, nonatomic) UIToolbarButton* _toolbarButton;
 @property(assign, nonatomic, getter=isEnabled) BOOL enabled;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL _shouldBezelImage;
+-(id)createViewForNavigationItem:(id)navigationItem;
+-(id)createViewForToolbar:(id)toolbar;
+-(void)_setWidth:(float)width;
+-(float)_width;
+#endif
 @end
 

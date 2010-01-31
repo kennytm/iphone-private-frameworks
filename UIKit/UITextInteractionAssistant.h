@@ -5,11 +5,14 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
-@class UILongPressGestureRecognizer, UIFieldEditor, UIScrollView, NSMutableArray, UIView;
+@class UILongPressGestureRecognizer, UIFieldEditor, UIScrollView, NSMutableArray, UIView, UITextChecker;
 @protocol UITextSelectingContainer;
 
+__attribute__((visibility("hidden")))
 @interface UITextInteractionAssistant : NSObject {
+@private
 	UIView<UITextSelectingContainer>* _view;
 	NSMutableArray* _recognizers;
 	UILongPressGestureRecognizer* loupeGesture;
@@ -18,6 +21,9 @@
 	CGPoint _autoscrollBasePoint;
 	CGPoint _autoscrollUntransformedExtentPoint;
 	CGPoint _loupeGestureEndPoint;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UITextChecker* _textChecker;
+#endif
 	BOOL _inGesture;
 	BOOL _autoscrolled;
 	BOOL _isTryingToHighlightLink;
@@ -31,7 +37,7 @@
 @property(readonly, assign, nonatomic) UIFieldEditor* fieldEditor;
 @property(readonly, assign, nonatomic) UIScrollView* scrollView;
 -(id)initWithView:(id)view;
--(void)dealloc;
+// inherited: -(void)dealloc;
 -(void)detach;
 -(void)attach;
 -(BOOL)containerIsTextField;
@@ -93,4 +99,3 @@
 -(void)willRotate:(id)rotate;
 -(void)didRotate:(id)rotate;
 @end
-

@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import "NSObject.h"
 #import <UIKit/UITextInputTraits.h>
+#import <Availability2.h>
 
 @class UIColor;
 @protocol UITextInputTraits;
@@ -19,6 +20,7 @@
 @property(assign, nonatomic) id textSuggestionDelegate;
 @property(assign, nonatomic) BOOL contentsIsSingleValue;
 @property(assign, nonatomic) BOOL acceptsEmoji;
+@property(assign, nonatomic) int emptyContentReturnKeyType __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)takeTraitsFrom:(id)from;
 @optional
 -(BOOL)acceptsEmoji;

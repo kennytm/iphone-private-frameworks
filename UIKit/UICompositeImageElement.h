@@ -5,9 +5,13 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class UIImage;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+__attribute__((visibility("hidden")))
+#endif
 @interface UICompositeImageElement : NSObject {
 	UIImage* m_image;
 	CGRect m_fromRect;

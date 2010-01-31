@@ -7,19 +7,20 @@
 #import "UIKit-Structs.h"
 #import <UIKit/UITextView.h>
 #import <UIKit/UIScrollView.h>
+#import <Availability2.h>
 
 @class UITextSelectionView, UIColor, DOMHTMLElement, NSString, UITouch, UIDelayedAction, UIWebDocumentView, WebFrame, UIFont, UITextInteractionAssistant;
 @protocol UITextViewDelegate;
 
 @interface UITextView ()
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(id)initWithFrame:(CGRect)frame webView:(id)view;
 -(id)initWithFrame:(CGRect)frame font:(id)font;
--(id)initWithCoder:(id)coder;
+// in a protocol: -(id)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
--(void)encodeWithCoder:(id)coder;
+// in a protocol: -(void)encodeWithCoder:(id)coder;
 -(void)commonInitWithWebDocumentView:(id)webDocumentView isDecoding:(BOOL)decoding;
--(void)dealloc;
+// inherited: -(void)dealloc;
 -(void)removeFromSuperview;
 -(void)detachSelectionView;
 -(void)detachInteractionAssistant;
@@ -32,28 +33,20 @@
 -(void)recalculateStyle;
 -(void)didMoveToSuperview;
 -(void)updateWebViewObjects;
--(BOOL)becomeFirstResponder;
--(BOOL)resignFirstResponder;
--(BOOL)canBecomeFirstResponder;
--(BOOL)canResignFirstResponder;
--(BOOL)isFirstResponder;
+// inherited: -(BOOL)becomeFirstResponder;
+// inherited: -(BOOL)resignFirstResponder;
+// inherited: -(BOOL)canBecomeFirstResponder;
+// inherited: -(BOOL)canResignFirstResponder;
+// inherited: -(BOOL)isFirstResponder;
 -(void)ensureSelection;
 -(CGPoint)constrainedPoint:(CGPoint)point;
--(void)textLoupeTimerAction;
 -(CGImageRef)createSnapshotWithRect:(CGRect)rect;
--(id)_syntheticTouch;
--(void)callSuperTouchBegan:(XXStruct_CKAdxD*)began;
--(void)callSuperTouchMoved:(XXStruct_CKAdxD*)moved;
--(void)callSuperTouchEnded:(XXStruct_CKAdxD*)ended;
--(void)touchBegan:(XXStruct_CKAdxD*)began atLocation:(CGPoint)location;
--(void)touchMoved:(XXStruct_CKAdxD*)moved atLocation:(CGPoint)location;
--(void)touchEnded:(XXStruct_CKAdxD*)ended atLocation:(CGPoint)location loupeActive:(BOOL)active loupeTerminalPoint:(CGPoint)point;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
--(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
+// inherited: -(id)hitTest:(CGPoint)test withEvent:(id)event;
+// inherited: -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
 -(id)content;
 -(void)beginSelectionChange;
 -(void)endSelectionChange;
@@ -84,8 +77,8 @@
 -(void)setContentToHTMLString:(id)htmlstring;
 -(id)contentAsHTMLString;
 -(id)textInputTraits;
--(void)forwardInvocation:(id)invocation;
--(id)methodSignatureForSelector:(SEL)selector;
+// inherited: -(void)forwardInvocation:(id)invocation;
+// inherited: -(id)methodSignatureForSelector:(SEL)selector;
 -(BOOL)hasText;
 -(BOOL)becomesEditableWithGestures;
 -(void)setBecomesEditableWithGestures:(BOOL)gestures;
@@ -113,7 +106,6 @@
 -(BOOL)keyboardInputShouldDelete:(id)keyboardInput;
 -(BOOL)keyboardInputChanged:(id)changed;
 -(void)keyboardInputChangedSelection:(id)selection;
--(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
 -(void)webView:(id)view decidePolicyForNavigationAction:(id)navigationAction request:(id)request frame:(id)frame decisionListener:(id)listener;
 -(void)setBottomBufferHeight:(float)height;
 -(float)bottomBufferHeight;
@@ -128,6 +120,21 @@
 -(void)setAllowsFourWayRubberBanding:(BOOL)banding;
 -(void)setScrollerIndicatorSubrect:(CGRect)subrect;
 -(void)scrollToMakeCaretVisible:(BOOL)makeCaretVisible;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(CGImageRef)newSnapshotWithRect:(CGRect)rect;
+-(void)replace:(id)replace;
+-(id)automaticallySelectedOverlay;
+#else
+-(void)textLoupeTimerAction;
+-(id)_syntheticTouch;
+-(void)callSuperTouchBegan:(XXStruct_CKAdxD*)began;
+-(void)callSuperTouchMoved:(XXStruct_CKAdxD*)moved;
+-(void)callSuperTouchEnded:(XXStruct_CKAdxD*)ended;
+-(void)touchBegan:(XXStruct_CKAdxD*)began atLocation:(CGPoint)location;
+-(void)touchMoved:(XXStruct_CKAdxD*)moved atLocation:(CGPoint)location;
+-(void)touchEnded:(XXStruct_CKAdxD*)ended atLocation:(CGPoint)location loupeActive:(BOOL)active loupeTerminalPoint:(CGPoint)point;
+-(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
+#endif
 @end
 
 @interface UITextView (SyntheticEvents)

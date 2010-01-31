@@ -6,6 +6,7 @@
 #import "UIKit-Structs.h"
 #import "UIWebPlugInView.h"
 #import <WebCore/WAKView.h>
+#import <Availability2.h>
 
 @class UIWebDocumentView, UIView;
 
@@ -16,25 +17,29 @@
 	BOOL _isFullScreen;
 }
 -(id)initWithWebView:(id)webView plugInView:(id)view;
--(void)dealloc;
--(void)setFrame:(CGRect)frame;
--(void)setFrameSize:(CGSize)size;
--(void)viewDidMoveToWindow;
--(void)invalidateGState;
+// inherited: -(void)dealloc;
+// inherited: -(void)setFrame:(CGRect)frame;
+// inherited: -(void)setFrameSize:(CGSize)size;
+// inherited: -(void)viewDidMoveToWindow;
+// inherited: -(void)invalidateGState;
 -(id)plugInView;
 -(void)reshape;
--(void)layout;
--(void)drawRect:(CGRect)rect;
+// inherited: -(void)layout;
+// inherited: -(void)drawRect:(CGRect)rect;
 -(void)webPlugInInitialize;
 -(void)webPlugInStart;
 -(void)webPlugInStop;
 -(void)webPlugInDestroy;
--(BOOL)respondsToSelector:(SEL)selector;
--(void)forwardInvocation:(id)invocation;
--(id)methodSignatureForSelector:(SEL)selector;
+// inherited: -(BOOL)respondsToSelector:(SEL)selector;
+// inherited: -(void)forwardInvocation:(id)invocation;
+// inherited: -(id)methodSignatureForSelector:(SEL)selector;
 -(id)objectForWebScript;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setWebView:(id)view;
+#else
 -(void)mouseDown:(GSEventRef)down;
 -(void)mouseUp:(GSEventRef)up;
+#endif
 @end
 
 @interface UIWebPlugInView (Private)

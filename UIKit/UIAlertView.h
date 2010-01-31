@@ -103,7 +103,9 @@
 -(void)popupAlertAnimated:(BOOL)animated atOffset:(float)offset;
 -(void)popupAlertAnimated:(BOOL)animated animationType:(int)type;
 -(void)popupAlertAnimated:(BOOL)animated;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(void)rePopupAlertAfterRotation;
+#endif
 -(void)_presentSheetFromView:(id)view above:(BOOL)above;
 -(void)presentSheetFromBehindView:(id)behindView;
 -(void)presentSheetFromAboveView:(id)aboveView;

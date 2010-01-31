@@ -5,11 +5,16 @@
 
 #import <Foundation/NSObject.h>
 #import <GraphicsServices/GSFont.h>
+#import <Availability2.h>
 
 @class NSString;
 
 @interface UIFont ()
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)__newDummy;
+#else
 +(id)__dummy;
+#endif
 +(UIFont*)fontWithFamilyName:(NSString*)familyName traits:(GSFontTraitMask)traits size:(CGFloat)fontSize;
 +(UIFont*)fontWithMarkupDescription:(NSString*)markupDescription;
 +(float)labelFontSize;

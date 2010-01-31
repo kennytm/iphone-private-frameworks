@@ -88,20 +88,9 @@
 -(BOOL)isFirstResponder;
 -(void)ensureSelection;
 -(CGPoint)constrainedPoint:(CGPoint)point;
--(void)textLoupeTimerAction;
 -(id)automaticallySelectedOverlay  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(id)_syntheticTouch;
--(void)callSuperTouchBegan:(XXStruct_CKAdxD*)began;
--(void)callSuperTouchMoved:(XXStruct_CKAdxD*)moved;
--(void)callSuperTouchEnded:(XXStruct_CKAdxD*)ended;
--(void)touchBegan:(XXStruct_CKAdxD*)began atLocation:(CGPoint)location;
--(void)touchMoved:(XXStruct_CKAdxD*)moved atLocation:(CGPoint)location;
--(void)touchEnded:(XXStruct_CKAdxD*)ended atLocation:(CGPoint)location loupeActive:(BOOL)active loupeTerminalPoint:(CGPoint)point;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
 -(void)_scrollViewWillBeginDragging;
 -(void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)_scrollView;
 -(void)_scrollViewDidEndDecelerating;
@@ -140,14 +129,11 @@
 -(id)wordContainingCaretSelection;
 -(id)wordRangeContainingCaretSelection;
 -(id)wordInRange:(id)range;
--(int)wordOffsetInRange:(id)range;
 -(unsigned short)characterBeforeCaretSelection;
 -(BOOL)rangeAtSentenceStart:(id)sentenceStart;
--(BOOL)selectionAtSentenceStart;
 -(NSRange)selectionRange;
 -(CGRect)rectContainingCaretSelection;
 -(id)fontForCaretSelection;
--(unsigned short)characterInRelationToCaretSelection:(int)caretSelection;
 -(id)undoManagerForWebView:(id)webView;
 -(id)undoManager;
 -(void)_hideSelectionCommands;
@@ -208,7 +194,6 @@
 -(BOOL)keyboardInputShouldDelete:(id)keyboardInput;
 -(BOOL)keyboardInputChanged:(id)changed;
 -(void)keyboardInputChangedSelection:(id)selection;
--(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
 -(void)webView:(id)view decidePolicyForNavigationAction:(id)navigationAction request:(id)request frame:(id)frame decisionListener:(id)listener;
 -(void)setBottomBufferHeight:(float)height;
 -(float)bottomBufferHeight;
@@ -222,6 +207,26 @@
 -(BOOL)scrollingEnabled;
 -(void)setAllowsFourWayRubberBanding:(BOOL)banding;
 -(void)setScrollerIndicatorSubrect:(CGRect)subrect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)replace:(id)replace;
+-(void)promptForReplace:(id)replace;
+#else
+-(void)textLoupeTimerAction;
+-(id)_syntheticTouch;
+-(void)callSuperTouchBegan:(XXStruct_CKAdxD*)began;
+-(void)callSuperTouchMoved:(XXStruct_CKAdxD*)moved;
+-(void)callSuperTouchEnded:(XXStruct_CKAdxD*)ended;
+-(void)touchBegan:(XXStruct_CKAdxD*)began atLocation:(CGPoint)location;
+-(void)touchMoved:(XXStruct_CKAdxD*)moved atLocation:(CGPoint)location;
+-(void)touchEnded:(XXStruct_CKAdxD*)ended atLocation:(CGPoint)location loupeActive:(BOOL)active loupeTerminalPoint:(CGPoint)point;
+-(void)mouseDown:(GSEventRef)down;
+-(void)mouseDragged:(GSEventRef)dragged;
+-(void)mouseUp:(GSEventRef)up;
+-(int)wordOffsetInRange:(id)range;
+-(BOOL)selectionAtSentenceStart;
+-(unsigned short)characterInRelationToCaretSelection:(int)caretSelection;
+-(int)keyboardInput:(id)input positionForAutocorrection:(id)autocorrection;
+#endif
 @end
 
 @interface UITextContentView (SyntheticEvents)

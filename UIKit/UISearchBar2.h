@@ -12,18 +12,18 @@
 @protocol UISearchBarDelegate;
 
 @interface UISearchBar ()
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+// -(id)initWithFrame:(CGRect)frame;
+// -(id)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
--(void)encodeWithCoder:(id)coder;
--(void)dealloc;
+// -(void)encodeWithCoder:(id)coder;
+// -(void)dealloc;
 -(void)setController:(id)controller;
 -(id)controller;
 -(id)searchField;
--(void)willMoveToSuperview:(id)superview __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)movedToSuperview:(id)superview __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+// -(void)willMoveToSuperview:(id)superview __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+// -(void)movedToSuperview:(id)superview __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_updateRightView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)_hideShowAnimationDidFinish;
--(void)setShowsCancelButton:(BOOL)button animated:(BOOL)animated;
 -(void)_setShowsCancelButton:(BOOL)button;
 -(void)setBackgroundImage:(id)image;
 -(id)backgroundImage;
@@ -35,9 +35,9 @@
 -(BOOL)usesEmbeddedAppearance;
 -(void)setCancelButton:(id)button;
 -(id)cancelButton;
--(CGSize)sizeThatFits:(CGSize)fits;
+// -(CGSize)sizeThatFits:(CGSize)fits;
 -(void)_setShowsSeparator:(BOOL)separator;
--(void)layoutSubviews;
+// -(void)layoutSubviews;
 -(void)setContentInset:(UIEdgeInsets)inset;
 -(UIEdgeInsets)contentInset;
 -(void)_setUpScopeBar;
@@ -67,6 +67,12 @@
 -(BOOL)canResignFirstResponder;
 -(BOOL)resignFirstResponder;
 -(BOOL)isFirstResponder;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)pretendsIsInBar;
+-(void)setPretendsIsInBar:(BOOL)bar;
+-(BOOL)_isInBar;
+-(void)_resultsListButtonPressed;
+#endif
 @end
 
 @interface UISearchBar (UIKitAccessibilityInterfaceBuilderSupport)

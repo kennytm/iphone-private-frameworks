@@ -247,8 +247,10 @@
 -(void)_disableScrollingIfNecessary;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 @interface UIScroller (UIWebSelectionAutoscroll)
 -(int)scrollableDirections;
 -(float)maxVelocityInDirection:(int)direction;
 @end
+#endif
 

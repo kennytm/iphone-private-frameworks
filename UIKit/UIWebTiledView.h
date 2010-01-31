@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class WAKWindow;
 
@@ -14,12 +15,13 @@
 	int _tilingArea;
 	BOOL _didFirstTileLayout;
 	BOOL _layoutTilesInMainThread;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _tilingModeIsLocked;
+#endif
 }
 -(id)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(WKWindow*)wkWindow;
--(void)flushDirtyRects;
--(void)layoutBeforeDraw;
 -(CGRect)visibleRect;
 -(void)layoutTilesNow;
 -(void)layoutSubviews;
@@ -43,8 +45,6 @@
 -(BOOL)isTilingEnabled;
 -(void)setLogsTilingChanges:(BOOL)changes;
 -(BOOL)logsTilingChanges;
--(void)ensureDrawnRect:(CGRect)rect;
--(void)setFirstTileSize:(CGSize)size;
 -(void)setTileDrawingEnabled:(BOOL)enabled;
 -(BOOL)tileDrawingEnabled;
 -(void)setTileMinificationFilter:(id)filter;
@@ -54,5 +54,15 @@
 -(void)removeAllTiles;
 -(BOOL)layoutTilesInMainThread;
 -(void)setLayoutTilesInMainThread:(BOOL)mainThread;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)layoutTilesNowOnWebThread;
+-(void)lockTilingMode;
+-(void)unlockTilingMode;
+#else
+-(void)flushDirtyRects;
+-(void)layoutBeforeDraw;
+-(void)ensureDrawnRect:(CGRect)rect;
+-(void)setFirstTileSize:(CGSize)size;
+#endif
 @end
 

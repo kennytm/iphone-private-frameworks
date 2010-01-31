@@ -3,10 +3,15 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+
 #import <Foundation/NSObject.h>
 
 @class NSString, NSData;
 
+__attribute__((visibility("hidden")))
 @interface CandWordString : NSObject {
 	NSString* _string;
 	char* _UTF8String;
@@ -18,3 +23,4 @@
 -(const char*)UTF8String;
 @end
 
+#endif

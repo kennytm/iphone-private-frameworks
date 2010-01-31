@@ -6,9 +6,11 @@
 #import "UIKit-Structs.h"
 #import "UIKeyboardCandidateList.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class UILabel, UIScroller, NSMutableArray, UIImage, NSArray, UIKeyboardCandidateSafetyNetVie, NSTimer, UIKeyboardGenericKeyView, UIImageView, NSString, UIAutocorrectInlinePrompt;
 
+__attribute__((visibility("hidden")))
 @interface UIKeyboardCandidateInline : UIView <UIKeyboardCandidateList> {
 	id _delegate;
 	NSArray* _candidates;
@@ -24,8 +26,10 @@
 	unsigned _numColumns;
 	BOOL _alwaysShowBackground;
 	BOOL _showControls;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	BOOL _showingAll;
 	BOOL _selectedInAll;
+#endif
 	NSMutableArray* _candidateLines;
 	UIAutocorrectInlinePrompt* _inlineView;
 	UIScroller* _scrollView;
@@ -43,6 +47,9 @@
 	CGRect _windowFrame;
 	CGPoint _draggingStartOffset;
 	UIImageView* _closeButton;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIImageView* _expandButton;
+#endif
 	UIImage* _backgroundImage;
 	UIImage* _backgroundTopImage;
 	CGRect _closeButtonFrame;
@@ -57,37 +64,40 @@
 	BOOL m_caretShowingNow;
 	BOOL m_showingCompletions;
 	UIKeyboardCandidateSafetyNetVie* m_landscapeSafetyNetView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _windowType;
+#endif
 }
 +(id)sharedInstance;
 +(void)releaseSharedInstance;
--(id)initWithFrame:(CGRect)frame;
+// inherited: -(id)initWithFrame:(CGRect)frame;
 -(id)rotatingContentViewForWindow:(id)window;
 -(void)adjustForFrame:(CGRect)frame orientation:(int)orientation;
 -(int)orientation;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 -(BOOL)ignoresMouseEvents;
--(void)dealloc;
--(void)candidateAcceptedAtIndex:(unsigned)index;
--(void)drawRect:(CGRect)rect;
+// inherited: -(void)dealloc;
+// in a protocol: -(void)candidateAcceptedAtIndex:(unsigned)index;
+// inherited: -(void)drawRect:(CGRect)rect;
 -(void)_setInlineText:(id)text;
--(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
--(void)setCandidates:(id)candidates type:(int)type inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
--(void)obsoleteCandidates;
--(void)setCompletionContext:(id)context;
--(void)showCandidateAtIndex:(unsigned)index;
--(void)showPageAtIndex:(unsigned)index;
--(void)showNextPage;
--(void)showPreviousPage;
--(void)setUIKeyboardCandidateListDelegate:(id)delegate;
--(void)showNextCandidate;
--(id)currentCandidate;
--(unsigned)currentIndex;
--(id)candidateAtIndex:(unsigned)index;
+// in a protocol: -(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
+// in a protocol: -(void)setCandidates:(id)candidates type:(int)type inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;
+// in a protocol: -(void)obsoleteCandidates;
+// in a protocol: -(void)setCompletionContext:(id)context;
+// in a protocol: -(void)showCandidateAtIndex:(unsigned)index;
+// in a protocol: -(void)showPageAtIndex:(unsigned)index;
+// in a protocol: -(void)showNextPage;
+// in a protocol: -(void)showPreviousPage;
+// in a protocol: -(void)setUIKeyboardCandidateListDelegate:(id)delegate;
+// in a protocol: -(void)showNextCandidate;
+// in a protocol: -(id)currentCandidate;
+// in a protocol: -(unsigned)currentIndex;
+// in a protocol: -(id)candidateAtIndex:(unsigned)index;
 -(void)setCurrentIndex:(unsigned)index;
--(unsigned)count;
--(void)configureKeyboard:(id)keyboard;
+// in a protocol: -(unsigned)count;
+// in a protocol: -(void)configureKeyboard:(id)keyboard;
 -(void)setAlwaysShowBackground:(BOOL)background;
 -(void)setShowControls:(BOOL)controls;
 -(void)inlineCandidateClicked:(id)clicked;
@@ -96,8 +106,7 @@
 -(void)cancelButtonSelected:(id)selected;
 -(void)prevPageButtonSelected:(id)selected;
 -(void)nextPageButtonSelected:(id)selected;
--(void)layout;
--(void)layoutOneCandidateAtIndex:(unsigned)index;
+// in a protocol: -(void)layout;
 -(void)clearLayout;
 -(void)_clearInlineCandidate;
 -(void)_fadeInlineCandidate;
@@ -120,7 +129,22 @@
 -(BOOL)_layoutNextLine;
 -(BOOL)needsWebDocumentViewEventsDirectly;
 -(void)setCaretPosition:(CGRect)position;
--(void)showCaret:(BOOL)caret gradually:(BOOL)gradually;
+// in a protocol: -(void)showCaret:(BOOL)caret gradually:(BOOL)gradually;
 -(int)textEffectsVisibilityLevel;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_setupButton:(id)button;
+// in a protocol: -(void)showPreviousCandidate;
+-(void)layoutWithWindowType:(int)windowType;
+-(void)_showCandidateListInline;
+-(void)_showCandidateListBottom;
+-(BOOL)_layoutNextLineWithMarginLeft:(float)marginLeft marginRight:(float)right;
+#else
+-(void)layoutOneCandidateAtIndex:(unsigned)index;
+#endif
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UIKeyboardCandidateInline (UIKeyboardUnitTestSupport)
+-(id)_inlineView;
+@end
+#endif

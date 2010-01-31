@@ -5,10 +5,12 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSTimer, UITextRangeView;
 @protocol UITextSelectingContainer;
 
+__attribute__((visibility("hidden")))
 @interface UITextSelectionView : UIView {
 	UIView<UITextSelectingContainer>* m_view;
 	int m_state;
@@ -44,7 +46,6 @@
 -(id)convertedSelectionRects;
 -(void)updateSelection;
 -(void)updateSelectionDots;
--(void)cancelDelayedSelectionCommandRequests;
 -(void)showSelectionCommandsAfterDelay:(double)delay;
 -(void)showSelectionCommands;
 -(void)hideSelectionCommandsAfterDelay:(double)delay;
@@ -69,5 +70,20 @@
 -(void)updateSelectionWithContentPoint:(CGPoint)contentPoint;
 -(id)scrollView;
 -(CGRect)clippedTargetRect:(CGRect)rect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(readonly, assign, nonatomic) BOOL replacementCommandsShowing;
+-(void)updateCalloutBarRects:(id)rects effectsWindow:(id)window;
+-(void)showCommandsWithReplacements:(id)replacements;
+-(void)updateSelectionCommands;
+-(void)cancelDelayedCommandRequests;
+-(void)calculateAndShowReplacements:(id)replacements;
+-(void)showReplacementsWithOptions:(unsigned)options afterDelay:(double)delay;
+-(void)showReplacements:(id)replacements;
+-(void)configureForSelectionMode;
+-(void)configureForReplacementMode;
+-(void)layoutChanged;
+#else
+-(void)cancelDelayedSelectionCommandRequests;
+#endif
 @end
 

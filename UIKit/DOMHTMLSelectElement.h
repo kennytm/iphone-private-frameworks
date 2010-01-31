@@ -4,9 +4,9 @@
  */
 
 #import <WebKit/DOMHTMLSelectElement.h>
+#import <Availability2.h>
 
-
-@interface DOMHTMLSelectElement (UIWebFormAssistantExtras)
+@interface DOMHTMLSelectElement (UIWebFormAssistantExtras)	// note: the category name is UIWebFormPeripheral in 3.2.
 -(id)createPeripheral;
 @end
 
@@ -14,3 +14,13 @@
 -(BOOL)nodeCanBecomeFirstResponder;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface DOMHTMLSelectElement (UIWebBrowserViewPrivate)
+-(void)_startAssistingDocumentView:(id)view;
+-(void)_stopAssistingDocumentView:(id)view;
+-(BOOL)_isAssistable;
+-(BOOL)_requiresAccessoryView;
+-(BOOL)_requiresInputView;
+-(BOOL)_supportsAutoFill;
+@end
+#endif

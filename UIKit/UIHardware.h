@@ -5,12 +5,14 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
-
+#import <Availability2.h>
 
 @interface UIHardware : NSObject {
 }
 +(float)statusBarHeight;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 +(void)_setStatusBarHeight:(float)height;
+#endif
 +(CGSize)mainScreenSize;
 +(CGRect)fullScreenApplicationContentRect;
 +(int)ringerState;

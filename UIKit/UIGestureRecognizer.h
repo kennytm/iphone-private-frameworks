@@ -5,8 +5,19 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
+
 
 @class NSMutableSet, NSMutableArray, UIView, UIEvent, NSSet;
+
+@protocol UIGestureRecognizerDelegate <NSObject>
+@optional
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer;
+-(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer*)otherGestureRecognizer;
+-(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch;
+@end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 
 typedef enum {
 	UIGestureRecognizerStatePossible,
@@ -47,22 +58,55 @@ typedef enum {
 +(void)_setDelaysDirtyReset:(BOOL)reset;
 +(BOOL)_delaysDirtyReset;
 -(id)initWithTarget:(id)target action:(SEL)action;
--(id)init;
--(void)dealloc;
--(void)_clearUpdateTimer;
+// -(id)init;
+// -(void)dealloc;
 -(void)reset;
--(void)setView:(UIView*)view;
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
 -(void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
 -(void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event;
 -(void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event;
 -(void)ignoreTouch:(id)touch forEvent:(id)event;
+-(id)delayedTouchForTouch:(id)touch;
+-(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
+-(void)_resetIfDirty;
+-(void)addFriendGesture:(id)gesture;
+-(BOOL)isFriendWithGesture:(id)gesture;
+-(void)_addBlockedGesture:(id)gesture;
+-(void)_removeBlockedGesture:(id)gesture;
+-(BOOL)_isBlockingOtherGestures;
+-(void)_blockingGestureDidComplete:(id)_blockingGesture;
+-(id)_blockingGestures;
+-(BOOL)_refusesMoreTouches;
+-(id)_desriptionForDependencies:(id)dependencies;
+-(id)_descriptionIncludingDependencies:(BOOL)dependencies;
+
+#else
+
+#include_next <UIKit/UIGestureRecognizer.h>
+
+@interface UIGestureRecognizer()
+-(id)_delayedTouchForTouch:(id)touch;
+-(void)_enqueueDelayedTouchToSend:(id)send;
+-(void)_queueForResetIfFinished;
+-(BOOL)_delegateShouldReceiveTouch:(id)_delegate;
+-(void)_addFriendGesture:(id)gesture;
+-(BOOL)_isFriendWithGesture:(id)gesture;
+-(BOOL)_delegateCanPreventGestureRecognizer:(id)recognizer;
+-(BOOL)_isDirty;
+-(void)_addUnfailedGestureForReset:(id)reset;
+-(void)_relatedGestureFinished:(id)finished withEvent:(id)event;
+-(void)_relatedGestureReleased:(id)released;
+-(void)_relatedGestureRecognizer:(id)recognizer wasEnabled:(BOOL)enabled;
+-(void)_addFailureDependent:(id)dependent;
+-(void)_removeFailureDependent:(id)dependent;
+#endif
+-(void)_clearUpdateTimer;
+-(void)setView:(UIView*)view;
 -(void)_delayTouch:(id)touch forEvent:(id)event;
 -(BOOL)_isDelayingTouch:(id)touch;
 -(BOOL)_canFinishDelayedTouch:(id)touch;
 -(id)_activeTouchesForEvent:(id)event;
 -(CGPoint)centroidOfTouches:(id)touches;
--(id)delayedTouchForTouch:(id)touch;
 -(void)_touchWasCancelled:(id)cancelled;
 -(void)_clearDelayedTouches;
 -(void)_enqueueDelayedTouchesToSend;
@@ -73,22 +117,10 @@ typedef enum {
 -(int)_depthFirstViewCompare:(id)compare;
 -(BOOL)_affectedByGesture:(id)gesture;
 -(BOOL)_isExcludedFromGestures:(id)gestures;
--(BOOL)_shouldSaveGestureFromExclusion:(id)exclusion;
 -(void)_setDirty;
--(void)_resetIfDirty;
 -(void)_resetIfFinished;
 -(void)requireOtherGestureToFail:(id)fail;
--(void)addFriendGesture:(id)gesture;
--(BOOL)isFriendWithGesture:(id)gesture;
--(void)_addBlockedGesture:(id)gesture;
--(void)_removeBlockedGesture:(id)gesture;
--(BOOL)_isBlockingOtherGestures;
--(void)_blockingGestureDidComplete:(id)_blockingGesture;
 -(BOOL)_isWaitingForGesturesToFail;
--(id)_blockingGestures;
--(BOOL)_refusesMoreTouches;
--(id)_desriptionForDependencies:(id)dependencies;
--(id)_descriptionIncludingDependencies:(BOOL)dependencies;
 -(id)description;
 -(void)_invalidate;
 @end

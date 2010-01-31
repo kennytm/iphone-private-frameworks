@@ -3,14 +3,18 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
-
+#import <Availability2.h>
 
 @protocol UIFormPeripheral
 -(void)setPeripheralFormNode:(id)node;
 -(void)beginEditing;
 -(void)endEditing;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(void)reset;
 -(id)peripheralFormNode;
 -(BOOL)isKeyboard;
+#else
+-(id)assistantView;
+#endif
 @end
 

@@ -42,5 +42,9 @@
 -(int)systemItem;
 -(id)_internalTitle;
 -(id)_internalTemplateImage;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_setInternalTitle:(id)title;
+-(void)_setInternalTemplateImage:(id)image;
+#endif
 @end
 

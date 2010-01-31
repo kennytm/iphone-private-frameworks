@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSArray, UIImage;
 
@@ -26,18 +27,20 @@
 	CGPoint m_dragPoint;
 }
 -(id)initWithFrame:(CGRect)frame variants:(id)variants expansion:(int)expansion orientation:(int)orientation;
--(void)dealloc;
+// inherited: -(void)dealloc;
 -(void)setSelectedIndex:(int)index;
 -(void)sendSelectedString;
 -(unsigned)moveCharactersAndCapsToAltSide:(unsigned)altSide position:(unsigned)position expansion:(int)expansion;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(BOOL)canHandleHandEvent:(GSEventRef)event;
--(void)mouseDown:(GSEventRef)down;
--(void)mouseDragged:(GSEventRef)dragged;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+#endif
+// inherited: -(void)mouseDown:(GSEventRef)down;
+// inherited: -(void)mouseDragged:(GSEventRef)dragged;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
 -(void)drawRect:(CGRect)rect;
 @end
 

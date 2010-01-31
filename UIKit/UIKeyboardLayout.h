@@ -9,44 +9,73 @@
 
 
 @interface UIKeyboardLayout : UIView <UIKeyboardLayoutProtocol> {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSMutableArray* m_uncommittedTouches;
+	UITouch* m_activeTouch;
+	UITouch* m_shiftKeyTouch;
+	UITouch* m_swipeTouch;
+	UIKeyboardZoomGesture* m_zoomGesture;
+#else	
 	unsigned m_currentPathFlags;
 	XXStruct__FxRIA m_activePathInfo;
 	int m_shiftKeyPathIndex;
 	int m_swipePathIndex;
+#endif
 }
--(id)initWithFrame:(CGRect)frame;
--(void)showKeyboardType:(UIKeyboardType)type withAppearance:(UIKeyboardAppearance)appearance;
--(void)deactivateActiveKeys;
--(void)updateReturnKey;
--(void)updateLocalizedKeys;
--(BOOL)usesAutoShift;
--(void)setShift:(BOOL)shift;
--(BOOL)isShiftKeyBeingHeld;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(retain, nonatomic) UITouch* activeTouch;
+@property(retain, nonatomic) UITouch* shiftKeyTouch;
+@property(retain, nonatomic) UITouch* swipeTouch;
+-(void)swipeGestureRecognized:(id)recognized;
+-(void)zoomGestureRecognized:(id)recognized;
+-(void)superLongPress:(id)press;
+-(void)addZoomRecognizer;
+-(void)addSwipeRecognizer;
+#endif
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited (since 3.2): -(void)dealloc;
+// in a protocol: -(void)showKeyboardType:(int)type withAppearance:(int)appearance;
+// in a protocol: -(void)deactivateActiveKeys;
+// in a protocol: -(void)updateReturnKey;
+// in a protocol: -(void)updateLocalizedKeys;
+// in a protocol: -(BOOL)usesAutoShift;
+// in a protocol: -(void)setShift:(BOOL)shift;
+// in a protocol (since 3.2): -(void)setAutoshift:(BOOL)autoshift;
+// in a protocol: -(BOOL)isShiftKeyBeingHeld;
 -(BOOL)isShiftKeyPlaneChooser;
 -(BOOL)shiftKeyRequiresImmediateUpdate;
--(void)longPressAction;
--(BOOL)canHandleHandEvent:(GSEventRef)event;
--(BOOL)handleHandEvent:(GSEventRef)event;
--(void)didClearInput;
--(id)candidateList;
--(void)setLabel:(id)label forKey:(id)key;
--(void)setTarget:(id)target forKey:(id)key;
--(void)setAction:(SEL)action forKey:(id)key;
--(void)setLongPressAction:(SEL)action forKey:(id)key;
--(void)restoreDefaultsForKey:(id)key;
--(void)restoreDefaultsForAllKeys;
--(id)activationIndicatorView;
--(BOOL)shouldShowIndicator;
+// in a protocol: -(void)longPressAction;
+// in a protocol (N/A after 3.2): -(BOOL)canHandleHandEvent:(GSEventRef)event;
+// in a protocol (N/A after 3.2): -(BOOL)handleHandEvent:(GSEventRef)event;
+// in a protocol: -(void)didClearInput;
+// in a protocol: -(id)candidateList;
+// in a protocol: -(void)setLabel:(id)label forKey:(id)key;
+// in a protocol: -(void)setTarget:(id)target forKey:(id)key;
+// in a protocol: -(void)setAction:(SEL)action forKey:(id)key;
+// in a protocol: -(void)setLongPressAction:(SEL)action forKey:(id)key;
+// in a protocol: -(void)restoreDefaultsForKey:(id)key;
+// in a protocol: -(void)restoreDefaultsForAllKeys;
+// in a protocol: -(id)activationIndicatorView;
+// in a protocol: -(BOOL)shouldShowIndicator;
 -(void)handleHardwareKeyDownFromSimulator:(GSEventRef)simulator;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)canProduceString:(id)string;
+-(void)touchDown:(id)down;
+-(void)touchDragged:(id)dragged;
+-(void)touchUp:(id)up;
+-(void)touchCancelled:(id)cancelled;
+-(void)commitTouchesBeforeTouch:(id)touch;
+#else
 -(void)touchDown:(GSEventRef)down withPathInfo:(XXStruct__FxRIA*)pathInfo;
 -(void)touchDragged:(GSEventRef)dragged withPathInfo:(XXStruct__FxRIA*)pathInfo;
 -(void)touchUp:(GSEventRef)up withPathInfo:(XXStruct__FxRIA*)pathInfo;
--(BOOL)cancelTouchTracking;
--(BOOL)cancelMouseTracking;
--(void)touchesBegan:(id)began withEvent:(id)event;
--(void)touchesMoved:(id)moved withEvent:(id)event;
--(void)touchesEnded:(id)ended withEvent:(id)event;
--(void)touchesCancelled:(id)cancelled withEvent:(id)event;
--(void)phraseBoundaryDidChange;
+// inherited: -(BOOL)cancelTouchTracking;
+// inherited: -(BOOL)cancelMouseTracking;
+#endif
+// inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
+// inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+// inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
+// in a protocol: -(void)phraseBoundaryDidChange;
 @end
 

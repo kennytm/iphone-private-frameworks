@@ -7,22 +7,27 @@
 #import "UIKit-Structs.h"
 #import "UITableViewDelegate.h"
 #import "UITableViewDataSource.h"
+#import <Availability2.h>
 
 @class UITableView;
 
 @interface UITableViewController ()
--(id)init;
--(void)dealloc;
+// inherited: -(id)init;
+// inherited: -(void)dealloc;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_existingTableView;
+#else
 -(id)existingTableView;
--(void)loadView;
--(void)viewWillAppear:(BOOL)view;
--(void)viewWillDisappear:(BOOL)view;
--(void)viewDidAppear:(BOOL)view;
--(void)setEditing:(BOOL)editing animated:(BOOL)animated;
+#endif
+// inherited: -(void)loadView;
+// inherited: -(void)viewWillAppear:(BOOL)view;
+// inherited: -(void)viewWillDisappear:(BOOL)view;
+// inherited: -(void)viewDidAppear:(BOOL)view;
+// inherited: -(void)setEditing:(BOOL)editing animated:(BOOL)animated;
 -(void)_adjustTableForKeyboardInfo:(id)keyboardInfo;
--(int)tableView:(id)view numberOfRowsInSection:(int)section;
--(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
--(void)tableView:(id)view willBeginEditingRowAtIndexPath:(id)indexPath;
--(void)tableView:(id)view didEndEditingRowAtIndexPath:(id)indexPath;
+// in a protocol: -(int)tableView:(id)view numberOfRowsInSection:(int)section;
+// in a protocol: -(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
+// in a protocol: -(void)tableView:(id)view willBeginEditingRowAtIndexPath:(id)indexPath;
+// in a protocol: -(void)tableView:(id)view didEndEditingRowAtIndexPath:(id)indexPath;
 @end
 

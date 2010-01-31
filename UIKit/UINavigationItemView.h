@@ -5,14 +5,21 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class UINavigationItem, UIFont;
 
+__attribute__((visibility("hidden")))
 @interface UINavigationItemView : UIView {
 	UIFont* _font;
 	UINavigationItem* _item;
 	float _titleWidth;
 	BOOL _titleAutosizesToFit;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIView* _topCrossView;
+	UIView* _bottomCrossView;
+	BOOL _isCrossFading;
+#endif	
 }
 -(id)initWithNavigationItem:(id)navigationItem;
 -(id)navigationItem;
@@ -28,5 +35,11 @@
 -(void)setFont:(id)font;
 -(id)font;
 -(id)_scriptingInfo;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)drawText:(id)text inRect:(CGRect)rect isButtonText:(BOOL)text3 barStyle:(int)style;
+-(void)_prepareCrossViewsForNewSize:(CGSize)newSize;
+-(void)_crossFadeHiddingButton:(BOOL)button;
+-(void)_cleanUpCrossView;
+#endif
 @end
 

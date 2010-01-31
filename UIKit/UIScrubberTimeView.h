@@ -5,16 +5,26 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface UIScrubberTimeView : UIView {
 	NSString* _time;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIColor* _timeColor;
+	UIColor* _timeShadowColor;
+#endif
 	unsigned _align : 2;
 }
--(id)initWithFrame:(CGRect)frame;
--(void)dealloc;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(void)dealloc;
 -(void)setTime:(id)time;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setTimeColor:(id)color;
+-(void)setTimeShadowColor:(id)color;
+#endif
 -(id)time;
 -(void)drawRect:(CGRect)rect;
 @end

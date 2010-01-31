@@ -6,7 +6,7 @@
 #import "UIKit-Structs.h"
 #import "NSCopying.h"
 #import <Foundation/NSObject.h>
-
+#import <Availability2.h>
 
 @interface UISectionRowData : NSObject <NSCopying> {
 	BOOL _valid;

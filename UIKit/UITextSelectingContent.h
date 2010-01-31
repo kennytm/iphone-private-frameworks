@@ -4,7 +4,7 @@
  */
 
 #import "UIKit-Structs.h"
-
+#import <Availability2.h>
 
 @protocol UITextSelectingContent
 @property(readonly, assign, nonatomic) int selectionState;
@@ -41,6 +41,7 @@
 -(void)clearSelection;
 -(void)setSelectionToNextGranularity:(CGPoint)nextGranularity;
 -(void)moveSelectionToStartOrEndOfCurrentWord;
+-(id)wordContainingCaretSelection __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(BOOL)pointAtStartOfLine:(CGPoint)line;
 -(BOOL)pointAtEndOfLine:(CGPoint)line;
 -(int)selectionBaseWritingDirection:(BOOL*)direction;

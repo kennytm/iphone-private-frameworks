@@ -5,14 +5,17 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class UIImage;
 
+__attribute__((visibility("hidden")))
 @interface UITextFieldBorderView : UIView {
 	UIImage* _image;
 }
 -(id)initWithFrame:(CGRect)frame;
 -(void)setImage:(id)image;
 -(void)dealloc;
+-(BOOL)useBlockyMagnificationInClassic __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
 

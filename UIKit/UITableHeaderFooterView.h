@@ -5,15 +5,24 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSString, UILabel, UIImage;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+__attribute__((visibility("hidden")))
+#endif
 @interface UITableHeaderFooterView : UIView {
 	UILabel* _label;
 	UIImage* _backgroundImage;
 	int _tableViewStyle;
 	BOOL _sectionHeader;
 	CGRect _frame;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _textAlignment;
+	UITableView* _tableView;
+	float _maxTitleWidth;
+#endif
 }
 @property(assign, nonatomic) int tableViewStyle;
 @property(assign, nonatomic) BOOL sectionHeader;
@@ -29,5 +38,12 @@
 -(void)_updateBackgroundImage;
 -(void)setOpaque:(BOOL)opaque;
 -(void)drawRect:(CGRect)rect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) UITableView* tableView;
+@property(assign, nonatomic) float maxTitleWidth;
+@property(assign, nonatomic) int textAlignment;
+-(id)_label:(BOOL)label;
+-(id)_scriptingInfo;
+#endif
 @end
 

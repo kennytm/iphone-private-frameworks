@@ -13,14 +13,25 @@
 	id m_delegate;
 	CGPoint m_pointBelowControls;
 	CGPoint m_pointAboveControls;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
 	BOOL m_pointPositionedBelowControls;
+#else
+	CGPoint m_targetPoint;
+	int m_targetDirection;
+#endif
 	BOOL m_fadeAfterCommand;
 	BOOL m_updateVisibleItems;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	BOOL m_shouldAppear;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL m_showExtras;
+#endif
 	CGRect m_controlFrame;
 	CGRect m_targetRect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int m_arrowDirection;
+#endif
 	NSMutableArray* m_buttons;
 	NSMutableArray* m_rectsToEvade;
 	UICalloutBarOverlay* m_overlay;
@@ -28,15 +39,20 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	id m_responderTarget;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSArray* m_replacements;
+	NSArray* m_extraItems;
+#endif
 }
 @property(assign, nonatomic) CGPoint pointAboveControls;
 @property(assign, nonatomic) CGPoint pointBelowControls;
-@property(assign, nonatomic) BOOL pointPositionedBelowControls;
 @property(assign, nonatomic) CGRect controlFrame;
 @property(assign, nonatomic) id delegate;
 @property(readonly, assign, nonatomic) NSArray* rectsToEvade;
 @property(assign, nonatomic) CGRect targetRect;
-@property(assign, nonatomic) UIResponder* responderTarget __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+@property(assign, nonatomic) UIResponder* responderTarget;
+@property(copy, nonatomic) NSArray* replacements;
+@property(copy, nonatomic) NSArray* extraItems;
 @property(readonly, assign, nonatomic) BOOL visible;
 +(UICalloutBar*)sharedCalloutBar;
 +(BOOL)sharedCalloutBarIsVisible;
@@ -58,7 +74,6 @@
 -(BOOL)calculateControlFrameInsideTargetRect:(float)rect;
 -(id)visibleButtons;
 -(BOOL)positionIsValid;
--(BOOL)updateVisibleItems;
 -(void)setTargetRect:(CGRect)rect pointBelowControls:(CGPoint)controls pointAboveControls:(CGPoint)controls3;
 -(void)buttonHighlighted:(id)highlighted highlighted:(BOOL)highlighted2;
 -(void)appear;
@@ -69,6 +84,20 @@
 -(void)zoomDownAnimationDidStop:(id)zoomDownAnimation finished:(id)finished;
 -(void)addRectToEvade:(CGRect)evade;
 -(void)clearEvadeRects;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) CGPoint targetPoint;
+@property(assign, nonatomic) int targetDirection;
+@property(assign, nonatomic) int arrowDirection;
+@property(copy, nonatomic) NSArray* replacements;
+@property(copy, nonatomic) NSArray* extraItems;
+-(void)_showMoreItems:(id)items;
+-(BOOL)_updateVisibleItems;
+-(void)setTargetRect:(CGRect)rect arrowDirection:(int)direction;
+-(BOOL)hasReplacements;
+#else
+@property(assign, nonatomic) BOOL pointPositionedBelowControls;
+-(BOOL)updateVisibleItems;
+#endif
 @end
 
 @protocol UICalloutBarDelegate

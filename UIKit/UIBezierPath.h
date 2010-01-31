@@ -3,9 +3,7 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
-#import "UIKit-Structs.h"
-#import "UIBezierPath.h"
-#import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 typedef enum {
 	UIBezierPathRoundedLeftEdge = 1,
@@ -21,6 +19,34 @@ typedef enum {
 	UIBezierPathRoundedBottomRightCorner = 8,
 } UIBezierPathRoundedCorners;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#include_next <UIKit/UIBezierPath.h>
+
+@interface UIBezierPath ()
++(id)_bezierPathWithRoundedRect:(CGRect)roundedRect byRoundingCorners:(unsigned)corners cornerRadius:(float)radius;
++(id)bezierPathForBottomOfRect:(CGRect)rect withCornerRadius:(float)cornerRadius;
++(id)bezierPathForTopOfRect:(CGRect)rect withCornerRadius:(float)cornerRadius;
++(id)roundedRectBezierPath:(CGRect)path withRoundedEdges:(UIBezierPathRoundedEdges)roundedEdges;
++(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadius:(float)cornerRadius;
++(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadii:(NSArray*)cornerRadii;
+-(CGPathRef)_createMutablePathByDecodingData:(id)data;
+-(id)_initWithCGMutablePath:(CGPathRef)cgmutablePath;
+-(CGPathRef)_mutablePath;
+-(void)appendBezierPath:(id)path;
+-(void)appendBezierPathWithArcWithCenter:(CGPoint)center radius:(float)radius startAngle:(float)angle endAngle:(float)angle4 clockwise:(BOOL)clockwise;
+-(void)appendBezierPathWithOvalInRect:(CGRect)rect;
+-(void)appendBezierPathWithOvalInRect:(CGRect)rect transform:(CGAffineTransform)transform;
+-(void)appendBezierPathWithRect:(CGRect)rect;
+-(void)clip;
+-(void)lineToPoint:(CGPoint)point;
+@end
+
+#else
+
+#import "UIKit-Structs.h"
+#import "UIBezierPath.h"
+#import <Foundation/NSObject.h>
 
 @interface UIBezierPath : NSObject {
 	CGPathRef _pathRef;
@@ -55,6 +81,8 @@ typedef enum {
 +(UIBezierPath*)roundedRectBezierPath:(CGRect)path withTopCornerRadius:(float)topCornerRadius withBottomCornerRadius:(float)bottomCornerRadius;
 -(CGPathRef)_pathRef;
 @end
+
+#endif
 
 @interface UIBezierPath (UIAutocorrectShadow)
 +(id)shadowBezierPath:(CGRect)path withRoundedEdges:(int)roundedEdges;

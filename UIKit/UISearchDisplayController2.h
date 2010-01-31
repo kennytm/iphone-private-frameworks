@@ -15,8 +15,6 @@
 -(id)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
--(void)_configureSearchBarForTableView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)_cleanUpSearchBar __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_configureNewSearchBar;
 -(void)setSearchBar:(id)bar;
 -(void)setSearchContentsController:(id)controller;
@@ -29,8 +27,6 @@
 -(void)_setTableViewVisible:(BOOL)visible inView:(id)view;
 -(void)_updateSearchBarForTableViewIndexBar:(id)tableViewIndexBar;
 -(void)_indexBarFrameChanged:(id)changed;
--(void)_searchBarSuperviewWillChange __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)_searchBarSuperviewChanged __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)showHideAnimationDidFinish;
 -(void)setActive:(BOOL)active animated:(BOOL)animated;
 -(void)_keyboardWillShow:(id)_keyboard;
@@ -47,5 +43,21 @@
 -(void)_updateNoSearchResultsMessageVisiblity;
 -(void)_managedTableViewDidScroll;
 -(void)_clearViewController;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+-(void)_configureSearchBarForTableView;
+-(void)_cleanUpSearchBar;
+-(void)_searchBarSuperviewWillChange;
+-(void)_searchBarSuperviewChanged;
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL dimTableViewOnEmptySearchString;
+@property(assign, nonatomic, getter=isNavigationBarHidingEnabled) BOOL navigationBarHidingEnabled;
+-(BOOL)_isSearchBarInBar;
+-(void)_popoverKeyboardDidShow:(id)_popoverKeyboard;
+-(void)_popoverKeyboardDidHide:(id)_popoverKeyboard;
+-(void)_popoverClearButtonPressed:(id)pressed;
+-(id)_createPopoverController;
+-(void)searchBarResultsListButtonClicked:(id)clicked;
+#endif
 @end
 

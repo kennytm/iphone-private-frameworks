@@ -18,7 +18,13 @@
 -(BOOL)isDelayed;
 -(void)setSentTouchesEnded:(BOOL)ended;
 -(BOOL)sentTouchesEnded;
--(id)gestureRecognizers;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic, setter=_setPathIndex:) unsigned char _pathIndex;
+@property(assign, nonatomic, setter=_setPathIdentity:) unsigned char _pathIdentity;
+@property(assign, nonatomic, setter=_setPathMajorRadius:) float _pathMajorRadius;
+#else
+-(id)gestureRecognizers;	// it becomes a public property in 3.2
+#endif
 -(void)_loadStateFromTouch:(id)touch;
 @end
 

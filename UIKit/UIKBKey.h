@@ -3,14 +3,17 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
 #import "NSCopying.h"
 #import "NSCoding.h"
 #import "UIKBShape.h"
 #import "UIKit-Structs.h"
+#import "UIKBCacheKey.h"
 
 @class NSArray, NSString, UIKBAttributeList;
 
-@interface UIKBKey : UIKBShape <NSCoding, NSCopying> {
+@interface UIKBKey : UIKBShape <NSCoding, NSCopying, UIKBCacheKey> {
 	NSString* m_name;
 	NSString* m_representedString;
 	NSString* m_displayString;
@@ -50,5 +53,16 @@
 -(id)variantDisplayString;
 -(void)setVariantPopupBias:(id)bias;
 -(id)variantPopupBias;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(copy, nonatomic) NSString* clientVariantRepresentedString;
+@property(copy, nonatomic) NSString* clientVariantActionName;
+@property(retain, nonatomic) NSArray* flicks;
+// in a protocol: @property(readonly, assign, nonatomic) NSString* cacheKey;
+@property(readonly, assign, nonatomic) BOOL isClientVariantOverride;
+@property(copy, nonatomic) NSString* rendering;
+@property(copy, nonatomic) NSString* tint;
+-(int)textAlignment;
+-(void)setTextAlignment:(int)alignment;
+-(void)removeClientVariantActionInfo;
+#endif
 @end
-

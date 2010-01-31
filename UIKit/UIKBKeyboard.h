@@ -3,13 +3,18 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+
 #import "NSCoding.h"
 #import "UIKit-Structs.h"
 #import "UIKBShape.h"
+#import "UIKBCacheKey.h"
 
 @class NSArray, NSString, NSDictionary, NSMutableArray, NSMutableDictionary, UIKBKey, UIKBKeyplane;
 
-@interface UIKBKeyboard : UIKBShape <NSCoding> {
+@interface UIKBKeyboard : UIKBShape <NSCoding, UIKBCacheKey> {
 	NSString* m_name;
 	NSString* m_visualStyle;
 	NSMutableArray* m_keyplanes;
@@ -19,6 +24,7 @@
 @property(retain, nonatomic) NSString* visualStyle;
 @property(retain, nonatomic) NSArray* keyplanes;
 @property(retain, nonatomic) NSDictionary* keyCache;
+// in a protocol (since 3.2): @property(readonly, assign, nonatomic) NSString* cacheKey;
 +(UIKBKeyboard*)keyboard;
 //-(id)init;
 //-(void)dealloc;
@@ -29,3 +35,5 @@
 //-(id)description;
 -(void)layout;
 @end
+
+#endif

@@ -21,6 +21,10 @@
 -(void)_setFirstOtherButtonIndex:(int)index;
 -(void)dismissWithClickedButtonIndex:(int)clickedButtonIndex animated:(BOOL)animated;
 -(id)initWithFrame:(CGRect)frame;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)presentFromRect:(CGRect)rect inView:(id)view direction:(int)direction allowInteractionWithViews:(id)views backgroundStyle:(int)style animated:(BOOL)animated;
+-(void)_presentPopoverInCenterOfWindowForView:(id)view;
+#endif
 @end
 
 @interface UIActionSheet (Private)
@@ -133,5 +137,14 @@
 -(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
 -(void)tableView:(id)view didSelectRowAtIndexPath:(id)indexPath;
 -(void)presentSheetFromButtonBar:(id)buttonBar;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)popoverControllerDidDismissPopover:(id)popoverController;
+-(id)_relinquishPopoverController;
+-(void)presentSheetInPopoverView:(id)popoverView;
+-(void)presentSheetInContentView:(id)contentView;
+-(id)_dimViewWithFrame:(CGRect)frame;
+-(void)_presentSheetStartingFromYCoordinate:(double)ycoordinate inView:(id)view;
+-(void)setInPopover:(BOOL)popover;
+#endif
 @end
 

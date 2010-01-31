@@ -62,8 +62,6 @@
 -(void)_updateNavigationBarItem:(id)item forStyle:(int)style;
 -(void)didAddSubview:(id)subview;
 -(void)_updateNavigationBarItemsForStyle:(int)style;
--(void)setHasRoundedCorners:(BOOL)corners;
--(BOOL)hasRoundedCorners;
 -(BOOL)isMinibar;
 -(BOOL)forceFullHeightInLandscape;
 -(void)setForceFullHeightInLandscape:(BOOL)landscape;
@@ -114,10 +112,27 @@
 -(void)_fadeViewsIn:(id)anIn;
 -(void)_adjustVisibleItemsByDelta:(float)delta;
 -(float)_barWidth;
--(void)_getTitleViewFrame:(CGRect*)frame leftViewFrame:(CGRect*)frame2 rightViewFrame:(CGRect*)frame3;
 -(void)layoutSubviews;
 -(int)_barStyle:(BOOL)style;
 -(void)_navBarButtonPressed:(id)pressed;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)buttonItemShadowColor;
+-(id)buttonItemTextColor;
+-(void)showHideBackButtomAnimationDidStop:(id)showHideBackButtomAnimation finished:(id)finished context:(void*)context;
+-(float)topItemAlpha;
+-(void)setTopItemAlpha:(float)alpha;
+-(id)_allViews;
+-(void)_fadeAllViewsOut;
+-(void)_fadeAllViewsIn;
+-(void)_getTitleViewFrame:(CGRect*)frame leftViewFrame:(CGRect*)frame2 rightViewFrame:(CGRect*)frame3 forViews:(id*)views forItemAtIndex:(unsigned)index;
+-(void)_getTitleViewFrame:(CGRect*)frame leftViewFrame:(CGRect*)frame2 rightViewFrame:(CGRect*)frame3 forViews:(id*)views;
+-(id)_itemStack;
+-(void)_setAutoAdjustTitle:(BOOL)title;
+#else
+-(void)setHasRoundedCorners:(BOOL)corners;
+-(BOOL)hasRoundedCorners;
+-(void)_getTitleViewFrame:(CGRect*)frame leftViewFrame:(CGRect*)frame2 rightViewFrame:(CGRect*)frame3;
+#endif
 @end
 
 @interface UINavigationBar (UIKitAccessibilityInterfaceBuilderSupport)

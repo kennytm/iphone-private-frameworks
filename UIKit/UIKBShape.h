@@ -26,6 +26,7 @@
 //-(void)dealloc;
 //-(id)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
+-(void)makeLikeOther:(id)other __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(unsigned)hash;
 //-(BOOL)isEqual:(id)equal;
 -(void)setFrameOnly:(CGRect)frame;

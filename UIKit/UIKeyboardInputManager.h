@@ -264,7 +264,11 @@
 -(void)clearKeyAreas;
 -(void)registerKeyArea:(CGPoint)area withRadii:(CGPoint)radii forKeyCode:(unsigned short)keyCode forLowerKey:(id)lowerKey forUpperKey:(id)upperKey;
 // Returns the actual key code the user has hit.
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(int)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withTouch:(id)touch forceShift:(BOOL)shift;
+#else
 -(int)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(UIPathInfo*)pathInfo forceShift:(BOOL)shift;
+#endif
 -(BOOL)keySlidIntoSwipe;
 -(int)keyCancel:(CGPoint)cancel atTime:(double)time fromPath:(int)path withIdentity:(int)identity forceShift:(BOOL)shift;
 -(void)deleteFromStrokeHistory:(BOOL)strokeHistory;
@@ -304,5 +308,12 @@
 
 //! Change the keyboard layout for autocorrection string.
 -(void)configureKeyboard:(id)keyboard forAutocorrection:(id)autocorrection;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setKeyboardEventsLagging:(BOOL)lagging;
+-(void)configureInputModeSpecificFeatures:(id)features;
+#endif
+
 @end
+
 

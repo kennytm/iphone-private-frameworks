@@ -6,6 +6,7 @@
 #import <UIKit/UIDevice.h>
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSString;
 
@@ -15,6 +16,7 @@
 -(void)setOrientation:(int)orientation;
 -(void)beginGeneratingDeviceOrientationNotifications;
 -(void)endGeneratingDeviceOrientationNotifications;
+-(void)setOrientation:(int)orientation animated:(BOOL)animated __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
 
 @interface UIDevice (UIDevicePrivate)
@@ -23,6 +25,10 @@
 -(void)_setProximityState:(BOOL)state;
 -(void)_setBatteryState:(int)state;
 -(void)_setBatteryLevel:(float)level;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)isWildcat;
+-(void)setIsWildcat:(BOOL)wildcat;
+#endif
 @end
 
 @interface UIDevice (Private)

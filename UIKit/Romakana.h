@@ -3,6 +3,10 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+
 #import <Foundation/NSObject.h>
 
 
@@ -17,3 +21,4 @@
 -(id)roma2katakana:(id)katakana;
 @end
 
+#endif

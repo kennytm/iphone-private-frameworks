@@ -6,15 +6,30 @@
 #import "UIKit-Structs.h"
 #import "NSCoding.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface UILayoutContainerView : UIView <NSCoding> {
 	id _delegate;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _usesRoundedCorners;
+	float _cornerRadius;
+	BOOL _fastMode;
+	UIRoundedCornerView* _roundedCornerView;
+	BOOL _usesInnerShadow;
+	BOOL _shadowViewsInstalled;
+	UIView* _shadowView;	
+#endif
 }
 @property(assign, nonatomic) id delegate;
--(id)initWithCoder:(id)coder;
--(void)encodeWithCoder:(id)coder;
--(void)setFrame:(CGRect)frame;
--(void)layoutSubviews;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL usesRoundedCorners;
+@property(assign, nonatomic) BOOL useFastMode;
+@property(assign, nonatomic) BOOL usesInnerShadow;
+-(void)_installShadowViews;
+-(void)_tearDownShadowViews;
+-(void)_beginFastMode;
+-(void)_endFastMode;
+#endif
 @end
 

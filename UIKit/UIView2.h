@@ -8,6 +8,7 @@
 #import <UIKit/UIView.h>
 #import <UIKit/UIResponder.h>
 #import "UITextEffectsOrdering.h"
+#import <Availability2.h>
 
 @class NSMutableArray, CALayer, NSArray, UIScrollView, UIGestureRecognizer;
 
@@ -37,6 +38,9 @@
 -(void)_setBackgroundCGColor:(CGColorRef)color;
 -(CGColorRef)_backgroundCGColor;
 -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(int)_topToBottomLeftToRightViewCompare:(id)rightViewCompare;
+#endif
 @end
 
 @interface UIView (SyntheticEvents)
@@ -109,6 +113,11 @@
 -(void)_subscribeToScrollNotificationsIfNecessary:(id)scrollNotificationsIfNecessary;
 -(void)_unsubscribeToScrollNotificationsIfNecessary:(id)scrollNotificationsIfNecessary;
 -(id)_gestureRecognizers;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_updateNeedsDisplayOnBoundsChange;
+-(BOOL)_animationIsPaused;
+-(void)_collectKeyViews:(id)views;
+#endif
 @end
 
 @interface UIView (Deprecated)
@@ -123,6 +132,9 @@
 -(void)setEnabled:(BOOL)enabled;
 -(BOOL)isEnabled;
 -(void)setClipsSubviews:(BOOL)subviews;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(CGImageRef)createSnapshotWithRect:(CGRect)rect;
+#endif
 @end
 
 @interface UIView (Animation)
@@ -130,7 +142,6 @@
 +(void)beginAnimations:(id)animations context:(void*)context;
 +(void)commitAnimations;
 +(void)endAnimations;
-+(BOOL)_pendingAnimations;
 +(void)setAnimationDelegate:(id)delegate;
 +(void)setAnimationPosition:(CGPoint)position;
 +(void)disableAnimation;
@@ -154,6 +165,15 @@
 +(void)setAnimationDidStopSelector:(SEL)stopSelector;
 -(void)addAnimation:(id)animation forKey:(id)key;
 -(void)_removeAllAnimations:(BOOL)animations;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(BOOL)_isInAnimationBlock;
++(void)_setAnimationAttributes:(id)attributes;
++(void)_setAnimationFilter:(int)filter forView:(id)view;
++(void)_setAnimationFilterValue:(float)value;
+-(void)_clearAnimationFilters;
+#else
++(BOOL)_pendingAnimations;
+#endif
 @end
 
 @interface UIView (Rendering)
@@ -167,7 +187,11 @@
 -(BOOL)isHiddenOrHasHiddenAncestor;
 -(void)setClearsContext:(BOOL)context;
 -(void)setContentsPosition:(int)position;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(CGImageRef)newSnapshotWithRect:(CGRect)rect;
+#else
 -(CGImageRef)createSnapshotWithRect:(CGRect)rect;
+#endif
 -(void)forceDisplayIfNeeded;
 -(void)recursivelyForceDisplayIfNeeded;
 -(void)_enableLayerKitPatternDrawing:(BOOL)drawing;
@@ -210,6 +234,10 @@
 -(void)layoutIfNeeded;
 -(void)layoutBelowIfNeeded;
 -(void)layoutSubviews;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)topMostView:(id)view;
+-(id)indexPath;
+#endif
 @end
 
 @interface UIView (Geometry)
@@ -342,5 +370,24 @@
 @interface UIView (UIAutoscrollAdditions)
 -(id)_enclosingScrollerIncludingSelf;
 -(BOOL)_isScrollingEnabled;
+-(id)_enclosingScrollableScrollerIncludingSelf __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+@interface UIView (ClassicAdditions)
+-(BOOL)useBlockyMagnificationInClassic;
+@end
+
+@interface UIView (UIViewStyleAdditions)
++(id)_tintColorForStyle:(int)style;
+-(int)_containerStyle;
+-(int)_style;
+@end
+
+@interface UIView (UITextInputView)
+-(id)textInputView;
+@end
+
+#endif
 

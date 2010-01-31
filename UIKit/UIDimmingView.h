@@ -5,20 +5,43 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
+@class UIBarButtonItem, UIImageView, NSArray, UIWindow;
 
+__attribute__((visibility("hidden")))
 @interface UIDimmingView : UIView {
 	id _delegate;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIBarButtonItem* _highlightedBarButtonItem;
+	UIImageView* _highlightedImageView;
+	UIImageView* _backgroundGlow;
+	NSArray* _passthroughViews;
+	BOOL _ignoresTouches;
+	BOOL _dimsStatusBar;
+	UIWindow* _statusBarDimmingWindow;	
+#else
 	CGGradientRef _gradient;
+#endif
 }
 @property(assign, nonatomic) id delegate;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(void)dealloc;
+-(void)display:(BOOL)display withAnimationDuration:(float)animationDuration;
+// inherited: -(void)mouseUp:(GSEventRef)up;
+// inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(retain, nonatomic) NSArray* passthroughViews;
+@property(assign, nonatomic) BOOL dimsStatusBar;
+@property(assign, nonatomic) BOOL ignoresTouches;
+@property(retain, nonatomic) UIBarButtonItem* highlightedBarButtonItem;
+-(void)dimmingRemovalAnimationDidStop;
+// -(id)hitTest:(CGPoint)test withEvent:(id)event;
+// -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
+#else
 +(id)dimmingViewForView:(id)view;
--(id)initWithFrame:(CGRect)frame;
--(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(void)transitionDidStop:(id)transition finished:(id)finished context:(id)context;
--(void)display:(BOOL)display withAnimationDuration:(float)animationDuration;
--(void)mouseUp:(GSEventRef)up;
--(void)touchesEnded:(id)ended withEvent:(id)event;
+#endif
 @end
 

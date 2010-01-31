@@ -3,6 +3,9 @@
  * class-dump-z is Copyright (C) 2009 by KennyTM~, licensed under GPLv3.
  */
 
+#ifndef IPF_UIKIT_STRUCTS_H
+#define IPF_UIKIT_STRUCTS_H 1
+
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <WebCore/WKTypes.h>
@@ -10,6 +13,7 @@
 #import <GraphicsServices/GSEvent.h>
 #import <GraphicsServices/GSHeartbeat.h>
 #import <QuartzCore/QuartzCore.h>
+#import <Availability2.h>
 
 typedef struct {
 	unsigned char pathIndex;
@@ -130,15 +134,20 @@ typedef struct WKWindow {
 	CGRect _field3;
 	WKViewRef _field4;
 	WKViewRef _field5;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _field6 : 1;
+#else
 	TiledSurfaceRef _field6;
 	unsigned _field7 : 1;
 	unsigned _field8 : 1;
+#endif
 } WKWindow;
 
-typedef struct {
+typedef struct CADoublePoint {
 	double width;
 	double height;
-} XXStruct_meWoWB;
+} CADoublePoint;
+typedef CADoublePoint XXStruct_meWoWB;
 
 #pragma mark UIKBLength, for use in UIKBGeometry only.
 
@@ -151,6 +160,7 @@ typedef struct {
 	float amount;
 	int unit;
 } UIKBLength;
+typedef UIKBLength XXStruct_tp$7nC;
 
 static inline UIKBLength UIKBLengthMakePixel(float x) {
 	UIKBLength r;
@@ -247,11 +257,79 @@ typedef struct {
 } XXStruct_b4LybD;
 
 typedef struct UIKeyboardAnimationGeometry {
-	CGPoint _field1;
-	CGPoint _field2;
-	CGRect _field3;
-	CGAffineTransform _field4;
-} UIKeyboardAnimationGeometry;
+	CGPoint outPosition;
+	CGPoint inPosition;
+	CGRect bounds;
+	CGAffineTransform transform;
+} UIKeyboardAnimationGeometry, UIPeripheralAnimationGeometry;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+typedef struct {
+	BOOL animateContentRotation;
+	BOOL preserveHeight;
+	BOOL avoidFadingBottomOfContent;
+	float contentStretchRightEdgeInset;
+	BOOL slideFooterOutAndIn;
+	int edgeClip;
+	float contentBottomInset;
+	int startContentOrientation;
+	CGRect startContentBounds;
+	CGRect endContentBounds;
+} XXStruct_Nw9VXC;
+
+typedef struct {
+	UIImage* background;
+	UIImage* leftDivider;
+	UIImage* rightDivider;
+	UIColor* textColor;
+	UIColor* shadowColor;
+	CGSize shadowOffset;
+} XXStruct_KYn_rD;
+typedef XXStruct_KYn_rD XXStruct_V3NSMA;
+
+typedef struct {
+	UIFont* _field1;
+	float _field2;
+	float _field3;
+	XXStruct_KYn_rD _field4;
+	XXStruct_KYn_rD _field5;
+	XXStruct_KYn_rD _field6;
+	XXStruct_KYn_rD _field7;
+	BOOL _field8;
+} XXStruct_V8l7SB;
+typedef XXStruct_V8l7SB XXStruct_wXTbsB;
+
+typedef struct {
+	BOOL key[200];
+	unsigned short width;
+	unsigned short height;
+	unsigned offset;
+} XXStruct_0aX3CD;
+
+typedef struct {
+	unsigned version;
+	unsigned minorVersion;
+	unsigned magic;
+	unsigned numImages;
+	unsigned totalCacheSize;
+} XXStruct_iXKIAB;
+
+typedef struct SharedElements SharedElements;
+
+// template<typename T>
+struct COWQueue {
+	unsigned m_size;
+	unsigned m_capacity;
+	SharedElements* m_elements;
+};
+
+typedef struct KBStrokeList {
+	struct COWQueue/*<writing_point16_t>*/ _field1;
+	struct COWQueue/*<int>*/ _field2;
+	int _field3;
+} KBStrokeList;
+
+#endif
 
 //---------
 
@@ -318,4 +396,6 @@ extern "C" {
 
 #if __cplusplus
 }
+#endif
+
 #endif

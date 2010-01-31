@@ -43,9 +43,16 @@ __attribute__((visibility("hidden")))
 @interface _UIGroupTableViewCellBackgroundImageKey : NSObject <NSCopying> {
 @private
 	BOOL _opaque;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _selected;
+#endif
 	CGSize _size;
 	UIColor* _backgroundColor;
 	UIColor* _borderColor;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIColor* _topShadowColor;
+	UIColor* _bottomShadowColor;
+#endif
 	UIColor* _fillColor;
 	float _leftPhase;
 	float _rightPhase;
@@ -64,6 +71,11 @@ __attribute__((visibility("hidden")))
 // inherited: -(unsigned)hash;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(id)description;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL selected;
+@property(retain, nonatomic) UIColor* topShadowColor;
+@property(retain, nonatomic) UIColor* bottomShadowColor;
+#endif
 @end
 
 #endif

@@ -5,6 +5,7 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class UIWebDocumentView, DOMRange;
 @protocol UIWebSelectionBlock;
@@ -48,7 +49,11 @@
 -(void)growSelectionTowardsPoint:(CGPoint)point;
 -(BOOL)tryToShrinkToBaseAndExtent;
 -(void)shrinkSelectionFromPoint:(CGPoint)point towardsPoint:(CGPoint)point2 withNewRect:(CGRect)newRect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)duplicate;
+#else
 -(id)getCopy;
+#endif
 -(void)useBlock;
 -(id)textSelectionRects;
 -(CGRect)boundingTextSelectionRect;

@@ -5,9 +5,11 @@
 
 #import "UIKeyboardLayout.h"
 #import "UIKit-Structs.h"
+#import <Availability2.h>
 
 @class UIKBKeyplaneView, NSMutableArray, NSMutableDictionary, UIKBKey, NSMutableSet, UIKBKeyboard, NSTimer, UIKBKeyplane, NSString, NSLocale;
 
+__attribute__((visibility("hidden")))
 @interface UIKeyboardLayoutStar : UIKeyboardLayout {
 	UIKBKeyboard* m_keyboard;
 	UIKBKeyplane* m_keyplane;
@@ -15,9 +17,26 @@
 	NSString* m_keyplaneName;
 	int m_appearance;
 	UIKBKey* m_activeKey;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	CGPoint m_dragPoint;
+#endif
 	UIKBKeyplaneView* m_keyplaneView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIView* m_savedKeyplaneView;
+	UIView* m_animationKeyplaneBackground;
+#endif
 	int m_keyboardType;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIView* m_animationBackgroundView;
+	UIView* m_animationFromView;
+	UIView* m_animationToView;
+	CGPoint m_initialDragPoint;
+	CGPoint m_dragPrevPoint;
+	float m_dragValues[4];
+	float m_dragVelocity;
+	double m_prevTouchUpTime;
+	int m_prevUpActions;	
+#endif
 @package
 	NSMutableDictionary* m_keyboards;
 @protected
@@ -26,11 +45,20 @@
 	NSMutableDictionary* m_renderedKeys;
 	NSMutableDictionary* m_allKeyplaneViews;
 	NSMutableSet* m_variantKeyTokens;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSMutableSet* m_validInputStrings;
+#endif
 	NSString* m_localizedInputMode;
 	NSMutableArray* m_keyIndexMap;
 	NSMutableDictionary* m_activatedKeys;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	CFDictionaryRef m_extendedTouchInfoMap;
+#endif
 	NSTimer* m_activatedTimer;
 	int m_preferredTrackingChangeCount;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int m_shiftTrackingChangeCount;
+#endif
 	USetRef m_accentInfo;
 	USetRef m_hasAccents;
 	id m_spaceTarget;
@@ -44,11 +72,25 @@
 	SEL m_deleteLongAction;
 	BOOL m_secureTextEntry;
 	BOOL m_shift;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL m_autoshift;
+#endif
 	BOOL m_settingShift;
 	BOOL m_didLongPress;
 	BOOL m_dragged;
 	BOOL m_dragChangedKey;
 	BOOL m_touchDownInMoreKey;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL m_wasShifted;
+	BOOL m_dragDismissStarted;
+	UISwipeGestureRecognizer* m_rightSwipeRecognizer;
+	UISwipeGestureRecognizer* m_leftSwipeRecognizer;
+	UISwipeGestureRecognizer* m_upSwipeRecognizer;
+	UISwipeGestureRecognizer* m_flickGestureRecognizer;
+	NSSet* m_flickKeys;
+	BOOL m_preRotateShift;
+	NSString* m_preRotateKeyplaneName;
+#endif	
 }
 @property(readonly, assign, nonatomic) UIKBKeyboard* keyboard;
 @property(readonly, assign, nonatomic) UIKBKeyplane* keyplane;
@@ -60,7 +102,6 @@
 //-(id)initWithFrame:(CGRect)frame;
 //-(void)dealloc;
 -(void)setKeyboardName:(NSString*)name appearance:(UIKeyboardAppearance)appearance;
--(void)setReturnKeyType:(UIReturnKeyType)type;
 -(void)setCurrencyKeysForCurrentLocale:(NSLocale*)currentLocale;
 -(int)displayTypeHintForMoreKey;
 -(int)displayTypeHintForShiftKey;
@@ -74,14 +115,12 @@
 -(void)deactivateAllInActivatedSet;
 -(id)cacheIdentifierForState:(int)state ofKey:(UIKBKey*)key;
 -(id)cacheIdentifierForKeyplaneNamed:(NSString*)keyplaneNamed withVisualStyle:(NSString*)visualStyle;
--(void)showKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance orientation:(NSString*)orientation;
 -(void)deactivateActiveKeys;
 //-(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(id)keyHitTestContainingPoint:(CGPoint)point;
 -(id)keyHitTestClosestToPoint:(CGPoint)point;
 -(id)keyHitTestWithoutCharging:(CGPoint)charging;
 -(id)keyHitTest:(CGPoint)test;
--(id)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(XXStruct__FxRIA*)pathInfo;
 //-(void)sendStringAction:(id)action forKey:(id)key;
 //-(void)deleteAction;
 //-(void)setLabel:(id)label forKey:(id)key;
@@ -96,18 +135,76 @@
 //-(BOOL)isLongPressedKey:(id)key;
 //-(void)longPressAction;
 //-(void)showPopupVariantsForKey:(id)key;
-//-(void)touchDown:(GSEventRef)down withPathInfo:(XXStruct__FxRIA*)pathInfo;
 //-(void)touchDownWithKey:(id)key atPoint:(CGPoint)point;
-//-(void)touchDragged:(GSEventRef)dragged withPathInfo:(XXStruct__FxRIA*)pathInfo;
-//-(void)touchUp:(GSEventRef)up withPathInfo:(XXStruct__FxRIA*)pathInfo;
 -(BOOL)keyHasAccentedVariants:(id)variants;
 //-(unsigned)downActionFlagsForKey:(id)key;
 //-(unsigned)upActionFlagsForKey:(id)key;
-//-(void)updateReturnKey;
 //-(BOOL)usesAutoShift;
 //-(BOOL)isShiftKeyBeingHeld;
 -(void)updateKeyCentroids:(BOOL)centroids;
 //-(void)didRotate;
 //-(id)scriptingInfoWithChildren;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL autoShift;
+-(id)keyboardWithName:(id)name;
+// inherited: -(BOOL)canProduceString:(id)string;
+-(void)setReturnKeyEnabled:(BOOL)enabled withDisplayName:(id)displayName withType:(int)type;
+-(void)setKeyViewFrame:(CGRect)frame forKey:(id)key;
+-(id)findMoreKeyOnKeyPlane:(id)plane onLeftMostSide:(BOOL)side;
+-(void)updateLatinAccentsKey;
+-(int)stateForKey:(id)key;
+-(void)showKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance orientation:(NSString*)orientation withShift:(BOOL)shift;
+-(BOOL)showingSplitKeyboard;
+-(void)showSplitAlternateKeyboard;
+-(void)splitAlternateKeyboardFirstHalfAnimationDidStop:(id)splitAlternateKeyboardFirstHalfAnimation finished:(id)finished context:(void*)context;
+-(void)splitAlternateKeyboardSecondHalfAnimationDidStop:(id)splitAlternateKeyboardSecondHalfAnimation finished:(id)finished context:(void*)context;
+// inherited: -(void)zoomGestureRecognized:(id)recognized;
+-(id)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withTouch:(id)touch;
+// inherited: -(id)candidateList;
+// inherited: -(void)didClearInput;
+// inherited: -(id)activationIndicatorView;
+// inherited: -(void)touchDown:(id)down;
+// inherited: -(void)touchDragged:(id)dragged;
+// inherited: -(void)touchUp:(id)up;
+// inherited: -(void)touchCancelled:(id)cancelled;
+-(id)flickKeyForPoint:(CGPoint)point;
+-(BOOL)gestureRecognizerShouldBegin:(id)gestureRecognizer;
+-(void)flickGesture:(id)gesture;
+-(void)endFlickForKey:(id)key;
+-(void)flickForKey:(id)key;
+-(void)installFlickGestureRecognizers;
+-(void)uninstallFlickGestureRecognizers;
+-(void)installGestureRecognizers;
+-(void)uninstallGestureRecognizers;
+-(void)swipeDetected:(id)detected;
+-(id)infoForTouch:(id)touch;
+-(id)generateInfoForTouch:(id)touch;
+-(void)clearInfoForTouch:(id)touch;
+-(void)clearAllTouchInfo;
+-(id)touchForKey:(id)key;
+-(id)spaceKey;
+-(void)downActionShiftWithKey:(id)key;
+-(void)upActionShift;
+-(void)updateShiftKeyState;
+// inherited: -(void)setAutoshift:(BOOL)autoshift;
+-(void)willRotate;
+-(void)postKeyboardNotification:(id)notification forGeometry:(UIPeripheralAnimationGeometry)geometry;
+-(void)dragToTouch:(id)touch;
+#else
+-(void)setReturnKeyType:(UIReturnKeyType)type;
+-(void)showKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance orientation:(NSString*)orientation;
+-(id)keyHitTest:(CGPoint)test touchStage:(int)stage atTime:(double)time withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)touchDown:(GSEventRef)down withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)touchDragged:(GSEventRef)dragged withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)touchUp:(GSEventRef)up withPathInfo:(XXStruct__FxRIA*)pathInfo;
+//-(void)updateReturnKey;
+#endif
 @end
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UIKeyboardLayoutStar (UIKeyboardUnitTestSupport)
+-(CGRect)frameForKeyWithRepresentedString:(id)representedString;
+-(id)popupKeyViews;
+@end
+#endif
 

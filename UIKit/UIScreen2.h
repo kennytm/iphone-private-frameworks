@@ -5,10 +5,29 @@
 
 #import "UIKit-Structs.h"
 #import <Foundation/NSObject.h>
-
+#import <Availability2.h>
 
 @interface UIScreen ()
--(id)init;
+// inherited: +(void)initialize;
+// inherited: -(id)init;
 -(CGRect)_applicationFrameForInterfaceOrientation:(int)interfaceOrientation;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(CGAffineTransform)transformForScreenOriginRotation:(float)screenOriginRotation;
++(CGAffineTransform)transformToRotateScreen:(float)rotateScreen;
+-(id)initWithDisplay:(id)display;
+// inherited: -(void)dealloc;
+// -(void)observeValueForKeyPath:(id)keyPath ofObject:(id)object change:(id)change context:(void*)context;
+-(void)_setupBounds;
+-(CGRect)_realDisplayBounds;
+-(float)scale;
+-(void)setScale:(float)scale;
+-(float)_rotation;
+-(int)bitsPerComponent;
+-(void)setBitsPerComponent:(int)component;
+-(int)screenType;
+-(id)_name;
+-(BOOL)_isMainScreen;
+-(BOOL)_hasStatusBar;
+#endif
 @end
 

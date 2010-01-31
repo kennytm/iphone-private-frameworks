@@ -54,6 +54,7 @@
 -(BOOL)_reallyWantsFullScreenLayout;
 -(void)willShowViewController:(id)controller animated:(BOOL)animated;
 -(void)didShowViewController:(id)controller animated:(BOOL)animated;
+-(void)navigationTransitionView:(id)view didStartTransition:(int)transition __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)navigationTransitionView:(id)view didEndTransition:(int)transition fromView:(id)view3 toView:(id)view4;
 -(double)navigationTransitionView:(id)view durationForTransition:(int)transition;
 -(void)setNeedsDeferredTransition;
@@ -117,9 +118,17 @@
 -(id)defaultPNGName;
 -(id)tabBarItem;
 -(void)updateTabBarItemForViewController:(id)viewController;
+-(void)_layoutTopViewControllerInSheet __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
+-(void)_layoutTopViewControllerOutOfSheet __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(id)_moreListTitle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(id)moreListImage;
 -(id)moreListSelectedImage;
 -(id)moreListTableCell;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface UINavigationController (MasterDetailLegacySupport)
+@property(assign) BOOL isExpanded;
+@property(retain) UIViewController* detailViewController;
+@end
+#endif

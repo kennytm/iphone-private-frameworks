@@ -7,6 +7,7 @@
 #import <UIKit/UIApplication.h>
 #import "UIKit-Structs.h"
 #import <UIKit/UIResponder.h>
+#import <Availability2.h>
 
 @class UIWindow, NSMutableSet, NSArray, NSTimer, UIEvent;
 @protocol UIApplicationDelegate;
@@ -36,11 +37,9 @@
 -(BOOL)isIgnoringInteractionEvents;
 -(BOOL)_isActivated;
 -(void)_setActivated:(BOOL)activated;
--(void)_performInitializationWithURL:(id)url sourceBundleID:(id)id;
 -(void)_installAutoreleasePoolsIfNecessaryForMode:(CFStringRef)mode;
 -(void)_run;
 -(void)_reportAppLaunchFinished;
--(void)_runWithURL:(id)url sourceBundleID:(id)id;
 -(void)_registerForDoubleHeightModeChangeNotification;
 -(void)_registerForAlertItemStateChangeNotification;
 -(void)_registerForSignificantTimeChangeNotification;
@@ -56,9 +55,6 @@
 -(void)popRunLoopMode:(id)mode;
 -(void)sendAction:(SEL)action fromSender:(id)sender toTarget:(id)target forEvent:(GSEventRef)event;
 -(BOOL)sendAction:(SEL)action toTarget:(id)target fromSender:(id)sender forEvent:(id)event;
--(void)_setStatusBarStyle:(int)style orientation:(int)orientation animated:(BOOL)animated;
--(void)setStatusBarHidden:(BOOL)hidden animated:(BOOL)animated;
--(CGRect)_statusBarFrameForMode:(int)mode orientation:(int)orientation;
 -(void)_setDoubleHeightMode:(int)mode;
 -(void)setDoubleHeightMode:(int)mode glowAnimationEnabled:(BOOL)enabled;
 -(void)setDoubleHeightMode:(int)mode;
@@ -84,7 +80,6 @@
 -(BOOL)_isLaunchedSuspended;
 -(void)suspend;
 -(void)suspendReturningToLastApp:(BOOL)lastApp;
--(unsigned)_portForEvent:(GSEventRef)event;
 -(void)applicationSuspended:(GSEventRef)suspended;
 -(void)applicationSuspendedSettingsUpdated:(GSEventRef)updated;
 -(void)applicationExited:(GSEventRef)exited;
@@ -93,7 +88,7 @@
 -(void)lockButtonUp:(GSEventRef)up;
 -(void)headsetButtonDown:(GSEventRef)down;
 -(void)headsetButtonUp:(GSEventRef)up;
--(void)headsetAvailabilityChanged:(GSEventRef)changed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)headsetAvailabilityChanged:(GSEventRef)changed;
 -(void)menuButtonDown:(GSEventRef)down;
 -(void)menuButtonUp:(GSEventRef)up;
 -(void)statusBarMouseDown:(GSEventRef)down;
@@ -108,8 +103,6 @@
 -(void)_handleAccessoryKeyStateChanged:(GSEventRef)changed;
 -(void)accessoryKeyStateChanged:(GSEventRef)changed;
 -(void)accessoryEvent:(GSEventRef)event;
--(void)handleOutOfLineDataResponse:(id)lineDataResponse requestID:(unsigned)id;
--(void)handleOutOfLineDataRequest:(GSEventRef)lineDataRequest;
 -(void)lockDevice:(GSEventRef)device;
 -(void)quitTopApplication:(GSEventRef)application;
 -(void)resetIdleDuration:(double)duration;
@@ -118,7 +111,7 @@
 -(void)setSimpleRemoteRoutingPriority:(unsigned)priority;
 -(void)_postSimpleRemoteNotificationForAction:(int)action;
 -(void)_handleHeadsetButtonUp:(GSEventRef)up;
--(void)_handleHeadsetButtonDown:(GSEventRef)down __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)_handleHeadsetButtonDown:(GSEventRef)down;
 -(void)_handleHeadsetButtonClick;
 -(void)_handleHeadsetButtonDoubleClick;
 -(void)_handleHeadsetButtonTripleClick;
@@ -163,7 +156,6 @@
 -(void)setApplicationBadgeString:(id)string;
 -(void)addWebClipToHomeScreen:(id)homeScreen;
 -(BOOL)homeScreenCanAddIcons;
--(CGRect)statusBarRect;
 -(void)_fetchInfoPlistFlags;
 -(int)orientation;
 -(int)statusBarMode;
@@ -188,8 +180,6 @@
 -(void)_prepareToSetStatusBarMode:(int)setStatusBarMode orientation:(int)orientation duration:(float)duration;
 -(void)_finishedSettingStatusBarMode:(int)mode oldMode:(int)mode2 newOrientation:(int)orientation oldOrientation:(int)orientation4;
 -(BOOL)_useDoubleHeightStatusBarForMode:(int)mode orientation:(int)orientation;
--(float)currentStatusBarHeightForMode:(int)mode orientation:(int)orientation;
--(int)_getCurrentStatusBarOrientationFromSB;
 -(void)setStatusBarMode:(int)mode orientation:(int)orientation duration:(float)duration fenceID:(int)id animation:(int)animation startTime:(double)time;
 -(void)setStatusBarMode:(int)mode orientation:(int)orientation duration:(float)duration fenceID:(int)id animation:(int)animation;
 -(void)setStatusBarMode:(int)mode orientation:(int)orientation duration:(float)duration fenceID:(int)id;
@@ -250,7 +240,7 @@
 -(BOOL)handleEvent:(GSEventRef)event withNewEvent:(id)newEvent;
 -(void)setUIOrientation:(int)orientation;
 -(void)setExpectsFaceContact:(BOOL)contact;
--(void)setRelaunchesAfterAbnormalExit:(BOOL)exit __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
+-(void)setRelaunchesAfterAbnormalExit:(BOOL)relaunches;
 -(void)applicationWillOrderInContext:(unsigned)application windowLevel:(float)level windowOutput:(int)anOutput;
 -(void)applicationDidOrderOutContext:(unsigned)application;
 -(void)_sendOrderedOutContexts;
@@ -275,6 +265,51 @@
 -(void)_hideNetworkActivityIndicator;
 -(void)_beginShowingNetworkActivityIndicator;
 -(void)_endShowingNetworkActivityIndicator;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_extendLaunchTest;
+-(id)_launchTestName;
+-(void)_performInitializationWithURL:(id)url payload:(id)payload;
+-(void)_runWithURL:(id)url payload:(id)payload launchOrientation:(int)orientation;
+-(void)_setStatusBarStyle:(int)style orientation:(int)orientation withAnimation:(int)animation;
+-(unsigned)_frontmostApplicationPort;
+-(void)mediaKeyDown:(GSEventRef)down;
+-(void)mediaKeyUp:(GSEventRef)up;
+-(id)userCachesDirectory;
+-(void)_setIsClassic:(BOOL)classic;
+-(BOOL)_isSystemApplication;
+-(int)interfaceOrientation;
+-(void)_setRotationDisabledDuringTouch:(BOOL)touch;
+-(BOOL)_rotationDisabledDuringTouch;
+-(void)_prepareToSetStatusBarOrientation:(int)setStatusBarOrientation duration:(float)duration;
+-(void)_finishedSettingStatusBarOrientation:(int)orientation oldOrientation:(int)orientation2;
+-(CGRect)statusBarFrameForOrientation:(int)orientation;
+-(float)statusBarHeightForOrientation:(int)orientation ignoreHidden:(BOOL)hidden;
+-(float)statusBarHeightForOrientation:(int)orientation;
+-(void)_setStatusBarHeight:(float)height;
+-(float)statusBarHeight;
+-(int)activeInterfaceOrientation;
+-(int)_getSpringBoardOrientation;
+-(double)windowRotationDuration;
+-(void)_stopPlayback;
+-(void)handleKeyEvent:(GSEventRef)event;
+-(BOOL)_isClassic;
+-(BOOL)_shouldZoom;
+-(void)_setShouldZoom:(BOOL)shouldZoom;
+-(void)setStatusBarModeBlockingWithOrientation:(int)orientation duration:(float)duration fenceID:(int)anId sender:(id)sender;
+-(BOOL)shouldFenceStatusBarRotation;
+#else
+-(void)_performInitializationWithURL:(id)url sourceBundleID:(id)bundleID;
+-(void)_runWithURL:(id)url sourceBundleID:(id)bundleID;
+-(void)_setStatusBarStyle:(int)style orientation:(int)orientation animated:(BOOL)animated;
+-(CGRect)_statusBarFrameForMode:(int)mode orientation:(int)orientation;
+-(unsigned)_portForEvent:(GSEventRef)event;
+-(CGRect)statusBarRect;
+-(void)handleOutOfLineDataResponse:(id)lineDataResponse requestID:(unsigned)requestID;
+-(void)handleOutOfLineDataRequest:(GSEventRef)lineDataRequest;
+-(float)currentStatusBarHeightForMode:(int)mode orientation:(int)orientation;
+-(int)_getCurrentStatusBarOrientationFromSB;
+#endif
 @end
 
 @interface UIApplication (UIApplicationTesting)
@@ -297,6 +332,16 @@
 -(void)_leak;
 -(void)startLeaking;
 -(void)stopLeaking;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)_currentTests;
+-(void)runTest:(id)test startingBeforeAnimation:(id)animation stoppingAfterAnimation:(id)animation3;
+-(void)_noteAnimationStarted:(id)started;
+-(void)_noteAnimationFinished:(id)finished;
+-(void)runTest:(id)test forAnimation:(id)animation;
+-(void)testPrep:(id)prep options:(id)options;
+-(BOOL)rotateIfNeeded:(int)needed;
+-(void)setDeviceOrientation:(int)orientation;
+#endif
 @end
 
 @interface UIApplication (UIAlertSheetAppAdditions)
@@ -318,6 +363,7 @@
 
 @interface UIApplication (UIApplication_RemoteSheet)
 -(void)beginRemoteSheet:(id)sheet delegate:(id)delegate didEndSelector:(SEL)selector contextInfo:(void*)info;
+-(void)beginRemoteSheet:(id)sheet delegate:(id)delegate didEndSelector:(SEL)selector contextInfo:(void*)info requireTopApplication:(BOOL)application __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)endRemoteSheet:(id)sheet;
 -(void)endRemoteSheet:(id)sheet returnCode:(int)code;
 -(void)_sheetWithRemoteIdentifierDidDismiss:(id)_sheetWithRemoteIdentifier;

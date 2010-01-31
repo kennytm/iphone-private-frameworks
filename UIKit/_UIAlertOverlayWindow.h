@@ -5,13 +5,20 @@
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIWindow.h>
+#import <Availability2.h>
 
-
+__attribute__((visibility("hidden")))
 @interface _UIAlertOverlayWindow : UIWindow {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _shouldNormalizeScaleInClassic;
+#endif
 }
-+(CGRect)constrainFrameToScreen:(CGRect)screen;
--(void)makeKeyWindow;
--(void)_handleMouseUp:(GSEventRef)up;
--(id)representation;
+@property(assign, nonatomic) BOOL shouldNormalizeScaleInClassic __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
+// inherited: +(CGRect)constrainFrameToScreen:(CGRect)screen;
+// inherited: -(void)makeKeyWindow;
+// inherited: -(void)_handleMouseUp:(GSEventRef)up;
+// inherited: -(id)representation;
+// inherited (since 3.2): -(void)_setContentsScale:(float)scale;
+// inherited (since 3.2): -(float)_contentsScale;
 @end
 
