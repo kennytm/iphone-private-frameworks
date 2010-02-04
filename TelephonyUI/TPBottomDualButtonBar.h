@@ -7,6 +7,7 @@
 
 #import "TelephonyUI-Structs.h"
 #import "TPBottomButtonBar.h"
+#import <Availability2.h>
 
 @class TPPushButton;
 
@@ -17,6 +18,7 @@
 -(id)initForIncomingCallWithFrame:(CGRect)frame;
 -(id)initForCallFailureWithFrame:(CGRect)frame;
 -(id)initForEmergencyCallWithFrame:(CGRect)frame;
+-(id)initForVideoChatWithFrame:(CGRect)frame __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(float)_buttonWidth;
 -(void)_updateButtonSettings:(id)settings;
 -(void)setButton2:(id)a2;

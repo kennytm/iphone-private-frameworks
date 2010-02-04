@@ -8,7 +8,7 @@
 #import "TelephonyUI-Structs.h"
 #import "TPPhonePad.h"
 #import <UIKit/UIControl.h>
-
+#import <Availability2.h>
 
 @interface TPPhonePad : UIControl {
 	int _downKey;
@@ -40,6 +40,7 @@
 -(void)setButton:(id)button forKeyAtIndex:(int)index;
 -(id)_buttonForKeyAtIndex:(int)index;
 -(void)setNeedsDisplayForKey:(int)key;
+-(CGPoint)_keypadOrigin __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(id)_pressedImage;
 -(id)_keypadImage;
 -(float)_yFudge;

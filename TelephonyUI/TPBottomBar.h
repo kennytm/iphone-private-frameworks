@@ -10,11 +10,20 @@
 
 
 @interface TPBottomBar : UIView {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _orientation;
+#endif
 }
 +(id)_backgroundImage;
 +(void)preloadImages;
 +(float)defaultHeight;
 -(id)initWithDefaultSize;
 -(void)drawRect:(CGRect)rect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(float)defaultHeightForOrientation:(int)orientation;
+-(id)initWithDefaultSizeForOrientation:(int)orientation;
+-(void)setOrientation:(int)orientation;
+-(int)orientation;
+#endif
 @end
 

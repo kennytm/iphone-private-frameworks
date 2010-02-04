@@ -7,6 +7,7 @@
 
 #import "TelephonyUI-Structs.h"
 #import <UIKit/UIThreePartButton.h>
+#import <Availability2.h>
 
 @class NSString;
 
@@ -19,13 +20,15 @@
 	float _iconVerticalOffset;
 	float _iconAlpha;
 	float _minimumFontSize;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _imageIsOptional;
+#endif
 }
 +(float)defaultHeight;
 +(float)defaultHeightForColor:(int)color;
 +(void)preloadImagesForColor:(int)color;
 +(id)answerButtonImage;
 +(id)declineButtonImage;
--(XXStruct_SIyEID)_buttonSlices;
 -(id)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame;
 -(void)setPlusSeparatedTitle:(id)title;
 -(void)setPushButtonColor:(int)color;
@@ -38,5 +41,14 @@
 -(void)setIconAlpha:(float)alpha;
 -(CGPoint)_titleOriginForTitleSize:(CGSize)titleSize;
 -(void)setMinimumTitleFontSize:(float)size;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)declineVideoButtonImage;
++(id)acceptVideoButtonImage;
+-(id)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame imageIsOptional:(BOOL)optional;
+-(void)setImageIsOptional:(BOOL)optional;
+-(BOOL)imageIsOptional;
+#else
+-(XXStruct_SIyEID)_buttonSlices;
+#endif
 @end
 

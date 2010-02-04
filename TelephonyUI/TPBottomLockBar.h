@@ -7,6 +7,7 @@
 
 #import "TelephonyUI-Structs.h"
 #import "TPBottomBar.h"
+#import <Availability2.h>
 
 @class TPLockKnobView, NSArray, TPLockTextView, NSTimer;
 
@@ -54,5 +55,14 @@
 -(id)representedObject;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(float)knobTrackInsetLeft;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(float)defaultLabelFontSize;
+-(void)_adjustKnobOrigin;
+-(void)_adjustLabelOrigin;
+// inherited: -(void)setOrientation:(int)orientation;
+-(float)knobTrackInsetRight;
+-(BOOL)_canDrawContent;
+-(id)hitTest:(CGPoint)test withEvent:(id)event;
+#endif
 @end
 
