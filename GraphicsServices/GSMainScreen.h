@@ -34,12 +34,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSMAINSCREEN_H
 
 #include <CoreGraphics/CoreGraphics.h>
+#include <Availability2.h>
 
 #if __cplusplus
 extern "C" {
 #endif	
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	CGRect GSFullScreenApplicationContentRect();
+#else
+	CGSize GSMainScreenPixelSize(void);	// default to 320 x 480.
+	CGSize GSMainScreenPointSize(void);	// default to 320 x 480.
+#endif
 	
 	void GSSetMainScreenInfo(CGSize screenSize, CGFloat screenScale, int screenOrientation);
 	CGAffineTransform GSMainScreenPositionTransform();

@@ -35,6 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
+#include <Availability2.h>
 
 #if __cplusplus
 extern "C" {
@@ -79,6 +80,7 @@ extern "C" {
 		 CGFloat _descent;	// 1c
 		 CGFloat _lineSpacing;	// 20
 		 CGFloat _lineGap;	// 24
+		CGFloat _maximumAdvanceWidth // 28 (since 3.2)
 	 }
 	 */
 	
@@ -106,6 +108,9 @@ extern "C" {
 	CGFloat GSFontGetDescent(GSFontRef font);	///< Get the font's descent.
 	CGFloat GSFontGetLineSpacing(GSFontRef font);	///< Get the font's line spacing.
 	CGFloat GSFontGetLineGap(GSFontRef font);	///< Get the font's line gap.
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	CGFloat GSFontGetMaximumAdvanceWidth(GSFontRef font);	///< Get the font's maximum advance width.
+#endif
 	
 	typedef enum CGFontRenderingMode {
 		kCGFontRenderingModeAntialiased = 3
@@ -130,7 +135,9 @@ extern "C" {
 	CFArrayRef GSFontCopyFontNamesForFamilyName(const char* familyName);	// an array of CFString, not const char*
 	CFArrayRef GSFontCopyFamilyNames();
 	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	void GSFontPurgeFontCache();
+#endif
 	void GSFontInitialize();
 	
 	/// Use the specified font in the context.

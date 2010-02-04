@@ -33,6 +33,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef GSMAPS_H
 #define GSMAPS_H
 
+#include <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
+
 #include <CoreFoundation/CoreFoundation.h>
 
 #if __cplusplus
@@ -57,6 +61,8 @@ extern "C" {
 
 #if __cplusplus
 }
+#endif
+
 #endif
 
 #endif

@@ -92,10 +92,25 @@ extern "C" {
 	} GSDeviceOrientationInfo;
 	
 	typedef struct __GSKeyInfo {
-		UniChar keycode, characterIgnoringModifier, character;	// 0x3C, 0x3E, 0x40
+		UniChar keyCode, characterIgnoringModifier, charCode;	// 0x3C, 0x3E, 0x40
 		unsigned short characterSet;	// 0x42
 		Boolean isKeyRepeating;	// 0x44
 	} GSKeyInfo;
+	
+	typedef struct __GSHardwareKeyInfo {
+		UniChar keyCode;	// 3c
+		UniChar characterIgnoringModifier;	// 3e
+		UniChar charCode;	// 40
+		unsigned short characterSet;	// 42
+		uint16_t characters_length;	// 44
+		UniChar characters[32];		// 46 .. 84
+		uint16_t unmodified_characters_length;	// 86
+		UniChar unmodified_characters[32];		// 88 .. C6
+		int unknown0 : 1;
+		int isKeyVariant : 1;
+		int unknown2 : 14;
+		int unknown10 : 16;
+	} GSHardwareKeyInfo;
 	
 	typedef struct __GSAccessoryKeyStateInfo {
 		unsigned short a;
@@ -125,8 +140,9 @@ extern "C" {
 		
 		kGSEventKeyDown = 10,
 		kGSEventKeyUp = 11,
-		kGSEventSimulatorKeyDown = 12,	// Maybe?
-		kGSEventHardwareKeyDown = 13,
+		kGSEventModifiersChanged = 12,
+		kGSEventSimulatorKeyDown = 13,
+		kGSEventHardwareKeyDown = 14,	// Maybe?
 		kGSEventScrollWheel = 22,
 		kGSEventAccelerate = 23,
 		kGSEventProximityStateChanged = 24,
@@ -160,6 +176,8 @@ extern "C" {
 		kGSEventHeadsetButtonUp = 1019,
 		kGSEventMotionBegin = 1020,
 		kGSEventHeadsetAvailabilityChanged = 1021,
+		kGSEventMediaKeyDown = 1022,	// ≥3.2
+		kGSEventMediaKeyUp = 1023,	// ≥3.2
 		
 		kGSEventVibrate = 1100,
 		kGSEventSetBacklightFactor = 1102,
@@ -223,7 +241,9 @@ extern "C" {
 	
 	GSEventRef GSEventCopy(GSEventRef event);
 	GSEventRef GSEventCreateWithEventRecord(const GSEventRecord* record);
-	GSEventRef GSEventCreateWithTypeAndLocation(GSEventType type, CGPoint location) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+	GSEventRef GSEventCreateWithTypeAndLocation(GSEventType type, CGPoint location);
+#endif
 	GSEventRef GSEventCreateWithPlist(CFDictionaryRef dictionary) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_2);
 	
 	const GSEventRecord* GSEventRecordGetRecordDataWithPlist(CFDictionaryRef plist) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_2);
@@ -235,7 +255,9 @@ extern "C" {
 
 	GSEventType GSEventGetType(GSEventRef event);
 	GSEventSubType GSEventGetSubType(GSEventRef event);
-	int GSEventGetWindowContextId(GSEventRef event) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+	int GSEventGetWindowContextId(GSEventRef event);
+#endif
 	CGPoint GSEventGetLocationInWindow(GSEventRef event);
 	CGPoint GSEventGetOuterMostPathPosition(GSEventRef event);
 	CGPoint GSEventGetInnerMostPathPosition(GSEventRef event);
@@ -288,8 +310,10 @@ extern "C" {
 	
 	/// Register a callback function that will be called when PurpleEventCallback() is called.
 	void GSEventRegisterEventCallBack(void(*callback)(GSEventRef event));
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	void GSEventRegisterFindWindowCallBack(int(*callback)(CGPoint position));
 	void GSEventRegisterTransformToWindowCoordsCallBack(void*) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+#endif
 		
 #pragma mark -
 #pragma mark Touch events
@@ -297,8 +321,12 @@ extern "C" {
 	GSPathInfo GSEventGetPathInfoAtIndex(GSEventRef event, CFIndex index);
 	void GSEventSetPathInfoAtIndex(GSEventRef event, GSPathInfo pathInfo, CFIndex index);
 	
-	void GSEventSetHandInfoScale(GSEventRef event, CGFloat denominator) __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0);
-	void GSEventChangeHandInfoToCancel(GSEventRef event) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
+	void GSEventSetHandInfoScale(GSEventRef event, CGFloat denominator);
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+	void GSEventChangeHandInfoToCancel(GSEventRef event);
+#endif
 	
 	void GSEventDisableHandEventCoalescing(Boolean disableHandCoalescing);
 	
@@ -312,8 +340,10 @@ extern "C" {
 #pragma mark Scroll wheel and touch events
 	CGFloat GSEventGetDeltaX(GSEventRef event);
 	CGFloat GSEventGetDeltaY(GSEventRef event);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	void GSEventSetDeltaX(GSEventRef event, CGFloat deltaX);
 	void GSEventSetDeltaY(GSEventRef event, CGFloat deltaY);
+#endif
 	
 #pragma mark -
 #pragma mark Keyboard events
@@ -322,14 +352,18 @@ extern "C" {
 	Boolean GSEventIsKeyRepeating(GSEventRef event);
 	UniChar GSEventGetKeyCode(GSEventRef event);
 	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	GSEventRef _GSCreateSyntheticKeyEvent(UniChar keycode, Boolean isKeyUp, Boolean isKeyRepeating);
+#endif
 	Boolean GSEventIsKeyCharacterEventType(GSEventRef event, UniChar expected_keycode);
 	Boolean GSEventIsTabKeyEvent(GSEventRef event);
 	
 	CFStringRef GSEventCopyCharactersIgnoringModifiers(GSEventRef event);
 	CFStringRef GSEventCopyCharacters(GSEventRef event);
 	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	void _GSPostSyntheticKeyEvent(CFStringRef keys, Boolean isKeyUp, Boolean isKeyRepeating);
+#endif
 	
 #pragma mark -
 #pragma mark Accelerometer events
@@ -338,9 +372,11 @@ extern "C" {
 	CGFloat GSEventAccelerometerAxisZ(GSEventRef event);
 	
 #pragma mark -
-#pragma mark Out-of-line data
+#pragma mark Out-of-line data (deprecated)
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	void GSEventRequestOutOfLineData(mach_port_t port, void* unknown);
 	mach_msg_return_t GSEventSendOutOfLineData(mach_port_t port, ...);	
+#endif
 	
 #pragma mark -
 #pragma mark Hardware manipulation events
@@ -391,6 +427,42 @@ extern "C" {
 	
 	void GSEventVibrateForDuration(float secs);
 	void GSEventStopVibrator();	///< Equivalent to GSEventVibrateForDuration(0)
+
+#pragma mark -
+#pragma mark Hardware keyboard events
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	extern const char* kGSEventHardwareKeyboardAvailabilityChangedNotification;	// "GSEventHardwareKeyboardAttached"
+	Boolean GSEventIsHardwareKeyboardAttached(void);
+	void GSEventSetHardwareKeyboardAttached(Boolean attached);
+	
+	// "type" must be 10 or 14.
+	GSEventRef GSEventCreateKeyEvent(GSEventType type,
+									 CGPoint windowLocation,
+									 CFStringRef characters,
+									 CFStringRef unmodifiedCharacters,
+									 GSEventFlags modifiers,
+									 uint16_t usagePage,
+									 unsigned options7, unsigned options8);
+	void GSSendKeyEvent(GSEventType type,
+						CGPoint windowLocation,
+						CFStringRef characters,
+						CFStringRef unmodifiedCharacters,
+						GSEventFlags modifiers,
+						uint16_t usagePage,
+						unsigned short options7,
+						unsigned short options8);
+	
+	uint16_t GSEventGetUsagePage(GSEventRef event);
+	void GSEventSetCharCode(GSEventRef event, UniChar charCode);
+	void GSEventSetCharacters(GSEventRef event, CFStringRef characters);
+	void GSEventSetKeyCode(GSEventRef event, uint16_t keyCode);
+	void GSEventSetUnmodifiedCharacters(GSEventRef event, CFStringRef characters);
+	
+	Boolean GSEventIsHardwareKeyboardEvent(GSEventRef event);
+	Boolean GSEventIsKeyVariant(GSEventRef event);
+	
+#endif
+		
 	
 #if __cplusplus
 }

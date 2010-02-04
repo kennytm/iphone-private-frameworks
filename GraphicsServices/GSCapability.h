@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSCAPABILITY_H
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <Availability2.h>
 
 #if __cplusplus
 extern "C" {
@@ -50,7 +51,12 @@ extern "C" {
 	
 	
 	Boolean GSSystemCanTakePhoto();	///< Returns if the device can take photos (i.e. have "still-camera" but not "cameraRestriction" capabilities).
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	Boolean GSSystemHasTelephonyCapability();	///< Returns if the device has "telephony" capability.
+#else
+	Boolean GSSystemGetCellularDataCapability(void);	///< Returns if the device has "cellular-data" capability.
+	Boolean GSSystemGetTelephonyCapability(void);	///< Returns if the device has "telephony" capability.
+#endif
 	
 	/// If the capability is a dictionary (e.g. the "screen-dimensions" capability), copy the value of a key in that dictionary.
 	CFPropertyListRef GSSystemCopySubcapability(CFStringRef capability, CFStringRef subcapability);
@@ -67,8 +73,10 @@ extern "C" {
 
 	extern CFStringRef kGSTelephonyMaximumGeneration;
 	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	extern CFStringRef kGSARMV6ExecutionCapability;
 	extern CFStringRef kGSARMV7ExecutionCapability;
+#endif
 	extern CFStringRef kGSAccelerometerCapability;
 	extern CFStringRef kGSAccessibilityCapability;
 	extern CFStringRef kGSAppleInternalInstallCapability;
@@ -92,13 +100,17 @@ extern "C" {
 	extern CFStringRef kGSLocationServicesCapability;
 	extern CFStringRef kGSMMSCapability;
 	extern CFStringRef kGSMagnetometerCapability;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	extern CFStringRef kGSMarketingNameString;
+#endif
 	extern CFStringRef kGSMicrophoneCapability;
 	extern CFStringRef kGSNikeIpodCapability;
 	extern CFStringRef kGSNotGreenTeaDeviceCapability;
 	extern CFStringRef kGSOpenGLES1Capability;
 	extern CFStringRef kGSOpenGLES2Capability;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	extern CFStringRef kGSPeer2PeerCapability;
+#endif
 	extern CFStringRef kGSPiezoClickerCapability;
 	extern CFStringRef kGSPlatformStandAloneContactsCapability;
 	extern CFStringRef kGSProximitySensorCapability;
@@ -115,6 +127,16 @@ extern "C" {
 	extern CFStringRef kGSWiFiCapability;
 	extern CFStringRef kGSYouTubeCapability;
 	extern CFStringRef kGSYouTubePluginCapability;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	extern CFStringRef kGS720pPlaybackCapability;
+	extern CFStringRef kGSCellularDataCapability;
+	extern CFStringRef kGSContainsCellularRadioCapability;
+	extern CFStringRef kGSDataPlanCapability;
+	extern CFStringRef kGSDisplayPortCapability;
+	extern CFStringRef kGSH264EncoderCapability;
+	extern CFStringRef kGSHideNonDefaultApplicationsCapability;
+	extern CFStringRef kGSWildcatCapability;
+#endif
 	
 	/// Subcapabilities
 	extern CFStringRef kGSMainScreenHeight;
@@ -123,7 +145,9 @@ extern "C" {
 	extern CFStringRef kGSMainScreenWidth;	
 	
 	extern CFStringRef kGSEnforceGoogleMail;
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	extern CFStringRef kGSEnforceCameraShutterClick;
+#endif
 	
 #if __cplusplus
 }
