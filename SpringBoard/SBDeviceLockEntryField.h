@@ -1,0 +1,50 @@
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+#import <UIKit/UIView.h>
+#import <CoreFoundation/CoreFoundation.h>
+#import <UIKit/UITextInput.h>
+@class UIPasscodeField, UITextInputTraits;
+
+@interface SBDeviceLockEntryField : UIView <UIKeyInput> {
+	int _style;
+	int _interfaceOrientation;
+	UIPasscodeField* _passcodeField;
+	UITextInputTraits* _textInputTraits;
+	CFCharacterSetRef _numericTrimmingSet;
+	id _delegate;
+}
+@property(assign, nonatomic) int interfaceOrientation;
+@property(assign, nonatomic) id delegate;
+// in a protocol: @property(assign, nonatomic) int autocapitalizationType;
+// in a protocol: @property(assign, nonatomic) int autocorrectionType;
+// in a protocol: @property(assign, nonatomic) int keyboardType;
+// in a protocol: @property(assign, nonatomic) int keyboardAppearance;
+// in a protocol: @property(assign, nonatomic) int returnKeyType;
+// in a protocol: @property(assign, nonatomic) BOOL enablesReturnKeyAutomatically;
+// in a protocol: @property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
+@property(assign, nonatomic, getter=isOkayButtonEnabled) BOOL okayButtonEnabled;
+@property(copy, nonatomic) NSString* stringValue;
+-(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(void)dealloc;
+// inherited: -(BOOL)canBecomeFirstResponder;
+// inherited: -(BOOL)becomeFirstResponder;
+-(id)passcodeField;
+-(CGSize)_fieldSizeForCurrentDevice;
+-(void)_layoutForCurrentDevice;
+-(void)appendString:(id)string;
+-(void)deleteLastCharacter;
+-(id)textInputTraits;
+-(void)passcodeFieldTextDidChange:(id)passcodeFieldText;
+-(BOOL)passcodeField:(id)field shouldInsertText:(id)text;
+-(void)passcodeFieldDidAcceptEntry:(id)passcodeField;
+-(id)text;
+-(void)setText:(id)text;
+// in a protocol: -(BOOL)hasText;
+// in a protocol: -(void)insertText:(id)text;
+// in a protocol: -(void)deleteBackward;
+// inherited: -(void)forwardInvocation:(id)invocation;
+@end
+
+#endif

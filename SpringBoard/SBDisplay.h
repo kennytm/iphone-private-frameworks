@@ -7,6 +7,7 @@
 
 #import <Foundation/NSObject.h>
 #import "SpringBoard-Structs.h"
+#import <Availability2.h>
 
 @class NSMutableSet, NSMutableDictionary;
 
@@ -66,12 +67,9 @@
 -(void)exitedNormally;
 -(BOOL)allowsEventOnlySuspension;
 -(BOOL)allowsDoubleHeightStatusBar:(BOOL)bar;
--(void)updateStatusBar:(double)bar fence:(int)fence animation:(int)animation startTime:(double)time;
 -(void)updateStatusBar:(double)bar;
 -(int)defaultStatusBarMode;
 -(int)statusBarMode;
--(int)defaultStatusBarOrientation;
--(int)statusBarOrientation;
 -(double)autoDimTime;
 -(void)setAutoDimTime:(double)time;
 -(double)autoLockTime;
@@ -95,5 +93,17 @@
 -(NSString*)activationSettingsDescription;
 -(NSString*)descriptionForDeactivationSettings:(unsigned)deactivationSettings;
 -(NSString*)deactivationSettingsDescription;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)updateStatusBar:(double)bar orientation:(int)orientation fence:(int)fence animation:(int)animation startTime:(double)time;
+-(void)updateStatusBar:(double)bar orientation:(int)orientation;
+-(int)launchInterfaceOrientationForCurrentOrientation;
+-(int)launchInterfaceOrientationForCurrentOrientation:(int)currentOrientation;
+-(BOOL)defaultClassicAppZoomedIn;
+-(BOOL)classicAppZoomedIn;
+#else
+-(void)updateStatusBar:(double)bar fence:(int)fence animation:(int)animation startTime:(double)time;
+-(int)defaultStatusBarOrientation;
+-(int)statusBarOrientation;
+#endif
 @end
 

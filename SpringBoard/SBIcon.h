@@ -7,14 +7,21 @@
 
 #import <UIKit/UIView.h>
 #import "SpringBoard-Structs.h"
+#import <Availability2.h>
 
 @class SBIconImageView, SBIconBadge, NSString, NSTimer, UIImageView, UIPushButton, SBIconLabel, CAAnimation;
 
 @interface SBIcon : UIView {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIImageView* _shadow;
+#else
 	NSString* _filenameSafeDisplayIdentifier;
+#endif
 	SBIconImageView* _image;
 	UIImageView* _reflection;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	UIView* _grayFilterView;
+#endif
 	SBIconBadge* _badge;
 	id _badgeNumberOrString;
 	SBIconLabel* _label;
@@ -30,10 +37,17 @@
 	unsigned _isJittering : 1;
 	unsigned _allowJitter : 1;
 	unsigned _touchDownInIcon : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _disableAutorotation : 1;
+	unsigned _onWallpaper : 1;
+#endif
 	NSTimer* _delayedUnhighlightTimer;
 	CGPoint _unjitterPoint;
 	CGPoint _grabPoint;
 	NSTimer* _grabTimer;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIImage* _cachedIconImages[3];
+#endif
 }
 +(CGSize)defaultIconSize;
 +(void)enqueueReusableIconImageView:(id)view;
@@ -51,14 +65,9 @@
 -(NSString*)displayName;
 -(int)localizedCompareDisplayNames:(id)names;
 -(NSString*)displayIdentifier;
--(NSString*)filenameSafeDisplayIndentifier;
--(NSDate*)modificationDate:(BOOL)date;
 -(id)tags;
 -(BOOL)launchEnabled;
 -(void)setDisplayedIcon:(id)icon;
--(UIImage*)icon;
--(UIImage*)smallIcon;
--(id)_createIconImageDataForSmallIcon:(BOOL)smallIcon;
 -(UIImage*)reflectedIcon:(BOOL)icon;
 -(BOOL)isShowingImages;
 -(void)setShowsImages:(BOOL)images;
@@ -107,5 +116,27 @@
 -(id)uninstallAlertBody;
 -(id)uninstallAlertConfirmTitle;
 -(id)uninstallAlertCancelTitle;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(CGSize)defaultIconImageSize;
++(id)genericAppIcon:(int)icon;
+-(id)generateIconImage:(int)image;
+-(id)getIconImage:(int)image;
+-(void)reloadIconImage;
+-(id)_shadowImageName;
+-(void)_updateShadow;
+-(void)setDisplaysOnWallpaper:(BOOL)wallpaper;
+-(BOOL)showsReflection;
+-(UIEdgeInsets)snapshotEdgeInsets;
+-(void)setShadowsHidden:(BOOL)hidden;
+-(void)_updateShadowFrameForShadow:(id)shadow;
+-(void)_updateShadowFrame;
+-(id)createShadowImageView;
+#else
+-(NSString*)filenameSafeDisplayIndentifier;
+-(NSDate*)modificationDate:(BOOL)date;
+-(UIImage*)icon;
+-(UIImage*)smallIcon;
+-(id)_createIconImageDataForSmallIcon:(BOOL)smallIcon;
+#endif
 @end
 

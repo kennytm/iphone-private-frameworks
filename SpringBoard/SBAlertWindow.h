@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIWindow.h>
+#import <Availability2.h>
 
 @class NSMutableDictionary, NSMutableArray, SBAlertDisplay, UIView;
 
@@ -16,6 +17,9 @@
 	unsigned _isInvalid : 1;
 	unsigned _handlerActive : 1;
 	float _finalAlpha;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _currentOrientation;
+#endif
 	SBAlertDisplay* _currentDisplay;
 	NSMutableArray* _stackedAlertDisplays;
 	NSMutableDictionary* _alertToDisplayMap;
@@ -34,5 +38,17 @@
 -(id)currentDisplay;
 -(void)setHandlerAlreadyActive:(BOOL)active;
 -(BOOL)handlerAlreadyActive;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)contentLayer;
+-(void)_setupContentLayerForCurrentOrientation;
+-(BOOL)_isSupportedInterfaceOrientation:(int)orientation;
+-(BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(id)animation;
+-(BOOL)window:(id)window shouldAutorotateToInterfaceOrientation:(int)interfaceOrientation;
+-(id)rotatingContentViewForWindow:(id)window;
+-(void)window:(id)window willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)window:(id)window willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)window:(id)window didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+-(void)noteInterfaceOrientationChangingTo:(int)to animated:(BOOL)animated;
+#endif
 @end
 

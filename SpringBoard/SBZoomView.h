@@ -7,11 +7,30 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 
-@interface SBZoomView : UIView {
+@interface SBZoomView : UIView
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+{
+	BOOL _hasImage;
+	BOOL _hasFullSizedImage;
+	BOOL _usesRoundedCorners;
+	NSMutableArray* _cornerViews;
 }
+// inherited: -(id)initWithFrame:(CGRect)frame;
+-(id)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image originalImageOrientation:(int)orientation currentImageOrientation:(int)orientation4 interfaceOrientation:(int)orientation5 doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split chrome:(id)chrome chromeStatusBarStyle:(int)style;
+-(id)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface transform:(CGAffineTransform)transform;
+// inherited: -(void)dealloc;
+-(int)_degreesForRotationFromInterfaceOrientation:(int)interfaceOrientation toInterfaceOrientation:(int)interfaceOrientation2;
+-(int)_degreesForRotationFromOriginalImageOrientation:(int)originalImageOrientation toInterfaceOrientation:(int)interfaceOrientation;
+-(CGSize)_rotateAndNormalizeSize:(CGSize)size withTransform:(CGAffineTransform)transform;
+-(void)_createCornerViewsIfNecessaryWithCornersFrame:(CGRect)cornersFrame;
+-(void)setUsesRoundedCorners:(BOOL)corners withCornersFrame:(CGRect)cornersFrame;
+-(id)_chromeStatusBarImageForInterfaceOrientation:(int)interfaceOrientation;
+#else
 -(id)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split;
 -(id)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface;
+#endif
 @end
 

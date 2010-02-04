@@ -7,21 +7,32 @@
 
 #import <Foundation/NSObject.h>
 #import "ISDownloadQueueDelegate.h"
+#import "SSDownloadQueueObserver.h"
+#import <Availability2.h>
 
-@class ISDownloadQueue;
+@class ISDownloadQueue, SSDownloadQueue;
 
-@interface SBDownloadController : NSObject <ISDownloadQueueDelegate> {
+@interface SBDownloadController : NSObject 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+<ISDownloadQueueDelegate> {
+	SSDownloadQueue* _downloadQueue;
+}
+#else
+<ISDownloadQueueDelegate> {
 	ISDownloadQueue* _downloadQueue;
 }
+#endif
 +(id)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(void)downloadQueue:(id)queue changedWithRemovals:(id)removals disappearances:(id)disappearances;
 -(void)_showDownloadQueueError;
-// in a protocol: -(void)downloadQueueError:(id)error;
+-(void)downloadQueueError:(id)error;
 -(BOOL)checkQueue;
 -(id)currentDownloads;
 -(id)downloadQueue;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(void)_networkUsageChanged:(id)changed;
+#endif
 @end
 

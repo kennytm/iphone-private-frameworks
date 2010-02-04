@@ -7,6 +7,7 @@
 
 #import "UIModalViewDelegate.h"
 #import "SBFlippyAlertItem.h"
+#import <Availability2.h>
 
 @class MPAudioDeviceController;
 
@@ -39,6 +40,7 @@
 -(void)_playPauseButtonAction:(id)action;
 -(void)_changeTrackButtonDown:(id)down;
 -(void)_changeTrackButtonUp:(id)up;
+-(void)_changeTrackButtonEndSeek:(id)seek __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)_changeTrackButtonTouchPause:(id)pause;
 -(void)_volumeChange:(id)change;
 -(void)_registerForNowPlayingNotifications;

@@ -7,11 +7,16 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
-@class UISearchBar, UITableView, SBRoundedCornerView, UILabel, UIKeyboard;
+@class UISearchBar, UITableView, SBRoundedCornerView, UILabel, UIKeyboard, SBRoundedCornersView;
 
 @interface SBSearchView : UIView {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	SBRoundedCornersView* _roundedCornersView;
+#else
 	SBRoundedCornerView* _roundedCornerView;
+#endif
 	UISearchBar* _searchBar;
 	UITableView* _tableView;
 	UIKeyboard* _keyboard;
@@ -19,6 +24,9 @@
 	BOOL _isKeyboardVisible;
 	BOOL _inAnimationBlock;
 	BOOL _showSearchKeyWhenAnimatingKeyboard;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _hidesEmptyTableFooter;
+#endif
 }
 @property(readonly, assign, nonatomic) UISearchBar* searchBar;
 @property(readonly, assign, nonatomic) UITableView* tableView;
@@ -41,5 +49,12 @@
 -(void)scatterAnimationDidStop;
 -(void)unscatter:(BOOL)unscatter startTime:(double)time;
 -(void)unscatterAnimationDidStop;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)setHidesEmptyTableFooter:(BOOL)footer;
+-(void)_resetContentViewTransform;
+-(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+#endif
 @end
 

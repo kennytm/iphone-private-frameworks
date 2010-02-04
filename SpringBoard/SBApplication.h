@@ -15,9 +15,13 @@
 	NSString* _roleIdentifier;
 	NSString* _displayIdentifier;
 	NSString* _path;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSDictionary* _spotlightIconNames;
+#else
 	NSString* _iconPath;
 	NSString* _smallIconPath;
 	NSDictionary* _spotlightIcons;
+#endif
 	NSString* _bundleVersion;
 	NSString* _longDisplayName;
 	NSDictionary* _searchDomainLaunchInfo;
@@ -25,6 +29,9 @@
 	NSString* _launchdJobLabel;
 	int _pid;
 	SBApplicationTimes* _times;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	double _modificationDate;
+#endif
 	NSString* _displayName;
 	NSString* _demoRole;
 	NSMutableSet* _statusBarItemSet;
@@ -47,11 +54,24 @@
 	unsigned _isSystemProvisioningApplication : 1;
 	unsigned _hasMiniAlerts : 1;
 	unsigned _isRevealable : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	unsigned _uiPrerederedIcon : 1;
+#endif
 	unsigned _uiRequiresPersistentWiFi : 1;
 	unsigned _dataFlagsIsSet : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _isClassic : 1;
+	unsigned _supportsPortraitOrientation : 1;
+	unsigned _supportsPortraitUpsideDownOrientation : 1;
+	unsigned _supportsLandscapeLeftOrientation : 1;
+	unsigned _supportsLandscapeRightOrientation : 1;	
+#endif
 	unsigned _defaultStatusBarStyle : 8;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _defaultInterfaceOrientation : 8;
+#else
 	unsigned _defaultInterfaceOrientaton : 8;
+#endif
 	unsigned _sbUsesNetwork : 8;
 	unsigned _dataFlags : 8;
 	unsigned _launchAlerts : 8;
@@ -111,25 +131,19 @@
 -(void)setUsesWiFiNetwork:(BOOL)network;
 -(void)_resetDataUsage;
 // inherited: -(id)displayIdentifier;
--(NSString*)pathForIcon;
--(NSString*)pathForSmallIcon;
--(id)spotlightIcons;
 -(BOOL)isSystemApplication;
 -(BOOL)isSystemProvisioningApplication;
 -(BOOL)isWidgetApplication;
 -(BOOL)isUserRatable;
 -(void)validateSystemProvisioningEntitlements:(XXStruct_kUSYWB*)entitlements;
--(void)flushSnapshotsForAllRoles;
 -(BOOL)shouldLaunchPNGless;
 -(id)_additionalDisplayQualification;
 -(id)defaultImage:(BOOL*)image;
 -(Class)iconClass;
 -(BOOL)isRevealable;
--(BOOL)isPrerenderedIcon;
 -(NSString*)displayName;
 -(void)setDisplayName:(NSString*)name;
 -(NSString*)longDisplayName;
--(void)_sendCurrentDeviceOrientation;
 -(int)ratingRank;
 -(void)markLaunchTime;
 -(BOOL)launch;
@@ -181,5 +195,21 @@
 -(BOOL)showLaunchAlertForType:(int)type;
 -(void)resetLaunchAlertForType:(int)type;
 -(NSTimeInterval)elapsedCPUTime;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(double)modificationDate;
+-(id)spotlightIconNames;
+-(void)flushSnapshotsForAllRoles:(BOOL)allRoles;
+-(id)_pathIfFileExistsAtPath:(id)path;
+-(id)defaultImage:(BOOL*)image originalOrientation:(int*)orientation currentOrientation:(int*)orientation3;
+-(BOOL)isClassic;
+-(int)classicDefaultStatusBarMode;
+#else
+-(NSString*)pathForIcon;
+-(NSString*)pathForSmallIcon;
+-(id)spotlightIcons;
+-(void)flushSnapshotsForAllRoles;
+-(BOOL)isPrerenderedIcon;
+-(void)_sendCurrentDeviceOrientation;
+#endif
 @end
 

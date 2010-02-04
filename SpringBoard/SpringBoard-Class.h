@@ -8,6 +8,7 @@
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIApplication.h>
 #import "SpringBoard.h"
+#import <Availability2.h>
 
 @class NSURL, NSDictionary, NSString, NSMutableArray, NSNumberFormatter, SBApplication, SBDimmingWindow, NSTimer, SBUIController;
 
@@ -24,6 +25,9 @@
 	SBDimmingWindow* _simulatedBlankingWindow;
 	unsigned _headsetButtonClickCount : 8;
 	unsigned _menuButtonClickCount : 8;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _waitingForMenuDoubleTapAfterActingOnSingleTap : 1;
+#endif
 	unsigned _screenshotWasTaken : 1;
 	unsigned _disableAutoDimming : 1;
 	unsigned _nextLockUpLocks : 1;
@@ -32,6 +36,12 @@
 	unsigned _autoDimmedToBlack : 1;
 	unsigned _headsetDownDelayedActionPerformed : 1;
 	unsigned _nowPlayingAppIsPlaying : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _isSeekingInMedia : 1;
+	int _mediaSeekDirection;
+	unsigned _springBoardRequestsAccelerometerEvents;
+	int _activeInterfaceOrientation;
+#endif
 	int _UIOrientation;
 	NSURL* _menuDoubleTapURL;
 	int _notifyDontAnimateREOToken;
@@ -74,7 +84,6 @@
 -(BOOL)canShowLockScreenHUDControls;
 -(BOOL)canShowNowPlayingHUD;
 -(void)setAppDisabledNowPlayingHUD:(BOOL)hud bundleIdentifier:(id)identifier;
--(BOOL)allowMenuDoubleTap;
 -(void)handleMenuDoubleTap;
 -(void)_setMenuButtonTimer:(id)timer;
 -(void)_setLockButtonTimer:(id)timer;
@@ -174,9 +183,6 @@
 -(id)_createAppsCPUTimesDictionary;
 // inherited: -(void)didReceiveMemoryWarning;
 -(void)noteSubstantialTransitionOccured;
-// inherited: -(int)_frontMostAppOrientation;
--(void)noteUIOrientationChanged:(int)changed display:(id)display;
--(int)UIOrientation;
 -(void)updateMenuDoubleTapSettings;
 -(void)setZoomTouchEnabled:(BOOL)enabled;
 -(id)springBoardPluginsDirectory;
@@ -212,6 +218,31 @@
 -(void)_accessibilityActivationAnimationWillBegin;
 -(double)_accessibilityDeactivationAnimationStartDelay;
 -(void)_accessibilityDeactivationAnimationWillBegin;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)updateStackshotSettings;
+-(BOOL)respondImmediatelyToMenuSingleTapAllowingDoubleTap:(BOOL*)menuSingleTapAllowingDoubleTap;
+-(void)goToSpotlight:(BOOL)spotlight;
+-(void)_giveUpOnMenuDoubleTap;
+-(void)_startSeekWithDirection:(id)direction;
+// inherited: -(void)mediaKeyDown:(GSEventRef)down;
+// inherited: -(void)mediaKeyUp:(GSEventRef)up;
+-(void)_iapServerConnectionDiedNotification:(id)notification;
+-(void)_iapExtendedModeReset;
+-(void)_imagesMounted;
+-(void)keyboardWantsToAttemptUnlock;
+-(void)noteInterfaceOrientationChanged:(int)changed;
+// inherited: -(int)activeInterfaceOrientation;
+-(int)launchingInterfaceOrientation;
+// inherited: -(double)windowRotationDuration;
+// inherited: -(void)setStatusBarModeBlockingWithOrientation:(int)orientation duration:(float)duration fenceID:(int)anId sender:(id)sender;
+// inherited: -(BOOL)shouldFenceStatusBarRotation;
+-(id)_accessibilityFrontMostApplication;
+#else
+-(BOOL)allowMenuDoubleTap;
+// inherited: -(int)_frontMostAppOrientation;
+-(void)noteUIOrientationChanged:(int)changed display:(id)display;
+-(int)UIOrientation;
+#endif
 @end
 
 @interface SpringBoard (ScriptingAdditions)

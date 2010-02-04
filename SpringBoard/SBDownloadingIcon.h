@@ -8,18 +8,32 @@
 #import "SBIcon.h"
 #import "SpringBoard-Structs.h"
 #import "ISDownloadDelegate.h"
+#import <Availability2.h>
 
 @class NSString, ISDownload, ISDownloadStatus, SBDownloadingProgressBar;
+@class SSDownload, SSDownloadStatus;
 
-@interface SBDownloadingIcon : SBIcon <ISDownloadDelegate> {
+@interface SBDownloadingIcon : SBIcon
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+<ISDownloadDelegate> 
+#endif
+{
 	NSString* _displayID;
 	NSString* _bundleID;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	ISDownload* _download;
+#else
+	SSDownload* _download;
+#endif
 	SBDownloadingProgressBar* _progressView;
 	float _progress;
 	BOOL _installing;
 	BOOL _wasUninstalledByUser;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	ISDownloadStatus* _lastStatus;
+#else
+	SSDownloadStatus* _lastStatus;
+#endif
 }
 +(id)displayIdentifierForDownloadUniqueID:(id)downloadUniqueID;
 +(id)displayIdentifierForDownload:(id)download;
@@ -53,7 +67,12 @@
 // inherited: -(id)uninstallAlertBody;
 // inherited: -(id)uninstallAlertConfirmTitle;
 // inherited: -(id)uninstallAlertCancelTitle;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)reloadForStatusChange;
+#else
 -(void)_reloadIcon;
+-(void)_thumbnailAvailableNotification:(id)notification;
+#endif
 -(void)_showAlertForError:(id)error;
 @end
 

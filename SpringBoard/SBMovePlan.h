@@ -6,6 +6,7 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class SBIcon, SBIconList;
 
@@ -13,13 +14,22 @@
 	SBIcon* _icon;
 	SBIconList* _source;
 	SBIconList* _destination;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _index;
+#else
 	int _x;
 	int _y;
+#endif
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)initWithIcon:(id)icon index:(int)index source:(id)source destination:(id)destination;
+-(int)index;
+#else
 -(id)initWithIcon:(id)icon x:(int)x y:(int)y source:(id)source destination:(id)destination;
-// inherited: -(void)dealloc;
 -(int)x;
 -(int)y;
+#endif
+// inherited: -(void)dealloc;
 -(id)destination;
 -(id)source;
 -(id)icon;

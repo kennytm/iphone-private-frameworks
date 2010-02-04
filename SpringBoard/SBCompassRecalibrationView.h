@@ -6,13 +6,20 @@
  */
 
 #import "SpringBoard-Structs.h"
+#import "SBHUDView.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
-
-@interface SBCompassRecalibrationView : UIView {
+@interface SBCompassRecalibrationView :
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+SBHUDView
+#else
+UIView
+#endif
+{
 }
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(void)drawRect:(CGRect)rect;
+// -(void)drawRect:(CGRect)rect;
 @end
 

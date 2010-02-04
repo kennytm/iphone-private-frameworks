@@ -6,13 +6,15 @@
  */
 
 #import "SBApplicationIcon.h"
-
+#import <Availability2.h>
 
 @interface SBWeatherApplicationIcon : SBApplicationIcon {
 }
 // inherited: -(void)localeChanged;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(BOOL)showFahrenheit;
 // inherited: -(id)icon;
 // inherited: -(id)modificationDate:(BOOL)date;
+#endif
 @end
 

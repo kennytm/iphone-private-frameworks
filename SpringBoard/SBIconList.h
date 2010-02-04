@@ -7,47 +7,49 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIView.h>
+#import <Availability2.h>
 
 @class NSMutableArray, SBIcon;
 
 @interface SBIconList : UIView {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _orientation;
+#endif
 	SBIcon* _bouncedIcon;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSMutableArray* _icons;
+#else
 	NSMutableArray* _iconMatrix;
+#endif
 	NSMutableArray* _removedIcons;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSMutableArray* _iconContainerMatrix;
+#endif
 	unsigned _scattered : 1;
 	unsigned _needsLayout : 1;
 	unsigned _stateIsDirty : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _rotating : 1;
+	unsigned _onWallpaper : 1;
+	UIView* _fadeView;
+#endif
 }
 // inherited: -(id)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
--(float)horizontalIconInset;
--(int)maxIconRows;
--(int)maxIconColumns;
 -(NSArray*)icons;
--(SBIcon*)iconAtX:(int)x Y:(int)y;
--(BOOL)firstFreeSlotX:(int*)x Y:(int*)y;
 -(BOOL)isEmpty;
 -(BOOL)needsCompacting;
 -(void)compactIconsInIconList:(BOOL)iconList;
 -(void)showIconAnimationDidStop:(id)showIconAnimation didFinish:(id)finish icon:(id)icon;
--(id)placeIcon:(id)icon atX:(int)x Y:(int)y animate:(BOOL)animate moveNow:(BOOL)now;
--(id)insertIcon:(id)icon atX:(int)x Y:(int)y moveNow:(BOOL)now;
--(BOOL)getX:(int*)x Y:(int*)y forIcon:(id)icon;
--(BOOL)getX:(int*)x Y:(int*)y forDisplayIdentifier:(id)displayIdentifier;
 -(BOOL)containsIcon:(id)icon;
 -(BOOL)containsIconForDisplayIdentifier:(id)displayIdentifier;
--(void)removeIconAtX:(int)x Y:(int)y compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
 -(void)removeIcon:(id)icon compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
 -(void)removeAllIcons;
 -(BOOL)isScattered;
 -(void)setIconAlphaForRow:(int)row column:(int)column alpha:(float)alpha;
--(void)scatter:(BOOL)scatter startTime:(double)time;
--(void)unscatter:(BOOL)unscatter startTime:(double)time;
 -(void)removeAllIconAnimations;
 -(float)verticalIconPadding;
 -(float)topIconPadding;
--(void)setIconsNeedLayout;
--(int)visibleIconsInRow:(id)row;
 -(CGPoint)originForIconAtX:(int)x Y:(int)y;
 -(CGPoint)originForIcon:(id)icon;
 -(void)setFrame:(CGRect)frame;
@@ -55,8 +57,6 @@
 -(float)layoutIconsIfNeeded:(float)needed domino:(BOOL)domino;
 -(int)columnAtPoint:(CGPoint)point;
 -(int)rowAtPoint:(CGPoint)point;
--(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y;
--(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y proposedOrder:(int*)order;
 -(void)removeInfoAnimation:(id)animation didFinish:(id)finish view:(id)view;
 -(void)stopJittering;
 -(void)noteEditingStateChanged;
@@ -68,5 +68,55 @@
 -(void)resetWithRepresentation:(id)representation;
 -(id)initWithRepresentation:(id)representation;
 -(NSArray*)representation;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(int)iconRowsForInterfaceOrientation:(int)interfaceOrientation;
++(int)iconColumnsForInterfaceOrientation:(int)interfaceOrientation;
++(int)maxIcons;
+-(int)iconRowsForCurrentOrientation;
+-(int)iconColumnsForCurrentOrientation;
+-(int)iconsInRowForSpacingCalculation;
+-(void)setOrientation:(int)orientation;
+-(void)setDisplaysOnWallpaper:(BOOL)wallpaper;
+-(int)indexForX:(int)x Y:(int)y forOrientation:(int)orientation;
+-(void)getX:(int*)x Y:(int*)y forIndex:(int)index forOrientation:(int)orientation;
+-(id)iconAtIndex:(int)index;
+-(BOOL)firstFreeSlotIndex:(int*)index;
+-(id)placeIcon:(id)icon atIndex:(int)index animate:(BOOL)animate moveNow:(BOOL)now;
+-(id)insertIcon:(id)icon atIndex:(int)index moveNow:(BOOL)now;
+-(BOOL)getIndex:(int*)index forIcon:(id)icon;
+-(BOOL)getIndex:(int*)index forDisplayIdentifier:(id)displayIdentifier;
+-(void)removeIconAtIndex:(int)index compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
+-(void)scatterWithDuration:(double)duration startTime:(double)time;
+-(void)unscatterWithDuration:(double)duration startTime:(double)time;
+-(void)fade:(float)fade;
+-(float)horizontalIconInset;
+-(float)horizontalIconSpace;
+-(CGPoint)originForIconAtIndex:(int)index;
+-(void)setIconsNeedLayout;
+-(id)iconAtPoint:(CGPoint)point index:(int*)index;
+-(id)iconAtPoint:(CGPoint)point index:(int*)index proposedOrder:(int*)order;
+-(void)makeColumn:(int)column showImages:(BOOL)images andJitter:(BOOL)jitter;
+-(id)rotationIconContainers;
+-(void)prepareToRotateToInterfaceOrientation:(int)interfaceOrientation;
+-(void)performRotationWithDuration:(double)duration;
+-(void)cleanupAfterRotation;
+#else
+-(float)horizontalIconInset;
+-(int)maxIconRows;
+-(int)maxIconColumns;
+-(SBIcon*)iconAtX:(int)x Y:(int)y;
+-(BOOL)firstFreeSlotX:(int*)x Y:(int*)y;
+-(id)placeIcon:(id)icon atX:(int)x Y:(int)y animate:(BOOL)animate moveNow:(BOOL)now;
+-(id)insertIcon:(id)icon atX:(int)x Y:(int)y moveNow:(BOOL)now;
+-(BOOL)getX:(int*)x Y:(int*)y forIcon:(id)icon;
+-(BOOL)getX:(int*)x Y:(int*)y forDisplayIdentifier:(id)displayIdentifier;
+-(void)removeIconAtX:(int)x Y:(int)y compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
+-(void)scatter:(BOOL)scatter startTime:(double)time;
+-(void)unscatter:(BOOL)unscatter startTime:(double)time;
+-(void)setIconsNeedLayout;
+-(int)visibleIconsInRow:(id)row;
+-(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y;
+-(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y proposedOrder:(int*)order;
+#endif
 @end
 

@@ -7,31 +7,68 @@
 
 #import "SpringBoard-Structs.h"
 #import "SBSlidingAlertDisplay.h"
+#import <Availability2.h>
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+#import <UIKit/UITextInput.h>
+#endif
 
 @class TPBottomButtonBar, SBNowPlayingArtView, SBAlertImageView, NSTimer, SBAwayViewPluginController, SBAwayChargingView, UIImage, UIModalView, SBAwaySwipeGestureRecognizer, TPBottomLockBar, UIPushButton, NSDictionary, SBAwayDateView, NSString, SBAwayInCallController, SBAwayItemsView, SBActivationView;
+@class MPAudioDeviceController, SBAwayLockBar;
 
-@interface SBAwayView : SBSlidingAlertDisplay {
+@interface SBAwayView : SBSlidingAlertDisplay 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+<UIKeyInput>
+#endif
+{
 	BOOL _isDimmed;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _fullscreen;
+	BOOL _alwaysFullscreen;
+#endif
 	BOOL _deferAwayItemFetching;
 	BOOL _showingBlockedIndicator;
 	BOOL _hasTelephony;
 	BOOL _wasShowingAlertAtDismiss;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _awayPluginIsVisible;
+	BOOL _ignoreFullScreenUpdates;
+#endif
 	SBAwayChargingView* _chargingView;
 	SBAwayDateView* _dateView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	SBNowPlayingArtView* _albumArtView;
+#endif
 	SBAwayItemsView* _awayItemsView;
 	SBActivationView* _activationView;
 	SBAlertImageView* _firewireWarningView;
 	SBAwayViewPluginController* _awayPluginController;
 	SBAwaySwipeGestureRecognizer* _gestureRecognizer;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	MPAudioDeviceController* _audioDeviceController;
+#endif
 	NSTimer* _mediaControlsTimer;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSTimer* _fullscreenTimer;
+	NSTimer* _chargingViewTimer;
+#endif
 	NSDictionary* _nowPlayingInfo;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _isPlaying;
+#else
 	UIImage* _nowPlayingArt;
 	NSString* _lastTrackArtPath;
+#endif
 	NSTimer* _blockedStatusUpdateTimer;
 	UIModalView* _alertSheet;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _alertSheetPosition;
+#endif
 	SBAwayInCallController* _inCallController;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	SBAwayLockBar* _lockBar;
+#else
 	TPBottomLockBar* _lockBar;
+#endif
 	TPBottomButtonBar* _cancelSyncBar;
 	UIPushButton* _infoButton;
 }
@@ -62,14 +99,12 @@
 // inherited: -(void)setMiddleContentAlpha:(float)alpha;
 -(void)setDimmed:(BOOL)dimmed;
 -(BOOL)dimmed;
--(void)setDrawsBlackBackground:(BOOL)background;
 -(void)lockBarUnlocked:(id)unlocked;
 -(void)lockBarStartedTracking:(id)tracking;
 -(void)lockBarStoppedTracking:(id)tracking;
 -(void)updateLockBarLabel;
 -(id)currentAwayPluginController;
 -(void)removePluginController:(BOOL)controller;
--(void)_setPluginControllerView:(id)view;
 -(void)_setAwayViewGesturesEnabled:(BOOL)enabled;
 -(void)windowGestureWasCompleted:(id)completed;
 // inherited: -(BOOL)shouldShowBlockedRedStatus;
@@ -92,9 +127,7 @@
 -(void)showAlertSheet:(id)sheet;
 -(void)removeAlertSheet;
 -(void)slideAlertSheetOut:(BOOL)anOut direction:(BOOL)direction duration:(float)duration;
--(void)_batteryStatusChanged:(id)changed;
 -(id)chargingView;
--(void)addChargingView;
 -(void)hideChargingView;
 -(void)clearMediaControlsTimer;
 -(void)restartMediaControlsTimer;
@@ -107,12 +140,68 @@
 // inherited: -(void)updateTopBarBackground;
 -(void)showSyncingBottomBar:(BOOL)bar;
 -(void)hideSyncingBottomBar:(BOOL)bar;
--(void)hideNowPlaying;
--(id)nowPlayingArtView;
 -(void)updateNowPlayingInfo:(id)info;
--(BOOL)updateNowPlayingArt:(BOOL)art;
--(void)handleRequestedAlbumArt:(id)art;
 // inherited: -(void)animateToShowingDeviceLock:(BOOL)showingDeviceLock;
 -(void)_wirelessModemStateChanged:(id)changed;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+// in a protocol: @property(assign, nonatomic) int autocapitalizationType;
+// in a protocol: @property(assign, nonatomic) int autocorrectionType;
+// in a protocol: @property(assign, nonatomic) int keyboardType;
+// in a protocol: @property(assign, nonatomic) int keyboardAppearance;
+// in a protocol: @property(assign, nonatomic) int returnKeyType;
+// in a protocol: @property(assign, nonatomic) BOOL enablesReturnKeyAutomatically;
+// in a protocol: @property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
+// inherited: -(void)layoutForInterfaceOrientation:(int)interfaceOrientation;
+-(BOOL)isAnimating;
+-(BOOL)shouldShowChargingView;
+-(void)_setMiddleSubviewsAlpha:(float)alpha;
+-(void)lockBarUnlocked:(id)unlocked freezeKnobInLockedPosition:(BOOL)lockedPosition;
+-(void)_setPluginController:(id)controller;
+-(void)_pluginFadeInAnimationDidStop:(id)_pluginFadeInAnimation finished:(BOOL)finished context:(void*)context;
+-(void)_fullscreenAnimationStopped:(id)stopped finished:(id)finished context:(void*)context;
+-(void)setFullscreen:(BOOL)fullscreen duration:(double)duration force:(BOOL)force;
+-(void)setFullscreen:(BOOL)fullscreen duration:(double)duration;
+// inherited: -(BOOL)isFullscreen;
+-(BOOL)isAlwaysFullscreen;
+-(void)setAlwaysFullscreen:(BOOL)fullscreen;
+-(void)setIgnoreFullScreenUpdates:(BOOL)updates;
+// inherited: -(void)animateToHidingDeviceLockFinished;
+-(void)_recenterAlertSheet;
+-(void)showChargingView;
+-(void)updateChargingView;
+-(void)startChargingViewTimer;
+-(void)_chargingViewTimerFired;
+-(void)_didFadeChargingView;
+-(void)clearChargingViewTimer;
+-(void)restartMediaControlsTimerIfNecessary;
+-(BOOL)isPlaying;
+-(void)setPlaying:(BOOL)playing;
+-(BOOL)hasNowPlayingInfo;
+-(BOOL)hasNowPlayingInfoFromiPod;
+-(void)enableOrDisableNowPlayingPlugin;
+-(void)_cancelFullscreenTimer;
+-(void)_restartFullscreenTimer;
+-(void)_fullscreenTimerFired;
+-(void)restartFullscreenTimerIfNecessary;
+-(BOOL)handleMenuButtonTap;
+-(void)didMoveToWindow;
+-(void)audioDeviceControllerAudioRoutesChanged:(id)changed;
+// inherited: -(BOOL)canBecomeFirstResponder;
+// in a protocol: -(BOOL)hasText;
+// in a protocol: -(void)insertText:(id)text;
+// in a protocol: -(void)deleteBackward;
+// inherited: -(void)forwardInvocation:(id)invocation;
+
+#else
+-(void)setDrawsBlackBackground:(BOOL)background;
+-(void)_setPluginControllerView:(id)view;
+-(void)_batteryStatusChanged:(id)changed;
+-(void)addChargingView;
+-(void)hideNowPlaying;
+-(id)nowPlayingArtView;
+-(BOOL)updateNowPlayingArt:(BOOL)art;
+-(void)handleRequestedAlbumArt:(id)art;
+#endif
 @end
 

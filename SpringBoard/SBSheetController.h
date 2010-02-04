@@ -6,6 +6,7 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class UIWindow, NSMutableDictionary;
 
@@ -19,11 +20,17 @@
 -(void)animateSheetUp:(id)up;
 -(void)animationDidStop:(id)animation finished:(id)finished context:(void*)context;
 -(void)animateSheetDown:(id)down;
--(BOOL)presentRemoteViewIdentifier:(id)identifier asSheetForApplication:(id)application;
 -(void)dismissRemoteViewIdentifier:(id)identifier forApplication:(id)application;
 -(BOOL)isShowingSheets;
 -(void)dismissAllSheets;
 -(void)dismissSheetsForApplication:(id)application;
 -(BOOL)sheetWantsProgress;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)presentRemoteViewIdentifier:(id)identifier asSheetForApplication:(id)application requireTopApplication:(BOOL)application3;
+-(void)sendDeviceOrientationChangesToSheets;
+-(void)sendStatusBarOrientationWillChangeToSheets:(int)sendStatusBarOrientation duration:(float)duration;
+#else
+-(BOOL)presentRemoteViewIdentifier:(id)identifier asSheetForApplication:(id)application;
+#endif
 @end
 

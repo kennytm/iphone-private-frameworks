@@ -6,10 +6,16 @@
  */
 
 #import <Foundation/NSString.h>
-
+#import <Availability2.h>
 
 @interface NSString (Formatting)
 -(id)ICCID;
 -(id)IMEI;
 @end
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@interface NSString (SBDeviceLockEntryFieldExtras)
+-(BOOL)isSingleCharacterAndMemberOfSet:(CFCharacterSetRef)set;
+-(BOOL)isNewline;
+@end
+#endif

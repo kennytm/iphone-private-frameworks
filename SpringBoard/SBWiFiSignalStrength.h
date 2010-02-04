@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIImageView.h>
+#import <Availability2.h>
 
 
 @interface SBWiFiSignalStrength : UIImageView {
@@ -15,6 +16,9 @@
 	BOOL _hilited;
 	BOOL _selected;
 	BOOL _secure;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _requiresPassword;
+#endif
 	BOOL _joining;
 	UIImageView* _icon;
 }
@@ -32,6 +36,10 @@
 -(void)setHilited:(BOOL)hilited;
 -(BOOL)secure;
 -(void)setSecure:(BOOL)secure;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(BOOL)requiresPassword;
+-(void)setRequiresPassword:(BOOL)password;
+#endif
 -(void)updateImage;
 @end
 

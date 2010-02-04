@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIControl.h>
+#import <Availability2.h>
 
 @class NSString;
 
@@ -17,10 +18,14 @@
 	unsigned _ellipsesText : 1;
 	unsigned _kerningAllowed : 1;
 	unsigned _textMightOverlap : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _onWallpaper : 1;
+#endif
 }
 -(id)initWithSize:(CGSize)size label:(id)label;
 // inherited: -(void)dealloc;
 -(void)setInDock:(BOOL)dock;
+-(void)setDisplaysOnWallpaper:(BOOL)wallpaper __OSX_AVAILABLE_STARTING( _MAC_NA, __IPHONE_3_2);
 -(void)setEllipsesText:(BOOL)text;
 -(void)setKerningAllowed:(BOOL)allowed;
 -(void)drawRect:(CGRect)rect;

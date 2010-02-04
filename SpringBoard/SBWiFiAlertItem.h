@@ -7,6 +7,7 @@
 
 #import "SBAlertItem.h"
 #import "SpringBoard-Structs.h"
+#import <Availability2.h>
 
 @class NSString, NSTimer, NSMutableArray, UITable, NSDictionary;
 
@@ -28,7 +29,13 @@
 // inherited: -(id)init;
 -(int)_joinRow;
 -(void)setNetworks:(id)networks;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)_setDelegateForAlert:(id)alert delegate:(id)delegate;
+-(void)_dismissCurrentChildAlert;
+-(void)childAlertDismissed:(id)dismissed;
+#else
 -(void)setChildAlert:(id)alert;
+#endif
 -(id)insertionsForNewNetworks:(id)newNetworks;
 -(id)deletionSetForLostNetworks:(id)lostNetworks originalNetworks:(id)networks;
 -(void)wifiManager:(id)manager scanCompleted:(id)completed;

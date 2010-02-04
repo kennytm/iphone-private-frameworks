@@ -8,6 +8,7 @@
 #import "SBIconListPageControlDelegate.h"
 #import "UIScrollViewDelegate.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class UITouch, SBIconListPageControl, SBIcon, SBIconScrollView, SBIconList, UIView, NSTimer, SBSearchView, SBIconModel, TPLCDTextView, SBIconContentView;
 
@@ -21,20 +22,35 @@
 	TPLCDTextView* _idleText;
 	float _currentIdleTextOffset;
 	SBSearchView* _searchView;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _orientation;
+#endif
 	SBIcon* _lastClickedIcon;
 	double _lastClickedTime;
 	SBIcon* _iconToInstall;
 	SBIcon* _grabbedIcon;
 	SBIconList* _grabbedIconList;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _grabbedIndex;
+#else
 	int _grabbedX;
 	int _grabbedY;
+#endif
 	SBIcon* _swappedIcon;
 	SBIconList* _swappedIconList;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _swappedIndex;
+#else
 	int _swappedX;
 	int _swappedY;
+#endif
 	SBIconList* _destinationIconList;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _destinationIndex;
+#else
 	int _destinationX;
 	int _destinationY;
+#endif
 	NSTimer* _scrollPageTimer;
 	unsigned _didScroll : 1;
 	unsigned _isEditing : 1;
@@ -43,6 +59,11 @@
 	unsigned _animatedScrolling : 1;
 	unsigned _scrollingToSearch : 1;
 	unsigned _movedFromOrigin : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _disableUpdatingCurrentIconList : 1;
+	unsigned _delayResumingAutorotation : 1;
+	unsigned _onWallpaper : 1;
+#endif
 	float _iconAlpha;
 	float _searchViewAlpha;
 	UITouch* _lastTouch;
@@ -71,10 +92,7 @@
 -(void)setIconToInstall:(id)install;
 -(void)finishInstallingIcon;
 -(void)scrollToIconDestination;
--(id)addIcon:(id)icon toIconList:(id)iconList x:(int)x y:(int)y animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
--(id)insertIcon:(id)icon intoIconList:(id)list X:(int)x Y:(int)y moveNow:(BOOL)now duration:(float)duration;
 -(void)removeIcon:(id)icon animate:(BOOL)animate;
--(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icon:(id)icon;
 -(void)uninstallIcon:(id)icon;
 -(void)uninstallIcon:(id)icon animate:(BOOL)animate;
 -(void)lcdTextViewCompletedScroll:(id)scroll;
@@ -82,8 +100,6 @@
 -(void)updateNumberOfRowsWithDuration:(float)duration;
 -(BOOL)hasIdleModeText;
 -(void)setIdleModeText:(id)text;
--(void)scatter:(BOOL)scatter startTime:(double)time;
--(void)unscatter:(BOOL)unscatter startTime:(double)time;
 -(void)adjustIconListAlpha;
 -(void)_showSearchKeyboardIfNecessary:(BOOL)necessary;
 // in a protocol: -(void)scrollViewDidScroll:(id)scrollView;
@@ -118,7 +134,32 @@
 -(void)compactIconsInIconLists:(BOOL)iconLists limitToIconList:(id)iconList;
 -(void)animateToNewState:(float)newState domino:(BOOL)domino;
 -(void)moveAnimation:(id)animation didFinish:(id)finish movePlan:(id)plan;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)scrollView;
+-(int)orientation;
+-(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+-(void)updateIconListFrames;
+-(void)updateIconListWallpaperState;
+-(void)setIconsDisplayOnWallpaper:(BOOL)wallpaper;
+-(id)addIcon:(id)icon toIconList:(id)iconList index:(int)index animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
+-(id)insertIcon:(id)icon intoIconList:(id)list index:(int)index moveNow:(BOOL)now duration:(float)duration;
+-(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icons:(id)icons;
+-(void)scatterWithDuration:(double)duration startTime:(double)time;
+-(void)unscatterWithDuration:(double)duration startTime:(double)time;
+-(void)unscatterWithDuration:(double)duration startTime:(double)time fade:(BOOL)fade;
+-(void)resumeRotationDelayed;
+-(void)moveIcon:(id)icon fromIconList:(id)iconList toIndex:(int)index toIconList:(id)iconList4 animate:(BOOL)animate;
+-(void)moveIcon:(id)icon fromIconList:(id)iconList toIndex:(int)index toIconList:(id)iconList4;
+#else
+-(id)addIcon:(id)icon toIconList:(id)iconList x:(int)x y:(int)y animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
+-(id)insertIcon:(id)icon intoIconList:(id)list X:(int)x Y:(int)y moveNow:(BOOL)now duration:(float)duration;
+-(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icon:(id)icon;
+-(void)scatter:(BOOL)scatter startTime:(double)time;
+-(void)unscatter:(BOOL)unscatter startTime:(double)time;
 -(void)moveIcon:(id)icon fromIconList:(id)iconList toX:(int)x Y:(int)y toIconList:(id)iconList5 animate:(BOOL)animate;
 -(void)moveIcon:(id)icon fromIconList:(id)iconList toX:(int)x Y:(int)y toIconList:(id)iconList5;
+#endif
 @end
 

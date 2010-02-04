@@ -7,10 +7,32 @@
 
 #import "SBIconList.h"
 #import "SpringBoard-Structs.h"
-
+#import <Availability2.h>
 
 @interface SBButtonBar : SBIconList {
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)_backgroundImageForOrientation:(int)orientation;
+// inherited: +(int)iconColumnsForInterfaceOrientation:(int)interfaceOrientation;
+// inherited: +(int)iconRowsForInterfaceOrientation:(int)interfaceOrientation;
+-(id)initForOrientation:(int)orientation;
+// inherited: -(id)initWithFrame:(CGRect)frame;
+-(void)_updateForOrientation:(int)orientation duration:(double)duration;
+// inherited: -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
+// inherited: -(void)setOrientation:(int)orientation;
+-(void)setOrientation:(int)orientation duration:(double)duration;
+-(int)visibleIconsInButtonBar;
+// inherited: -(float)topIconPadding;
+// inherited: -(float)verticalIconPadding;
+// inherited: -(int)iconsInRowForSpacingCalculation;
+// inherited: -(float)horizontalIconInset;
+// inherited: -(float)horizontalIconSpace;
+-(float)horizontalInsetForCenteringIcons;
+// inherited: -(CGPoint)originForIconAtIndex:(int)index;
+// inherited: -(id)iconAtPoint:(CGPoint)point index:(int*)index proposedOrder:(int*)order;
+// inherited: -(int)rowAtPoint:(CGPoint)point;
+// inherited: -(int)columnAtPoint:(CGPoint)point;
+#else
 +(CGSize)defaultSize;
 // inherited: -(id)initWithFrame:(CGRect)frame;
 // inherited: -(int)maxIconRows;
@@ -21,5 +43,6 @@
 // inherited: -(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y proposedOrder:(int*)order;
 // inherited: -(int)rowAtPoint:(CGPoint)point;
 // inherited: -(int)columnAtPoint:(CGPoint)point;
+#endif
 @end
 

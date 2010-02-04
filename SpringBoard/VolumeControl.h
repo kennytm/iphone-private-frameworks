@@ -7,13 +7,16 @@
 
 #import "SpringBoard-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSString, VolumeControlView, NSMutableSet, UIWindow;
 
 @interface VolumeControl : NSObject {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	UIWindow* _volumeWindow;
 	VolumeControlView* _volumeView;
 	BOOL _windowVisible;
+#endif
 	BOOL _debounce;
 	int _mode;
 	NSMutableSet* _alwaysHiddenCategories;
@@ -23,30 +26,38 @@
 +(id)sharedVolumeControl;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(void)reorientHUDIfNeeded:(BOOL)needed;
--(void)_createUI;
--(void)_tearDown;
--(void)_orderWindowOut:(id)anOut;
 -(void)addAlwaysHiddenCategory:(id)category;
 -(void)removeAlwaysHiddenCategory:(id)category;
 -(BOOL)_HUDIsDisplayableForCategory:(id)category;
--(float)_windowFadeDelay;
--(void)_orderWindowFront:(id)front forCategory:(id)category;
 -(void)_changeVolumeBy:(float)by;
 -(float)_calcButtonRepeatDelay;
 -(void)increaseVolume;
 -(void)decreaseVolume;
--(void)hideHUD;
--(void)showHUD;
 -(id)lastDisplayedCategory;
--(void)setHUDMode:(int)mode;
 -(void)handleVolumeEvent:(GSEventRef)event;
 -(void)cancelVolumeEvent;
--(void)animationDidStop:(id)animation finished:(id)finished context:(void*)context;
 -(void)_registerForAVSystemControllerNotifications;
 -(void)_unregisterForAVSystemControllerNotifications;
 -(void)_serverConnectionDied:(id)died;
 -(int)_volumeModeForCategory:(id)category;
 -(void)_systemVolumeChanged:(id)changed;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(float)volumeStep;
+-(void)toggleMute;
+-(BOOL)_headphonesPresent;
+-(void)_presentVolumeHUDWithMode:(int)mode volume:(float)volume;
+-(void)hideVolumeHUDIfVisible;
+#else
+-(void)reorientHUDIfNeeded:(BOOL)needed;
+-(void)_createUI;
+-(void)_tearDown;
+-(void)_orderWindowOut:(id)anOut;
+-(float)_windowFadeDelay;
+-(void)_orderWindowFront:(id)front forCategory:(id)category;
+-(void)hideHUD;
+-(void)showHUD;
+-(void)setHUDMode:(int)mode;
+-(void)animationDidStop:(id)animation finished:(id)finished context:(void*)context;
+#endif
 @end
 

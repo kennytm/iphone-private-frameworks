@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSMutableArray, NSLock;
 
@@ -16,12 +17,17 @@
 	double _topDisplayLastUpdateTime;
 	double _topDisplayInterval;
 	NSMutableArray* _clients;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _springBoardWantsEvents;
+#endif
 }
 // inherited: +(void)initialize;
 +(SBAccelerometerInterface*)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)updateSettings;
+
+-(void)setSpringBoardWantsEvents:(BOOL)events __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 
 // set up a client to the mach port "port".
 

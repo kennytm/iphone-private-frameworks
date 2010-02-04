@@ -7,31 +7,48 @@
 
 #import "SBAlertDisplay.h"
 #import "SpringBoard-Structs.h"
+#import <Availability2.h>
 
-@class UIKeyboard, SBPasscodeField, SBDeviceLockKeypad, NSString, SBEmergencyCallView, UIImageView, TPLCDView;
+@class UIKeyboard, SBPasscodeField, SBDeviceLockKeypad, NSString, SBEmergencyCallView, UIImageView, TPLCDView, SBDeviceLockView;
 
 @interface SBSlidingAlertDisplay : SBAlertDisplay {
 	UIImageView* _backgroundView;
 	UIView* _topBar;
 	UIView* _bottomBar;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIView* _overlayView;
+	SBDeviceLockView* _deviceLockView;
+#else
 	TPLCDView* _deviceLockStatusView;
 	SBDeviceLockKeypad* _deviceLockKeypad;
 	UIKeyboard* _deviceLockKeyboard;
 	UIImageView* _deviceLockEntryBackground;
 	SBPasscodeField* _deviceLockEntryField;
+#endif
 	SBEmergencyCallView* _emergencyCallView;
 	UIView* _emergencyCallTopBar;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	NSString* _lastPasscode;
 	int _okFontSize;
 	int _cancelFontSize;
+#endif
 	BOOL _playKeyboardClicks;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	int _alphanumericPIN;
 	BOOL _alphanumericPINLoaded;
+#endif
 	unsigned _animatingEmergencyCall : 1;
 	unsigned _animatingIn : 1;
 	unsigned _animatingOut : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _animatingDeviceLock : 1;
+#endif
 	unsigned _showingDeviceLock : 1;
 	unsigned _showingDeviceUnlockFailure : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _isDisplayingWallpaper : 1;
+	int _currentOrientation;
+#endif
 }
 +(id)createTopBarForInstance:(id)instance;
 +(id)createBottomBarForInstance:(id)instance;
@@ -66,17 +83,10 @@
 -(void)animateDisplayIn:(float)anIn middleDelay:(float)delay animateStatusBar:(BOOL)bar;
 // inherited: -(void)alertDisplayWillBecomeVisible;
 -(BOOL)isShowingDeviceLock;
--(void)_loadAlphanumericPIN;
--(BOOL)alphanumericKeyboard;
--(BOOL)fourDigitPasscode;
--(CGRect)_entryFrame;
--(float)_startingKeypadXOrigin;
 -(void)setShowingDeviceLock:(BOOL)lock duration:(float)duration;
 -(void)setShowingDeviceLock:(BOOL)lock;
 -(void)animateToShowingDeviceLock:(BOOL)showingDeviceLock;
 -(void)_animateToHidingOrShowingDeviceLockFinished;
--(void)_animateToShowingDeviceLockFinished;
--(void)_animateToHidingDeviceLockFinished;
 -(void)deviceUnlockSucceeded;
 -(void)deviceUnlockFailed;
 -(void)deviceUnlockCanceled;
@@ -86,12 +96,6 @@
 -(void)removeBlockedStatus;
 -(BOOL)isDisplayingErrorStatus;
 -(void)_entryFinishedWithPassword:(id)password;
--(void)phonePad:(id)pad keyDown:(BOOL)down;
--(void)phonePad:(id)pad keyUp:(BOOL)up;
--(void)passcodeFieldDidAcceptEntry:(id)passcodeField;
--(void)_setLastPasscode:(id)passcode;
--(void)passcodeFieldTextDidChange:(id)passcodeFieldText;
--(void)returnKeyPressed:(id)pressed;
 -(void)_animateView:(id)view direction:(int)direction;
 -(void)animateToEmergencyCall;
 -(void)emergencyCallWasDisplayed;
@@ -99,5 +103,48 @@
 -(void)emergencyCallWasRemoved;
 -(id)bottomBar;
 -(id)topBar;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)rightNavigationButtonPressed;
+-(void)leftNavigationButtonPressed;
+-(BOOL)isFullscreen;
+-(BOOL)_isShowingWallpaper;
+-(void)_fadeOutCompletedWithDisplayDisablingIconUnscatter:(BOOL)displayDisablingIconUnscatter;
+// inherited: -(void)layoutForInterfaceOrientation:(int)interfaceOrientation;
+-(BOOL)_shouldZoomDeviceLockView;
+-(void)_zoomInDeviceLockViewWithDelay:(double)delay;
+-(void)_zoomOutDeviceLockViewWithDelay:(double)delay;
+-(BOOL)topBarIsVisible;
+-(BOOL)bottomBarIsVisible;
+-(void)_updateOverlayViewFrame;
+-(void)setShowingDeviceLock:(BOOL)lock animated:(BOOL)animated;
+-(void)animateToShowingDeviceLockFinished;
+-(void)animateToHidingDeviceLockFinished;
+-(BOOL)shouldUseTransparentStatusBar;
+-(void)deviceLockViewWillAnimateMinimization:(id)deviceLockView;
+-(void)deviceLockViewWillAnimateMaximization:(id)deviceLockView;
+-(void)deviceLockViewPasscodeDidChange:(id)deviceLockViewPasscode;
+-(void)deviceLockViewPasscodeEntered:(id)entered;
+-(void)deviceLockViewCancelButtonPressed:(id)pressed;
+-(void)deviceLockViewEmergencyCallButtonPressed:(id)pressed;
+-(int)requiredUnlockStyle;
+-(BOOL)shouldShowEmergencyCallButton;
+// inherited: -(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+// inherited: -(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+// inherited: -(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+#else
+-(void)_loadAlphanumericPIN;
+-(BOOL)alphanumericKeyboard;
+-(BOOL)fourDigitPasscode;
+-(CGRect)_entryFrame;
+-(float)_startingKeypadXOrigin;
+-(void)_animateToShowingDeviceLockFinished;
+-(void)_animateToHidingDeviceLockFinished;
+-(void)phonePad:(id)pad keyDown:(BOOL)down;
+-(void)phonePad:(id)pad keyUp:(BOOL)up;
+-(void)passcodeFieldDidAcceptEntry:(id)passcodeField;
+-(void)_setLastPasscode:(id)passcode;
+-(void)passcodeFieldTextDidChange:(id)passcodeFieldText;
+-(void)returnKeyPressed:(id)pressed;
+#endif
 @end
 

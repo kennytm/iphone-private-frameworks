@@ -6,12 +6,15 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSMutableDictionary, SBButtonBar, NSString, NSSet, NSMutableArray, NSDictionary, SBIcon, SBIconList;
 
 @interface SBIconModel : NSObject {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	NSString* _iconCachePath;
 	NSString* _smallIconCachePath;
+#endif
 	NSDictionary* _previousIconState;
 	NSMutableArray* _iconLists;
 	SBButtonBar* _buttonBar;
@@ -21,7 +24,6 @@
 }
 +(SBIconModel*)sharedInstance;
 +(int)maxIconListCount;
-+(void)purgeIconCaches;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)localeChanged;
@@ -34,14 +36,6 @@
 -(id)addSpotlightIconForDisplayIdentifier:(id)displayIdentifier spotlightCategory:(id)category iconName:(id)name;
 -(void)removeAppForDownloadingIcon:(id)downloadingIcon;
 -(id)addBookmarkIconForWebClip:(id)webClip;
--(void)reloadIconImage:(id)image;
--(void)reloadIconImageForDisplayIdentifier:(id)displayIdentifier;
--(id)pathForCachedIconData:(id)cachedIconData smallIcon:(BOOL)icon;
--(void)cacheImagesForIcon:(id)icon;
--(void)_cacheImagesForIcon:(id)icon smallIcon:(BOOL)icon2;
--(id)getCachedImagedForIcon:(id)icon smallIcon:(BOOL)icon2;
--(id)_imageForDataAtPath:(id)path width:(unsigned)width height:(unsigned)height;
--(void)_purgeOrphanedImages;
 -(void)addIconForApplication:(id)application;
 -(void)loadAllIcons;
 -(NSArray*)visibleIconIdentifiers;
@@ -60,8 +54,6 @@
 -(id)addEmptyIconList;
 -(void)removeEmptyIconList:(id)list;
 -(void)compactIconLists;
--(id)firstAvailableIconListX:(int*)x Y:(int*)y;
--(BOOL)iconPositionInPlatformState:(id)platformState X:(int*)x Y:(int*)y inIconListNumber:(int*)iconListNumber;
 -(void)clearPreviousIconState;
 -(void)addNewIconToDesignatedLocation:(id)designatedLocation animate:(BOOL)animate scrollToList:(BOOL)list saveIconState:(BOOL)state;
 -(void)_addNewIconToDesignatedLocation:(id)designatedLocation animate:(BOOL)animate scrollToList:(BOOL)list saveIconState:(BOOL)state;
@@ -77,5 +69,24 @@
 -(id)_arrayForIconList:(id)iconList;
 -(id)_dictionaryForIcon:(id)icon;
 -(BOOL)importState:(id)state;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)modernIconCellForCell:(id)cell;
++(id)modernIconListForList:(id)list;
++(id)modernIconStateForState:(id)state;
+-(id)firstAvailableIconListIndex:(int*)index;
+-(BOOL)iconPositionInPlatformState:(id)platformState index:(int*)index inIconListNumber:(int*)iconListNumber;
+#else
++(void)purgeIconCaches;
+-(void)reloadIconImage:(id)image;
+-(void)reloadIconImageForDisplayIdentifier:(id)displayIdentifier;
+-(id)pathForCachedIconData:(id)cachedIconData smallIcon:(BOOL)icon;
+-(void)cacheImagesForIcon:(id)icon;
+-(void)_cacheImagesForIcon:(id)icon smallIcon:(BOOL)icon2;
+-(id)getCachedImagedForIcon:(id)icon smallIcon:(BOOL)icon2;
+-(id)_imageForDataAtPath:(id)path width:(unsigned)width height:(unsigned)height;
+-(void)_purgeOrphanedImages;
+-(id)firstAvailableIconListX:(int*)x Y:(int*)y;
+-(BOOL)iconPositionInPlatformState:(id)platformState X:(int*)x Y:(int*)y inIconListNumber:(int*)iconListNumber;
+#endif
 @end
 

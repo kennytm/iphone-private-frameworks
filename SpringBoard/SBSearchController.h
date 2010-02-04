@@ -11,13 +11,19 @@
 #import "UISearchBarDelegate.h"
 #import <Foundation/NSObject.h>
 #import "SpringBoard-Structs.h"
+#import <Availability2.h>
 
 @class SBSearchView, NSTimer, NSArray, NSDateFormatter, SPSearchResult, SPSearchResultDeserializer, SPDaemonQueryToken, NSString, NSMutableArray, NSDate;
 
 @interface SBSearchController : NSObject <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, SPDaemonQueryDelegate> {
 	SBSearchView* _searchView;
 	NSString* _queryString;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSDateFormatter* _dayDateFormatter;
+	NSDateFormatter* _timeDateFormatter;
+#else
 	NSDateFormatter* _dateFormatter;
+#endif
 	int _domainOrdering[12];
 	NSArray* _querySearchDomains;
 	BOOL _querySearchDomainsIncludesApplications;
@@ -34,6 +40,9 @@
 	NSTimer* _clearSearchTimer;
 	NSDate* _clearSearchDate;
 	BOOL _reloadingTableContent;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _previousSectionCount;
+#endif
 }
 @property(retain, nonatomic) SBSearchView* searchView;
 +(id)sharedInstance;
@@ -54,7 +63,6 @@
 // in a protocol: -(int)tableView:(id)view numberOfRowsInSection:(int)section;
 // in a protocol: -(int)numberOfSectionsInTableView:(id)tableView;
 // in a protocol: -(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
--(id)_stringFromDate:(id)date;
 // in a protocol: -(void)tableView:(id)view didSelectRowAtIndexPath:(id)indexPath;
 -(void)_deselect;
 // in a protocol: -(void)tableView:(id)view willDisplayCell:(id)cell forRowAtIndexPath:(id)indexPath;
@@ -77,5 +85,18 @@
 -(id)_imageForDomain:(int)domain andDisplayID:(id)anId;
 -(id)_imageForDisplayIdentifier:(id)displayIdentifier andSpotlightCategory:(id)category;
 -(void)clearSearchResults;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)controllerWasDeactivated;
+-(void)_populateCell:(id)cell withSearchResult:(id)searchResult;
+-(id)_dayAndTimeStringForDate:(id)date;
+-(id)_dayStringForDate:(id)date;
+-(id)_timeStringForDate:(id)date;
+-(void)_tableViewDidFadeOut:(id)_tableView finished:(id)finished context:(void*)context;
+-(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+#else
+-(id)_stringFromDate:(id)date;
+#endif
 @end
 

@@ -7,6 +7,7 @@
 
 #import <Foundation/NSObject.h>
 #include <sys/types.h>
+#import <Availability2.h>
 
 @class NSMutableDictionary, NSDictionary, SBApplication, NSOperationQueue, NSArray;
 
@@ -38,7 +39,11 @@
 -(void)updateSchemesForRoleDefinition:(id)roleDefinition displayIdentifier:(id)identifier application:(id)application;
 -(id)rolesForInfoPlist:(id)infoPlist;
 -(id)rolesForRoleDefinitions:(id)roleDefinitions;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)displayNameForInfoDictionary:(id)infoDictionary inBundle:(id)bundle atPath:(id)path;
+#else
 -(id)displayNameForInfoDictionary:(id)infoDictionary inBundle:(id)bundle;
+#endif
 -(id)widgetRoles;
 -(void)_applicationInstallationCallback:(id)callback;
 -(void)_handleInstalledApplicationDictionaryIfReceived;

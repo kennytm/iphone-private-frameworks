@@ -7,7 +7,7 @@
 
 #import <Foundation/NSObject.h>
 #import "SpringBoard-Structs.h"
-
+#import <Availability2.h>
 
 @interface SBCFBundle : NSObject {
 	CFBundleRef _cfBundle;
@@ -21,5 +21,6 @@
 -(id)localizedStringForKey:(id)key value:(id)value table:(id)table;
 -(id)infoDictionary;
 -(id)localizedInfoDictionary;
+-(CFBundleRef)cfBundle __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
 

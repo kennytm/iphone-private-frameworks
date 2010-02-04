@@ -5,20 +5,43 @@
  * Source: (null)
  */
 
+#import <Availability2.h>
 #import "SBDismissOnlyAlertItem.h"
 
-
-@interface SBVoiceMailAlertItem : SBDismissOnlyAlertItem {
+@interface SBVoiceMailAlertItem : 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+SBAlertItem
+#else
+SBDismissOnlyAlertItem
+#endif
+{
 	BOOL _isForVisualVoicemail;
 	unsigned _recordUID;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSString* _title;
+	NSString* _body;
+#endif
 }
-+(id)currentInstance;
-+(BOOL)hasCurrentInstance;
 -(BOOL)isForVisualVoicemail;
 -(void)setIsVisualVoicemail:(BOOL)voicemail recordUID:(unsigned)uid;
-// inherited: -(void)didDeactivateForReason:(int)reason;
-// inherited: -(BOOL)willShowInAwayItems;
 // inherited: -(void)performUnlockAction;
 // inherited: -(id)lockLabel;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+// inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
+// inherited: -(BOOL)dismissOnLock;
+-(id)title;
+-(void)setTitle:(id)title;
+-(id)bodyText;
+-(void)setBodyText:(id)text;
+-(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
+-(void)_performAppropriateListenAction;
+-(void)_launchPhoneAndDisplayVoicemailRecord:(int)record;
+#else
++(id)currentInstance;
++(BOOL)hasCurrentInstance;
+// inherited: -(void)didDeactivateForReason:(int)reason;
+// inherited: -(BOOL)willShowInAwayItems;
+#endif
 @end
+
 

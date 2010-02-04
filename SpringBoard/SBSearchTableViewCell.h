@@ -7,14 +7,28 @@
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UITableViewCell.h>
+#import <Availability2.h>
 
 @class NSString, UIFont, NSArray;
 
 @interface SBSearchTableViewCell : UITableViewCell {
-	NSString* _title;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	UIFont* _titleFont;
-	NSArray* _subtitleComponents;
 	UIFont* _subtitleFont;
+#endif
+	NSString* _title;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSString* _subtitle;
+#else
+	UIFont* _titleFont;
+#endif
+	NSArray* _subtitleComponents;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSString* _auxiliaryTitle;
+	NSString* _auxiliarySubtitle;
+#else
+	UIFont* _subtitleFont;
+#endif
 	BOOL _badged;
 	BOOL _usesAlternateBackgroundColor;
 	BOOL _isFirstInTableView;
@@ -41,5 +55,11 @@
 // inherited: -(void)_drawContentInRect:(CGRect)rect selected:(BOOL)selected;
 -(void)drawRect:(CGRect)rect;
 -(id)_scriptingInfo;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(retain, nonatomic) NSString* subtitle;
+@property(retain, nonatomic) NSString* auxiliaryTitle;
+@property(retain, nonatomic) NSString* auxiliarySubtitle;
+-(void)clearContents;
+#endif
 @end
 

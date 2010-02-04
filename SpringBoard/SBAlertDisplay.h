@@ -7,6 +7,7 @@
 
 #import <UIKit/UIView.h>
 #import "SBAlertDisplay.h"
+#import <Availability2.h>
 
 @class SBAlert;
 
@@ -27,6 +28,12 @@
 -(BOOL)isReadyToBeRemovedFromView;
 -(void)setShouldAnimateIn:(BOOL)animateIn;
 -(BOOL)shouldAnimateIn;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)layoutForInterfaceOrientation:(int)interfaceOrientation;
+-(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
+-(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+#endif
 @end
 
 @interface SBAlertDisplay (PhoneNumberResolution)

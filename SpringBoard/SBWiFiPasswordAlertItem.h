@@ -15,7 +15,11 @@
 }
 -(id)initWithNetworkName:(id)networkName;
 // inherited: -(void)dealloc;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) id delegate;
+#else
 -(void)setDelegate:(id)delegate;
+#endif
 // inherited: -(void)dismiss;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 -(void)returnKeyPressed:(id)pressed;

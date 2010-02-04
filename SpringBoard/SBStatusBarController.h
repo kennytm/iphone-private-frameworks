@@ -6,6 +6,7 @@
  */
 
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSString, NSMutableArray, SBStatusBar, SBStatusBarContentsView, UIWindow, UIColor;
 
@@ -13,6 +14,10 @@
 	UIWindow* _slidingStatusBarWindow;
 	int _slidingStatusBarAnimation;
 	UIWindow* _animatingCallStatusBarWindow;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIWindow* _leftTopCorner;
+	UIWindow* _rightTopCorner;
+#endif
 	UIWindow* _leftBottomCorner;
 	UIWindow* _rightBottomCorner;
 	SBStatusBar* _statusBarView;
@@ -46,6 +51,10 @@
 	UIColor* _dimmerOverlayColor;
 	int _airPortSignalStrength;
 	NSMutableArray* _doubleHeightInfos;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSString* _currentAnimationIDStr;
+	unsigned _currentAnimationID;
+#endif
 }
 +(SBStatusBarController*)sharedStatusBarController;
 +(BOOL)isLikeAFullScreenStatusBar:(int)bar;
@@ -114,8 +123,6 @@
 -(void)setStatusBarMode:(int)mode orientation:(int)orientation duration:(double)duration animation:(int)animation;
 -(void)setStatusBarMode:(int)mode orientation:(int)orientation duration:(double)duration fenceID:(int)anId animation:(int)animation startTime:(double)time;
 -(void)_setTransitionalStatusBarSize:(BOOL)size;
--(void)statusBarRotateContentAnimationDidStop:(id)statusBarRotateContentAnimation finished:(id)finished context:(id)context;
--(void)finishSwitching;
 -(void)switchBackstopFrom:(int)from to:(int)to fromOrientation:(int)orientation toOrientation:(int)orientation4 duration:(double)duration fenceID:(int)anId animation:(int)animation startTime:(double)time;
 -(void)orderStatusBarFront;
 -(void)_finishStatusBarAnimation;
@@ -131,6 +138,21 @@
 -(BOOL)telephonyControllerCheckedIn;
 -(BOOL)bluetoothControllerCheckedIn;
 -(void)loopCarrierNameIfNecessary;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
++(id)sharedStatusBarControllerIfAvailable;
+
+-(void)_updateCorners;
+-(void)_setCurrentAnimationID:(id)anId;
+-(id)_uniqueAnimationIDWithPrefix:(id)prefix;
+-(void)hideStatusBarAnimationDidStop:(id)hideStatusBarAnimation finished:(id)finished context:(void*)context;
+-(void)setStatusBarMode:(int)mode duration:(double)duration;
+
+-(void)statusBarAnimationDidStop:(id)statusBarAnimation finished:(id)finished context:(id)context;
+#else
+-(void)statusBarRotateContentAnimationDidStop:(id)statusBarRotateContentAnimation finished:(id)finished context:(id)context;
+-(void)finishSwitching;
+#endif
 @end
 
 // Status Bar Item could be one of:

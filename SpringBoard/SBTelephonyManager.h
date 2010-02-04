@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSString;
 
@@ -101,5 +102,9 @@
 -(BOOL)isUsingWirelessModem;
 -(void)setIsUsingWirelessModem:(BOOL)modem;
 -(void)noteWirelessModemChanged;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(void)activateDataPlanNewAccountAlert;
+-(void)carrierBundleChanged;
+#endif
 @end
 

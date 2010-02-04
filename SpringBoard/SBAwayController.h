@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import "SBAlert.h"
+#import <Availability2.h>
 
 @class SBUIController, NSTimer, NSDictionary, NSTimeZone, NSString, SBAwayModel, NSMutableArray, SBSleepProofTimer, SBSlidingAlertDisplay, NSMutableDictionary, SBAwayView, SBAlertItem;
 
@@ -16,6 +17,9 @@
 	SBAwayView* _awayView;
 	NSTimer* _dimTimer;
 	unsigned _isLocked : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _isUnlocking : 1;
+#endif
 	unsigned _isDeviceLocked : 1;
 	unsigned _isDeviceLockedInitialized : 1;
 	unsigned _isDimmed : 1;
@@ -30,7 +34,14 @@
 	unsigned _wasLockedOrMakingEmergencyCallBeforeSync : 1;
 	unsigned _wasDeviceLockedBeforeSync : 1;
 	unsigned _showOverheatUI : 1;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	unsigned _performingAutoUnlock : 1;
+#endif
 	NSDictionary* _nowPlayingInfo;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSNumber* _iPodNowPlayingPID;
+	BOOL _iPodIsPlaying;
+#endif
 	SBSlidingAlertDisplay* _deviceUnlockDisplay;
 	double _deviceLockBlockTime;
 	double _lastLockWallTime;
@@ -39,9 +50,15 @@
 	NSTimer* _deviceLockTimer;
 	BOOL _devicePasscodeLoaded;
 	NSString* _devicePasscode;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	BOOL _chargingViewHasFadedOut;
+#endif
 	NSMutableArray* _pendingAlertItems;
 	SBAlertItem* _currentAlertItem;
 	NSMutableDictionary* _awayViewPluginControllers;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	NSString* _alwaysFullscreenAwayPluginName;
+#endif
 	SBSleepProofTimer* _smsSoundWakeTimers[2];
 }
 +(id)sharedAwayController;
@@ -64,7 +81,6 @@
 -(void)_pendAlertItem:(id)item;
 -(void)lock;
 -(id)pendingAlertItems;
--(void)_unlockWithSound:(BOOL)sound;
 -(void)unlockWithSound:(BOOL)sound;
 -(void)unlockWithSound:(BOOL)sound alertDisplay:(id)display;
 -(void)loadPasscode;
@@ -126,7 +142,6 @@
 // inherited: -(int)statusBarMode;
 -(void)orderOut;
 // inherited: -(void)didFinishAnimatingOut;
--(void)updateNowPlayingInfo:(id)info;
 -(void)handleRequestedAlbumArt:(id)art;
 -(void)updateClockFormat;
 -(void)makeEmergencyCall;
@@ -158,5 +173,41 @@
 -(BOOL)handleMenuButtonTap;
 -(BOOL)handleMenuButtonDoubleTap;
 -(BOOL)handleMenuButtonHeld;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL chargingViewHasFadedOut;
+-(void)_unlockWithSound:(BOOL)sound isAutoUnlock:(BOOL)unlock;
+-(void)screensaverDidFadeToBlack:(id)screensaver finished:(id)finished context:(void*)context;
+-(void)unlockWithSound:(BOOL)sound alertDisplay:(id)display isAutoUnlock:(BOOL)unlock;
+-(void)unlockWithSound:(BOOL)sound isAutoUnlock:(BOOL)unlock;
+-(BOOL)deviceHasPhotos;
+-(BOOL)hasPhotosDevicesAttached;
+-(BOOL)shouldShowSlideshowButton;
+-(void)frontLocked:(BOOL)locked withAnimation:(int)animation automatically:(BOOL)automatically disableLockSound:(BOOL)sound;
+-(void)attemptUnlockWithHardwareKeyPress:(BOOL)hardwareKeyPress;
+-(BOOL)handleKeyEvent:(GSEventRef)event;
+-(void)updateNowPlayingInfo:(id)info fromiPod:(BOOL)pod;
+-(void)updateiPodNowPlayingInfo:(id)info;
+-(void)updateiPodPlaybackState:(id)state;
+-(void)updateAwayViewNowPlayingInfo;
+-(void)_fetchiPodNowPlayingInfo:(id)info;
+-(void)_handleFetchediPodNowPlayingInfo:(id)info;
+-(void)_batteryStatusChanged;
+-(id)activeAwayPluginController;
+-(id)interfaceControllingAwayPluginController;
+-(id)nameOfPluginController:(id)pluginController;
+-(void)pluginVisiblityStateChanged:(id)changed;
+-(void)_disablePluginControllersForLock;
+-(void)_disablePluginControllersForUnlock;
+-(void)pluginFullscreenNotification:(id)notification;
+-(void)hardwareKeyboardAvailabilityChanged;
+-(BOOL)handleSlideshowHardwareButton;
+-(void)setAlwaysFullscreenAwayPluginName:(id)name;
+-(BOOL)isAlwaysFullscreenAwayPluginEnabled;
+-(void)enableAlwaysFullscreenAwayPlugin;
+-(void)unlockAlwaysFullscreenAwayView;
+#else
+-(void)_unlockWithSound:(BOOL)sound;
+-(void)updateNowPlayingInfo:(id)info;
+#endif
 @end
 

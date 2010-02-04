@@ -5,11 +5,15 @@
  * Source: (null)
  */
 
-#import <UIKit/UIWindow.h>
+#import <Availability2.h>
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+
+#import <UIKit/UIWindow.h>
 
 @interface SBCompassRecalibrationControllerWindow : UIWindow {
 }
 // inherited: -(BOOL)_ignoresHitTest;
 @end
 
+#endif

@@ -13,7 +13,7 @@
 +(id)sharedInstance;
 // inherited: -(id)_automationID;
 // inherited: -(id)displayIdentifier;
-// inherited: -(id)icon;
+-(id)icon;
 // inherited: -(void)setDisplayedIcon:(id)icon;
 @end
 

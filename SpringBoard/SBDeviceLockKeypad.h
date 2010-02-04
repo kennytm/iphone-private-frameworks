@@ -7,26 +7,49 @@
 
 #import "SpringBoard-Structs.h"
 #import <TelephonyUI/TPPhonePad.h>
+#import <Availability2.h>
 
 @class SBEmergencyCallButton, UIImage, UIPushButton;
 
 @interface SBDeviceLockKeypad : TPPhonePad {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	UIImage* _deleteIcon;
+#endif
 	UIPushButton* _deleteButton;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	UIPushButton* _cancelButton;
+	BOOL _deleteEnabled;
+#else
 	SBEmergencyCallButton* _emergencyCallButton;
 	BOOL _showDeleteIcon;
+#endif
 	BOOL _playKeyboardClicks;
 }
 // inherited: -(id)initWithFrame:(CGRect)frame;
--(void)setPlaysKeyboardClicks:(BOOL)clicks;
--(BOOL)showsEmergencyCallButton;
--(void)setShowsEmergencyCallButton:(BOOL)button;
 // inherited: -(void)dealloc;
--(void)setShowsDeleteIcon:(BOOL)icon;
-// inherited: -(id)_pressedImage;
 -(void)hiddenFromView;
 -(void)willBecomeVisible;
 // inherited: -(id)_keypadImage;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic, getter=isDeleteEnabled) BOOL deleteEnabled;
+@property(readonly, assign, nonatomic) BOOL emergencyKeyChar;
+@property(readonly, assign, nonatomic) BOOL cancelKeyChar;
+@property(readonly, assign, nonatomic) BOOL deleteKeyChar;
+@property(assign, nonatomic) BOOL showsEmergencyCallButton;
+@property(assign, nonatomic) BOOL playsKeyboardClicks;
++(id)keypadImage;
++(id)pressedImage;
++(void)flushPressedImage;
++(CGSize)defaultSize;
+// inherited: -(id)_pressedImage;
+-(id)initWithDefaultSize;
+#else
+-(void)setPlaysKeyboardClicks:(BOOL)clicks;
+-(BOOL)showsEmergencyCallButton;
+-(void)setShowsEmergencyCallButton:(BOOL)button;
+-(void)setShowsDeleteIcon:(BOOL)icon;
+// inherited: -(id)_pressedImage;
 // inherited: -(float)_yFudge;
+#endif
 @end
 

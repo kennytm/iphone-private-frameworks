@@ -7,6 +7,7 @@
 
 #import "SpringBoard-Structs.h"
 #import <Foundation/NSObject.h>
+#import <Availability2.h>
 
 @class NSMutableDictionary, NSTimer;
 
@@ -24,7 +25,9 @@
 	NSTimer* _signalStrengthTimer;
 	int _shouldPollSignalStrength;
 	BOOL _canPollSignalStrength;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 	NSMutableDictionary* _securityDict;
+#endif
 	id _delegate;
 	unsigned _notificationID;
 	double _lastSignalStrengthUpdateTime;
@@ -33,6 +36,7 @@
 +(BOOL)hasWiFi;
 // inherited: -(void)dealloc;
 -(WiFiManagerClient*)_manager;
+-(void)setDevice:(WiFiDeviceClient*)device __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 // inherited: -(id)init;
 -(void)setDelegate:(id)delegate;
 -(void)scan;
@@ -57,7 +61,9 @@
 -(void)cancelPicker:(BOOL)picker;
 -(void)userChoseNetwork:(id)network;
 -(id)knownNetworks;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 -(BOOL)networkRequiresPassword:(id)password;
+#endif
 -(void)resetSettings;
 -(void)_scanComplete:(CFArrayRef)complete;
 -(void)_joinComplete:(int)complete network:(WiFiNetwork*)network;

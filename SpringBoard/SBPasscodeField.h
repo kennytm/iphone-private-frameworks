@@ -5,13 +5,41 @@
  * Source: (null)
  */
 
+#import <Availability2.h>
 #import <UIKit/UIPasscodeField.h>
 
-
 @interface SBPasscodeField : UIPasscodeField {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+	int _style;
+	float _okFontSize;
+	float _cancelFontSize;
+	float _buttonWidth;
+	BOOL _showsCancelButton;	
+#else
 	float _width;
+#endif
 	BOOL _isAlphanumericField;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) BOOL isAlphanumericField;
+@property(assign, nonatomic) BOOL showsCancelButton;
+@property(assign, nonatomic) int clearButtonMode;
+@property(assign, nonatomic, getter=isOkayButtonEnabled) BOOL okayButtonEnabled;
+// inherited: +(Class)textFieldClass;
+-(id)initWithStyle:(int)style;
+-(id)_entryField;
+// inherited: -(void)setNumberOfEntryFields:(int)entryFields opaqueBackground:(BOOL)background;
+// inherited: -(void)setShowsOKButton:(BOOL)button;
+-(id)textInputTraits;
+-(id)_localizedOKString;
+-(id)_localizedCancelString;
+-(void)_updateButtonMetrics;
+-(void)_updateButtonTitle;
+-(void)_updateButtonFrame;
+// inherited: -(void)_updateFields;
+-(BOOL)textFieldShouldClear:(id)textField;
+// inherited: -(void)_textDidChange;
+#else
 -(id)okButton;
 -(void)setIsAlphanumericField:(BOOL)field;
 // inherited: -(void)_updateFields;
@@ -20,5 +48,5 @@
 -(id)entryField;
 -(void)setButtonWidth:(float)width;
 -(void)adjustOKButtonFrame;
+#endif
 @end
-
