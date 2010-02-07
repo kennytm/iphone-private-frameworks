@@ -167,9 +167,9 @@
 -(void)_removeAllAnimations:(BOOL)animations;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(BOOL)_isInAnimationBlock;
-+(void)_setAnimationAttributes:(id)attributes;
-+(void)_setAnimationFilter:(int)filter forView:(id)view;
-+(void)_setAnimationFilterValue:(float)value;
++(void)_setAnimationAttributes:(id<CAMediaTiming>)attributes;
++(void)_setAnimationFilter:(int)filter forView:(UIView*)view;
++(void)_setAnimationFilterValue:(CGFloat)value;
 -(void)_clearAnimationFilters;
 #else
 +(BOOL)_pendingAnimations;

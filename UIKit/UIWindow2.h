@@ -171,10 +171,15 @@
 -(void)window:(UIWindow*)window willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
 -(void)window:(UIWindow*)window didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(UIWindow*)window;
--(void)getRotationContentSettings:(XXStruct_TF$i3B*)settings forWindow:(UIWindow*)window;
 -(UIView*)rotatingContentViewForWindow:(UIWindow*)window;
 -(UIView*)rotatingHeaderViewForWindow:(UIWindow*)window;
 -(UIView*)rotatingFooterViewForWindow:(UIWindow*)window;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+-(id)clientsForRotationForWindow:(UIWindow*)window;
+-(void)getRotationContentSettings:(XXStruct_t5OlHA*)settings forWindow:(UIWindow*)window;
+#else
+-(void)getRotationContentSettings:(XXStruct_TF$i3B*)settings forWindow:(UIWindow*)window;
+#endif
 @end
 
 @interface UIWindow (UITextEffectsWindowAdditions)

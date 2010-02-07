@@ -63,7 +63,7 @@ namespace KB {
 		~String();	///< Destructor.
 		
 		/// Create a string with external/internal buffer.
-		String(StringBufferType buffer_type, const char* str, uint16_t size, uint16_t length, uint16_t sort_key_length);
+		String(StringBufferType buffer_type, const char* data_file, uint16_t size, uint16_t length, uint16_t sort_key_length);
 		
 		/// Assignment operators.
 		String& operator=(const char* str);

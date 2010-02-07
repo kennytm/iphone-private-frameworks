@@ -74,7 +74,7 @@ namespace KB {
 		static Hashmap<unsigned, String> g_cached_sort_keys_for_letter_forms;
 		
 		unsigned m_single_primaries_to_letter[256];
-		bool m_is_known_lead_primary[256];
+		uint8_t m_is_known_lead_primary[256];
 		Hashmap<String, unsigned> m_sort_keys_to_letter_forms;
 	};
 	
@@ -88,7 +88,7 @@ namespace KB {
 		
 		void set_custom_capitalization();
 		void move_capitalization_to_bits();
-		void parse_substitution_list(ReadOnlyDataFile& dat_file, unsigned offset, const String&, unsigned sort_key_length);
+		void parse_substitution_list(ReadOnlyDataFile& dat_file, unsigned offset, const String& string, unsigned sort_key_length);
 		String capitalized_string() const;
 		
 		Word();	///< Create an empty word.
@@ -99,7 +99,7 @@ namespace KB {
 		///   <byte = h> [if h & 4, <byte = a if not flag & 512, a * 255 else>] [if h & 32, <byte = c>. If c & 1, cap_mask is set to 1]
 		///      [if h & 1, <unsigned = cap_mask>] [if h & 64, <unsigned = d>] [if not flag & 2048 or h & 8 or c & 48, <unsigned short = SSSSSS.....KKKKK> ]
 		///      [if h & 16, <null-terminated-string = string>, else if not h & 8, string = lettersForSortKey(sort_key), else parse_substitution_list(dat_file, "offset", ?, sort_key_length) ]
-		Word(ReadOnlyDataFile& dat_file, unsigned x, const String& sort_key, const SortKeyByteConverter&, unsigned flag);
+		Word(ReadOnlyDataFile& dat_file, unsigned offset, const String& sort_key, const SortKeyByteConverter&, unsigned compilation_flag);
 		
 		const String& string() const { return m_string; }
 		float probability() const { return word.probability; }
@@ -181,14 +181,66 @@ namespace KB {
 		} freqNword;
 		unsigned char patricia_key_bytes[4];
 		
-		// void parse_trie_sibling_binary(const char* arg1, const char* arg2);
+	private:
+		const char* parse_trie_sibling_binary(const char* child, const char* data)	// returns the address of the next sibling.
+#if 0
+		{
+			int cur_child_offset = child - data;
+			
+			this->sortNchild.v2bytes.flags_byte = *child++;
+			
+			for (unsigned i = 0; i <= this->sortNchild.v2fields.patricia_key_size_1; ++ i) {
+				this->patricia_key_bytes[i] = *child++;
+			}
+			
+			switch (this->sortNchild.v2fields.has_child_offset_type) {
+				case 1:
+					this->sortNchild.v2fields.child_offset = cur_child_offset + (*child++);
+					break;
+				case 2:
+					this->sortNchild.v2fields.child_offset = cur_child_offset + unsigned_short_at(child);
+					child += 2;
+					break;
+				case 3:
+					// note: no addition.
+					this->sortNchild.v2fields.child_offset = (read 3 bytes from child);
+					child += 3;
+					break;
+			}
+			
+			if (has_freq bit is cleared) {
+				this->freqNword.v2fields.compacted_freq = 0xff;
+			} else {
+				this->freqNword.v2fields.compacted_freq = 1 + *child++;
+			}
+			
+			if (has_unigram_list_offset bit is cleared) {
+				if (has_word_termination_prob bit is set) {
+					this->freqNword.fields.word_offset = 1 + **child++
+				}
+			} else {
+				this->freqNword.fields.word_[offset,is_0freq] = (read 3 bytes from child);
+				child += 3;
+			}
+			
+			if (more_sibling bit is set) {
+				return child;
+			} else
+				return NULL;			
+		}
+#endif
+		;
 		
-		bool finishesWords() const {
+		bool finishesWords() const
+#if 0
+		{
 			if (sortNchild.v2fields.child_offset != 0 || freqNword.fields.compacted_freq == 0 || freqNword.fields.word_is_0freq)
 				return sortNchild.v2fields.has_word_termination_prob || sortNchild.v2fields.has_unigram_list_offset;
 			else
 				return true;
 		}
+#endif
+		;
 	};	
 	
 #pragma mark -
@@ -258,6 +310,78 @@ namespace KB {
 		char l, m;
 	};
 	
+	class WordTrieNode {
+	private:
+		WordTrieNode(ReadOnlyDataFile* data_file, const char*, TrieSearchType type);
+		WordTrieNode(ReadOnlyDataFile* data_file, unsigned int root_offset);
+		WordTrieNode();
+		
+		WordTrieNode advance(unsigned char input, TrieSearchType search_type) const;
+#if 0
+		{
+			const char* child_addr = this->trie_addr(this->sibling.child_offset);
+			RefPtr<WordTrieNode> child_b = NULL;
+			RefPtr<WordTrieNode> child_refptr = NULL;
+			
+			// begin:
+			for (; child_addr != NULL && r6 != 256; ++ r6, child_addr = next_child_addr ) {
+				
+				PackedTrieSibling sibling;
+				next_child_addr = sibling.parse_trie_sibling_binary(child_addr, data_file->m_data);
+				
+				char first_pat_char = sibling.pat_key[0];
+				bool matches;
+				TrieSearchType child_search_type;
+				
+				if (search_type == Exact) {
+					matches = (first_pat_char == input);
+					child_search_type = search_type;
+				} else if (search_type == Fuzzy) {
+					child_search_type = this->trie_search_type;
+					if (this->trie_search_type != Fuzzy && first_pat_char == input)
+						matches = true;
+					else {
+						matches = keyboard_sort_key_match(first_pat_char, input);
+						child_search_type = Fuzzy;
+					}
+				} else {
+					assert(false);
+				}
+				
+				if (match) {
+					RefPtr<WordTrieNode> child_a = WordTrieNode::create(this->data_file, child_addr, child_search_type);
+					if (child_b == NULL) {
+						child_refptr = child_a;
+						child_b = child_refptr;
+					} else {
+						child_refptr->m = child_a;
+						child_refptr = child_a;
+					}
+					// deref child_a.
+				}
+			}
+			if (child_b == NULL)
+				child_b = new WordTrieNode;
+			return child_b;
+			// deref stuff.
+		}
+#endif
+		
+		static WordTrieNode* create(ReadOnlyDataFile* data_file, const char*, TrieSearchType type);	///< Just calls the constructor.
+		static WordTrieNode* create(ReadOnlyDataFile* data_file, unsigned int offset);	///< Just calls the constructor.
+		bool not_valid(void) const;
+		const char* trie_addr(unsigned int child_offset) const;	// returns : data_file->m_data + child_offset.
+		
+	private:
+		int one;
+		char b;
+		ReadOnlyDataFile* data_file;
+		const char* data_ptr;
+		int parse_result;
+		TrieSearchType trie_search_type;
+		PackedTrieSibling sibling;
+		WTF::RefPtr<WordTrieNode> m;
+	};
 	
 	class WordTrie {
 	public:
@@ -305,11 +429,11 @@ namespace KB {
 		
 		float probability_sum_for_V2_words_at(unsigned) const;
 		
-		void recurse_matching_words_for_node(Vector<Word>&, WordTrieNode*, unsigned, int, bool) const;
+		void recurse_matching_words_for_node(Vector<Word>& res, WordTrieNode* node, unsigned offset, int the_int, bool perform_match) const;
 		void fill_vector_with_trie_children_at(unsigned, Vector<DictionaryCursors>&) const;
 		bool advance_static_cursor_to_next_patricia_node(DictionaryCursors& cursors, unsigned char tag, unsigned address) const;
 		
-		Word word_at(unsigned, unsigned&, const String&) const;
+		Word word_at(unsigned offset, unsigned& res_offset, const String& sort_key) const;
 		
 		
 	private:
@@ -327,7 +451,7 @@ namespace KB {
 		unsigned m_trie_root_offset;	// 1ad4
 		float m_root_usage_sum;	// 1ad8
 		SortKeyByteConverter m_sort_key_converter;	// 1adc (sizeof = 524)
-	};	// sizeof = 1ff0.
+	};	// sizeof = 2000.
 }
 
 #endif

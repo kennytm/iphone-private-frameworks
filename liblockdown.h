@@ -68,7 +68,7 @@ extern "C" {
 	extern CFStringRef kLDErrorSessionInactive;
 	extern CFStringRef kLDErrorSetProhibited;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_2_2
-	extern CFStringRef kLDErrorCheckinConnectionFailed
+	extern CFStringRef kLDErrorCheckinConnectionFailed;
 	extern CFStringRef kLDErrorCheckinOutOfMemory;
 	extern CFStringRef kLDErrorCheckinReceiveFailed;
 	extern CFStringRef kLDErrorCheckinResponseFailed;
@@ -421,7 +421,7 @@ extern "C" {
 		void* info;
 	}*/* LockdownServiceRef;
 	
-	typedef void(*LockdownServiceCallback)(LcokdownServiceRef service, CFSocketCallBackType cbType, void* info);
+	typedef void(*LockdownServiceCallback)(LockdownServiceRef service, CFSocketCallBackType cbType, void* info);
 	
 	CFTypeID LockdownServiceGetTypeID();
 	

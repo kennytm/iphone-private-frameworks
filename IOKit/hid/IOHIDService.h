@@ -44,7 +44,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 			
-	typedef struct __IOHIDDisplay
+	typedef struct __IOHIDService
 #if 0
 	{
 		CFRuntimeBase _base;	// 0, 4
