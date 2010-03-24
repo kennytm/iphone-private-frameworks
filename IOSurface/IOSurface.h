@@ -17,6 +17,6 @@ from
 	/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceAPI.h
 
 */
-#include "IOSurfaceAPI.h"
+#include <IOSurface/IOSurfaceAPI.h>
 
 #endif
