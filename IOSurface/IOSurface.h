@@ -9,6 +9,6 @@
 #include <sys/cdefs.h>
 #include <CoreFoundation/CFBase.h>
 
-#include "IOSurfaceAPI.h"
+#include <IOSurface/IOSurfaceAPI.h>
 
 #endif
