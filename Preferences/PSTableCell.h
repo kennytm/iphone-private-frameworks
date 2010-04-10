@@ -15,16 +15,16 @@
 	BOOL _checked;
 }
 @property(retain) id userInfo;
-+(int)cellTypeFromString:(id)string;
++(PSCellType)cellTypeFromString:(id)string;
 +(id)_cellForSpecifier:(id)specifier defaultClass:(Class)aClass frame:(CGRect)frame;
-+(id)switchCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)segmentCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)sliderCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)textFieldCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)textViewCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)groupHeaderCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)staticTextCellWithFrame:(CGRect)frame specifier:(id)specifier;
-+(id)cellWithFrame:(CGRect)frame specifier:(id)specifier;
++(PSTableCell *)switchCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)segmentCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)sliderCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)textFieldCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)textViewCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)groupHeaderCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)staticTextCellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
++(PSTableCell *)cellWithFrame:(CGRect)frame specifier:(PSSpecifier *)specifier;
 -(void)setValueChangedTarget:(id)target action:(SEL)action userInfo:(id)info;
 -(void)cellClicked:(id)clicked;
 // inherited: -(void)layoutSubviews;
