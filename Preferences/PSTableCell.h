@@ -7,8 +7,8 @@
 
 #import "Preferences-Structs.h"
 #import "PSTableCell.h"
+#import "PSSpecifier.h"
 #import <UIKit/UIPreferencesTableCell.h>
-
 
 @interface PSTableCell : UIPreferencesTableCell {
 	id _userInfo;
