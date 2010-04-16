@@ -1,0 +1,17 @@
+#ifndef _VTPIXELTRANSFERSESSION_H
+#define _VTPIXELTRANSFERSESSION_H 1
+
+#include <CoreVideo/CVPixelBuffer.h>
+
+typedef struct __VTPixelTransferSession *VTPixelTransferSessionRef;
+CVReturn VTPixelTransferSessionCreate(CFAllocatorRef allocator, VTPixelTransferSessionRef *outPixelTransferSession);
+
+void VTPixelTransferSessionRelease(VTPixelTransferSessionRef transferSession);
+VTPixelTransferSessionRef VTPixelTransferSessionRetain(VTPixelTransferSessionRef transferSession);
+
+CVReturn VTPixelTransferSessionTransferImage(VTPixelTransferSessionRef transferSession, CVPixelBufferRef sourceBuffer, CVPixelBufferRef destBuffer);
+
+CVReturn VTPixelTransferSessionCopySupportedPropertyDictionary(VTPixelTransferSessionRef transferSession, CFDictionaryRef *outProperties);
+
+
+#endif
