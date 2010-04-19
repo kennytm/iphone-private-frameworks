@@ -114,8 +114,8 @@ typedef struct UIStatusBarData {
 	unsigned bluetoothConnected : 1;
 	unsigned displayRawGSMSignal : 1;
 	unsigned displayRawWifiSignal : 1;
-};
-typedef struct UIStatusBarData XXStruct_AE4LvD;
+} UIStatusBarData;
+typedef UIStatusBarData XXStruct_AE4LvD;
 
 @class UIView, UIImage;
 typedef union {
