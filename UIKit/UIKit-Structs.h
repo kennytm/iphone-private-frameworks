@@ -92,6 +92,31 @@ typedef struct {
 	} _field2;
 } XXStruct_CKAdxD;
 
+typedef struct UIStatusBarData {
+	BOOL itemIsEnabled[19];
+	BOOL timeString[32];
+	int gsmSignalStrengthRaw;
+	int gsmSignalStrengthBars;
+	BOOL serviceString[100];
+	BOOL serviceImageBlack[100];
+	BOOL serviceImageSilver[100];
+	BOOL operatorDirectory[1024];
+	unsigned serviceContentType;
+	int wifiSignalStrengthRaw;
+	int wifiSignalStrengthBars;
+	unsigned dataNetworkType;
+	int batteryCapacity;
+	unsigned batteryState;
+	int bluetoothBatteryCapacity;
+	int thermalColor;
+	unsigned slowActivity : 1;
+	BOOL activityDisplayId[256];
+	unsigned bluetoothConnected : 1;
+	unsigned displayRawGSMSignal : 1;
+	unsigned displayRawWifiSignal : 1;
+};
+typedef struct UIStatusBarData XXStruct_AE4LvD;
+
 @class UIView, UIImage;
 typedef union {
 	UIImage* image;
