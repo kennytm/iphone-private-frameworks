@@ -137,6 +137,15 @@ extern "C" {
 	extern CFStringRef kGSHideNonDefaultApplicationsCapability;
 	extern CFStringRef kGSWildcatCapability;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+	extern CFStringRef kGSCameraFlashCapability;
+	extern CFStringRef kGSCanRasterizeEfficientlyCapability;
+	extern CFStringRef kGSFrontFacingCameraCapability;
+	extern CFStringRef kGSHiDPICapability;
+	extern CFStringRef kGSIOSurfaceBackedImagesCapability;
+	extern CFStringRef kGSMultitaskingCapability;
+	extern CFStringRef kGSVeniceCapability;
+#endif
 	
 	/// Subcapabilities
 	extern CFStringRef kGSMainScreenHeight;
