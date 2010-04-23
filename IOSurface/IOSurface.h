@@ -12,4 +12,6 @@
 #include <IOSurface/IOSurfaceAPI.h>
 #include <IOSurface/IOSurfaceAccelerator.h>
 
+void IOSurfaceFlushProcessorCaches(IOSurfaceRef surface);
+
 #endif
