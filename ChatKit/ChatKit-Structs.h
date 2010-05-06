@@ -10,12 +10,11 @@
 #import <UIKit/UIKit-Structs.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <AddressBook/AddressBook.h>
+#import <ImageIO/ImageIO.h>
 
 typedef struct __CKSMSRecord* CKSMSRecordRef;
 
 typedef struct __CKSMSAddress* CKSMSAddressRef;
-
-typedef struct CGImageSource* CGImageSourceRef;
 
 #if __cplusplus
 extern "C" {
