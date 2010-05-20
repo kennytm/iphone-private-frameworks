@@ -120,11 +120,13 @@
 -(void)_setLayerHidden:(BOOL)hidden;
 -(id)_touchData;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+// inherited: -(void)encodeWithCoder:(id)coder;
+-(void)awakeFromNib;
 +(void*)createRotatedCGImageFromIOSurface:(void*)iosurface;
 +(void*)createIOSurfaceWithContextIds:(const unsigned*)contextIds count:(unsigned)count frame:(CGRect)frame outTransform:(CGAffineTransform*)transform;
 +(id)_hitTestToPoint:(CGPoint)point pathIndex:(int)index forEvent:(id)event;
 +(id)_findWithDisplayPoint:(CGPoint)displayPoint;
--(void)_resetWindowGeometryForClassicController;
+-(BOOL)_isClassicControllerWindow;
 -(void)_updateTransformLayer;
 -(void)_createContext;
 -(void)_destroyContext;
@@ -137,6 +139,14 @@
 -(void)_finishedFullRotation:(id)rotation finished:(id)finished context:(id)context;
 -(int)_windowOutput;
 -(CGPoint)_transformDisplayToWindowCoordinates:(CGPoint)windowCoordinates;
+-(CGPoint)_convertOffset:(CGPoint)offset toWindow:(id)window;
+-(CGPoint)_convertOffset:(CGPoint)offset fromWindow:(id)window;
+-(id)_rootViewControllers;
+-(id)_clientsForRotation;
+-(void)_addRootViewController:(id)controller;
+-(void)_removeRootViewController:(id)controller;
+-(BOOL)resizesToFullScreen;
+-(void)setResizesToFullScreen:(BOOL)fullScreen;
 #else
 -(void)_commonInit;
 -(void)_createWindow;

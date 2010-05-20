@@ -341,6 +341,8 @@
 -(void)testPrep:(id)prep options:(id)options;
 -(BOOL)rotateIfNeeded:(int)needed;
 -(void)setDeviceOrientation:(int)orientation;
+-(void)_handleKeyEvent:(GSEventRef)event;
+-(void)setHardwareKeyboardLayoutName:(id)name;
 #endif
 @end
 

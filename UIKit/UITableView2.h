@@ -257,6 +257,8 @@
 -(void)_updateBackgroundView;
 -(id)_newSectionViewWithFrame:(CGRect)frame forSection:(int)section isHeader:(BOOL)header;
 -(id)_defaultBackgroundView;
+-(CGSize)_fontMetrics:(id)metrics;
+-(CGSize)_atomBackgroundTextOffset;
 #else
 -(id)_newSectionViewWithFrame:(CGRect)frame isHeader:(BOOL)header;
 #endif

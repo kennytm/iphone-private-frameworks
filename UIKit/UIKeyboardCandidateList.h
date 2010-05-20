@@ -28,5 +28,6 @@
 -(void)showCaret:(BOOL)caret gradually:(BOOL)gradually;
 -(void)setCompletionContext:(id)context;
 -(void)obsoleteCandidates;
+-(BOOL)obstructsView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 @end
 

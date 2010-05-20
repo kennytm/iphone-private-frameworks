@@ -145,6 +145,12 @@
 -(void)_setSearchDisplayController:(id)controller retain:(BOOL)retain;
 -(void)_setSearchDisplayControllerUnretained:(id)unretained;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+@property(assign, nonatomic) CGSize contentSizeForViewInPopover;
+@property(retain, nonatomic) UIDropShadowView* dropShadowView;
+@property(assign, nonatomic) BOOL modalInPopover;
+@property(readonly, assign, nonatomic) BOOL _isDimmingBackground;
+@property(readonly, assign, nonatomic) BOOL _useSheetRotation;
+@property(readonly, assign, nonatomic) BOOL _isModalSheet;
 -(float)heightForViewInPopoverView;
 -(CGSize)_sizeForViewInPopoverView;
 -(CGSize)contentSizeForViewInPopoverView;

@@ -135,12 +135,13 @@ typedef struct WKWindow {
 	WKViewRef _field4;
 	WKViewRef _field5;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-	unsigned _field6 : 1;
+	CGSize _field6;
+	CGSize _field7;
 #else
 	TiledSurfaceRef _field6;
 	unsigned _field7 : 1;
-	unsigned _field8 : 1;
 #endif
+	unsigned _field8 : 1;
 } WKWindow;
 
 typedef struct CADoublePoint {

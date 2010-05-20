@@ -21,6 +21,7 @@
 @property(assign, nonatomic) BOOL contentsIsSingleValue;
 @property(assign, nonatomic) BOOL acceptsEmoji;
 @property(assign, nonatomic) int emptyContentReturnKeyType __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
+@property(assign, nonatomic) BOOL returnKeyGoesToNextResponder __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)takeTraitsFrom:(id)from;
 @optional
 -(BOOL)acceptsEmoji;

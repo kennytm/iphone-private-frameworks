@@ -10,7 +10,9 @@
 
 @class NSString, DOMDocument, DOMHTMLElement, UIView;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
 __attribute__((visibility("hidden")))
+#endif
 @interface UIFieldEditor : UIWebDocumentView <UIAutoscrollContainer> {
 	DOMDocument* _document;
 	DOMHTMLElement* _textElement;
@@ -18,6 +20,7 @@ __attribute__((visibility("hidden")))
 	NSString* _initialText;
 	NSString* _initialStyle;
 	UIView* _proxiedView;
+@private
 	unsigned _changingView : 1;
 	unsigned _mouseWasDragged : 1;
 	unsigned _disableNotifications : 1;
