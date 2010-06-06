@@ -47,6 +47,7 @@ if len(sys.argv) > 1:
 				'-I{0}/usr/lib/gcc/arm-apple-darwin9/4.2.1/include'.format(sdk),
 				'-F{0}/System/Library/PrivateFrameworks/'.format(sdk),
 				'-I.',
+				'-I_fallback',
 				'-Wall',
 				'-Wextra',
 				'-o',

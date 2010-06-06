@@ -5,16 +5,4 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-#import "NSObject.h"
-
-
-@protocol UIActionSheetDelegate <NSObject>
-@optional
--(void)actionSheet:(id)sheet clickedButtonAtIndex:(int)index;
--(void)actionSheetCancel:(id)cancel;
--(void)willPresentActionSheet:(id)sheet;
--(void)didPresentActionSheet:(id)sheet;
--(void)actionSheet:(id)sheet willDismissWithButtonIndex:(int)buttonIndex;
--(void)actionSheet:(id)sheet didDismissWithButtonIndex:(int)buttonIndex;
-@end
-
+#import <UIKit/UIAlert.h>

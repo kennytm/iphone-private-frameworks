@@ -6,7 +6,7 @@
 #import "ActorKit-Structs.h"
 #import <Foundation/NSObject.h>
 
-@class NSThread, NSConditionLock;
+@class NSThread, NSConditionLock, NSNumber, NSRunLoop;
 
 enum AKDispatchQueueState {
 	AKDispatchQueueState_Initialized = 0,
