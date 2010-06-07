@@ -94,13 +94,13 @@ typedef struct {
 
 typedef struct UIStatusBarData {
 	BOOL itemIsEnabled[19];
-	BOOL timeString[32];
+	char timeString[32];
 	int gsmSignalStrengthRaw;
 	int gsmSignalStrengthBars;
-	BOOL serviceString[100];
-	BOOL serviceImageBlack[100];
-	BOOL serviceImageSilver[100];
-	BOOL operatorDirectory[1024];
+	char serviceString[100];
+	char serviceImageBlack[100];
+	char serviceImageSilver[100];
+	char operatorDirectory[1024];
 	unsigned serviceContentType;
 	int wifiSignalStrengthRaw;
 	int wifiSignalStrengthBars;
@@ -110,7 +110,7 @@ typedef struct UIStatusBarData {
 	int bluetoothBatteryCapacity;
 	int thermalColor;
 	unsigned slowActivity : 1;
-	BOOL activityDisplayId[256];
+	char activityDisplayId[256];
 	unsigned bluetoothConnected : 1;
 	unsigned displayRawGSMSignal : 1;
 	unsigned displayRawWifiSignal : 1;

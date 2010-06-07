@@ -30,6 +30,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+#import "UISelectedItemPrivate.h"
+#else
+
 @protocol UIWebSelectedItemPrivate
 -(id)node;
 -(BOOL)selected;
@@ -37,3 +43,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -(void)unselect;
 @end
 
+#endif

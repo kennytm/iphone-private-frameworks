@@ -52,6 +52,7 @@ if len(sys.argv) > 1:
 				'-Wextra',
 				'-o',
 				'-',
+				'-miphoneos-version-min={0}'.format(sys.argv[1]),
 				'-x',
 				language,
 				'-arch',

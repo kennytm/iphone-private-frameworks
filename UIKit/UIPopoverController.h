@@ -5,7 +5,6 @@
 #include_next <UIKit/UIPopoverController.h>
 
 @interface UIPopoverController ()
-@property(assign, nonatomic) CGRect popoverFrame;
 -(void)_disableAutomaticKeyboard:(id)keyboard;
 -(void)_adjustPopoverForNewContentSize:(id)newContentSize;
 -(id)popoverView;
