@@ -5,6 +5,10 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+
 #import "PhotoLibrary-Structs.h"
 #import "PLImageTileView.h"
 
@@ -17,3 +21,4 @@
 // inherited: -(CGSize)imageSize;
 @end
 
+#endif

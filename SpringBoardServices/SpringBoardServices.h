@@ -73,9 +73,7 @@ extern "C" {
 	void SBReloadApplication(mach_port_t port) __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
 	 */
 	
-	
-#endif
-	
+		
 #if __cplusplus
 }
 #endif

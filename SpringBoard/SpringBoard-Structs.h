@@ -12,6 +12,7 @@
 #import <AppSupport/AppSupport.h>
 #import <ChatKit/ChatKit.h>
 #import <QuartzCore/QuartzCore2.h>
+#import <DataAccess/DataAccess.h>
 
 typedef struct __CTCall* CTCallRef;
 
@@ -41,20 +42,9 @@ typedef struct {
 	long long voicemailID;
 } XXStruct_EX3dgA;
 
-typedef struct {
-	int _field1;
-	BOOL _field2;
-	BOOL _field3;
-	BOOL _field4;
-	BOOL _field5;
-	double _field6;
-} XXStruct_fhKmAA;
-
 typedef struct CalEventExpirationMonitor CalEventExpirationMonitor;
 
 typedef struct CalAlarmEngine CalAlarmEngine;
-
-typedef struct CalDatabase CalDatabase;
 
 typedef struct {
 	double _field1;

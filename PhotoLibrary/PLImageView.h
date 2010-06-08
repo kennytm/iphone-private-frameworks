@@ -5,6 +5,57 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+#import <Availability2.h>
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+// me being lazy here. no diff.
+
+#import <UIKit/UIImageView.h>
+@class PLVideoView, UILabel, NSString;
+
+@interface PLImageView : UIImageView {
+	NSString* _name;
+	UIView* _borderView;
+	PLVideoView* _videoView;
+	UILabel* _textBadge;
+	unsigned _shadowEnabled : 1;
+	unsigned _suppressShadowDrawing : 1;
+	unsigned _borderIsVisible : 1;
+	float _aspectRatio;
+	double _lastBorderAlphaTime;
+	double _lastShadowAlphaTime;
+	float _transitionProgress;
+	BOOL _edgeAntialiasingEnabled;
+}
+@property(copy, nonatomic) NSString* name;
+@property(assign, nonatomic) float transitionProgress;
+@property(retain, nonatomic) PLVideoView* videoView;
+@property(assign, nonatomic) float borderAlpha;
+@property(assign, nonatomic, getter=isBorderVisible) BOOL borderVisible;
+@property(assign, nonatomic, getter=isDimmed) BOOL dimmed;
+@property(assign, nonatomic, getter=isShadowEnabled) BOOL shadowEnabled;
++(void)initialize;
++(BOOL)shouldDrawShadows;
++(id)textBadgeForString:(id)string photoSize:(CGSize)size;
+-(id)textBadgeString;
+-(void)setTextBadgeString:(id)string;
+-(id)initWithFrame:(CGRect)frame;
+-(void)dealloc;
+-(CGSize)sizeThatFits:(CGSize)fits allowRounding:(BOOL)rounding;
+-(CGSize)sizeThatFits:(CGSize)fits;
+-(void)renderSnapshotInContext:(CGContextRef)context;
+-(void)layoutSubviews;
+-(void)_updateShadowPath;
+-(void)setImage:(id)image;
+-(void)parentDidLayout;
+-(void)setBorderAlpha:(float)alpha forced:(BOOL)forced;
+-(void)setBorderWidthScale:(float)scale heightScale:(float)scale2;
+-(void)setEdgeAntialiasingEnabled:(BOOL)enabled;
+@end
+
+#else
+
 #import "PhotoLibrary-Structs.h"
 #import <UIKit/UITiledView.h>
 #import "PLItemView.h"
@@ -92,3 +143,4 @@
 -(void)zoomToWindowPoint:(CGPoint)windowPoint scale:(float)scale duration:(float)duration constrainScrollPoint:(BOOL)point event:(GSEventRef)event;
 @end
 
+#endif
