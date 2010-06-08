@@ -6,7 +6,9 @@
  */
 
 #import <QuartzCore/QuartzCore-Structs.h>
+#import <AppSupport/CPRecord.h>
 #include <pthread.h>
+#include <fcntl.h>
 
 typedef struct __MLPrefixOccurrenceInfo {
 	unsigned _field1;
@@ -120,14 +122,6 @@ typedef struct SLinkElement SLinkElement;
 typedef struct SLinkList {
 	SLinkElement* _field1;
 } SLinkList;
-
-typedef struct flock {
-	long long _field1;
-	long long _field2;
-	int _field3;
-	short _field4;
-	short _field5;
-} flock;
 
 typedef struct ChapterData ChapterData;
 

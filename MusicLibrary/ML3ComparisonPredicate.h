@@ -23,7 +23,9 @@
 @property(assign, nonatomic) BOOL caseInsensitive;
 @property(assign, nonatomic) BOOL treatNullAsBlank;
 @property(copy, nonatomic) NSString* transformFunction;
+#if !__cplusplus
 @property(readonly, assign, nonatomic) NSString* operator;
+#endif
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison;
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive;
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive treatNullAsBlank:(BOOL)blank;
