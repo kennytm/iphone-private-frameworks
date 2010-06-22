@@ -94,13 +94,13 @@ typedef struct {
 
 typedef struct UIStatusBarData {
 	BOOL itemIsEnabled[19];
-	BOOL timeString[32];
+	char timeString[32];
 	int gsmSignalStrengthRaw;
 	int gsmSignalStrengthBars;
-	BOOL serviceString[100];
-	BOOL serviceImageBlack[100];
-	BOOL serviceImageSilver[100];
-	BOOL operatorDirectory[1024];
+	char serviceString[100];
+	char serviceImageBlack[100];
+	char serviceImageSilver[100];
+	char operatorDirectory[1024];
 	unsigned serviceContentType;
 	int wifiSignalStrengthRaw;
 	int wifiSignalStrengthBars;
@@ -110,7 +110,7 @@ typedef struct UIStatusBarData {
 	int bluetoothBatteryCapacity;
 	int thermalColor;
 	unsigned slowActivity : 1;
-	BOOL activityDisplayId[256];
+	char activityDisplayId[256];
 	unsigned bluetoothConnected : 1;
 	unsigned displayRawGSMSignal : 1;
 	unsigned displayRawWifiSignal : 1;
@@ -160,12 +160,13 @@ typedef struct WKWindow {
 	WKViewRef _field4;
 	WKViewRef _field5;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-	unsigned _field6 : 1;
+	CGSize _field6;
+	CGSize _field7;
 #else
 	TiledSurfaceRef _field6;
 	unsigned _field7 : 1;
-	unsigned _field8 : 1;
 #endif
+	unsigned _field8 : 1;
 } WKWindow;
 
 typedef struct CADoublePoint {

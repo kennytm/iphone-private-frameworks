@@ -33,6 +33,7 @@
 -(void)phraseBoundaryDidChange;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)setAutoshift:(BOOL)autoshift;
+-(BOOL)performReturnAction;
 @optional
 -(void)setReturnKeyEnabled:(BOOL)enabled withDisplayName:(id)displayName withType:(int)type;
 #endif

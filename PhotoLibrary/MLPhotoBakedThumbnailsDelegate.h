@@ -5,10 +5,4 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-#import "PhotoLibrary-Structs.h"
-
-
-@protocol MLPhotoBakedThumbnailsDelegate
--(void)decorateThumbnail:(id)thumbnail inContext:(CGContextRef)context;
-@end
-
+#import <MusicLibrary/MLPhotoBakedThumbnailsDelegate.h>

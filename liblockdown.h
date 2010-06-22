@@ -75,7 +75,9 @@ extern "C" {
 	extern CFStringRef kLDErrorCheckinSendFailed;
 	extern CFStringRef kLDErrorCheckinSetupFailed;
 #endif
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+	extern CFStringRef kLDErrorSavePairRecordFailed;
+#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
 	extern CFStringRef kLLDErrorSavePairRecordFailed;
 #endif
 	
@@ -102,6 +104,11 @@ extern "C" {
 	extern CFStringRef kLockdownNotificationIQAgentAllowedChanged;
 	extern CFStringRef kLockdownNotificationiTunesAccountChanged;
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+	extern CFStringRef kLockdownNotificationPowerChange;
+	extern CFStringRef kLockdownNotificationSBLockChange;
+	extern CFStringRef kLockdownNotificationSyncAllowChanged;	
+#endif
 	
 #pragma mark -
 #pragma mark Domains
@@ -127,7 +134,11 @@ extern "C" {
 	extern CFStringRef kLockdownProtocolVersion;	// "2"
 	extern CFStringRef kLockdownPrefApplicationID;	// com.apple.mobile.lockdownd
 	extern CFStringRef kLockdownMobileApplicationUsageMapDomain;	// com.apple.mobile.mobile_application_usage
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_4_0
 	extern CFStringRef kLockdownThirdPartyTerminationMapDomain;	// com.apple.mobile.third_party_termination
+#else
+	extern CFStringRef kLockdownHostPairingsDomainKey;
+#endif
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0
 	extern CFStringRef kLockdownBackupDomainKey;	// com.apple.mobile.backup
@@ -226,13 +237,52 @@ extern "C" {
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
 	extern CFStringRef kLockdownAMRKey;
-	extern CFStringRef kLockdownEnableLockdownNetworkConnectKey;
 	extern CFStringRef kLockdownH263Key;
 	extern CFStringRef kLockdownH264HKey;
 	extern CFStringRef kLockdownH264MKey;
 	extern CFStringRef kLockdownSNUMKey;
 	extern CFStringRef kLockdownServiceToken;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_4_0
+	extern CFStringRef kLockdownEnableLockdownNetworkConnectKey;
+#else
+	extern CFStringRef kLockdownBackupVersionKey;
+	extern CFStringRef kLockdownBuddyHostNameKey;
+	extern CFStringRef kLockdownBuddyServiceNameKey;
+	extern CFStringRef kLockdownBuddyServicePortKey;
+	extern CFStringRef kLockdownCallsInProgressKey;
+	extern CFStringRef kLockdownChapterImageSpecs;
+	extern CFStringRef kLockdownCheckinHostIDkey;
+	extern CFStringRef kLockdownCheckinVersionKey;
+	extern CFStringRef kLockdownCurrentlyBrowsingKey;
+	extern CFStringRef kLockdownDevToolsAvailableKey;
+	extern CFStringRef kLockdownEscrowBagKey;
+	extern CFStringRef kLockdownExternalChargeCapableKey;
+	extern CFStringRef kLockdownExternalConnectedKey;
+	extern CFStringRef kLockdownFullyChargedKey;
+	extern CFStringRef kLockdownInternalKey;
+	extern CFStringRef kLockdownMCCKey;
+	extern CFStringRef kLockdownMNCKey;
+	extern CFStringRef kLockdownMachineHackKey;
+	extern CFStringRef kLockdownNoneKey;
+	extern CFStringRef kLockdownPartitionTypeKey;
+	extern CFStringRef kLockdownPluggedInKey;
+	extern CFStringRef kLockdownSBLockedKey;
+	extern CFStringRef kLockdownSortSectionsKey;
+	extern CFStringRef kLockdownStandardKey;
+	extern CFStringRef kLockdownSyncAllowedKey;
+	extern CFStringRef kLockdownWakingBuddyKey;
+	extern CFStringRef kLockdownWirelessBuddyFriendlyNameKey;
+	extern CFStringRef kLockdownWirelessBuddyIDKey;
+	extern CFStringRef kLockdownWirelessEchoServicePortNumberKey;
+	extern CFStringRef kLockdownWirelessEnableWifiConnections;
+	extern CFStringRef kLockdownWirelessSupportsWifi;
+	extern CFStringRef kLockdownWokeBuddySincePluggedKey;
 #endif
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED == __IPHONE_3_2
+	extern CFStringRef kLockdownPlaylistFoldersSupportedKey;
+#endif
+	
 	
 #pragma mark : Disk Usage Domain Keys
 	extern CFStringRef kLockdownAmountCameraAvailableKey;
@@ -397,6 +447,19 @@ extern "C" {
 	CFPropertyListRef lockdown_copy_value(LockdownConnectionRef connection, CFStringRef domain, CFStringRef key);
 	LockdownError lockdown_remove_value(LockdownConnectionRef connection, CFStringRef domain, CFStringRef key);
 	LockdownError lockdown_set_value(LockdownConnectionRef connection, CFStringRef domain, CFStringRef key, CFPropertyListRef newValue);
+	
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+	/* XXX Todo:
+	lockdown_get_securecontext
+	lockdown_get_socket
+	lockdown_receive_message
+	lockdown_recv
+	lockdown_secure_checkin
+	lockdown_send
+	lockdown_send_message
+	secure_lockdown_checkin	
+	 */
+#endif
 	
 	/*
 	 dlfun("lockdown_connect", "^v");

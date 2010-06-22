@@ -6,8 +6,4 @@
  */
 
 
-
-@protocol AccountCreationProtocol
--(id)initWithBasicAccount:(id)basicAccount;
-@end
-
+#import <DataAccess/AccountCreationProtocol.h>

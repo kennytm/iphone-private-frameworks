@@ -5,6 +5,9 @@
  * Source: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <QuartzCore/QuartzCore.h>
+
 typedef struct __SecTrust SecTrust;
 
 typedef struct _xmlNs xmlNs;
@@ -61,8 +64,6 @@ typedef struct {
 typedef struct ldap ldap;
 
 typedef struct ldapmsg ldapmsg;
-
-typedef struct __SCDynamicStore* SCDynamicStoreRef;
 
 typedef struct CalDatabase CalDatabase;
 
@@ -399,17 +400,5 @@ typedef struct {
 typedef struct {
 	int _field1;
 } XXStruct_YWGUWB;
-
-typedef struct {
-	unsigned long _field1;
-	id* _field2;
-	unsigned long* _field3;
-	unsigned long _field4[5];
-} XXStruct_kFm5bA;
-
-typedef struct {
-	int _field1;
-	int _field2;
-} XXStruct_K5nmsA;
 
 

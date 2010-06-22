@@ -162,6 +162,14 @@
 -(CGRect)contentFrameForView:(id)view;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(float)_cancelSelectDistance;
+-(void)setBouncesHorizontally:(BOOL)horizontally;
+-(BOOL)bouncesHorizontally;
+-(void)setBouncesVertically:(BOOL)vertically;
+-(BOOL)bouncesVertically;
+-(float)_scrollHysteresis;
+-(void)_scrollViewWillBeginZooming;
+-(void)_scrollViewDidEndZooming;
+-(float)_zoomScaleFromPresentationLayer:(BOOL)presentationLayer;
 -(void)_adjustBackgroundShadowsForContentSizeForcedVisible:(BOOL)contentSizeForcedVisible;
 -(BOOL)_beginTrackingWithEvent:(id)event;
 -(void)_clearContentOffsetAnimation;

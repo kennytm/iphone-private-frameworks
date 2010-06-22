@@ -5,21 +5,4 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-#import "NSObject.h"
-
-
-@protocol UITableViewDataSource <NSObject>
--(int)tableView:(id)view numberOfRowsInSection:(int)section;
--(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
-@optional
--(int)numberOfSectionsInTableView:(id)tableView;
--(id)tableView:(id)view titleForHeaderInSection:(int)section;
--(id)tableView:(id)view titleForFooterInSection:(int)section;
--(BOOL)tableView:(id)view canEditRowAtIndexPath:(id)indexPath;
--(BOOL)tableView:(id)view canMoveRowAtIndexPath:(id)indexPath;
--(id)sectionIndexTitlesForTableView:(id)tableView;
--(int)tableView:(id)view sectionForSectionIndexTitle:(id)sectionIndexTitle atIndex:(int)index;
--(void)tableView:(id)view commitEditingStyle:(int)style forRowAtIndexPath:(id)indexPath;
--(void)tableView:(id)view moveRowAtIndexPath:(id)indexPath toIndexPath:(id)indexPath3;
-@end
-
+#import <UIKit/UITableView.h>

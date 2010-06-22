@@ -6,7 +6,7 @@
  */
 
 #import "PhotoLibrary-Structs.h"
-#import <Foundation/NSInputStream.h>
+#import <Foundation/NSStream.h>
 
 @class NSArray, NSMutableData;
 @protocol PLDataArrayInputStreamProgressDelegate;

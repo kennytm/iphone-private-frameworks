@@ -5,6 +5,9 @@
 
 #import <UIKit/UIAlert.h>
 #import <Availability2.h>
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+#include_next <UIKit/UIAlertView.h>
+#endif
 
 @class NSString, UILabel, NSMutableArray, UIWindow, UIToolbar, UIAlertSheetTextField;
 @protocol UIAlertViewDelegate;

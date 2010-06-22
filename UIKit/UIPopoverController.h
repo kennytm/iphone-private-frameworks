@@ -5,13 +5,12 @@
 #include_next <UIKit/UIPopoverController.h>
 
 @interface UIPopoverController ()
-@property(assign, nonatomic) CGRect popoverFrame;
 -(void)_disableAutomaticKeyboard:(id)keyboard;
 -(void)_adjustPopoverForNewContentSize:(id)newContentSize;
 -(id)popoverView;
 -(void)_setupIncomingViewController:(id)controller presenting:(BOOL)presenting animated:(BOOL)animated;
 -(void)_teardownOutgoingViewController:(id)controller animated:(BOOL)animated;
-//-(void)setContentViewController:(id)controller animated:(BOOL)animated;
+//-(void)setContentViewController:(UIViewContorller*)controller animated:(BOOL)animated;
 -(void)setPopoverFrame:(CGRect)frame animated:(BOOL)animated;
 -(BOOL)_popoverShouldBeDismissed:(id)_popover;
 -(void)_popoverDidDismiss:(id)_popover;

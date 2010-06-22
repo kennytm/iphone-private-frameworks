@@ -5,13 +5,4 @@
  * Source: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-#import "NSObject.h"
-
-
-@protocol UIImagePickerControllerDelegate <NSObject>
-@optional
--(void)imagePickerController:(id)controller didFinishPickingImage:(id)image editingInfo:(id)info;
--(void)imagePickerController:(id)controller didFinishPickingMediaWithInfo:(id)info;
--(void)imagePickerControllerDidCancel:(id)imagePickerController;
-@end
-
+#import <UIKit/UIImagePickerController.h>
