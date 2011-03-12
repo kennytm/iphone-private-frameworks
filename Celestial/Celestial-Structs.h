@@ -7,6 +7,7 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 #include <GraphicsServices/GraphicsServices.h>
+#include <AudioToolbox/AudioToolbox.h>
 
 typedef struct OpaqueMD5CheckProgress OpaqueMD5CheckProgress;
 
@@ -149,65 +150,9 @@ typedef struct AVSystemControllerPrivate {
 	OpaqueFigPlayer* _field5;
 } AVSystemControllerPrivate;
 
-typedef struct AudioStreamBasicDescription {
-	double mSampleRate;
-	unsigned mFormatID;
-	unsigned mFormatFlags;
-	unsigned mBytesPerPacket;
-	unsigned mFramesPerPacket;
-	unsigned mBytesPerFrame;
-	unsigned mChannelsPerFrame;
-	unsigned mBitsPerChannel;
-	unsigned mReserved;
-} AudioStreamBasicDescription;
-
 typedef struct OpaqueAudioFileID OpaqueAudioFileID;
 
 typedef struct OpaqueAudioQueue OpaqueAudioQueue;
-
-typedef struct AudioQueueLevelMeterState {
-	float _field1;
-	float _field2;
-} AudioQueueLevelMeterState;
-
-typedef struct AudioStreamPacketDescription AudioStreamPacketDescription;
-typedef struct AudioQueueBuffer {
-	unsigned _field1;
-	void* _field2;
-	unsigned _field3;
-	void* _field4;
-	unsigned _field5;
-	AudioStreamPacketDescription* _field6;
-	unsigned _field7;
-} AudioQueueBuffer;
-
-struct AudioStreamPacketDescription {
-	long long _field1;
-	unsigned _field2;
-	unsigned _field3;
-};
-
-typedef struct SMPTETime {
-	short _field1;
-	short _field2;
-	unsigned _field3;
-	unsigned _field4;
-	unsigned _field5;
-	short _field6;
-	short _field7;
-	short _field8;
-	short _field9;
-} SMPTETime;
-
-typedef struct AudioTimeStamp {
-	double _field1;
-	unsigned long long _field2;
-	double _field3;
-	unsigned long long _field4;
-	SMPTETime _field5;
-	unsigned _field6;
-	unsigned _field7;
-} AudioTimeStamp;
 
 typedef struct OpaqueFigRecorder OpaqueFigRecorder;
 
