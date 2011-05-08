@@ -47,8 +47,7 @@
 -(id)overrideGeometry:(id)geometry;
 @end
 
-static inline UIKBGeometry* UIKBGeometryForKeyWithPercentages(float x, float y, float w, float h) {
-	UIKBGeometry* geom = [UIKBGeometry geometry];
+static inline UIKBGeometry* UIKBGeometryForKeyWithPercentages(UIKBGeometry *geom, float x, float y, float w, float h) {
 	geom.x = UIKBLengthMakePercentage(x);
 	geom.y = UIKBLengthMakePercentage(y);
 	geom.w = UIKBLengthMakePercentage(w);
@@ -57,3 +56,5 @@ static inline UIKBGeometry* UIKBGeometryForKeyWithPercentages(float x, float y, 
 	geom.paddingRight = UIKBLengthMakePixel(1);
 	return geom;
 }
+// So that simply including this header won't link UIKBGeometry
+#define UIKBGeometryForKeyWithPercentages(x, y, w, h) UIKBGeometryForKeyWithPercentages([UIKBGeometry geometry], x, y, w, h)
