@@ -241,7 +241,7 @@ extern "C" {
 	
 	GSEventRef GSEventCopy(GSEventRef event);
 	GSEventRef GSEventCreateWithEventRecord(const GSEventRecord* record);
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	GSEventRef GSEventCreateWithTypeAndLocation(GSEventType type, CGPoint location);
 #endif
 	GSEventRef GSEventCreateWithPlist(CFDictionaryRef dictionary) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_2);
@@ -255,7 +255,7 @@ extern "C" {
 
 	GSEventType GSEventGetType(GSEventRef event);
 	GSEventSubType GSEventGetSubType(GSEventRef event);
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	int GSEventGetWindowContextId(GSEventRef event);
 #endif
 	CGPoint GSEventGetLocationInWindow(GSEventRef event);
@@ -310,7 +310,7 @@ extern "C" {
 	
 	/// Register a callback function that will be called when PurpleEventCallback() is called.
 	void GSEventRegisterEventCallBack(void(*callback)(GSEventRef event));
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void GSEventRegisterFindWindowCallBack(int(*callback)(CGPoint position));
 	void GSEventRegisterTransformToWindowCoordsCallBack(void*) __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
 #endif
@@ -321,10 +321,10 @@ extern "C" {
 	GSPathInfo GSEventGetPathInfoAtIndex(GSEventRef event, CFIndex index);
 	void GSEventSetPathInfoAtIndex(GSEventRef event, GSPathInfo pathInfo, CFIndex index);
 	
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_1
 	void GSEventSetHandInfoScale(GSEventRef event, CGFloat denominator);
 #endif
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_0 && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void GSEventChangeHandInfoToCancel(GSEventRef event);
 #endif
 	
@@ -340,7 +340,7 @@ extern "C" {
 #pragma mark Scroll wheel and touch events
 	CGFloat GSEventGetDeltaX(GSEventRef event);
 	CGFloat GSEventGetDeltaY(GSEventRef event);
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void GSEventSetDeltaX(GSEventRef event, CGFloat deltaX);
 	void GSEventSetDeltaY(GSEventRef event, CGFloat deltaY);
 #endif
@@ -352,7 +352,7 @@ extern "C" {
 	Boolean GSEventIsKeyRepeating(GSEventRef event);
 	UniChar GSEventGetKeyCode(GSEventRef event);
 	
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	GSEventRef _GSCreateSyntheticKeyEvent(UniChar keycode, Boolean isKeyUp, Boolean isKeyRepeating);
 #endif
 	Boolean GSEventIsKeyCharacterEventType(GSEventRef event, UniChar expected_keycode);
@@ -361,7 +361,7 @@ extern "C" {
 	CFStringRef GSEventCopyCharactersIgnoringModifiers(GSEventRef event);
 	CFStringRef GSEventCopyCharacters(GSEventRef event);
 	
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void _GSPostSyntheticKeyEvent(CFStringRef keys, Boolean isKeyUp, Boolean isKeyRepeating);
 #endif
 	
@@ -373,7 +373,7 @@ extern "C" {
 	
 #pragma mark -
 #pragma mark Out-of-line data (deprecated)
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void GSEventRequestOutOfLineData(mach_port_t port, void* unknown);
 	mach_msg_return_t GSEventSendOutOfLineData(mach_port_t port, ...);	
 #endif

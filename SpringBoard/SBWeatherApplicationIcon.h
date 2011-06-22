@@ -11,7 +11,7 @@
 @interface SBWeatherApplicationIcon : SBApplicationIcon {
 }
 // inherited: -(void)localeChanged;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(BOOL)showFahrenheit;
 // inherited: -(id)icon;
 // inherited: -(id)modificationDate:(BOOL)date;

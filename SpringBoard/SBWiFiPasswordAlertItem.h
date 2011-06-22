@@ -17,7 +17,8 @@
 // inherited: -(void)dealloc;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 @property(assign, nonatomic) id delegate;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)setDelegate:(id)delegate;
 #endif
 // inherited: -(void)dismiss;

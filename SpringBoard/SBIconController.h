@@ -7,7 +7,7 @@
 
 #import "SBIconListPageControlDelegate.h"
 #import "UIScrollViewDelegate.h"
-#import <Foundation/NSObject.h>
+#import <UIKit/UIKit.h>
 #import <Availability2.h>
 
 @class UITouch, SBIconListPageControl, SBIcon, SBIconScrollView, SBIconList, UIView, NSTimer, SBSearchView, SBIconModel, TPLCDTextView, SBIconContentView;
@@ -32,7 +32,8 @@
 	SBIconList* _grabbedIconList;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	int _grabbedIndex;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	int _grabbedX;
 	int _grabbedY;
 #endif
@@ -40,14 +41,16 @@
 	SBIconList* _swappedIconList;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	int _swappedIndex;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	int _swappedX;
 	int _swappedY;
 #endif
 	SBIconList* _destinationIconList;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	int _destinationIndex;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	int _destinationX;
 	int _destinationY;
 #endif
@@ -84,22 +87,22 @@
 -(BOOL)isShowingSearch;
 -(int)currentIconListIndex;
 -(void)scrollToIconListContainingIcon:(SBIcon*)iconListContainingIcon animate:(BOOL)animate;
--(void)scrollToIconListAtIndex:(int)index animate:(BOOL)animate;
+-(void)scrollToIconListAtIndex:(NSInteger)index animate:(BOOL)animate;
 -(void)updateContentSize;
 -(void)noteNumberOfIconListsChanged;
 -(void)removeEmptyIconList:(id)list animate:(BOOL)animate;
--(id)iconToInstall;
--(void)setIconToInstall:(id)install;
+-(SBIcon *)iconToInstall;
+-(void)setIconToInstall:(SBIcon *)icon;
 -(void)finishInstallingIcon;
 -(void)scrollToIconDestination;
--(void)removeIcon:(id)icon animate:(BOOL)animate;
--(void)uninstallIcon:(id)icon;
--(void)uninstallIcon:(id)icon animate:(BOOL)animate;
+-(void)removeIcon:(SBIcon *)icon animate:(BOOL)animate;
+-(void)uninstallIcon:(SBIcon *)icon;
+-(void)uninstallIcon:(SBIcon *)icon animate:(BOOL)animate;
 -(void)lcdTextViewCompletedScroll:(id)scroll;
 -(void)idleTextDidAnimate:(id)idleText finished:(id)finished toText:(id)text;
 -(void)updateNumberOfRowsWithDuration:(float)duration;
 -(BOOL)hasIdleModeText;
--(void)setIdleModeText:(id)text;
+-(void)setIdleModeText:(NSString *)text;
 -(void)adjustIconListAlpha;
 -(void)_showSearchKeyboardIfNecessary:(BOOL)necessary;
 // in a protocol: -(void)scrollViewDidScroll:(id)scrollView;
@@ -107,59 +110,60 @@
 // in a protocol: -(void)scrollViewWillBeginDecelerating:(id)scrollView;
 // in a protocol: -(void)scrollViewDidEndDecelerating:(id)scrollView;
 // in a protocol: -(void)scrollViewDidEndScrollingAnimation:(id)scrollView;
--(void)launchIcon:(id)icon;
--(void)doubleClickedIcon:(id)icon;
--(void)clickedIcon:(id)icon;
+-(void)launchIcon:(SBIcon *)icon;
+-(void)doubleClickedIcon:(SBIcon *)icon;
+-(void)clickedIcon:(SBIcon *)icon;
 -(int)reorderCount;
 -(void)incrementReorderCount;
 -(void)_addEmptyListIfNecessary;
 -(void)setIsEditing:(BOOL)editing;
 -(BOOL)isEditing;
--(id)iconAnimationView;
--(void)moveIconToWindow:(id)window;
--(void)moveIconFromWindow:(id)window toIconList:(id)iconList;
--(void)ungrabAnimation:(id)animation didFinish:(id)finish grabbedIcon:(id)icon;
+-(SBIcon *)iconAnimationView;
+-(void)moveIconToWindow:(UIWindow *)window;
+-(void)moveIconFromWindow:(UIWindow *)window toIconList:(SBIcon *)iconList;
+-(void)ungrabAnimation:(id)animation didFinish:(id)finish grabbedIcon:(SBIcon *)icon;
 -(void)noteDownloadStateChanged;
 -(void)noteViewCovered;
--(void)setLastTouch:(id)touch;
--(void)fixupBouncedIconsAfterIndex:(int)index;
--(void)setGrabbedIcon:(id)icon;
--(id)grabbedIcon;
--(id)destinationIconList;
+-(void)setLastTouch:(UITouch *)touch;
+-(void)fixupBouncedIconsAfterIndex:(NSInteger)index;
+-(void)setGrabbedIcon:(SBIcon *)icon;
+-(SBIcon *)grabbedIcon;
+-(SBIconList *)destinationIconList;
 -(void)cancelScrollTimer;
 -(void)scrollLeft;
 -(void)scrollRight;
--(void)noteGrabbedIconLocationChangedWithTouch:(id)touch;
--(void)noteGrabbedIconLocationChangedWithEvent:(id)event;
--(void)compactIconsInIconLists:(BOOL)iconLists limitToIconList:(id)iconList;
+-(void)noteGrabbedIconLocationChangedWithTouch:(UITouch *)touch;
+-(void)noteGrabbedIconLocationChangedWithEvent:(UIEvent *)event;
+-(void)compactIconsInIconLists:(BOOL)iconLists limitToIconList:(SBIcon *)iconList;
 -(void)animateToNewState:(float)newState domino:(BOOL)domino;
 -(void)moveAnimation:(id)animation didFinish:(id)finish movePlan:(id)plan;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
--(id)scrollView;
--(int)orientation;
--(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+-(UIScrollView *)scrollView;
+-(UIInterfaceOrientation)orientation;
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(void)updateIconListFrames;
 -(void)updateIconListWallpaperState;
 -(void)setIconsDisplayOnWallpaper:(BOOL)wallpaper;
--(id)addIcon:(id)icon toIconList:(id)iconList index:(int)index animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
--(id)insertIcon:(id)icon intoIconList:(id)list index:(int)index moveNow:(BOOL)now duration:(float)duration;
--(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icons:(id)icons;
--(void)scatterWithDuration:(double)duration startTime:(double)time;
--(void)unscatterWithDuration:(double)duration startTime:(double)time;
--(void)unscatterWithDuration:(double)duration startTime:(double)time fade:(BOOL)fade;
+-(id)addIcon:(SBIcon *)icon toIconList:(SBIcon *)iconList index:(NSInteger)index animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
+-(id)insertIcon:(SBIcon *)icon intoIconList:(id)list index:(NSInteger)index moveNow:(BOOL)now duration:(float)duration;
+-(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icons:(SBIcon *)icons;
+-(void)scatterWithDuration:(NSTimeInterval)duration startTime:(double)time;
+-(void)unscatterWithDuration:(NSTimeInterval)duration startTime:(double)time;
+-(void)unscatterWithDuration:(NSTimeInterval)duration startTime:(double)time fade:(BOOL)shouldFade;
 -(void)resumeRotationDelayed;
--(void)moveIcon:(id)icon fromIconList:(id)iconList toIndex:(int)index toIconList:(id)iconList4 animate:(BOOL)animate;
--(void)moveIcon:(id)icon fromIconList:(id)iconList toIndex:(int)index toIconList:(id)iconList4;
-#else
--(id)addIcon:(id)icon toIconList:(id)iconList x:(int)x y:(int)y animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
--(id)insertIcon:(id)icon intoIconList:(id)list X:(int)x Y:(int)y moveNow:(BOOL)now duration:(float)duration;
--(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icon:(id)icon;
--(void)scatter:(BOOL)scatter startTime:(double)time;
--(void)unscatter:(BOOL)unscatter startTime:(double)time;
--(void)moveIcon:(id)icon fromIconList:(id)iconList toX:(int)x Y:(int)y toIconList:(id)iconList5 animate:(BOOL)animate;
--(void)moveIcon:(id)icon fromIconList:(id)iconList toX:(int)x Y:(int)y toIconList:(id)iconList5;
+-(void)moveIcon:(SBIcon *)icon fromIconList:(SBIconList *)sourceIconList toIndex:(NSInteger)index toIconList:(SBIconList *)destIconList animate:(BOOL)animate;
+-(void)moveIcon:(SBIcon *)icon fromIconList:(SBIconList *)sourceIconList toIndex:(NSInteger)index toIconList:(SBIconList *)destIconList;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+-(id)addIcon:(SBIcon *)icon toIconList:(SBIconList *)iconList x:(NSInteger)x y:(NSInteger)y animate:(BOOL)animate moveNow:(BOOL)now scrollToList:(BOOL)list;
+-(id)insertIcon:(SBIcon *)icon intoIconList:(SBIconList *)iconList X:(NSInteger)x Y:(NSInteger)y moveNow:(BOOL)now duration:(float)duration;
+-(void)uninstallIconDidAnimate:(id)uninstallIcon finished:(id)finished icon:(SBIcon *)icon;
+-(void)scatter:(BOOL)scatter startTime:(NSTimeInterval)time;
+-(void)unscatter:(BOOL)unscatter startTime:(NSTimeInterval)time;
+-(void)moveIcon:(SBIcon *)icon fromIconList:(SBIconList *)sourceIconList toX:(NSInteger)x Y:(NSInteger)y toIconList:(SBIconList *)destIconList animate:(BOOL)animate;
+-(void)moveIcon:(SBIcon *)icon fromIconList:(SBIconList *)sourceIconList toX:(NSInteger)x Y:(NSInteger)y toIconList:(SBIconList *)destIconList;
 #endif
 @end
 

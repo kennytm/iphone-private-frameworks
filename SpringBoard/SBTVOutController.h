@@ -5,7 +5,7 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 #import "SBTVOutController.h"
 #import <Availability2.h>
 
@@ -14,7 +14,7 @@
 	int _tvOutMode;
 }
 @property(assign, nonatomic) int tvOutMode;
-+(id)sharedInstance;
++(SBTVOutController *)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)setIntialTVModeIfNeeded;

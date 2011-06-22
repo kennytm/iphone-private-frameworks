@@ -8,9 +8,9 @@
 }
 // inherited: -(void)dealloc;
 // inherited: -(void)controllerWasDeactivated;
--(float)tableView:(id)view heightForRowAtIndexPath:(id)indexPath;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 // inherited: -(void)_populateCell:(id)cell withSearchResult:(id)searchResult;
--(id)_auxiliaryTitleForABRecordID:(int)abrecordID;
+-(NSString *)_auxiliaryTitleForABRecordID:(int)abrecordID;
 @end
 
 #endif

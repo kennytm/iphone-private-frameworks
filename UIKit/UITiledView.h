@@ -4,7 +4,7 @@
  */
 
 #import <Availability2.h>
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 #import "UIKit-Structs.h"
 #import <UIKit/UIView.h>

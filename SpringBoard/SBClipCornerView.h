@@ -7,7 +7,7 @@
 
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIView.h>
@@ -15,18 +15,18 @@
 @class UIImage;
 
 @interface SBClipCornerView : UIView {
-	float _cornerRadius;
+	CGFloat _cornerRadius;
 	int _rectCorner;
 	CGPoint _pathOrigin;
 	CGPathRef _clipPath;
 	UIImage* _backgroundImage;
 	CGRect _backgroundImageSubrect;
 }
-@property(assign, nonatomic) float cornerRadius;
+@property(assign, nonatomic) CGFloat cornerRadius;
 @property(retain, nonatomic) UIImage* backgroundImage;
 @property(assign, nonatomic) CGRect backgroundImageSubrect;
 -(void)_updateCornerPath;
--(id)initWithCornerRadius:(float)cornerRadius forCorner:(int)corner;
+-(id)initWithCornerRadius:(CGFloat)cornerRadius forCorner:(int)corner;
 -(void)drawRect:(CGRect)rect;
 -(void)setFrame:(CGRect)frame;
 // inherited: -(void)dealloc;

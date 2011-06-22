@@ -6,24 +6,24 @@
  */
 
 #import "TelephonyUI-Structs.h"
-#import <UIKit/UIView.h>
+#import <UIKit/UIKit.h>
 
 
 @interface TPBottomBar : UIView {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-	int _orientation;
+	UIInterfaceOrientation _orientation;
 #endif
 }
-+(id)_backgroundImage;
++(UIImage *)_backgroundImage;
 +(void)preloadImages;
-+(float)defaultHeight;
++(CGFloat)defaultHeight;
 -(id)initWithDefaultSize;
 -(void)drawRect:(CGRect)rect;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-+(float)defaultHeightForOrientation:(int)orientation;
--(id)initWithDefaultSizeForOrientation:(int)orientation;
--(void)setOrientation:(int)orientation;
--(int)orientation;
++(CGFloat)defaultHeightForOrientation:(UIInterfaceOrientation)orientation;
+-(id)initWithDefaultSizeForOrientation:(UIInterfaceOrientation)orientation;
+-(void)setOrientation:(UIInterfaceOrientation)orientation;
+-(UIInterfaceOrientation)orientation;
 #endif
 @end
 

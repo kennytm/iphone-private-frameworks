@@ -8,26 +8,27 @@
 #import "SBIconList.h"
 #import "SpringBoard-Structs.h"
 #import <Availability2.h>
+#import <UIKit/UIKit.h>
 
 @interface SBButtonBar : SBIconList {
 }
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-+(id)_backgroundImageForOrientation:(int)orientation;
++(UIImage *)_backgroundImageForOrientation:(UIInterfaceOrientation)orientation;
 // inherited: +(int)iconColumnsForInterfaceOrientation:(int)interfaceOrientation;
 // inherited: +(int)iconRowsForInterfaceOrientation:(int)interfaceOrientation;
--(id)initForOrientation:(int)orientation;
+-(id)initForOrientation:(UIInterfaceOrientation)orientation;
 // inherited: -(id)initWithFrame:(CGRect)frame;
--(void)_updateForOrientation:(int)orientation duration:(double)duration;
+-(void)_updateForOrientation:(UIInterfaceOrientation)orientation duration:(double)duration;
 // inherited: -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
 // inherited: -(void)setOrientation:(int)orientation;
--(void)setOrientation:(int)orientation duration:(double)duration;
+-(void)setOrientation:(UIInterfaceOrientation)orientation duration:(double)duration;
 -(int)visibleIconsInButtonBar;
 // inherited: -(float)topIconPadding;
 // inherited: -(float)verticalIconPadding;
 // inherited: -(int)iconsInRowForSpacingCalculation;
 // inherited: -(float)horizontalIconInset;
 // inherited: -(float)horizontalIconSpace;
--(float)horizontalInsetForCenteringIcons;
+-(CGFloat)horizontalInsetForCenteringIcons;
 // inherited: -(CGPoint)originForIconAtIndex:(int)index;
 // inherited: -(id)iconAtPoint:(CGPoint)point index:(int*)index proposedOrder:(int*)order;
 // inherited: -(int)rowAtPoint:(CGPoint)point;
@@ -38,7 +39,7 @@
 // inherited: -(int)maxIconRows;
 // inherited: -(float)topIconPadding;
 // inherited: -(float)verticalIconPadding;
--(float)horizontalInsetForCenteringRow:(int)centeringRow;
+-(CGFloat)horizontalInsetForCenteringRow:(int)centeringRow;
 // inherited: -(CGPoint)originForIconAtX:(int)x Y:(int)y;
 // inherited: -(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y proposedOrder:(int*)order;
 // inherited: -(int)rowAtPoint:(CGPoint)point;

@@ -15,7 +15,7 @@
 	int _lastOrientationCode;
 #endif
 }
-+(id)sharedInstance;
++(SBTetherController *)sharedInstance;
 -(unsigned)_demoCardConnection;
 -(BOOL)isTethered;
 -(void)noteInterfaceOrientationChanged;

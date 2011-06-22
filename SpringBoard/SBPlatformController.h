@@ -17,32 +17,32 @@
 	NSMutableDictionary* _currentConfiguration;
 	NSMutableDictionary* _currentCapabilities;
 }
-+(id)sharedInstance;
++(SBPlatformController *)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
--(id)systemBuildVersion;
--(id)infoForCapability:(id)capability;
--(void)setInfo:(id)info forCapability:(id)capability;
--(void)addCapabilities:(id)capabilities removeCapabilities:(id)capabilities2;
--(BOOL)hasCapability:(id)capability;
--(id)enabledCapabilities;
--(BOOL)hasRestriction:(id)restriction;
+-(NSString *)systemBuildVersion;
+-(id)infoForCapability:(NSString *)capability;
+-(void)setInfo:(id)info forCapability:(NSString *)capability;
+-(void)addCapabilities:(NSArray *)capabilitiesToAdd removeCapabilities:(NSArray *)capabilitiesToRemove;
+-(BOOL)hasCapability:(NSString *)capability;
+-(NSArray *)enabledCapabilities;
+-(BOOL)hasRestriction:(NSString *)restriction;
 -(BOOL)canTakePhoto;
--(id)platformName;
+-(NSString *)platformName;
 -(id)iconState;
--(BOOL)matchesPlatforms:(id)platforms;
--(id)localizedPlatformName;
+-(BOOL)matchesPlatforms:(NSArray *)platforms;
+-(NSString *)localizedPlatformName;
 -(BOOL)isInternalInstall;
 -(void)noteITunesStoreCapabilityChanged;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_addIconListIdentifiers:(id)identifiers toSet:(id)set;
--(id)defaultDisplayIdentifiers;
+-(NSArray *)defaultDisplayIdentifiers;
 -(BOOL)isCarrierInstall;
 #endif
 @end
 
 @interface SBPlatformController (Private)	// the actual category name is (private), but C++ rejects this.
--(id)currentConfigurationName;
+-(NSString *)currentConfigurationName;
 -(void)postCurrentConfiguration;
 -(void)_mergeDictionary:(id)dictionary intoDictionary:(id)dictionary2;
 -(void)_addConfigurationNamed:(id)named toCompositeDictionary:(id)compositeDictionary;

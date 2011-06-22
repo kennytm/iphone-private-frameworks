@@ -205,7 +205,8 @@
 -(BOOL)isAlwaysFullscreenAwayPluginEnabled;
 -(void)enableAlwaysFullscreenAwayPlugin;
 -(void)unlockAlwaysFullscreenAwayView;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)_unlockWithSound:(BOOL)sound;
 -(void)updateNowPlayingInfo:(id)info;
 #endif

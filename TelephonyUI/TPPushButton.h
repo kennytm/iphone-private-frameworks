@@ -47,7 +47,8 @@
 -(id)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame imageIsOptional:(BOOL)optional;
 -(void)setImageIsOptional:(BOOL)optional;
 -(BOOL)imageIsOptional;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(XXStruct_SIyEID)_buttonSlices;
 #endif
 @end

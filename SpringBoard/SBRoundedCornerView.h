@@ -7,21 +7,21 @@
 
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 #import "SpringBoard-Structs.h"
-#import <UIKit/UIView.h>
+#import <UIKit/UIKit.h>
 
-@class UIImageView, SBClipCornerView;
+@class SBClipCornerView;
 
 @interface SBRoundedCornerView : UIView {
 	SBClipCornerView* _clipCornerViews[4];
-	float _cornerRadius;
-	float _cornerSize;
-	float _edgeInset;
+	CGFloat _cornerRadius;
+	CGFloat _cornerSize;
+	CGFloat _edgeInset;
 	UIImageView* _imageSuperview;
 }
--(id)initWithCornerRadius:(float)cornerRadius size:(float)size inset:(float)inset imageSuperview:(id)superview;
+-(id)initWithCornerRadius:(CGFloat)cornerRadius size:(CGFloat)size inset:(CGFloat)inset imageSuperview:(UIView *)superview;
 -(CGPoint)_originForCornerIndex:(int)cornerIndex withBoundsSize:(CGSize)boundsSize;
 -(void)_layoutSubviews;
 -(void)setFrame:(CGRect)frame;

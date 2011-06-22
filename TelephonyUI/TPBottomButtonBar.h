@@ -24,8 +24,8 @@
 -(id)initForEndCallWithFrame:(CGRect)frame;
 -(id)initForTTYWithFrame:(CGRect)frame;
 -(id)initForVoiceControlWithFrame:(CGRect)frame;
--(void)setButton:(id)button;
--(id)button;
+-(void)setButton:(TPPushButton *)button;
+-(TPPushButton *)button;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 // inherited: +(id)_backgroundImage;
 -(void)addBackgroundAndWellIfNecessary;

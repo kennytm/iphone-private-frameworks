@@ -21,7 +21,8 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	NSDateFormatter* _dayDateFormatter;
 	NSDateFormatter* _timeDateFormatter;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	NSDateFormatter* _dateFormatter;
 #endif
 	int _domainOrdering[12];
@@ -45,7 +46,7 @@
 #endif
 }
 @property(retain, nonatomic) SBSearchView* searchView;
-+(id)sharedInstance;
++(SBSearchController *)sharedInstance;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)updateSearchOrdering;
@@ -80,23 +81,24 @@
 -(id)_groupForSection:(int)section;
 -(int)_groupIndexForSection:(int)section;
 -(int)_resultSectionCount;
--(id)_launchingURLForResult:(id)result withDisplayIdentifier:(id)displayIdentifier;
+-(id)_launchingURLForResult:(id)result withDisplayIdentifier:(NSString *)displayIdentifier;
 -(void)_updateApplicationSearchResults;
--(id)_imageForDomain:(int)domain andDisplayID:(id)anId;
--(id)_imageForDisplayIdentifier:(id)displayIdentifier andSpotlightCategory:(id)category;
+-(UIImage *)_imageForDomain:(int)domain andDisplayID:(id)anId;
+-(UIImage *)_imageForDisplayIdentifier:(NSString *)displayIdentifier andSpotlightCategory:(id)category;
 -(void)clearSearchResults;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)controllerWasDeactivated;
 -(void)_populateCell:(id)cell withSearchResult:(id)searchResult;
--(id)_dayAndTimeStringForDate:(id)date;
--(id)_dayStringForDate:(id)date;
--(id)_timeStringForDate:(id)date;
--(void)_tableViewDidFadeOut:(id)_tableView finished:(id)finished context:(void*)context;
--(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
-#else
--(id)_stringFromDate:(id)date;
+-(NSString *)_dayAndTimeStringForDate:(NSDate *)date;
+-(NSString *)_dayStringForDate:(NSDate *)date;
+-(NSString *)_timeStringForDate:(NSDate *)date;
+-(void)_tableViewDidFadeOut:(UITableView *)_tableView finished:(id)finished context:(void*)context;
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(double)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(double)duration;
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+-(NSString *)_stringFromDate:(NSString *)date;
 #endif
 @end
 

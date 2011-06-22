@@ -23,7 +23,7 @@
 	NSString* _lastDisplayedCategory;
 	NSString* _lastEventCategory;
 }
-+(id)sharedVolumeControl;
++(VolumeControl *)sharedVolumeControl;
 // inherited: -(id)init;
 // inherited: -(void)dealloc;
 -(void)addAlwaysHiddenCategory:(id)category;
@@ -47,7 +47,8 @@
 -(BOOL)_headphonesPresent;
 -(void)_presentVolumeHUDWithMode:(int)mode volume:(float)volume;
 -(void)hideVolumeHUDIfVisible;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)reorientHUDIfNeeded:(BOOL)needed;
 -(void)_createUI;
 -(void)_tearDown;

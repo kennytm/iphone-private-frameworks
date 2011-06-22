@@ -3,11 +3,14 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 
 #import <Foundation/NSObject.h>
+#import <UIKit/UIKit.h>
+
+@class SBCornerView, SBCornerWindow;
 
 @interface SBCornerViewFactory : NSObject {
 }
-+(id)createCornerViewForCorner:(int)corner cornersFrame:(CGRect)frame;
-+(id)createCornerWindowForCorner:(int)corner windowLevel:(float)level cornersFrame:(CGRect)frame;
++(SBCornerView *)createCornerViewForCorner:(int)corner cornersFrame:(CGRect)frame;
++(SBCornerWindow *)createCornerWindowForCorner:(int)corner windowLevel:(UIWindowLevel)level cornersFrame:(CGRect)frame;
 @end
 
 #endif

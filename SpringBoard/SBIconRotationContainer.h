@@ -1,7 +1,7 @@
 #import <Availability2.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-#import <UIKit/UIView.h>
+#import <UIKit/UIKit.h>
 
 @class SBIcon;
 
@@ -16,7 +16,7 @@
 -(void)setStartIcon:(id)icon endIcon:(id)icon2;
 -(void)setOrigin:(CGPoint)origin;
 -(void)prepareToCrossfade;
--(void)crossfadeWithDuration:(double)duration;
+-(void)crossfadeWithDuration:(NSTimeInterval)duration;
 -(id)createSnapshot:(id)snapshot includingShadows:(BOOL)shadows;
 @end
 

@@ -6,11 +6,11 @@
  */
 
 #import "SpringBoard-Structs.h"
-#import <UIKit/UIApplication.h>
+#import <UIKit/UIKit.h>
 #import "SpringBoard.h"
 #import <Availability2.h>
 
-@class NSURL, NSDictionary, NSString, NSMutableArray, NSNumberFormatter, SBApplication, SBDimmingWindow, NSTimer, SBUIController;
+@class SBApplication, SBDimmingWindow, SBUIController;
 
 @interface SpringBoard : UIApplication {
 	SBUIController* _uiController;
@@ -137,10 +137,10 @@
 // inherited: -(void)applicationSuspend:(GSEventRef)suspend;
 // inherited: -(void)applicationSuspended:(GSEventRef)suspended;
 // inherited: -(void)applicationSuspendedSettingsUpdated:(GSEventRef)updated;
--(void)showAlertForUnhandledURL:(id)unhandledURL error:(int)error;
+-(void)showAlertForUnhandledURL:(NSURL *)unhandledURL error:(int)error;
 // inherited: -(void)_applicationOpenURL:(id)url event:(GSEventRef)event;
 // inherited: -(void)applicationOpenURL:(id)url;
--(void)applicationOpenURL:(id)url publicURLsOnly:(BOOL)only;
+-(void)applicationOpenURL:(NSURL *)url publicURLsOnly:(BOOL)only;
 // inherited: -(void)volumeChanged:(GSEventRef)changed;
 -(void)setBacklightFactorPending:(float)pending;
 -(void)setBacklightFactor:(float)factor;
@@ -185,7 +185,7 @@
 -(void)noteSubstantialTransitionOccured;
 -(void)updateMenuDoubleTapSettings;
 -(void)setZoomTouchEnabled:(BOOL)enabled;
--(id)springBoardPluginsDirectory;
+-(NSString *)springBoardPluginsDirectory;
 -(void)updateProximitySettings;
 -(void)updateAirPortForDisplay:(id)display;
 -(void)frontDisplayDidChange;
@@ -232,16 +232,17 @@
 -(void)keyboardWantsToAttemptUnlock;
 -(void)noteInterfaceOrientationChanged:(int)changed;
 // inherited: -(int)activeInterfaceOrientation;
--(int)launchingInterfaceOrientation;
+-(UIInterfaceOrientation)launchingInterfaceOrientation;
 // inherited: -(double)windowRotationDuration;
 // inherited: -(void)setStatusBarModeBlockingWithOrientation:(int)orientation duration:(float)duration fenceID:(int)anId sender:(id)sender;
 // inherited: -(BOOL)shouldFenceStatusBarRotation;
 -(id)_accessibilityFrontMostApplication;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(BOOL)allowMenuDoubleTap;
 // inherited: -(int)_frontMostAppOrientation;
 -(void)noteUIOrientationChanged:(int)changed display:(id)display;
--(int)UIOrientation;
+-(UIInterfaceOrientation)UIOrientation;
 #endif
 @end
 

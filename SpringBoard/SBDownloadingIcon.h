@@ -14,7 +14,7 @@
 @class SSDownload, SSDownloadStatus;
 
 @interface SBDownloadingIcon : SBIcon
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 <ISDownloadDelegate> 
 #endif
 {
@@ -35,13 +35,13 @@
 	SSDownloadStatus* _lastStatus;
 #endif
 }
-+(id)displayIdentifierForDownloadUniqueID:(id)downloadUniqueID;
-+(id)displayIdentifierForDownload:(id)download;
--(id)initWithDisplayIdentifier:(id)displayIdentifier;
++(NSString *)displayIdentifierForDownloadUniqueID:(id)downloadUniqueID;
++(NSString *)displayIdentifierForDownload:(id)download;
+-(id)initWithDisplayIdentifier:(NSString *)displayIdentifier;
 -(id)initWithDownload:(id)download;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)description;
--(void)setDisplayIdentifier:(id)identifier;
+-(void)setDisplayIdentifier:(NSString *)displayIdentifier;
 // inherited: -(id)icon;
 // inherited: -(id)modificationDate:(BOOL)date;
 // inherited: -(void)setDisplayedIcon:(id)icon;
@@ -69,7 +69,8 @@
 // inherited: -(id)uninstallAlertCancelTitle;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)reloadForStatusChange;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)_reloadIcon;
 -(void)_thumbnailAvailableNotification:(id)notification;
 #endif

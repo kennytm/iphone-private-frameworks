@@ -7,9 +7,11 @@
 
 #import "SBAlertItem.h"
 #import "SpringBoard-Structs.h"
+#import <Foundation/Foundation.h>
+
 #import <Availability2.h>
 
-@class NSString, NSTimer, NSMutableArray, UITable, NSDictionary;
+@class UITable;
 
 @interface SBWiFiAlertItem : SBAlertItem {
 	NSMutableArray* _networks;
@@ -33,7 +35,8 @@
 -(void)_setDelegateForAlert:(id)alert delegate:(id)delegate;
 -(void)_dismissCurrentChildAlert;
 -(void)childAlertDismissed:(id)dismissed;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)setChildAlert:(id)alert;
 #endif
 -(id)insertionsForNewNetworks:(id)newNetworks;

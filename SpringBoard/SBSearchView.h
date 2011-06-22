@@ -14,7 +14,8 @@
 @interface SBSearchView : UIView {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	SBRoundedCornersView* _roundedCornersView;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	SBRoundedCornerView* _roundedCornerView;
 #endif
 	UISearchBar* _searchBar;
@@ -36,7 +37,7 @@
 -(void)didMoveToWindow;
 -(void)setFrame:(CGRect)frame;
 -(void)layoutCornerView;
--(float)_footerHeight;
+-(CGFloat)_footerHeight;
 -(void)layoutFooterView;
 -(BOOL)isKeyboardVisible;
 -(void)setShowsKeyboard:(BOOL)keyboard animated:(BOOL)animated;
@@ -52,9 +53,9 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)setHidesEmptyTableFooter:(BOOL)footer;
 -(void)_resetContentViewTransform;
--(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
--(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration;
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 #endif
 @end
 

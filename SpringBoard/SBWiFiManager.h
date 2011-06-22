@@ -25,14 +25,14 @@
 	NSTimer* _signalStrengthTimer;
 	int _shouldPollSignalStrength;
 	BOOL _canPollSignalStrength;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	NSMutableDictionary* _securityDict;
 #endif
 	id _delegate;
 	unsigned _notificationID;
 	double _lastSignalStrengthUpdateTime;
 }
-+(id)sharedInstance;
++(SBWiFiManager *)sharedInstance;
 +(BOOL)hasWiFi;
 // inherited: -(void)dealloc;
 -(WiFiManagerClient*)_manager;
@@ -47,7 +47,7 @@
 -(void)_updateCurrentNetwork;
 -(BOOL)isAssociated;
 -(BOOL)_cachedIsAssociated;
--(id)currentNetworkName;
+-(NSString *)currentNetworkName;
 -(BOOL)powered;
 -(BOOL)wiFiEnabled;
 -(void)setWiFiEnabled:(BOOL)enabled;
@@ -61,7 +61,7 @@
 -(void)cancelPicker:(BOOL)picker;
 -(void)userChoseNetwork:(id)network;
 -(id)knownNetworks;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(BOOL)networkRequiresPassword:(id)password;
 #endif
 -(void)resetSettings;

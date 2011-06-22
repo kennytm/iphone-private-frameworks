@@ -41,7 +41,8 @@
 -(id)rolesForRoleDefinitions:(id)roleDefinitions;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(id)displayNameForInfoDictionary:(id)infoDictionary inBundle:(id)bundle atPath:(id)path;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(id)displayNameForInfoDictionary:(id)infoDictionary inBundle:(id)bundle;
 #endif
 -(id)widgetRoles;

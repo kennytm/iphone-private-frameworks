@@ -28,7 +28,8 @@
 -(void)_createCornerViewsIfNecessaryWithCornersFrame:(CGRect)cornersFrame;
 -(void)setUsesRoundedCorners:(BOOL)corners withCornersFrame:(CGRect)cornersFrame;
 -(id)_chromeStatusBarImageForInterfaceOrientation:(int)interfaceOrientation;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(id)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split;
 -(id)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface;
 #endif

@@ -9,7 +9,7 @@
 #import "SpringBoard-Structs.h"
 #import <Availability2.h>
 
-@class UIKeyboard, SBPasscodeField, SBDeviceLockKeypad, NSString, SBEmergencyCallView, UIImageView, TPLCDView, SBDeviceLockView;
+@class UIKeyboard, SBPasscodeField, SBDeviceLockKeypad, SBEmergencyCallView, TPLCDView, SBDeviceLockView;
 
 @interface SBSlidingAlertDisplay : SBAlertDisplay {
 	UIImageView* _backgroundView;
@@ -18,7 +18,8 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	UIView* _overlayView;
 	SBDeviceLockView* _deviceLockView;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	TPLCDView* _deviceLockStatusView;
 	SBDeviceLockKeypad* _deviceLockKeypad;
 	UIKeyboard* _deviceLockKeyboard;
@@ -131,7 +132,8 @@
 // inherited: -(void)willRotateToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 // inherited: -(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation duration:(double)duration;
 // inherited: -(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)_loadAlphanumericPIN;
 -(BOOL)alphanumericKeyboard;
 -(BOOL)fourDigitPasscode;

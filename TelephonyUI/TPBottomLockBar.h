@@ -27,7 +27,7 @@
 -(id)initWithFrame:(CGRect)frame knobImage:(id)image;
 -(id)initWithFrame:(CGRect)frame knobColor:(int)color;
 -(id)initForIncomingCallWithFrame:(CGRect)frame;
--(id)knob;
+-(TPLockKnobView *)knob;
 -(void)startAnimating;
 -(void)stopAnimating;
 -(BOOL)isAnimating;
@@ -42,9 +42,9 @@
 -(void)finishedCyclingLabelOut;
 -(void)cycleToLabelAtIndex:(int)index;
 -(void)setLabels:(id)labels;
--(id)labels;
--(void)setFontSize:(float)size;
--(float)fontSize;
+-(NSArray *)labels;
+-(void)setFontSize:(CGFloat)size;
+-(CGFloat)fontSize;
 -(void)knobDragged:(float)dragged;
 -(void)slideBack:(BOOL)back;
 -(void)relock;
@@ -53,16 +53,16 @@
 -(void)setDelegate:(id)delegate;
 -(void)setRepresentedObject:(id)object;
 -(id)representedObject;
--(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
--(float)knobTrackInsetLeft;
+-(BOOL)pointInside:(CGPoint)inside withEvent:(UIEvent *)event;
+-(CGFloat)knobTrackInsetLeft;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-+(float)defaultLabelFontSize;
++(CGFloat)defaultLabelFontSize;
 -(void)_adjustKnobOrigin;
 -(void)_adjustLabelOrigin;
 // inherited: -(void)setOrientation:(int)orientation;
--(float)knobTrackInsetRight;
+-(CGFloat)knobTrackInsetRight;
 -(BOOL)_canDrawContent;
--(id)hitTest:(CGPoint)test withEvent:(id)event;
+-(UIView *)hitTest:(CGPoint)test withEvent:(UIEvent *)event;
 #endif
 @end
 

@@ -203,7 +203,8 @@
 -(id)defaultImage:(BOOL*)image originalOrientation:(int*)orientation currentOrientation:(int*)orientation3;
 -(BOOL)isClassic;
 -(int)classicDefaultStatusBarMode;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(NSString*)pathForIcon;
 -(NSString*)pathForSmallIcon;
 -(id)spotlightIcons;

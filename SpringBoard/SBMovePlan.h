@@ -5,7 +5,7 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 #import <Availability2.h>
 
 @class SBIcon, SBIconList;
@@ -15,23 +15,25 @@
 	SBIconList* _source;
 	SBIconList* _destination;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-	int _index;
-#else
-	int _x;
-	int _y;
+	NSInteger _index;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+	NSInteger _x;
+	NSInteger _y;
 #endif
 }
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
--(id)initWithIcon:(id)icon index:(int)index source:(id)source destination:(id)destination;
--(int)index;
-#else
--(id)initWithIcon:(id)icon x:(int)x y:(int)y source:(id)source destination:(id)destination;
--(int)x;
--(int)y;
+-(id)initWithIcon:(SBIcon *)icon index:(NSInteger)index source:(SBIconList *)source destination:(SBIconList *)destination;
+-(NSInteger)index;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+-(id)initWithIcon:(SBIcon *)icon x:(NSInteger)x y:(NSInteger)y source:(SBIconList *)source destination:(SBIconList *)destination;
+-(NSInteger)x;
+-(NSInteger)y;
 #endif
 // inherited: -(void)dealloc;
--(id)destination;
--(id)source;
--(id)icon;
+-(SBIconList *)destination;
+-(SBIconList *)source;
+-(SBIcon *)icon;
 @end
 
