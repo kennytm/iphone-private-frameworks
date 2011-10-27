@@ -50,11 +50,11 @@
 -(id)_imageScaledToProportion:(CGFloat)proportion interpolationQuality:(CGInterpolationQuality)quality;
 @end
 
-@interface UIImage (UIImageDeprecated)
-+(id)imageNamed:(id)named inBundle:(id)bundle;
-+(id)imageAtPath:(id)path;
-+(void)removeImageNameFromCache:(id)cache;
--(id)initWithData:(id)data cache:(BOOL)cache;
+@interface UIImage (UIImageDeprecated2)
++(id)imageNamed:(NSString *)named inBundle:(NSBundle *)bundle;
++(id)imageAtPath:(NSString *)path;
++(void)removeImageNameFromCache:(NSString *)imageName;
+-(id)initWithData:(NSData *)data cache:(BOOL)cache;
 -(id)initWithImageRef:(CGImageRef)imageRef;
 -(CGImageRef)imageRef;
 -(void)compositeToRect:(CGRect)rect fromRect:(CGRect)rect2 operation:(int)operation fraction:(float)fraction;

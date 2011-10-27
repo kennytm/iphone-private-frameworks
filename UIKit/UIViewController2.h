@@ -88,7 +88,9 @@
 -(BOOL)_shouldUseFullScreenLayoutInWindow:(id)window parentViewController:(id)controller;
 -(BOOL)_reallyWantsFullScreenLayout;
 -(BOOL)isPerformingModalTransition;
--(id)presentedViewController;
+#ifndef __IPHONE_5_0
+-(UIViewController *)presentedViewController;
+#endif
 -(id)currentAction;
 -(void)_overlayPresentAnimationDidStop:(id)_overlayPresentAnimation finished:(id)finished context:(id)context;
 -(void)presentModalViewController:(id)controller fromBarButtonItem:(id)barButtonItem animated:(BOOL)animated;
