@@ -13,7 +13,7 @@
 
 @class UIColor, MPTVOutWindow, MPVideoBackgroundView, MPSwipableView, MPVideoView, UIView, UIProgressIndicator, UIAlertView;
 
-@interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoTransferViewController, UIModalViewDelegate> {
+@interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoTransferViewController, UIAlertViewDelegate> {
 	MPVideoBackgroundView* _backgroundView;
 	MPSwipableView* _backstopView;
 	unsigned _desiredParts;
