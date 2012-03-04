@@ -5,16 +5,10 @@
  * Source: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-#import <Foundation/NSObject.h>
-#import "NSCoding.h"
+#import <MediaPlayer/MPMediaItem.h>
 #import "MediaPlayer-Structs.h"
 
-@class MPMediaItemInternal, NSArray;
-
-@interface MPMediaItem : NSObject <NSCoding> {
-@private
-	MPMediaItemInternal* _internal;
-}
+@interface MPMediaItem ()
 @property(readonly, assign, nonatomic) NSArray* chapters;
 +(BOOL)canFilterByProperty:(id)property;
 +(void)_createFilterableDictionary;

@@ -285,7 +285,7 @@
 #import "EmojiPageControl.h"
 #import "UIDOMHTMLOptGroupCell.h"
 #import "UIToolbar2.h"
-#import "UIActionSheet.h"
+#import "UIActionSheet2.h"
 #import "CandWord.h"
 #import "UIRemoteSheetInfo.h"
 #import "UIViewAnimation.h"

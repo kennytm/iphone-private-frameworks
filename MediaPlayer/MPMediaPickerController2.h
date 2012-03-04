@@ -5,22 +5,13 @@
  * Source: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-#import <UIKit/UIViewController.h>
+#import <MediaPlayer/MPMediaPickerController.h>
 
-@class NSString, MPMediaPickerControllerInternal;
+@class MPMediaPickerControllerInternal;
 @protocol MPMediaPickerControllerDelegate;
 
-@interface MPMediaPickerController : UIViewController {
-@private
-	MPMediaPickerControllerInternal* _internal;
-}
-@property(copy, nonatomic) NSString* prompt;
-@property(assign, nonatomic) BOOL allowsPickingMultipleItems;
-@property(assign, nonatomic) id<MPMediaPickerControllerDelegate> delegate;
-@property(readonly, assign, nonatomic) int mediaTypes;
+@interface MPMediaPickerController ()
 +(void)preheatMediaPicker;
--(id)init;
--(id)initWithMediaTypes:(int)mediaTypes;
 -(void)dealloc;
 -(void)loadView;
 -(void)viewDidUnload;
