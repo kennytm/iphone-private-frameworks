@@ -95,8 +95,6 @@
 -(void)willMoveToSuperview:(id)superview;
 -(void)didMoveToSuperview;
 -(void)layoutSubviews;
--(void)willTransitionToState:(unsigned)state;
--(void)didTransitionToState:(unsigned)state;
 -(CGRect)contentRectForState:(unsigned)state;
 -(void)setBackgroundColor:(id)color;
 -(id)backgroundColor;

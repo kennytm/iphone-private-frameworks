@@ -9,7 +9,7 @@
 #import <UIKit/UIResponder.h>
 #import <Availability2.h>
 
-@class UINavigationItem, UITabBarItem, NSBundle, NSHashTable, UINavigationController, UITabBarController, UITransitionView, NSArray, UIView, UIBarButtonItem, NSString, UISearchDisplayController;
+@class UINavigationItem, UITabBarItem, NSBundle, NSHashTable, UINavigationController, UITabBarController, UITransitionView, NSArray, UIView, UIBarButtonItem, NSString, UISearchDisplayController, UIDropShadowView;
 
 @interface UIViewController ()
 +(BOOL)doesOverrideViewControllerMethod:(SEL)method;

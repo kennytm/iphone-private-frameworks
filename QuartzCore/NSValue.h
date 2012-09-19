@@ -8,11 +8,7 @@
 #import "QuartzCore-Structs.h"
 #import <Foundation/NSValue.h>
 
-
-@interface NSValue (CATransform3DAdditions)
-+(id)valueWithCATransform3D:(CATransform3D)catransform3D;
--(CATransform3D)CATransform3DValue;
-@end
+#import <QuartzCore/CATransform3D.h>
 
 @interface NSValue (CARenderValue)
 -(Object*)CA_copyRenderValue;
