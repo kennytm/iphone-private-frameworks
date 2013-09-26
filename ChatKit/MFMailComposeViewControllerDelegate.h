@@ -5,9 +5,13 @@
 
 #import "NSObject.h"
 
+#ifdef __IPHONE_3_0
+#import <MessageUI/MessageUI.h>
+#else
 
 @protocol MFMailComposeViewControllerDelegate <NSObject>
 @optional
--(void)mailComposeController:(id)controller didFinishWithResult:(int)result error:(id)error;
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(int)result error:(NSError *)error;
 @end
 
+#endif
