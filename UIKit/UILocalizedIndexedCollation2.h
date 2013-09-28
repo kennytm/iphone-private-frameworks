@@ -12,8 +12,6 @@
 @interface UILocalizedIndexedCollation ()
 +(id)currentCollation;
 -(void)dealloc;
--(int)sectionForSectionIndexTitleAtIndex:(int)index;
--(int)sectionForObject:(id)object collationStringSelector:(SEL)selector;
 @end
 
 @interface UILocalizedIndexedCollation (UIKitInternal)

@@ -23,7 +23,6 @@
 -(void)endTrackingAt:(CGPoint)at previous:(CGPoint)previous withEvent:(GSEventRef)event;
 -(void)endTrackingWithTouch:(id)touch withEvent:(id)event;
 -(void)updateCurrentPageDisplay;
--(CGSize)sizeForNumberOfPages:(int)pages;
 @end
 
 @interface UIPageControl (Internal)

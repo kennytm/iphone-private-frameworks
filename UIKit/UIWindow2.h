@@ -86,7 +86,7 @@
 -(int)interfaceOrientation;
 -(void)synchronizeDrawingWithID:(int)id;
 -(void)synchronizeDrawingWithID:(int)id count:(unsigned)count;
--(void)handleStatusBarChangeFromHeight:(float)height toHeight:(float)height2;
+-(void)handleStatusBarChangeFromHeight:(CGFloat)fromHeight toHeight:(CGFloat)toHeight;
 -(int)windowOutput;
 -(int)bitsPerComponent;
 -(void)setDelegate:(id)delegate;

@@ -66,7 +66,7 @@
 -(BOOL)cancelMouseTracking;
 -(void)cancelNextContentTouchEnded;
 -(float)_zoomRubberBandScaleForScale:(float)scale;
--(void)setZoomScale:(float)scale animated:(BOOL)animated;
+-(void)setZoomScale:(CGFloat)scale animated:(BOOL)animated;
 -(void)zoomToRect:(CGRect)rect animated:(BOOL)animated;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_centerContentIfNecessary;

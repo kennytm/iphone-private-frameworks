@@ -84,16 +84,16 @@
 @property(copy, nonatomic) NSString* title;
 @property(assign, nonatomic) id<UIModalViewDelegate> delegate;
 -(id)initWithFrame:(CGRect)frame;
--(id)initWithTitle:(id)title message:(id)message delegate:(id)delegate defaultButton:(id)button cancelButton:(id)button5 otherButtons:(id)buttons;
--(id)_initWithTelephoneNumber:(id)telephoneNumber buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id<UIModalViewDelegate>)delegate defaultButton:(id)defaultButton cancelButton:(id)cancelButton otherButtons:(NSArray *)buttons;
+-(id)_initWithTelephoneNumber:(id)telephoneNumber buttons:(NSArray *)buttons defaultButtonIndex:(NSInteger)index delegate:(id<UIModalViewDelegate>)delegate context:(id)context;
 -(void)dealloc;
--(int)addButtonWithTitle:(id)title;
--(id)buttonTitleAtIndex:(int)index;
--(void)setDefaultButtonIndex:(int)index;
--(int)defaultButtonIndex;
--(void)_setFirstOtherButtonIndex:(int)index;
--(int)firstOtherButtonIndex;
--(void)dismissWithClickedButtonIndex:(int)clickedButtonIndex animated:(BOOL)animated;
+-(NSInteger)addButtonWithTitle:(NSString *)title;
+-(NSString *)buttonTitleAtIndex:(NSInteger)index;
+-(void)setDefaultButtonIndex:(NSInteger)index;
+-(NSInteger)defaultButtonIndex;
+-(void)_setFirstOtherButtonIndex:(NSInteger)index;
+-(NSInteger)firstOtherButtonIndex;
+-(void)dismissWithClickedButtonIndex:(NSInteger)clickedButtonIndex animated:(BOOL)animated;
 @end
 
 @interface UIModalView (Private)

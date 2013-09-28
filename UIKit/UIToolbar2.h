@@ -18,8 +18,10 @@
 -(void)_updateOpacity;
 -(void)setMode:(int)mode;
 -(int)mode;
+#ifndef __IPHONE_7_0
 -(void)setDelegate:(id)delegate;
 -(id)delegate;
+#endif
 -(void)setSelectedItem:(id)item;
 -(id)selectedItem;
 -(void)_sendAction:(id)action withEvent:(id)event;

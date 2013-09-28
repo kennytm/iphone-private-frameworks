@@ -13,12 +13,12 @@
 @protocol UIAlertViewDelegate;
 
 @interface UIAlertView ()
--(id)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(id)initWithTitle:(NSString *)title buttons:(NSArray *)buttons defaultButtonIndex:(NSInteger)index delegate:(id<UIAlertViewDelegate>)delegate context:(id)context;
 -(void)dealloc;
--(void)setDefaultButtonIndex:(int)index;
+-(void)setDefaultButtonIndex:(NSInteger)index;
 -(int)defaultButtonIndex;
--(void)_setFirstOtherButtonIndex:(int)index;
--(void)dismissWithClickedButtonIndex:(int)clickedButtonIndex animated:(BOOL)animated;
+-(void)_setFirstOtherButtonIndex:(NSInteger)index;
+-(void)dismissWithClickedButtonIndex:(NSInteger)clickedButtonIndex animated:(BOOL)animated;
 -(id)initWithFrame:(CGRect)frame;
 -(void)showWithAnimationType:(int)animationType;
 -(void)show;

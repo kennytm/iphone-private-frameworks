@@ -228,9 +228,9 @@
 -(void)_menuDismissed:(id)dismissed __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 // inherited: -(BOOL)canPerformAction:(SEL)action withSender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)_performAction:(SEL)action sender:(id)sender __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)cut:(id)cut __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)copy:(id)copy __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(void)paste:(id)paste __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
+-(void)cut:(id)cut __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
+-(void)copy:(id)copy __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
+-(void)paste:(id)paste __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_updateAndCacheBackgroundColorForHighlightIgnoringSelection:(BOOL)highlightIgnoringSelection;
 -(void)_updateContentClip;

@@ -19,7 +19,9 @@
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(CGSize)textSize;
--(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(int)lines;
+#ifndef __IPHONE_7_0
+-(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)lines;
+#endif
 -(void)_invalidateTextSize;
 -(void)setActualFontSize:(float)size;
 -(float)actualFontSize;

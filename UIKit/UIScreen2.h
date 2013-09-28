@@ -19,8 +19,10 @@
 // -(void)observeValueForKeyPath:(id)keyPath ofObject:(id)object change:(id)change context:(void*)context;
 -(void)_setupBounds;
 -(CGRect)_realDisplayBounds;
--(float)scale;
--(void)setScale:(float)scale;
+#ifndef __IPHONE_7_0
+-(CGFloat)scale;
+#endif
+-(void)setScale:(CGFloat)scale;
 -(float)_rotation;
 -(int)bitsPerComponent;
 -(void)setBitsPerComponent:(int)component;
