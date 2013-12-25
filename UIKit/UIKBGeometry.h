@@ -31,7 +31,7 @@
 @property(assign, nonatomic, setter=setPaddingLeft:) UIKBLength paddingLeft;
 @property(assign, nonatomic, setter=setPaddingBottom:) UIKBLength paddingBottom;
 @property(assign, nonatomic, setter=setPaddingRight:) UIKBLength paddingRight;
-@property(assign, nonatomic) BOOL explicit;
+//@property(assign, nonatomic) BOOL explicit;
 +(UIKBGeometry*)geometry;
 +(UIKBGeometry*)geometryWithRect:(CGRect)rect;
 //-(id)init;

@@ -19,7 +19,7 @@
 }
 @property(copy, nonatomic) NSString* name;
 @property(readonly, assign, nonatomic) NSArray* list;
-@property(assign, nonatomic) BOOL explicit;
+//@property(assign, nonatomic) BOOL explicit;
 @property(readonly, assign, nonatomic) unsigned count;
 @property(readonly, assign, nonatomic) NSArray* names;
 //-(id)init;

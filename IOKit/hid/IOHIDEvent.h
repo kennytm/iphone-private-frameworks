@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef IOKIT_HID_IOHIDEVENT_H
 #define IOKIT_HID_IOHIDEVENT_H 1
 
-#include <libkern/OSTypes.h>
+//#include <libkern/OSTypes.h>
 #include <IOKit/IOTypes.h>
 #include <IOKit/hid/IOHIDEventTypes.h>
 #include <IOKit/hid/IOHIDEventData.h>
