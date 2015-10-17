@@ -37,5 +37,5 @@ enum {
 @property(readonly) BOOL horizontalOverflow;
 @property(readonly) BOOL verticalOverflow;
 
-- (voinstancetype)initOverflowEvent:(unsigned short)orient horizontalOverflow:(BOOL)horizontalOverflow verticalOverflow:(BOOL)verticalOverflow;
+- (void)initOverflowEvent:(unsigned short)orient horizontalOverflow:(BOOL)horizontalOverflow verticalOverflow:(BOOL)verticalOverflow;
 @end

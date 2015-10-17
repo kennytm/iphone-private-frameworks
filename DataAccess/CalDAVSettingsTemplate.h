@@ -45,7 +45,7 @@
 // inherited: -(BOOL)isEqual:(id)equal;
 -(int)compare:(id)compare;
 -(BOOL)isDomainInAliases:(id)aliases;
--(voinstancetype)initAccount:(id)account;
+-(void)initAccount:(id)account;
 -(void)setDomain:(id)domain forAccount:(id)account;
 -(void)setUsername:(id)username forAccount:(id)account;
 -(void)setUseSSL:(BOOL)ssl forAccount:(id)account;

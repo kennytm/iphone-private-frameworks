@@ -16,7 +16,7 @@
 	BOOL _stopped;
 }
 +(BOOL)taskIs64Bit:(unsigned)bit;
--(voinstancetype)initMemoryRegions;
+-(void)initMemoryRegions;
 -(void)freeMemoryRegions;
 -(instancetype)initWithTask:(unsigned)task;
 -(void)flushMemoryCache;

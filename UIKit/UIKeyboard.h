@@ -26,7 +26,7 @@
 }
 // in a protocol: @property(assign, nonatomic, getter=isMinimized) BOOL minimized;
 +(UIKeyboard*)activeKeyboard;
-+(voinstancetype)initImplementationNow;
++(void)initImplementationNow;
 +(void)removeAllDynamicDictionaries;
 +(CGSize)defaultSize;
 +(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;

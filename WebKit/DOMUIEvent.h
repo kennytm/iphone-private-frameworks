@@ -34,9 +34,9 @@
 @property(readonly, retain) DOMAbstractView *view;
 @property(readonly) int detail;
 
-- (voinstancetype)initUIEvent:(NSString *)type canBubble:(BOOL)canBubble cancelable:(BOOL)cancelable view:(DOMAbstractView *)view detail:(int)detail;
+- (void)initUIEvent:(NSString *)type canBubble:(BOOL)canBubble cancelable:(BOOL)cancelable view:(DOMAbstractView *)view detail:(int)detail;
 @end
 
 @interface DOMUIEvent (DOMUIEventDeprecated)
-- (voinstancetype)initUIEvent:(NSString *)type :(BOOL)canBubble :(BOOL)cancelable :(DOMAbstractView *)view :(int)detail DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
+- (void)initUIEvent:(NSString *)type :(BOOL)canBubble :(BOOL)cancelable :(DOMAbstractView *)view :(int)detail DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
 @end

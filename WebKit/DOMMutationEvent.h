@@ -42,9 +42,9 @@ enum {
 @property(readonly, copy) NSString *attrName;
 @property(readonly) unsigned short attrChange;
 
-- (voinstancetype)initMutationEvent:(NSString *)type canBubble:(BOOL)canBubble cancelable:(BOOL)cancelable relatedNode:(DOMNode *)relatedNode prevValue:(NSString *)prevValue newValue:(NSString *)newValue attrName:(NSString *)attrName attrChange:(unsigned short)attrChange;
+- (void)initMutationEvent:(NSString *)type canBubble:(BOOL)canBubble cancelable:(BOOL)cancelable relatedNode:(DOMNode *)relatedNode prevValue:(NSString *)prevValue newValue:(NSString *)newValue attrName:(NSString *)attrName attrChange:(unsigned short)attrChange;
 @end
 
 @interface DOMMutationEvent (DOMMutationEventDeprecated)
-- (voinstancetype)initMutationEvent:(NSString *)type :(BOOL)canBubble :(BOOL)cancelable :(DOMNode *)relatedNode :(NSString *)prevValue :(NSString *)newValue :(NSString *)attrName :(unsigned short)attrChange DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
+- (void)initMutationEvent:(NSString *)type :(BOOL)canBubble :(BOOL)cancelable :(DOMNode *)relatedNode :(NSString *)prevValue :(NSString *)newValue :(NSString *)attrName :(unsigned short)attrChange DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
 @end

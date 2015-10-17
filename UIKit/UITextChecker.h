@@ -17,9 +17,9 @@
 -(id)_nameOfDictionaryForDocumentTag:(int)documentTag;
 -(void)_setLanguageDictionaryName:(id)name;
 -(void)_setDocumentDictionaryName:(id)name;
--(voinstancetype)initUserAddressBook;
--(voinstancetype)initUserDictionaries;
--(voinstancetype)initGlobals;
+-(void)initUserAddressBook;
+-(void)initUserDictionaries;
+-(void)initGlobals;
 // inherited: -(instancetype)init;
 -(id)_initWithAsynchronousLoading:(BOOL)asynchronousLoading;
 -(BOOL)_doneLoading;

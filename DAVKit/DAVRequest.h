@@ -65,7 +65,7 @@
 -(BOOL)isNegoHeader:(id)header;
 -(BOOL)initAuthGSS;
 -(BOOL)stepAuthGSS:(id)gss;
--(voinstancetype)initBeforeDispatch;
+-(void)initBeforeDispatch;
 -(void)dispatch;
 -(id)httpStatus;
 -(int)httpStatusCode;
