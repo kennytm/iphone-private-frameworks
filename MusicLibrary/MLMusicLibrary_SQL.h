@@ -40,7 +40,7 @@
 -(void)noteSharedRecordStoreChangedToStoreRef:(CPRecordStoreRef)storeRef;
 -(void)jetsamMemoryImpl;
 -(void)memoryLevelDidChange;
--(id)initWithBasePath:(id)basePath;
+-(instancetype)initWithBasePath:(id)basePath;
 -(void)dealloc;
 -(void)_loadPurchaseData;
 -(void)postInitSetup;

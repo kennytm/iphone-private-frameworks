@@ -19,7 +19,7 @@
 @property(retain, nonatomic) NSFileHandle* fileHandle;
 @property(readonly, assign, nonatomic) BOOL isEnabledByDefault;
 +(id)instance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)logString:(id)string;
 -(void)logStringWithFormat:(id)format;

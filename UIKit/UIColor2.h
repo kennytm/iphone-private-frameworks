@@ -32,7 +32,7 @@
 +(UIColor*)textFieldAtomPurpleColor;
 +(UIColor*)infoTextOverPinStripeTextColor;
 -(Class)classForCoder;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)set;
 -(void)setFill;

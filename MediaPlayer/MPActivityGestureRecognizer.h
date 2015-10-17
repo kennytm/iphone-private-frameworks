@@ -10,7 +10,7 @@
 
 @interface MPActivityGestureRecognizer : UIGestureRecognizer {
 }
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;
 -(void)touchesCancelled:(id)cancelled withEvent:(id)event;

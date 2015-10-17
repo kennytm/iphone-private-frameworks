@@ -27,7 +27,7 @@
 -(BOOL)_setupValuesWithCount:(int)count dataProvider:(id)provider isRefresh:(BOOL)refresh;
 -(BOOL)_setupGapIndexesWithCount:(int)count dataProvider:(id)provider isRefresh:(BOOL)refresh;
 -(BOOL)_setupWithDataProvider:(id)dataProvider valueIsSingleton:(BOOL)singleton singletonValue:(float)value isRefresh:(BOOL)refresh;
--(id)init;
+-(instancetype)init;
 -(id)copyWithZone:(NSZone*)zone;
 -(void)dealloc;
 -(BOOL)refreshWithDataProvider:(id)dataProvider singleValue:(float)value;

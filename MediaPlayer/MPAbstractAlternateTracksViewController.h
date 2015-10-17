@@ -12,7 +12,7 @@
 	unsigned _selectedTracks[2];
 	unsigned _previousTracks[2];
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)_alternateTypesChangedNotification:(id)notification;
 -(void)reloadData;

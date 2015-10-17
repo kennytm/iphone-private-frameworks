@@ -15,7 +15,7 @@
 	id _context;
 	int _currentIndex;
 }
--(id)initWithObserver:(id)observer times:(id)times context:(id)context currentIndex:(int)index;
+-(instancetype)initWithObserver:(id)observer times:(id)times context:(id)context currentIndex:(int)index;
 -(void)dealloc;
 -(BOOL)gotoTime:(double)time;
 -(double)nextInterestingTime;

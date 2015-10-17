@@ -44,8 +44,8 @@
 	unsigned _unused : 3;
 }
 +(BOOL)allowLayeredFillForKnob;
--(id)initWithFrame:(CGRect)frame maxTrackWidth:(float)width showTimes:(BOOL)times knobStyle:(int)style;
--(id)initWithFrame:(CGRect)frame maxTrackWidth:(float)width showTimes:(BOOL)times showKnob:(BOOL)knob;
+-(instancetype)initWithFrame:(CGRect)frame maxTrackWidth:(float)width showTimes:(BOOL)times knobStyle:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame maxTrackWidth:(float)width showTimes:(BOOL)times showKnob:(BOOL)knob;
 // inherited: -(id)createSliderKnobView;
 -(void)setPinTimeToOutsideEdges:(BOOL)outsideEdges;
 -(void)setShowTimeCenteredInAvailableArea:(BOOL)availableArea;

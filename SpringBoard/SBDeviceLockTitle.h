@@ -12,7 +12,7 @@
 @property(retain, nonatomic) NSString* subtitle;
 @property(retain, nonatomic) NSString* title;
 @property(assign, nonatomic, getter=isHighlighted) BOOL highlighted;
--(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+-(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 -(id)_protectedInitWithStyle:(int)style interfaceOrientation:(int)orientation;
 -(void)blinkSubtitle;
 @end

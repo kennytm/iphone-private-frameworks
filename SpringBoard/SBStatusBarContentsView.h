@@ -30,7 +30,7 @@
 	SBStatusBarCallForwardingView* _forwardingView;
 }
 +(float)contentAlphaForMode:(int)mode;
--(id)initWithStatusBar:(id)statusBar mode:(int)mode;
+-(instancetype)initWithStatusBar:(id)statusBar mode:(int)mode;
 // inherited: -(void)dealloc;
 -(SBStatusBar*)statusBar;
 -(void)buildContentViews;

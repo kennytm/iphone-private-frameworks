@@ -12,8 +12,8 @@
 }
 +(id)postRequestWithURL:(id)url data:(id)data;
 +(id)postRequestWithSession:(id)session path:(id)path data:(id)data;
--(id)initPostWithURL:(id)url data:(id)data;
--(id)initPostWithSession:(id)session path:(id)path data:(id)data;
+-(instancetype)initPostWithURL:(id)url data:(id)data;
+-(instancetype)initPostWithSession:(id)session path:(id)path data:(id)data;
 -(id)data;
 @end
 

@@ -18,7 +18,7 @@
 	BOOL _haveTweakedCcIvar;
 }
 // inherited: -(void)dealloc;
--(id)initWithDAMailMessage:(id)damailMessage mailbox:(id)mailbox;
+-(instancetype)initWithDAMailMessage:(id)damailMessage mailbox:(id)mailbox;
 // inherited: -(id)remoteID;
 // inherited: -(id)mailbox;
 // inherited: -(id)headers;

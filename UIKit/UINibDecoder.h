@@ -71,8 +71,8 @@ __attribute__((visibility("hidden")))
 @property(assign) id delegate;
 +(id)unarchiveObjectWithData:(id)data;
 +(id)unarchiveObjectWithFile:(id)file;
--(id)initForReadingWithData:(id)data error:(id*)error;
--(id)initForReadingWithData:(id)data;
+-(instancetype)initForReadingWithData:(id)data error:(id*)error;
+-(instancetype)initForReadingWithData:(id)data;
 -(void)dealloc;
 -(BOOL)validateAndIndexData:(id)data error:(id*)error;
 -(BOOL)validateAndIndexClasses:(const void*)classes length:(unsigned long)length;

@@ -37,8 +37,8 @@
 }
 +(NSString *)displayIdentifierForDownloadUniqueID:(id)downloadUniqueID;
 +(NSString *)displayIdentifierForDownload:(id)download;
--(id)initWithDisplayIdentifier:(NSString *)displayIdentifier;
--(id)initWithDownload:(id)download;
+-(instancetype)initWithDisplayIdentifier:(NSString *)displayIdentifier;
+-(instancetype)initWithDownload:(id)download;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)description;
 -(void)setDisplayIdentifier:(NSString *)displayIdentifier;

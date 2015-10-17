@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 	Object* _object;
 }
 +(id)objectWithRenderObject:(Object*)renderObject;
--(id)initWithRenderObject:(Object*)renderObject;
+-(instancetype)initWithRenderObject:(Object*)renderObject;
 -(Object*)object;
 -(Object*)CA_copyRenderValue;
 // inherited: -(void)dealloc;

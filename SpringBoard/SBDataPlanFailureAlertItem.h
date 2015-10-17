@@ -12,7 +12,7 @@
 @property(assign, nonatomic, getter=isNewAccount) BOOL newAccount;
 // inherited: +(id)laterButtonTitle;
 // inherited: +(id)nowButtonTitle;
--(id)initWithAccountURL:(NSURL *)accountURL carrierName:(NSString *)name newAccount:(BOOL)account;
+-(instancetype)initWithAccountURL:(NSURL *)accountURL carrierName:(NSString *)name newAccount:(BOOL)account;
 // inherited: -(void)dealloc;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 @end

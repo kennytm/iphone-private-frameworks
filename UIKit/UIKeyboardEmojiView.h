@@ -20,7 +20,7 @@
 @property(retain) UIView* pressedView;
 +(void)recycleEmojiView:(id)view;
 +(id)emojiViewForEmoji:(id)emoji withFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame emoji:(id)emoji;
+-(instancetype)initWithFrame:(CGRect)frame emoji:(id)emoji;
 -(void)dealloc;
 -(id)createAndInstallKeyPopupView;
 -(void)uninstallPopup;

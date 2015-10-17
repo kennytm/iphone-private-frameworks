@@ -16,7 +16,7 @@
 }
 @property(readonly, assign, nonatomic) MLPredicate* MLPredicate;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)description;
 @end

@@ -12,7 +12,7 @@
 	DOMHTMLOptGroupElement* _node;
 }
 @property(retain, nonatomic) DOMHTMLOptGroupElement* _node;
--(id)initWithHTMLOptGroupNode:(id)htmloptGroupNode;
+-(instancetype)initWithHTMLOptGroupNode:(id)htmloptGroupNode;
 -(id)node;
 -(BOOL)selected;
 -(void)setSelected:(BOOL)selected;

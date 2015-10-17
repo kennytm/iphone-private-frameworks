@@ -29,7 +29,7 @@
 -(void)cellClicked:(id)clicked;
 // inherited: -(void)layoutSubviews;
 // inherited: -(id)titleTextLabel;
--(id)initWithFrame:(CGRect)frame specifier:(id)specifier;
+-(instancetype)initWithFrame:(CGRect)frame specifier:(id)specifier;
 // inherited: -(void)dealloc;
 -(void)willMoveToSuperview:(id)superview;
 @end

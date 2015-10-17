@@ -14,7 +14,7 @@
 	id _target;
 	SEL _action;
 }
--(id)initWithAlertID:(int)alertID sheet:(id)sheet target:(id)target action:(SEL)action;
+-(instancetype)initWithAlertID:(int)alertID sheet:(id)sheet target:(id)target action:(SEL)action;
 -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 @end

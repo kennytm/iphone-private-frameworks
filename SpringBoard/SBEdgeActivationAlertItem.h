@@ -14,7 +14,7 @@
 	NSString* _reason;
 	BOOL _suggestWiFi;
 }
--(id)initWithErrorCode:(int)errorCode reason:(id)reason suggestWiFi:(BOOL)fi;
+-(instancetype)initWithErrorCode:(int)errorCode reason:(id)reason suggestWiFi:(BOOL)fi;
 // inherited: -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;

@@ -26,7 +26,7 @@
 #endif
 	BOOL _playKeyboardClicks;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)hiddenFromView;
 -(void)willBecomeVisible;
@@ -43,7 +43,7 @@
 +(void)flushPressedImage;
 +(CGSize)defaultSize;
 // inherited: -(id)_pressedImage;
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 #endif
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)setPlaysKeyboardClicks:(BOOL)clicks;

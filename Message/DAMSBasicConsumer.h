@@ -19,7 +19,7 @@
 }
 @property(retain, nonatomic) ActivityMonitor* monitor;
 @property(retain, nonatomic) MFError* error;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 @end
 

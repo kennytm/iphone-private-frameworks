@@ -14,7 +14,7 @@
 @private
 	UIWindow* _window;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(unsigned)contextId;
 @end

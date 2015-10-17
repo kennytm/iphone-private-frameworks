@@ -12,8 +12,8 @@
 
 @interface UIDatePicker ()
 -(void)_insertPickerView;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(CGSize)sizeThatFits:(CGSize)fits;

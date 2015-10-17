@@ -85,7 +85,7 @@
 -(void)getOptionalFieldState:(XXStruct_mj3sZD*)state;
 -(void)_layoutSubviews:(BOOL)subviews changingView:(id)view toSize:(CGSize)size;
 -(void)_layoutSubviews:(BOOL)subviews;
--(id)initWithFrame:(CGRect)frame navigationItem:(UINavigationItem*)item delegate:(id)delegate;
+-(instancetype)initWithFrame:(CGRect)frame navigationItem:(UINavigationItem*)item delegate:(id)delegate;
 -(id)keyboard;
 -(id)bottomView;
 // inherited: -(void)dealloc;

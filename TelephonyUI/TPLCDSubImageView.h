@@ -13,7 +13,7 @@
 @interface TPLCDSubImageView : UIView {
 	UIImage* _image;
 }
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 -(void)setImage:(id)image;
 -(id)image;
 -(void)drawRect:(CGRect)rect;

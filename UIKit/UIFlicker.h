@@ -21,7 +21,7 @@
 -(void)_mouseDraggedMemberListTest;
 -(void)_mouseUpMemberListTest;
 -(void)_throwMemberListTest;
--(id)init;
+-(instancetype)init;
 -(CGPoint)offset;
 -(void)setOffset:(CGPoint)offset;
 -(void)setTarget:(id)target;

@@ -25,7 +25,7 @@
 }
 +(void)loadImages;
 +(CGSize)controlSize;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_checkHeadphonesPresent;
 -(void)setMode:(int)mode;
 -(void)setVolume:(float)volume mode:(int)mode;

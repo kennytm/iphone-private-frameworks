@@ -17,7 +17,7 @@
 	SBPowerDownController* _powerDownController;
 	NSTimer* _autoDismissTimer;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)cancelAutoDismissTimer;
 -(void)resetAutoDismissTimer;

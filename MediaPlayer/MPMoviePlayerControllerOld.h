@@ -20,7 +20,7 @@
 +(void)_setPlaybackInProgress:(BOOL)progress;
 +(BOOL)_playbackInProgress;
 -(void)dealloc;
--(id)initWithContentURL:(id)contentURL;
+-(instancetype)initWithContentURL:(id)contentURL;
 -(id)contentURL;
 -(void)play;
 -(void)stop;

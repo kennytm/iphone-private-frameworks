@@ -19,6 +19,6 @@ __attribute__((visibility("hidden")))
 -(unsigned)hash;
 -(BOOL)isEqual:(id)equal;
 -(void)encodeWithCoder:(id)coder;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 @end
 

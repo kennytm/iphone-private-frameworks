@@ -18,7 +18,7 @@
 	BOOL _debounceVolumeRepeat;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setNowPlayingInfo:(id)info;
 -(BOOL)hasTrack;

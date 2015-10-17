@@ -13,7 +13,7 @@
 @interface _DAVGetToFileReader : NSObject <DAVResponseBodyReader> {
 	NSFileHandle* _fileHandle;
 }
--(id)initWithFileHandle:(id)fileHandle;
+-(instancetype)initWithFileHandle:(id)fileHandle;
 // inherited: -(void)dealloc;
 // in a protocol: -(BOOL)request:(id)request acceptResponseWithHTTPStatusCode:(int)httpstatusCode;
 // in a protocol: -(void)request:(id)request readResponseBody:(id)body;

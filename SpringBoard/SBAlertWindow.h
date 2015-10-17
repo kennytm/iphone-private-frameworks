@@ -25,7 +25,7 @@
 	NSMutableDictionary* _alertToDisplayMap;
 }
 // inherited: +(CGRect)constrainFrameToScreen:(CGRect)screen;
-// inherited: -(id)initWithContentRect:(CGRect)contentRect;
+// inherited: -(instancetype)initWithContentRect:(CGRect)contentRect;
 // inherited: -(void)dealloc;
 -(BOOL)isOpaque;
 -(id)stackedDisplayForAlert:(id)alert;

@@ -39,7 +39,7 @@
 @property(assign, nonatomic) BOOL requiresIntegralScreenFrame;
 @property(readonly, assign, nonatomic) BOOL canChangeScaleMode;
 @property(assign, nonatomic) CGSize subtitlesPadding;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)moviePath;
 -(void)prepareAVControllerQueue;

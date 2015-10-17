@@ -84,7 +84,7 @@
 +(NSString*)snapshotsDirectory;
 +(void)flushLaunchAlertsOfType:(int)type;
 +(void)userElapsedCPUTime:(NSTimeInterval*)time systemElapsedCPUTime:(NSTimeInterval*)time2 idleElapsedCPUTime:(NSTimeInterval*)time3;
--(id)initWithBundleIdentifier:(NSString*)bundleIdentifier roleIdentifier:(NSString*)identifier path:(NSString*)path bundle:(id)bundle infoDictionary:(NSDictionary*)dictionary isSystemApplication:(BOOL)application signerIdentity:(id)identity provisioningProfileValidated:(BOOL)validated;
+-(instancetype)initWithBundleIdentifier:(NSString*)bundleIdentifier roleIdentifier:(NSString*)identifier path:(NSString*)path bundle:(id)bundle infoDictionary:(NSDictionary*)dictionary isSystemApplication:(BOOL)application signerIdentity:(id)identity provisioningProfileValidated:(BOOL)validated;
 -(void)_watchdogFired;
 -(void)_watchdogFiredFired;
 -(void)_startWatchdogTimerType:(int)type;

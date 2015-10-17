@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 	unsigned* _nameCookieIndexMap;
 }
 +(unsigned**)_chapterDataCookieIndexMapForProperty:(int)property ofChapterTOC:(id)chapterTOC;
--(id)initWithChapterDataRef:(ChapterData*)chapterDataRef track:(id)track;
+-(instancetype)initWithChapterDataRef:(ChapterData*)chapterDataRef track:(id)track;
 -(ChapterData*)chapterDataRef;
 -(void)dealloc;
 -(unsigned)countOfChapters;

@@ -11,7 +11,7 @@
 @interface UITabBarBadgeBackground : UIView {
 	UIImage* _image;
 }
--(id)initWithImage:(id)image;
+-(instancetype)initWithImage:(id)image;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

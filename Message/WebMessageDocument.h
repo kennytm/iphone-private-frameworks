@@ -22,10 +22,10 @@
 	BOOL _messageIsFromEntourage;
 }
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
--(id)initWithMimeBody:(id)mimeBody;
--(id)initWithMimePart:(id)mimePart;
--(id)initWithMimePart:(id)mimePart htmlData:(id)data encoding:(unsigned long)encoding;
+// inherited: -(instancetype)init;
+-(instancetype)initWithMimeBody:(id)mimeBody;
+-(instancetype)initWithMimePart:(id)mimePart;
+-(instancetype)initWithMimePart:(id)mimePart htmlData:(id)data encoding:(unsigned long)encoding;
 -(id)mimePartForURL:(id)url;
 // inherited: -(id)attachmentForURL:(id)url;
 -(id)attachmentsInDocument;

@@ -9,9 +9,9 @@
 +(void)_loadResourcesForStyle:(int)style;
 +(CGSize)defaultSizeForStyle:(int)style;
 +(CGSize)size;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(CGSize)sizeThatFits:(CGSize)fits;
 -(void)setAnimationDuration:(double)duration;

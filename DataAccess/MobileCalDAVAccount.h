@@ -50,8 +50,8 @@
 // inherited: +(Class)accountClass;
 // inherited: +(Class)clientClass;
 +(id)supportedDataclasses;
-// inherited: -(id)initWithProperties:(id)properties;
-// inherited: -(id)init;
+// inherited: -(instancetype)initWithProperties:(id)properties;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(id)properties;
 // inherited: -(BOOL)supportsAccountType:(int)type;

@@ -11,7 +11,7 @@
 
 @interface MPWildcatFullScreenTransportControls : MPTransportControls {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)reloadForAdditions:(id)additions removals:(id)removals animate:(BOOL)animate;
 -(id)createVolumeSlider;

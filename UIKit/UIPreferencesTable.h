@@ -23,7 +23,7 @@
 	unsigned _reserved : 27;
 }
 -(void)dealloc;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
 -(BOOL)canHandleSwipes;
 -(BOOL)canDeleteRow:(int)row;

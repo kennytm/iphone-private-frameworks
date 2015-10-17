@@ -28,7 +28,7 @@
 	unsigned _locreloff;
 	unsigned _nlocrel;
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isDySymTab;
 -(unsigned)indirectsymoff;
 -(unsigned)nindirectsyms;

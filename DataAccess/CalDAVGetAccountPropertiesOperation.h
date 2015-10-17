@@ -24,7 +24,7 @@
 	BOOL _isCalendarProxySupported;
 }
 // inherited: -(id)description;
--(id)initWithPrincipalURL:(id)principalURL session:(id)session;
+-(instancetype)initWithPrincipalURL:(id)principalURL session:(id)session;
 // inherited: -(void)dealloc;
 -(void)getAccountProperties;
 -(id)session;

@@ -12,7 +12,7 @@
 @interface VMUUUIDLoadCommand : VMULoadCommand {
 	NSData* _uuid;
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 -(NSData*)uuid;
 // inherited: -(BOOL)isUUID;
 // inherited: -(void)dealloc;

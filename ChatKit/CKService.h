@@ -13,7 +13,7 @@
 }
 @property(readonly, assign, nonatomic) NSString* serviceID;
 @property(readonly, assign, nonatomic) CKConversationList* conversationList;
--(id)initWithServiceID:(id)serviceID;
+-(instancetype)initWithServiceID:(id)serviceID;
 -(int)createConversationWithRecipients:(id)recipients;
 -(int)conversationIDWithRecipients:(id)recipients;
 -(int)unreadConversationCount;

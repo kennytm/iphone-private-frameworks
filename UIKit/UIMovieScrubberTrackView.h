@@ -52,7 +52,7 @@
 }
 @property(assign, nonatomic) id<UIMovieScrubberTrackViewDelegate> delegate;
 @property(assign, nonatomic) id<UIMovieScrubberTrackViewDataSource> dataSource;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(void)setFrame:(CGRect)frame;

@@ -41,7 +41,7 @@
 -(void)_reloadAccounts;
 -(void)_respondToAccountsChangedNotification;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)checkValidityForAccount:(id)account consumer:(id)consumer;
 @end
 

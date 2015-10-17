@@ -61,8 +61,8 @@
 +(unsigned)defaultScaleMode;
 +(void)setDefaultScaleMode:(unsigned)mode;
 -(BOOL)allowAutoChangingScaleModeToFill;
--(id)init;
--(id)initWithPath:(id)path error:(id*)error;
+-(instancetype)init;
+-(instancetype)initWithPath:(id)path error:(id*)error;
 -(void)dealloc;
 -(void)flushNowPlayingCaches;
 -(void)resetBookkeeping;

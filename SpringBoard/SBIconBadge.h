@@ -15,7 +15,7 @@
 	CGSize _badgeContentSize;
 	BOOL _highlighted;
 }
--(id)initWithBadge:(id)badge;
+-(instancetype)initWithBadge:(id)badge;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(void)setHightlighted:(BOOL)hightlighted;

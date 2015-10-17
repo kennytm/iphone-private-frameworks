@@ -17,11 +17,11 @@
 +(UIImage *)_backgroundImage;
 +(void)preloadImages;
 +(CGFloat)defaultHeight;
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 -(void)drawRect:(CGRect)rect;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(CGFloat)defaultHeightForOrientation:(UIInterfaceOrientation)orientation;
--(id)initWithDefaultSizeForOrientation:(UIInterfaceOrientation)orientation;
+-(instancetype)initWithDefaultSizeForOrientation:(UIInterfaceOrientation)orientation;
 -(void)setOrientation:(UIInterfaceOrientation)orientation;
 -(UIInterfaceOrientation)orientation;
 #endif

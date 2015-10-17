@@ -27,9 +27,9 @@
 +(void)registerForAlerts;
 +(void)_significantTimeChange;
 +(CFDateFormatterRef)_customFormatter;
-// inherited: -(id)init;
--(id)initWithCount:(int)count;
--(id)initWithTitle:(id)title organizerName:(id)name startDate:(double)date endDate:(double)date4 floats:(BOOL)floats allDay:(BOOL)day eventId:(int)anId status:(int)status;
+// inherited: -(instancetype)init;
+-(instancetype)initWithCount:(int)count;
+-(instancetype)initWithTitle:(id)title organizerName:(id)name startDate:(double)date endDate:(double)date4 floats:(BOOL)floats allDay:(BOOL)day eventId:(int)anId status:(int)status;
 // inherited: -(void)dealloc;
 // inherited: -(void)didDeactivateForReason:(int)reason;
 -(int)eventId;

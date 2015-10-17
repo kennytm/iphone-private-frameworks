@@ -28,8 +28,8 @@
 +(BOOL)multipleStoresSupportedByDataclass:(id)dataclass;
 +(BOOL)displayToggleForDataclass:(id)dataclass;
 +(BOOL)userConfirmationIsRequiredByDataclass:(id)dataclass;
--(id)initWithProperties:(id)properties;
-// inherited: -(id)init;
+-(instancetype)initWithProperties:(id)properties;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)type;
 -(id)identifier;

@@ -13,7 +13,7 @@
 	UILabel* _defaultTextView;
 }
 +(float)singleLineTextHeight;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setDefaultText:(id)text;
 -(void)setText:(id)text;

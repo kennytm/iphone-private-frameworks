@@ -24,8 +24,8 @@
 @property(readonly, assign, nonatomic) int playbackState;
 @property(readonly, assign, nonatomic) UIView* backgroundView;
 @property(readonly, assign, nonatomic) UIView* view;
--(id)init;
--(id)initWithContentURL:(id)contentURL;
+-(instancetype)init;
+-(instancetype)initWithContentURL:(id)contentURL;
 -(void)dealloc;
 -(id)methodSignatureForSelector:(SEL)selector;
 -(void)forwardInvocation:(id)invocation;

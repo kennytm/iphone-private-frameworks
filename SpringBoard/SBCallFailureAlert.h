@@ -19,7 +19,7 @@
 +(BOOL)shouldDisplayForCauseCode:(long)causeCode modemCauseCode:(long)code;
 +(void)activateForCall:(CTCallRef)call causeCode:(long)code;
 // inherited: +(void)test;
--(id)initWithCauseCode:(long)causeCode call:(CTCallRef)call;
+-(instancetype)initWithCauseCode:(long)causeCode call:(CTCallRef)call;
 // inherited: -(void)dealloc;
 -(void)activateWhenPossible;
 // inherited: -(id)alertDisplayViewWithSize:(CGSize)size;

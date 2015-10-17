@@ -75,7 +75,7 @@
 -(void)_bounceAnimationFinished;
 -(void)animationDidStop:(id)animation finished:(BOOL)finished;
 -(void)_setShadowViewVisible:(BOOL)visible;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)setEnabledGestures:(int)gestures;

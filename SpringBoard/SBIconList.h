@@ -35,7 +35,7 @@
 	UIView* _fadeView;
 #endif
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(NSArray*)icons;
 -(BOOL)isEmpty;
@@ -67,7 +67,7 @@
 -(void)setBouncedIcon:(SBIcon *)icon;
 -(SBIcon *)bouncedIcon;
 -(void)resetWithRepresentation:(id)representation;
--(id)initWithRepresentation:(id)representation;
+-(instancetype)initWithRepresentation:(id)representation;
 -(NSArray*)representation;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(NSInteger)iconRowsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;

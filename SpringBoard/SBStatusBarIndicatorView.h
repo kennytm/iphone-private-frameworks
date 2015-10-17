@@ -14,7 +14,7 @@
 	BOOL _showIndicatorView;
 	NSString* _indicatorName;
 }
--(id)initWithName:(NSString*)name andMode:(int)mode;
+-(instancetype)initWithName:(NSString*)name andMode:(int)mode;
 // inherited: -(void)dealloc;
 // inherited: -(int)priority;
 // inherited: -(void)setVisible:(BOOL)visible;

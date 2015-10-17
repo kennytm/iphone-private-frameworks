@@ -11,7 +11,7 @@
 	CGRect _originalFrame;
 	UIView* _syncPiece;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(CGRect)originalFrame;
 -(void)setSyncPiece:(id)piece;

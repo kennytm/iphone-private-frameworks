@@ -21,7 +21,7 @@
 	CGFloat _edgeInset;
 	UIImageView* _imageSuperview;
 }
--(id)initWithCornerRadius:(CGFloat)cornerRadius size:(CGFloat)size inset:(CGFloat)inset imageSuperview:(UIView *)superview;
+-(instancetype)initWithCornerRadius:(CGFloat)cornerRadius size:(CGFloat)size inset:(CGFloat)inset imageSuperview:(UIView *)superview;
 -(CGPoint)_originForCornerIndex:(int)cornerIndex withBoundsSize:(CGSize)boundsSize;
 -(void)_layoutSubviews;
 -(void)setFrame:(CGRect)frame;

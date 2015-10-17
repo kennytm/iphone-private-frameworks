@@ -15,7 +15,7 @@
 	NSDictionary* _lastNowPlayingInfo;
 }
 +(id)sharedInstance;
--(id)init;
+-(instancetype)init;
 -(id)_init;
 -(void)dealloc;
 -(void)postNowPlayingInfoForItem:(id)item isPlaying:(BOOL)playing additionalInfo:(id)info;

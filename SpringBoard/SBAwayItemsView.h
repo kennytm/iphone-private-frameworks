@@ -15,7 +15,7 @@
 	float _widestLabel;
 }
 +(GSFontRef)createItemTypeFont;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)reloadData;
 -(id)_labelForAwayItem:(id)awayItem count:(int)count;

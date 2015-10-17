@@ -38,7 +38,7 @@
 @property(assign, nonatomic) float xThreshold;
 @property(assign, nonatomic) NSTimeInterval updateInterval;
 @property(assign, nonatomic) BOOL accelerometerEventsEnabled;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_checkIn;
 -(void)_checkOut;

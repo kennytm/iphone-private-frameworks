@@ -13,7 +13,7 @@
 @private
 	CPSqliteDatabase* _libraryDB;
 }
--(id)initWithLibraryStore:(CPRecordStoreRef)libraryStore;
+-(instancetype)initWithLibraryStore:(CPRecordStoreRef)libraryStore;
 -(void)notifyDatabaseContentsWillChange;
 -(void)notifyDatabaseContentsDidChange;
 -(void)dropIndexesWithTransactionGranularity:(int)transactionGranularity;

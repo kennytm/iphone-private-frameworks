@@ -12,7 +12,7 @@
 	NSString* _title;
 	float _width;
 }
--(id)initWithTitle:(id)title identifier:(id)identifier width:(float)width;
+-(instancetype)initWithTitle:(id)title identifier:(id)identifier width:(float)width;
 -(void)dealloc;
 -(id)title;
 -(void)setTitle:(id)title;

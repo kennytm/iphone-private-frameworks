@@ -12,7 +12,7 @@
 
 @interface WRObject : NSObject <WeaklyReferencedObject> {
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)copyWithZone:(NSZone*)zone;
 // in a protocol: -(id)retain;
 -(void)objectWillBeDeallocated:(id)object;

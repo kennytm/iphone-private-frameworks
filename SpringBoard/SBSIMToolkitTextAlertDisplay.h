@@ -19,7 +19,7 @@
 // inherited: -(void)dealloc;
 -(void)navigationBar:(id)bar buttonClicked:(int)clicked;
 -(void)adjustScrollerFrame;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(BOOL)showsDesktopImage;
 // inherited: -(void)setMiddleContentAlpha:(float)alpha;
 -(void)displayDidTimeout;

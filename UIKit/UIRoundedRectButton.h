@@ -12,7 +12,7 @@
 	UIBezierPath* _fillPath;
 }
 -(void)_commonRoundedRectButtonInit;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)_invalidatePaths;
 -(void)setFrame:(CGRect)frame;

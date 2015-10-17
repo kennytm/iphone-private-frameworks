@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 	float m_fraction;
 }
 +(id)elementWithImage:(id)image toRect:(CGRect)rect fromRect:(CGRect)rect3 operation:(int)operation fraction:(float)fraction;
--(id)initWithImage:(id)image toRect:(CGRect)rect fromRect:(CGRect)rect3 operation:(int)operation fraction:(float)fraction;
+-(instancetype)initWithImage:(id)image toRect:(CGRect)rect fromRect:(CGRect)rect3 operation:(int)operation fraction:(float)fraction;
 -(void)dealloc;
 -(void)draw;
 @end

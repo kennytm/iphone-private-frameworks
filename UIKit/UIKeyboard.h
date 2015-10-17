@@ -26,14 +26,14 @@
 }
 // in a protocol: @property(assign, nonatomic, getter=isMinimized) BOOL minimized;
 +(UIKeyboard*)activeKeyboard;
-+(void)initImplementationNow;
++(voinstancetype)initImplementationNow;
 +(void)removeAllDynamicDictionaries;
 +(CGSize)defaultSize;
 +(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGRect)defaultFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGSize)defaultSizeForOrientation:(int)orientation;
-// inherited: -(id)initWithFrame:(CGRect)frame;
--(id)initWithDefaultSize;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithDefaultSize;
 // inherited: -(void)dealloc;
 // inherited: -(void)setFrame:(CGRect)frame;
 -(void)updateLayout;

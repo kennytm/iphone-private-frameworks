@@ -21,7 +21,7 @@
 @property(readonly, assign, nonatomic) NSString* title;
 +(void)setMaxImageSize:(int)size;
 +(int)imageIDForFileGroup:(id)fileGroup;
--(id)initWithDCFFileGroup:(id)dcffileGroup;
+-(instancetype)initWithDCFFileGroup:(id)dcffileGroup;
 -(void)checkForVideoFile;
 // inherited: -(unsigned)hash;
 // inherited: -(BOOL)isEqual:(id)equal;

@@ -48,8 +48,8 @@
 +(id)defaultProperties;
 +(id)newAccountOfClass:(Class)aClass;
 // inherited: -(void)dealloc;
-// inherited: -(id)initWithProperties:(id)properties;
-// inherited: -(id)init;
+// inherited: -(instancetype)initWithProperties:(id)properties;
+// inherited: -(instancetype)init;
 -(void)resetAccountID;
 -(id)accountID;
 // inherited: -(id)syncStoreIdentifier;
@@ -60,8 +60,8 @@
 -(void)setEnabled:(BOOL)enabled forAccountType:(int)accountType changeType:(int)type;
 -(BOOL)originallyEnabledForAccountType:(int)accountType;
 -(int)accountChangeTypeForAccountType:(int)accountType;
--(id)initProperClassWithProperties:(id)properties;
-// in a protocol: -(id)initWithBasicAccount:(id)basicAccount;
+-(instancetype)initProperClassWithProperties:(id)properties;
+// in a protocol: -(instancetype)initWithBasicAccount:(id)basicAccount;
 -(BOOL)accountBoolPropertyForKey:(id)key;
 -(void)setAccountBoolProperty:(BOOL)property forKey:(id)key;
 -(int)accountIntPropertyForKey:(id)key;

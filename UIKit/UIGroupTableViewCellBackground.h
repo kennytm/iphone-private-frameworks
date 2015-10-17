@@ -30,7 +30,7 @@
 @property(assign, nonatomic) int sectionLocation;
 +(void)_flushCacheOnMemoryWarning:(id)warning;
 +(void)initialize;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)_setSectionLocationAnimationDidStop;

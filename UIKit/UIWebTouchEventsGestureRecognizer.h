@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray* touchIdentifiers;
 @property(readonly, assign, nonatomic) float scale;
 @property(readonly, assign, nonatomic) float rotation;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 -(id)_typeDescription;
 -(id)_locationsDescription;

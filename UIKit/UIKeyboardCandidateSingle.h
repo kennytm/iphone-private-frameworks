@@ -8,7 +8,7 @@
 @interface UIKeyboardCandidateSingle : UIKeyboardCandidate {
 	NSString* _candidate;
 }
--(id)initWithCandidate:(id)candidate;
+-(instancetype)initWithCandidate:(id)candidate;
 // inherited: -(void)dealloc;
 // inherited: -(id)candidate;
 // inherited: -(id)copyWithZone:(NSZone*)zone;

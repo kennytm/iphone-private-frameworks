@@ -16,7 +16,7 @@
 	} _sectionHeaderCellFlags;
 }
 +(id)defaultTitleFont;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setStyle:(int)style;
 -(CGRect)_rectForTitle:(id)title;

@@ -14,7 +14,7 @@
 	FILE* _logFile;
 	NSURL* _urlToFile;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(id)urlToFile;

@@ -19,7 +19,7 @@
 	BOOL _lastItem;
 	BOOL _dontDrawRightEdge;
 }
--(id)initWithCandidate:(id)candidate andIndex:(unsigned)index withFontSize:(float)fontSize target:(id)target action:(SEL)action;
+-(instancetype)initWithCandidate:(id)candidate andIndex:(unsigned)index withFontSize:(float)fontSize target:(id)target action:(SEL)action;
 -(void)dealloc;
 -(CGSize)stringImageSize;
 -(unsigned)index;

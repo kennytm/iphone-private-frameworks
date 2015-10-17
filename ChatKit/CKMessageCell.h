@@ -19,7 +19,7 @@
 +(id)_exclamationGlyphImage;
 +(id)_failImage;
 +(id)_failPressedImage;
--(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
+-(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated;

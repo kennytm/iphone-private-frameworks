@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITouch* touch;
 @property(assign, nonatomic) float allowableMovement;
 @property(assign, nonatomic) double minimumFinalPressDuration __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 // inherited: -(void)reset;
 -(void)clearTapTimer;

@@ -17,7 +17,7 @@
 @property(assign, nonatomic) int type;
 @property(retain, nonatomic) NSString* value;
 @property(assign, nonatomic) int statusCode;
--(id)initWithType:(int)type value:(id)value statusCode:(int)code;
+-(instancetype)initWithType:(int)type value:(id)value statusCode:(int)code;
 // inherited: -(void)dealloc;
 @end
 

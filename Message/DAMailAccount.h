@@ -43,7 +43,7 @@
 +(id)accountIDForDirectoryName:(id)directoryName isAccountDirectory:(BOOL*)directory;
 // inherited: +(id)basicAccountProperties;
 // inherited: +(id)supportedDataclasses;
--(id)initWithDAAccount:(id)daaccount;
+-(instancetype)initWithDAAccount:(id)daaccount;
 -(void)foldersContentsChanged:(id)changed;
 // inherited: -(id)displayName;
 // inherited: -(id)username;

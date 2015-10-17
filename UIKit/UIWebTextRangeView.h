@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(assign, nonatomic) id<UIWebTextRangeViewController> controller;
 #endif
 @property(readonly, assign, nonatomic) UIView<UITextSelectingContainer>* container;
--(id)initWithFrame:(CGRect)frame textContainer:(id)container;
+-(instancetype)initWithFrame:(CGRect)frame textContainer:(id)container;
 -(void)dealloc;
 -(void)removeFromSuperview;
 -(CGRect)rectAtIndex:(int)index;

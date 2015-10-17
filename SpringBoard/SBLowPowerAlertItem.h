@@ -16,7 +16,7 @@
 +(unsigned)_thresholdForLevel:(unsigned)level;
 +(BOOL)_shouldIgnoreChangeToBatteryLevel:(unsigned)batteryLevel;
 +(void)setBatteryLevel:(unsigned)level;
--(id)initWithLevel:(unsigned)level;
+-(instancetype)initWithLevel:(unsigned)level;
 -(void)willPresentAlertSheet:(id)sheet;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

@@ -16,8 +16,8 @@
 }
 -(BOOL)matchesUTF8String:(const char*)string;
 -(BOOL)matches:(id)matches;
--(id)initWithSearchString:(id)searchString andLocale:(id)locale;
--(id)initWithSearchString:(id)searchString;
+-(instancetype)initWithSearchString:(id)searchString andLocale:(id)locale;
+-(instancetype)initWithSearchString:(id)searchString;
 // inherited: -(void)dealloc;
 @end
 

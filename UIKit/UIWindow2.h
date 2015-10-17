@@ -19,11 +19,11 @@
 +(IOSurfaceRef)createIOSurfaceWithContextId:(unsigned)contextId frame:(CGRect)frame;
 +(IOSurfaceRef)createIOSurfaceWithContextIds:(const unsigned*)contextIds count:(size_t)count frame:(CGRect)frame;
 +(IOSurfaceRef)createScreenIOSurface;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame output:(int)anOutput;
--(id)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
--(id)initWithContentRect:(CGRect)contentRect;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame output:(int)anOutput;
+-(instancetype)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
+-(instancetype)initWithContentRect:(CGRect)contentRect;
+-(instancetype)initWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setContentView:(id)view;
 -(id)representation;

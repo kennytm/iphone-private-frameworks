@@ -17,7 +17,7 @@
 +(id)abPointerForControl:(id)control rep:(id)rep useFieldName:(BOOL)name;
 +(id)synonymsForMatch:(id)match;
 -(void)_indexMapping:(id)mapping;
--(id)initWithPath:(id)path;
+-(instancetype)initWithPath:(id)path;
 -(void)dealloc;
 -(id)abPointerForControl:(id)control rep:(id)rep useFieldName:(BOOL)name foundByPageScan:(BOOL*)scan;
 -(id)synonymsForMatch:(id)match;

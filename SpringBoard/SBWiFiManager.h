@@ -37,7 +37,7 @@
 // inherited: -(void)dealloc;
 -(WiFiManagerClient*)_manager;
 -(void)setDevice:(WiFiDeviceClient*)device __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setDelegate:(id)delegate;
 -(void)scan;
 -(BOOL)joining;

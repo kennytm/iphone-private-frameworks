@@ -17,8 +17,8 @@
 	NSString* filename;
 	int lineNumber;
 }
--(id)initWithPC:(unsigned)pc withSymbolicator:(id)symbolicator;
--(id)initWithCString:(char*)cstring length:(long)length withLine:(int)line;
+-(instancetype)initWithPC:(unsigned)pc withSymbolicator:(id)symbolicator;
+-(instancetype)initWithCString:(char*)cstring length:(long)length withLine:(int)line;
 -(id)name;
 -(id)library;
 -(id)filename;

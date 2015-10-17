@@ -23,7 +23,7 @@
 -(void)addedVideoFileGroup:(id)group withDuration:(id)duration;
 -(void)removedFileGroup:(id)group;
 -(void)applicationWillTerminate:(id)application;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 @end
 

@@ -17,7 +17,7 @@
 	BOOL _operatorNameIsLooping;
 	BOOL _showCarrierView;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(void)start;
 // inherited: -(void)stop;

@@ -14,7 +14,7 @@
 	CGRect _dirtyRect;
 	BOOL _hasDrawnContent;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
 -(void)setNeedsDisplayInRect:(CGRect)rect;
 -(void)setNeedsDisplay;

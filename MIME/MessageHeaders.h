@@ -18,7 +18,7 @@
 +(id)basicHeaders;
 +(BOOL)isStructuredHeaderKey:(id)key;
 +(id)uniqueHeaderKeyStringForString:(id)string;
--(id)initWithHeaderData:(id)headerData encoding:(unsigned long)encoding;
+-(instancetype)initWithHeaderData:(id)headerData encoding:(unsigned long)encoding;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(void)dealloc;
 // inherited: -(id)mutableCopy;

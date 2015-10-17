@@ -15,7 +15,7 @@
 }
 // inherited: -(BOOL)requiresKeyboard;
 // inherited: -(BOOL)drawLabel;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)setPreferenceSpecifier:(id)specifier;
 -(int)selectedIndex;
 -(void)selectIndex:(int)index;

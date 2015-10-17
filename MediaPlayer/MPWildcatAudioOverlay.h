@@ -33,7 +33,7 @@
 @property(copy, nonatomic) NSString* playbackErrorDescription;
 @property(assign, nonatomic) int style;
 @property(assign, nonatomic) MPVideoViewController* videoViewController;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(id)createProgressIndicator;

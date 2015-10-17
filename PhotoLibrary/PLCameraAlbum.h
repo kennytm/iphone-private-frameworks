@@ -23,7 +23,7 @@
 +(void)deletePreviewWellImage;
 +(id)previewWellImage;
 +(BOOL)previewWellImageExists;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)dcimContentsDidChange;
 -(void)setIgnoreAlbumChangeNotifications:(BOOL)notifications;

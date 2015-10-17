@@ -19,7 +19,7 @@
 +(MLCompoundPredicateStruct)_normalizedCompoundPredicateStructFromQuery:(id)query retainedFields:(BOOL)fields;
 +(MLCompoundPredicateStruct)_copyCompoundPredicateStructFromPredicates:(id)predicates;
 +(BOOL)predicateAllowsUnknownItems:(MLCompoundPredicateStruct)items forGroupingProperty:(unsigned long)groupingProperty;
--(id)initFromQuery:(id)query;
+-(instancetype)initFromQuery:(id)query;
 -(void)dealloc;
 -(MLCompoundPredicateStruct*)cpredStructPtr;
 -(unsigned)hash;

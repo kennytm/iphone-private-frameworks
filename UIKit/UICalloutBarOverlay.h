@@ -13,7 +13,7 @@
 	CGRect m_arrowRect;
 	float m_dividerOffsets[8];
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setDividerOffsets:(float*)offsets;
 -(void)drawRect:(CGRect)rect;

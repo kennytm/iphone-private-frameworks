@@ -21,7 +21,7 @@
 }
 // inherited: -(id)description;
 -(unsigned long)uid;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(BOOL)isEqual:(id)equal;
 // inherited: -(unsigned)hash;
 -(id)remoteID;

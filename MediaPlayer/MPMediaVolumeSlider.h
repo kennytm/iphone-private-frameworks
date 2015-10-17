@@ -27,7 +27,7 @@
 -(BOOL)_setPlayerVolume:(float)volume;
 -(float)_playerVolume;
 -(CGRect)adjustedFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame isForMovie:(BOOL)movie;
+-(instancetype)initWithFrame:(CGRect)frame isForMovie:(BOOL)movie;
 -(void)setFrame:(CGRect)frame;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;

@@ -18,7 +18,7 @@
 	CalDatabase* _database;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_finishInitialization;
 -(void)_databaseChanged:(id)changed;

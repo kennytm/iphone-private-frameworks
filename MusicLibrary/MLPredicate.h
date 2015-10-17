@@ -32,7 +32,7 @@
 -(id)valueDescription;
 -(id)description;
 -(void)encodeWithCoder:(id)coder;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(BOOL)isEqual:(id)equal;
 -(unsigned long)property;
 -(unsigned long)propertyValueType;

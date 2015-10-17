@@ -15,7 +15,7 @@
 	UIFont* _font;
 	UIColor* _fontColor;
 }
--(id)initWithWidth:(float)width font:(id)font fontColor:(id)color;
+-(instancetype)initWithWidth:(float)width font:(id)font fontColor:(id)color;
 // inherited: -(void)dealloc;
 -(void)_updateText;
 -(void)setText:(id)text;

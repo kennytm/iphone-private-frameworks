@@ -54,8 +54,8 @@
 +(id)imageNamed:(NSString *)named inBundle:(NSBundle *)bundle;
 +(id)imageAtPath:(NSString *)path;
 +(void)removeImageNameFromCache:(NSString *)imageName;
--(id)initWithData:(NSData *)data cache:(BOOL)cache;
--(id)initWithImageRef:(CGImageRef)imageRef;
+-(instancetype)initWithData:(NSData *)data cache:(BOOL)cache;
+-(instancetype)initWithImageRef:(CGImageRef)imageRef;
 -(CGImageRef)imageRef;
 -(void)compositeToRect:(CGRect)rect fromRect:(CGRect)rect2 operation:(int)operation fraction:(float)fraction;
 -(void)compositeToPoint:(CGPoint)point fromRect:(CGRect)rect operation:(int)operation fraction:(float)fraction;
@@ -80,9 +80,9 @@
 +(UIImage*)defaultDesktopImage;
 +(void)setDesktopImageData:(id)data;
 +(id)imageFromAlbumArtData:(id)albumArtData height:(int)height width:(int)width cache:(BOOL)cache;
--(id)initWithContentsOfFile:(id)file cache:(BOOL)cache;
--(id)initWithCGImage:(CGImageRef)cgimage imageOrientation:(int)orientation;
--(id)initWithIOSurface:(IOSurfaceRef)iosurface;
+-(instancetype)initWithContentsOfFile:(id)file cache:(BOOL)cache;
+-(instancetype)initWithCGImage:(CGImageRef)cgimage imageOrientation:(int)orientation;
+-(instancetype)initWithIOSurface:(IOSurfaceRef)iosurface;
 -(IOSurfaceRef)ioSurface;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(BOOL)getDefaultDesktopImage:(id*)image modificationDate:(id*)date forVariant:(int)variant;

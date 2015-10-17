@@ -16,8 +16,8 @@
 +(UIImage *)_backgroundImageForOrientation:(UIInterfaceOrientation)orientation;
 // inherited: +(int)iconColumnsForInterfaceOrientation:(int)interfaceOrientation;
 // inherited: +(int)iconRowsForInterfaceOrientation:(int)interfaceOrientation;
--(id)initForOrientation:(UIInterfaceOrientation)orientation;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initForOrientation:(UIInterfaceOrientation)orientation;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_updateForOrientation:(UIInterfaceOrientation)orientation duration:(double)duration;
 // inherited: -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
 // inherited: -(void)setOrientation:(int)orientation;
@@ -35,7 +35,7 @@
 // inherited: -(int)columnAtPoint:(CGPoint)point;
 #else
 +(CGSize)defaultSize;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(int)maxIconRows;
 // inherited: -(float)topIconPadding;
 // inherited: -(float)verticalIconPadding;

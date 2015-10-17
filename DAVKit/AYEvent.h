@@ -15,7 +15,7 @@
 	id _info;
 }
 +(id)eventWithDomain:(id)domain eventCode:(int)code userInfo:(id)info;
--(id)initWithDomain:(id)domain eventCode:(int)code userInfo:(id)info;
+-(instancetype)initWithDomain:(id)domain eventCode:(int)code userInfo:(id)info;
 // inherited: -(void)dealloc;
 -(id)domain;
 -(int)code;

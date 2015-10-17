@@ -12,7 +12,7 @@
 @interface SBStatusBarBluetoothBatteryView : SBStatusBarContentView {
 	BOOL _showBluetoothBatteryView;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)start;
 // inherited: -(void)stop;
 -(void)batteryLevelChanged;

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 #endif
 }
 +(id)font;
--(id)initWithCandidate:(id)candidate andIndex:(unsigned)index target:(id)target action:(SEL)action;
+-(instancetype)initWithCandidate:(id)candidate andIndex:(unsigned)index target:(id)target action:(SEL)action;
 -(void)dealloc;
 -(CGSize)stringImageSize;
 -(unsigned)index;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 	int _style;
 }
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
--(id)initWithSegmentedControlStyle:(int)segmentedControlStyle;
+-(instancetype)initWithSegmentedControlStyle:(int)segmentedControlStyle;
 #endif
 // inherited: -(id)_disabledFontColor;
 @end

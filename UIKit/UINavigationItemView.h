@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 	BOOL _isCrossFading;
 #endif	
 }
--(id)initWithNavigationItem:(id)navigationItem;
+-(instancetype)initWithNavigationItem:(id)navigationItem;
 -(id)navigationItem;
 -(id)_defaultFont;
 -(void)drawText:(id)text inRect:(CGRect)rect;

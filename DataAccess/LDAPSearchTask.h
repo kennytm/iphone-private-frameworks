@@ -18,7 +18,7 @@
 	NSMutableArray* _foundContacts;
 }
 @property(readonly, assign) DADContactsSearchQuery* query;
--(id)initWithQuery:(id)query;
+-(instancetype)initWithQuery:(id)query;
 // inherited: -(void)dealloc;
 -(id)_initializeServer;
 -(id)_copySearchStringForQueryInput:(id)queryInput;

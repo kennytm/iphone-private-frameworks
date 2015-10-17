@@ -34,11 +34,11 @@
 -(void*)_newRecurrence;
 -(void)saveToCalendarWithParentASEvent:(id)parentASEvent existingRecord:(void*)record treatNullsAsDeletes:(BOOL)deletes;
 -(BOOL)_loadAttributesFromCalRecurrence:(void*)calRecurrence parentStartDate:(id)date parentItem:(id)item;
--(id)initWithCalRecurrence:(void*)calRecurrence parentEvent:(id)event;
+-(instancetype)initWithCalRecurrence:(void*)calRecurrence parentEvent:(id)event;
 -(void)appendActiveSyncDataForTask:(id)task toWBXMLData:(id)wbxmldata;
 -(void)setUntilString:(id)string;
 // inherited: -(void)dealloc;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(id)type;
 -(void)setType:(id)type;

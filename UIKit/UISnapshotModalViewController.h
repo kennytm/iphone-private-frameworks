@@ -12,7 +12,7 @@
 	UIViewController* _disappearingViewController;
 }
 @property(retain, nonatomic) UIViewController* disappearingViewController;
--(id)initWithInterfaceOrientation:(int)interfaceOrientation;
+-(instancetype)initWithInterfaceOrientation:(int)interfaceOrientation;
 -(void)dealloc;
 -(void)viewWillDisappear:(BOOL)view;
 -(void)viewDidDisappear:(BOOL)view;

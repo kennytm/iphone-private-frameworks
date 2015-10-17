@@ -18,9 +18,9 @@
 @property(retain, nonatomic) UIKBKeyset* keyset;
 @property(readonly, assign, nonatomic) NSArray* references;
 +(UIKBKeylayout*)keylayout;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(NSString*)description;
 -(void)setReferenceWithName:(NSString*)name value:(id)value flags:(unsigned)flags;

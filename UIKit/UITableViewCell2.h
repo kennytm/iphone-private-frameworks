@@ -15,11 +15,11 @@
 @property(retain,nonatomic) UITableViewCellLayoutManager* layoutManager;
 
 -(void)_updateSeparatorContent;
--(id)init;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCellCommon __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
--(id)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

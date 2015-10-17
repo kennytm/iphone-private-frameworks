@@ -47,7 +47,7 @@
 }
 +(id)createBottomLockBarForDisplay:(id)display;
 // inherited: +(id)createBottomBarForInstance:(id)instance;
--(id)initWithFrame:(CGRect)frame session:(id)session;
+-(instancetype)initWithFrame:(CGRect)frame session:(id)session;
 -(BOOL)_wasTriggeredByMenu;
 // inherited: -(void)updateDesktopImage:(id)image;
 // inherited: -(void)dealloc;

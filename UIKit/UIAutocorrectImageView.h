@@ -12,8 +12,8 @@
 	UIImage* m_image;
 }
 +(id)imageWithMaskingView:(id)maskingView maskingRect:(CGRect)rect;
--(id)initWithFrame:(CGRect)frame image:(id)image;
--(id)initWithFrame:(CGRect)frame string:(id)string font:(id)font;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame string:(id)string font:(id)font;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

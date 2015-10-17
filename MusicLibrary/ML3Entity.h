@@ -27,7 +27,7 @@
 +(id)disambiguatedAndCollatedSQLForProperty:(id)property;
 +(id)indexableSQLForProperties:(id)properties;
 +(id)orderingSQLForProperties:(id)properties directionality:(id)directionality;
--(id)initWithPersistentID:(long long)persistentID inLibrary:(id)library;
+-(instancetype)initWithPersistentID:(long long)persistentID inLibrary:(id)library;
 -(id)copyWithZone:(NSZone*)zone;
 -(BOOL)isEqual:(id)equal;
 -(unsigned)hash;

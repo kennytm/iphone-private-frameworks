@@ -16,7 +16,7 @@
 	void* _trackInfoContext;
 }
 @property(copy, nonatomic) NSString* lyrics;
--(id)initWithTrackContext:(void*)trackContext;
+-(instancetype)initWithTrackContext:(void*)trackContext;
 -(void*)trackInfoContext;
 -(id)copyWithZone:(NSZone*)zone;
 -(id)description;

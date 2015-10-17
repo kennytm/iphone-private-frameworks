@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 	unsigned _length;
 	BOOL _dying;
 }
--(id)initWithMappedFile:(id)mappedFile index:(unsigned long)index length:(unsigned long)length idealAddress:(void*)address;
--(id)initWithMappedFile:(id)mappedFile offset:(long long)offset length:(unsigned long)length;
+-(instancetype)initWithMappedFile:(id)mappedFile index:(unsigned long)index length:(unsigned long)length idealAddress:(void*)address;
+-(instancetype)initWithMappedFile:(id)mappedFile offset:(long long)offset length:(unsigned long)length;
 -(void)release;
 -(void)dealloc;
 -(void*)bytes;

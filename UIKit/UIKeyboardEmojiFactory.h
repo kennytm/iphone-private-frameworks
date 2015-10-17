@@ -10,7 +10,7 @@
 @interface UIKeyboardEmojiFactory : NSObject {
 	NSMutableDictionary* emojiMap;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)emojiWithCodePoint:(id)codePoint;
 @end

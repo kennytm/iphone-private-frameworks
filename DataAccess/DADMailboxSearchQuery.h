@@ -29,8 +29,8 @@
 @property(assign) BOOL deepTraversal;
 @property(assign) BOOL rebuildResults;
 +(id)mailboxSearchQueryWithSearchString:(id)searchString;
-// inherited: -(id)initWithSearchString:(id)searchString;
-// inherited: -(id)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
+// inherited: -(instancetype)initWithSearchString:(id)searchString;
+// inherited: -(instancetype)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
 // inherited: -(void)dealloc;
 -(BOOL)isEqualToDADMailboxSearchQuery:(id)dadmailboxSearchQuery;
 // inherited: -(BOOL)isEqual:(id)equal;

@@ -30,7 +30,7 @@
 @property(assign, nonatomic) int interfaceOrientation;
 @property(assign, nonatomic) unsigned visibleParts;
 @property(assign, nonatomic) unsigned disabledParts;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)didMoveToSuperview;

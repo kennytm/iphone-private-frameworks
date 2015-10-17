@@ -14,8 +14,8 @@
 	id _internal;
 }
 @property(readonly, assign, nonatomic) MPMoviePlayerController* moviePlayer;
--(id)init;
--(id)initWithContentURL:(id)contentURL;
+-(instancetype)init;
+-(instancetype)initWithContentURL:(id)contentURL;
 -(void)dealloc;
 -(void)loadView;
 -(BOOL)shouldAutorotateToInterfaceOrientation:(int)interfaceOrientation;

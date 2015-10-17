@@ -20,7 +20,7 @@
 	id<UIKeyboardEmojiController> _controller;
 }
 @property(assign) id<UIKeyboardEmojiController> controller;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)forceLayout;

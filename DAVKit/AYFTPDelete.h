@@ -13,7 +13,7 @@
 @interface AYFTPDelete : AYFTPPut {
 }
 +(id)deleteRequestWithURL:(id)url username:(id)username password:(id)password;
--(id)initDeleteRequestWithURL:(id)url username:(id)username password:(id)password;
+-(instancetype)initDeleteRequestWithURL:(id)url username:(id)username password:(id)password;
 @end
 
 @interface AYFTPDelete (Override)

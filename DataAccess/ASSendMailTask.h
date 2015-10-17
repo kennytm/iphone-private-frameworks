@@ -12,7 +12,7 @@
 @interface ASSendMailTask : ASTask {
 	NSData* _mimeMessage;
 }
--(id)initWithMessage:(id)message;
+-(instancetype)initWithMessage:(id)message;
 // inherited: -(void)dealloc;
 // inherited: -(void)finishWithError:(id)error;
 -(int)_streamType;

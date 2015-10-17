@@ -43,9 +43,9 @@
 @property(assign, nonatomic) BOOL hidden;
 +(UIKBKey*)key;
 +(UIKBKey*)keyWithKey:(id)key;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(id)copyWithZone:(NSZone*)zone;
 //-(id)description;

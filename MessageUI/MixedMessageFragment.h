@@ -16,8 +16,8 @@
 	NSString* _textEncodingName;
 	NSURL* _baseURL;
 }
--(id)initWithMarkupString:(id)markupString baseURL:(id)url;
--(id)initWithMarkupData:(id)markupData textEncodingName:(id)name baseURL:(id)url;
+-(instancetype)initWithMarkupString:(id)markupString baseURL:(id)url;
+-(instancetype)initWithMarkupData:(id)markupData textEncodingName:(id)name baseURL:(id)url;
 -(id)markupString;
 -(id)markupData;
 -(id)mimeType;

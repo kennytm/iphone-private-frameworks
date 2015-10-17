@@ -16,7 +16,7 @@
 +(id)machTaskContainerWithTask:(unsigned)task;
 +(id)machTaskContainerWithPid:(int)pid;
 +(id)machTaskContainerWithPid:(int)pid task:(unsigned)task;
--(id)initWithPid:(int)pid task:(unsigned)task;
+-(instancetype)initWithPid:(int)pid task:(unsigned)task;
 -(unsigned)task;
 -(int)pid;
 // inherited: -(id)description;

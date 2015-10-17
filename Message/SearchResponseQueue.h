@@ -13,7 +13,7 @@
 	NSMutableIndexSet* indexSet;
 	unsigned limit;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(BOOL)addItem:(id)item;
 // inherited: -(BOOL)flush;
 // inherited: -(unsigned)uidForItem:(id)item;

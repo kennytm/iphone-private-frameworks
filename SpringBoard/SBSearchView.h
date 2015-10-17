@@ -31,7 +31,7 @@
 }
 @property(readonly, assign, nonatomic) UISearchBar* searchBar;
 @property(readonly, assign, nonatomic) UITableView* tableView;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)_initializeKeyboardIfNotBricked;
 // inherited: -(void)dealloc;
 -(void)didMoveToWindow;

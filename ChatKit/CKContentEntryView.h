@@ -24,7 +24,7 @@
 }
 @property(readonly, assign, nonatomic) NSArray* contentViews;
 @property(assign, nonatomic) BOOL showsSubject;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)removeFromSuperview;
 -(void)setContentOffset:(CGPoint)offset;

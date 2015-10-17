@@ -159,7 +159,7 @@
 -(void)_detectFileAsAutoConstruction;
 -(void)_reconstructFileAsField;
 -(void)_loadAttributesFromABRecord:(void*)abrecord;
--(id)initWithABRecord:(void*)abrecord serverID:(id)anId;
+-(instancetype)initWithABRecord:(void*)abrecord serverID:(id)anId;
 -(BOOL)hasLocalModifications:(void*)modifications;
 -(BOOL)_saveDatesToAddressBookWithExistingRecord:(void*)existingRecord maintainExistingData:(BOOL)data;
 -(BOOL)_saveRelatedNamesToAddressBookWithExistingRecord:(void*)existingRecord maintainExistingData:(BOOL)data;

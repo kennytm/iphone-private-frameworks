@@ -62,7 +62,7 @@
 -(void)updateTopBarBackground;
 -(void)_clearUnlockFailedIndicator;
 -(void)_showUnlockFailedIndicator;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)lockBar;
 -(CGRect)middleFrame;

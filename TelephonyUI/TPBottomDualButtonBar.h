@@ -15,10 +15,10 @@
 	TPPushButton* _button2;
 	unsigned _drawSeparator : 1;
 }
--(id)initForIncomingCallWithFrame:(CGRect)frame;
--(id)initForCallFailureWithFrame:(CGRect)frame;
--(id)initForEmergencyCallWithFrame:(CGRect)frame;
--(id)initForVideoChatWithFrame:(CGRect)frame __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
+-(instancetype)initForIncomingCallWithFrame:(CGRect)frame;
+-(instancetype)initForCallFailureWithFrame:(CGRect)frame;
+-(instancetype)initForEmergencyCallWithFrame:(CGRect)frame;
+-(instancetype)initForVideoChatWithFrame:(CGRect)frame __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(float)_buttonWidth;
 -(void)_updateButtonSettings:(id)settings;
 -(void)setButton2:(id)a2;

@@ -12,7 +12,7 @@
 @interface SBBookmarkIcon : SBIcon {
 	UIWebClip* _webClip;
 }
--(id)initWithWebClip:(id)webClip;
+-(instancetype)initWithWebClip:(id)webClip;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)allowsCloseBox;
 // inherited: -(id)icon;

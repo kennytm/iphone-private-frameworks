@@ -32,9 +32,9 @@
 @property(assign, nonatomic) BOOL hasShownSystemwideEnableAlert;
 @property(retain, nonatomic) NSDictionary* lastUserInfo;
 @property(retain, nonatomic) SBRemoteNotificationAlert* currentAlertItem;
--(id)initWithBundleIdentifier:(id)bundleIdentifier;
+-(instancetype)initWithBundleIdentifier:(id)bundleIdentifier;
 // inherited: -(void)dealloc;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(int)effectivelyEnabledTypes;
 @end

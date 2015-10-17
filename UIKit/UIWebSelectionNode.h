@@ -21,7 +21,7 @@
 	BOOL _invalid;
 }
 @property(retain) UIWebSelection* selection;
--(id)initWithSelection:(id)selection inGraph:(id)graph;
+-(instancetype)initWithSelection:(id)selection inGraph:(id)graph;
 -(void)dealloc;
 -(id*)nodeByReferenceFromEdge:(int)edge outwards:(BOOL)anOutwards;
 -(int)oppositeEdge:(int)edge;

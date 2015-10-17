@@ -13,8 +13,8 @@
 +(id)getRequestWithURL:(id)url toFileHandle:(id)fileHandle;
 +(id)getRequestWithSession:(id)session path:(id)path toFileHandle:(id)fileHandle;
 +(id)getRequestWithSession:(id)session URI:(id)uri toFileHandle:(id)fileHandle;
--(id)initGetWithURL:(id)url toFileHandle:(id)fileHandle;
--(id)initGetWithSession:(id)session path:(id)path toFileHandle:(id)fileHandle;
--(id)initGetWithSession:(id)session URI:(id)uri toFileHandle:(id)fileHandle;
+-(instancetype)initGetWithURL:(id)url toFileHandle:(id)fileHandle;
+-(instancetype)initGetWithSession:(id)session path:(id)path toFileHandle:(id)fileHandle;
+-(instancetype)initGetWithSession:(id)session URI:(id)uri toFileHandle:(id)fileHandle;
 @end
 

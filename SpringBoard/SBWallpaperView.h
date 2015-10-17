@@ -28,7 +28,7 @@
 +(NSString *)_nameForVariant:(int)variant;
 +(UIImage *)_desktopImage;
 +(BOOL)lockScreenAndHomeScreenShareWallpaper;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)_wallpaperChanged;
 -(void)_updateGeometry;

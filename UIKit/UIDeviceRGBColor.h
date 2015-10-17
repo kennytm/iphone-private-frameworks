@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 	float alphaComponent;
 	CGColorRef cachedColor;
 }
-// inherited: -(id)initWithHue:(float)hue saturation:(float)saturation brightness:(float)brightness alpha:(float)alpha;
-// inherited: -(id)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
-// inherited: -(id)initWithCGColor:(CGColorRef)cgcolor;
+// inherited: -(instancetype)initWithHue:(float)hue saturation:(float)saturation brightness:(float)brightness alpha:(float)alpha;
+// inherited: -(instancetype)initWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+// inherited: -(instancetype)initWithCGColor:(CGColorRef)cgcolor;
 // inherited: -(void)dealloc;
 // inherited: -(id)colorWithAlphaComponent:(float)alphaComponent;
 -(CGColorRef)_createCGColorWithAlpha:(float)alpha;

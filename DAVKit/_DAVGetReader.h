@@ -13,7 +13,7 @@
 @interface _DAVGetReader : NSObject <DAVResponseBodyReader> {
 	NSMutableData* _data;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(BOOL)request:(id)request acceptResponseWithHTTPStatusCode:(int)httpstatusCode;
 // in a protocol: -(void)request:(id)request readResponseBody:(id)body;

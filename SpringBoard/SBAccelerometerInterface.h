@@ -23,7 +23,7 @@
 }
 // inherited: +(void)initialize;
 +(SBAccelerometerInterface*)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)updateSettings;
 

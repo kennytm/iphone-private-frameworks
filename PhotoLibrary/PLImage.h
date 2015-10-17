@@ -13,9 +13,9 @@
 }
 @property(readonly, assign, nonatomic) NSData* imageData;
 // inherited: +(Class)_internalClass;
-// inherited: -(id)initWithURL:(id)url;
-// inherited: -(id)initWithData:(id)data;
-// inherited: -(id)initWithData:(id)data pathExtension:(id)extension;
+// inherited: -(instancetype)initWithURL:(id)url;
+// inherited: -(instancetype)initWithData:(id)data;
+// inherited: -(instancetype)initWithData:(id)data pathExtension:(id)extension;
 // inherited: -(void)dealloc;
 // inherited: -(int)itemType;
 -(void)setTitle:(id)title;

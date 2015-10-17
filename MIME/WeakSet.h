@@ -14,7 +14,7 @@
 @private
 	CFSetRef _set;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // in a protocol: -(void)dealloc;
 // in a protocol: -(void)objectWillBeDeallocated:(id)object;
 -(void)addObject:(id)object;

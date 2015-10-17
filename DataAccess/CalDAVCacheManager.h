@@ -18,7 +18,7 @@
 }
 +(id)cacheControllerForCalendar:(id)calendar;
 +(void)clearAllCacheControllers;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setETag:(id)tag forFilename:(id)filename;
 -(void)setETag:(id)tag forEventWithExternalID:(id)externalID;

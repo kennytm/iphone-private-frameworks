@@ -30,7 +30,7 @@
 +(Class)attachmentClass;
 +(BOOL)isRecognizedClassForContent:(id)content;
 // in a protocol: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)type;
 -(void)setType:(id)type;
 -(id)subtype;

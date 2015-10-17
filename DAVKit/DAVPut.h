@@ -13,9 +13,9 @@
 +(id)putRequestWithURL:(id)url data:(id)data;
 +(id)putRequestWithSession:(id)session path:(id)path data:(id)data;
 +(id)putRequestWithSession:(id)session URI:(id)uri data:(id)data;
--(id)initPutWithURL:(id)url data:(id)data;
--(id)initPutWithSession:(id)session path:(id)path data:(id)data;
--(id)initPutWithSession:(id)session URI:(id)uri data:(id)data;
+-(instancetype)initPutWithURL:(id)url data:(id)data;
+-(instancetype)initPutWithSession:(id)session path:(id)path data:(id)data;
+-(instancetype)initPutWithSession:(id)session URI:(id)uri data:(id)data;
 // inherited: -(long long)operationProgress;
 // inherited: -(long long)operationTotal;
 @end

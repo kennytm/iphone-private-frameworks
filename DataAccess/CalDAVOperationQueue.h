@@ -14,7 +14,7 @@
 	CalDAVAccount* _account;
 	NSMutableArray* _operations;
 }
--(id)initWithAccount:(id)account;
+-(instancetype)initWithAccount:(id)account;
 // inherited: -(void)dealloc;
 -(void)insertOperation:(id)operation;
 -(void)enqueueOperation:(id)operation;

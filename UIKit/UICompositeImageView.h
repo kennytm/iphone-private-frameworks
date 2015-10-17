@@ -11,7 +11,7 @@
 @interface UICompositeImageView : UIView {
 	NSMutableArray* m_images;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)addImage:(id)image;
 -(void)addImage:(id)image operation:(int)operation fraction:(float)fraction;

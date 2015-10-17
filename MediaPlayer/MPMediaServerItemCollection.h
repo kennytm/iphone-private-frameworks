@@ -19,10 +19,10 @@
 	int _containedMediaTypes;
 }
 @property(readonly, assign, nonatomic) MPMediaServerQuery* itemsQuery;
--(id)initWithItemsQuery:(id)itemsQuery itemsCount:(unsigned)count representativeItem:(id)item containedMediaTypes:(int)types;
--(id)initWithItems:(id)items representativeItem:(id)item containedMediaTypes:(int)types;
+-(instancetype)initWithItemsQuery:(id)itemsQuery itemsCount:(unsigned)count representativeItem:(id)item containedMediaTypes:(int)types;
+-(instancetype)initWithItems:(id)items representativeItem:(id)item containedMediaTypes:(int)types;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

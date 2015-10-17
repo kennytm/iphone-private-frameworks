@@ -14,7 +14,7 @@
 	BOOL _isRed;
 	BOOL _isMinibar;
 }
--(id)initAsRed:(BOOL)red;
+-(instancetype)initAsRed:(BOOL)red;
 -(void)dealloc;
 -(void)setEnabled:(BOOL)enabled;
 -(CGPoint)_offsetForMiniBarState:(BOOL)miniBarState;

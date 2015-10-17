@@ -13,7 +13,7 @@
 	UIWindow* _presentationWindow;
 }
 +(SBSheetController *)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)animateSheetUp:(id)up;
 -(void)animationDidStop:(id)animation finished:(id)finished context:(void*)context;

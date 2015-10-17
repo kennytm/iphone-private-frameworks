@@ -28,7 +28,7 @@
 -(BOOL)canPassThroughAudio:(id)audio;
 -(BOOL)canPassThroughVideo:(id)video;
 -(OpaqueFigRemaker*)createFigRemaker;
--(id)initWithSource:(id)source dest:(id)dest mode:(id)mode options:(id)options;
+-(instancetype)initWithSource:(id)source dest:(id)dest mode:(id)mode options:(id)options;
 -(void)dealloc;
 -(void)setRangeStartTime:(double)time endTime:(double)time2;
 -(id)start;

@@ -33,8 +33,8 @@
 }
 @property(assign, nonatomic) BOOL shouldNotifyDidCompleteImmediately;
 +(double)defaultDurationForTransition:(int)transition;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(double)durationForTransition:(int)transition;

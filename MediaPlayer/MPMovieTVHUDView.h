@@ -14,7 +14,7 @@
 	int _currentState;
 	UIImageView* _playbackMode;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)_changeState;
 -(void)_fadeOut;
 -(void)animationDidStop:(id)animation;

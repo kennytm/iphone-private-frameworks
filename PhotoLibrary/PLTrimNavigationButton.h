@@ -10,7 +10,7 @@
 
 @interface PLTrimNavigationButton : UINavigationButton {
 }
-// inherited: -(id)initWithTitle:(id)title;
+// inherited: -(instancetype)initWithTitle:(id)title;
 // inherited: -(void)setControlSize:(int)size;
 @end
 

@@ -30,7 +30,7 @@
 }
 // inherited: +(void)initialize;
 +(void)setMessageClassForStore:(id)store;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)copyWithZone:(NSZone*)zone;
 -(MessageStore*)messageStore;
 -(void)setMessageStore:(MessageStore*)store;

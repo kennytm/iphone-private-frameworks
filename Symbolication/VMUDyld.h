@@ -16,7 +16,7 @@
 +(VMUDyld*)dyldWithMachOHeader:(VMUMachOHeader*)machOHeader memory:(id)memory;
 +(NSString*)nativeSharedCachePath;
 +(NSDate*)nativeSharedCacheTimestamp;
--(id)initWithMachOHeader:(VMUMachOHeader*)machOHeader memory:(id)memory;
+-(instancetype)initWithMachOHeader:(VMUMachOHeader*)machOHeader memory:(id)memory;
 -(id)findMachOHeadersInMemory:(id)memory;
 -(NSString*)name;
 -(NSArray*)machOHeaders;

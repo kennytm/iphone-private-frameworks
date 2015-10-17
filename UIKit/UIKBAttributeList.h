@@ -22,9 +22,9 @@
 //@property(assign, nonatomic) BOOL explicit;
 @property(readonly, assign, nonatomic) unsigned count;
 @property(readonly, assign, nonatomic) NSArray* names;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(id)copyWithZone:(NSZone*)zone;
 //-(id)description;

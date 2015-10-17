@@ -18,8 +18,8 @@
 -(void)_updateViewSettings;
 -(id)_buildVersion;
 -(void)_webViewCommonInit:(BOOL)init;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
@@ -56,7 +56,7 @@
 -(BOOL)webView:(id)view runJavaScriptConfirmPanelWithMessage:(id)message initiatedByFrame:(id)frame;
 -(id)webView:(id)view runJavaScriptTextInputPanelWithPrompt:(id)prompt defaultText:(id)text initiatedByFrame:(id)frame;
 -(BOOL)webView:(id)view frame:(id)frame requestGeolocationPermissionForSecurityOrigin:(id)securityOrigin shouldClearCache:(BOOL)cache;
--(id)webView:(id)view identifierForInitialRequest:(id)initialRequest fromDataSource:(id)dataSource;
+-(id)webView:(id)view identifierForInitialRequest:(instancetype)initialRequest fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFinishLoadingFromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFailLoadingWithError:(id)error fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didReceiveAuthenticationChallenge:(id)challenge fromDataSource:(id)dataSource;

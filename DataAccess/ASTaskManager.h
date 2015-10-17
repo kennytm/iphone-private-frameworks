@@ -20,7 +20,7 @@
 	ASGetOptionsTask* _getOptionsTask;
 	ASTask* _modalPolicyKeyUpdateTask;
 }
--(id)initWithAccount:(id)account policyManager:(id)manager;
+-(instancetype)initWithAccount:(id)account policyManager:(id)manager;
 // inherited: -(void)dealloc;
 -(void)_populateVersionDescriptions;
 -(id)_model;

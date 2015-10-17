@@ -31,7 +31,7 @@
 // inherited: +(void)initialize;
 -(void)_registerForNotifications;
 -(void)_unregisterForNotifications;
--(id)initWithAddress:(id)address isPhoneNumber:(BOOL)number maxWidth:(float)width useDisplayString:(BOOL)string;
+-(instancetype)initWithAddress:(id)address isPhoneNumber:(BOOL)number maxWidth:(float)width useDisplayString:(BOOL)string;
 -(void)setDelegate:(id)delegate;
 // inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 // inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;

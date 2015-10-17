@@ -15,7 +15,7 @@
 	MPWildcatFullScreenVideoOverlay* _fullscreenVideoOverlay;
 	unsigned _firstVideoFrameDisplayed : 1;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)loadView;
 -(void)viewWillDisappear:(BOOL)view;

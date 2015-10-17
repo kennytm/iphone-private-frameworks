@@ -13,7 +13,7 @@
 	unsigned _row;
 	id _delegate;
 }
--(id)initWithFrame:(CGRect)frame andRow:(unsigned)row;
+-(instancetype)initWithFrame:(CGRect)frame andRow:(unsigned)row;
 // inherited: -(void)setSelected:(BOOL)selected withFade:(BOOL)fade;
 -(void)setDelegate:(id)delegate;
 @end

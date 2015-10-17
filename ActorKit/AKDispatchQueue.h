@@ -36,7 +36,7 @@ enum AKDispatchQueueState {
 
 /** The state must be 1, 2 or 5. */
 -(void)switchToState:(NSNumber*)state;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 
 /** Returns the low-level queue object. */

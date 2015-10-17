@@ -101,7 +101,7 @@
 //-(void)_unloadBundleControllers;
 // inherited: -(void)suspend;
 // inherited: -(void)dealloc;
-// inherited: -(id)initForContentSize:(CGSize)contentSize;
+// inherited: -(instancetype)initForContentSize:(CGSize)contentSize;
 // inherited: -(id)navigationTitle;
 //-(id)_createGroupIndices:(id)indices;
 //-(void)createGroupIndices;

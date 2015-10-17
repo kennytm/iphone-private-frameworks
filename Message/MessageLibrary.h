@@ -14,7 +14,7 @@
 	NSString* _path;
 }
 // inherited: +(void)initialize;
--(id)initWithPath:(NSString*)path;
+-(instancetype)initWithPath:(NSString*)path;
 // inherited: -(void)dealloc;
 -(void)flagsChangedForMessages:(id)messages flags:(id)flags oldFlagsByMessage:(id)message;
 -(void)commit;

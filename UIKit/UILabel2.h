@@ -13,9 +13,9 @@
 @interface UILabel ()
 +(id)defaultFont;
 -(void)_commonInit;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(CGSize)textSize;

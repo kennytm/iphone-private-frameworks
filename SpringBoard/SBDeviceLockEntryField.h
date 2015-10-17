@@ -25,7 +25,7 @@
 // in a protocol: @property(assign, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
 @property(assign, nonatomic, getter=isOkayButtonEnabled) BOOL okayButtonEnabled;
 @property(copy, nonatomic) NSString* stringValue;
--(id)initWithStyle:(int)style interfaceOrientation:(UIInterfaceOrientation)orientation;
+-(instancetype)initWithStyle:(int)style interfaceOrientation:(UIInterfaceOrientation)orientation;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)canBecomeFirstResponder;
 // inherited: -(BOOL)becomeFirstResponder;

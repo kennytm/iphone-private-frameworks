@@ -10,7 +10,7 @@
 }
 @property(copy, nonatomic) NSString* carrierName;
 @property(assign, nonatomic, getter=isNewAccount) BOOL newAccount;
--(id)initWithCarrierName:(NSString *)carrierName newAccount:(BOOL)account;
+-(instancetype)initWithCarrierName:(NSString *)carrierName newAccount:(BOOL)account;
 // inherited: -(void)dealloc;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

@@ -28,7 +28,7 @@
 +(float)removeButtonWidth;
 +(BOOL)removeConfirmationsVisibleInView:(id)view;
 +(void)hideAllRemoveConfirmationsInView:(id)view;
--(id)initWithTarget:(id)target;
+-(instancetype)initWithTarget:(id)target;
 -(void)dealloc;
 -(void)removeFromSuperview;
 -(void)layoutSubviews;

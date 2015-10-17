@@ -29,7 +29,7 @@
 	XXStruct_4pnlqD _clientContext;
 }
 @property(assign, nonatomic) id<PLDataArrayInputStreamProgressDelegate> progressDelegate;
--(id)initWithDataArray:(id)dataArray;
+-(instancetype)initWithDataArray:(id)dataArray;
 -(id)delegate;
 -(void)setDelegate:(id)delegate;
 // inherited: -(void)dealloc;

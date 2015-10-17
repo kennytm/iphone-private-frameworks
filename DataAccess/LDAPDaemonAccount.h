@@ -10,6 +10,6 @@
 
 @interface LDAPDaemonAccount : LDAPAccount {
 }
-// inherited: -(id)initWithProperties:(id)properties;
+// inherited: -(instancetype)initWithProperties:(id)properties;
 @end
 

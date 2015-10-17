@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 }
 @property(assign, nonatomic) double delay;
 @property(assign, nonatomic) BOOL shouldPerformSynchronouslyWithNoDelay;
--(id)initWithTarget:(id)target continuationSelector:(SEL)selector terminationSelector:(SEL)selector3 delay:(double)delay context:(id)context;
+-(instancetype)initWithTarget:(id)target continuationSelector:(SEL)selector terminationSelector:(SEL)selector3 delay:(double)delay context:(id)context;
 -(void)dealloc;
 -(void)_schedule;
 -(void)_performSynchronouslyWithNoDelay;

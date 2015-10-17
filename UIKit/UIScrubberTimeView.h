@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 #endif
 	unsigned _align : 2;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setTime:(id)time;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2

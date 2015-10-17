@@ -61,7 +61,7 @@ typedef enum {
 +(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadius:(float)cornerRadius;
 +(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners withCornerRadii:(NSArray*)cornerRadii;
 +(id)roundedRectBezierPath:(CGRect)path withRoundedCorners:(UIBezierPathRoundedCorners)roundedCorners visibleEdges:(UIBezierPathRoundedEdges)edges cornerRadius:(float)radius;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)moveToPoint:(CGPoint)point;
 -(void)lineToPoint:(CGPoint)point;

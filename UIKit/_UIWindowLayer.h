@@ -12,7 +12,7 @@
 
 @interface _UIWindowLayer : CALayer {
 }
--(id)init;
+-(instancetype)init;
 -(void)setPosition:(CGPoint)position;
 -(CGPoint)position;
 -(void)setAffineTransform:(CGAffineTransform)transform;

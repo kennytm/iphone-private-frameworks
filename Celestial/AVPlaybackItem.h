@@ -31,7 +31,7 @@
 @property(retain) NSDictionary* lyricsNotificationInfo;
 @property(assign) BOOL isInPlayQueue;
 @property(assign) BOOL isPreparingForInspection;
--(id)initWithDelegate:(id)delegate item:(id)item;
+-(instancetype)initWithDelegate:(id)delegate item:(id)item;
 -(void)release;
 -(void)dealloc;
 -(void)cacheCurrentSize;

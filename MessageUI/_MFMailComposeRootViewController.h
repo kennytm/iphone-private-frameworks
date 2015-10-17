@@ -20,7 +20,7 @@
 }
 @property(assign, nonatomic) id<MFMailComposeViewControllerDelegate> delegate;
 @property(assign, nonatomic) id autorotationDelegate;
--(id)initWithComposition:(id)composition;
+-(instancetype)initWithComposition:(id)composition;
 // inherited: -(void)loadView;
 // inherited: -(void)dealloc;
 -(void)_presentPeoplePicker:(id)picker;

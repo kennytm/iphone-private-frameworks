@@ -21,7 +21,7 @@
 +(id)allMimeCharsets;
 +(id)charsetForEncoding:(unsigned long)encoding;
 +(id)preferredMimeCharset;
--(id)initWithEncoding:(unsigned long)encoding;
+-(instancetype)initWithEncoding:(unsigned long)encoding;
 -(void)_setPrimaryLanguage:(id)language;
 // inherited: -(void)dealloc;
 -(unsigned long)encoding;

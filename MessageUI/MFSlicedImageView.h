@@ -16,7 +16,7 @@
 	CGRect _imageSlice;
 	unsigned _isPressed : 1;
 }
--(id)initWithFrame:(CGRect)frame image:(id)image pressed:(id)pressed slice:(CGRect)slice;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image pressed:(id)pressed slice:(CGRect)slice;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(void)setPressed:(BOOL)pressed;

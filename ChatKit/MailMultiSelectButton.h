@@ -15,7 +15,7 @@
 +(id)minusImage;
 +(id)plusImage;
 +(id)minusCenterImage;
--(id)initWithRemoveControl:(id)removeControl checked:(BOOL)checked;
+-(instancetype)initWithRemoveControl:(id)removeControl checked:(BOOL)checked;
 -(void)toggleRotate:(BOOL)rotate;
 -(BOOL)isRotated;
 -(BOOL)isRotating;

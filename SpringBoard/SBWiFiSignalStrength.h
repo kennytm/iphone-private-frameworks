@@ -24,7 +24,7 @@
 }
 +(void)hideSpinner;
 -(void)setSpinnerHilited:(BOOL)hilited;
--(id)initWithFrame:(CGRect)frame inView:(id)view;
+-(instancetype)initWithFrame:(CGRect)frame inView:(id)view;
 // inherited: -(void)dealloc;
 -(BOOL)joining;
 -(void)setJoining:(BOOL)joining;

@@ -30,9 +30,9 @@
 @property(readonly, assign, nonatomic) GenericAttachmentStore* attachments;
 @property(assign, nonatomic, getter=isKeyboardVisible) BOOL keyboardVisible;
 +(id)MFMailCompositionContextWithURL:(id)url;
-// inherited: -(id)init;
--(id)initWithURL:(id)url;
--(id)initNewMessageWithURL:(id)url;
+// inherited: -(instancetype)init;
+-(instancetype)initWithURL:(id)url;
+-(instancetype)initNewMessageWithURL:(id)url;
 // inherited: -(void)dealloc;
 -(id)messageBody;
 -(void)setMessageBody:(id)body isHTML:(BOOL)html;

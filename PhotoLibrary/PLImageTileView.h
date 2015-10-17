@@ -21,7 +21,7 @@
 // inherited: +(Class)tileClass;
 +(int)tileWidth;
 +(void)setTileSize:(CGSize)size;
--(id)initWithSize:(CGSize)size;
+-(instancetype)initWithSize:(CGSize)size;
 -(CGSize)imageSize;
 -(void)setDelegate:(id)delegate;
 // inherited: -(id)_createTileWithFrame:(CGRect)frame;

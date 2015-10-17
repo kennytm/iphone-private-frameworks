@@ -14,7 +14,7 @@
 }
 +(id)grabberImage;
 +(CGSize)defaultSize;
--(id)initWithTableViewCell:(id)tableViewCell;
+-(instancetype)initWithTableViewCell:(id)tableViewCell;
 -(void)layoutSubviews;
 -(BOOL)shouldTrack;
 -(void)setFrame:(CGRect)frame;

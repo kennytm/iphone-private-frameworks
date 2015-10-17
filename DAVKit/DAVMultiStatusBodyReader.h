@@ -18,9 +18,9 @@
 +(id)multiStatusBodyReader;
 +(id)multiStatusBodyReaderWithResponseClass:(Class)responseClass;
 +(id)propFindBodyReader;
-// inherited: -(id)init;
--(id)initWithResponseClass:(Class)responseClass;
--(id)initForPropFind;
+// inherited: -(instancetype)init;
+-(instancetype)initWithResponseClass:(Class)responseClass;
+-(instancetype)initForPropFind;
 // inherited: -(void)dealloc;
 -(id)responses;
 // in a protocol: -(BOOL)request:(id)request acceptResponseWithHTTPStatusCode:(int)httpstatusCode;

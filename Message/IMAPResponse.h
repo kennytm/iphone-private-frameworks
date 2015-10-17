@@ -62,7 +62,7 @@
 -(id)parameters;
 -(void)setResponseName:(id)name parameters:(id)parameters;
 // inherited: -(id)description;
--(id)initWithConnection:(id)connection;
--(id)initWithString:(id)string;
+-(instancetype)initWithConnection:(id)connection;
+-(instancetype)initWithString:(id)string;
 @end
 

@@ -20,8 +20,8 @@
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
--(id)initWithPolicyType:(id)policyType;
+// inherited: -(instancetype)init;
+-(instancetype)initWithPolicyType:(id)policyType;
 -(id)policyType;
 -(void)setPolicyType:(id)type;
 -(id)policies;

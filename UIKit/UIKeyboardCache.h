@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 +(id)cacheIndexPath;
 +(void)clearDiskCache;
 +(BOOL)cachingEnabled;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)imageForKey:(id)key;
 -(void)evictAsNeeded;

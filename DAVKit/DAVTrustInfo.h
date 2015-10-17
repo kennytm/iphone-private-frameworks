@@ -15,7 +15,7 @@
 	DAVSession* _session;
 	BOOL _allows;
 }
--(id)initWithTrust:(SecTrust*)trust session:(id)session;
+-(instancetype)initWithTrust:(SecTrust*)trust session:(id)session;
 // inherited: -(void)dealloc;
 -(SecTrust*)trust;
 -(id)host;

@@ -13,9 +13,9 @@
 @interface MFMailComposeViewController ()
 +(BOOL)hasAutosavedMessage;
 +(void)removeAutosavedMessage;
-// inherited: -(id)initWithNibName:(id)nibName bundle:(id)bundle;
--(id)initWithURL:(id)url;
--(id)initWithComposition:(id)composition;
+// inherited: -(instancetype)initWithNibName:(id)nibName bundle:(id)bundle;
+-(instancetype)initWithURL:(id)url;
+-(instancetype)initWithComposition:(id)composition;
 // inherited: -(void)dealloc;
 -(id)_rootViewController;
 // inherited: -(id)view;

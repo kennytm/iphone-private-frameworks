@@ -14,7 +14,7 @@
 	NSString* _fromFolder;
 	NSString* _toFolder;
 }
--(id)initMoveRequestWithMessage:(id)message fromFolder:(id)folder toFolder:(id)folder3;
+-(instancetype)initMoveRequestWithMessage:(id)message fromFolder:(id)folder toFolder:(id)folder3;
 -(id)message;
 -(id)fromFolder;
 -(id)toFolder;

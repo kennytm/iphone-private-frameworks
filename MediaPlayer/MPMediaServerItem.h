@@ -18,10 +18,10 @@
 }
 @property(readonly, assign, nonatomic) NSDictionary* commonProperties;
 @property(readonly, assign, nonatomic) MLTrack* MLTrack;
--(id)initWithMLTrack:(id)mltrack;
--(id)initWithMLTrack:(id)mltrack prefetchProperties:(BOOL)properties;
+-(instancetype)initWithMLTrack:(id)mltrack;
+-(instancetype)initWithMLTrack:(id)mltrack prefetchProperties:(BOOL)properties;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(BOOL)isEqual:(id)equal;
 -(unsigned)hash;

@@ -47,9 +47,9 @@ enum {
 
 - (void)stopPropagation;
 - (void)preventDefault;
-- (void)initEvent:(NSString *)eventTypeArg canBubbleArg:(BOOL)canBubbleArg cancelableArg:(BOOL)cancelableArg;
+- (voinstancetype)initEvent:(NSString *)eventTypeArg canBubbleArg:(BOOL)canBubbleArg cancelableArg:(BOOL)cancelableArg;
 @end
 
 @interface DOMEvent (DOMEventDeprecated)
-- (void)initEvent:(NSString *)eventTypeArg :(BOOL)canBubbleArg :(BOOL)cancelableArg DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
+- (voinstancetype)initEvent:(NSString *)eventTypeArg :(BOOL)canBubbleArg :(BOOL)cancelableArg DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER;
 @end

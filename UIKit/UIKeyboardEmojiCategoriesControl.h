@@ -20,7 +20,7 @@
 	NSMutableArray* _dividerViews;
 }
 @property(assign) int selectedIndex;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)updateSegmentImages;
 -(void)setFrame:(CGRect)frame;
 -(void)layoutSubviews;

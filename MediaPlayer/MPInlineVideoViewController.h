@@ -43,7 +43,7 @@
 @property(copy, nonatomic) NSString* playbackErrorDescription;
 @property(assign, nonatomic) int videoOverlayStyle;
 @property(readonly, assign, nonatomic) UIView* fullscreenView;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)loadView;
 -(void)viewDidAppear:(BOOL)view;

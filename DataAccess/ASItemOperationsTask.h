@@ -18,7 +18,7 @@
 }
 // inherited: -(int)commandCode;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(int)mimeSupport;
 -(void)setMIMESupport:(int)support;
 -(int)bodyType;

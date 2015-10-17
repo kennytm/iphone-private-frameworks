@@ -26,7 +26,7 @@
 -(CGRect)_sizeFieldFrame;
 -(CGRect)_sizeTableFrame;
 -(void)_updateSublayerFrames;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 -(int)numberOfRowsInTable:(id)table;

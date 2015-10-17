@@ -15,7 +15,7 @@
 +(id)nodeWithName:(id)name;
 +(id)nodeWithName:(id)name attributes:(id)attributes;
 +(id)icsStringFromDate:(id)date;
--(id)initWithSession:(id)session URI:(id)uri startDate:(id)date endDate:(id)date4;
+-(instancetype)initWithSession:(id)session URI:(id)uri startDate:(id)date endDate:(id)date4;
 // inherited: -(void)dealloc;
 -(id)filenamesToETags;
 // inherited: -(id)error;

@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(assign, nonatomic) BOOL sectionHeader;
 @property(retain, nonatomic) NSString* text;
 +(id)_defaultFontForTableViewStyle:(int)tableViewStyle isSectionHeader:(BOOL)header;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(CGRect)frame;

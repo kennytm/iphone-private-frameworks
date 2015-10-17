@@ -13,7 +13,7 @@
 	NSString* _uri;
 	DAVSession* _session;
 }
--(id)initWithSession:(id)session URI:(id)uri;
+-(instancetype)initWithSession:(id)session URI:(id)uri;
 // inherited: -(void)dealloc;
 -(void)getResource;
 @end

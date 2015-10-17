@@ -65,8 +65,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) BOOL autoscrolled;
 @property(readonly, assign, nonatomic) UIView<UITextSelectingContainer>* container;
 @property(readonly, assign, nonatomic) UITextSelectionView* selectionView;
--(id)initWithFrame:(CGRect)frame selectionView:(id)view;
--(id)initWithFrame:(CGRect)frame textContainer:(id)container;
+-(instancetype)initWithFrame:(CGRect)frame selectionView:(id)view;
+-(instancetype)initWithFrame:(CGRect)frame textContainer:(id)container;
 -(void)dealloc;
 -(void)removeFromSuperview;
 -(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;

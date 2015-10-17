@@ -42,7 +42,7 @@
 }
 +(id)inputModesPreferringEuroToDollar;
 +(id)availableTopLevelDomains;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)showKeyboardType:(int)type withAppearance:(int)appearance;
 -(void)deactivateActiveKeys;

@@ -30,7 +30,7 @@
 }
 @property(assign, nonatomic) id<PLPublishingAgentDelegate> delegate;
 +(id)publishingAgentForBundleNamed:(id)bundleNamed;
--(id)initWithMediaPath:(id)mediaPath;
+-(instancetype)initWithMediaPath:(id)mediaPath;
 // inherited: -(void)dealloc;
 -(id)mediaPath;
 -(void)setMediaPath:(id)path;

@@ -18,7 +18,7 @@
 }
 @property(retain, nonatomic) DOMNode* _textNode;
 +(id)createPeripheral;
--(id)initFormPeripheral;
+-(instancetype)initFormPeripheral;
 -(void)dealloc;
 -(id)peripheralFormNode;
 -(BOOL)isKeyboard;

@@ -34,8 +34,8 @@
 -(id)principal;
 -(id)mobileAccount;
 -(void)setMobileAccount:(id)account;
--(id)initWithConfiguration:(id)configuration;
-// inherited: -(id)init;
+-(instancetype)initWithConfiguration:(id)configuration;
+// inherited: -(instancetype)init;
 -(id)configuration;
 -(void)setupSources;
 // in a protocol: -(void)systemNetworkDidChange;

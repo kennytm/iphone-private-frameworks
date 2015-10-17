@@ -14,9 +14,9 @@
 @property(readonly, assign, nonatomic) NSArray* list;
 //@property(assign, nonatomic) BOOL explicit;
 @property(readonly, assign, nonatomic) unsigned count;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(id)description;

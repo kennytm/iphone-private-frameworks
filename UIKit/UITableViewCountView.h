@@ -12,7 +12,7 @@
 	NSString* _countString;
 	int _count;
 }
--(id)initWithFrame:(CGRect)frame withCountString:(id)countString withCount:(int)count;
+-(instancetype)initWithFrame:(CGRect)frame withCountString:(id)countString withCount:(int)count;
 -(void)dealloc;
 -(void)setCountString:(id)string withCount:(int)count;
 -(void)setCount:(int)count;

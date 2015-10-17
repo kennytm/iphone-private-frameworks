@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) unsigned languageIndex;
 @property(readonly, assign, nonatomic) unsigned startingSectionIndex;
 @property(readonly, assign, nonatomic) NSArray* sections;
--(id)initWithSectionHeadersDictionary:(id)sectionHeadersDictionary languageIndex:(unsigned)index startingSectionIndex:(unsigned)index3 sectionCollator:(id)collator;
+-(instancetype)initWithSectionHeadersDictionary:(id)sectionHeadersDictionary languageIndex:(unsigned)index startingSectionIndex:(unsigned)index3 sectionCollator:(id)collator;
 -(void)dealloc;
 -(int)compare:(id)compare;
 -(BOOL)containsCharacters:(const unsigned short*)characters length:(unsigned)length;

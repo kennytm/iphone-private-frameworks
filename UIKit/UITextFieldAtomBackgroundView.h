@@ -12,7 +12,7 @@
 }
 +(id)_blueAtomBackgroundImage;
 +(id)_purpleAtomBackgroundImage;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 -(int)atomStyle;
 -(void)setAtomStyle:(int)style;

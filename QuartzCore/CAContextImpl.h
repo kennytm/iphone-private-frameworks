@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 @private
 	Context* _impl;
 }
--(id)initWithOptions:(id)options localContext:(bool)context;
--(id)initRemoteWithOptions:(id)options;
+-(instancetype)initWithOptions:(id)options localContext:(bool)context;
+-(instancetype)initRemoteWithOptions:(id)options;
 // inherited: -(void)invalidate;
 // inherited: -(void)dealloc;
 -(unsigned)contextId;

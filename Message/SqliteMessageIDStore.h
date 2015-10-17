@@ -15,7 +15,7 @@
 	int _mailboxRowid;
 	MailMessageLibrary* _library;
 }
--(id)initWithLibrary:(id)library URLString:(id)string;
+-(instancetype)initWithLibrary:(id)library URLString:(id)string;
 -(void)_loadMailboxRowidIfNecessary:(sqlite3*)necessary;
 -(id)knownMessageIDsFromSet:(id)set;
 -(id)messageIDsAddedBeforeDate:(double)date;

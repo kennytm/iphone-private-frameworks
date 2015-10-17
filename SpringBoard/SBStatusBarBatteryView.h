@@ -18,7 +18,7 @@
 }
 -(void)updateBattery;
 -(void)_batteryStatusChanged:(id)changed;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(void)start;
 // inherited: -(void)stop;

@@ -47,7 +47,7 @@
 +(UIColor *)lineColor;
 +(UIColor *)alternateLineColor;
 +(UIColor *)topLineShadowColor;
-// inherited: -(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
+// inherited: -(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 // inherited: -(void)dealloc;
 -(BOOL)_drawsContent;
 // inherited: -(void)_drawContentInRect:(CGRect)rect selected:(BOOL)selected;

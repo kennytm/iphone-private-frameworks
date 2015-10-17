@@ -39,10 +39,10 @@
 - (NSString *)descriptionWithCalendarFormat:(NSString *)format;
 - (NSString *)descriptionWithLocale:(id)locale;
 - (NSTimeZone *)timeZone;
-- (id)initWithString:(NSString *)description calendarFormat:(NSString *)format locale:(id)locale;
-- (id)initWithString:(NSString *)description calendarFormat:(NSString *)format;
-- (id)initWithString:(NSString *)description;
-- (id)initWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second timeZone:(NSTimeZone *)aTimeZone;
+- (instancetype)initWithString:(NSString *)description calendarFormat:(NSString *)format locale:(id)locale;
+- (instancetype)initWithString:(NSString *)description calendarFormat:(NSString *)format;
+- (instancetype)initWithString:(NSString *)description;
+- (instancetype)initWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second timeZone:(NSTimeZone *)aTimeZone;
 - (void)setCalendarFormat:(NSString *)format;
 - (void)setTimeZone:(NSTimeZone *)aTimeZone;
 - (void)years:(NSInteger *)yp months:(NSInteger *)mop days:(NSInteger *)dp hours:(NSInteger *)hp minutes:(NSInteger *)mip seconds:(NSInteger *)sp sinceDate:(NSCalendarDate *)date;
@@ -60,6 +60,6 @@
 + (id)dateWithString:(NSString *)aString;
 - (NSCalendarDate *)dateWithCalendarFormat:(NSString *)format timeZone:(NSTimeZone *)aTimeZone;
 - (NSString *)descriptionWithCalendarFormat:(NSString *)format timeZone:(NSTimeZone *)aTimeZone locale:(id)locale;
-- (id)initWithString:(NSString *)description;
+- (instancetype)initWithString:(NSString *)description;
 @end
 

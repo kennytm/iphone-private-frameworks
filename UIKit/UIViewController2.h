@@ -27,8 +27,8 @@
 +(double)durationForTransition:(int)transition;
 +(BOOL)_doesOverrideLegacyShouldAutorotateMethod;
 -(void)_doCommonSetup;
--(id)init;
--(id)initWithCoder:(id)coder;
+-(instancetype)init;
+-(instancetype)initWithCoder:(id)coder;
 -(void)awakeFromNib;
 -(void)_populateArchivedChildViewControllers:(id)controllers;
 -(BOOL)_shouldPersistViewWhenCoding;

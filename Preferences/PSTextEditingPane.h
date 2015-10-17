@@ -15,7 +15,7 @@
 }
 // inherited: +(CGSize)defaultSize;
 // inherited: -(BOOL)drawLabel;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(BOOL)becomeFirstResponder;
 // inherited: -(void)setPreferenceValue:(id)value;
 // inherited: -(id)preferenceValue;

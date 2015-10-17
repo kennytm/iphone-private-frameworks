@@ -49,7 +49,7 @@
 @property(readonly, assign, nonatomic) CGPoint centroid;
 @property(readonly, assign, nonatomic) CGPoint startPoint;
 @property(assign, nonatomic) id<UILongPressGestureRecognizerDelegate> delegate;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 // inherited: -(void)reset;
 -(void)enoughTimeElapsed:(id)elapsed;

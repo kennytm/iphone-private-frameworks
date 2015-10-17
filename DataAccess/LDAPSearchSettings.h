@@ -18,7 +18,7 @@
 @property(retain) NSString* searchBase;
 @property(assign) int scope;
 // inherited: -(void)dealloc;
--(id)initWithSettingsDict:(id)settingsDict;
+-(instancetype)initWithSettingsDict:(id)settingsDict;
 -(id)settingsDict;
 -(BOOL)hasSameScopeAndBaseAsOther:(id)other;
 // inherited: -(BOOL)isEqual:(id)equal;

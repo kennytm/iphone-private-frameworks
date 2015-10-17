@@ -26,8 +26,8 @@
 +(VMUArchitecture*)x86_32Architecture;
 +(VMUArchitecture*)x86_64Architecture;
 +(VMUArchitecture*)architectureWithCpuType:(cpu_type_t)cpuType cpuSubtype:(cpu_subtype_t)subtype;
--(id)initWithCpuType:(cpu_type_t)cpuType cpuSubtype:(cpu_subtype_t)subtype;
-// in a protocol: -(id)initWithCoder:(id)coder;
+-(instancetype)initWithCpuType:(cpu_type_t)cpuType cpuSubtype:(cpu_subtype_t)subtype;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 -(BOOL)isBigEndian;

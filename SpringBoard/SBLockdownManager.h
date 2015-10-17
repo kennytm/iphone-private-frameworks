@@ -20,7 +20,7 @@
 	NSString* _unqiueDeviceIdentifier;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)_hasEverRegistered;
 -(void)_setHasEverRegistered:(BOOL)registered;
 -(BOOL)_isRegisteredToNetwork;

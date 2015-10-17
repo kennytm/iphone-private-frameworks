@@ -63,7 +63,7 @@
 +(id)symbolicatorWithSymbolOwners:(id)symbolOwners path:(id)path machTaskContainer:(id)container;
 +(id)ignoreFunctionSymbols:(BOOL)symbols;
 +(BOOL)isIgnoreFunctionSymbols;
--(id)initWithSymbolOwners:(id)symbolOwners path:(id)path machTaskContainer:(id)container;
+-(instancetype)initWithSymbolOwners:(id)symbolOwners path:(id)path machTaskContainer:(id)container;
 -(id)programTextForAddress:(unsigned long long)address;
 -(id)programTextForAddressRange:(VMURange)addressRange;
 -(id)symbolForOneAddress:(unsigned long long)oneAddress;

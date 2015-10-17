@@ -15,6 +15,6 @@
 -(void)load;
 -(void)unload;
 -(id)specifiersWithSpecifier:(id)specifier;
--(id)initWithParentListController:(id)parentListController;
+-(instancetype)initWithParentListController:(id)parentListController;
 @end
 

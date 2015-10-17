@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface MLMutableSectionData : MLSectionData {
 }
--(id)init;
+-(instancetype)init;
 -(void)appendTitle:(id)title sectionLength:(unsigned)length;
 @end
 

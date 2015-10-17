@@ -13,7 +13,7 @@
 	Alarm* _alarm;
 	BOOL _snoozeAlarm;
 }
--(id)initWithAlarm:(id)alarm;
+-(instancetype)initWithAlarm:(id)alarm;
 // inherited: -(void)dealloc;
 -(void)setAlarm:(id)alarm;
 -(id)alarm;

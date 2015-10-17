@@ -19,8 +19,8 @@
 -(float)_tableRowHeight;
 -(id)_orientationImageSuffix;
 -(void)setSoundsEnabled:(BOOL)enabled;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

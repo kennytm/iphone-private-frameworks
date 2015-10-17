@@ -26,7 +26,7 @@
 // inherited: +(id)createBottomBarForInstance:(id)instance;
 -(void)setDelegate:(id)delegate;
 // inherited: -(void)dealloc;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(BOOL)showsDesktopImage;
 // inherited: -(void)setMiddleContentAlpha:(float)alpha;
 -(void)setText:(id)text;

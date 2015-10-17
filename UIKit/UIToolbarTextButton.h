@@ -11,7 +11,7 @@
 	NSString* _title;
 	NSString* _selectedTitle;
 }
--(id)initWithTitle:(id)title selectedTitle:(id)title2 withFont:(id)font withBarStyle:(int)barStyle withStyle:(int)style withTitleWidth:(float)titleWidth possibleTitles:(id)titles withTintColor:(id)tintColor;
+-(instancetype)initWithTitle:(id)title selectedTitle:(id)title2 withFont:(id)font withBarStyle:(int)barStyle withStyle:(int)style withTitleWidth:(float)titleWidth possibleTitles:(id)titles withTintColor:(id)tintColor;
 -(void)dealloc;
 -(void)_setSelected:(BOOL)selected;
 -(id)_scriptingInfo;

@@ -16,8 +16,8 @@
 	NSString* _validationRules;
 }
 @property(retain) NSString* validationRules;
--(id)initWithURL:(id)url;
--(id)initWithURL:(id)url options:(id)options;
+-(instancetype)initWithURL:(id)url;
+-(instancetype)initWithURL:(id)url options:(id)options;
 -(void)dealloc;
 -(id)url;
 -(BOOL)isStreaming;

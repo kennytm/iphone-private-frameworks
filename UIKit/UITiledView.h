@@ -53,7 +53,7 @@
 -(BOOL)shouldRepaintInPieces:(CGRect)pieces region:(void*)region;
 -(void)accurateDirtyRects:(CGRect**)rects count:(unsigned*)count clear:(BOOL)clear;
 -(void)_invalidateTiles;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(BOOL)tilesNeedDisplay;
 -(void)flushDirtyRects;

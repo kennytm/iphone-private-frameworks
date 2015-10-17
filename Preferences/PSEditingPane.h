@@ -19,7 +19,7 @@
 @property(retain) id preferenceValue;
 +(CGSize)defaultSize;
 +(id)defaultBackgroundColor;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)drawLabel;
 -(CGRect)contentRect;
 // inherited: -(void)dealloc;

@@ -62,7 +62,7 @@
 -(void)longPressGesture:(id)gesture;
 -(void)singleTap:(id)tap;
 -(void)setupGestureRecognizers;
--(id)initWithFrame:(CGRect)frame delegate:(id)delegate;
+-(instancetype)initWithFrame:(CGRect)frame delegate:(id)delegate;
 -(int)orientation;
 -(void)setOrientation:(int)orientation;
 -(void)setBubbleAlpha:(float)alpha;

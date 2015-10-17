@@ -49,7 +49,7 @@
 +(id)currentOperation;
 +(void)_setCurrentOperation:(id)operation;
 -(void)_setCurrentThread:(id)thread;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)async;
 -(id)syncFor:(id)aFor;

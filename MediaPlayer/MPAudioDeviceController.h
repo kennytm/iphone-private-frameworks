@@ -17,8 +17,8 @@
 	NSString* _category;
 	BOOL _fakeRouteAvailable;
 }
--(id)init;
--(id)initWithAVController:(id)avcontroller;
+-(instancetype)init;
+-(instancetype)initWithAVController:(id)avcontroller;
 -(void)dealloc;
 -(void)setAVController:(id)controller;
 -(void)invalidateAVController;

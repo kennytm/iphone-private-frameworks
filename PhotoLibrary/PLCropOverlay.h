@@ -34,13 +34,13 @@
 	unsigned _controlsAreVisible : 1;
 }
 -(void)_updateToolbarItems:(BOOL)items;
--(id)initWithFrame:(CGRect)frame mode:(int)mode offsettingStatusBar:(BOOL)bar;
+-(instancetype)initWithFrame:(CGRect)frame mode:(int)mode offsettingStatusBar:(BOOL)bar;
 -(BOOL)controlsAreVisible;
 -(void)setControlsAreVisible:(BOOL)visible;
 -(id)overlayContainerView;
 -(void)setOverlayContainerView:(id)view;
--(id)initWithFrame:(CGRect)frame mode:(int)mode;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame mode:(int)mode;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_createCropView;
 -(void)insertIrisView:(id)view;
 -(id)bottomBar;

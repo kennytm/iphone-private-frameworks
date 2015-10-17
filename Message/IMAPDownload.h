@@ -14,7 +14,7 @@
 	NSMutableArray* _pendingFetchResults;
 }
 // inherited: -(void)dealloc;
--(id)initWithUid:(unsigned long)uid;
+-(instancetype)initWithUid:(unsigned long)uid;
 -(unsigned long)uid;
 -(unsigned long)expectedLength;
 -(BOOL)isComplete;

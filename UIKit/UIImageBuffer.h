@@ -19,7 +19,7 @@ typedef struct UIColorComponents {
 }
 @property(readonly, assign, nonatomic) unsigned width;
 @property(readonly, assign, nonatomic) unsigned height;
--(id)initWithWidth:(unsigned)width height:(unsigned)height;
+-(instancetype)initWithWidth:(unsigned)width height:(unsigned)height;
 -(void)dealloc;
 -(UIColorComponents*)pixels;
 -(void)getPixel:(UIColorComponents*)pixel atPoint:(CGPoint)point;

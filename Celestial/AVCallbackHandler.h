@@ -19,7 +19,7 @@
 @property(assign) id target;
 @property(assign) SEL action;
 @property(assign) SEL mainThreadAction;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)setCallbackParams:(id)params;
 -(id)waitForCallbackParams;

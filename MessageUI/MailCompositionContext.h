@@ -36,12 +36,12 @@ typedef enum MailCompositionContextType {
 @property(retain, nonatomic) MessageViewingContext* loadingContext;
 @property(assign, nonatomic) BOOL includeAttachments;
 @property(assign, nonatomic) BOOL loadRest;
--(id)initWithComposeType:(MailCompositionContextType)composeType;
--(id)initWithComposeType:(MailCompositionContextType)composeType originalMessage:(MailMessage*)message;
--(id)initReplyToMessage:(MailMessage*)message;
--(id)initReplyAllToMessage:(MailMessage*)message;
--(id)initForwardOfMessage:(MailMessage*)message;
--(id)initDraftRestoreOfMessage:(MailMessage*)message;
+-(instancetype)initWithComposeType:(MailCompositionContextType)composeType;
+-(instancetype)initWithComposeType:(MailCompositionContextType)composeType originalMessage:(MailMessage*)message;
+-(instancetype)initReplyToMessage:(MailMessage*)message;
+-(instancetype)initReplyAllToMessage:(MailMessage*)message;
+-(instancetype)initForwardOfMessage:(MailMessage*)message;
+-(instancetype)initDraftRestoreOfMessage:(MailMessage*)message;
 // inherited: -(void)dealloc;
 @end
 

@@ -31,6 +31,6 @@
 -(BOOL)isAtEnd;
 -(BOOL)byteAtScanLocation;
 -(id)nextTokenWithPunctuation:(id)punctuation;
--(id)initWithData:(id)data;
+-(instancetype)initWithData:(id)data;
 @end
 

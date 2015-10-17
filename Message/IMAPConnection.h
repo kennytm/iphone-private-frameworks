@@ -48,7 +48,7 @@
 }
 // inherited: +(void)initialize;
 +(void)setReadSizeParameters;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // in a protocol: -(void)dealloc;
 -(id)delegate;
 -(void)setDelegate:(id)delegate;

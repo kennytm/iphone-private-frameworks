@@ -49,7 +49,7 @@
 @property(readonly, assign) unsigned countOfEntities;
 @property(readonly, assign) unsigned countOfEntitiesNoLoad;
 @property(readonly, assign) BOOL hasEntities;
--(id)initWithLibrary:(id)library entityClass:(Class)aClass predicate:(id)predicate orderingProperties:(id)properties usingSections:(BOOL)sections nonDirectAggregateQuery:(id)query;
+-(instancetype)initWithLibrary:(id)library entityClass:(Class)aClass predicate:(id)predicate orderingProperties:(id)properties usingSections:(BOOL)sections nonDirectAggregateQuery:(id)query;
 -(void)dealloc;
 -(id)description;
 -(BOOL)_countByPersistentIDs:(unsigned*)ids loadIfNecessary:(BOOL)necessary;

@@ -14,7 +14,7 @@
 	NSRecursiveLock* _lock;
 }
 +(id)defaultObjectRegistry;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)registerObjectForSafeRetain:(id)safeRetain;
 -(BOOL)safeRetainObject:(id)object;

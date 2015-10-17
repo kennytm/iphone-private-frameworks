@@ -43,10 +43,10 @@ __attribute__((visibility("hidden")))
 -(BOOL)isToken;
 -(void)_initBindings:(unsigned)bindings;
 -(id)__initWithSQLBindingCount:(long)sqlbindingCount sqlString:(id)string;
--(id)init;
--(id)initToken:(id)token;
--(id)initWithSQLBindingCount:(long)sqlbindingCount sqlFormat:(id)format;
--(id)initWithSQLFormat:(id)sqlformat;
+-(instancetype)init;
+-(instancetype)initToken:(id)token;
+-(instancetype)initWithSQLBindingCount:(long)sqlbindingCount sqlFormat:(id)format;
+-(instancetype)initWithSQLFormat:(id)sqlformat;
 -(void)dealloc;
 -(BOOL)allowsJoins;
 -(id)_descriptionWithOptions:(unsigned)options level:(int)level;

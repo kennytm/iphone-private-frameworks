@@ -16,7 +16,7 @@
 @property(assign, nonatomic) float progressValue;
 +(float)defaultHeight;
 +(float)_minFillWidth;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)_setupFillFrame;

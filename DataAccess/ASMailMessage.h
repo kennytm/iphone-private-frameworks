@@ -13,7 +13,7 @@
 	ASEmailItem* _ASEmailItem;
 }
 // inherited: -(void)dealloc;
--(id)initWithASEmailItem:(id)asemailItem;
+-(instancetype)initWithASEmailItem:(id)asemailItem;
 // inherited: -(id)description;
 // inherited: -(id)to;
 // inherited: -(id)cc;

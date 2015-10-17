@@ -27,7 +27,7 @@
 +(int)statusBarStyleForString:(id)string;
 +(int)interfaceOrientationForString:(id)string;
 +(id)stringForInterfaceOrientation:(int)interfaceOrientation;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(BOOL)shouldLaunchSafe;
 -(BOOL)firstLaunchAfterBoot;

@@ -39,13 +39,13 @@
 +(id)appleTemplate;
 +(id)calendarServerTemplate;
 +(BOOL)isValidPort:(int)port;
--(id)initWithName:(id)name plist:(id)plist;
+-(instancetype)initWithName:(id)name plist:(id)plist;
 // inherited: -(void)dealloc;
 // inherited: -(unsigned)hash;
 // inherited: -(BOOL)isEqual:(id)equal;
 -(int)compare:(id)compare;
 -(BOOL)isDomainInAliases:(id)aliases;
--(void)initAccount:(id)account;
+-(voinstancetype)initAccount:(id)account;
 -(void)setDomain:(id)domain forAccount:(id)account;
 -(void)setUsername:(id)username forAccount:(id)account;
 -(void)setUseSSL:(BOOL)ssl forAccount:(id)account;

@@ -12,7 +12,7 @@
 @interface MPAudioRouteCell : UIAlertSheetTableCell {
 	UIImageView* _pickedImage;
 }
--(id)initWithRouteName:(id)routeName isPicked:(BOOL)picked;
+-(instancetype)initWithRouteName:(id)routeName isPicked:(BOOL)picked;
 -(void)layoutSubviews;
 -(void)setPicked:(BOOL)picked;
 -(void)updateHighlightColors;

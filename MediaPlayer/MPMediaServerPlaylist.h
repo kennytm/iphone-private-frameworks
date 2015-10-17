@@ -14,9 +14,9 @@
 @private
 	MLPlaylist* _playlist;
 }
--(id)initWithMLPlaylist:(id)mlplaylist;
+-(instancetype)initWithMLPlaylist:(id)mlplaylist;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)count;
 -(id)mediaTypes;

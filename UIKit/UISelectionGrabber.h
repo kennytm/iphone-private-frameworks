@@ -24,7 +24,7 @@
 @property(assign, nonatomic) BOOL navigationTransitionFlattened;
 @property(assign, nonatomic) BOOL animating;
 @property(readonly, assign, nonatomic) UITextRangeView* hostView;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)mustFlattenForAlert:(id)alert;
 -(void)canExpandAfterAlert:(id)alert;

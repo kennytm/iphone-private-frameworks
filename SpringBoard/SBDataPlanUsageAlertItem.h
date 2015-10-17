@@ -9,7 +9,7 @@
 	NSNumber* _remainingPortion;
 }
 @property(retain, nonatomic) NSNumber* remainingPortion;
--(id)initWithAccountURL:(NSURL *)accountURL usage:(id)usage;
+-(instancetype)initWithAccountURL:(NSURL *)accountURL usage:(id)usage;
 // inherited: -(void)dealloc;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 @end

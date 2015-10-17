@@ -18,7 +18,7 @@
 @property(assign, nonatomic) BOOL showThumbnailColumn;
 @property(assign, nonatomic) unsigned index;
 @property(assign, nonatomic, getter=isCurrent) BOOL current;
--(id)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
+-(instancetype)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
 -(void)dealloc;
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated;
 @end

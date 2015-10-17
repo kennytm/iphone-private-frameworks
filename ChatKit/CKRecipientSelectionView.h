@@ -22,7 +22,7 @@
 }
 @property(assign, nonatomic) id delegate;
 @property(readonly, assign, nonatomic, getter=isShowingSearchField) BOOL showingSearchField;
--(id)initWithFrame:(CGRect)frame ABProperties:(id)properties;
+-(instancetype)initWithFrame:(CGRect)frame ABProperties:(id)properties;
 -(void)dealloc;
 -(BOOL)hasText;
 -(id)recipients;

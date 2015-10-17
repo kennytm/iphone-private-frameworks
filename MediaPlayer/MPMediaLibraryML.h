@@ -15,7 +15,7 @@
 	unsigned _filteringDisabled : 1;
 	MPMediaLibrary* _mediaLibrary;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)prepareForQueryingWithMediaLibrary:(id)mediaLibrary;
 -(id)serverIsAlive;

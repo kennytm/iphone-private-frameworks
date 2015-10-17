@@ -14,7 +14,7 @@
 	BOOL _isOnAC;
 	BOOL _showBatteryPercentageView;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)updateBattery;
 -(void)_batteryStatusChanged:(id)changed;
 // inherited: -(void)dealloc;

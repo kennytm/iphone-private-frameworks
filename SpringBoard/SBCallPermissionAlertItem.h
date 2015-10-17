@@ -12,7 +12,7 @@
 @interface SBCallPermissionAlertItem : SBAlertItem {
 	NSURL* _url;
 }
--(id)initWithURL:(id)url;
+-(instancetype)initWithURL:(id)url;
 // inherited: -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;

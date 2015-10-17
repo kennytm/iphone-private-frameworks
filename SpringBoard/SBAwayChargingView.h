@@ -26,7 +26,7 @@
 +(CGSize)defaultSize;
 +(BOOL)shouldShowDeviceBattery;
 +(BOOL)shouldShowHeadsetBattery;
--(id)initWithFrame:(CGRect)frame awayView:(id)view;
+-(instancetype)initWithFrame:(CGRect)frame awayView:(id)view;
 // inherited: -(void)dealloc;
 -(void)updateInterface:(BOOL)interface;
 -(id)chargingView;

@@ -15,11 +15,11 @@
 @property(copy, nonatomic) NSString* title;
 @property(readonly, assign, nonatomic) int itemType;
 +(Class)_internalClass;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
--(id)initWithURL:(id)url;
--(id)initWithData:(id)data;
--(id)initWithData:(id)data pathExtension:(id)extension;
+-(instancetype)initWithURL:(id)url;
+-(instancetype)initWithData:(id)data;
+-(instancetype)initWithData:(id)data pathExtension:(id)extension;
 -(id)_MLPhoto;
 -(BOOL)_allowsRotation;
 @end

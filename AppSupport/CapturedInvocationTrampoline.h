@@ -11,7 +11,7 @@
 @interface CapturedInvocationTrampoline : InvocationTrampoline {
 	NSInvocation** _outInvocation;
 }
--(id)initWithTarget:(id)target outInvocation:(id*)invocation;
+-(instancetype)initWithTarget:(id)target outInvocation:(id*)invocation;
 // inherited: -(void)forwardInvocation:(id)invocation;
 @end
 

@@ -15,7 +15,7 @@
 	int _meetingResponse;
 	ASEventUID* _eventUID;
 }
--(id)initWithEmailItemFolderId:(id)emailItemFolderId emailItemServerId:(id)anId meetingResponse:(int)response eventUID:(id)uid;
+-(instancetype)initWithEmailItemFolderId:(id)emailItemFolderId emailItemServerId:(id)anId meetingResponse:(int)response eventUID:(id)uid;
 // inherited: -(void)dealloc;
 // inherited: -(int)commandCode;
 // inherited: -(id)requestBody;

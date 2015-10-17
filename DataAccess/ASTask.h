@@ -62,7 +62,7 @@
 +(unsigned)uniqueQueryID;
 +(void)_setDefaultTaskTimeout:(double)timeout;
 +(void)_restoreDefaultTaskTimeout;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)description;
 -(id)responseContentType;

@@ -15,7 +15,7 @@
 	NSString* _operatorName;
 	BOOL _fullSize;
 }
--(id)initWithOperatorName:(id)operatorName;
+-(instancetype)initWithOperatorName:(id)operatorName;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(float)calculateLetterSpacingForOperatorName:(id)operatorName;

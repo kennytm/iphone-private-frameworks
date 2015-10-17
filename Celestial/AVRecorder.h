@@ -13,7 +13,7 @@
 @private
 	AVRecorderPrivate* _priv;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)setFilePath:(id)path;
 -(id)filePath;

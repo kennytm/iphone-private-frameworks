@@ -13,8 +13,8 @@
 +(id)headRequestWithURL:(id)url;
 +(id)headRequestWithSession:(id)session path:(id)path;
 +(id)headRequestWithSession:(id)session URI:(id)uri;
--(id)initHeadWithURL:(id)url;
--(id)initHeadWithSession:(id)session path:(id)path;
--(id)initHeadWithSession:(id)session URI:(id)uri;
+-(instancetype)initHeadWithURL:(id)url;
+-(instancetype)initHeadWithSession:(id)session path:(id)path;
+-(instancetype)initHeadWithSession:(id)session URI:(id)uri;
 @end
 

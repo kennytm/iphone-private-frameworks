@@ -20,7 +20,7 @@
 	unsigned _isFromEntourage : 1;
 }
 // inherited: +(void)initialize;
--(id)initWithFrame:(CGRect)frame visibleSize:(CGSize)size;
+-(instancetype)initWithFrame:(CGRect)frame visibleSize:(CGSize)size;
 -(void)setMessageWebLayerDelegate:(id)delegate;
 // inherited: -(void)dealloc;
 -(void)defaultMouseDragged:(GSEventRef)dragged;
@@ -37,7 +37,7 @@
 -(void)updateImageURL:(id)url withURL:(id)url2 width:(float)width;
 -(void)_updateInlinePluginWithContentID:(id)contentID htmlRepresentation:(id)representation;
 -(void)updateInlinePluginWithContentID:(id)contentID htmlRepresentation:(id)representation;
--(id)webView:(id)view identifierForInitialRequest:(id)initialRequest fromDataSource:(id)dataSource;
+-(id)webView:(id)view identifierForInitialRequest:(instancetype)initialRequest fromDataSource:(id)dataSource;
 -(id)webView:(id)view resource:(id)resource willSendRequest:(id)request redirectResponse:(id)response fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFinishLoadingFromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFailLoadingWithError:(id)error fromDataSource:(id)dataSource;

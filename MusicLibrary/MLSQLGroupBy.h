@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface MLSQLGroupBy : MLSQLCode {
 }
 +(id)expressionToken;
--(id)initWithGroupColumnsString:(id)groupColumnsString;
+-(instancetype)initWithGroupColumnsString:(id)groupColumnsString;
 -(id)groupColumnsString;
 -(void)dealloc;
 @end

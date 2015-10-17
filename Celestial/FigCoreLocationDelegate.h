@@ -29,7 +29,7 @@
 @property(assign) opaqueFigBufferQueue* outputQueue;
 @property(readonly, assign) opaqueFigFormatDescription* formatDescription;
 +(BOOL)locationServicesEnabled;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(opaqueFigFormatDescription*)createFormatDescription;
 -(void)createLocationManager;

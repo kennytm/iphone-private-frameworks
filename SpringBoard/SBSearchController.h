@@ -47,7 +47,7 @@
 }
 @property(retain, nonatomic) SBSearchView* searchView;
 +(SBSearchController *)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)updateSearchOrdering;
 -(void)resetClearSearchTimer;

@@ -9,7 +9,7 @@
 	UIImage* _maskImage;
 	CGFloat _bottomMargin;
 }
--(id)initWithImage:(UIImage *)image bottomMargin:(CGFloat)margin;
+-(instancetype)initWithImage:(UIImage *)image bottomMargin:(CGFloat)margin;
 // inherited: -(void)dealloc;
 -(void)setImage:(UIImage *)image;
 -(void)drawRect:(CGRect)rect;

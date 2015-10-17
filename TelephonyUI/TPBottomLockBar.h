@@ -24,9 +24,9 @@
 	float _fontSize;
 }
 +(CGSize)defaultSize;
--(id)initWithFrame:(CGRect)frame knobImage:(id)image;
--(id)initWithFrame:(CGRect)frame knobColor:(int)color;
--(id)initForIncomingCallWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame knobImage:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame knobColor:(int)color;
+-(instancetype)initForIncomingCallWithFrame:(CGRect)frame;
 -(TPLockKnobView *)knob;
 -(void)startAnimating;
 -(void)stopAnimating;

@@ -31,7 +31,7 @@
 +(CGSize)defaultSizeForType:(int)type;
 +(float)batteryHeightForType:(int)type;
 +(int)redChargeIndexForType:(int)type;
--(id)initWithFrame:(CGRect)frame type:(int)type;
+-(instancetype)initWithFrame:(CGRect)frame type:(int)type;
 // inherited: -(void)dealloc;
 -(void)setShowsReflection:(BOOL)reflection;
 -(int)_currentBatteryIndex;

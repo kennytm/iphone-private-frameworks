@@ -16,7 +16,7 @@
 	BOOL _showProgressView;
 	BOOL _showOnLeft;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)dataConnectionTypeChanged;
 // inherited: -(void)start;

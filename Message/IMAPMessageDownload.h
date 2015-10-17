@@ -22,7 +22,7 @@
 	unsigned _fetchBodyData : 1;
 }
 // inherited: -(void)dealloc;
--(id)initWithMessage:(id)message;
+-(instancetype)initWithMessage:(id)message;
 -(id)message;
 -(BOOL)allowsPartialDownloads;
 -(void)setAllowsPartialDownloads:(BOOL)downloads;

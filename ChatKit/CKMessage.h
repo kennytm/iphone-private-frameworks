@@ -29,7 +29,7 @@
 }
 @property(readonly, assign, nonatomic) NSArray* messageParts;
 @property(assign, nonatomic) CKConversation* conversation;
--(id)init;
+-(instancetype)init;
 -(int)messageCount;
 -(BOOL)isEqual:(id)equal;
 -(void)dealloc;

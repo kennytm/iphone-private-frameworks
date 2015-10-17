@@ -11,7 +11,7 @@
 
 @interface UITextTapRecognizer : UITapGestureRecognizer {
 }
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 @end
 
 #else
@@ -40,7 +40,7 @@
 @property(readonly, assign, nonatomic) NSArray* touches;
 @property(assign, nonatomic) float allowableMovement;
 @property(readonly, assign, nonatomic) CGPoint centroid;
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)dealloc;
 -(void)reset;
 -(void)clearTapTimer;

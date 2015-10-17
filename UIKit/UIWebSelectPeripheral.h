@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) DOMHTMLSelectElement* _selectionNode;
 @property(retain, nonatomic) id<UIWebSelectControl> _selectControl;
 +(id)createPeripheral;
--(id)initFormPeripheral;
+-(instancetype)initFormPeripheral;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)assistantView;
 // in a protocol: -(void)beginEditing;

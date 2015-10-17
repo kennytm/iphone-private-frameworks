@@ -18,7 +18,7 @@
 	NSMutableDictionary* _currentCapabilities;
 }
 +(SBPlatformController *)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(NSString *)systemBuildVersion;
 -(id)infoForCapability:(NSString *)capability;

@@ -10,7 +10,7 @@
 }
 // inherited: +(id)keypadImage;
 // inherited: +(id)pressedImage;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(void)setHighlighted:(BOOL)highlighted;
 // inherited: -(float)_yFudge;

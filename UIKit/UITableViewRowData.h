@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 	float _reorderedRowHeight;
 }
 @property(assign, nonatomic) float minimumRowHeight;
--(id)initWithTableView:(id)tableView;
+-(instancetype)initWithTableView:(id)tableView;
 -(void)tableViewWidthDidChangeToWidth:(float)tableViewWidth;
 -(void)tableHeaderHeightDidChangeToHeight:(float)tableHeaderHeight;
 -(void)tableFooterHeightDidChangeToHeight:(float)tableFooterHeight;

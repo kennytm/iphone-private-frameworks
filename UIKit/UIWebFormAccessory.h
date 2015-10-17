@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UISegmentedControl* _tab;
 @property(retain, nonatomic) UIButton* _autofill;
 @property(assign, nonatomic) id<UIWebFormAccessoryDelegate> delegate;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)done:(id)done;
 -(void)tab:(id)tab;

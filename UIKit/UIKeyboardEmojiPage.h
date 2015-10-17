@@ -34,7 +34,7 @@
 @property(retain) UIKeyboardEmojiView* pendingDisplay;
 @property(retain) UIKeyboardEmojiView* onDisplay;
 @property(assign) CGRect keyActivationRect;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)updateLayoutConstants;
 -(void)setFrame:(CGRect)frame;

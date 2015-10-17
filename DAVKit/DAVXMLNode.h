@@ -18,7 +18,7 @@
 }
 +(id)textNodeWithContent:(id)content;
 +(id)nodeWithName:(id)name attributes:(id)attributes;
--(id)initWithName:(id)name attributes:(id)attributes;
+-(instancetype)initWithName:(id)name attributes:(id)attributes;
 // inherited: -(void)dealloc;
 -(void)addChild:(id)child;
 -(void)removeChild:(id)child;

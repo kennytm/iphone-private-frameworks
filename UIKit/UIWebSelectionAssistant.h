@@ -25,7 +25,7 @@
 @property(assign, nonatomic) BOOL enabled;
 @property(readonly, assign, nonatomic) CGRect selectionFrame;
 @property(readonly, assign, nonatomic) UIWebSelection* selection;
--(id)initWithWebView:(id)webView;
+-(instancetype)initWithWebView:(id)webView;
 -(void)dealloc;
 -(void)setGestureRecognizers;
 -(void)selectionChanged;

@@ -25,7 +25,7 @@
 @property(readonly, assign, nonatomic) NSString* selectedSectionTitle;
 @property(retain, nonatomic) UIFont* font;
 @property(retain, nonatomic) NSArray* titles;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(CGSize)sizeThatFits:(CGSize)fits;
 -(unsigned)maximumNumberOfTitlesWithoutTruncationForHeight:(float)height;

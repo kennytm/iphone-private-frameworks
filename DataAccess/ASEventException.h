@@ -33,8 +33,8 @@
 // inherited: -(void)postProcessApplicationData;
 // inherited: -(id)uidGeneratedIfNecessaryWithLocalEvent:(void*)localEvent;
 -(void)takeValuesFromParentForAccount:(id)account;
--(id)initWithCalEvent:(void*)calEvent originalEvent:(id)event account:(id)account;
--(id)initWithExceptionStartTime:(id)exceptionStartTime;
+-(instancetype)initWithCalEvent:(void*)calEvent originalEvent:(id)event account:(id)account;
+-(instancetype)initWithExceptionStartTime:(id)exceptionStartTime;
 // inherited: -(BOOL)deleteFromCalendar;
 // inherited: -(void)appendActiveSyncDataForTask:(id)task toWBXMLData:(id)wbxmldata;
 // inherited: -(void)loadClientIDs;
@@ -42,7 +42,7 @@
 // inherited: -(void)dealloc;
 // inherited: -(id)exceptionDate;
 // inherited: -(void)setExceptionDate:(id)date;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(BOOL)hasOccurrenceInTheFuture;
 -(id)originalEvent;

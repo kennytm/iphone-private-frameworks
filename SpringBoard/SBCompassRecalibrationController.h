@@ -29,7 +29,7 @@
 #endif
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_0
 +(BOOL)isCompassCalibrationWindowVisible;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_createUI;
 -(void)reorientRecalibrationHUDIfNeeded:(BOOL)needed;
 -(void)_animationDidStop:(id)_animation finished:(id)finished context:(void*)context;

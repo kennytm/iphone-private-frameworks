@@ -28,7 +28,7 @@
 		} flags;
 	} _typeSpecific;
 }
--(id)initWithType:(int)type;
+-(instancetype)initWithType:(int)type;
 // inherited: -(void)dealloc;
 -(int)type;
 -(id)envelope;

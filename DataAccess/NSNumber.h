@@ -15,7 +15,7 @@
 +(BOOL)parsingWithSubItems;
 +(BOOL)frontingBasicTypes;
 // in a protocol: +(BOOL)expectsContent;
-// in a protocol: -(id)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
+// in a protocol: -(instancetype)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
 // in a protocol: -(int)parsingState;
 @end
 

@@ -16,7 +16,7 @@
 	unsigned _showControlsAfterRotate : 1;
 	unsigned _autoHidingForItemChange : 1;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)showOverlayIfNecessary;
 -(BOOL)canDisplayItem:(id)item withInterfaceOrientation:(int)interfaceOrientation;

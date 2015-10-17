@@ -19,12 +19,12 @@
 @property(readonly, assign, nonatomic) MPMediaItem* representativeItem;
 @property(readonly, assign, nonatomic) NSArray* items;
 +(id)collectionWithItems:(id)items;
--(id)init;
--(id)initWithItems:(id)items;
+-(instancetype)init;
+-(instancetype)initWithItems:(id)items;
 -(id)_init;
 -(id)_initWithItemsQuery:(id)itemsQuery itemsCount:(unsigned)count representativeItem:(id)item containedMediaTypes:(int)types;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

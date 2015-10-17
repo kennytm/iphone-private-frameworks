@@ -15,7 +15,7 @@
 		unsigned isTranslucent : 1;
 	} _navbarFlags;
 }
--(id)initWithFrame:(CGRect)frame withBarStyle:(int)barStyle withTintColor:(id)tintColor isTranslucent:(BOOL)translucent;
+-(instancetype)initWithFrame:(CGRect)frame withBarStyle:(int)barStyle withTintColor:(id)tintColor isTranslucent:(BOOL)translucent;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

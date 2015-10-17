@@ -28,8 +28,8 @@
 @property(assign, nonatomic) id delegate;
 @property(assign, nonatomic) BOOL usesRoundedCorners __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 +(double)defaultDurationForTransition:(int)transition;
-// inherited: -(id)initWithFrame:(CGRect)frame;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
 -(BOOL)transition:(int)transition toView:(id)view;

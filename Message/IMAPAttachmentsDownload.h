@@ -13,7 +13,7 @@
 	LibraryMessage* _message;
 }
 // inherited: -(void)dealloc;
--(id)initWithLibraryMessage:(id)libraryMessage;
+-(instancetype)initWithLibraryMessage:(id)libraryMessage;
 -(id)message;
 -(void)saveCompletedDownloads;
 @end

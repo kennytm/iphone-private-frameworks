@@ -6,7 +6,7 @@
 
 @interface SBBrightnessHUDView : SBHUDView {
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(BOOL)displaysLabel;
 @end
 

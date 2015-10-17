@@ -11,7 +11,7 @@
 	int m_autoscrollDirections;
 }
 @property(assign, nonatomic) int autoscrollDirections;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawAutoscroller:(CGRect)autoscroller;
 -(void)drawMagnifier:(CGRect)magnifier;
 -(void)drawRect:(CGRect)rect;

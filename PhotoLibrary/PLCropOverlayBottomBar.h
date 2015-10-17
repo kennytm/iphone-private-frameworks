@@ -28,7 +28,7 @@
 	unsigned _takingPhotoView : 1;
 	unsigned _wasEnabled : 1;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)adjustButtonWidths;
 -(void)_createTakePhotoView;
 -(void)_prepareForPhotoEdit;

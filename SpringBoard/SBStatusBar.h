@@ -27,7 +27,7 @@
 	unsigned _airplaneMode : 1;
 }
 @property(assign, nonatomic, getter=isGlowAnimationEnabled) BOOL glowAnimationEnabled;
--(id)initWithMode:(int)mode orientation:(int)orientation;
+-(instancetype)initWithMode:(int)mode orientation:(int)orientation;
 // inherited: -(id)description;
 -(void)_setGlowImage:(id)image;
 -(void)_setBaseImage:(id)image;

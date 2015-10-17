@@ -37,9 +37,9 @@ typedef enum {
 }
 +(NSString*)specialNameForType:(int)type;
 // in a protocol: -(void)dealloc;
-// inherited: -(id)init;
--(id)initWithAccount:(id)account;
--(id)initWithName:(id)name attributes:(unsigned)attributes forAccount:(id)account permanentTag:(id)tag;
+// inherited: -(instancetype)init;
+-(instancetype)initWithAccount:(id)account;
+-(instancetype)initWithName:(id)name attributes:(unsigned)attributes forAccount:(id)account permanentTag:(id)tag;
 -(NSString*)uniqueId;
 -(NSString*)displayName;
 -(void)setPendingNameChange:(id)change;

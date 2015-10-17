@@ -24,7 +24,7 @@
 @property(assign, nonatomic, getter=idleTimerDisabled, setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
 @property(assign, nonatomic) id delegate;
 @property(assign, nonatomic) BOOL observesApplicationSuspendResumeEventsOnly;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)beginIgnoringChangeTypes:(unsigned)types;
 -(BOOL)canDisplayItem:(id)item withInterfaceOrientation:(int)interfaceOrientation;

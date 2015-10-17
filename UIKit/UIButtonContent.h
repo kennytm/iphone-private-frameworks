@@ -24,7 +24,7 @@
 @property(retain, nonatomic) UIColor* shadowColor;
 @property(readonly, assign, nonatomic) BOOL isEmpty;
 -(id)copyWithZone:(NSZone*)zone;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(id)description;

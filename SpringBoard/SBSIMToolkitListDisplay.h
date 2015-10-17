@@ -18,7 +18,7 @@
 // inherited: -(void)dealloc;
 -(id)_simToolkitListItems;
 -(void)_selectListItem:(unsigned long)item;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(BOOL)showsDesktopImage;
 // inherited: -(void)setMiddleContentAlpha:(float)alpha;
 // inherited: -(void)alertDisplayWillBecomeVisible;

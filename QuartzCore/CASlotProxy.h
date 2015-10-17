@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @private
 	Proxy* _proxy;
 }
--(id)initWithName:(unsigned)name;
+-(instancetype)initWithName:(unsigned)name;
 // inherited: -(void)dealloc;
 -(Object*)CA_copyRenderValue;
 @end

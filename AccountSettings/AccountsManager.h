@@ -20,7 +20,7 @@
 +(void)_migrateAccountsIfNeeded;
 +(id)displayNameForGroupOfAccountType:(id)accountType forBeginningOfSentence:(BOOL)sentence;
 -(id)_initInsideOfMigration;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)accountWithIdentifier:(id)identifier;
 -(id)accountWithSyncIdentifier:(id)syncIdentifier;
@@ -62,7 +62,7 @@
 @interface AccountsManager (Private)
 +(unsigned)currentVersion;
 +(id)fullPathToAccountSettingsPlist;
--(id)initWithAccounsInfoArray:(id)accounsInfoArray;
+-(instancetype)initWithAccounsInfoArray:(id)accounsInfoArray;
 -(unsigned)dataVersion;
 @end
 

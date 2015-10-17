@@ -55,7 +55,7 @@
 +(id)dequeueReusableIconImageView;
 +(CAAnimation*)_jitterPositionAnimation;
 +(CAAnimation*)_jitterTransformAnimation;
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 // inherited: -(void)dealloc;
 -(void)localeChanged;
 -(void)showIconAnimationDidStop:(id)showIconAnimation didFinish:(id)finish icon:(id)icon;

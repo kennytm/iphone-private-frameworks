@@ -18,7 +18,7 @@
 }
 @property(assign, nonatomic) BOOL allowsCustomizing;
 @property(retain, nonatomic) NSArray* moreViewControllers;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)table;
 -(void)_layoutCells;

@@ -17,7 +17,7 @@
 +(void)addMappings:(id)mappings forCoder:(id)coder;
 +(id)mappedObjectForCoder:(id)coder withIdentifier:(id)identifier;
 +(void)removeMappingsForCoder:(id)coder;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setProxiedObjectIdentifier:(id)identifier;

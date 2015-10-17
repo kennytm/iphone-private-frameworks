@@ -24,7 +24,7 @@
 	NSString* _lastEventCategory;
 }
 +(VolumeControl *)sharedVolumeControl;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)addAlwaysHiddenCategory:(id)category;
 -(void)removeAlwaysHiddenCategory:(id)category;

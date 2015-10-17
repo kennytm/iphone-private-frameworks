@@ -14,7 +14,7 @@
 	UITextLabel* _accountLabel;
 	UIImageView* _background;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(void)layoutSubviews;
 -(id)_accountLabel;

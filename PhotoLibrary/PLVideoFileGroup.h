@@ -15,7 +15,7 @@
 	NSString* _videoPreviewFilePath;
 	MLPhoto* _photo;
 }
--(id)initWithURL:(id)url forMLPhoto:(id)mlphoto;
+-(instancetype)initWithURL:(id)url forMLPhoto:(id)mlphoto;
 // inherited: -(void)dealloc;
 -(BOOL)hasVideoFile;
 -(id)pathForVideoFile;

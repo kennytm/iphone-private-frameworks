@@ -13,7 +13,7 @@
 @interface AYSimpleOperationCompanion : NSObject <AYOperationCompanion> {
 	AYOperation* _operation;
 }
--(id)initWithOperation:(id)operation;
+-(instancetype)initWithOperation:(id)operation;
 -(id)operation;
 // in a protocol: -(void)postOperationForOperation:(id)operation;
 @end

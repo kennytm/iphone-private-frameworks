@@ -9,6 +9,6 @@
 
 @interface CKSelectedMessageCellView : UIView {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 @end
 

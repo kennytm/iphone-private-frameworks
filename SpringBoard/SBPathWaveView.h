@@ -13,7 +13,7 @@
 }
 // inherited: +(Class)layerClass;
 -(id)_shapeLayer;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
 -(CGPathRef)_copyCurrentPath;
 -(void)_updateCurrentPath;

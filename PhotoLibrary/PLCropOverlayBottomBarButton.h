@@ -10,7 +10,7 @@
 
 @interface PLCropOverlayBottomBarButton : UIButton {
 }
--(id)initWithTitle:(id)title isDoneButton:(BOOL)button;
+-(instancetype)initWithTitle:(id)title isDoneButton:(BOOL)button;
 -(void)setTitle:(id)title;
 // inherited: -(void)layoutSubviews;
 @end

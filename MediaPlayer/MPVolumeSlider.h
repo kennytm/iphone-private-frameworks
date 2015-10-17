@@ -23,8 +23,8 @@
 @property(copy, nonatomic) NSString* volumeAudioCategory;
 +(void)_disableSystemVolumeHUDForAudioCategory:(id)audioCategory;
 +(void)_enableSystemVolumeHUDForAudioCategory:(id)audioCategory;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame style:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame style:(int)style;
 -(void)dealloc;
 -(float)minimumValue;
 -(float)maximumValue;

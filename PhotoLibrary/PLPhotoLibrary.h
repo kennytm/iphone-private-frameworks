@@ -17,7 +17,7 @@
 +(CGImageRef)createThumbnailOfImage:(CGImageRef)image format:(int)format atPath:(id)path;
 +(CGImageRef)createThumbnailOfImage:(CGImageRef)image format:(int)format atPath:(id)path orientation:(int)orientation;
 +(CGImageRef)createThumbnailOfImage:(CGImageRef)image format:(int)format atPath:(id)path orientation:(int)orientation thumbnailDataOut:(id*)anOut;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(CGImageRef)createCGImageForDulcimerImage:(id)dulcimerImage format:(int)format copyImageData:(BOOL)data;
 -(CGImageRef)createCGImageForDulcimerImage:(id)dulcimerImage format:(int)format;

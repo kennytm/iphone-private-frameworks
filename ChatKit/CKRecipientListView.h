@@ -18,7 +18,7 @@
 }
 @property(assign, nonatomic) id delegate;
 @property(readonly, assign, nonatomic) CGSize contentSize;
--(id)initWithFrame:(CGRect)frame toFieldRecipients:(id)fieldRecipients delegate:(id)delegate;
+-(instancetype)initWithFrame:(CGRect)frame toFieldRecipients:(id)fieldRecipients delegate:(id)delegate;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setExpanded:(BOOL)expanded animate:(BOOL)animate;

@@ -31,6 +31,6 @@
 -(void)appendTag:(unsigned char)tag withStringContent:(id)stringContent;
 -(void)appendTag:(unsigned char)tag withIntContent:(int)intContent;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 @end
 

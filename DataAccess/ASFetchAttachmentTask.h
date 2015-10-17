@@ -24,7 +24,7 @@
 // inherited: -(BOOL)processContext:(id)context;
 -(id)attachmentName;
 -(id)messageID;
--(id)initForMessageServerID:(id)messageServerID andAttachmentName:(id)name;
+-(instancetype)initForMessageServerID:(id)messageServerID andAttachmentName:(id)name;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)shouldLogIncomingData;
 @end

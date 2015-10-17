@@ -13,7 +13,7 @@
 	int _value;
 }
 +(id)rangeValueWithRange:(VMURange)range value:(int)value;
--(id)initWithRange:(VMURange)range value:(int)value;
+-(instancetype)initWithRange:(VMURange)range value:(int)value;
 -(VMURange)addressRange;
 -(int)value;
 -(int)compare:(id)compare;

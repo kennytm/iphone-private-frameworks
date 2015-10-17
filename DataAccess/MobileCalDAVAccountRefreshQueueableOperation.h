@@ -14,7 +14,7 @@
 	MobileCalDAVAccountRefreshActor* _refreshActor;
 }
 @property(readonly, assign, nonatomic) CalDAVRefreshContext* context;
--(id)initWithQueue:(id)queue context:(id)context;
+-(instancetype)initWithQueue:(id)queue context:(id)context;
 // inherited: -(void)dealloc;
 // inherited: -(id)readableDescription;
 // inherited: -(void)performOperation;

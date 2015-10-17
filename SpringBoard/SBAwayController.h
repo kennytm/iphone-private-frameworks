@@ -63,7 +63,7 @@
 }
 +(id)sharedAwayController;
 // inherited: +(void)registerForAlerts;
--(id)initWithUIController:(id)uicontroller;
+-(instancetype)initWithUIController:(id)uicontroller;
 -(id)awayModel;
 // inherited: -(CGRect)alertWindowRect;
 // inherited: -(float)finalAlpha;

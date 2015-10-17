@@ -9,6 +9,6 @@
 
 @protocol MFLockObject
 -(BOOL)isLockedByMe;
--(id)initWithName:(id)name andDelegate:(id)delegate;
+-(instancetype)initWithName:(id)name andDelegate:(id)delegate;
 @end
 

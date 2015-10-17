@@ -10,8 +10,8 @@
 @interface UIPlacardButton : UIThreePartButton {
 }
 +(id)defaultFont;
--(id)initWithFrame:(CGRect)frame isShort:(BOOL)aShort;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithTitle:(id)title autosizesToFit:(BOOL)fit isShort:(BOOL)aShort;
+-(instancetype)initWithFrame:(CGRect)frame isShort:(BOOL)aShort;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithTitle:(id)title autosizesToFit:(BOOL)fit isShort:(BOOL)aShort;
 @end
 

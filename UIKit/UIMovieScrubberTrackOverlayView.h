@@ -22,7 +22,7 @@
 	unsigned _editing : 1;
 	unsigned _zoomed : 1;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
 -(void)_updateLeftFill;
 -(void)_updateRightFill;

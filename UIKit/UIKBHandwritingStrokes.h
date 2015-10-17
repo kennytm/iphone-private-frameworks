@@ -8,7 +8,7 @@
 @interface UIKBHandwritingStrokes : NSObject <NSCopying> {
 	KBStrokeList* _strokes;
 }
--(id)initWithStrokes:(KBStrokeList*)strokes;
+-(instancetype)initWithStrokes:(KBStrokeList*)strokes;
 // inherited: -(void)dealloc;
 -(const KBStrokeList*)strokes;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;

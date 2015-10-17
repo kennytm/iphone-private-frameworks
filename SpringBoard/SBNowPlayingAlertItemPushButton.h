@@ -13,7 +13,7 @@
 	float _yOffset;
 	float _xOffset;
 }
-// inherited: -(id)initWithImage:(id)image;
+// inherited: -(instancetype)initWithImage:(id)image;
 -(void)setYOffset:(float)offset;
 -(void)setXOffset:(float)offset;
 -(CGRect)hitRect;

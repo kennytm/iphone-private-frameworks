@@ -13,8 +13,8 @@
 
 @interface UIButton ()
 +(id)_defaultContentForType:(int)type andState:(unsigned)state;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

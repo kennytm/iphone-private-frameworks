@@ -18,7 +18,7 @@
 }
 +(id)sharedInstance;
 +(int)randomTransition;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)shouldRepeat;
 -(BOOL)shouldShuffle;
 -(int)secondsPerSlide;

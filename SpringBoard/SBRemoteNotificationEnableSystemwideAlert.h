@@ -12,7 +12,7 @@
 @interface SBRemoteNotificationEnableSystemwideAlert : SBAlertItem {
 	SBApplication* _app;
 }
--(id)initWithApplication:(id)application;
+-(instancetype)initWithApplication:(id)application;
 // inherited: -(void)dealloc;
 -(void)_showNotificationsPrefs;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

@@ -18,9 +18,9 @@
 	BOOL _usesRoundedCorners;
 	NSMutableArray* _cornerViews;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
--(id)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image originalImageOrientation:(int)orientation currentImageOrientation:(int)orientation4 interfaceOrientation:(int)orientation5 doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split chrome:(id)chrome chromeStatusBarStyle:(int)style;
--(id)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface transform:(CGAffineTransform)transform;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image originalImageOrientation:(int)orientation currentImageOrientation:(int)orientation4 interfaceOrientation:(int)orientation5 doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split chrome:(id)chrome chromeStatusBarStyle:(int)style;
+-(instancetype)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface transform:(CGAffineTransform)transform;
 // inherited: -(void)dealloc;
 -(int)_degreesForRotationFromInterfaceOrientation:(int)interfaceOrientation toInterfaceOrientation:(int)interfaceOrientation2;
 -(int)_degreesForRotationFromOriginalImageOrientation:(int)originalImageOrientation toInterfaceOrientation:(int)interfaceOrientation;
@@ -30,8 +30,8 @@
 -(id)_chromeStatusBarImageForInterfaceOrientation:(int)interfaceOrientation;
 #endif
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
--(id)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split;
--(id)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface;
+-(instancetype)initWithSnapshotFrame:(CGRect)snapshotFrame image:(id)image doubleHeightStatusBar:(BOOL)bar preventSplit:(BOOL)split;
+-(instancetype)initWithSnapshotFrame:(CGRect)snapshotFrame ioSurface:(void*)surface;
 #endif
 @end
 

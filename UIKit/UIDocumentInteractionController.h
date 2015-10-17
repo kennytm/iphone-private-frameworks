@@ -7,7 +7,7 @@
 @interface UIDocumentInteractionController()
 @property(retain, nonatomic) NSString* uniqueIdentifier;
 // inherited: +(void)initialize;
--(id)initWithURL:(id)url;
+-(instancetype)initWithURL:(id)url;
 // inherited: -(void)dealloc;
 -(void)updatePopoverContentSizeForPresentationOfTableViewHack;
 @end

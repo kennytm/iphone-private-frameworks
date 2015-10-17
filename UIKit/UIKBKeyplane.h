@@ -23,9 +23,9 @@
 @property(readonly, assign, nonatomic) NSArray* keysOrderedByPosition;
 @property(readonly, assign, nonatomic) NSArray* keys;
 +(UIKBKeyplane*)keyplane;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(UIKBKeylayout*)keylayoutWithName:(NSString*)name;
 -(void)layoutInRect:(CGRect)rect;

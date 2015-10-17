@@ -95,7 +95,7 @@
 	XXStruct_meWoWB _gridBounceLnFactor;
 }
 @property(assign, nonatomic) BOOL scrollsToTop;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)setContentSize:(CGSize)size;

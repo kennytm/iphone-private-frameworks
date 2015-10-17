@@ -18,7 +18,7 @@
 	int _swipeDirection;
 }
 @property(readonly, assign, nonatomic) int swipeDirection;
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;

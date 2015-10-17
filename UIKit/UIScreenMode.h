@@ -6,7 +6,7 @@
 
 @interface UIScreenMode ()
 +(id)screenModeForDisplayMode:(id)displayMode;
--(id)initWithDisplayMode:(id)displayMode;
+-(instancetype)initWithDisplayMode:(id)displayMode;
 -(id)_displayMode;
 @end
 

@@ -17,8 +17,8 @@
 // inherited: -(id)retain;
 -(void)release;
 // inherited: -(unsigned)retainCount;
-// inherited: -(id)init;
--(id)initWithBounds:(CGRect)bounds;
+// inherited: -(instancetype)init;
+-(instancetype)initWithBounds:(CGRect)bounds;
 // inherited: -(void)dealloc;
 // inherited: -(id)debugDescription;
 -(id)valueForKey:(id)key;

@@ -16,9 +16,9 @@
 @property(retain, nonatomic) NSMutableArray* keys;
 @property(readonly, assign, nonatomic) unsigned count;
 +(UIKBKeylist*)keylist;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(UIKBKey*)keyWithName:(NSString*)name;
 //-(id)description;

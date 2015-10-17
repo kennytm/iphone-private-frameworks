@@ -22,7 +22,7 @@
 // in a protocol: -(oneway void)setAccount:(id)account;
 // in a protocol: -(oneway void)shutdown;
 -(void)_findScheduler;
--(id)initWithDAAccount:(id)daaccount;
+-(instancetype)initWithDAAccount:(id)daaccount;
 // inherited: -(void)dealloc;
 @end
 

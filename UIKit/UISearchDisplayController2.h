@@ -11,8 +11,8 @@
 @protocol UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate;
 
 @interface UISearchDisplayController ()
--(id)init;
--(id)initWithCoder:(id)coder;
+-(instancetype)init;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)_configureNewSearchBar;

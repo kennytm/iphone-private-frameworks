@@ -59,7 +59,7 @@
 +(SBStatusBarController*)sharedStatusBarController;
 +(BOOL)isLikeAFullScreenStatusBar:(int)bar;
 +(UIImage*)statusBarImageNamed:(NSString*)named forMode:(int)mode;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)_enteringAirplaneMode;
 // inherited: -(void)dealloc;
 -(void)preheatStatusBarForMode:(int)mode orientation:(int)orientation;

@@ -34,9 +34,9 @@
 //@property(assign, nonatomic) BOOL explicit;
 +(UIKBGeometry*)geometry;
 +(UIKBGeometry*)geometryWithRect:(CGRect)rect;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(instancetype)initWithCoder:(id)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(id)copyWithZone:(NSZone*)zone;
 //-(id)description;

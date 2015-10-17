@@ -13,7 +13,7 @@
 @interface DAMessageStore : LibraryStore {
 	DAFolder* _DAFolder;
 }
-// inherited: -(id)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
+// inherited: -(instancetype)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
 -(id)_folderIDForFetching;
 // inherited: -(int)fetchNumMessages:(unsigned)messages preservingUID:(id)uid beforeUID:(unsigned)uid3 synchronize:(BOOL)synchronize compact:(BOOL)compact;
 // inherited: -(int)fetchMessagesMatchingCriterion:(id)criterion limit:(unsigned)limit;

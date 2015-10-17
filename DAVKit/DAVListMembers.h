@@ -14,8 +14,8 @@
 }
 +(id)listMembersRequestWithURL:(id)url showHidden:(BOOL)hidden;
 +(id)listMembersRequestWithSession:(id)session path:(id)path showHidden:(BOOL)hidden;
--(id)initListMembersWithURL:(id)url showHidden:(BOOL)hidden;
--(id)initListMembersWithSession:(id)session path:(id)path showHidden:(BOOL)hidden;
+-(instancetype)initListMembersWithURL:(id)url showHidden:(BOOL)hidden;
+-(instancetype)initListMembersWithSession:(id)session path:(id)path showHidden:(BOOL)hidden;
 -(id)members;
 // inherited: -(void)finalizeOperation;
 @end

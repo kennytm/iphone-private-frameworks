@@ -14,7 +14,7 @@
 }
 +(id)bottomLineColor;
 -(void)_tile;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;

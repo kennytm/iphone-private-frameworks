@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 @private
 	UISearchDisplayController* _linkedSearchDisplayController;
 }
--(id)initWithStyle:(int)style searchDisplayController:(id)controller;
+-(instancetype)initWithStyle:(int)style searchDisplayController:(id)controller;
 // inherited: -(void)viewDidDisappear:(BOOL)view;
 // inherited: -(float)heightForViewInPopoverView;
 @end

@@ -13,7 +13,7 @@
 	UILabel* _statusLabel;
 }
 +(CGRect)defaultFrame;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setStatus:(id)status;

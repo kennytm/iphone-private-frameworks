@@ -16,7 +16,7 @@
 	NSString* password;
 	BOOL supportsDigest;
 }
--(id)initWithBadAuthResponse:(CFHTTPMessageRef)badAuthResponse username:(id)username password:(id)password supportsDigest:(BOOL)digest;
+-(instancetype)initWithBadAuthResponse:(CFHTTPMessageRef)badAuthResponse username:(id)username password:(id)password supportsDigest:(BOOL)digest;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // inherited: -(BOOL)addAuthHeaderToMessage:(CFHTTPMessageRef)message;

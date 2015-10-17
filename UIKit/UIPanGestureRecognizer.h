@@ -51,7 +51,7 @@
 #endif
 @property(readonly, assign, nonatomic) CGAffineTransform transform;
 @property(assign, nonatomic, getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 // inherited: -(void)reset;
 -(void)setScrollViewGesture:(BOOL)gesture;

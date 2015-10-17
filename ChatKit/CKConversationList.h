@@ -15,7 +15,7 @@
 	CKService* _service;
 }
 @property(readonly, assign, nonatomic) CKService* service;
--(id)initWithService:(id)service;
+-(instancetype)initWithService:(id)service;
 -(void)dealloc;
 -(id)conversationForRecipients:(id)recipients create:(BOOL)create;
 -(id)_recipientForMessage:(id)message;

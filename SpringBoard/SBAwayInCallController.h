@@ -19,7 +19,7 @@
 	UIImage* _callerImage;
 	BOOL _isFullScreen;
 }
--(id)initWithLCDView:(id)lcdview;
+-(instancetype)initWithLCDView:(id)lcdview;
 // inherited: -(void)dealloc;
 -(id)callerImage;
 -(BOOL)callerImageIsFullScreen;

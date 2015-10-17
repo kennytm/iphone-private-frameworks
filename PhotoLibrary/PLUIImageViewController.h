@@ -30,10 +30,10 @@
 	unsigned _remaking : 1;
 }
 -(BOOL)_displaysFullScreen;
--(id)initWithPhoto:(id)photo;
--(id)initWithImage:(CGImageRef)image cropRect:(CGRect)rect;
--(id)initWithUIImage:(id)uiimage cropRect:(CGRect)rect;
--(id)initWithVideoPath:(id)videoPath;
+-(instancetype)initWithPhoto:(id)photo;
+-(instancetype)initWithImage:(CGImageRef)image cropRect:(CGRect)rect;
+-(instancetype)initWithUIImage:(id)uiimage cropRect:(CGRect)rect;
+-(instancetype)initWithVideoPath:(id)videoPath;
 // inherited: -(void)dealloc;
 -(int)_deviceOrientationFromImageOrientation:(int)imageOrientation;
 -(int)cropOverlayMode;

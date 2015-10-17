@@ -22,7 +22,7 @@
 	BOOL _showingArrow;
 	BOOL _arrowHighlighted;
 }
--(id)initWithFrame:(CGRect)frame candidates:(id)candidates type:(int)type maxScreenWidth:(float)width;
+-(instancetype)initWithFrame:(CGRect)frame candidates:(id)candidates type:(int)type maxScreenWidth:(float)width;
 -(void)dealloc;
 -(int)edgeType;
 -(int)textEffectsVisibilityLevel;

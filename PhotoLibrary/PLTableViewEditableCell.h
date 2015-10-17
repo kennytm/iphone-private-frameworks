@@ -18,7 +18,7 @@
 	id _delegate;
 	BOOL _forceFirstResponder;
 }
--(id)initWithFrame:(CGRect)frame multiLine:(BOOL)line;
+-(instancetype)initWithFrame:(CGRect)frame multiLine:(BOOL)line;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)forceFirstResponder:(BOOL)responder;

@@ -15,7 +15,7 @@
 	int _fd;
 	NSString* _path;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)data;
 // in a protocol: -(void)appendData:(id)data;

@@ -10,7 +10,7 @@
 
 @interface ASEventAddCommand : ASEventChangeCommand {
 }
-// inherited: -(id)initWithEvent:(id)event;
+// inherited: -(instancetype)initWithEvent:(id)event;
 // inherited: -(id)clientID;
 // inherited: -(id)serverID;
 @end

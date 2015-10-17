@@ -21,7 +21,7 @@
 	unsigned _usingWirelessModem : 1;
 }
 +(SBTelephonyManager *)sharedTelephonyManager;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(CTServerConnectionRef)_serverConnection;
 -(void)_serverConnectionDidError:(XXStruct_K5nmsA)_serverConnection;
 -(void)SBTelephonyDaemonRestartHandler;

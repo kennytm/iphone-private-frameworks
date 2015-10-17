@@ -16,7 +16,7 @@
 	CFRunLoopObserverRef _mainRunLoopDrawObserver;
 	BOOL _isFullScreen;
 }
--(id)initWithWebView:(id)webView plugInView:(id)view;
+-(instancetype)initWithWebView:(id)webView plugInView:(id)view;
 // inherited: -(void)dealloc;
 // inherited: -(void)setFrame:(CGRect)frame;
 // inherited: -(void)setFrameSize:(CGSize)size;

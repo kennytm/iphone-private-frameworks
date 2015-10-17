@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 }
 @property(assign, nonatomic) BOOL descending;
 +(id)expressionToken;
--(id)initWithOrderColumnsString:(id)orderColumnsString indexCharSelectionString:(id)string displayColumnName:(id)name;
+-(instancetype)initWithOrderColumnsString:(id)orderColumnsString indexCharSelectionString:(id)string displayColumnName:(id)name;
 -(id)orderColumnsString;
 -(id)_text;
 -(void)dealloc;

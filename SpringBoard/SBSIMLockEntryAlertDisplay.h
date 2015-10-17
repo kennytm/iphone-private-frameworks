@@ -14,7 +14,7 @@
 	NSString* _languageCode;
 	NSString* _code;
 }
--(id)initWithFrame:(CGRect)frame languageCode:(id)code;
+-(instancetype)initWithFrame:(CGRect)frame languageCode:(id)code;
 // inherited: -(void)dealloc;
 -(id)localizedStringWithKey:(id)key;
 -(id)_pinAttemptsRemainingLabel;

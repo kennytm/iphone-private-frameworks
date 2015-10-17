@@ -17,7 +17,7 @@
 	float _progress;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setMode:(int)mode;
 -(void)setProgress:(float)progress;

@@ -13,7 +13,7 @@
 	AYOperation* _operation;
 	BOOL _asyncLaunch;
 }
--(id)initWithOperation:(id)operation;
+-(instancetype)initWithOperation:(id)operation;
 -(void)setAsyncLaunch:(BOOL)launch;
 // inherited: -(BOOL)respondsToSelector:(SEL)selector;
 // inherited: -(BOOL)conformsToProtocol:(id)protocol;

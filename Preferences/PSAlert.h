@@ -28,7 +28,7 @@
 @property(retain) id userInfo;
 +(id)alertWithBodyText:(id)bodyText defaultButton:(id)button alternateButton:(id)button3;
 +(void)displayAlertWithBodyText:(id)bodyText defaultButton:(id)button alternateButton:(id)button3 delegate:(id)delegate userInfo:(id)info;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(id)alertSheet;

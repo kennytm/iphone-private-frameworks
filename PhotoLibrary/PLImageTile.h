@@ -29,7 +29,7 @@
 -(void)setEnabledGestures:(int)gestures;
 -(void)_cleanupVideoView;
 -(void)_cleanupImageScroller;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(BOOL)_drawsContent;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 	UIWindow* _window;
 	UIButton* _zoomButton;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)isClassicControlWindow:(id)window;
 -(id)_zoomText:(BOOL)text;

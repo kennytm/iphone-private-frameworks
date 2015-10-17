@@ -19,14 +19,14 @@
 	unsigned maxDepth;
 	unsigned threadCount;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)freeXrefTable:(id)table;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)addEvent:(id)event;
 -(void)buildPCMap:(long*)map withNumPages:(unsigned)numPages forTask:(unsigned)task;
--(id)initWithLogRecords:(XXStruct_KGqEpA*)logRecords forTask:(unsigned)task;
--(id)initWithBacktraces:(id)backtraces forTask:(unsigned)task;
+-(instancetype)initWithLogRecords:(XXStruct_KGqEpA*)logRecords forTask:(unsigned)task;
+-(instancetype)initWithBacktraces:(id)backtraces forTask:(unsigned)task;
 -(id)symbolForPC:(unsigned)pc;
 -(id)threadIDs;
 -(id)traceForThread:(unsigned)thread;

@@ -27,7 +27,7 @@
 		unsigned state : 3;
 	} _parserFlags;
 }
--(id)initWithBodyData:(id)bodyData topLevelHeaders:(id)headers headersToPreserve:(id)preserve;
+-(instancetype)initWithBodyData:(id)bodyData topLevelHeaders:(id)headers headersToPreserve:(id)preserve;
 // inherited: -(void)dealloc;
 -(void)start;
 -(void)setDelegate:(id)delegate;

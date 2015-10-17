@@ -11,7 +11,7 @@
 	SEL _progressSelector;
 	int _gestureType;
 }
--(id)initWithTarget:(id)target progressSelector:(SEL)selector gestureType:(int)type;
+-(instancetype)initWithTarget:(id)target progressSelector:(SEL)selector gestureType:(int)type;
 -(void)setProgress:(float)progress;
 -(int)gestureType;
 @end

@@ -14,7 +14,7 @@
 @private
 	MPInlineTransportControls* _transportControls;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setItem:(id)item;

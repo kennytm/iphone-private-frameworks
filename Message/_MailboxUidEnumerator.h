@@ -14,7 +14,7 @@
 	unsigned _index;
 }
 // inherited: -(void)dealloc;
--(id)initWithMailbox:(id)mailbox;
+-(instancetype)initWithMailbox:(id)mailbox;
 // inherited: -(id)nextObject;
 @end
 

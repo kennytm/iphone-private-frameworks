@@ -14,8 +14,8 @@
 	VMURange* _ranges;
 	unsigned _max;
 }
-// inherited: -(id)init;
--(id)initWithRanges:(const VMURange*)ranges count:(unsigned)count;
+// inherited: -(instancetype)init;
+-(instancetype)initWithRanges:(const VMURange*)ranges count:(unsigned)count;
 // inherited: -(void)dealloc;
 -(void)setCapacity:(unsigned)capacity;
 -(void)addRange:(VMURange)range;

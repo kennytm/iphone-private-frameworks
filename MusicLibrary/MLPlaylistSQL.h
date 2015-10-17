@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @private
 	void* _containerRef;
 }
--(id)initWithDBRecord:(void*)dbrecord;
+-(instancetype)initWithDBRecord:(void*)dbrecord;
 -(void*)dbRecord;
 -(int)dbRecordID;
 -(void)dealloc;

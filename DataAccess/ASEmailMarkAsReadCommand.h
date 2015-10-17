@@ -11,7 +11,7 @@
 @interface ASEmailMarkAsReadCommand : ASSyncTaskCommand {
 	BOOL _read;
 }
--(id)initWithServerID:(id)serverID read:(BOOL)read;
+-(instancetype)initWithServerID:(id)serverID read:(BOOL)read;
 // inherited: -(void)appendApplicationDataForTask:(id)task toWBXMLData:(id)wbxmldata;
 @end
 

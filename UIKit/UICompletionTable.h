@@ -23,7 +23,7 @@
 
 +(id)_cellFont;
 +(id)_shadowImage;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setDelegate:(id)delegate;

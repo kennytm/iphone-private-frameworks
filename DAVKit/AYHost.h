@@ -23,8 +23,8 @@
 +(id)hostWithName:(id)name;
 +(id)hostWithAddress:(id)address;
 -(void)_setClient;
--(id)initHostWithName:(id)name;
--(id)initHostWithAddress:(id)address;
+-(instancetype)initHostWithName:(id)name;
+-(instancetype)initHostWithAddress:(id)address;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)_launchInfoResolutionWithType:(int)type;

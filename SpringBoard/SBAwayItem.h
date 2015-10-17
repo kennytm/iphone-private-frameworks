@@ -18,8 +18,8 @@
 	NSDate* _date;
 	int _count;
 }
--(id)initWithTitle:(id)title uid:(int)uid type:(int)type date:(id)date count:(int)count;
--(id)initWithTitle:(id)title uid:(int)uid type:(int)type date:(id)date;
+-(instancetype)initWithTitle:(id)title uid:(int)uid type:(int)type date:(id)date count:(int)count;
+-(instancetype)initWithTitle:(id)title uid:(int)uid type:(int)type date:(id)date;
 // inherited: -(void)dealloc;
 -(id)title;
 -(void)setSingletonTitle:(id)title;

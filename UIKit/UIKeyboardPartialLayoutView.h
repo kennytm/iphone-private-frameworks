@@ -9,6 +9,6 @@
 
 @interface UIKeyboardPartialLayoutView : UIView {
 }
--(id)initWithFrame:(CGRect)frame imageName:(id)name visibleOrigin:(CGPoint)origin;
+-(instancetype)initWithFrame:(CGRect)frame imageName:(id)name visibleOrigin:(CGPoint)origin;
 @end
 

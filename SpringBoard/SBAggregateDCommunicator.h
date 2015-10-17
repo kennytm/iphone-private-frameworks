@@ -28,7 +28,7 @@
 }
 @property(retain, nonatomic) NSString* lastApplicationActivatedIdentifier;
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_installedApplicationsChanged:(id)changed;
 -(void)reportApplicationQuit:(id)quit;

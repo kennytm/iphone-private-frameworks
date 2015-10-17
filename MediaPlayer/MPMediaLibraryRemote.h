@@ -22,7 +22,7 @@
 	CFRunLoopSourceRef _runLoopSource;
 	unsigned _serverConnectionDeathCount;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)prepareForQueryingWithMediaLibrary:(id)mediaLibrary;
 -(void)prepareForDecodingWithCoder:(id)coder;

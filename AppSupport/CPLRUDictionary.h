@@ -39,7 +39,7 @@
 	CPLRUDictionaryNode* _head;
 	CPLRUDictionaryNode* _tail;
 }
--(id)initWithMaximumCapacity:(NSUInteger)maximumCapacity;
+-(instancetype)initWithMaximumCapacity:(NSUInteger)maximumCapacity;
 -(NSUInteger)count;
 -(id)allKeys;
 -(id)objectForKey:(id)key;

@@ -21,7 +21,7 @@
 }
 // inherited: +(id)createBottomBarForInstance:(id)instance;
 +(id)_createBottomButtonBarForDisplay:(id)display;
--(id)initWithSize:(CGSize)size;
+-(instancetype)initWithSize:(CGSize)size;
 // inherited: -(void)dealloc;
 -(void)_callCountChanged:(id)changed;
 -(void)_callWaitingControlsFaded;

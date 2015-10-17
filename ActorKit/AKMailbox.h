@@ -19,7 +19,7 @@
 
 /// Create a mailbox with target and public protocol.
 +(id)mailboxWithTarget:(id)target protocol:(id)protocol;
--(id)initWithTarget:(id)target protocol:(id)protocol;
+-(instancetype)initWithTarget:(id)target protocol:(id)protocol;
 -(void)dealloc;
 
 /// Checks whether the mailbox conforms to the specific protocol (either privately or publicly).

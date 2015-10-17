@@ -14,7 +14,7 @@
 	NSString* _body;
 	double _autoDismissInterval;
 }
--(id)initWithTitle:(id)title body:(id)body;
+-(instancetype)initWithTitle:(id)title body:(id)body;
 // inherited: -(void)dealloc;
 // inherited: -(double)autoDismissInterval;
 -(void)setAutoDismissInterval:(double)interval;

@@ -8,7 +8,7 @@
 @interface SBDeviceLockKeyboard : UIKeyboard {
 	SBDeviceLockViewWithKeyboard* _deviceLockView;
 }
--(id)initWithFrame:(CGRect)frame deviceLockView:(SBDeviceLockViewWithKeyboard *)view;
+-(instancetype)initWithFrame:(CGRect)frame deviceLockView:(SBDeviceLockViewWithKeyboard *)view;
 // inherited: -(BOOL)canDismiss;
 // inherited: -(void)minimize;
 // inherited: -(void)maximize;

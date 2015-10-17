@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 	MLChapterTOC* _chapterTOC;
 }
 @property(assign, nonatomic) BOOL hasChanges;
--(id)initWithDBRecord:(void*)dbrecord;
--(id)initWithTrackContext:(void*)trackContext;
+-(instancetype)initWithDBRecord:(void*)dbrecord;
+-(instancetype)initWithTrackContext:(void*)trackContext;
 -(BOOL)_isFilePathPlayable;
 -(void*)dbRecord;
 -(int)dbRecordID;

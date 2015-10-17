@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface MLMixedResultsQueryImpl_SQL : MLTrackQueryImpl_SQL {
 }
--(id)init;
+-(instancetype)init;
 -(int)entityTypeOfEntityAtIndex:(unsigned)index;
 @end
 

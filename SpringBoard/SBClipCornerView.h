@@ -26,7 +26,7 @@
 @property(retain, nonatomic) UIImage* backgroundImage;
 @property(assign, nonatomic) CGRect backgroundImageSubrect;
 -(void)_updateCornerPath;
--(id)initWithCornerRadius:(CGFloat)cornerRadius forCorner:(int)corner;
+-(instancetype)initWithCornerRadius:(CGFloat)cornerRadius forCorner:(int)corner;
 -(void)drawRect:(CGRect)rect;
 -(void)setFrame:(CGRect)frame;
 // inherited: -(void)dealloc;

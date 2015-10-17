@@ -14,7 +14,7 @@
 	UIImage* _backgroundImage;
 	float _requiredFrameSizeWidth;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(CGSize)sizeThatFits:(CGSize)fits;

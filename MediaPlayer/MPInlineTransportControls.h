@@ -16,7 +16,7 @@
 	UIActivityIndicatorView* _loadingMovieIndicator;
 }
 @property(readonly, assign, nonatomic) CGRect availableProgressControlAreaFrame;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)reloadForAdditions:(id)additions removals:(id)removals animate:(BOOL)animate;
 -(id)buttonImageForPart:(unsigned)part;

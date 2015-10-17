@@ -19,7 +19,7 @@
 +(void)registerForAlerts;
 +(void)alarmsDidFire:(id)alarms;
 +(void)significantTimeChange;
--(id)initWithDate:(double)date title:(id)title location:(id)location eventId:(int)anId isAllDay:(BOOL)day;
+-(instancetype)initWithDate:(double)date title:(id)title location:(id)location eventId:(int)anId isAllDay:(BOOL)day;
 // inherited: -(void)dealloc;
 -(id)_dayString:(BOOL)string;
 -(id)_timeString;

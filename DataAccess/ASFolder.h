@@ -22,7 +22,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // inherited: -(unsigned)hash;
 // inherited: -(BOOL)isEqual:(id)equal;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
@@ -30,7 +30,7 @@
 -(BOOL)mayContainSyncContent:(int)content;
 -(id)_folderTypeString;
 // inherited: -(id)description;
--(id)initWithFolderType:(int)folderType serverID:(id)anId parentID:(id)anId3 displayName:(id)name localID:(int)anId5;
+-(instancetype)initWithFolderType:(int)folderType serverID:(id)anId parentID:(id)anId3 displayName:(id)name localID:(int)anId5;
 // inherited: -(void)parseASParseContext:(id)context root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 account:(id)account;
 // inherited: -(id)asParseRules;
 -(void)setFolderTypeNumber:(id)number;

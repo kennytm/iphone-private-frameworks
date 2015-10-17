@@ -8,7 +8,7 @@
 	BOOL _newAccount;
 }
 @property(assign, nonatomic, getter=isNewAccount) BOOL newAccount;
--(id)initWithAccountURL:(NSURL *)accountURL newAccount:(BOOL)account;
+-(instancetype)initWithAccountURL:(NSURL *)accountURL newAccount:(BOOL)account;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 @end
 

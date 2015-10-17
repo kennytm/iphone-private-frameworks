@@ -28,7 +28,7 @@
 @property(readonly, assign, nonatomic) BOOL terminalPointPlacedCarefully;
 @property(assign, nonatomic) CGPoint magnificationPoint;
 +(id)sharedRangedMagnifier;
--(id)initWithDefaultFrame;
+-(instancetype)initWithDefaultFrame;
 -(void)dealloc;
 -(int)horizontalMovementAtTime:(double)time;
 -(BOOL)wasPlacedCarefullyAtTime:(double)time;

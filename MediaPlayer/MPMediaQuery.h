@@ -31,12 +31,12 @@
 +(id)genresQuery;
 +(void)setFilteringDisabled:(BOOL)disabled;
 +(id)videosQuery;
--(id)init;
--(id)initWithFilterPredicates:(id)filterPredicates;
+-(instancetype)init;
+-(instancetype)initWithFilterPredicates:(id)filterPredicates;
 -(id)_initWithMLQuery:(id)mlquery;
 -(void)dealloc;
 -(id)description;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)copyWithZone:(NSZone*)zone;
 -(void)addFilterPredicate:(id)predicate;

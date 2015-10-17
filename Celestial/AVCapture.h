@@ -59,9 +59,9 @@
 +(id)availableModes;
 -(id)optionsForCaptureMode:(id)captureMode qualityPreset:(id)preset;
 -(BOOL)getRecorderBoolForKey:(id)key withDefault:(BOOL)aDefault;
--(id)initWithFigRecorderCreateFunction:(/*function-pointer*/ void*)figRecorderCreateFunction;
--(id)init;
--(id)initLocal;
+-(instancetype)initWithFigRecorderCreateFunction:(/*function-pointer*/ void*)figRecorderCreateFunction;
+-(instancetype)init;
+-(instancetype)initLocal;
 -(void)dealloc;
 -(void)setObject:(id)object forMetadataKey:(id)metadataKey;
 -(id)objectForMetadataKey:(id)metadataKey;

@@ -15,7 +15,7 @@
 	int _seconds;
 	int _oldSeconds;
 }
--(id)initWithHeartbeat:(int)heartbeat folders:(id)folders oldHeartbeat:(int)heartbeat3 oldFolders:(id)folders4;
+-(instancetype)initWithHeartbeat:(int)heartbeat folders:(id)folders oldHeartbeat:(int)heartbeat3 oldFolders:(id)folders4;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)forceEDGETransport;
 // inherited: -(BOOL)shouldHoldPowerAssertion;

@@ -10,6 +10,6 @@
 
 @interface ASContactDeleteCommand : ASSyncTaskCommand {
 }
--(id)initWithServerID:(id)serverID;
+-(instancetype)initWithServerID:(id)serverID;
 @end
 

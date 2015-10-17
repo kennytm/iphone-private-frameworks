@@ -25,7 +25,7 @@
 @property(readonly, assign, nonatomic) CGRect boundingRect;
 @property(readonly, assign, nonatomic, getter=isTextOnly) BOOL textOnly;
 @property(readonly, assign, nonatomic) BOOL valid;
--(id)initWithDocumentView:(id)documentView;
+-(instancetype)initWithDocumentView:(id)documentView;
 -(void)dealloc;
 -(void)setSelectionWithPoint:(CGPoint)point;
 -(id)webView;

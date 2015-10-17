@@ -53,7 +53,7 @@
 @property(assign, nonatomic) int minuteInterval;
 @property(assign, nonatomic) id delegateOfDatePicker;
 @property(assign, nonatomic) double countDownDuration;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(float)_tableRowHeight;
 -(id)pickerImageNamePrefix;

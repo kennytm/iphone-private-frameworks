@@ -19,9 +19,9 @@
 	unsigned _complete : 1;
 	NSRange _range;
 }
--(id)initWithUid:(unsigned long)uid section:(id)section estimatedLength:(unsigned long)length;
--(id)initWithUid:(unsigned long)uid section:(id)section length:(unsigned long)length;
--(id)initWithUid:(unsigned long)uid section:(id)section range:(NSRange)range;
+-(instancetype)initWithUid:(unsigned long)uid section:(id)section estimatedLength:(unsigned long)length;
+-(instancetype)initWithUid:(unsigned long)uid section:(id)section length:(unsigned long)length;
+-(instancetype)initWithUid:(unsigned long)uid section:(id)section range:(NSRange)range;
 -(id)section;
 // inherited: -(unsigned long)expectedLength;
 // inherited: -(unsigned long)bytesFetched;

@@ -13,7 +13,7 @@
 	NSString* ns;
 	NSString* tag;
 }
--(id)initWithNS:(id)ns andTag:(id)tag;
+-(instancetype)initWithNS:(id)ns andTag:(id)tag;
 // inherited: -(void)dealloc;
 -(id)namespace;
 -(id)tag;

@@ -25,7 +25,7 @@
 	MFMailComposeViewController* _mailComposeController;
 }
 @property(assign, nonatomic) CKConversationList* conversationList;
--(id)initWithNavigationController:(id)navigationController service:(id)service;
+-(instancetype)initWithNavigationController:(id)navigationController service:(id)service;
 -(void)dealloc;
 -(id)transcriptController;
 -(void)_conversationWasMarkedAsRead:(id)read;

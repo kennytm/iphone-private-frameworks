@@ -13,7 +13,7 @@
 	UIRemoteWindow* _remoteWindow;
 	BOOL _captureAllWindows;
 }
--(id)initWithFrame:(CGRect)frame captureAllWindows:(BOOL)windows;
+-(instancetype)initWithFrame:(CGRect)frame captureAllWindows:(BOOL)windows;
 -(void)registerWithIdentifier:(id)identifier;
 -(void)dealloc;
 -(void)unregister;

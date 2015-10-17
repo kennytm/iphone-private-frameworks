@@ -66,7 +66,7 @@
 +(BOOL)isPlayingToTVOut;
 +(CGRect)calculatePosterImageViewFrameInRect:(CGRect)rect;
 +(id)sharedVideoView:(BOOL)view;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)showAlternateTracksController:(id)controller;
 -(void)showChaptersControllerAndFadeViews:(id)views;

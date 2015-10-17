@@ -28,7 +28,7 @@
 	BOOL _parentIsClosing;
 	UITextField* _textField;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(int)composeRecipientAtomKeyboardType:(id)type;
 // inherited: -(void)setLabel:(id)label;
 -(BOOL)editable;

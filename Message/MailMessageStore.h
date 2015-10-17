@@ -45,7 +45,7 @@
 +(BOOL)cheapStoreAtPathIsEmpty:(id)pathIsEmpty;
 // inherited: +(Class)classForMimePart;
 +(int)copyMessages:(id)messages toMailbox:(id)mailbox markAsRead:(BOOL)read deleteOriginals:(BOOL)originals isDeletion:(BOOL)deletion unsuccessfulOnes:(id)ones;
--(id)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
+-(instancetype)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
 // inherited: -(void)dealloc;
 -(void)openAsynchronously;
 -(void)openSynchronously;

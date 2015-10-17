@@ -13,7 +13,7 @@
 	CGPoint _downPoint;
 }
 +(id)grabberImage;
--(id)initWithFrame:(CGRect)frame tableViewCell:(id)cell;
+-(instancetype)initWithFrame:(CGRect)frame tableViewCell:(id)cell;
 -(void)drawRect:(CGRect)rect;
 -(BOOL)shouldTrack;
 -(BOOL)beginTrackingWithTouch:(id)touch withEvent:(id)event;

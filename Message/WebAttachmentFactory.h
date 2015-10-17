@@ -13,7 +13,7 @@
 	WeakSet* _instances;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)addSource:(id)source;
 -(id)availableSources;
 -(id)sourceWithUniqueIdentifier:(unsigned)uniqueIdentifier;

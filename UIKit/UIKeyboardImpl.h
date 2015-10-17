@@ -172,7 +172,7 @@
 +(CGSize)defaultSizeForOrientation:(UIInterfaceOrientation)orientation;
 +(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(UIInterfaceOrientation)orientationForSize:(CGSize)size;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)delayedInit;
 -(void)dealloc;
 -(void)clearLayouts;

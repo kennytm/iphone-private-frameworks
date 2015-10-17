@@ -15,9 +15,9 @@
 }
 +(id)avItem;
 +(id)avItemWithPath:(id)path error:(id*)error;
--(id)initWithError:(id*)error;
--(id)init;
--(id)initWithPath:(id)path error:(id*)error;
+-(instancetype)initWithError:(id*)error;
+-(instancetype)init;
+-(instancetype)initWithPath:(id)path error:(id*)error;
 -(void)dealloc;
 -(BOOL)setPath:(id)path error:(id*)error;
 -(int)_instantiateItem;

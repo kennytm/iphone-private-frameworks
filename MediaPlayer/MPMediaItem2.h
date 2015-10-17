@@ -14,10 +14,10 @@
 +(BOOL)canFilterByProperty:(id)property;
 +(void)_createFilterableDictionary;
 +(BOOL)_isValidItemProperty:(id)property;
--(id)initWithPersistentID:(unsigned long long)persistentID;
+-(instancetype)initWithPersistentID:(unsigned long long)persistentID;
 -(id)_initWithMLTrack:(id)mltrack;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(BOOL)isEqual:(id)equal;
 -(unsigned)hash;

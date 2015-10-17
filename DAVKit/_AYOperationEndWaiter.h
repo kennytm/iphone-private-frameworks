@@ -13,7 +13,7 @@
 	AYOperation* _operation;
 	BOOL _finished;
 }
--(id)initWithOperation:(id)operation;
+-(instancetype)initWithOperation:(id)operation;
 // inherited: -(void)dealloc;
 -(void)wait;
 -(void)operationEnded:(id)ended;

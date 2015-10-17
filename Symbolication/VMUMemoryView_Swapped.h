@@ -15,7 +15,7 @@
 	unsigned long _cursor;
 	char* _data;
 }
--(id)initWithAddressRange:(VMURange)addressRange data:(char*)data;
+-(instancetype)initWithAddressRange:(VMURange)addressRange data:(char*)data;
 // in a protocol: -(VMURange)addressRange;
 // in a protocol: -(unsigned long long)cursor;
 // in a protocol: -(void)setCursor:(unsigned long long)cursor;

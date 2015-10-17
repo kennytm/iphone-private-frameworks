@@ -14,7 +14,7 @@
 }
 +(void)initialize;
 +(id)sharedAVSystemController;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(BOOL)changeActiveCategoryVolumeBy:(float)by fallbackCategory:(id)category resultVolume:(float*)volume affectedCategory:(id*)category4;
 -(BOOL)changeActiveCategoryVolumeBy:(float)by;

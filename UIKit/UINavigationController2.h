@@ -11,8 +11,8 @@
 @protocol UINavigationControllerDelegate;
 
 @interface UINavigationController ()
--(id)initWithNibName:(id)nibName bundle:(id)bundle;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithNibName:(id)nibName bundle:(id)bundle;
+-(instancetype)initWithCoder:(id)coder;
 -(BOOL)_shouldPersistViewWhenCoding;
 -(void)encodeWithCoder:(id)coder;
 -(void)_releaseContainerViews;

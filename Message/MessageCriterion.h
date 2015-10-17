@@ -32,11 +32,11 @@
 +(id)stringForCriterionType:(int)criterionType;
 +(id)criterionForMailboxURL:(id)mailboxURL;
 +(id)messageIsDeletedCriterion:(BOOL)criterion;
-// inherited: -(id)init;
--(id)initWithCriterion:(id)criterion expression:(id)expression;
--(id)initWithType:(int)type qualifier:(int)qualifier expression:(id)expression;
--(id)initWithDictionary:(id)dictionary;
--(id)initWithDictionary:(id)dictionary andRemoveRecognizedKeysIfMutable:(BOOL)aMutable;
+// inherited: -(instancetype)init;
+-(instancetype)initWithCriterion:(id)criterion expression:(id)expression;
+-(instancetype)initWithType:(int)type qualifier:(int)qualifier expression:(id)expression;
+-(instancetype)initWithDictionary:(id)dictionary;
+-(instancetype)initWithDictionary:(id)dictionary andRemoveRecognizedKeysIfMutable:(BOOL)aMutable;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)isEqual:(id)equal;
 -(id)descriptionWithDepth:(unsigned)depth;

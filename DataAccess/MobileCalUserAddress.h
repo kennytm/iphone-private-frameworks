@@ -15,7 +15,7 @@
 }
 +(id)userAddress:(id)address forAccount:(id)account;
 +(id)userAddressFromDictionaryRepresentation:(id)dictionaryRepresentation forAccount:(id)account;
--(id)initWithAddress:(id)address account:(id)account;
+-(instancetype)initWithAddress:(id)address account:(id)account;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 -(id)account;

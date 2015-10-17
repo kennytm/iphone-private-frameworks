@@ -10,7 +10,7 @@
 @interface UIProgressBar : UIProgressView {
 }
 @property(assign, nonatomic) int progressBarStyle;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setStyle:(int)style;
 @end
 

@@ -50,7 +50,7 @@
 +(SBUIController *)sharedInstance;
 -(void)_indicateConnectedToPower;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)animateAppleDown:(BOOL)animated;	// Zoom out the Apple logo.
 -(BOOL)launchedAfterLanguageRestart;
 -(void)clearLaunchedAfterLanguageRestart;

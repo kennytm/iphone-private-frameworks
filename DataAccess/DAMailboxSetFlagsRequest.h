@@ -14,7 +14,7 @@
 	unsigned long long _offFlags;
 	NSString* _messageID;
 }
--(id)initRequestWithSetFlags:(unsigned long long)setFlags unsetFlags:(unsigned long long)flags message:(id)message;
+-(instancetype)initRequestWithSetFlags:(unsigned long long)setFlags unsetFlags:(unsigned long long)flags message:(id)message;
 // inherited: -(void)dealloc;
 -(unsigned long long)onFlags;
 -(unsigned long long)offFlags;

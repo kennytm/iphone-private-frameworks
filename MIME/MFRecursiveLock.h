@@ -15,8 +15,8 @@
 	id _delegate;
 }
 +(void)initialize;
-// inherited: -(id)init;
-// in a protocol: -(id)initWithName:(id)name andDelegate:(id)delegate;
+// inherited: -(instancetype)init;
+// in a protocol: -(instancetype)initWithName:(id)name andDelegate:(id)delegate;
 // in a protocol: -(BOOL)isLockedByMe;
 // inherited: -(void)lock;
 // inherited: -(BOOL)tryLock;

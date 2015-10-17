@@ -18,7 +18,7 @@
 +(float)defaultWidth;
 +(id)minusImage;
 +(id)plusImage;
--(id)initWithRemoveControl:(id)removeControl;
+-(instancetype)initWithRemoveControl:(id)removeControl;
 -(void)dealloc;
 -(void)setHiding:(BOOL)hiding;
 -(BOOL)isHiding;

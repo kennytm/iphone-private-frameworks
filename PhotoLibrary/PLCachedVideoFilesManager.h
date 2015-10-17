@@ -18,7 +18,7 @@
 	NSMutableDictionary* _videosMetadata;
 	NSDate* _currentDatabaseModTime;
 }
--(id)initWithPhotoLibrary:(id)photoLibrary;
+-(instancetype)initWithPhotoLibrary:(id)photoLibrary;
 // inherited: -(void)dealloc;
 -(void)postProcessVideosAfterSync;
 -(void)cancelPostProcessing;

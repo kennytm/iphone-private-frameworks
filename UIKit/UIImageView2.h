@@ -10,8 +10,8 @@
 @class NSArray, UIImage;
 
 @interface UIImageView ()
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setBounds:(CGRect)bounds;

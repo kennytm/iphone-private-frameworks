@@ -30,7 +30,7 @@
 @property(readonly, assign, nonatomic) BOOL animateFromCurrentPosition;
 @property(readonly, assign, nonatomic) BOOL shouldDeleteAfterAnimation;
 @property(readonly, assign, nonatomic) BOOL editing;
--(id)initWithView:(id)view indexPath:(id)path endRect:(CGRect)rect endAlpha:(float)alpha startFraction:(float)fraction endFraction:(float)fraction6 curve:(int)curve animateFromCurrentPosition:(BOOL)currentPosition shouldDeleteAfterAnimation:(BOOL)animation editing:(BOOL)editing;
+-(instancetype)initWithView:(id)view indexPath:(id)path endRect:(CGRect)rect endAlpha:(float)alpha startFraction:(float)fraction endFraction:(float)fraction6 curve:(int)curve animateFromCurrentPosition:(BOOL)currentPosition shouldDeleteAfterAnimation:(BOOL)animation editing:(BOOL)editing;
 -(void)dealloc;
 -(id)description;
 @end

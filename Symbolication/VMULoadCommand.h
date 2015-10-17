@@ -13,7 +13,7 @@
 	unsigned _command;
 }
 +(id)loadCommandWithMemory:(id)memory;
--(id)initWithMemory:(id)memory;
+-(instancetype)initWithMemory:(id)memory;
 -(unsigned long long)cmdSize;
 -(BOOL)isUUID;
 -(BOOL)isSymTab;

@@ -24,7 +24,7 @@
 +(XXStruct_UUz0SD)backgroundImageSlicesWithDisclosure:(BOOL)disclosure;
 +(float)defaultHeight;
 +(float)horizontalPadding;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)title;
 -(void)setTitle:(id)title;

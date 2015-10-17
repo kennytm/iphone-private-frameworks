@@ -33,7 +33,7 @@ UIImageView
 +(float)textFontSize;
 +(float)labelFontSize;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 -(void)setContentsAlpha:(float)alpha;
 #endif
 -(CGRect)_text1Frame;

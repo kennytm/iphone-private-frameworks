@@ -12,7 +12,7 @@
 @interface SBWiFiCell : UIAlertSheetTableCell {
 	id _userInfo;
 }
--(id)initWithFrame:(CGRect)frame networkDictionary:(id)dictionary;
+-(instancetype)initWithFrame:(CGRect)frame networkDictionary:(id)dictionary;
 -(void)setUserInfo:(id)info;
 -(id)userInfo;
 // inherited: -(void)layoutSubviews;

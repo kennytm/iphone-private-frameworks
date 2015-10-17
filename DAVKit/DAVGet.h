@@ -13,9 +13,9 @@
 +(id)getRequestWithURL:(id)url;
 +(id)getRequestWithSession:(id)session path:(id)path;
 +(id)getRequestWithSession:(id)session URI:(id)uri;
--(id)initGetWithURL:(id)url;
--(id)initGetWithSession:(id)session path:(id)path;
--(id)initGetWithSession:(id)session URI:(id)uri;
+-(instancetype)initGetWithURL:(id)url;
+-(instancetype)initGetWithSession:(id)session path:(id)path;
+-(instancetype)initGetWithSession:(id)session URI:(id)uri;
 -(id)data;
 @end
 

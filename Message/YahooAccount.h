@@ -43,7 +43,7 @@
 // inherited: +(id)hostname;
 // inherited: +(BOOL)usernameIsEmailAddress;
 // inherited: +(BOOL)getConfigurationFromServerForEmail:(id)email;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)_deliveryAccountCreateIfNeeded:(BOOL)needed;
 -(id)_defaultSpecialMailboxNameForType:(int)type;
 // inherited: -(id)hostname;

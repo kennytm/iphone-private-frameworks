@@ -14,7 +14,7 @@
 	/*function-pointer*/ void* _pushCallback;
 	/*function-pointer*/ void* _popCallback;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setPushCallBack:(/*function-pointer*/ void*)back;
 -(void)setPopCallBack:(/*function-pointer*/ void*)back;

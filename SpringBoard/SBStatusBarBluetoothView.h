@@ -20,7 +20,7 @@
 }
 // inherited: +(void)initialize;
 -(id)icon;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(int)_effectiveMode;
 -(void)_setupActiveView;
 -(int)btStatus;

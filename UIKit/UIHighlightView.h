@@ -17,7 +17,7 @@
 	NSMutableArray* _innerQuads;
 	BOOL _invertHighlight;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)cleanUp;
 -(void)dealloc;
 -(void)setColor:(id)color;

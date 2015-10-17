@@ -12,11 +12,11 @@
 +(int)classicPortForScheme:(id)scheme;
 +(id)URLWithDirtyString:(id)dirtyString;
 +(id)URLWithScheme:(id)scheme host:(id)host port:(int)port uri:(id)uri;
--(id)initWithDirtyString:(id)dirtyString;
+-(instancetype)initWithDirtyString:(id)dirtyString;
 -(id)uri;
 -(id)URLWithUsername:(id)username;
 -(id)URLWithoutUsername;
 -(id)URLWithoutPassword;
--(id)initWithScheme:(id)scheme host:(id)host port:(int)port uri:(id)uri;
+-(instancetype)initWithScheme:(id)scheme host:(id)host port:(int)port uri:(id)uri;
 @end
 

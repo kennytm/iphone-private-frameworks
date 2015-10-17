@@ -38,7 +38,7 @@
 @property(readonly, assign, nonatomic) NSDate* lastModifiedDate;
 +(Class)_implementationClass;
 +(id)defaultMediaLibrary;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)forwardInvocation:(id)invocation;
 -(id)methodSignatureForSelector:(SEL)selector;

@@ -14,7 +14,7 @@
 	int _bodyFormat;
 	int _maxSize;
 }
--(id)initRequestForBodyFormat:(int)bodyFormat withMessageID:(id)messageID withBodySizeLimit:(int)bodySizeLimit;
+-(instancetype)initRequestForBodyFormat:(int)bodyFormat withMessageID:(id)messageID withBodySizeLimit:(int)bodySizeLimit;
 -(id)messageID;
 // inherited: -(int)bodyFormat;
 -(int)maxSize;

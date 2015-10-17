@@ -19,7 +19,7 @@
 +(BOOL)pidIsTranslated:(int)translated;
 +(id)findDyldHeaderInMemory:(id)memory address:(unsigned long long)address;
 +(id)taskWithMachTaskContainer:(id)machTaskContainer;
--(id)initWithMachTaskContainer:(id)machTaskContainer;
+-(instancetype)initWithMachTaskContainer:(id)machTaskContainer;
 -(BOOL)isTranslated;
 -(int)pid;
 -(id)memory;

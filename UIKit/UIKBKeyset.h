@@ -15,9 +15,9 @@
 @property(retain, nonatomic) NSString* name;
 @property(retain, nonatomic) NSMutableArray* keylists;
 +(UIKBKeyset*)keyset;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(NSCoder*)coder;
+//-(instancetype)initWithCoder:(NSCoder*)coder;
 //-(void)encodeWithCoder:(NSCoder*)coder;
 -(UIKBKeylist*)keylistWithName:(NSString*)name;
 -(BOOL)addKeylist:(UIKBKeylist*)keylist;

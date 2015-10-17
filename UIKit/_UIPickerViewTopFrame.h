@@ -14,7 +14,7 @@
 	UIImage* _rightImage;
 	float _inset;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setLeftImage:(id)image middleImage:(id)image2 rightImage:(id)image3;
 -(void)dealloc;
 -(BOOL)ignoresMouseEvents;

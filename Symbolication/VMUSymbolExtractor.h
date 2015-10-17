@@ -17,7 +17,7 @@
 +(VMULazySymbolOwner*)extractLazySymbolOwnerFromHeader:(id)header;
 +(VMUSymbolOwner*)extractSymbolOwnerFromHeader:(id)header;
 +(id)expandSourceInfos:(id)infos usingSymbols:(id)symbols;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)symbols;
 -(NSArray*)sourceInfos;	// NSArray of VMUSourceInfo's
 // inherited: -(void)dealloc;

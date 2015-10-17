@@ -13,7 +13,7 @@
 @interface SBWidgetApplicationIcon : SBApplicationIcon {
 	UIWebClip* _webClip;
 }
-// inherited: -(id)initWithApplication:(id)application;
+// inherited: -(instancetype)initWithApplication:(id)application;
 // inherited: -(void)dealloc;
 // inherited: -(id)icon;
 // inherited: -(BOOL)shouldEllipsizeLabel;

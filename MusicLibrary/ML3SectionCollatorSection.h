@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 @property(copy, nonatomic) NSString* header;
 @property(assign, nonatomic) ML3SectionCollator* sectionCollator;
--(id)initWithHeader:(id)header sectionCollator:(id)collator;
+-(instancetype)initWithHeader:(id)header sectionCollator:(id)collator;
 -(void)dealloc;
 -(long)compareToTransformedCharacters:(const unsigned short*)transformedCharacters length:(unsigned)length;
 -(long)compareToCharacters:(const unsigned short*)characters length:(unsigned)length;

@@ -75,7 +75,7 @@
 // inherited: +(id)createBottomBarForInstance:(id)instance;
 +(id)lockLabels:(BOOL)labels fontSize:(float*)size;
 -(void)_clearBlockedStatusUpdateTimer;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)postLockCompletedNotification:(BOOL)notification;
 // inherited: -(void)dealloc;
 -(void)_postLockCompletedNotification;

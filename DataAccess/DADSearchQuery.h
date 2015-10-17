@@ -22,8 +22,8 @@
 @property(readonly, assign) NSString* searchString;
 @property(assign) unsigned maxResults;
 // inherited: -(id)description;
--(id)initWithSearchString:(id)searchString;
--(id)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
+-(instancetype)initWithSearchString:(id)searchString;
+-(instancetype)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
 // inherited: -(void)dealloc;
 -(void)_copyProperties:(id)properties;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;

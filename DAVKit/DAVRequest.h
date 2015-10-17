@@ -44,9 +44,9 @@
 +(id)requestWithURL:(id)url method:(id)method;
 +(id)requestWithSession:(id)session method:(id)method path:(id)path;
 +(id)requestWithSession:(id)session method:(id)method URI:(id)uri;
--(id)initWithURL:(id)url method:(id)method;
--(id)initWithSession:(id)session method:(id)method path:(id)path;
--(id)initWithSession:(id)session method:(id)method URI:(id)uri;
+-(instancetype)initWithURL:(id)url method:(id)method;
+-(instancetype)initWithSession:(id)session method:(id)method path:(id)path;
+-(instancetype)initWithSession:(id)session method:(id)method URI:(id)uri;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // inherited: -(id)description;
@@ -65,7 +65,7 @@
 -(BOOL)isNegoHeader:(id)header;
 -(BOOL)initAuthGSS;
 -(BOOL)stepAuthGSS:(id)gss;
--(void)initBeforeDispatch;
+-(voinstancetype)initBeforeDispatch;
 -(void)dispatch;
 -(id)httpStatus;
 -(int)httpStatusCode;
@@ -100,23 +100,23 @@
 +(id)propPatchRequestWithURL:(id)url patchProperties:(id)properties deleteProperties:(id)properties3;
 +(id)propPatchRequestWithSession:(id)session path:(id)path patchProperties:(id)properties deleteProperties:(id)properties4;
 -(void)_initReaderWithClass:(Class)aClass;
--(id)initMultiStatusRequestWithURL:(id)url method:(id)method;
--(id)initMultiStatusRequestWithSession:(id)session method:(id)method path:(id)path;
--(id)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri;
--(id)initMultiStatusRequestWithURL:(id)url method:(id)method responseClass:(Class)aClass;
--(id)initMultiStatusRequestWithSession:(id)session method:(id)method path:(id)path responseClass:(Class)aClass;
--(id)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri responseClass:(Class)aClass;
--(id)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri responseReader:(id)reader;
+-(instancetype)initMultiStatusRequestWithURL:(id)url method:(id)method;
+-(instancetype)initMultiStatusRequestWithSession:(id)session method:(id)method path:(id)path;
+-(instancetype)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri;
+-(instancetype)initMultiStatusRequestWithURL:(id)url method:(id)method responseClass:(Class)aClass;
+-(instancetype)initMultiStatusRequestWithSession:(id)session method:(id)method path:(id)path responseClass:(Class)aClass;
+-(instancetype)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri responseClass:(Class)aClass;
+-(instancetype)initMultiStatusRequestWithSession:(id)session method:(id)method URI:(id)uri responseReader:(id)reader;
 -(id)responses;
 -(void)_initForPropFindWithDepth:(id)depth lookingForProps:(id)props;
--(id)initPropFindWithURL:(id)url withDepth:(id)depth lookingForProps:(id)props;
--(id)initPropFindWithSession:(id)session withDepth:(id)depth path:(id)path lookingForProps:(id)props;
--(id)initPropFindWithSession:(id)session withDepth:(id)depth URI:(id)uri lookingForProps:(id)props;
--(id)initPropFindWithSession:(id)session withDepth:(id)depth URI:(id)uri lookingForProps:(id)props responseReader:(id)reader;
+-(instancetype)initPropFindWithURL:(id)url withDepth:(id)depth lookingForProps:(id)props;
+-(instancetype)initPropFindWithSession:(id)session withDepth:(id)depth path:(id)path lookingForProps:(id)props;
+-(instancetype)initPropFindWithSession:(id)session withDepth:(id)depth URI:(id)uri lookingForProps:(id)props;
+-(instancetype)initPropFindWithSession:(id)session withDepth:(id)depth URI:(id)uri lookingForProps:(id)props responseReader:(id)reader;
 -(void)_initForPropPatchWithPatchDict:(id)patchDict deleteProperties:(id)properties;
--(id)initPropPatchWithURL:(id)url patchProperties:(id)properties deleteProperties:(id)properties3;
--(id)initPropPatchWithSession:(id)session path:(id)path patchProperties:(id)properties deleteProperties:(id)properties4;
--(id)initPropPatchWithSession:(id)session URI:(id)uri patchProperties:(id)properties deleteProperties:(id)properties4;
+-(instancetype)initPropPatchWithURL:(id)url patchProperties:(id)properties deleteProperties:(id)properties3;
+-(instancetype)initPropPatchWithSession:(id)session path:(id)path patchProperties:(id)properties deleteProperties:(id)properties4;
+-(instancetype)initPropPatchWithSession:(id)session URI:(id)uri patchProperties:(id)properties deleteProperties:(id)properties4;
 @end
 
 @interface DAVRequest (SSL)

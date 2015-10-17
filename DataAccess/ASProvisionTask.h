@@ -15,9 +15,9 @@
 	NSString* _key;
 }
 -(id)_initWithType:(int)type policy:(id)policy key:(id)key;
--(id)initWithOriginalKeyForPolicyRequest:(id)policyRequest;
--(id)initWithPolicyAcknowledgement:(id)policyAcknowledgement withKey:(id)key;
--(id)initWithRemoteWipeAcknowledgement:(id)remoteWipeAcknowledgement withKey:(id)key;
+-(instancetype)initWithOriginalKeyForPolicyRequest:(id)policyRequest;
+-(instancetype)initWithPolicyAcknowledgement:(id)policyAcknowledgement withKey:(id)key;
+-(instancetype)initWithRemoteWipeAcknowledgement:(id)remoteWipeAcknowledgement withKey:(id)key;
 // inherited: -(void)dealloc;
 -(int)type;
 -(id)_policyID;

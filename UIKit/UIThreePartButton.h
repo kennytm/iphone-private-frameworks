@@ -15,7 +15,7 @@
 }
 @property(assign, nonatomic) CGSize titleOffset __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 // inherited: +(id)defaultFont;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setBackgroundSlices:(XXStruct_UUz0SD)slices;
 -(void)setBackgroundImage:(id)image;
 -(void)setPressedBackgroundImage:(id)image;

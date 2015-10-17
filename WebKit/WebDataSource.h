@@ -56,7 +56,7 @@
     @param request The request to use in creating a datasource.
     @result Returns an initialized WebDataSource.
 */
-- (id)initWithRequest:(NSURLRequest *)request;
+- (instancetype)initWithRequest:(NSURLRequest *)request;
 
 /*!
     @method data

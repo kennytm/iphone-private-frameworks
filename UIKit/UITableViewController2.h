@@ -12,7 +12,7 @@
 @class UITableView;
 
 @interface UITableViewController ()
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(id)_existingTableView;

@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 }
 +(void)invalidate;
 +(UIITunesStoreURLResolver*)sharedResolver;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(UIITunesStoreURLType)urlTypeForURL:(NSURL*)url;
 -(id)_copyRegularExpressionsFromArray:(id)array;

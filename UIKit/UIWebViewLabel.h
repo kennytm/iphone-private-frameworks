@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	UILabel* _label;
 	UIHighlightView* _highlight;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)sizeToFit;
 -(void)setText:(id)text;
 -(void)dealloc;

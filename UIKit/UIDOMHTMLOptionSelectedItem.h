@@ -13,7 +13,7 @@
 	DOMHTMLOptionElement* _node;
 }
 @property(retain, nonatomic) DOMHTMLOptionElement* _node;
--(id)initWithHTMLOptionNode:(id)htmloptionNode;
+-(instancetype)initWithHTMLOptionNode:(id)htmloptionNode;
 -(id)node;
 -(BOOL)selected;
 -(void)setSelected:(BOOL)selected;

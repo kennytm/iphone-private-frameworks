@@ -19,7 +19,7 @@
 @property(assign, nonatomic) unsigned currentItemIndex;
 @property(assign, nonatomic) double currentTime;
 @property(assign, nonatomic) int feederMode;
--(id)initWithStateOfAVController:(id)avcontroller;
+-(instancetype)initWithStateOfAVController:(id)avcontroller;
 -(void)dealloc;
 -(id)description;
 @end

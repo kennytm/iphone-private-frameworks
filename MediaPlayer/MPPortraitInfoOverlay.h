@@ -25,7 +25,7 @@
 @property(retain, nonatomic) MPItem* item;
 @property(assign, nonatomic) unsigned visibleParts;
 @property(assign, nonatomic) BOOL allowsDetailScrubbing;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)didMoveToSuperview;
 -(void)didTransition;

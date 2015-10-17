@@ -13,6 +13,6 @@
 // inherited: +(void)registerForAlerts;
 -(void)_unregisterForNotifications;
 -(void)_registerForNotifications;
--(id)initWithString:(id)string;
+-(instancetype)initWithString:(id)string;
 @end
 

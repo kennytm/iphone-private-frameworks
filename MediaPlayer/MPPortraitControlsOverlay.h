@@ -15,7 +15,7 @@
 	UILabel* _scrubInstructionLabel;
 	UIImageView* _scrubInstructionOverlay;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)createButtonForPart:(unsigned)part;
 -(unsigned)_layoutStyle;

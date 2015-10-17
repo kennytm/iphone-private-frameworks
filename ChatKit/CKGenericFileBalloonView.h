@@ -21,7 +21,7 @@
 +(float)additionalHeightForBubbleWhenInsetAtPoint:(CGPoint)point;
 +(float)fixedHeight;
 +(BOOL)shouldHaveAccessoryDiclosure;
--(id)initWithFrame:(CGRect)frame delegate:(id)delegate;
+-(instancetype)initWithFrame:(CGRect)frame delegate:(id)delegate;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 -(float)tightenedWidth;

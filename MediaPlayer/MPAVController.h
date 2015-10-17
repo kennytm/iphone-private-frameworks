@@ -105,7 +105,7 @@
 +(id)sharedInstance;
 +(void)purgeSharedInstance;
 +(id)sharedIPCAppInstance;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)beginSeek:(int)seek;
 -(void)dequeueOnDemandItemIfInactive;

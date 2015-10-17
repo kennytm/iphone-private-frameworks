@@ -17,8 +17,8 @@
 +(CGSize)defaultSize;
 +(void)_loadResourcesForStyle:(int)style;
 #endif
-// inherited: -(id)initWithFrame:(CGRect)frame;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // -(CGSize)sizeThatFits:(CGSize)fits;
 -(void)drawOverlayProgressView:(CGRect)view;

@@ -62,9 +62,9 @@
 @property(retain, nonatomic) UIColor* textColor;
 @property(retain, nonatomic) UIFont* font;
 @property(copy, nonatomic) NSString* text;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame webView:(id)view;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame webView:(id)view;
+-(instancetype)initWithCoder:(id)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)commonInitWithWebDocumentView:(id)webDocumentView isDecoding:(BOOL)decoding;

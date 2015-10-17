@@ -17,7 +17,7 @@
 }
 +(id)_folderCacheFilenameWithId:(id)anId;
 +(void)cleanUpFilesForAccountWithId:(id)anId;
--(id)initWithAccount:(id)account;
+-(instancetype)initWithAccount:(id)account;
 // inherited: -(id)description;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;

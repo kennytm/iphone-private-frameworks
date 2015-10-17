@@ -21,7 +21,7 @@
 }
 @property(retain) NSDictionary* pendingApplicationDictionaries;
 +(SBApplicationController*)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(NSArray*)allApplications;
 -(NSArray*)applicationsWithBundleIdentifier:(NSString*)bundleIdentifier;

@@ -12,7 +12,7 @@
 @interface VMUDyLinkerLoadCommand : VMULoadCommand {
 	NSString* _name;
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isDyLinker;
 -(id)name;
 // inherited: -(id)description;

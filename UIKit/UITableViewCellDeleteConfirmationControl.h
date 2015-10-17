@@ -13,7 +13,7 @@
 }
 @property(assign, nonatomic, getter=isVisible) BOOL visible;
 +(CGSize)defaultSizeForTitle:(id)title;
--(id)initWithTitle:(id)title;
+-(instancetype)initWithTitle:(id)title;
 -(CGSize)defaultSize;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;
 -(BOOL)beginTrackingWithTouch:(id)touch withEvent:(id)event;

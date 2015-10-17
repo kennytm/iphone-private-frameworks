@@ -13,7 +13,7 @@
 @private
 	AVSubtitleLayerUsingWebKitPrivate* _priv;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)setSubtitleString:(CFAttributedStringRef)string forced:(BOOL)forced;
 -(void)clearSubtitle;

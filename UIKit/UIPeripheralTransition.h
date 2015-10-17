@@ -19,7 +19,7 @@
 }
 @property(retain, nonatomic) DOMNode* _nextNode;
 @property(retain, nonatomic) UIView<UIFormPeripheral>* _nextPeripheral;
--(id)initWithNode:(id)node withPeripheral:(id)peripheral;
+-(instancetype)initWithNode:(id)node withPeripheral:(id)peripheral;
 -(void)dealloc;
 -(id)completeWithCurrentPeripheral:(id)currentPeripheral;
 -(CGRect)frame;

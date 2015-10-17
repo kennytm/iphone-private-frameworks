@@ -17,8 +17,8 @@
 }
 @property(readonly, assign, nonatomic) unsigned count;
 @property(assign, nonatomic, getter=isHostingEnabled) BOOL hostingEnabled;
--(id)initWithDefaultSize;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithDefaultSize;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 -(void)willOrderInContextWithId:(unsigned)anId windowLevel:(float)level windowOutput:(int)output;

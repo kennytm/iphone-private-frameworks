@@ -14,7 +14,7 @@
 	SBApplicationIcon* _icon;
 	BOOL _launchApp;
 }
--(id)initWithIcon:(id)icon;
+-(instancetype)initWithIcon:(id)icon;
 // inherited: -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)didDeactivateForReason:(int)reason;

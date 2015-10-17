@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface WhiteView : UIView {
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setBackgroundColor:(id)color;
 @end
 

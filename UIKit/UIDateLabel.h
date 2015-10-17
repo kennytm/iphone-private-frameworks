@@ -14,7 +14,7 @@
 }
 @property(assign, nonatomic) BOOL boldForAllLocales;
 +(id)defaultFont;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(int)_dateKey;
 -(void)_invalidateDateKey;

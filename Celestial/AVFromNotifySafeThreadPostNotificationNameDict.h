@@ -13,7 +13,7 @@
 	NSMutableDictionary* _obj;
 }
 +(id)dict;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)release;
 -(void)setObject:(id)object forKey:(id)key;

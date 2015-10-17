@@ -35,8 +35,8 @@
 	unsigned _didSetPosterImageIndex : 1;
 }
 +(id)libraryAlbum;
--(id)init;
--(id)initWithAlbumID:(unsigned)albumID albumName:(id)name;
+-(instancetype)init;
+-(instancetype)initWithAlbumID:(unsigned)albumID albumName:(id)name;
 -(void)dealloc;
 -(id)description;
 -(id)faceImageWithSize:(CGSize)size returnLocationInImage:(CGRect*)image;

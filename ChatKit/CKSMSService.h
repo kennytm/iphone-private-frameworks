@@ -25,7 +25,7 @@
 -(int)createConversationWithRecipients:(id)recipients;
 -(int)conversationIDWithRecipients:(id)recipients;
 -(void)_registerForCTNotifications;
--(id)init;
+-(instancetype)init;
 -(id)abPropertyTypes;
 -(id)_newMMSMessageWithParts:(id)parts forConversation:(id)conversation subject:(id)subject;
 -(id)_newMMSMessageWithComposition:(id)composition forConversation:(id)conversation;

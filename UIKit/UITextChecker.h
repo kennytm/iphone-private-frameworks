@@ -17,10 +17,10 @@
 -(id)_nameOfDictionaryForDocumentTag:(int)documentTag;
 -(void)_setLanguageDictionaryName:(id)name;
 -(void)_setDocumentDictionaryName:(id)name;
--(void)initUserAddressBook;
--(void)initUserDictionaries;
--(void)initGlobals;
-// inherited: -(id)init;
+-(voinstancetype)initUserAddressBook;
+-(voinstancetype)initUserDictionaries;
+-(voinstancetype)initGlobals;
+// inherited: -(instancetype)init;
 -(id)_initWithAsynchronousLoading:(BOOL)asynchronousLoading;
 -(BOOL)_doneLoading;
 // inherited: -(void)dealloc;

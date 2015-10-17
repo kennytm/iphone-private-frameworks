@@ -28,7 +28,7 @@
 }
 -(void)setMailComposeViewDelegate:(id)delegate;
 -(float)contentWidth;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setDirty:(BOOL)dirty;
 -(BOOL)isDirty;
@@ -45,7 +45,7 @@
 -(void)_finishedLoadingURLRequest:(id)request success:(BOOL)success;
 -(void)webView:(id)view resource:(id)resource didFinishLoadingFromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFailLoadingWithError:(id)error fromDataSource:(id)dataSource;
--(id)webView:(id)view identifierForInitialRequest:(id)initialRequest fromDataSource:(id)dataSource;
+-(id)webView:(id)view identifierForInitialRequest:(instancetype)initialRequest fromDataSource:(id)dataSource;
 -(id)webView:(id)view resource:(id)resource willSendRequest:(id)request redirectResponse:(id)response fromDataSource:(id)dataSource;
 -(BOOL)webView:(id)view shouldDeleteDOMRange:(id)range;
 -(BOOL)webView:(id)view shouldInsertText:(id)text replacingDOMRange:(id)range givenAction:(int)action;

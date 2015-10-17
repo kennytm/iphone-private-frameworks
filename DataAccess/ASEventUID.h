@@ -27,8 +27,8 @@
 // inherited: -(id)description;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
--(id)initWithCalFrameworkString:(id)calFrameworkString;
-// in a protocol: -(id)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
+-(instancetype)initWithCalFrameworkString:(id)calFrameworkString;
+// in a protocol: -(instancetype)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
 // in a protocol: -(int)parsingState;
 -(id)uidForCalFramework;
 -(id)uidForResponseEmail;

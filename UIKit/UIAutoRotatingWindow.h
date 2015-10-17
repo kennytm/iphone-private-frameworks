@@ -16,7 +16,7 @@
 	int _interfaceOrientation;
 }
 +(id)sharedPopoverHostingWindow;
-// inherited: -(id)initWithFrame:(CGRect)frame output:(int)output bitsPerComponent:(int)component;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame output:(int)output bitsPerComponent:(int)component;
 -(void)updateForOrientation:(int)orientation;
 -(void)matchDeviceOrientation;
 -(void)_didRemoveSubview:(id)subview;

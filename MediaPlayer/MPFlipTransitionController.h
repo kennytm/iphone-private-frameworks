@@ -16,7 +16,7 @@
 }
 @property(retain, nonatomic) UIView* fromView;
 @property(assign, nonatomic) CGRect toFrame;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(int)orientation;
 -(void)transition:(unsigned)transition;

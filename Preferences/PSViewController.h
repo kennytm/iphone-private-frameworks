@@ -16,7 +16,7 @@
 	PSRootController* _rootController;
 }
 // in a protocol: +(BOOL)isOverlay;
-// in a protocol: -(id)initForContentSize:(CGSize)contentSize;
+// in a protocol: -(instancetype)initForContentSize:(CGSize)contentSize;
 // in a protocol: -(id)navigationTitle;
 // in a protocol: -(id)navigationItem;
 // in a protocol: -(void)pushNavigationItemWithTitle:(id)title;

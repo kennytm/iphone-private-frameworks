@@ -60,7 +60,7 @@
 -(id)queryString;
 -(id)unsortedListItemsWithQueryString:(id)queryString;
 -(id)computeListItemsAndInitiallySelectedIndex:(unsigned*)index withQueryString:(id)queryString;
--(id)initWithDOMElement:(id)domelement webFrame:(id)frame;
+-(instancetype)initWithDOMElement:(id)domelement webFrame:(id)frame;
 -(void)dealloc;
 -(id)webFrame;
 -(void)sourceFieldTextDidChange;

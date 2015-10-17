@@ -20,7 +20,7 @@
 }
 +(void)vendDaemons:(Class)daemons;
 +(id)sharedPowerAssertionManager;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(unsigned)powerAssertionRetainCount:(id)count;
 -(void)retainPowerAssertion:(id)assertion withGroupIdentifier:(id)groupIdentifier;

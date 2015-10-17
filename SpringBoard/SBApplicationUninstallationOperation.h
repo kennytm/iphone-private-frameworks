@@ -12,7 +12,7 @@
 @interface SBApplicationUninstallationOperation : NSOperation {
 	NSString* _bundleIdentifier;
 }
--(id)initWithBundleIdentifier:(id)bundleIdentifier;
+-(instancetype)initWithBundleIdentifier:(id)bundleIdentifier;
 // inherited: -(void)dealloc;
 // inherited: -(void)main;
 @end

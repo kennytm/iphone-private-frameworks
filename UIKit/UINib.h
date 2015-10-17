@@ -15,9 +15,9 @@
 #endif
 	BOOL instantiatingForSimulator;
 }
--(id)initWithData:(id)data;
--(id)initWithContentsOfURL:(id)url;
--(id)initWithContentsOfFile:(id)file;
+-(instancetype)initWithData:(id)data;
+-(instancetype)initWithContentsOfURL:(id)url;
+-(instancetype)initWithContentsOfFile:(id)file;
 -(void)dealloc;
 -(BOOL)instantiatingForSimulator;
 -(void)setInstantiatingForSimulator:(BOOL)simulator;

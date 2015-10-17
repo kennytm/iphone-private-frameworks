@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) unsigned countOfSections;
 +(id)sectionlessSectionDataForQuery:(id)query;
 +(id)sectionDataWithLegacyCharacterArrayData:(CFArrayRef)legacyCharacterArrayData countOfEntities:(unsigned)entities;
--(id)init;
+-(instancetype)init;
 -(id)description;
 -(void)dealloc;
 -(void)_ensureLoaded;

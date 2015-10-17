@@ -9,6 +9,6 @@
 
 @interface UIInsertControl : UIRemoveControl {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 @end
 

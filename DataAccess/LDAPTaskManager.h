@@ -29,7 +29,7 @@
 -(void)_executeNextTaskIfIdle;
 -(void)_enqueueTask:(id)task;
 -(void)enqueueTask:(id)task;
--(id)initWithAccount:(id)account;
+-(instancetype)initWithAccount:(id)account;
 -(void)setAccount:(id)account;
 -(void)_clearTask:(id)task;
 -(void)taskDidFinish:(id)task;

@@ -15,7 +15,7 @@
 +(float)visibleWidth;
 +(float)opaqueVisibleWidth;
 -(id)_sectionTitles;
--(id)initWithSectionTable:(id)sectionTable;
+-(instancetype)initWithSectionTable:(id)sectionTable;
 -(void)drawRect:(CGRect)rect;
 -(id)_titleForPoint:(CGPoint)point pastTop:(BOOL*)top pastBottom:(BOOL*)bottom;
 -(void)_scrollToClosestSectionAtPoint:(CGPoint)point;

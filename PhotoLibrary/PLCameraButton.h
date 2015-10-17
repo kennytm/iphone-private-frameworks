@@ -24,7 +24,7 @@
 	int _orientation;
 	BOOL _watchingOrientationChanges;
 }
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 -(void)_setIcon:(id)icon;
 // inherited: -(void)dealloc;
 -(void)setVideoMode:(BOOL)mode;

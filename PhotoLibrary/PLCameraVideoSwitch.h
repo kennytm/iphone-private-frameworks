@@ -31,7 +31,7 @@
 	unsigned _lockEnabled : 1;
 }
 @property(assign, nonatomic, getter=isOn) BOOL on;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(void)setEnabled:(BOOL)enabled;
 -(void)setLockEnabled:(BOOL)enabled;

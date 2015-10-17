@@ -18,7 +18,7 @@
 // inherited: +(id)keypadImage;
 // inherited: +(id)pressedImage;
 // inherited: +(void)flushPressedImage;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(float)_yFudge;
 // inherited: -(BOOL)showsEmergencyCallButton;

@@ -34,7 +34,7 @@
 // in a protocol: -(oneway void)startup;
 // in a protocol: -(void)connection:(id)connection didReceivePublicToken:(id)token;
 // in a protocol: -(void)connection:(id)connection didReceiveMessageForTopic:(id)topic userInfo:(id)info;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 @end
 

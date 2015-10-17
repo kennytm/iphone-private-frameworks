@@ -13,7 +13,7 @@
 }
 @property(retain, nonatomic) SBWallpaperView* wallpaperView;
 @property(assign, nonatomic) CGPoint contentOffset;
--(id)initWithFrame:(CGRect)frame wallpaperView:(SBWallpaperView *)view;
+-(instancetype)initWithFrame:(CGRect)frame wallpaperView:(SBWallpaperView *)view;
 // inherited: -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)setWallpaperView:(SBWallpaperView *)view force:(BOOL)force;

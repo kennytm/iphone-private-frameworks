@@ -14,7 +14,7 @@
 +(void)preheatSounds;
 +(void)playNewMailSound;
 +(void)playSentMailSound;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 @end
 

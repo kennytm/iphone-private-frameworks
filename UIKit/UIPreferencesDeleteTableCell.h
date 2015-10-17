@@ -10,7 +10,7 @@
 @interface UIPreferencesDeleteTableCell : UIPreferencesControlTableCell {
 }
 +(float)defaultHeight;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(id)button;
 @end
 

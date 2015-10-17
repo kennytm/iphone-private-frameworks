@@ -57,8 +57,8 @@
 +(BOOL)_shouldClampVerticallyToBottomCornerForPopoverSize:(CGSize)popoverSize arrowOffset:(float)offset;
 +(id)_popoverBackgroundViewForContentSize:(CGSize)contentSize offset:(float)offset direction:(int)direction background:(int)background contentOrigin:(out CGPoint*)origin;
 +(id)popoverViewContainingView:(id)view;
-// inherited: -(id)initWithFrame:(CGRect)frame;
--(id)initWithContentSize:(CGSize)contentSize;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithContentSize:(CGSize)contentSize;
 // inherited: -(void)dealloc;
 -(id)_viewForModalPresentationOfViewController:(id)viewController;
 -(void)_modalPresentationWillBeginForViewController:(id)_modalPresentation;

@@ -9,7 +9,7 @@
 @interface MailMultiSelectControl : UIRemoveControl {
 	unsigned _inEditMode : 1;
 }
--(id)initWithTarget:(id)target inEditMode:(BOOL)editMode;
+-(instancetype)initWithTarget:(id)target inEditMode:(BOOL)editMode;
 -(void)_setInterceptMouseEvent:(BOOL)event;
 -(void)setChecked:(BOOL)checked selected:(BOOL)selected;
 @end

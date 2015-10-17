@@ -11,7 +11,7 @@
 	float _horizontalOffset;
 	float _verticalOffset;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setHorizontalOffset:(float)offset;
 -(void)setVerticalOffset:(float)offset;
 -(CGRect)contentBounds;

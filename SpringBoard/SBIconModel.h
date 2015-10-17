@@ -24,7 +24,7 @@
 }
 +(SBIconModel*)sharedInstance;
 +(NSInteger)maxIconListCount;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)localeChanged;
 -(void)setVisibilityOfIconsWithVisibleTags:(NSArray *)visibleTags hiddenTags:(NSArray *)hiddenTags;

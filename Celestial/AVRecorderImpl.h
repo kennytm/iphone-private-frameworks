@@ -10,7 +10,7 @@
 
 
 @protocol AVRecorderImpl <NSObject>
--(id)init;
+-(instancetype)init;
 -(void)setFilePath:(id)path;
 -(id)filePath;
 -(void)setAttribute:(id)attribute forKey:(id)key;

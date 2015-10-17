@@ -97,7 +97,7 @@ extern NSString *WebPreferencesChangedNotification;
     for the WebPreferences.
     @result Returns a new instance of WebPreferences or a previously allocated instance with the same identifier.
 */
-- (id)initWithIdentifier:(NSString *)anIdentifier;
+- (instancetype)initWithIdentifier:(NSString *)anIdentifier;
 
 /*!
     @method identifier

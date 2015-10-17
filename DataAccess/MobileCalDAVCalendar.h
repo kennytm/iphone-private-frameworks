@@ -23,7 +23,7 @@
 	int _mostRecentRecurChangeIndex;
 	int _mostRecentAttendeeChangeIndex;
 }
--(id)initWithCalendarPath:(id)calendarPath account:(id)account;
+-(instancetype)initWithCalendarPath:(id)calendarPath account:(id)account;
 // inherited: -(void)dealloc;
 -(void)deleteCalendar;
 -(id)account;

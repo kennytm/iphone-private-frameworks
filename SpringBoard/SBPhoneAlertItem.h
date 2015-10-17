@@ -13,7 +13,7 @@
 	NSString* _bodyText;
 	NSString* _title;
 }
--(id)initWithTitle:(id)title bodyText:(id)text;
+-(instancetype)initWithTitle:(id)title bodyText:(id)text;
 // inherited: -(void)dealloc;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

@@ -27,7 +27,7 @@
 @property(assign, nonatomic) int clearButtonMode;
 @property(assign, nonatomic, getter=isOkayButtonEnabled) BOOL okayButtonEnabled;
 // inherited: +(Class)textFieldClass;
--(id)initWithStyle:(int)style;
+-(instancetype)initWithStyle:(int)style;
 -(id)_entryField;
 // inherited: -(void)setNumberOfEntryFields:(int)entryFields opaqueBackground:(BOOL)background;
 // inherited: -(void)setShowsOKButton:(BOOL)button;

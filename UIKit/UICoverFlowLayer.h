@@ -10,7 +10,7 @@
 @interface UICoverFlowLayer : CALayer {
 	void* _private;
 }
--(id)initWithFrame:(CGRect)frame numberOfCovers:(unsigned)covers numberOfPlaceholders:(unsigned)placeholders;
+-(instancetype)initWithFrame:(CGRect)frame numberOfCovers:(unsigned)covers numberOfPlaceholders:(unsigned)placeholders;
 -(unsigned)numberOfCovers;
 -(unsigned)numberOfPlaceholders;
 -(void)dealloc;

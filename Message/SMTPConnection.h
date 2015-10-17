@@ -23,7 +23,7 @@
 	id _delegate;
 }
 // inherited: +(void)initialize;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setDelegate:(id)delegate;
 // inherited: -(void)dealloc;
 -(int)state;

@@ -11,7 +11,7 @@
 @property(copy, nonatomic) NSURL* accountURL;
 +(NSString *)laterButtonTitle;
 +(NSString *)nowButtonTitle;
--(id)initWithAccountURL:(NSURL *)accountURL;
+-(instancetype)initWithAccountURL:(NSURL *)accountURL;
 // inherited: -(void)dealloc;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

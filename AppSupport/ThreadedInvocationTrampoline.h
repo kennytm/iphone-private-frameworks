@@ -12,7 +12,7 @@
 @interface ThreadedInvocationTrampoline : InvocationTrampoline {
 	NSThread* _thread;
 }
--(id)initWithTarget:(id)target thread:(id)thread;
+-(instancetype)initWithTarget:(id)target thread:(id)thread;
 // inherited: -(void)dealloc;
 // inherited: -(void)forwardInvocation:(id)invocation;
 @end

@@ -16,7 +16,7 @@
 	BOOL _isDataAlert;
 	BOOL _usesCellNetwork;
 }
--(id)initWithLaunchAlertType:(int)launchAlertType dataAlert:(BOOL)alert usesCellNetwork:(BOOL)network bundleID:(id)anId;
+-(instancetype)initWithLaunchAlertType:(int)launchAlertType dataAlert:(BOOL)alert usesCellNetwork:(BOOL)network bundleID:(id)anId;
 // inherited: -(void)dealloc;
 -(void)setAssociatedWithDisplay:(id)display;
 -(void)_displayDeactivated:(id)deactivated;

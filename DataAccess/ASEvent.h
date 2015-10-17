@@ -78,8 +78,8 @@
 // inherited: -(int)classType;
 -(id)uidGeneratedIfNecessaryWithLocalEvent:(void*)localEvent;
 -(void)_loadAttributesFromCalEvent:(void*)calEvent forAccount:(id)account;
-// inherited: -(id)init;
--(id)initWithCalEvent:(void*)calEvent serverID:(id)anId account:(id)account;
+// inherited: -(instancetype)init;
+-(instancetype)initWithCalEvent:(void*)calEvent serverID:(id)anId account:(id)account;
 -(BOOL)hasLocalModifications:(void*)modifications;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
@@ -114,7 +114,7 @@
 -(id)uidForCalFramework;
 -(id)exceptionDate;
 -(void)setExceptionDate:(id)date;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(BOOL)cachedOrganizerIsSelf;
 -(id)fullOrganizerString;

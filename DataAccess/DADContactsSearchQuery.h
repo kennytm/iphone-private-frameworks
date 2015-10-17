@@ -17,8 +17,8 @@
 @property(retain) NSString* searchBase;
 @property(retain) NSString* searchScope;
 +(id)contactsSearchQueryWithSearchString:(id)searchString searchBase:(id)base searchScope:(id)scope;
--(id)initWithSearchString:(id)searchString searchBase:(id)base searchScope:(id)scope;
-// inherited: -(id)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
+-(instancetype)initWithSearchString:(id)searchString searchBase:(id)base searchScope:(id)scope;
+// inherited: -(instancetype)initWithDictionaryRepresentation:(id)dictionaryRepresentation;
 // inherited: -(void)dealloc;
 -(BOOL)isEqualToDADContactsSearchQuery:(id)dadcontactsSearchQuery;
 // inherited: -(BOOL)isEqual:(id)equal;

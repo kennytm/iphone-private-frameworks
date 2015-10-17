@@ -12,9 +12,9 @@
 	id object;
 }
 +(id)swapperForObject:(id)object withClassName:(id)className;
--(id)initWithObject:(id)object andClassName:(id)name;
+-(instancetype)initWithObject:(id)object andClassName:(id)name;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

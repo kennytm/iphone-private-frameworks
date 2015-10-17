@@ -8,7 +8,7 @@
 }
 -(void)_centerStatusView;
 -(void)_layoutForCurrentOrientation;
-// inherited: -(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(void)setMinimized:(BOOL)minimized;
 // inherited: -(void)setInterfaceOrientation:(int)orientation;
 // inherited: -(void)returnKeyPressed:(id)pressed;

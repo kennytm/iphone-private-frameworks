@@ -15,7 +15,7 @@
 	BOOL _shouldNotifyMobileMail;
 	NSSet* _supportedMailClasses;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(int)fixBasicAccountIfNeeded:(id)needed loggingMessage:(id)message;
 // in a protocol: -(void)accountsHaveBeenSaved:(BOOL)saved;

@@ -9,7 +9,7 @@
 
 @interface UIMovieScrubberTrackInnerShadowView : UIView {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 @end
 

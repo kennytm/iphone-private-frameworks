@@ -12,7 +12,7 @@
 	NSMutableArray* _resources;
 	int _composeResourcePoolID;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)newContentViewWithFrame:(CGRect)frame;
 -(void)setMessageComposition:(id)composition;

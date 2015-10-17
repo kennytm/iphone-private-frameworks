@@ -13,8 +13,8 @@
 @private
 	NSMutableArray* _items;
 }
--(id)init;
--(id)initWithArray:(id)array;
+-(instancetype)init;
+-(instancetype)initWithArray:(id)array;
 -(void)dealloc;
 -(id)itemForIndex:(unsigned)index;
 -(unsigned)itemCount;

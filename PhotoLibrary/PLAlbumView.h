@@ -41,7 +41,7 @@
 @property(assign, nonatomic) int filter;
 @property(retain, nonatomic) MLPhotoAlbum* album;
 @property(assign, nonatomic) id delegate;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // in a protocol: -(int)tableView:(id)view numberOfRowsInSection:(int)section;
 // in a protocol: -(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;

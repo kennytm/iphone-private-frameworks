@@ -38,7 +38,7 @@
 +(void)registerCollationsOnHandle:(sqlite3*)handle;
 +(void)registerFunctionsOnHandle:(sqlite3*)handle;
 +(void)registerCustomCallbacksOnHandle:(sqlite3*)handle;
--(id)initWithPath:(id)path enableWrites:(BOOL)writes;
+-(instancetype)initWithPath:(id)path enableWrites:(BOOL)writes;
 -(void)dealloc;
 -(id)entityForClass:(Class)aClass persistentID:(long long)anId;
 -(void)_debugLoggingOptionsDidChangeNotification:(id)_debugLoggingOptions;

@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(assign, nonatomic) BOOL showRangedSelection;
 @property(readonly, assign, nonatomic) UITextRangeView* rangeView;
 @property(readonly, assign, nonatomic) BOOL selectionCommandsShowing;
--(id)initWithView:(id)view;
+-(instancetype)initWithView:(id)view;
 -(void)dealloc;
 -(void)detach;
 -(void)activate;

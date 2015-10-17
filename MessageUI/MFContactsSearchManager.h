@@ -21,7 +21,7 @@
 	NSSet* _properties;
 	unsigned _searchTypes;
 }
--(id)initWithAddressBook:(void*)addressBook properties:(int*)properties propertyCount:(unsigned)count;
+-(instancetype)initWithAddressBook:(void*)addressBook properties:(int*)properties propertyCount:(unsigned)count;
 -(void)setSearchTypes:(unsigned)types;
 -(id)searchForText:(id)text consumer:(id)consumer;
 -(void)_handleTaskFinished:(id)finished context:(id)context;

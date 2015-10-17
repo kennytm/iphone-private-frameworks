@@ -13,7 +13,7 @@
 @private
 	NSConditionLock* _doneCondition;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setDone:(BOOL)done;
 -(BOOL)waitUntilDoneBeforeDate:(id)date;
 -(void)waitUntilDone;

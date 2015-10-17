@@ -14,7 +14,7 @@
 	CFArrayRef _keysAndValues;
 	BOOL _useIsEqual;
 }
--(id)initWithCapacity:(long)capacity;
+-(instancetype)initWithCapacity:(long)capacity;
 // inherited: -(void)dealloc;
 -(void)setCapacity:(long)capacity;
 -(void)setUsesIsEqualForComparison:(BOOL)comparison;

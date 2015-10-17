@@ -27,7 +27,7 @@
 -(BOOL)isValidImageExtension:(id)extension;
 -(BOOL)isValidVideoExtension:(id)extension;
 -(id)_userInfoPath;
--(id)initWithDCIMPath:(id)dcimpath;
+-(instancetype)initWithDCIMPath:(id)dcimpath;
 -(void)dealloc;
 -(id)dcimPath;
 -(id)miscPath;

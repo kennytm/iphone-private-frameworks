@@ -12,7 +12,7 @@
 	int _statusBarMode;
 }
 @property(assign, nonatomic) int statusBarMode;
--(id)init;
+-(instancetype)init;
 -(void)transition:(unsigned)transition;
 -(void)_animationDidFinish:(id)_animation;
 @end

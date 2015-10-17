@@ -4,7 +4,7 @@
 
 @interface TPWell : UIImageView {
 }
-// inherited: -(id)initWithImage:(id)image;
+// inherited: -(instancetype)initWithImage:(id)image;
 @end
 
 #endif

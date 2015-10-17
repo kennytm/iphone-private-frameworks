@@ -13,7 +13,7 @@
 	NSOperationQueue* _queue;
 	int _priority;
 }
--(id)initWithTarget:(id)target operationQueue:(id)queue priority:(int)priority;
+-(instancetype)initWithTarget:(id)target operationQueue:(id)queue priority:(int)priority;
 // inherited: -(void)dealloc;
 // inherited: -(void)forwardInvocation:(id)invocation;
 @end

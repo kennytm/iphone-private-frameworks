@@ -14,14 +14,14 @@
 @protocol UIActionSheetDelegate;
 
 @interface UIActionSheet ()
--(id)initWithTitle:(id)title message:(id)message delegate:(id)delegate defaultButton:(id)button cancelButton:(id)button5 otherButtons:(id)buttons;
+-(instancetype)initWithTitle:(id)title message:(id)message delegate:(id)delegate defaultButton:(id)button cancelButton:(id)button5 otherButtons:(id)buttons;
 -(void)dealloc;
 -(void)setMessage:(id)message;
 -(id)message;
 -(void)setDefaultButtonIndex:(int)index;
 -(int)defaultButtonIndex;
 -(void)_setFirstOtherButtonIndex:(int)index;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)presentFromRect:(CGRect)rect inView:(id)view direction:(int)direction allowInteractionWithViews:(id)views backgroundStyle:(int)style animated:(BOOL)animated;
 -(void)_presentPopoverInCenterOfWindowForView:(id)view;
@@ -31,7 +31,7 @@
 @interface UIActionSheet (Private)
 +(CGSize)minimumSize;
 +(id)_popupAlertBackground;
--(id)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(instancetype)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
 -(BOOL)requiresPortraitOrientation;
 -(int)_currentOrientation;
 -(void)_setAlertSheetStyleFromButtonBar:(id)buttonBar;

@@ -20,7 +20,7 @@
 }
 +(id)recipientWithRecord:(void*)record property:(int)property identifier:(int)identifier;
 +(id)recipientWithProperty:(int)property address:(id)address;
--(id)initWithRecord:(void*)record property:(int)property identifier:(int)identifier address:(id)address;
+-(instancetype)initWithRecord:(void*)record property:(int)property identifier:(int)identifier address:(id)address;
 -(int)property;
 -(void*)record;
 -(id)address;

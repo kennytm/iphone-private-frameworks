@@ -83,8 +83,8 @@
 @property(copy, nonatomic) NSString* message;
 @property(copy, nonatomic) NSString* title;
 @property(assign, nonatomic) id<UIModalViewDelegate> delegate;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id<UIModalViewDelegate>)delegate defaultButton:(id)defaultButton cancelButton:(id)cancelButton otherButtons:(NSArray *)buttons;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id<UIModalViewDelegate>)delegate defaultButton:(id)defaultButton cancelButton:(id)cancelButton otherButtons:(NSArray *)buttons;
 -(id)_initWithTelephoneNumber:(id)telephoneNumber buttons:(NSArray *)buttons defaultButtonIndex:(NSInteger)index delegate:(id<UIModalViewDelegate>)delegate context:(id)context;
 -(void)dealloc;
 -(NSInteger)addButtonWithTitle:(NSString *)title;
@@ -104,7 +104,7 @@
 +(id)topMostAlert;
 +(id)visibleAlert;
 +(void)noteOrientationChangingTo:(int)to;
--(id)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(instancetype)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
 -(BOOL)requiresPortraitOrientation;
 -(int)_currentOrientation;
 -(void)_setAlertSheetStyleFromButtonBar:(id)buttonBar;

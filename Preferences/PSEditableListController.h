@@ -13,7 +13,7 @@
 	BOOL _editable;
 }
 @property(assign) BOOL editable;
-// inherited: -(id)initForContentSize:(CGSize)contentSize;
+// inherited: -(instancetype)initForContentSize:(CGSize)contentSize;
 -(void)_updateNavigationBar:(BOOL)bar;
 // inherited: -(void)viewWillBecomeVisible:(void*)view;
 // inherited: -(void)viewWillRedisplay;

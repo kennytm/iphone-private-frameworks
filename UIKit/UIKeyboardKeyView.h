@@ -25,7 +25,7 @@
 @property(assign, nonatomic) int style;
 @property(assign, nonatomic) int state;
 @property(assign, nonatomic) int type;
--(id)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
 -(CFDataRef)createCacheKey;
 -(id)image;
 -(void)drawRect:(CGRect)rect;

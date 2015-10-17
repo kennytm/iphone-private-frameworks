@@ -12,7 +12,7 @@
 @interface SBCalendarIconContentsView : UIView {
 	unsigned _highlighted : 1;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setHighlighted:(BOOL)highlighted;
 -(void)drawRect:(CGRect)rect;

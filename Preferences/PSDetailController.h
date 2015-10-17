@@ -19,7 +19,7 @@
 @property(retain) PSEditingPane* pane;
 @property(readonly, assign) BOOL keyboardVisible;
 -(void)_updateNavBarButtons;
-// inherited: -(id)initForContentSize:(CGSize)contentSize;
+// inherited: -(instancetype)initForContentSize:(CGSize)contentSize;
 // inherited: -(void)dealloc;
 // inherited: -(void)viewWillRedisplay;
 -(void)_addKeyboardView;

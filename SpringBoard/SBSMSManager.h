@@ -12,7 +12,7 @@
 }
 +(id)sharedSMSManager;
 -(void)messageReceived:(id)received;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)updateSMSBadges;
 -(void)markMessageAsRead:(id)read;
 @end

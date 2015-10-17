@@ -21,10 +21,10 @@
 +(float)buttonFontSize;
 +(float)smallSystemFontSize;
 +(float)systemFontSize;
--(id)initWithName:(id)name size:(float)size;
--(id)initWithFamilyName:(id)familyName traits:(int)traits size:(float)size;
--(id)initWithMarkupDescription:(id)markupDescription;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithName:(id)name size:(float)size;
+-(instancetype)initWithFamilyName:(id)familyName traits:(int)traits size:(float)size;
+-(instancetype)initWithMarkupDescription:(id)markupDescription;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(Class)classForCoder;
 -(GSFontTraitMask)traits;

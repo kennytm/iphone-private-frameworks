@@ -23,7 +23,7 @@
 	unsigned _hasNoContent : 1;
 	unsigned _isOutgoingMessage : 1;
 }
--(id)initWithMessage:(id)message;
+-(instancetype)initWithMessage:(id)message;
 // inherited: -(void)dealloc;
 -(BOOL)hasLoaded;
 -(BOOL)isPartial;

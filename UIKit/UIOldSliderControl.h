@@ -42,9 +42,9 @@
 	CGPoint _lastTrackingPoint;
 	CGPoint _idleTrackingPoint;
 }
--(id)init;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame layeredFill:(BOOL)fill;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame layeredFill:(BOOL)fill;
 -(id)createSliderKnobView;
 -(void)_resetFillFrames;
 -(CGRect)fillBounds;

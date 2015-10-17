@@ -14,7 +14,7 @@
 	UIImageView* _icon;
 }
 -(void)layoutSubviews;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 @end
 

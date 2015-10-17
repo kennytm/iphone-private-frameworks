@@ -16,7 +16,7 @@
 	unsigned _numNewUIDs;
 	unsigned _newMessageCount;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)shouldAddUID:(unsigned)uid;
 // inherited: -(unsigned)sizeForItem:(id)item;

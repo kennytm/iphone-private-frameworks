@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 @property(retain, nonatomic) UIWebSelectTableViewController* _tableViewController;
 @property(retain, nonatomic) UIPopoverController* _popoverController;
--(id)initSelectPopover;
+-(instancetype)initSelectPopover;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)controlView;
 // in a protocol: -(void)beginEditing;

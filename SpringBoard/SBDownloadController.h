@@ -20,7 +20,7 @@
 #endif
 }
 +(SBDownloadController *)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(void)downloadQueue:(id)queue changedWithRemovals:(id)removals disappearances:(id)disappearances;
 -(void)_showDownloadQueueError;

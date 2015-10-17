@@ -15,7 +15,7 @@
 }
 @property(assign, nonatomic) int tvOutMode;
 +(SBTVOutController *)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setIntialTVModeIfNeeded;
 -(void)updateSettings;

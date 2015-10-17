@@ -13,7 +13,7 @@
 @interface _DAVBasicChallenge : DAVChallenge {
 	NSString* authString;
 }
--(id)initWithAuthString:(id)authString;
+-(instancetype)initWithAuthString:(id)authString;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)addAuthHeaderToMessage:(CFHTTPMessageRef)message;
 @end

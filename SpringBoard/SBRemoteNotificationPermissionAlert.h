@@ -12,7 +12,7 @@
 @interface SBRemoteNotificationPermissionAlert : SBAlertItem {
 	SBApplication* _app;
 }
--(id)initWithApplication:(id)application;
+-(instancetype)initWithApplication:(id)application;
 // inherited: -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;

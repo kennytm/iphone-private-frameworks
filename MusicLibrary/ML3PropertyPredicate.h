@@ -14,7 +14,7 @@
 	NSString* _property;
 }
 @property(copy, nonatomic) NSString* property;
--(id)initWithProperty:(id)property;
+-(instancetype)initWithProperty:(id)property;
 -(void)dealloc;
 -(id)SQLJoinClausesForClass:(Class)aClass;
 @end

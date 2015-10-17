@@ -10,7 +10,7 @@
 
 @interface VMUSegment32LoadCommand : VMUSegmentLoadCommand {
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isSegment32;
 @end
 

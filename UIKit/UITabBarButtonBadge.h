@@ -12,7 +12,7 @@
 	UIView* _background;
 	UIView* _alternate;
 }
--(id)initWithValue:(id)value blinks:(BOOL)blinks;
+-(instancetype)initWithValue:(id)value blinks:(BOOL)blinks;
 -(void)dealloc;
 -(CGSize)sizeThatFits:(CGSize)fits;
 -(void)setValue:(id)value;

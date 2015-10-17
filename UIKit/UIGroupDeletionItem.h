@@ -12,9 +12,9 @@
 	int _group;
 	NSIndexSet* _indexes;
 }
--(id)initWithGroup:(int)group;
--(id)initWithGroup:(int)group andIndexes:(id)indexes;
--(id)initWithIndexes:(id)indexes inGroup:(int)group;
+-(instancetype)initWithGroup:(int)group;
+-(instancetype)initWithGroup:(int)group andIndexes:(id)indexes;
+-(instancetype)initWithIndexes:(id)indexes inGroup:(int)group;
 -(void)dealloc;
 -(int)group;
 -(id)indexes;

@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(assign, nonatomic) BOOL autoscrolled;
 @property(readonly, assign, nonatomic) UIFieldEditor* fieldEditor;
 @property(readonly, assign, nonatomic) UIScrollView* scrollView;
--(id)initWithView:(id)view;
+-(instancetype)initWithView:(id)view;
 // inherited: -(void)dealloc;
 -(void)detach;
 -(void)attach;

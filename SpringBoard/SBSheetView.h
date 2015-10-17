@@ -13,7 +13,7 @@
 	SBProxyRemoteView* _remoteProxyView;
 	SBApplication* _app;
 }
--(id)initWithRemoteViewIdentifier:(id)remoteViewIdentifier application:(id)application;
+-(instancetype)initWithRemoteViewIdentifier:(id)remoteViewIdentifier application:(id)application;
 -(id)remoteViewIdentifier;
 -(id)application;
 -(void)noteSheetDidEnd;

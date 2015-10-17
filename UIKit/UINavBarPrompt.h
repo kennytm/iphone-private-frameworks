@@ -12,7 +12,7 @@
 	NSString* _prompt;
 	UINavigationBar* _navBar;
 }
--(id)initWithPrompt:(id)prompt navBar:(id)bar;
+-(instancetype)initWithPrompt:(id)prompt navBar:(id)bar;
 -(void)clearWeakReference:(id)reference;
 -(void)dealloc;
 -(void)setPrompt:(id)prompt;

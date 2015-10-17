@@ -12,7 +12,7 @@
 	float _height;
 	CGShadingRef _shader;
 }
--(id)initVerticalWithValues:(XXStruct_iyXfGC*)values;
+-(instancetype)initVerticalWithValues:(XXStruct_iyXfGC*)values;
 -(void)fillRect:(CGRect)rect inContext:(CGContextRef)context;
 -(void)fillRect:(CGRect)rect;
 -(void)dealloc;

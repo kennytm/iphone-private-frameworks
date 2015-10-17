@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITouch* touch;
 @property(assign, nonatomic) int state;
 @property(assign, nonatomic) float startTimestamp;
--(id)initWithTouch:(id)touch inView:(id)view;
+-(instancetype)initWithTouch:(id)touch inView:(id)view;
 @end
 
 #endif

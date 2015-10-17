@@ -12,7 +12,7 @@
 	float _progress;
 }
 -(void)_updateImages;
--(id)initWithFrame:(CGRect)frame active:(BOOL)active;
+-(instancetype)initWithFrame:(CGRect)frame active:(BOOL)active;
 -(void)setFrame:(CGRect)frame;
 -(void)setBounds:(CGRect)bounds;
 -(void)setActive:(BOOL)active;

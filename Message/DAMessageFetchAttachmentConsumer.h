@@ -24,7 +24,7 @@
 @property(assign, nonatomic) unsigned expectedLength;
 // in a protocol: -(void)consumeData:(id)data ofContentType:(id)contentType forAttachmentNamed:(id)attachmentNamed ofMessageWithServerID:(id)serverID;
 // in a protocol: -(void)attachmentFetchCompletedWithStatus:(int)status forAttachmentNamed:(id)attachmentNamed ofMessageWithServerID:(id)serverID;
--(id)initWithActivityMonitor:(id)activityMonitor;
+-(instancetype)initWithActivityMonitor:(id)activityMonitor;
 // inherited: -(void)dealloc;
 @end
 

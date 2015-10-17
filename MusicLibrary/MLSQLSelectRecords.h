@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 +(unsigned)countOfRecordFromStore:(CPRecordStoreRef)store recordClass:(const XXStruct_T9QubB*)aClass where:(id)where;
 +(id)expressionToken;
--(id)initWithRecordClass:(const XXStruct_T9QubB*)recordClass recordTableAlias:(id)alias;
--(id)initWithRecordClass:(const XXStruct_T9QubB*)recordClass;
+-(instancetype)initWithRecordClass:(const XXStruct_T9QubB*)recordClass recordTableAlias:(id)alias;
+-(instancetype)initWithRecordClass:(const XXStruct_T9QubB*)recordClass;
 -(void)dealloc;
 -(id)recordTableID;
 -(BOOL)performWithConnection:(CPSqliteConnection*)connection store:(CPRecordStoreRef)store records:(const CFArrayRef*)records;

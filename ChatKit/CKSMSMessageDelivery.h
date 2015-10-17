@@ -16,7 +16,7 @@
 	unsigned _isSending : 1;
 }
 @property(assign, nonatomic) CKSMSMessage* message;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(float)progress;
 -(BOOL)isSending;

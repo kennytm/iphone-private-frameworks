@@ -32,7 +32,7 @@
 @property(assign, nonatomic) id<SBAwayDateViewDelegate> delegate;
 @property(assign, nonatomic, getter=isPlaying) BOOL playing;
 @property(retain, nonatomic) NSString* title;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)labelWithFontSize:(float)fontSize origin:(CGPoint)origin fontName:(const char*)name;
 -(id)labelWithFontSize:(float)fontSize origin:(CGPoint)origin;

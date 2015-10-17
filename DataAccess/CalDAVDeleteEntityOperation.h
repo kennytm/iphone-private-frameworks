@@ -15,7 +15,7 @@
 	CalDAVAccount* _account;
 	CalDAVCacheManager* _cache;
 }
--(id)initWithFilename:(id)filename calendarURL:(id)url account:(id)account cache:(id)cache;
+-(instancetype)initWithFilename:(id)filename calendarURL:(id)url account:(id)account cache:(id)cache;
 // inherited: -(void)dealloc;
 -(id)readableDescription;
 -(void)performOperation:(BOOL)operation;

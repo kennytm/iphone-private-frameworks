@@ -38,7 +38,7 @@
 }
 +(id)sharedInstance;
 +(BOOL)runningPhotosApplication;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)mainWindow;
 -(void)setMainWindow:(id)window;

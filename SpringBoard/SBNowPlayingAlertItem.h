@@ -17,7 +17,7 @@
 	unsigned _needsLayout : 1;
 	MPAudioDeviceController* _audioDeviceController;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)createCenteredLabel:(BOOL)label;
 -(void)_updateLabelWithTag:(int)tag text:(id)text faded:(BOOL)faded cursor:(float*)cursor sheet:(id)sheet;

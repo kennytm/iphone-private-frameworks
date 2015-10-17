@@ -17,7 +17,7 @@
 	UITabBar* _tabBar;
 	int _buttonTag;
 }
--(id)initWithImage:(id)image alternateImage:(id)image2;
+-(instancetype)initWithImage:(id)image alternateImage:(id)image2;
 -(void)dealloc;
 -(void)setCurrentImage;
 -(void)showAlternateImage:(BOOL)image;

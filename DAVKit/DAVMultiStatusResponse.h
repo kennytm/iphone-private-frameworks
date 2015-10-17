@@ -14,8 +14,8 @@
 	NSString* responseDescription;
 	int statusCode;
 }
-// inherited: -(id)init;
--(id)initWithXMLNode:(id)xmlnode;
+// inherited: -(instancetype)init;
+-(instancetype)initWithXMLNode:(id)xmlnode;
 // inherited: -(void)dealloc;
 -(id)href;
 -(int)statusCode;

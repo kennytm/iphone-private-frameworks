@@ -30,7 +30,7 @@
 	BOOL _wifiEnabled;
 }
 +(CPNetworkObserver*)sharedNetworkObserver;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)addObserver:(id)observer selector:(SEL)selector forHostname:(NSString*)hostname;
 -(void)removeObserver:(id)observer;

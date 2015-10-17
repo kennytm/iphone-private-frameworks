@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	char* _UTF8String;
 	NSData* _utf8Data;
 }
--(id)initWithString:(id)string;
+-(instancetype)initWithString:(id)string;
 -(void)dealloc;
 -(id)string;
 -(const char*)UTF8String;

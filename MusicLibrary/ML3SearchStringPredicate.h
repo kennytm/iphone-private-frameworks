@@ -18,7 +18,7 @@
 @property(copy, nonatomic) NSArray* properties;
 @property(copy, nonatomic) NSString* searchString;
 +(id)predicateWithConcatenatedProperties:(id)concatenatedProperties searchString:(id)string;
--(id)initWithConcatenatedProperties:(id)concatenatedProperties searchString:(id)string;
+-(instancetype)initWithConcatenatedProperties:(id)concatenatedProperties searchString:(id)string;
 -(void)dealloc;
 -(id)description;
 -(id)SQLJoinClausesForClass:(Class)aClass;

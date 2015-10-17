@@ -12,7 +12,7 @@
 @interface ASItemOperationsFetchCommand : NSObject {
 	NSString* _longID;
 }
--(id)initWithlongID:(id)anId;
+-(instancetype)initWithlongID:(id)anId;
 -(id)longID;
 // inherited: -(void)dealloc;
 @end

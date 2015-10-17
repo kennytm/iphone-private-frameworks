@@ -15,7 +15,7 @@
 @property(assign, nonatomic) UIViewController* viewController;
 @property(retain, nonatomic) NSString* name;
 @property(assign, nonatomic) BOOL animated;
--(id)initWithViewController:(id)viewController name:(id)name animated:(BOOL)animated;
+-(instancetype)initWithViewController:(id)viewController name:(id)name animated:(BOOL)animated;
 -(void)dealloc;
 @end
 

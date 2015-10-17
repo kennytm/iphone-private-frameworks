@@ -26,7 +26,7 @@
 	unsigned _writeIsPending : 1;
 }
 +(CGImageRef)createThumbnailOfImage:(CGImageRef)image format:(int)format fullPath:(id)path orientation:(int)orientation outThumbnailData:(id*)data;
--(id)initWithName:(id)name number:(int)number directory:(id)directory;
+-(instancetype)initWithName:(id)name number:(int)number directory:(id)directory;
 -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(id)delegate;

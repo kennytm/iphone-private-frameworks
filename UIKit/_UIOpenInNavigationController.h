@@ -6,7 +6,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIOpenInNavigationController : UINavigationController {
 }
--(id)initWithDocumentInteractionController:(id)documentInteractionController;
+-(instancetype)initWithDocumentInteractionController:(id)documentInteractionController;
 @end
 
 #endif

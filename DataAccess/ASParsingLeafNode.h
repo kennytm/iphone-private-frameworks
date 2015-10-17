@@ -9,7 +9,7 @@
 
 @protocol ASParsingLeafNode
 +(BOOL)expectsContent;
--(id)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
+-(instancetype)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
 -(int)parsingState;
 @end
 

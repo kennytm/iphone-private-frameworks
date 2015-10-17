@@ -17,7 +17,7 @@
 }
 +(id)eqPresetForName:(id)name;
 +(id)eqPresetForBuiltInPresetType:(int)presetType;
--(id)initWithBuiltInPresetType:(int)presetType;
+-(instancetype)initWithBuiltInPresetType:(int)presetType;
 -(void)dealloc;
 -(id)name;
 -(id)localizedName;

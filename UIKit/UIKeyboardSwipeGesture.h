@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 }
 @property(assign, nonatomic) int numberOfFingers;
 @property(assign, nonatomic) float minimumVerticalMovement;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(float)minimumVerticalMovementForTimeInterval:(double)timeInterval;
 -(float)minimumHorizontalMovementForTimeInterval:(double)timeInterval;
 -(float)maximumVerticalMovementForTimeInterval:(double)timeInterval;

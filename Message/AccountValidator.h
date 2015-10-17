@@ -26,7 +26,7 @@
 	NSArray* _incomingServerAuthSchemes;
 	NSArray* _smtpServerAuthSchemes;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)validateAccount:(id)account useSSL:(BOOL)ssl;

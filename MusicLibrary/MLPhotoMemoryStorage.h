@@ -26,7 +26,7 @@
 	double _longitude;
 	double _latitude;
 }
--(id)initWithImageID:(int)imageID;
+-(instancetype)initWithImageID:(int)imageID;
 -(void)dealloc;
 -(id)description;
 -(void)_setMetadataPathFromFullSizeVideoPath:(id)fullSizeVideoPath;

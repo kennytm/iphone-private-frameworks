@@ -32,7 +32,7 @@
 		unsigned unused : 18;
 	} _ppBitfields;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setAllowsPlayingSlideshow:(BOOL)slideshow;
 -(void)setAllowsFullSizeImageDisplay:(BOOL)display;

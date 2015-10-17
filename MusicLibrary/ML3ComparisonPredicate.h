@@ -30,7 +30,7 @@
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive;
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive treatNullAsBlank:(BOOL)blank;
 +(id)predicateWithProperty:(id)property value:(id)value comparison:(int)comparison transformFunction:(id)function;
--(id)initWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive transformFunction:(id)function treatNullAsBlank:(BOOL)blank;
+-(instancetype)initWithProperty:(id)property value:(id)value comparison:(int)comparison caseInsensitive:(BOOL)insensitive transformFunction:(id)function treatNullAsBlank:(BOOL)blank;
 -(void)dealloc;
 -(id)description;
 -(id)SQLForEntityClass:(Class)entityClass;

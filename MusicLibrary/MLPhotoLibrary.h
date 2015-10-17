@@ -30,7 +30,7 @@
 +(BOOL)transformForImage:(CGImageRef)image orientation:(int)orientation format:(int)format sizeInOut:(CGSize*)anOut contextSizeOut:(CGSize*)anOut5 transformOut:(CGAffineTransform*)anOut6;
 -(void)_loadImageLibrary;
 -(void)_flushImageLibrary;
--(id)initWithPath:(id)path;
+-(instancetype)initWithPath:(id)path;
 -(void)dealloc;
 -(ITImageInfo*)_imageInfoForPhoto:(id)photo;
 -(id)databasePath;

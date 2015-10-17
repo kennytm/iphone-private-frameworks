@@ -14,9 +14,9 @@
 +(id)deleteRequestWithURL:(id)url;
 +(id)deleteRequestWithSession:(id)session path:(id)path;
 +(id)deleteRequestWithSession:(id)session URI:(id)uri;
--(id)initDeleteWithURL:(id)url;
--(id)initDeleteWithSession:(id)session path:(id)path;
--(id)initDeleteWithSession:(id)session URI:(id)uri;
+-(instancetype)initDeleteWithURL:(id)url;
+-(instancetype)initDeleteWithSession:(id)session path:(id)path;
+-(instancetype)initDeleteWithSession:(id)session URI:(id)uri;
 -(id)dependenciesList;
 @end
 

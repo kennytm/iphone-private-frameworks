@@ -22,7 +22,7 @@
 	unsigned _allowsRemoteUIAccess : 1;
 }
 +(BOOL)_canSeedGeniusWithItem:(id)item;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)prepareForDecodingWithCoder:(id)coder;
 -(void)setNowPlayingItem:(id)item;

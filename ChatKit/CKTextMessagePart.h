@@ -15,7 +15,7 @@
 -(id)detachedCopy;
 -(BOOL)isDisplayable;
 -(int)type;
--(id)initWithText:(id)text;
+-(instancetype)initWithText:(id)text;
 -(id)text;
 -(void)dealloc;
 -(void)copyToPasteboard;

@@ -11,6 +11,6 @@
 	int _leftCapWidth;
 	int _topCapHeight;
 }
--(id)initWithImage:(id)image leftCapWidth:(int)width topCapHeight:(int)height;
+-(instancetype)initWithImage:(id)image leftCapWidth:(int)width topCapHeight:(int)height;
 @end
 

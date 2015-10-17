@@ -50,7 +50,7 @@
 		unsigned isAnimatingZoomFailure : 1;
 	} flags;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 @end
 

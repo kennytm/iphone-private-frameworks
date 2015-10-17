@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 +(void)_dbSaveCoalesceBegin;
 +(void)_dbSaveCoalesceEnd;
 +(unsigned long long)syncGenerationID;
--(id)initWithBasePath:(id)basePath;
+-(instancetype)initWithBasePath:(id)basePath;
 -(void)dealloc;
 -(void)mediaFolderPathDidChangeNotification:(id)mediaFolderPath;
 -(void)beginPreloadingItems;

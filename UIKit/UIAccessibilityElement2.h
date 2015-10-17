@@ -9,6 +9,6 @@
 @class NSString;
 
 @interface UIAccessibilityElement ()
--(id)initWithAccessibilityContainer:(id)accessibilityContainer;
+-(instancetype)initWithAccessibilityContainer:(id)accessibilityContainer;
 @end
 

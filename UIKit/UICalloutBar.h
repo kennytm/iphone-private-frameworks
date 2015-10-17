@@ -59,7 +59,7 @@
 +(void)fadeSharedCalloutBar;
 +(void)hideSharedCalloutBar;
 +(BOOL)sharedCalloutBarWasRecentlyFaded;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)flattenForAlertOrResignActive:(id)alertOrResignActive __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(void)expandAfterAlertOrBecomeActive:(id)active __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);

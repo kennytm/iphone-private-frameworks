@@ -11,7 +11,7 @@
 
 @interface AVQueueFeeder : NSObject {
 }
--(id)init;
+-(instancetype)init;
 -(unsigned)numberOfPaths;
 -(unsigned)itemCount;
 -(id)pathAtIndex:(unsigned)index;

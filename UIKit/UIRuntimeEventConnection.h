@@ -9,7 +9,7 @@
 @interface UIRuntimeEventConnection : UIRuntimeConnection {
 	unsigned eventMask;
 }
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)connect;
 -(void)connectForSimulator;

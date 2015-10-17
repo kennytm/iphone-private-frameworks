@@ -79,7 +79,7 @@
 @property(retain, nonatomic) CKMessage* smartForwardMessage;
 @property(assign, nonatomic) id composeDelegate;
 +(UIColor*)tableColor;
--(id)initWithNavigationController:(UINavigationController*)navigationController;
+-(instancetype)initWithNavigationController:(UINavigationController*)navigationController;
 -(void)dealloc;
 -(void)loadView;
 -(BOOL)_canReloadView;

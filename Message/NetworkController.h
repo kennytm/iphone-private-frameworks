@@ -22,7 +22,7 @@
 }
 +(id)sharedInstance;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)isNetworkUp;
 -(BOOL)isFatPipe;
 -(BOOL)inAirplaneMode;

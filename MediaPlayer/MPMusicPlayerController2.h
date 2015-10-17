@@ -62,7 +62,7 @@
 @property(assign, nonatomic) BOOL allowsRemoteUIAccess;
 +(id)applicationMusicPlayer;
 +(id)iPodMusicPlayer;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)_systemVolumeDidChange:(id)_systemVolume;
 -(void)forwardInvocation:(id)invocation;

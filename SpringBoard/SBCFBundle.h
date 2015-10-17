@@ -12,8 +12,8 @@
 @interface SBCFBundle : NSObject {
 	CFBundleRef _cfBundle;
 }
--(id)initWithPath:(id)path;
--(id)initWithCFBundle:(CFBundleRef)cfbundle;
+-(instancetype)initWithPath:(id)path;
+-(instancetype)initWithCFBundle:(CFBundleRef)cfbundle;
 // inherited: -(void)dealloc;
 -(id)executablePath;
 -(id)bundleIdentifier;

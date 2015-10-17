@@ -11,7 +11,7 @@
 
 @interface MPMediaPredicate : NSObject <NSCoding> {
 }
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

@@ -41,7 +41,7 @@
 	double _timeWhenResignedActive;
 	unsigned _movieIndexWhenResignedActive;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)contentURL;
 -(void)setContentURL:(id)url;

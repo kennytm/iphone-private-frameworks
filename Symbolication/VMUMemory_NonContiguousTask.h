@@ -20,7 +20,7 @@
 +(id)memoryWithPid:(int)pid addressRange:(VMURange)range architecture:(id)architecture;
 +(id)memoryWithMachTaskContainer:(id)machTaskContainer;
 +(id)memoryWithMachTaskContainer:(id)machTaskContainer addressRange:(VMURange)range architecture:(id)architecture;
--(id)initWithMachTaskContainer:(id)machTaskContainer addressRange:(VMURange)range architecture:(id)architecture;
+-(instancetype)initWithMachTaskContainer:(id)machTaskContainer addressRange:(VMURange)range architecture:(id)architecture;
 -(id)machTaskContainer;
 -(VMURange)regionAtAddress:(unsigned long long)address minProtection:(int)protection;
 // in a protocol: -(VMURange)addressRange;

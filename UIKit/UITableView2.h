@@ -14,10 +14,10 @@
 
 @interface UITableView ()
 @property(retain, nonatomic) id scrollTestParameters __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCommon;
 -(void)_populateArchivedSubviews:(id)subviews;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(instancetype)initWithCoder:(id)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
 -(void)reloadData;

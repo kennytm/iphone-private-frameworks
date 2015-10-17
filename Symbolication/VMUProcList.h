@@ -16,7 +16,7 @@
 	BOOL appsOnly;
 	BOOL ownedOnly;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)setProcInfos:(id)infos;

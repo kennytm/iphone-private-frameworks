@@ -13,7 +13,7 @@
 	NSString* _cacheFilePath;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_postNotification;
 -(void)_updateDefaults:(id)defaults;

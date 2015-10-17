@@ -72,7 +72,7 @@
 	UITouch* _lastTouch;
 }
 +(SBIconController*)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(SBIconContentView*)contentView;
 -(void)setPageControlVisible:(BOOL)visible;

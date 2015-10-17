@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	void* _iTunesExtensions;
 }
 @property(readonly, assign, nonatomic) sqlite3* db;
--(id)initWithDB:(sqlite3*)db;
+-(instancetype)initWithDB:(sqlite3*)db;
 -(void)dealloc;
 -(void)pushDB:(sqlite3*)db;
 -(void)popDB;

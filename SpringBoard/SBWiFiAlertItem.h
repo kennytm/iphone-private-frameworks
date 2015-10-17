@@ -28,7 +28,7 @@
 	BOOL _sentResponse;
 }
 -(void)scan;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(int)_joinRow;
 -(void)setNetworks:(id)networks;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2

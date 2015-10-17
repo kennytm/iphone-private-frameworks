@@ -15,7 +15,7 @@
 	id _delegate;
 }
 +(unsigned)uniqueQueryID;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setTaskManager:(id)manager;
 -(id)taskManager;
 -(void)performTask;

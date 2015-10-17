@@ -9,7 +9,7 @@
 @interface UITableCellFadeAnimation : UIAnimation {
 	BOOL _select;
 }
--(id)initWithTarget:(id)target select:(BOOL)select;
+-(instancetype)initWithTarget:(id)target select:(BOOL)select;
 -(void)dealloc;
 -(void)_appSuspended:(id)suspended;
 -(void)setProgress:(float)progress;

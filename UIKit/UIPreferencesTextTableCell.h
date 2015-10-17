@@ -15,7 +15,7 @@
 	float _textFieldOffset;
 	SEL _returnAction;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setTextFieldOffset:(float)offset;
 -(float)textFieldOffset;
 -(void)setReturnAction:(SEL)action;

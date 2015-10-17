@@ -17,8 +17,8 @@
 -(void)updateForMiniBarState:(BOOL)miniBarState;
 -(CGPoint)_offsetForMiniBarState:(BOOL)miniBarState;
 -(void)_commonSegmentedControlInit;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(id)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(int)controlSize;
@@ -59,7 +59,7 @@
 
 @interface UISegmentedControl (DeprecatedMethods)
 +(float)defaultHeight;
--(id)initWithFrame:(CGRect)frame withStyle:(int)style withItems:(id)items;
+-(instancetype)initWithFrame:(CGRect)frame withStyle:(int)style withItems:(id)items;
 -(void)setDelegate:(id)delegate;
 -(void)setShowsDisclosure:(BOOL)disclosure;
 -(void)setMomentaryClick:(BOOL)click;

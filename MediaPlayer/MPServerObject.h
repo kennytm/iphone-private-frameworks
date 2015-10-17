@@ -11,7 +11,7 @@
 @interface MPServerObject : NSObject {
 }
 +(id)_center;
--(id)init;
+-(instancetype)init;
 -(void)prepareForDecodingWithCoder:(id)coder;
 -(void)_registerNotificationsForSelectors;
 -(id)_forwardMessage:(id)message userInfo:(id)info;

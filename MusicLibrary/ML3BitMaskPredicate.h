@@ -17,7 +17,7 @@
 @property(assign, nonatomic) long long mask;
 @property(assign, nonatomic) long long value;
 +(id)predicateWithProperty:(id)property mask:(long long)mask value:(long long)value;
--(id)initWithProperty:(id)property mask:(long long)mask value:(long long)value;
+-(instancetype)initWithProperty:(id)property mask:(long long)mask value:(long long)value;
 -(void)dealloc;
 -(id)description;
 -(id)SQLForEntityClass:(Class)entityClass;

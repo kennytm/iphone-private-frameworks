@@ -35,7 +35,7 @@
 +(MailMessageLibrary*)defaultInstance;
 // inherited: +(void)initialize;
 +(void)_invalidateActiveAccountsClause;
-// inherited: -(id)initWithPath:(id)path;
+// inherited: -(instancetype)initWithPath:(id)path;
 -(void)setResetHandler:(/*function-pointer*/ void*)handler;
 // inherited: -(void)dealloc;
 -(void)renameOrRemoveDatabase;
