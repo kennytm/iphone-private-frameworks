@@ -29,7 +29,7 @@
 @property(assign, nonatomic) BOOL usesRoundedCorners __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 +(double)defaultDurationForTransition:(int)transition;
 // inherited: -(instancetype)initWithFrame:(CGRect)frame;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
 -(BOOL)transition:(int)transition toView:(id)view;

@@ -17,7 +17,7 @@
 -(instancetype)initWithPersistentID:(unsigned long long)persistentID;
 -(id)_initWithMLTrack:(id)mltrack;
 -(void)dealloc;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(BOOL)isEqual:(id)equal;
 -(unsigned)hash;

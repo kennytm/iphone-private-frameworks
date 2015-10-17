@@ -15,7 +15,7 @@
 -(void)_commonInit;
 -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(CGSize)textSize;

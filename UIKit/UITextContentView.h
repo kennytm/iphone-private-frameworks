@@ -64,7 +64,7 @@
 @property(copy, nonatomic) NSString* text;
 -(instancetype)initWithFrame:(CGRect)frame;
 -(instancetype)initWithFrame:(CGRect)frame webView:(id)view;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)commonInitWithWebDocumentView:(id)webDocumentView isDecoding:(BOOL)decoding;

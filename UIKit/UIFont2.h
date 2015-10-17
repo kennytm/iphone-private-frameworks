@@ -24,7 +24,7 @@
 -(instancetype)initWithName:(id)name size:(float)size;
 -(instancetype)initWithFamilyName:(id)familyName traits:(int)traits size:(float)size;
 -(instancetype)initWithMarkupDescription:(id)markupDescription;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(Class)classForCoder;
 -(GSFontTraitMask)traits;

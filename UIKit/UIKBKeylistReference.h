@@ -34,7 +34,7 @@
 @property(readonly, assign, nonatomic) NSString* keylistName;
 +(UIKBKeylistReference*)referenceWithName:(NSString*)name value:(id)value flags:(unsigned)flags;
 -(instancetype)initWithName:(NSString*)name value:(id)value flags:(unsigned)flags;
-//-(instancetype)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(void)dealloc;
 //-(id)description;

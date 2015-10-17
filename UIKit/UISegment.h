@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(assign, getter=isHighlighted) BOOL highlighted;
 @property(assign, getter=isSelected) BOOL selected;
 -(instancetype)initWithInfo:(id)info style:(int)style size:(int)size barStyle:(int)style4 tintColor:(id)color position:(unsigned)position isDisclosure:(BOOL)disclosure autosizeText:(BOOL)text;
-// inherited: -(instancetype)initWithCoder:(id)coder;
+// inherited: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // inherited: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;

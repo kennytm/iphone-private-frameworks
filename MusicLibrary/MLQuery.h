@@ -45,7 +45,7 @@
 -(void)_commonInit_MLQuery;
 -(instancetype)init;
 -(void)encodeWithCoder:(id)coder;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(id)indexMappingDescription;
 -(id)description;
 -(void)dealloc;

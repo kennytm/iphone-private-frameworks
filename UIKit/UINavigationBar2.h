@@ -22,7 +22,7 @@
 -(CGSize)defaultSizeForOrientation:(int)orientation;
 -(void)_updateOpacity;
 -(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

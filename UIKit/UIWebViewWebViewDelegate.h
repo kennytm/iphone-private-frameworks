@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 -(BOOL)webView:(id)view runJavaScriptConfirmPanelWithMessage:(id)message initiatedByFrame:(id)frame;
 -(id)webView:(id)view runJavaScriptTextInputPanelWithPrompt:(id)prompt defaultText:(id)text initiatedByFrame:(id)frame;
 -(BOOL)webView:(id)view frame:(id)frame requestGeolocationPermissionForSecurityOrigin:(id)securityOrigin shouldClearCache:(BOOL)cache;
--(id)webView:(id)view identifierForInitialRequest:(instancetype)initialRequest fromDataSource:(id)dataSource;
+-(id)webView:(id)view identifierForInitialRequest:(id)initialRequest fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFinishLoadingFromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didFailLoadingWithError:(id)error fromDataSource:(id)dataSource;
 -(void)webView:(id)view resource:(id)resource didReceiveAuthenticationChallenge:(id)challenge fromDataSource:(id)dataSource;

@@ -38,7 +38,7 @@
 -(void)appendActiveSyncDataForTask:(id)task toWBXMLData:(id)wbxmldata;
 -(void)setUntilString:(id)string;
 // inherited: -(void)dealloc;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(id)type;
 -(void)setType:(id)type;

@@ -14,7 +14,7 @@
 
 @interface UITabBarController ()
 -(instancetype)initWithNibName:(id)nibName bundle:(id)bundle;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedChildViewControllers:(id)controllers;
 -(BOOL)_shouldPersistViewWhenCoding;
 -(void)encodeWithCoder:(id)coder;

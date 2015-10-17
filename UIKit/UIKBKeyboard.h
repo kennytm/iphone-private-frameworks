@@ -25,7 +25,7 @@
 //-(instancetype)init;
 //-(void)dealloc;
 -(void)cacheKey:(UIKBKey*)key onKeyplane:(UIKBKeyplane*)keyplane;
-//-(instancetype)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(UIKBKeyplane*)keyplaneWithName:(NSString*)name;
 //-(id)description;

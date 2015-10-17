@@ -13,7 +13,7 @@
 @interface UIDatePicker ()
 -(void)_insertPickerView;
 -(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(CGSize)sizeThatFits:(CGSize)fits;

@@ -45,7 +45,7 @@
 // inherited: -(id)exceptionDate;
 // inherited: -(void)setExceptionDate:(id)date;
 // inherited: -(void)setDTStamp:(id)stamp;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(BOOL)cachedOrganizerIsSelf;
 -(id)instanceType;

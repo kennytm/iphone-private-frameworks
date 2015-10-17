@@ -23,7 +23,7 @@
 -(instancetype)initWithFrame:(CGRect)frame output:(int)anOutput;
 -(instancetype)initWithFrame:(CGRect)frame output:(int)anOutput bitsPerComponent:(int)component;
 -(instancetype)initWithContentRect:(CGRect)contentRect;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)dealloc;
 -(void)setContentView:(id)view;
 -(id)representation;

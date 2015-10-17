@@ -19,7 +19,7 @@
 -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCellCommon __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 -(instancetype)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

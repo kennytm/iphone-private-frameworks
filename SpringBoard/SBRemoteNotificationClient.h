@@ -34,7 +34,7 @@
 @property(retain, nonatomic) SBRemoteNotificationAlert* currentAlertItem;
 -(instancetype)initWithBundleIdentifier:(id)bundleIdentifier;
 // inherited: -(void)dealloc;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(int)effectivelyEnabledTypes;
 @end

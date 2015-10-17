@@ -13,7 +13,7 @@
 @interface UISlider ()
 -(instancetype)init;
 -(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)_initImages;

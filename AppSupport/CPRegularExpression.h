@@ -67,7 +67,7 @@ typedef NSUInteger CPRegularExpressionOptions;
 -(NSString*)expressionString;
 -(NSRange)matchedRangeForCString:(const char*)cstring range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
 -(NSRange)matchedRangeForString:(NSString*)string range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 @end
 

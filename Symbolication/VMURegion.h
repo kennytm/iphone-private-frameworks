@@ -19,7 +19,7 @@
 }
 +(id)regionWithOwner:(id)owner name:(id)name addressRange:(VMURange)range;
 -(instancetype)initWithOwner:(id)owner name:(id)name addressRange:(VMURange)range;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(id)owner;
 -(id)name;

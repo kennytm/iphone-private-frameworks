@@ -8,18 +8,18 @@
 
 @interface LASettingsViewController LA_SETTINGS_CONTROLLER(UIViewController)
 + (id)controller;
-- (id)init;
+- (instancetype)init;
 @end
 
 @interface LARootSettingsController LA_SETTINGS_CONTROLLER(LASettingsViewController)
 @end
 
 @interface LAModeSettingsController LA_SETTINGS_CONTROLLER(LASettingsViewController)
-- (id)initWithMode:(NSString *)mode;
+- (instancetype)initWithMode:(NSString *)mode;
 @end
 
 @interface LAEventSettingsController LA_SETTINGS_CONTROLLER(LASettingsViewController)
-- (id)initWithModes:(NSArray *)modes eventName:(NSString *)eventName;
+- (instancetype)initWithModes:(NSArray *)modes eventName:(NSString *)eventName;
 @end
 
 @interface LAListenerSettingsViewController LA_SETTINGS_CONTROLLER(LASettingsViewController)
@@ -27,7 +27,7 @@
 @end
 
 @interface LAEventConfigurationViewController LA_SETTINGS_CONTROLLER(LASettingsViewController)
-- (id)initWithEventName:(NSString *)eventName;
+- (instancetype)initWithEventName:(NSString *)eventName;
 @property (nonatomic, readonly, copy) NSString *eventName;
 @property (nonatomic, assign) BOOL showsSaveButton;
 - (BOOL)performSave;

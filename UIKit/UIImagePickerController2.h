@@ -15,7 +15,7 @@
 +(BOOL)_loadPhotoLibraryIfNecessary __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
 +(BOOL)_isMediaTypeAvailable:(id)available forSource:(unsigned)source;
 -(instancetype)init;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(id)_initWithSourceImage:(id)sourceImage cropRect:(CGRect)rect;
 -(void)dealloc;
 -(void)_populateArchivedChildViewControllers:(id)controllers;

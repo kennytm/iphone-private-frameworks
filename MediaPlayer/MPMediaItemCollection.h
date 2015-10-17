@@ -24,7 +24,7 @@
 -(id)_init;
 -(id)_initWithItemsQuery:(id)itemsQuery itemsCount:(unsigned)count representativeItem:(id)item containedMediaTypes:(int)types;
 -(void)dealloc;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

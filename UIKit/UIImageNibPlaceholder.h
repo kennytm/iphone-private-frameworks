@@ -15,7 +15,7 @@
 -(instancetype)initWithContentsOfFile:(id)file andRuntimeResourceName:(id)name;
 -(instancetype)initWithData:(id)data andRuntimeResourceName:(id)name;
 -(void)dealloc;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

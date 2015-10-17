@@ -21,7 +21,7 @@
 -(instancetype)init;
 -(id)_initWithMLPredicate:(id)mlpredicate;
 -(void)dealloc;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)description;
 -(id)_MLPredicate;

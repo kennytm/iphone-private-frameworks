@@ -36,7 +36,7 @@
 +(UIKBGeometry*)geometryWithRect:(CGRect)rect;
 //-(instancetype)init;
 //-(void)dealloc;
-//-(instancetype)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 //-(id)copyWithZone:(NSZone*)zone;
 //-(id)description;

@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSNumber* isAccessibilityConfigurationElement;
 @property(retain, nonatomic) NSObject* object;
 -(instancetype)initWithObject:(id)object label:(id)label hint:(id)hint traits:(id)traits andIsAccessibilityElement:(id)element;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)applyConfiguration;

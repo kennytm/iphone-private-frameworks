@@ -33,7 +33,7 @@
 // inherited: -(id)asParseRules;
 -(void)saveToCalendarWithParentASEvent:(id)parentASEvent existingRecord:(void*)record treatNullsAsDeletes:(BOOL)deletes;
 -(instancetype)initWithCalAttendee:(void*)calAttendee parentEvent:(id)event;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)appendActiveSyncDataForTask:(id)task toData:(id)data;
 -(id)fullEmailString;

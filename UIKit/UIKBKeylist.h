@@ -18,7 +18,7 @@
 +(UIKBKeylist*)keylist;
 //-(instancetype)init;
 //-(void)dealloc;
-//-(instancetype)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(UIKBKey*)keyWithName:(NSString*)name;
 //-(id)description;

@@ -28,7 +28,7 @@
 +(BOOL)_doesOverrideLegacyShouldAutorotateMethod;
 -(void)_doCommonSetup;
 -(instancetype)init;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)awakeFromNib;
 -(void)_populateArchivedChildViewControllers:(id)controllers;
 -(BOOL)_shouldPersistViewWhenCoding;

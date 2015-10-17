@@ -22,7 +22,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // inherited: -(unsigned)hash;
 // inherited: -(BOOL)isEqual:(id)equal;
 // in a protocol: -(void)encodeWithCoder:(id)coder;

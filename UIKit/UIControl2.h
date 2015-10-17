@@ -11,7 +11,7 @@
 
 @interface UIControl ()
 -(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(BOOL)cancelMouseTracking;

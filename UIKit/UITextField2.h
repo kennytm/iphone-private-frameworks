@@ -13,7 +13,7 @@
 
 @interface UITextField ()
 // inherited: -(instancetype)initWithFrame:(CGRect)frame;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;

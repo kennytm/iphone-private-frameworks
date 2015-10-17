@@ -34,7 +34,7 @@
 @property(assign, nonatomic) BOOL shouldNotifyDidCompleteImmediately;
 +(double)defaultDurationForTransition:(int)transition;
 -(instancetype)initWithFrame:(CGRect)frame;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(double)durationForTransition:(int)transition;

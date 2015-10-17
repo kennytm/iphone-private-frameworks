@@ -10,7 +10,7 @@
 
 @interface UINavigationItem ()
 +(id)defaultFont;
--(instancetype)initWithCoder:(id)coder;
+-(instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(id)navigationBar;

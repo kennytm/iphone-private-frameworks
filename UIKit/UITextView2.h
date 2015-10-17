@@ -16,7 +16,7 @@
 // inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(instancetype)initWithFrame:(CGRect)frame webView:(id)view;
 -(instancetype)initWithFrame:(CGRect)frame font:(id)font;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(void)commonInitWithWebDocumentView:(id)webDocumentView isDecoding:(BOOL)decoding;

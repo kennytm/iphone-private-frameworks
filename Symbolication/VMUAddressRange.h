@@ -14,7 +14,7 @@
 @interface VMUAddressRange : NSObject <NSCoding> {
 	VMURange _addressRange;
 }
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 @end
 

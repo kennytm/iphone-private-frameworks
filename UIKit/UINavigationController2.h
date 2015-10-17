@@ -12,7 +12,7 @@
 
 @interface UINavigationController ()
 -(instancetype)initWithNibName:(id)nibName bundle:(id)bundle;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(BOOL)_shouldPersistViewWhenCoding;
 -(void)encodeWithCoder:(id)coder;
 -(void)_releaseContainerViews;

@@ -6,8 +6,8 @@
 
 + (id)eventWithName:(NSString *)name;
 + (id)eventWithName:(NSString *)name mode:(NSString *)mode;
-- (id)initWithName:(NSString *)name;
-- (id)initWithName:(NSString *)name mode:(NSString *)mode;
+- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name mode:(NSString *)mode;
 
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *mode;

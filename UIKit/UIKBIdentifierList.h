@@ -16,7 +16,7 @@
 @property(readonly, assign, nonatomic) unsigned count;
 // inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(id)description;

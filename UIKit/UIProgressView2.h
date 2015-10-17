@@ -18,7 +18,7 @@
 +(void)_loadResourcesForStyle:(int)style;
 #endif
 // inherited: -(instancetype)initWithFrame:(CGRect)frame;
-// in a protocol: -(instancetype)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // -(CGSize)sizeThatFits:(CGSize)fits;
 -(void)drawOverlayProgressView:(CGRect)view;

@@ -36,7 +36,7 @@
 -(id)_initWithMLQuery:(id)mlquery;
 -(void)dealloc;
 -(id)description;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)copyWithZone:(NSZone*)zone;
 -(void)addFilterPredicate:(id)predicate;

@@ -14,7 +14,7 @@
 +(id)swapperForObject:(id)object withClassName:(id)className;
 -(instancetype)initWithObject:(id)object andClassName:(id)name;
 -(void)dealloc;
--(instancetype)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 
