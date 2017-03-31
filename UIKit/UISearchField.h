@@ -10,7 +10,7 @@
 @interface UISearchField : UITextField {
 }
 +(float)defaultHeight;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(CGRect)iconRect;
 -(CGRect)_textRectExcludingButtonsForBounds:(CGRect)bounds;
 -(CGRect)rightViewRectForBounds:(CGRect)bounds;

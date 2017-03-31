@@ -10,7 +10,7 @@
 
 @interface ASContactAddCommand : ASContactChangeCommand {
 }
-// inherited: -(id)initWithContact:(id)contact;
+// inherited: -(instancetype)initWithContact:(id)contact;
 // inherited: -(id)clientID;
 // inherited: -(id)serverID;
 @end

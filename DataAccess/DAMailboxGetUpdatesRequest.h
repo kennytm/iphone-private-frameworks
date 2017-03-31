@@ -12,7 +12,7 @@
 	int _maxSize;
 	int _bodyFormat;
 }
--(id)initRequestForBodyFormat:(int)bodyFormat withBodySizeLimit:(int)bodySizeLimit;
+-(instancetype)initRequestForBodyFormat:(int)bodyFormat withBodySizeLimit:(int)bodySizeLimit;
 -(int)maxSize;
 // inherited: -(int)bodyFormat;
 @end

@@ -19,7 +19,7 @@
 	} _flags;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)noteFileSystemChanged:(id)changed;
 -(long long)diskSpaceAvailableForUse;
 -(long long)freeDiskSpaceThreshold;

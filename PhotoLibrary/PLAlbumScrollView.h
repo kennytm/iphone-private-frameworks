@@ -34,7 +34,7 @@
 	unsigned _isScrolling : 1;
 }
 // inherited: @property(assign, nonatomic) id<UIScrollViewDelegate, PLAlbumScrollViewDelegate> delegate;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setRotationDisabled:(BOOL)disabled;
 -(void)_setMouseIsDown:(BOOL)down;
 -(void)_setIsScrolling:(BOOL)scrolling;

@@ -31,7 +31,7 @@ extern NSString *WAKViewDidScrollNotification;
 
 + (WAKView *)focusView;
 
-- (id)initWithFrame:(CGRect)rect;
+- (instancetype)initWithFrame:(CGRect)rect;
 
 - (WAKWindow *)window;
 

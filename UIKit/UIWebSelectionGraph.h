@@ -10,7 +10,7 @@
 @interface UIWebSelectionGraph : NSObject {
 	NSMutableArray* _selectionNodes;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)clearNodes;
 -(id)addNodeFromSelection:(id)selection;

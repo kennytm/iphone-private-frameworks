@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 	UIWindow* _leftBottomCorner;
 	UIWindow* _rightBottomCorner;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)isClassicControlWindow:(id)window;
 // inherited: -(void)loadView;

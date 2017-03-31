@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) UIWebSelection* selection;
 -(id)tintView;
 -(id)handleWithPosition:(int)position;
--(id)initWithWebDocumentView:(id)webDocumentView;
+-(instancetype)initWithWebDocumentView:(id)webDocumentView;
 -(void)dealloc;
 -(void)hideCopyCallout;
 -(void)showCopyCallout;

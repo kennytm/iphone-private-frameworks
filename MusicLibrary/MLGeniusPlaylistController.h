@@ -25,7 +25,7 @@
 +(unsigned)defaultTrackCount;
 +(BOOL)populatePlaylist:(id)playlist withSeedTrack:(id)seedTrack playlistItemMin:(unsigned)min playlistItemMax:(unsigned)max error:(id*)error;
 +(id)playlistControllerWithSeedTracks:(id)seedTracks error:(id*)error;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)_sharedBlobMutableData;
 -(BOOL)_canIncludeTrackInGeniusPlaylist:(id)geniusPlaylist;

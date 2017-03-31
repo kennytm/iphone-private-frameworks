@@ -29,7 +29,7 @@
 +(void)cleanUpFilesForAccountWithId:(id)anId;
 // inherited: +(id)defaultProperties;
 -(id)_newPolicyManager;
-// inherited: -(id)initWithProperties:(id)properties;
+// inherited: -(instancetype)initWithProperties:(id)properties;
 // inherited: -(void)dealloc;
 -(id)policyManager;
 // inherited: -(void)saveAccountSettings;

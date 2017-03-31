@@ -13,7 +13,7 @@
 	NSArray* _queueItems;
 }
 @property(readonly, assign, nonatomic) NSArray* items;
--(id)initWithItems:(id)items;
+-(instancetype)initWithItems:(id)items;
 -(void)dealloc;
 -(double)bookmarkTimeForIndex:(unsigned)index;
 -(id)copyRawItemAtIndex:(unsigned)index;

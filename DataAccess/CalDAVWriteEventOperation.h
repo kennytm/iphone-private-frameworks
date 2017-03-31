@@ -20,7 +20,7 @@
 }
 @property(readonly, assign, nonatomic) BOOL wasResourceModifiedByServer;
 @property(readonly, assign, nonatomic) NSString* resourcePath;
--(id)initWithCalendar:(id)calendar overwrite:(BOOL)overwrite calendarURL:(id)url account:(id)account cache:(id)cache;
+-(instancetype)initWithCalendar:(id)calendar overwrite:(BOOL)overwrite calendarURL:(id)url account:(id)account cache:(id)cache;
 // inherited: -(void)dealloc;
 -(void)performOperation:(BOOL)operation;
 @end

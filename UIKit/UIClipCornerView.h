@@ -29,7 +29,7 @@
 @property(assign, nonatomic) BOOL useSnapshot;
 -(void)_updateCornerPath;
 -(void)_updateSnapshot;
--(id)initWithCornerRadius:(float)cornerRadius forCorner:(int)corner;
+-(instancetype)initWithCornerRadius:(float)cornerRadius forCorner:(int)corner;
 // -(void)drawRect:(CGRect)rect;
 // -(void)setFrame:(CGRect)frame;
 // -(void)dealloc;

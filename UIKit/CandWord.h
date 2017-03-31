@@ -16,7 +16,7 @@
 @interface CandWord : NSObject <NSCopying> {
 	CandWordString* _word;
 }
--(id)initWithWord:(NSString*)word;
+-(instancetype)initWithWord:(NSString*)word;
 -(void)dealloc;
 -(NSString*)word;
 -(const char*)wordUTF8String;

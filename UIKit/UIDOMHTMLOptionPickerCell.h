@@ -8,7 +8,7 @@
 
 @interface UIDOMHTMLOptionPickerCell : UIPickerTableCell {
 }
--(id)initCommon;
--(id)initWithHTMLOptionNode:(id)htmloptionNode;
+-(instancetype)initCommon;
+-(instancetype)initWithHTMLOptionNode:(id)htmloptionNode;
 @end
 

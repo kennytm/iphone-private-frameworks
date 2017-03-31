@@ -16,7 +16,7 @@
 }
 // inherited: +(BOOL)isOverlay;
 // inherited: -(void)setupRootListForSize:(CGSize)size;
-// inherited: -(id)initForContentSize:(CGSize)contentSize;
+// inherited: -(instancetype)initForContentSize:(CGSize)contentSize;
 // inherited: -(void)dealloc;
 // inherited: -(id)view;
 // inherited: -(id)parentController;

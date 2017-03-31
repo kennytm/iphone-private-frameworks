@@ -19,8 +19,8 @@
 -(float)_tableRowHeight;
 -(id)_orientationImageSuffix;
 -(void)setSoundsEnabled:(BOOL)enabled;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
@@ -33,7 +33,6 @@
 -(void)reloadData;
 -(void)reloadAllComponents;
 -(void)reloadDataForColumn:(int)column;
--(void)reloadComponent:(int)component;
 -(id)pickerImageNamePrefix;
 -(id)_selectionBarSuffix;
 -(id)_popoverSuffix __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
@@ -49,8 +48,6 @@
 -(float)_delegateWidthForComponent:(int)component ofCount:(int)count withSizeLeft:(float)sizeLeft;
 -(float)_delegateRowHeightForComponent:(int)component;
 -(id)_createTableWithFrame:(CGRect)frame forComponent:(int)component;
--(CGSize)rowSizeForComponent:(int)component;
--(int)numberOfRowsInComponent:(int)component;
 -(int)numberOfRowsInColumn:(int)column;
 -(int)numberOfColumns;
 -(void)reloadAllPickerPieces;
@@ -73,13 +70,11 @@
 -(void)scrollerDidEndAnimatedScrolling:(id)scroller;
 -(id)cellForRow:(int)row column:(int)column;
 -(NSRange)visibleRowsForColumn:(int)column;
--(int)selectedRowInComponent:(int)component;
 -(int)selectedRowForColumn:(int)column;
 -(int)columnForTable:(id)table;
 -(id)tableForColumn:(int)column;
 -(id)selectedTableCellForColumn:(int)column;
 -(void)_selectRow:(int)row inComponent:(int)component animated:(BOOL)animated notify:(BOOL)notify;
--(void)selectRow:(int)row inComponent:(int)component animated:(BOOL)animated;
 -(void)selectRow:(int)row inColumn:(int)column animated:(BOOL)animated;
 @end
 

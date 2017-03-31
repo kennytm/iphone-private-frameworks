@@ -10,7 +10,7 @@
 @interface UIScrollerIndicator : UIView {
 	int _style;
 }
--(id)initInScroller:(id)scroller style:(int)style;
+-(instancetype)initInScroller:(id)scroller style:(int)style;
 -(void)drawRect:(CGRect)rect;
 @end
 

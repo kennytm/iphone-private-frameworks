@@ -26,7 +26,7 @@
 @property(assign, nonatomic) id<PLPhotoScrollerViewControllerDelegate> delegate;
 @property(assign, nonatomic) BOOL canShowCopyCallout;
 @property(assign, nonatomic) unsigned visibleItemIndex;
--(id)initWithItems:(id)items;
+-(instancetype)initWithItems:(id)items;
 -(id)_initWithAlbum:(id)album lockStatusBar:(BOOL)bar currentImageIndex:(int)index;
 // inherited: -(void)dealloc;
 -(id)navigationItem;

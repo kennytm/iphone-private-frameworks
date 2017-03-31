@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @property(assign, nonatomic) int zoomType;
 @property(assign, nonatomic) double maximumWaitForMultitouch;
 @property(assign, nonatomic) double maximumWaitForMovement;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)reset;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
 // inherited: -(void)touchesMoved:(id)moved withEvent:(id)event;

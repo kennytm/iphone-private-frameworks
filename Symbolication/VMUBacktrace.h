@@ -29,7 +29,7 @@
 }
 // inherited: +(void)initialize;
 +(void)flush;
--(id)initWithTask:(unsigned)task thread:(unsigned)thread is64Bit:(BOOL)bit;
+-(instancetype)initWithTask:(unsigned)task thread:(unsigned)thread is64Bit:(BOOL)bit;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 -(void)fixupStackWithTask:(unsigned)task symbolicator:(id)symbolicator;

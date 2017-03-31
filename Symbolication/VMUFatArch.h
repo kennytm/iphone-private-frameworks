@@ -17,8 +17,8 @@
 }
 +(id)fatArchWithMemory:(id)memory memoryView:(id)view;
 +(id)fatArchWithMemory:(id)memory fileOffset:(unsigned)offset size:(unsigned)size alignment:(unsigned)alignment;
--(id)initWithMemory:(id)memory fileOffset:(unsigned)offset size:(unsigned)size alignment:(unsigned)alignment;
--(id)initWithMemory:(id)memory memoryView:(id)view;
+-(instancetype)initWithMemory:(id)memory fileOffset:(unsigned)offset size:(unsigned)size alignment:(unsigned)alignment;
+-(instancetype)initWithMemory:(id)memory memoryView:(id)view;
 -(id)architecture;
 -(unsigned)fileOffset;
 -(unsigned)size;

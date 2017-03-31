@@ -8,6 +8,6 @@
 
 @interface UIDOMHTMLOptGroupCell : UIDOMHTMLOptionPickerCell {
 }
--(id)initWithHTMLOptGroupNode:(id)htmloptGroupNode;
+-(instancetype)initWithHTMLOptGroupNode:(id)htmloptGroupNode;
 @end
 

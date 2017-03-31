@@ -25,7 +25,7 @@
 @property(retain, nonatomic) NSArray* chapterTimeMarkers;
 @property(assign, nonatomic) BOOL videoOutActive;
 @property(assign, nonatomic) float topPadding;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)setCurrentMarker:(unsigned)marker;
 -(void)loadView;

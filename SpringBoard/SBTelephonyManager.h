@@ -6,10 +6,8 @@
  */
 
 #import "SpringBoard-Structs.h"
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 #import <Availability2.h>
-
-@class NSString;
 
 @interface SBTelephonyManager : NSObject {
 	void* _suspendDormancyAssertion;
@@ -22,14 +20,14 @@
 	unsigned _callForwardingIndicator : 2;
 	unsigned _usingWirelessModem : 1;
 }
-+(id)sharedTelephonyManager;
-// inherited: -(id)init;
++(SBTelephonyManager *)sharedTelephonyManager;
+// inherited: -(instancetype)init;
 -(CTServerConnectionRef)_serverConnection;
 -(void)_serverConnectionDidError:(XXStruct_K5nmsA)_serverConnection;
 -(void)SBTelephonyDaemonRestartHandler;
 -(void)updatePhoneNumberPrefs;
 -(void)updateTTYIndicator;
--(double)inCallDuration;
+-(NSTimeInterval)inCallDuration;
 -(void)setCallForwardingIndicator:(int)indicator;
 -(void)updateCallForwardingIndicator;
 -(int)callForwardingIndicator;
@@ -47,7 +45,7 @@
 -(void)_delayedAudioResume;
 -(long long)getRowIDOfLastCallInsert;
 -(id)allMissedCallsAfterRowID:(long long)anId;
--(int)callCount;
+-(NSInteger)callCount;
 -(BOOL)activeCallExists;
 -(BOOL)heldCallExists;
 -(BOOL)incomingCallExists;
@@ -79,7 +77,7 @@
 -(void)copyICCID:(id*)iccid IMEI:(id*)imei;
 -(void)configureForTTY:(BOOL)tty;
 -(BOOL)shouldPromptForTTY;
--(id)ttyTitle;
+-(NSString *)ttyTitle;
 -(void)_resetCTMMode;
 -(void)_headphoneChanged:(id)changed;
 -(void)_proximityChanged:(id)changed;
@@ -90,10 +88,10 @@
 -(void)_stopFakeService;
 -(BOOL)_pretendingToSearch;
 -(id)_fetchOperatorName;
--(void)_reallySetOperatorName:(id)name;
--(void)setOperatorName:(id)name;
+-(void)_reallySetOperatorName:(NSString *)name;
+-(void)setOperatorName:(NSString *)name;
 -(void)operatorBundleChanged;
--(id)operatorName;
+-(NSString *)operatorName;
 -(int)registrationStatus;
 -(void)checkForRegistrationSoon;
 -(id)SIMStatus;

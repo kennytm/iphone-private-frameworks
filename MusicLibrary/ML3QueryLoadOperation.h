@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 @property(retain) ML3Query* query;
 @property(assign) sqlite3_stmt* statement;
--(id)initWithQuery:(id)query;
+-(instancetype)initWithQuery:(id)query;
 -(void)dealloc;
 -(void)cancel;
 @end

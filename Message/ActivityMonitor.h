@@ -37,7 +37,7 @@
 }
 +(id)currentMonitor;
 +(void)destroyMonitor;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)isActive;
 -(void)setDelegate:(id)delegate;

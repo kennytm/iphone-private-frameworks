@@ -16,7 +16,7 @@
 	SBRoundedMaskCornerView* _bottomLeftCornerMask;
 	SBRoundedMaskCornerView* _bottomRightCornerMask;
 }
--(id)initWithFrame:(CGRect)frame cornerRadius:(CGFloat)radius;
+-(instancetype)initWithFrame:(CGRect)frame cornerRadius:(CGFloat)radius;
 -(void)layoutSubviews;
 // inherited: -(void)dealloc;
 @end

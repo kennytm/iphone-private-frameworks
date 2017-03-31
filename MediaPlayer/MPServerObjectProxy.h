@@ -12,7 +12,7 @@
 	unsigned _didPrepareForRemoteSelectorInvocation : 1;
 }
 +(id)_center;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)forwardInvocation:(id)invocation;
 -(void)prepareForDecodingWithCoder:(id)coder;

@@ -17,7 +17,7 @@
 	int _priority;
 	BOOL _outgoing;
 }
--(id)initOutgoing;
+-(instancetype)initOutgoing;
 // inherited: -(void)dealloc;
 -(BOOL)addAttachment:(id)attachment renamingContentID:(BOOL)anId;
 -(void)removeAttachmentsForURLs:(id)urls;

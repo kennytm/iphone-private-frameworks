@@ -18,7 +18,7 @@
 }
 +(id)sharedWriter;
 +(void)decorateThumbnail:(id)thumbnail inContext:(CGContextRef)context;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)enqueueJob:(id)job forFileGroup:(id)fileGroup;
 -(int)_orientationForExifProperties:(id)exifProperties;

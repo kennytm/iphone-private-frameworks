@@ -84,7 +84,7 @@
 +(NSString*)snapshotsDirectory;
 +(void)flushLaunchAlertsOfType:(int)type;
 +(void)userElapsedCPUTime:(NSTimeInterval*)time systemElapsedCPUTime:(NSTimeInterval*)time2 idleElapsedCPUTime:(NSTimeInterval*)time3;
--(id)initWithBundleIdentifier:(NSString*)bundleIdentifier roleIdentifier:(NSString*)identifier path:(NSString*)path bundle:(id)bundle infoDictionary:(NSDictionary*)dictionary isSystemApplication:(BOOL)application signerIdentity:(id)identity provisioningProfileValidated:(BOOL)validated;
+-(instancetype)initWithBundleIdentifier:(NSString*)bundleIdentifier roleIdentifier:(NSString*)identifier path:(NSString*)path bundle:(id)bundle infoDictionary:(NSDictionary*)dictionary isSystemApplication:(BOOL)application signerIdentity:(id)identity provisioningProfileValidated:(BOOL)validated;
 -(void)_watchdogFired;
 -(void)_watchdogFiredFired;
 -(void)_startWatchdogTimerType:(int)type;
@@ -203,7 +203,8 @@
 -(id)defaultImage:(BOOL*)image originalOrientation:(int*)orientation currentOrientation:(int*)orientation3;
 -(BOOL)isClassic;
 -(int)classicDefaultStatusBarMode;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(NSString*)pathForIcon;
 -(NSString*)pathForSmallIcon;
 -(id)spotlightIcons;

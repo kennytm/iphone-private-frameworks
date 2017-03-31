@@ -12,18 +12,15 @@
 
 @class ISDownloadQueue, SSDownloadQueue;
 
-@interface SBDownloadController : NSObject 
+@interface SBDownloadController : NSObject <ISDownloadQueueDelegate> {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-<ISDownloadQueueDelegate> {
 	SSDownloadQueue* _downloadQueue;
-}
 #else
-<ISDownloadQueueDelegate> {
 	ISDownloadQueue* _downloadQueue;
-}
 #endif
-+(id)sharedInstance;
-// inherited: -(id)init;
+}
++(SBDownloadController *)sharedInstance;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(void)downloadQueue:(id)queue changedWithRemovals:(id)removals disappearances:(id)disappearances;
 -(void)_showDownloadQueueError;
@@ -31,7 +28,7 @@
 -(BOOL)checkQueue;
 -(id)currentDownloads;
 -(id)downloadQueue;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)_networkUsageChanged:(id)changed;
 #endif
 @end

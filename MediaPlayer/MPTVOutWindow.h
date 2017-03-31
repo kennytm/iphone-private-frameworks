@@ -15,7 +15,7 @@
 	MPVideoView* _videoView;
 }
 @property(retain, nonatomic) MPVideoView* videoView;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)_playbackStateChanged:(id)changed;
 @end

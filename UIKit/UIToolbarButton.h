@@ -30,7 +30,7 @@
 +(id)_defaultLabelColor;
 +(id)_pushButtonWithBarStyle:(int)barStyle withStyle:(int)style withTintColor:(id)tintColor;
 +(void)_adjustPushButton:(id)button withBarStyle:(int)barStyle withStyle:(int)style withTintColor:(id)tintColor;
--(id)initWithImage:(id)image selectedImage:(id)image2 label:(id)label labelHeight:(float)height withBarStyle:(int)barStyle withStyle:(int)style withInsets:(UIEdgeInsets)insets possibleTitles:(id)titles withTintColor:(id)tintColor bezel:(BOOL)bezel imageInsets:(UIEdgeInsets)insets11 glowInsets:(UIEdgeInsets)insets12;
+-(instancetype)initWithImage:(id)image selectedImage:(id)image2 label:(id)label labelHeight:(float)height withBarStyle:(int)barStyle withStyle:(int)style withInsets:(UIEdgeInsets)insets possibleTitles:(id)titles withTintColor:(id)tintColor bezel:(BOOL)bezel imageInsets:(UIEdgeInsets)insets11 glowInsets:(UIEdgeInsets)insets12;
 -(void)dealloc;
 -(void)setSizesToFitImage:(BOOL)fitImage;
 -(void)_sizeView:(id)view toPossibleTitles:(id)possibleTitles selectedTitle:(id)title;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 	int _windowType;
 #endif
 }
-// -(id)initWithFrame:(CGRect)frame;
+// -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setLandscape:(BOOL)landscape;
 // -(void)drawRect:(CGRect)rect;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2

@@ -14,7 +14,7 @@
 @interface MessageCollector : NSObject <MessageConsumer, QueryProgressMonitor> {
 	NSMutableArray* messages;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)messages;
 // in a protocol: -(void)newMessagesAvailable:(id)available;

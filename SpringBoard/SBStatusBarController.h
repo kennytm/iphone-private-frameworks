@@ -5,10 +5,10 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <UIKit/UIKit.h>
 #import <Availability2.h>
 
-@class NSString, NSMutableArray, SBStatusBar, SBStatusBarContentsView, UIWindow, UIColor;
+@class SBStatusBar, SBStatusBarContentsView;
 
 @interface SBStatusBarController : NSObject {
 	UIWindow* _slidingStatusBarWindow;
@@ -59,13 +59,13 @@
 +(SBStatusBarController*)sharedStatusBarController;
 +(BOOL)isLikeAFullScreenStatusBar:(int)bar;
 +(UIImage*)statusBarImageNamed:(NSString*)named forMode:(int)mode;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)_enteringAirplaneMode;
 // inherited: -(void)dealloc;
 -(void)preheatStatusBarForMode:(int)mode orientation:(int)orientation;
 -(SBStatusWindow*)statusBarWindow;
 -(SBStatusBar*)statusBarView;
--(id)transitioningStatusBarView;
+-(SBStatusBar*)transitioningStatusBarView;
 -(void)addStatusBarItem:(NSString*)item;
 -(void)setIsLockVisible:(BOOL)visible isTimeVisible:(BOOL)visible2;
 -(BOOL)isLockVisible;
@@ -140,7 +140,7 @@
 -(void)loopCarrierNameIfNecessary;
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-+(id)sharedStatusBarControllerIfAvailable;
++(SBStatusBarController *)sharedStatusBarControllerIfAvailable;
 
 -(void)_updateCorners;
 -(void)_setCurrentAnimationID:(id)anId;
@@ -149,7 +149,8 @@
 -(void)setStatusBarMode:(int)mode duration:(double)duration;
 
 -(void)statusBarAnimationDidStop:(id)statusBarAnimation finished:(id)finished context:(id)context;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)statusBarRotateContentAnimationDidStop:(id)statusBarRotateContentAnimation finished:(id)finished context:(id)context;
 -(void)finishSwitching;
 #endif

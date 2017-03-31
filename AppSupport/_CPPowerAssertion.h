@@ -16,7 +16,7 @@
 	NSArray* _stack;
 }
 @property(assign, nonatomic) double timeout;
--(id)initWithIdentifier:(id)identifier timeout:(double)timeout;
+-(instancetype)initWithIdentifier:(id)identifier timeout:(double)timeout;
 // inherited: -(void)dealloc;
 -(void)timedout;
 @end

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 }
 @property(retain, nonatomic) ML3Predicate* predicate;
 +(id)predicateWithPredicate:(id)predicate;
--(id)initWithPredicate:(id)predicate;
+-(instancetype)initWithPredicate:(id)predicate;
 -(void)dealloc;
 -(id)SQLJoinClausesForClass:(Class)aClass;
 -(void)bindToSqlite3Statement:(sqlite3_stmt*)sqlite3Statement bindingIndex:(inout int*)index;

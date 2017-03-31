@@ -12,15 +12,15 @@
 	BOOL _isPlaceholder;
 }
 -(void)dealloc;
--(id)initWithConversation:(id)conversation text:(id)text date:(id)date;
+-(instancetype)initWithConversation:(id)conversation text:(id)text date:(id)date;
 -(BOOL)isEqual:(id)equal;
 -(void)markAsRead;
 -(BOOL)hasBeenRead;
 -(int)sentCount;
 -(void)markAsSent;
 -(void)setOutgoing:(BOOL)outgoing;
--(id)initPlaceholderConversation:(id)conversation date:(id)date;
--(id)initWithConversation:(id)conversation text:(id)text;
+-(instancetype)initPlaceholderConversation:(id)conversation date:(id)date;
+-(instancetype)initWithConversation:(id)conversation text:(id)text;
 -(BOOL)isOutgoing;
 @end
 

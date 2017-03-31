@@ -28,7 +28,7 @@
 @property(readonly, assign, nonatomic) BOOL terminalPointPlacedCarefully;
 @property(assign, nonatomic) CGPoint magnificationPoint;
 +(id)sharedCaretMagnifier;
--(id)initWithDefaultFrame;
+-(instancetype)initWithDefaultFrame;
 -(void)dealloc;
 -(void)postAutoscrollPoint:(CGPoint)point;
 -(void)animateToAutoscrollRenderer;

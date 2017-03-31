@@ -11,7 +11,7 @@
 @property(assign, nonatomic) BOOL headphonesPresent;
 -(void)_updateImage;
 -(void)_updateLabels;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)setProgress:(float)progress;
 @end
 

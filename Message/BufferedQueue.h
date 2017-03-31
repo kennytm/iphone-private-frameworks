@@ -17,8 +17,8 @@
 	NSMutableArray* _queue;
 	unsigned _currentSize;
 }
--(id)initWithMaximumSize:(unsigned)maximumSize latency:(double)latency;
-// inherited: -(id)init;
+-(instancetype)initWithMaximumSize:(unsigned)maximumSize latency:(double)latency;
+// inherited: -(instancetype)init;
 -(void)setMaximumSize:(unsigned)size;
 -(void)setMaximumLatency:(double)latency;
 // in a protocol: -(BOOL)addItem:(id)item;

@@ -17,8 +17,8 @@
 // inherited: -(id)retain;
 -(void)release;
 // inherited: -(unsigned)retainCount;
-// inherited: -(id)init;
--(id)initWithBounds:(CGRect)bounds;
+// inherited: -(instancetype)init;
+-(instancetype)initWithBounds:(CGRect)bounds;
 // inherited: -(void)dealloc;
 // inherited: -(id)debugDescription;
 -(id)valueForKey:(id)key;
@@ -36,7 +36,7 @@
 -(void)layoutIfNeeded;
 @end
 
-@interface CALayer (CALayerScrolling)
+@interface CALayer (CALayerScrolling_private)
 -(void)_scrollPoint:(CGPoint)point fromLayer:(id)layer;
 -(void)_scrollRect:(CGRect)rect fromLayer:(id)layer;
 -(CGRect)_visibleRectOfLayer:(id)layer;

@@ -21,7 +21,7 @@
 	int _gridCount;
 	float _gridOffset;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setTabBar:(id)bar currentItems:(id)items availableItems:(id)items3;
 -(void)dealloc;
 -(void)layoutSubviews;

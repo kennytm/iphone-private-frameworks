@@ -169,10 +169,10 @@
 +(void)releaseSharedInstance;
 +(void)applicationWillSuspend:(UIApplication*)application;
 +(CGSize)defaultSize;
-+(CGSize)defaultSizeForOrientation:(int)orientation;
-+(CGSize)defaultSizeForInterfaceOrientation:(int)interfaceOrientation;
-+(int)orientationForSize:(CGSize)size;
--(id)initWithFrame:(CGRect)frame;
++(CGSize)defaultSizeForOrientation:(UIInterfaceOrientation)orientation;
++(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
++(UIInterfaceOrientation)orientationForSize:(CGSize)size;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)delayedInit;
 -(void)dealloc;
 -(void)clearLayouts;
@@ -238,7 +238,7 @@
 -(void)geometryChangeDone:(BOOL)done;
 -(CGRect)subtractKeyboardFrameFromRect:(CGRect)rect inView:(id)view;
 -(void)updateLayout;
--(int)orientation;
+-(UIInterfaceOrientation)orientation;
 -(void)setMarkedText;
 -(BOOL)hasMarkedText;
 -(BOOL)hasEditableMarkedText;

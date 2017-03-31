@@ -9,7 +9,7 @@
 
 @interface UIAlertSheetTableCell : UIImageAndTextTableCell {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setBackgroundColor:(id)color;
 -(void)updateHighlightColors;
 -(void)drawSeparatorInRect:(CGRect)rect;

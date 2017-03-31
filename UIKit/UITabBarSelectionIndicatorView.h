@@ -12,7 +12,7 @@
 	UIImage* _image;
 	XXStruct_4cr1oD _slices;
 }
--(id)initWithFrame:(CGRect)frame withImageName:(id)imageName;
+-(instancetype)initWithFrame:(CGRect)frame withImageName:(id)imageName;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;

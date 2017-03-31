@@ -21,7 +21,7 @@
 @property(readonly, assign) ML3Container* container;
 @property(readonly, assign) NSString* selectLimitingSQL;
 @property(readonly, assign) unsigned limitCount;
--(id)initWithEntityClass:(Class)entityClass container:(id)container predicate:(id)predicate orderingProperties:(id)properties;
+-(instancetype)initWithEntityClass:(Class)entityClass container:(id)container predicate:(id)predicate orderingProperties:(id)properties;
 -(void)dealloc;
 -(BOOL)requiresSmartLimiting;
 -(id)selectPersistentIDsSQL;

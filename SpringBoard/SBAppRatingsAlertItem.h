@@ -15,7 +15,7 @@
 	UIPushButton* _rateButton;
 	BOOL _uninstallOnDismiss;
 }
--(id)initWithIcon:(id)icon uninstallOnDismiss:(BOOL)dismiss;
+-(instancetype)initWithIcon:(id)icon uninstallOnDismiss:(BOOL)dismiss;
 // inherited: -(void)dealloc;
 // inherited: -(Class)alertSheetClass;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

@@ -8,7 +8,7 @@
 @interface SBDeviceLockViewWithKeypadWildcat : SBDeviceLockViewWithKeypad {
 	UIView* _bottomContainer;
 }
-// inherited: -(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(void)dealloc;
 // inherited: -(id)keypadView;
 @end

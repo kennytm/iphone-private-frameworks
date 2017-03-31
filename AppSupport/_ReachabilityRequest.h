@@ -20,7 +20,7 @@
 	BOOL _receivedAtLeastOneCallback;
 }
 @property(assign, nonatomic) NSString* hostname;
--(id)initWithHostname:(id)hostname;
+-(instancetype)initWithHostname:(id)hostname;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 -(void)reachabilityChangedWithFlags:(unsigned)flags;

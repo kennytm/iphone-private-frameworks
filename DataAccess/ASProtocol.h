@@ -12,11 +12,11 @@
 @interface ASProtocol : NSObject {
 	ASProtocolCapabilities* _capabilities;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_setCapabilitiesVersion:(id)version;
 -(id)_initWithVersion:(id)version capabilitiesVersion:(id)version2;
--(id)initWithVersion:(id)version;
--(id)initWithCachedVersion:(id)cachedVersion;
+-(instancetype)initWithVersion:(id)version;
+-(instancetype)initWithCachedVersion:(id)cachedVersion;
 // inherited: -(void)dealloc;
 -(BOOL)versionChangeRequiresAccountUpgrade:(id)upgrade;
 -(id)protocolVersion;

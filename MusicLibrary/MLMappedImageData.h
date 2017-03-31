@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	unsigned _length;
 }
 +(id)mappedImageDataForFile:(id)file offset:(long long)offset length:(unsigned long)length fileIsFixedSize:(BOOL)size;
--(id)initWithMappedFileSegment:(id)mappedFileSegment bytes:(void*)bytes length:(unsigned long)length;
+-(instancetype)initWithMappedFileSegment:(id)mappedFileSegment bytes:(void*)bytes length:(unsigned long)length;
 -(void*)bytes;
 -(unsigned)length;
 -(void)dealloc;

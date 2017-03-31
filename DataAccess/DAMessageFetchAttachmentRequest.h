@@ -13,7 +13,7 @@
 	NSString* _messageID;
 	NSString* _attachmentName;
 }
--(id)initWithAttachmentName:(id)attachmentName andMessageServerID:(id)anId;
+-(instancetype)initWithAttachmentName:(id)attachmentName andMessageServerID:(id)anId;
 // inherited: -(void)dealloc;
 -(id)messageID;
 -(id)attachmentName;

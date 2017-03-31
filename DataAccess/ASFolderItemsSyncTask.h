@@ -34,8 +34,8 @@
 // inherited: -(int)commandCode;
 -(void)_setSpinning:(BOOL)spinning;
 // inherited: -(void)dealloc;
--(id)initWithFolderID:(id)folderID;
--(id)initWithFolderID:(id)folderID deletesAsMoves:(BOOL)moves;
+-(instancetype)initWithFolderID:(id)folderID;
+-(instancetype)initWithFolderID:(id)folderID deletesAsMoves:(BOOL)moves;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 -(int)mimeSupport;
 -(void)setMIMESupport:(int)support;

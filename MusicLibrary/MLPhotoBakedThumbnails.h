@@ -32,9 +32,9 @@
 @property(readonly, assign, nonatomic) int format;
 +(id)thumbnailsWithContentsOfFile:(id)file format:(int)format;
 +(BOOL)saveBakedThumbnailsOfImages:(id)images toFile:(id)file format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
--(id)initWithData:(id)data format:(int)format;
--(id)initWithContentsOfFile:(id)file format:(int)format;
--(id)initWithImages:(id)images format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
+-(instancetype)initWithData:(id)data format:(int)format;
+-(instancetype)initWithContentsOfFile:(id)file format:(int)format;
+-(instancetype)initWithImages:(id)images format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
 -(void)dealloc;
 -(id)description;
 -(id)serializedData;
@@ -49,8 +49,8 @@
 @interface MLPhotoBakedThumbnails (Deprecated)
 +(id)thumbnailsForAlbumVideo:(id)albumVideo format:(int)format;
 +(BOOL)saveBakedThumbnailsOfAlbumVideoImages:(id)albumVideoImages toFile:(id)file format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
--(id)initWithAlbumVideo:(id)albumVideo format:(int)format;
--(id)initWithAlbumVideoImages:(id)albumVideoImages format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
+-(instancetype)initWithAlbumVideo:(id)albumVideo format:(int)format;
+-(instancetype)initWithAlbumVideoImages:(id)albumVideoImages format:(int)format orientation:(int*)orientation options:(id)options delegate:(id)delegate;
 -(BOOL)saveToAlbumVideoFile:(id)albumVideoFile;
 @end
 

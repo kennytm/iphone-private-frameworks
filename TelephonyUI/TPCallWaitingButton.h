@@ -16,12 +16,12 @@
 }
 +(CGSize)defaultSizeForType:(int)type;
 +(float)defaultVerticalCenteringOffset;
--(id)initWithFrame:(CGRect)frame type:(int)type;
--(id)initTopForIncomingCallWaiting;
--(id)initTopForTTY;
--(id)initBottomForIncomingCallWaiting;
--(id)initBottomForSecondIncomingCallWaiting;
--(id)initBottomForTTYWithTitle:(id)title;
+-(instancetype)initWithFrame:(CGRect)frame type:(int)type;
+-(instancetype)initTopForIncomingCallWaiting;
+-(instancetype)initTopForTTY;
+-(instancetype)initBottomForIncomingCallWaiting;
+-(instancetype)initBottomForSecondIncomingCallWaiting;
+-(instancetype)initBottomForTTYWithTitle:(id)title;
 -(void)removeTarget:(id)target forControlEvents:(unsigned)controlEvents;
 -(void)addTarget:(id)target action:(SEL)action forEvents:(int)events;
 -(void)removeTarget:(id)target forEvents:(int)events;

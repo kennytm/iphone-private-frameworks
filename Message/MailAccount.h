@@ -94,8 +94,8 @@
 -(BOOL)isValidAccountWithError:(id)error accountBeingEdited:(id)edited userCanOverride:(BOOL*)override;
 -(BOOL)cheapStoreAtPathIsEmpty:(id)pathIsEmpty;
 // inherited: -(void)_setAccountProperties:(id)properties;
-// inherited: -(id)init;
--(id)initWithPath:(id)path;
+// inherited: -(instancetype)init;
+-(instancetype)initWithPath:(id)path;
 -(void)invalidate;
 // inherited: -(void)dealloc;
 -(NSString*)path;

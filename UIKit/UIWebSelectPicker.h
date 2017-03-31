@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 @property(retain, nonatomic) NSArray* _cachedItems;
 @property(retain, nonatomic) id<UIWebSelectedItemPrivate> _singleSelectionItem;
--(id)initSelectPicker;
+-(instancetype)initSelectPicker;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)controlView;
 // in a protocol: -(void)beginEditing;

@@ -26,7 +26,7 @@
 	id _delegate;
 }
 +(CGFloat)defaultHeight;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setKeyboardType:(UIKeyboardType)type;
 -(void)setKeyboardType:(UIKeyboardType)type appearance:(UIKeyboardAppearance)appearance;
 -(void)dealloc;

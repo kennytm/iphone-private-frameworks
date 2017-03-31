@@ -13,7 +13,7 @@
 	float m_textSize;
 	int m_style;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setBackgroundImage:(id)image;
 -(void)setTextSize:(float)size;

@@ -14,7 +14,7 @@
 +(id)supportedMIMETypes;
 +(id)supportedNonImageMIMETypes;
 +(id)supportedImageMIMETypes;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)finalize;
 -(void)_redirectDataToManualLoader:(id)manualLoader forPluginView:(id)pluginView;

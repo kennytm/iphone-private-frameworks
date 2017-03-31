@@ -11,7 +11,7 @@
 	unsigned _selected : 1;
 }
 @property(assign, nonatomic, getter=isSelected) BOOL selected;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(id)cell;
 -(void)drawRect:(CGRect)rect;
 @end

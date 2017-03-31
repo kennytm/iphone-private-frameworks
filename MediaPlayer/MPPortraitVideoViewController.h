@@ -19,8 +19,8 @@
 }
 @property(retain, nonatomic) UINavigationBar* navigationBar;
 @property(readonly, assign, nonatomic) BOOL ownsTransportControls;
--(id)init;
--(id)initWithTransportControls:(BOOL)transportControls;
+-(instancetype)init;
+-(instancetype)initWithTransportControls:(BOOL)transportControls;
 -(void)dealloc;
 -(void)showOverlayView;
 -(BOOL)canDisplayItem:(id)item withInterfaceOrientation:(int)interfaceOrientation;

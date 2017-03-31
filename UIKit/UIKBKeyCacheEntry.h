@@ -13,5 +13,5 @@
 }
 @property(readonly, retain, nonatomic) UIKBKey* key;
 @property(readonly, retain, nonatomic) UIKBKeyplane* keyplane;
--(id)initWithKey:(id)key keyPlane:(id)plane;
+-(instancetype)initWithKey:(id)key keyPlane:(id)plane;
 @end

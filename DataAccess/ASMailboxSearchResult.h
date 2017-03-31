@@ -20,7 +20,7 @@
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
 // inherited: -(id)description;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)_isSearchResult;
 // inherited: -(id)asParseRules;

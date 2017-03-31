@@ -16,7 +16,7 @@
 	NSString* _spotlightCategory;
 }
 +(id)displayIdentifierForSpotlightCategory:(id)spotlightCategory andAppDisplayIdentifier:(id)identifier;
--(id)initWithAppDisplayIdentifier:(id)appDisplayIdentifier spotlightCategory:(id)category iconName:(id)name;
+-(instancetype)initWithAppDisplayIdentifier:(id)appDisplayIdentifier spotlightCategory:(id)category iconName:(id)name;
 // inherited: -(void)dealloc;
 // inherited: -(id)smallIcon;
 // inherited: -(void)setIsHidden:(BOOL)hidden animate:(BOOL)animate;

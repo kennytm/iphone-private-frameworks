@@ -31,7 +31,7 @@
 @property(retain, nonatomic) UIView* alternatePeripheral;
 @property(retain, nonatomic) UIView* peripheralToolbar;
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)createHostViewIfNeeded;
 -(BOOL)isOnScreen;

@@ -14,7 +14,7 @@
 	CAKeyframeAnimation* _contentsAnimation;
 	CAKeyframeAnimation* _boundsAnimation;
 }
--(id)init:(BOOL)init;
+-(instancetype)init:(BOOL)init;
 // inherited: -(void)dealloc;
 -(id)_createContentsAnimation;
 -(id)_createBoundsAnimation;

@@ -13,10 +13,10 @@
 @protocol UITextViewDelegate;
 
 @interface UITextView ()
-// inherited: -(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame webView:(id)view;
--(id)initWithFrame:(CGRect)frame font:(id)font;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame webView:(id)view;
+-(instancetype)initWithFrame:(CGRect)frame font:(id)font;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(void)commonInitWithWebDocumentView:(id)webDocumentView isDecoding:(BOOL)decoding;

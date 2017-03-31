@@ -16,7 +16,7 @@
 +(id)identifier;
 +(id)cellForRecipient:(id)recipient;
 +(float)height;
-// inherited: -(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
+// inherited: -(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 -(id)recipient;
 -(void)setRecipient:(id)recipient;
 // inherited: -(void)dealloc;

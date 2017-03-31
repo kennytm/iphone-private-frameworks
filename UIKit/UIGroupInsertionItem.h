@@ -11,8 +11,8 @@
 	int _index;
 	NSRange _range;
 }
--(id)initWithExistingGroup:(int)existingGroup andRowRange:(NSRange)range;
--(id)initWithNewGroupBeforeGroup:(int)newGroupBeforeGroup andRowCount:(int)count;
+-(instancetype)initWithExistingGroup:(int)existingGroup andRowRange:(NSRange)range;
+-(instancetype)initWithNewGroupBeforeGroup:(int)newGroupBeforeGroup andRowCount:(int)count;
 -(int)groupIndex;
 -(NSRange)range;
 @end

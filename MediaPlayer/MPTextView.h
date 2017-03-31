@@ -25,7 +25,7 @@
 	BOOL _needsLayout;
 }
 @property(retain, nonatomic) UIView* headerView;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setNeedsLayout;
 -(void)layoutSubviews;

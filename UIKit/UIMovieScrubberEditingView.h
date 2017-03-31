@@ -18,7 +18,7 @@
 	unsigned _centerHandleEnabled : 1;
 }
 @property(assign, nonatomic, getter=isEditing) BOOL editing;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setCenterHandleEnabled:(BOOL)enabled;
 -(BOOL)pointInsideLeftHandle:(CGPoint)handle;

@@ -28,7 +28,7 @@
 	BOOL _timeDesignatorAppearsBeforeTime;
 }
 -(BOOL)_timeDesignatorAppearsBeforeTime;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)timeDesignatorFont;
 -(void)invalidateDateCache;

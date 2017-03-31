@@ -13,7 +13,7 @@
 }
 +(UIImage*)topShadowImage;
 +(UIImage*)bottomShadowImage;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)ignoresMouseEvents;
 -(void)setShadowImage:(UIImage*)image forEdge:(int)edge inside:(BOOL)inside;
 -(void)dealloc;

@@ -12,7 +12,7 @@
 @interface SBEmergencyCallView : UIView {
 	UIView* _topBar;
 }
--(id)initWithFrame:(CGRect)frame topBarFrame:(CGRect)frame2 bottomBarFrame:(CGRect)frame3;
+-(instancetype)initWithFrame:(CGRect)frame topBarFrame:(CGRect)frame2 bottomBarFrame:(CGRect)frame3;
 -(id)topBar;
 -(void)setTopBar:(id)bar;
 // inherited: -(void)dealloc;

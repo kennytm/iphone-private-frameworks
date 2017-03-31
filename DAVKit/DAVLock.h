@@ -15,11 +15,11 @@
 +(id)relockRequestWithURL:(id)url lockToken:(id)token;
 +(id)relockRequestWithSession:(id)session path:(id)path lockToken:(id)token;
 -(void)_initLockRequest;
--(id)initLockWithURL:(id)url;
--(id)initLockWithSession:(id)session path:(id)path;
+-(instancetype)initLockWithURL:(id)url;
+-(instancetype)initLockWithSession:(id)session path:(id)path;
 -(void)_initRelockRequestWithToken:(id)token;
--(id)initRelockWithURL:(id)url lockToken:(id)token;
--(id)initRelockWithSession:(id)session path:(id)path lockToken:(id)token;
+-(instancetype)initRelockWithURL:(id)url lockToken:(id)token;
+-(instancetype)initRelockWithSession:(id)session path:(id)path lockToken:(id)token;
 -(id)lockToken;
 -(int)lockTimeout;
 -(id)dependenciesList;

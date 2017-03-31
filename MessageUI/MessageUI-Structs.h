@@ -5,7 +5,7 @@
  * Source: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-#import <UIKit/UIKit2.h>
+#import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <QuartzCore/QuartzCore.h>

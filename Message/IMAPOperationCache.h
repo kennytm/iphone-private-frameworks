@@ -18,7 +18,7 @@
 	unsigned _lastSave;
 	unsigned _lastUidValidity;
 }
--(id)initWithIMAPAccount:(id)imapaccount;
+-(instancetype)initWithIMAPAccount:(id)imapaccount;
 // inherited: -(void)dealloc;
 -(id)account;
 -(void)_queueDeferredOperation:(id)operation;

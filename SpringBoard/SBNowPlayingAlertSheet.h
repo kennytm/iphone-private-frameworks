@@ -23,7 +23,7 @@
 @property(retain, nonatomic) UISlider* volumeSlider;
 @property(retain, nonatomic) UIButton* routeButton;
 @property(retain, nonatomic) UILabel* routeLabel;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)_positionControlButton:(int)button withFloor:(float)floor;
 -(void)showRouteButton:(BOOL)button volumeSlider:(BOOL)slider animated:(BOOL)animated;

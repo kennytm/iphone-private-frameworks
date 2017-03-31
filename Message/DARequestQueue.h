@@ -14,7 +14,7 @@
 	NSString* folderID;
 	double _invalidSyncKeyTimestamp;
 }
--(id)initWithAccount:(id)account folderID:(id)anId;
+-(instancetype)initWithAccount:(id)account folderID:(id)anId;
 -(id)filterRequests:(id)requests consumers:(id)consumers newConsumers:(id*)consumers3;
 -(void)_processRequests:(id)requests withConsumers:(id)consumers;
 // inherited: -(void)processRequests:(id)requests consumers:(id)consumers;

@@ -33,7 +33,7 @@
 -(void)addZoomRecognizer;
 -(void)addSwipeRecognizer;
 #endif
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited (since 3.2): -(void)dealloc;
 // in a protocol: -(void)showKeyboardType:(int)type withAppearance:(int)appearance;
 // in a protocol: -(void)deactivateActiveKeys;

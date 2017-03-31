@@ -37,11 +37,11 @@
 -(unsigned char)_magic;
 -(void)_deserializeOpSpecificValuesFromData:(id)data cursor:(unsigned*)cursor;
 -(void)serializeIntoData:(id)data;
--(id)initWithMailboxToCreate:(id)create;
--(id)initWithMailboxToDelete:(id)aDelete;
--(id)initWithFlagsToSet:(id)set flagsToClear:(id)clear forUids:(id)uids inMailbox:(id)mailbox;
--(id)initWithUidsToCopy:(id)copy fromMailbox:(id)mailbox toMailbox:(id)mailbox3 firstNewUid:(unsigned)uid;
--(id)initWithAppendedUid:(unsigned)appendedUid approximateSize:(unsigned)size flags:(id)flags internalDate:(id)date mailbox:(id)mailbox;
+-(instancetype)initWithMailboxToCreate:(id)create;
+-(instancetype)initWithMailboxToDelete:(id)aDelete;
+-(instancetype)initWithFlagsToSet:(id)set flagsToClear:(id)clear forUids:(id)uids inMailbox:(id)mailbox;
+-(instancetype)initWithUidsToCopy:(id)copy fromMailbox:(id)mailbox toMailbox:(id)mailbox3 firstNewUid:(unsigned)uid;
+-(instancetype)initWithAppendedUid:(unsigned)appendedUid approximateSize:(unsigned)size flags:(id)flags internalDate:(id)date mailbox:(id)mailbox;
 // inherited: -(void)dealloc;
 -(BOOL)isSourceOfTemporaryUid:(unsigned)temporaryUid;
 -(BOOL)actsOnTemporaryUid:(unsigned)uid;

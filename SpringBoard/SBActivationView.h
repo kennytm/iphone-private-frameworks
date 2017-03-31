@@ -15,7 +15,7 @@
 	SBStatusBarBatteryView* _batteryView;
 	int _mode;
 }
--(id)initWithFrame:(CGRect)frame mode:(int)mode;
+-(instancetype)initWithFrame:(CGRect)frame mode:(int)mode;
 -(int)mode;
 // inherited: -(void)dealloc;
 @end

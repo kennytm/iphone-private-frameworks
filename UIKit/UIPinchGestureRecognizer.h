@@ -33,7 +33,7 @@
 @property(assign, nonatomic) float scaleThreshold;
 @property(assign, nonatomic, getter=isScrollViewGesture) BOOL scrollViewGesture;
 @property(readonly, assign, nonatomic) CGPoint anchorPoint;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)reset;
 -(float)_distanceBetweenTouches:(id)touches;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;

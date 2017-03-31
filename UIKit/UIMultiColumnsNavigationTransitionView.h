@@ -26,8 +26,8 @@
 @property(assign, nonatomic) float columnWidth;
 @property(assign, nonatomic) int columnCount;
 +(double)defaultDurationForTransition:(int)transition;
-// inherited: -(id)initWithFrame:(CGRect)frame;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
 -(BOOL)transition:(int)transition toViews:(id)views;

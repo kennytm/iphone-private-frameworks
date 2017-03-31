@@ -8,7 +8,7 @@
 	float _cornerRadius;
 	unsigned _corner;
 }
--(id)initWithCorner:(unsigned)corner radius:(float)radius;
+-(instancetype)initWithCorner:(unsigned)corner radius:(float)radius;
 -(void)drawRect:(CGRect)rect;
 @end
 

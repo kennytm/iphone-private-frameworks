@@ -16,7 +16,7 @@
 }
 @property(readonly, assign, nonatomic) id key;
 @property(retain, nonatomic) id object;
--(id)initWithKey:(id)key object:(id)object;
+-(instancetype)initWithKey:(id)key object:(id)object;
 // inherited: -(void)dealloc;
 @end
 

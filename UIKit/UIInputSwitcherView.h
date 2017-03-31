@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 @property(readonly, assign, nonatomic) int mode;
 +(id)sharedInstance;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)applicationWillSuspend:(id)application;
 -(id)font;

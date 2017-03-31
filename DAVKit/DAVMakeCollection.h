@@ -13,8 +13,8 @@
 }
 +(id)makeCollectionRequestWithURL:(id)url;
 +(id)makeCollectionRequestWithSession:(id)session path:(id)path;
--(id)initMakeCollectionWithURL:(id)url;
--(id)initMakeCollectionWithSession:(id)session path:(id)path;
--(id)initMakeCollectionWithSession:(id)session URI:(id)uri;
+-(instancetype)initMakeCollectionWithURL:(id)url;
+-(instancetype)initMakeCollectionWithSession:(id)session path:(id)path;
+-(instancetype)initMakeCollectionWithSession:(id)session URI:(id)uri;
 @end
 

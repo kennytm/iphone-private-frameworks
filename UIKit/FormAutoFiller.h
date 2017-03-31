@@ -29,7 +29,7 @@
 +(id)radioButtonGroupContaining:(id)containing inFormElements:(id)formElements;
 +(int)indexOfItemInRadioButtonGroup:(id)radioButtonGroup forSynonyms:(id)synonyms;
 +(id)fieldNameForAutoFillOfControl:(id)control rep:(id)rep respectHTMLAutocompleteAttribute:(BOOL)attribute;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)visibleControlsInForm;
 -(void)_scanElements;

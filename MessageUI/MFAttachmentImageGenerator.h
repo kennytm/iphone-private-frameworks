@@ -18,7 +18,7 @@
 }
 +(id)pngDataForAttachment:(id)attachment dimensions:(CGSize*)dimensions;
 +(void)imageData:(id*)data mimeType:(id*)type dimensions:(CGSize*)dimensions forAttachment:(id)attachment;
--(id)initWithAttachment:(id)attachment;
+-(instancetype)initWithAttachment:(id)attachment;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

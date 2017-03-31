@@ -21,8 +21,8 @@
 -(float)defaultButtonHeight;
 -(CGSize)defaultSizeForOrientation:(int)orientation;
 -(void)_updateOpacity;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

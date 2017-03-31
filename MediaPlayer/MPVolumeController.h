@@ -30,7 +30,7 @@
 +(void)removeCurrentVolumeController:(id)controller;
 +(void)forgetController:(id)controller;
 +(id)currentVolumeController;
--(id)init;
+-(instancetype)init;
 -(id)description;
 -(void)setDebugName:(id)name;
 -(void)_postVolumeChangedNotification;

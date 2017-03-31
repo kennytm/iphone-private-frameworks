@@ -29,7 +29,7 @@
 -(void)reset;
 -(void)setTag:(id)tag;
 -(id)originalThreadMonitor;
--(id)initWithCurrentTag:(id)currentTag andAccountID:(id)anId;
+-(instancetype)initWithCurrentTag:(id)currentTag andAccountID:(id)anId;
 -(id)actionsConsumer;
 -(void)partialResultsForMailbox:(id)mailbox actions:(id)actions responses:(id)responses percentComplete:(double)complete moreAvailable:(BOOL)available;
 // in a protocol: -(void)resultsForMailbox:(id)mailbox newTag:(id)tag actions:(id)actions responses:(id)responses percentComplete:(double)complete moreAvailable:(BOOL)available;

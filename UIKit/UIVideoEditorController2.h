@@ -37,7 +37,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <UIKit/UIVideoEditorController.h>
 
 @interface UIVideoEditorController ()
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)setParentViewController:(id)controller;
 // inherited: -(void)viewWillAppear:(BOOL)view;
 // inherited: -(void)viewWillDisappear:(BOOL)view;

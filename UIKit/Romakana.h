@@ -16,7 +16,7 @@
 +(id)oneKanaToRoma:(id)roma;
 +(id)hiraganaString:(id)string withKanaMode:(BOOL)kanaMode;
 +(id)hiraganaString:(id)string mappingArray:(id)array withKanaMode:(BOOL)kanaMode;
--(id)initWithKanaMode:(BOOL)kanaMode;
+-(instancetype)initWithKanaMode:(BOOL)kanaMode;
 -(id)roma2hiragana:(id)hiragana stripIncompleteRomajiAtEnd:(BOOL)end;
 -(id)roma2katakana:(id)katakana;
 @end

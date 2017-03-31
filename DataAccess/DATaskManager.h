@@ -28,7 +28,7 @@
 @property(readonly, assign) id<DATask> activeQueuedTask;
 @property(readonly, assign) NSArray* queuedTasks;
 @property(readonly, assign) NSArray* allTasks;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)submitExclusiveTask:(id)task;
 -(void)submitExclusiveTask:(id)task toFrontOfQueue:(BOOL)queue;

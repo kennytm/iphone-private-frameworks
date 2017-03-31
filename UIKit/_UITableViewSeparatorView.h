@@ -12,8 +12,8 @@
 	UITableViewCell* _tableCell;
 	UITableView* _table;
 }
--(id)initWithTableCell:(id)tableCell;
--(id)initWithFrame:(CGRect)frame withTable:(id)table;
+-(instancetype)initWithTableCell:(id)tableCell;
+-(instancetype)initWithFrame:(CGRect)frame withTable:(id)table;
 -(void)drawRect:(CGRect)rect;
 @end
 

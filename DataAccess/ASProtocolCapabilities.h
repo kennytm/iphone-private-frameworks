@@ -13,7 +13,7 @@
 	NSString* _calConstraintsPlistPath;
 	NSString* _abConstraintsPlistPath;
 }
--(id)initWithProtocolVersionString:(id)protocolVersionString;
+-(instancetype)initWithProtocolVersionString:(id)protocolVersionString;
 // inherited: -(void)dealloc;
 -(BOOL)supportsProtocolVersion:(id)version;
 -(BOOL)supportsMailboxSearch;

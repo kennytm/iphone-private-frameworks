@@ -14,7 +14,7 @@
 	UIView* _holderView;
 }
 // inherited: +(CGRect)constrainFrameToScreen:(CGRect)screen;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)holderView;
 @end

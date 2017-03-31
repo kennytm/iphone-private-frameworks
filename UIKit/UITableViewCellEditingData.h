@@ -16,7 +16,7 @@
 	UIView* _reorderSeparatorView;
 }
 @property(readonly, assign, nonatomic, getter=isDataRequired) BOOL dataRequired;
--(id)initWithTableViewCell:(id)tableViewCell editingStyle:(int)style;
+-(instancetype)initWithTableViewCell:(id)tableViewCell editingStyle:(int)style;
 -(void)dealloc;
 -(id)editControl:(BOOL)control;
 -(id)reorderControl:(BOOL)control;

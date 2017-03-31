@@ -17,7 +17,7 @@
 	BOOL _showForwardingView;
 	BOOL _showOnLeft;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)updateIndicator;
 -(void)setShowsIndicator:(BOOL)indicator;
 -(BOOL)showsIndicator;

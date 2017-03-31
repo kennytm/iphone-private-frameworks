@@ -12,11 +12,11 @@
 }
 @property(copy, nonatomic) NSString* name;
 @property(readonly, assign, nonatomic) NSArray* list;
-@property(assign, nonatomic) BOOL explicit;
+//@property(assign, nonatomic) BOOL explicit;
 @property(readonly, assign, nonatomic) unsigned count;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(id)description;

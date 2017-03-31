@@ -20,7 +20,7 @@
 	BOOL _animateTimeView;
 	int _orientation;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_update:(id)update;
 -(void)startTimer;
 -(void)stopTimer;

@@ -34,8 +34,8 @@
 + (int)defaultStatusBarStyle;
 + (int)defaultStyleForRequestedStyle:(int)requestedStyle styleOverrides:(int)overrides;
 
-- (id)initWithFrame:(CGRect)frame showForegroundView:(BOOL)view;
-- (id)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame showForegroundView:(BOOL)view;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 - (void)forceUpdateData:(BOOL)data;
 - (void)forceUpdateDoubleHeightStatus;

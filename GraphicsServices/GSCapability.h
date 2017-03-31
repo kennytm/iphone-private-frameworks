@@ -51,9 +51,10 @@ extern "C" {
 	
 	
 	Boolean GSSystemCanTakePhoto();	///< Returns if the device can take photos (i.e. have "still-camera" but not "cameraRestriction" capabilities).
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	Boolean GSSystemHasTelephonyCapability();	///< Returns if the device has "telephony" capability.
-#else
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	Boolean GSSystemGetCellularDataCapability(void);	///< Returns if the device has "cellular-data" capability.
 	Boolean GSSystemGetTelephonyCapability(void);	///< Returns if the device has "telephony" capability.
 #endif

@@ -16,7 +16,7 @@
 }
 @property(retain) NSArray* getters;
 @property(retain) NSDictionary* setters;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(int)commandCode;
 // inherited: -(id)requestBody;

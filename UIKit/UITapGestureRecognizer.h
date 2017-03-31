@@ -48,7 +48,7 @@
 #endif
 @property(readonly, assign, nonatomic) CGPoint location;
 @property(readonly, assign, nonatomic) NSArray* touches;
-// inherited: -(id)initWithTarget:(id)target action:(SEL)action;
+// inherited: -(instancetype)initWithTarget:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 // inherited: -(void)reset;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;

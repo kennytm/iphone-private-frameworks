@@ -13,7 +13,7 @@
 	double _playbackStartTime;
 	BOOL _playbackStartTimeIsValid;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)_startPlaybackTimer;
 -(void)_stopPlaybackTimer;

@@ -15,7 +15,7 @@
 	NSMutableDictionary* _trackChangeDictionary;
 }
 @property(readonly, assign, nonatomic, getter=isLoaded) BOOL loaded;
--(id)initWithItem:(id)item;
+-(instancetype)initWithItem:(id)item;
 -(void)dealloc;
 -(void)beginTrackChanges;
 -(void)commitTrackChanges;

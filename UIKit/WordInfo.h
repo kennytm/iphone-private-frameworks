@@ -23,7 +23,7 @@
 	int _outConnections;
 	int _weight;
 }
--(id)initWithWord:(id)word withYomi:(id)yomi inConnection:(int)connection outConnection:(int)connection4 weight:(int)weight;
+-(instancetype)initWithWord:(id)word withYomi:(id)yomi inConnection:(int)connection outConnection:(int)connection4 weight:(int)weight;
 -(void)dealloc;
 -(id)copyWithZone:(NSZone*)zone;
 -(void)addOutConnection:(int)connection;

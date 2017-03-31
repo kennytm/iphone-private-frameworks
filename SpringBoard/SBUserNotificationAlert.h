@@ -50,7 +50,7 @@
 	AVController* _avController;
 }
 -(id)_safeLocalizedValue:(id)value withBundle:(id)bundle;
--(id)initWithMessage:(id)message replyPort:(unsigned)port requestFlags:(int)flags;
+-(instancetype)initWithMessage:(id)message replyPort:(unsigned)port requestFlags:(int)flags;
 // inherited: -(void)dealloc;
 // inherited: -(Class)alertSheetClass;
 -(int)token;

@@ -15,7 +15,7 @@
 	NSString* _inboxURI;
 	DAVSession* _session;
 }
--(id)initWithSession:(id)session fromURI:(id)uri toURI:(id)uri3 inboxURI:(id)uri4;
+-(instancetype)initWithSession:(id)session fromURI:(id)uri toURI:(id)uri3 inboxURI:(id)uri4;
 // inherited: -(void)dealloc;
 -(void)updateFreeBusySet;
 @end

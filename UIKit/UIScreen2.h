@@ -9,18 +9,20 @@
 
 @interface UIScreen ()
 // inherited: +(void)initialize;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(CGRect)_applicationFrameForInterfaceOrientation:(int)interfaceOrientation;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(CGAffineTransform)transformForScreenOriginRotation:(float)screenOriginRotation;
 +(CGAffineTransform)transformToRotateScreen:(float)rotateScreen;
--(id)initWithDisplay:(id)display;
+-(instancetype)initWithDisplay:(id)display;
 // inherited: -(void)dealloc;
 // -(void)observeValueForKeyPath:(id)keyPath ofObject:(id)object change:(id)change context:(void*)context;
 -(void)_setupBounds;
 -(CGRect)_realDisplayBounds;
--(float)scale;
--(void)setScale:(float)scale;
+#ifndef __IPHONE_7_0
+-(CGFloat)scale;
+#endif
+-(void)setScale:(CGFloat)scale;
 -(float)_rotation;
 -(int)bitsPerComponent;
 -(void)setBitsPerComponent:(int)component;

@@ -16,6 +16,6 @@
 +(CGRect)photoButtonFrame:(CGRect)frame;
 +(CGRect)entryFieldBalloonFrame:(CGRect)frame;
 -(void)dealloc;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 @end
 

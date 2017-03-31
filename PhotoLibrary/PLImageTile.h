@@ -7,7 +7,7 @@
 
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 #import "PLImageTile.h"
 #import "PhotoLibrary-Structs.h"
@@ -29,7 +29,7 @@
 -(void)setEnabledGestures:(int)gestures;
 -(void)_cleanupVideoView;
 -(void)_cleanupImageScroller;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(BOOL)_drawsContent;

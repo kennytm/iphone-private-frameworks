@@ -10,7 +10,7 @@
 
 @interface SBNetworkReselectionAlertItem : SBPhoneAlertItem {
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_showPrefs;
 // inherited: -(id)lockLabel;
 // inherited: -(void)performUnlockAction;

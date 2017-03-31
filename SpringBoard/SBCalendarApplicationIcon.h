@@ -12,7 +12,7 @@
 @interface SBCalendarApplicationIcon : SBApplicationIcon {
 	SBCalendarIconContentsView* _dateContents;
 }
-// inherited: -(id)initWithApplication:(id)application;
+// inherited: -(instancetype)initWithApplication:(id)application;
 // inherited: -(void)dealloc;
 // inherited: -(void)setHighlighted:(BOOL)highlighted delayUnhighlight:(BOOL)unhighlight;
 -(void)updateInvitationBadge;

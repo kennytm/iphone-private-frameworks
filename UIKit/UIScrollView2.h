@@ -13,8 +13,8 @@
 @protocol UIScrollViewDelegate;
 
 @interface UIScrollView ()
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
@@ -66,7 +66,7 @@
 -(BOOL)cancelMouseTracking;
 -(void)cancelNextContentTouchEnded;
 -(float)_zoomRubberBandScaleForScale:(float)scale;
--(void)setZoomScale:(float)scale animated:(BOOL)animated;
+-(void)setZoomScale:(CGFloat)scale animated:(BOOL)animated;
 -(void)zoomToRect:(CGRect)rect animated:(BOOL)animated;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_centerContentIfNecessary;

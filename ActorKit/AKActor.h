@@ -16,7 +16,7 @@
 @interface AKActor : NSObject <AKActor> {
 	AKMailbox* _mailbox;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 
 /// Returns the mailbox.

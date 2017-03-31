@@ -19,7 +19,7 @@
 	unsigned _lastShouldStick : 1;
 	unsigned _disableDidSelect : 1;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)canHandleSwipes;
 -(BOOL)didSelectDisabled;
 -(int)lastClickRow;

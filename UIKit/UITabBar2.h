@@ -11,7 +11,7 @@
 @protocol UITabBarDelegate;
 
 @interface UITabBar ()
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;

@@ -17,7 +17,7 @@
 @property(readonly, assign, nonatomic) NSString* compoundOperatorJoiner;
 @property(retain, nonatomic) NSArray* predicates;
 +(id)predicateMatchingPredicates:(id)predicates;
--(id)initWithPredicates:(id)predicates;
+-(instancetype)initWithPredicates:(id)predicates;
 -(void)dealloc;
 -(id)description;
 -(id)SQLJoinClausesForClass:(Class)aClass;

@@ -8,7 +8,7 @@
 }
 @property(assign, nonatomic, getter=isSilent) BOOL silent;
 -(void)_updateSilentImage;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 @end
 
 #endif

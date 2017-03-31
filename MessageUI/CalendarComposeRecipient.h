@@ -13,7 +13,7 @@
 	NSString* _calAttendeeName;
 }
 // inherited: -(void)dealloc;
--(id)initWithComposeRecipient:(id)composeRecipient;
+-(instancetype)initWithComposeRecipient:(id)composeRecipient;
 -(void)setCalAttendeeName:(id)name;
 // inherited: -(id)displayString;
 // inherited: -(BOOL)isEqual:(id)equal;

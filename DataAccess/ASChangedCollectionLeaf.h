@@ -22,7 +22,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)parseASParseContext:(id)context root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 account:(id)account;
 -(void)loadClientIDs;
 -(int)classType;

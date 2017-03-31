@@ -43,9 +43,9 @@
 }
 +(void)initialize;
 -(void)_commonInit_MLQuery;
--(id)init;
+-(instancetype)init;
 -(void)encodeWithCoder:(id)coder;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(id)indexMappingDescription;
 -(id)description;
 -(void)dealloc;
@@ -135,7 +135,7 @@
 -(id)sectionDataForStringProperty:(unsigned long)stringProperty;
 -(void)_setupDefaultFilterPredicates;
 -(void)_calculateFirstFrequentLongPrefixInfo:(MLPrefixOccurrenceInfo*)info;
--(id)initWithEntities:(id)entities;
+-(instancetype)initWithEntities:(id)entities;
 -(id)representativeTracksForAlbumsGetTrackCount:(unsigned*)albumsGetTrackCount;
 @end
 

@@ -28,7 +28,7 @@
 -(void)_removeXMLFilenameFromPurchasedConent:(id)purchasedConent;
 -(id)purchasedContentXMLFilenames;
 -(BOOL)_updatePurchasedContentInfoWithXMLFilename:(id)xmlfilename itemInserted:(BOOL*)inserted;
--(id)initWithBasePath:(id)basePath delegate:(id)delegate;
+-(instancetype)initWithBasePath:(id)basePath delegate:(id)delegate;
 -(void)clearWeakReference:(id)reference;
 -(void)dealloc;
 -(unsigned)countOfPurchasedContent;

@@ -13,7 +13,7 @@
 	AVExternalAudioPrivate* _priv;
 }
 +(id)avExternalAudio:(id)audio;
--(id)initWithDelegate:(id)delegate;
+-(instancetype)initWithDelegate:(id)delegate;
 -(void)dealloc;
 -(id)attributeForKey:(id)key;
 -(BOOL)setAttribute:(id)attribute forKey:(id)key error:(id*)error;

@@ -17,7 +17,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)_isSearchResult;
 // inherited: -(id)asParseRules;

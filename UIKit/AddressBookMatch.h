@@ -13,7 +13,7 @@
 	NSString* key;
 	int identifier;
 }
--(id)initWithValue:(id)value property:(id)property key:(id)key identifier:(int)identifier;
+-(instancetype)initWithValue:(id)value property:(id)property key:(id)key identifier:(int)identifier;
 -(id)description;
 -(void)dealloc;
 @end

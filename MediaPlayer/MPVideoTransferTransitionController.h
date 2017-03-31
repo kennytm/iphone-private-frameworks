@@ -17,7 +17,7 @@
 }
 @property(retain, nonatomic) UINavigationBar* portraitNavigationBar;
 @property(retain, nonatomic) UIView* transitionBehindView;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)transition:(unsigned)transition;
 -(void)_animationDidStop;

@@ -17,7 +17,7 @@
 	unsigned _flags;
 }
 +(id)lazySymbolOwnerWithName:(id)name signature:(id)signature regions:(id)regions flags:(unsigned)flags;
--(id)initWithName:(id)name signature:(id)signature regions:(id)regions flags:(unsigned)flags;
+-(instancetype)initWithName:(id)name signature:(id)signature regions:(id)regions flags:(unsigned)flags;
 -(id)regions;
 -(BOOL)isLazy;
 -(BOOL)isProtected;

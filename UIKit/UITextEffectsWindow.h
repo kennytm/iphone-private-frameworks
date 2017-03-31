@@ -33,7 +33,7 @@ UIWindow
 -(void)matchDeviceOrientation;
 #endif
 // inherited: -(id)hitTest:(CGPoint)test withEvent:(id)event;
-// inherited: -(id)initWithFrame:(CGRect)frame output:(int)output bitsPerComponent:(int)component;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame output:(int)output bitsPerComponent:(int)component;
 // inherited: -(void)dealloc;
 // inherited: -(void)_didRemoveSubview:(id)subview;
 -(void)didAddSubview:(id)subview;

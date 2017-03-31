@@ -18,10 +18,10 @@
 @property(copy, nonatomic) NSString* property;
 +(id)predicateWithValue:(id)value forProperty:(id)property;
 +(id)predicateWithValue:(id)value forProperty:(id)property comparisonType:(int)type;
--(id)init;
+-(instancetype)init;
 -(id)_initWithMLPredicate:(id)mlpredicate;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)description;
 -(id)_MLPredicate;

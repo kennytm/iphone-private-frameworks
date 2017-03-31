@@ -20,7 +20,7 @@
 +(id)contextWithOptions:(id)options;
 +(id)server;
 +(id)serverIfRunning;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)_init;
 -(void)addDisplay:(id)display;
 -(void)removeDisplay:(id)display;

@@ -13,7 +13,7 @@
 }
 +(id)optionsRequestWithURL:(id)url;
 +(id)optionsRequestWithSession:(id)session path:(id)path;
--(id)initOptionsWithURL:(id)url;
--(id)initOptionsWithSession:(id)session path:(id)path;
+-(instancetype)initOptionsWithURL:(id)url;
+-(instancetype)initOptionsWithSession:(id)session path:(id)path;
 @end
 

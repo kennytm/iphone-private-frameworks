@@ -38,12 +38,12 @@
 -(BOOL)isImageFile;
 -(unsigned)imageBytes;
 -(BOOL)writeToFile:(id)file atomically:(BOOL)atomically updateFilenames:(BOOL)filenames;
--(id)initWithPath:(id)path;
+-(instancetype)initWithPath:(id)path;
 -(BOOL)isPlaceholder;
 -(id)URL;
 -(void)setURL:(id)url;
--(id)initRegularFileWithContents:(id)contents;
--(id)initSymbolicLinkWithDestination:(id)destination;
+-(instancetype)initRegularFileWithContents:(id)contents;
+-(instancetype)initSymbolicLinkWithDestination:(id)destination;
 -(void)setPreferredFilename:(id)filename;
 -(id)preferredFilename;
 -(void)setFilename:(id)filename;

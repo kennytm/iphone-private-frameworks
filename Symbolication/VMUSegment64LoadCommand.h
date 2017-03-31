@@ -10,7 +10,7 @@
 
 @interface VMUSegment64LoadCommand : VMUSegmentLoadCommand {
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isSegment64;
 @end
 

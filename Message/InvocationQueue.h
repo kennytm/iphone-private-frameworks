@@ -17,7 +17,7 @@
 	NSConditionLock* _threadRecycleLock;
 }
 // inherited: +(void)initialize;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setMaxThreadCount:(unsigned)count;
 -(unsigned)maxThreadCount;
 // inherited: -(void)dealloc;

@@ -26,7 +26,7 @@
 	unsigned _hidingPassword : 1;
 	NSString* _accountURL;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(id)capabilities;
 // inherited: -(id)authenticationMechanisms;

@@ -15,7 +15,7 @@
 	int _location;
 	BOOL _isMouseInside;
 }
--(id)initWithFrame:(CGRect)frame target:(id)target action:(SEL)action;
+-(instancetype)initWithFrame:(CGRect)frame target:(id)target action:(SEL)action;
 -(void)setLabel:(id)label;
 -(void)setLocation:(int)location;
 -(id)localizedString;

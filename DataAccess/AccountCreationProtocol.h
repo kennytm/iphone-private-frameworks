@@ -8,6 +8,6 @@
 
 
 @protocol AccountCreationProtocol
--(id)initWithBasicAccount:(id)basicAccount;
+-(instancetype)initWithBasicAccount:(id)basicAccount;
 @end
 

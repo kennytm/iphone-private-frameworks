@@ -45,7 +45,7 @@
 @property(readonly, assign, nonatomic) unsigned shuffleType;
 @property(readonly, assign, nonatomic) unsigned repeatType;
 @property(readonly, assign, nonatomic) BOOL hideGeniusButton;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)createButtonForPart:(unsigned)part;
 -(id)createProgressIndicator;

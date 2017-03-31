@@ -13,7 +13,7 @@
 @interface SBAppProfileExpiredAlertItem : SBAlertItem <UIModalViewDelegate> {
 	SBApplicationIcon* _icon;
 }
--(id)initWithIcon:(id)icon;
+-(instancetype)initWithIcon:(id)icon;
 // inherited: -(void)dealloc;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;

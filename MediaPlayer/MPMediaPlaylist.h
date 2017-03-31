@@ -18,7 +18,7 @@
 +(BOOL)_isValidPlaylistProperty:(id)property;
 -(id)_initWithMLPlaylist:(id)mlplaylist;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)description;
 -(id)valueForProperty:(id)property;

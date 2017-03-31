@@ -13,7 +13,7 @@
 @interface LibraryPOPStore : LibraryStore {
 	POP3Connection* _connection;
 }
-// inherited: -(id)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
+// inherited: -(instancetype)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
 -(void)openSynchronouslyUpdatingMetadata:(BOOL)metadata;
 // inherited: -(id)dataForMimePart:(id)mimePart inRange:(NSRange)range isComplete:(BOOL*)complete downloadIfNecessary:(BOOL)necessary didDownload:(BOOL*)download;
 // inherited: -(id)dataForMimePart:(id)mimePart inRange:(NSRange)range isComplete:(BOOL*)complete;

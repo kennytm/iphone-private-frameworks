@@ -16,7 +16,7 @@
 }
 @property(assign, nonatomic) UIEdgeInsets hitRectInsets;
 @property(assign, nonatomic) double holdDelayInterval;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)beginTrackingWithTouch:(id)touch withEvent:(id)event;
 -(void)cancelTrackingWithEvent:(id)event;
 -(void)endTrackingWithTouch:(id)touch withEvent:(id)event;

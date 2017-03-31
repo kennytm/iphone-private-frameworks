@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	int _number;
 }
 +(id)validDCFNameForName:(id)name requiredLength:(int)length nameLength:(int)length3 number:(int*)number numberRange:(NSRange)range suffix:(id)suffix;
--(id)initWithName:(id)name number:(int)number;
+-(instancetype)initWithName:(id)name number:(int)number;
 -(void)dealloc;
 -(id)name;
 -(int)number;

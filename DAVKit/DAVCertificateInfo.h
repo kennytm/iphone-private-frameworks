@@ -16,7 +16,7 @@
 	SecTrust* _trustRef;
 	int _returnCode;
 }
--(id)initWithTitle:(id)title message:(id)message trustRef:(SecTrust*)ref;
+-(instancetype)initWithTitle:(id)title message:(id)message trustRef:(SecTrust*)ref;
 // inherited: -(void)dealloc;
 -(void)setReturnCode:(int)code;
 -(int)returnCode;

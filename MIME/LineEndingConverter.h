@@ -14,7 +14,7 @@
 	BOOL _lastCR;
 }
 +(id)converterWithConsumer:(id)consumer;
--(id)initWithConsumer:(id)consumer;
+-(instancetype)initWithConsumer:(id)consumer;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;
 // inherited: -(void)dealloc;

@@ -9,7 +9,7 @@ __attribute__((visibility("hidden")))
 @private
 	UIDocumentInteractionController* _documentInteractionController;
 }
--(id)initWithDocumentInteractionController:(id)documentInteractionController;
+-(instancetype)initWithDocumentInteractionController:(id)documentInteractionController;
 // inherited: -(int)tableView:(id)view numberOfRowsInSection:(int)section;
 // inherited: -(id)tableView:(id)view cellForRowAtIndexPath:(id)indexPath;
 // -(void)tableView:(id)view didSelectRowAtIndexPath:(id)indexPath;

@@ -18,7 +18,7 @@
 	UIKeyboardEmojiRecentsController* _recentsController;
 	UIKeyboardEmojiCategoryController* _categoryController;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)updateCornerButtonImages;

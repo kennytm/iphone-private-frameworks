@@ -11,7 +11,7 @@
 @interface _UIPickerViewSelectionBar : UIView {
 	UIPickerView* _pickerView;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setPickerView:(id)view;
 -(void)drawRect:(CGRect)rect;
 @end

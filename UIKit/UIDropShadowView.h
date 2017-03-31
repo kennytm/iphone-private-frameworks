@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @property(assign) float shadowRadius;
 @property(assign) float shadowOpacity;
 @property(assign) float cornerRadius;
--(id)initWithView:(id)view;
+-(instancetype)initWithView:(id)view;
 -(void)animateShadow;
 //-(void)setFrame:(CGRect)frame;
 //-(void)setBounds:(CGRect)bounds;

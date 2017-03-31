@@ -11,7 +11,7 @@
 	UITabBarItem* _item;
 	UIImageView* _view;
 }
--(id)initWithItem:(id)item inTabBar:(id)tabBar;
+-(instancetype)initWithItem:(id)item inTabBar:(id)tabBar;
 -(void)dealloc;
 -(id)item;
 -(id)view;

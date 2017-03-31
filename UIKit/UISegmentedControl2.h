@@ -17,8 +17,8 @@
 -(void)updateForMiniBarState:(BOOL)miniBarState;
 -(CGPoint)_offsetForMiniBarState:(BOOL)miniBarState;
 -(void)_commonSegmentedControlInit;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(int)controlSize;
@@ -31,14 +31,7 @@
 -(int)barStyle;
 -(void)setTransparentBackground:(BOOL)background;
 -(BOOL)transparentBackground;
--(void)removeSegmentAtIndex:(unsigned)index animated:(BOOL)animated;
 -(void)removeAllSegments;
--(void)setWidth:(float)width forSegmentAtIndex:(unsigned)index;
--(float)widthForSegmentAtIndex:(unsigned)index;
--(void)setContentOffset:(CGSize)offset forSegmentAtIndex:(unsigned)index;
--(CGSize)contentOffsetForSegmentAtIndex:(unsigned)index;
--(void)setEnabled:(BOOL)enabled forSegmentAtIndex:(unsigned)index;
--(BOOL)isEnabledForSegmentAtIndex:(unsigned)index;
 -(void)sizeToFit;
 -(void)setFrame:(CGRect)frame;
 -(CGSize)sizeThatFits:(CGSize)fits;
@@ -66,7 +59,7 @@
 
 @interface UISegmentedControl (DeprecatedMethods)
 +(float)defaultHeight;
--(id)initWithFrame:(CGRect)frame withStyle:(int)style withItems:(id)items;
+-(instancetype)initWithFrame:(CGRect)frame withStyle:(int)style withItems:(id)items;
 -(void)setDelegate:(id)delegate;
 -(void)setShowsDisclosure:(BOOL)disclosure;
 -(void)setMomentaryClick:(BOOL)click;

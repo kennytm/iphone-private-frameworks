@@ -17,8 +17,8 @@
 		unsigned unused : 30;
 	} _switchFlags;
 }
--(id)init;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)createThumbView;
 -(void)setAlternateColors:(BOOL)colors;

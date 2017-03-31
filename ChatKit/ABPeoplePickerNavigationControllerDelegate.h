@@ -5,10 +5,13 @@
 
 #import "NSObject.h"
 
+#import <AddressBook/AddressBook.h>
+
+@class ABPeoplePickerNavigationController;
 
 @protocol ABPeoplePickerNavigationControllerDelegate <NSObject>
--(void)peoplePickerNavigationControllerDidCancel:(id)peoplePickerNavigationController;
--(BOOL)peoplePickerNavigationController:(id)controller shouldContinueAfterSelectingPerson:(void*)person;
--(BOOL)peoplePickerNavigationController:(id)controller shouldContinueAfterSelectingPerson:(void*)person property:(int)property identifier:(int)identifier;
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)controller;
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)controller shouldContinueAfterSelectingPerson:(ABRecordRef)person;
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)controller shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier;
 @end
 

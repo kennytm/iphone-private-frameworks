@@ -15,8 +15,8 @@
 	NSMutableDictionary* _bakedThumbnails;
 }
 +(void)setTesting:(BOOL)testing;
--(id)init;
--(id)initWithContentsOfFile:(id)file;
+-(instancetype)init;
+-(instancetype)initWithContentsOfFile:(id)file;
 -(void)dealloc;
 -(void)_parseDataWithContentsOfFile:(id)file;
 -(id)availableFormats;

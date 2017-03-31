@@ -22,10 +22,10 @@
 @property(retain, nonatomic) NSDictionary* keyCache;
 // in a protocol (since 3.2): @property(readonly, assign, nonatomic) NSString* cacheKey;
 +(UIKBKeyboard*)keyboard;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
 -(void)cacheKey:(UIKBKey*)key onKeyplane:(UIKBKeyplane*)keyplane;
-//-(id)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(UIKBKeyplane*)keyplaneWithName:(NSString*)name;
 //-(id)description;

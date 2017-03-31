@@ -16,8 +16,8 @@
 	BOOL m_canceled;
 	NSString* m_runLoopMode;
 }
--(id)initWithTarget:(id)target action:(SEL)action userInfo:(id)info delay:(double)delay mode:(id)mode;
--(id)initWithTarget:(id)target action:(SEL)action userInfo:(id)info delay:(double)delay;
+-(instancetype)initWithTarget:(id)target action:(SEL)action userInfo:(id)info delay:(double)delay mode:(id)mode;
+-(instancetype)initWithTarget:(id)target action:(SEL)action userInfo:(id)info delay:(double)delay;
 -(void)dealloc;
 -(void)touch;
 -(void)touchWithDelay:(double)delay;

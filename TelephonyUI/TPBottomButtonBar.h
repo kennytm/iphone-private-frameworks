@@ -20,16 +20,16 @@
 #endif
 	TPPushButton* _button;
 }
--(id)initForIncomingCallWaitingWithFrame:(CGRect)frame;
--(id)initForEndCallWithFrame:(CGRect)frame;
--(id)initForTTYWithFrame:(CGRect)frame;
--(id)initForVoiceControlWithFrame:(CGRect)frame;
--(void)setButton:(id)button;
--(id)button;
+-(instancetype)initForIncomingCallWaitingWithFrame:(CGRect)frame;
+-(instancetype)initForEndCallWithFrame:(CGRect)frame;
+-(instancetype)initForTTYWithFrame:(CGRect)frame;
+-(instancetype)initForVoiceControlWithFrame:(CGRect)frame;
+-(void)setButton:(TPPushButton *)button;
+-(TPPushButton *)button;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 // inherited: +(id)_backgroundImage;
 -(void)addBackgroundAndWellIfNecessary;
--(id)initForEndVideoWithFrame:(CGRect)frame;
+-(instancetype)initForEndVideoWithFrame:(CGRect)frame;
 #endif
 @end
 

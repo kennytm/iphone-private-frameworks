@@ -16,7 +16,7 @@
 	unsigned _isLabelGroup : 1;
 	unsigned _reserved : 30;
 }
--(id)initWithTitle:(id)title childCount:(int)count rowCountBeforeGroup:(int)group isRadioGroup:(BOOL)group4;
+-(instancetype)initWithTitle:(id)title childCount:(int)count rowCountBeforeGroup:(int)group isRadioGroup:(BOOL)group4;
 -(void)dealloc;
 -(int)childCount;
 -(id)title;

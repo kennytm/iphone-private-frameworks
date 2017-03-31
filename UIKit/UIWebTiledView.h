@@ -19,7 +19,7 @@
 	BOOL _tilingModeIsLocked;
 #endif
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(WKWindow*)wkWindow;
 -(CGRect)visibleRect;

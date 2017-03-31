@@ -15,7 +15,7 @@
 	id _context;
 }
 // inherited: -(void)dealloc;
--(id)initWithAction:(int)action context:(id)context;
+-(instancetype)initWithAction:(int)action context:(id)context;
 -(int)action;
 -(id)context;
 -(void)_setContext:(id)context;

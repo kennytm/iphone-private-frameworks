@@ -12,7 +12,7 @@
 }
 +(id)localAccount;
 // inherited: +(id)accountTypeString;
-// inherited: -(id)initWithPath:(id)path;
+// inherited: -(instancetype)initWithPath:(id)path;
 // inherited: -(id)uniqueId;
 // inherited: -(Class)storeClass;
 // inherited: -(id)mailboxPathExtension;

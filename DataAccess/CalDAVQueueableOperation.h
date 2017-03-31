@@ -18,7 +18,7 @@
 	BOOL _pendingRetry;
 	BOOL _finished;
 }
--(id)initWithQueue:(id)queue;
+-(instancetype)initWithQueue:(id)queue;
 // inherited: -(void)dealloc;
 -(id)copyWithZone:(NSZone*)zone;
 -(void)beginQueueableOperation;

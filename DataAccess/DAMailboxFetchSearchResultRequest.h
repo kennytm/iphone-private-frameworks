@@ -14,7 +14,7 @@
 	int _bodyFormat;
 	int _maxSize;
 }
--(id)initRequestForBodyFormat:(int)bodyFormat withLongID:(id)longID withBodySizeLimit:(int)bodySizeLimit;
+-(instancetype)initRequestForBodyFormat:(int)bodyFormat withLongID:(id)longID withBodySizeLimit:(int)bodySizeLimit;
 -(id)longID;
 -(int)bodyFormat;
 -(int)maxSize;

@@ -19,7 +19,7 @@
 	unsigned _flags;
 }
 +(id)symbolWithName:(id)name mangledName:(id)name2 addressRange:(VMURange)range owner:(id)owner flags:(unsigned)flags;
--(id)initWithName:(id)name mangledName:(id)name2 addressRange:(VMURange)range owner:(id)owner flags:(unsigned)flags;
+-(instancetype)initWithName:(id)name mangledName:(id)name2 addressRange:(VMURange)range owner:(id)owner flags:(unsigned)flags;
 -(NSString*)name;
 -(NSString*)mangledName;
 -(VMURange)addressRange;

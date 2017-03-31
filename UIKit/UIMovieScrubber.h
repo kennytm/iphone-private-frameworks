@@ -86,8 +86,8 @@
 @property(assign, nonatomic, getter=isEditable) BOOL editable;
 @property(assign, nonatomic) BOOL thumbIsVisible;
 +(id)timeStringForSeconds:(int)seconds forceFullWidthComponents:(BOOL)components isElapsed:(BOOL)elapsed;
--(id)init;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)reloadData;
 -(id)_scriptingInfo __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);

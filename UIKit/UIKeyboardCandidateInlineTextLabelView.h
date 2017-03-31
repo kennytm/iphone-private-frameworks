@@ -10,7 +10,7 @@
 @interface UIKeyboardCandidateInlineTextLabelView : UILabel {
 }
 +(id)font;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(int)textEffectsVisibilityLevel;
 @end
 

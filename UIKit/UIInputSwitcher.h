@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 @property(copy, nonatomic) NSString* newMode;
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)hideSwitcher;
 -(void)showSwitcher;

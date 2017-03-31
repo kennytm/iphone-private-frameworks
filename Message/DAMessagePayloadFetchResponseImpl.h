@@ -15,7 +15,7 @@
 	BOOL streamingDone;
 	NSData* data;
 }
--(id)initWithData:(id)data streaming:(BOOL)streaming streamingDone:(BOOL)done;
+-(instancetype)initWithData:(id)data streaming:(BOOL)streaming streamingDone:(BOOL)done;
 // in a protocol: -(BOOL)streaming;
 // in a protocol: -(BOOL)streamingDone;
 // in a protocol: -(id)data;

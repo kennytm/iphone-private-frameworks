@@ -40,7 +40,7 @@
 +(id)textBadgeForString:(id)string photoSize:(CGSize)size;
 -(id)textBadgeString;
 -(void)setTextBadgeString:(id)string;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(CGSize)sizeThatFits:(CGSize)fits allowRounding:(BOOL)rounding;
 -(CGSize)sizeThatFits:(CGSize)fits;
@@ -87,7 +87,7 @@
 	double _lastTouchEventTimestamp;
 }
 // inherited: +(Class)tileClass;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(CGRect)visibleRect;
 -(void)setDelegate:(id)delegate;
 -(void)setOrientationDelegate:(id)delegate;

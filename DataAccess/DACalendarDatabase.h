@@ -17,7 +17,7 @@
 @property(readonly, assign, nonatomic) DACalendar* defaultLocalCalendar;
 @property(readonly, assign, nonatomic) NSArray* stores;
 @property(assign, nonatomic) BOOL isChangeLoggingEnabled;
--(id)initWithRef:(CalDatabase*)ref;
+-(instancetype)initWithRef:(CalDatabase*)ref;
 -(id)storeWithExternalID:(id)externalID;
 -(id)calendar;
 -(id)event;

@@ -13,7 +13,7 @@
 	id destination;
 	NSString* label;
 }
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(id)source;

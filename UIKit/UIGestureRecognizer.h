@@ -56,8 +56,8 @@ typedef enum {
 @property(readonly, assign, nonatomic) UIView* view;
 +(void)_setDelaysDirtyReset:(BOOL)reset;
 +(BOOL)_delaysDirtyReset;
--(id)initWithTarget:(id)target action:(SEL)action;
-// -(id)init;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
+// -(instancetype)init;
 // -(void)dealloc;
 -(void)reset;
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;

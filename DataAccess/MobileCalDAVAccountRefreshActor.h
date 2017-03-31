@@ -32,7 +32,7 @@
 +(BOOL)shouldCancel;
 -(void)_blowAwayTimer;
 -(void)setBackgroundThreadDispatchQueue;
--(id)initWithQueue:(id)queue context:(id)context callbackTarget:(id)target callbackThread:(id)thread;
+-(instancetype)initWithQueue:(id)queue context:(id)context callbackTarget:(id)target callbackThread:(id)thread;
 // inherited: -(void)dealloc;
 // in a protocol: -(void)fenceMethod;
 -(void)_sendResultToCallbackActor:(id)callbackActor;

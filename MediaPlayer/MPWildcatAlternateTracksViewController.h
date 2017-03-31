@@ -13,7 +13,7 @@
 @private
 	UITableView* _tableView;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)loadView;
 -(int)numberOfSectionsInTableView:(id)tableView;

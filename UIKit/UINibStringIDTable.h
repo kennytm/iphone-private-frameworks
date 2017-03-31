@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 	unsigned hashMask;
 	unsigned count;
 }
--(id)initWithKeysTransferingOwnership:(id*)keysTransferingOwnership count:(unsigned)count;
+-(instancetype)initWithKeysTransferingOwnership:(id*)keysTransferingOwnership count:(unsigned)count;
 // inherited: -(void)dealloc;
 -(BOOL)lookupKey:(id)key identifier:(int*)identifier;
 -(int)count;

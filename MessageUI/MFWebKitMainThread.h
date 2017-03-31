@@ -15,7 +15,7 @@
 	NSLock* _visibleDictLock;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_mainThreadPopulateDictForMimeType:(id)mimeType;
 -(int)dictValueForMimeType:(id)mimeType;

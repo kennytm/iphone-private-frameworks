@@ -16,8 +16,8 @@
 	NSString* _value;
 	DAVRequest* _request;
 }
--(id)initWithSession:(id)session URI:(id)uri properties:(id)properties value:(id)value;
--(id)initWithSession:(id)session URI:(id)uri property:(id)property value:(id)value;
+-(instancetype)initWithSession:(id)session URI:(id)uri properties:(id)properties value:(id)value;
+-(instancetype)initWithSession:(id)session URI:(id)uri property:(id)property value:(id)value;
 // inherited: -(void)dealloc;
 -(void)getProperties;
 -(id)responses;

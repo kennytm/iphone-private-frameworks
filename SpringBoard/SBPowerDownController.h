@@ -17,16 +17,17 @@
 	SBPowerDownView* _powerDownView;
 	BOOL _isFront;
 }
-+(id)sharedInstance;
++(SBPowerDownController *)sharedInstance;
 // inherited: -(void)dealloc;
 // inherited: -(double)autoLockTime;
 -(BOOL)isOrderedFront;
 -(void)orderFront;
 -(void)orderOut;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
--(id)powerDownViewWithSize:(CGSize)size;
-#else
--(id)powerDownView;
+-(SBPowerDownView *)powerDownViewWithSize:(CGSize)size;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+-(SBPowerDownView *)powerDownView;
 #endif
 // inherited: -(void)activate;
 -(void)_restoreIconListIfNecessary;

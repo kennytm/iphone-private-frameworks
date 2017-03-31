@@ -9,6 +9,6 @@
 @interface CKWBMPImageData : CKImageData {
 }
 -(void)_transformWBMPData;
--(id)initWithData:(id)data;
+-(instancetype)initWithData:(id)data;
 @end
 

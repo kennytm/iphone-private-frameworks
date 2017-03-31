@@ -28,8 +28,8 @@
 @property(retain) NSString* login;
 @property(readonly, assign) NSString* key;
 @property(retain) NSString* uid;
--(id)initWithConfiguration:(id)configuration account:(id)account;
-// inherited: -(id)init;
+-(instancetype)initWithConfiguration:(id)configuration account:(id)account;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)configuration;
 -(id)copyWithZone:(NSZone*)zone;

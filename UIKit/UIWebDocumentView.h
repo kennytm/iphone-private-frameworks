@@ -211,8 +211,8 @@
 // inherited: +(Class)layerClass;
 +(id)standardTextViewPreferences;
 -(void)_restoreViewportSettingsWithSize:(CGSize)size;
--(id)initSimpleHTMLDocumentWithStyle:(id)style editable:(BOOL)editable withFrame:(CGRect)frame withPreferences:(id)preferences;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initSimpleHTMLDocumentWithStyle:(id)style editable:(BOOL)editable withFrame:(CGRect)frame withPreferences:(id)preferences;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(id)commonInitWithFrame:(CGRect)frame;
 -(void)enableReachability;
 // inherited: -(void)dealloc;

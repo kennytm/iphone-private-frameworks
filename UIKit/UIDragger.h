@@ -25,7 +25,7 @@
 	BOOL _waitingForSmoothScrolling;
 	UIImageView* _fingerView;
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)setInterpolation:(/*function-pointer*/ void*)interpolation;
 -(void)setTarget:(id)target;

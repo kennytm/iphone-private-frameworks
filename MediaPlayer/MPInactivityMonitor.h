@@ -23,7 +23,7 @@
 	unsigned _monitoring : 1;
 	unsigned _ignorePendingMouseUp : 1;
 }
--(id)initForWindow:(id)window inactivityDuration:(double)duration delegate:(id)delegate;
+-(instancetype)initForWindow:(id)window inactivityDuration:(double)duration delegate:(id)delegate;
 -(void)setActivityTolerance:(float)tolerance withReferencePoint:(CGPoint)referencePoint;
 -(void)restartWithDuration:(double)duration;
 -(void)eventObservableWindowWillDeallocate:(id)eventObservableWindow;

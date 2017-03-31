@@ -18,7 +18,7 @@ UIView
 #endif
 {
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // -(void)drawRect:(CGRect)rect;
 @end

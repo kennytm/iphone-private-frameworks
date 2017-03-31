@@ -15,7 +15,7 @@
 	CGSize _durationPreambleSize;
 	UIFont* _font;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 @end
 

@@ -12,7 +12,7 @@
 @interface DADeliveryAccount : DeliveryAccount {
 	DAMailAccount* _DAMailAccount;
 }
--(id)initWithDAMailAccount:(id)damailAccount;
+-(instancetype)initWithDAMailAccount:(id)damailAccount;
 // inherited: -(Class)deliveryClass;
 // inherited: -(id)newDeliveryWithMessage:(id)message;
 // inherited: -(id)newDeliveryWithHeaders:(id)headers mixedContent:(id)content textPartsAreHTML:(BOOL)html;

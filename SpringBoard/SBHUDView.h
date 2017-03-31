@@ -21,7 +21,7 @@
 @property(retain, nonatomic) NSString* title;
 +(int)numberOfProgressIndicatorSteps;
 +(float)progressIndicatorStep;
--(id)initWithHUDViewLevel:(int)hudviewLevel;
+-(instancetype)initWithHUDViewLevel:(int)hudviewLevel;
 // inherited: -(void)dealloc;
 -(BOOL)displaysLabel;
 -(void)layoutSubviews;

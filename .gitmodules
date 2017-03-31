@@ -1,0 +1,3 @@
+[submodule "CaptainHook"]
+	path = CaptainHook
+	url = git://github.com/rpetrich/CaptainHook.git

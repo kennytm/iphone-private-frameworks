@@ -23,7 +23,7 @@
 @property(assign, nonatomic) BOOL padChar;
 @property(assign, nonatomic) BOOL allowSlash;
 +(id)encoderWithConsumer:(id)consumer;
--(id)initEncoderWithConsumer:(id)consumer;
+-(instancetype)initEncoderWithConsumer:(id)consumer;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;
 @end

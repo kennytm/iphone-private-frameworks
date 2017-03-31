@@ -14,8 +14,8 @@
 	SBStatusBarContentsView* _contentsView;
 	int _mode;
 }
--(id)initWithContentsView:(id)contentsView;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithContentsView:(id)contentsView;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setMode:(int)mode;
 -(int)effectiveModeForImages;
 -(void)start;

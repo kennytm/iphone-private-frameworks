@@ -14,7 +14,7 @@
 	unsigned _stroff;
 	unsigned _strsize;
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isSymTab;
 -(unsigned)symoff;
 -(unsigned)nsyms;

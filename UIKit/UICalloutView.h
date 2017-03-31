@@ -76,7 +76,7 @@
 -(void)_layoutAnimation;
 -(void)_scheduleLayoutAnimation;
 -(void)_fadeViewsIn:(BOOL)anIn;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setTitle:(id)title;
 -(id)title;

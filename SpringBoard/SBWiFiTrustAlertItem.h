@@ -16,7 +16,7 @@
 	BOOL _sentResponse;
 }
 // inherited: -(Class)alertSheetClass;
--(id)initWithCertificateArray:(id)certificateArray networkName:(id)name;
+-(instancetype)initWithCertificateArray:(id)certificateArray networkName:(id)name;
 // inherited: -(void)dealloc;
 -(id)_scanDictionaryWithCertificateData;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;

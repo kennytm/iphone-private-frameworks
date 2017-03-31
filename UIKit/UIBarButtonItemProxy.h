@@ -11,7 +11,7 @@
 	UIBarButtonItem* _item;
 	UIImageView* _view;
 }
--(id)initWithItem:(id)item inToolbar:(id)toolbar;
+-(instancetype)initWithItem:(id)item inToolbar:(id)toolbar;
 -(void)dealloc;
 -(id)item;
 -(id)view;

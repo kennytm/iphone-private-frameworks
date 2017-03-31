@@ -25,17 +25,17 @@
 // inherited: +(void)initialize;
 +(void)noteWallpaperPreferencesChanged;
 +(int)_desktopVariant;
-+(id)_nameForVariant:(int)variant;
-+(id)_desktopImage;
++(NSString *)_nameForVariant:(int)variant;
++(UIImage *)_desktopImage;
 +(BOOL)lockScreenAndHomeScreenShareWallpaper;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)_wallpaperChanged;
 -(void)_updateGeometry;
--(void)setWallpaper:(id)wallpaper;
+-(void)setWallpaper:(UIImage *)wallpaper;
 -(void)setFrame:(CGRect)frame;
--(float)alpha;
--(void)setAlpha:(float)alpha;
+-(CGFloat)alpha;
+-(void)setAlpha:(CGFloat)alpha;
 // inherited: -(BOOL)_shouldAnimatePropertyWithKey:(id)key;
 -(id)gradientColorAtUnitOffset:(CGPoint)unitOffset nearestColorStop:(CGPoint*)stop;
 @end

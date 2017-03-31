@@ -21,7 +21,7 @@
 +(unsigned)validatePriority:(int)priority;
 +(unsigned)displayablePriorityForPriority:(int)priority;
 // inherited: -(id)messageStore;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(unsigned long)messageFlags;
 -(void)setMessageFlags:(unsigned long)flags;
 -(void)setMessageFlagsWithoutCommitting:(unsigned long)committing;

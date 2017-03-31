@@ -21,7 +21,7 @@
 }
 @property(assign, nonatomic) id<MPSwipableViewDelegate> swipeDelegate;
 @property(assign, nonatomic) int enabledGestureTypes;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;
 -(void)_swipeGestureRecognized:(id)recognized;

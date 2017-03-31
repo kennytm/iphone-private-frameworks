@@ -19,8 +19,8 @@
 @property(retain, nonatomic) NSNumber* accessibilityConfigurationTraits;
 @property(retain, nonatomic) NSNumber* isAccessibilityConfigurationElement;
 @property(retain, nonatomic) NSObject* object;
--(id)initWithObject:(id)object label:(id)label hint:(id)hint traits:(id)traits andIsAccessibilityElement:(id)element;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithObject:(id)object label:(id)label hint:(id)hint traits:(id)traits andIsAccessibilityElement:(id)element;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)applyConfiguration;

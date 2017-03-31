@@ -35,7 +35,7 @@
 #endif
 	SBAwayChargingView* _chargingView;
 	SBAwayDateView* _dateView;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	SBNowPlayingArtView* _albumArtView;
 #endif
 	SBAwayItemsView* _awayItemsView;
@@ -75,7 +75,7 @@
 // inherited: +(id)createBottomBarForInstance:(id)instance;
 +(id)lockLabels:(BOOL)labels fontSize:(float*)size;
 -(void)_clearBlockedStatusUpdateTimer;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)postLockCompletedNotification:(BOOL)notification;
 // inherited: -(void)dealloc;
 -(void)_postLockCompletedNotification;
@@ -193,7 +193,8 @@
 // in a protocol: -(void)deleteBackward;
 // inherited: -(void)forwardInvocation:(id)invocation;
 
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)setDrawsBlackBackground:(BOOL)background;
 -(void)_setPluginControllerView:(id)view;
 -(void)_batteryStatusChanged:(id)changed;

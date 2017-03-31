@@ -29,7 +29,7 @@
 @property(retain, nonatomic) UIView* rootView;
 @property(assign, nonatomic) int toInterfaceOrientation;
 @property(retain, nonatomic) MPViewController* toViewController;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)addObserver:(id)observer didEndSelector:(SEL)selector;
 -(void)addViewToFadeIn:(id)anIn restoreOnPop:(BOOL)pop;

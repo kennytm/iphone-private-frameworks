@@ -16,7 +16,7 @@
 @property(assign, nonatomic) float adjustmentForKeyboard;
 @property(assign, nonatomic) BOOL registeredForNotifications;
 @property(assign, nonatomic) BOOL viewIsDisappearing;
--(id)initWithTableViewController:(id)tableViewController;
+-(instancetype)initWithTableViewController:(id)tableViewController;
 -(void)_keyboardWillShow:(id)_keyboard;
 -(void)_keyboardWillHide:(id)_keyboard;
 @end

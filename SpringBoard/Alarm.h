@@ -25,7 +25,7 @@
 }
 // inherited: -(id)description;
 -(void)_update;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)_initWithDictionary:(id)dictionary;
 -(id)_prefsDictionary;
 // inherited: -(void)dealloc;

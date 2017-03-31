@@ -12,7 +12,7 @@
 	UIColor* _tintColor;
 }
 @property(retain, nonatomic) UIColor* tintColor;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(CGSize)sizeThatFits:(CGSize)fits;
 -(CGRect)titleRectForContentRect:(CGRect)contentRect;

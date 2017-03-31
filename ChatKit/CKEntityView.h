@@ -12,7 +12,7 @@
 	CKEntity* _entity;
 }
 +(float)defaultHeight;
--(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
+-(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 -(void)dealloc;
 -(void)setEntity:(id)entity;
 -(void)sizeToFit;

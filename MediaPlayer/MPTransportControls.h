@@ -43,8 +43,8 @@
 @property(readonly, assign, nonatomic) NSString* playButtonImage;
 @property(assign, nonatomic, getter=isForVideo) BOOL forVideo;
 +(id)onScreenVolumeControls;
--(id)init;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)init;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)didMoveToWindow;
 -(void)setAlpha:(float)alpha;

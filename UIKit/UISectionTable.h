@@ -24,8 +24,8 @@
 		unsigned reserved : 28;
 	} _sectionTableFlags;
 }
--(id)initWithFrame:(CGRect)frame sectionList:(id)list;
--(id)initWithSize:(CGSize)size sectionList:(id)list;
+-(instancetype)initWithFrame:(CGRect)frame sectionList:(id)list;
+-(instancetype)initWithSize:(CGSize)size sectionList:(id)list;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)setDelegate:(id)delegate;

@@ -57,7 +57,7 @@
 }
 +(id)sharedInstance;
 +(CGAffineTransform)defaultPreviewViewTransform;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_inCallStatusChanged:(BOOL)callStatusChanged;
 -(BOOL)inCall;

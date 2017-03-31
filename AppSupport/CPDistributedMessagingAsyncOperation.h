@@ -22,7 +22,7 @@
 	NSDictionary* _reply;
 	NSError* _error;
 }
--(id)initWithCenter:(id)center messageName:(id)name userInfoData:(id)data oolKey:(id)key oolData:(id)data5 target:(id)target selector:(SEL)selector context:(void*)context;
+-(instancetype)initWithCenter:(id)center messageName:(id)name userInfoData:(id)data oolKey:(id)key oolData:(id)data5 target:(id)target selector:(SEL)selector context:(void*)context;
 // inherited: -(void)dealloc;
 -(void)_releaseSendingData;
 // inherited: -(void)main;

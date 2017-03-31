@@ -15,7 +15,7 @@
 	NSMutableDictionary* _unregisteredRemoteViewInfos;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)unregisterProxyRemoteView:(id)view;
 -(void)registerRemoteContextID:(unsigned)anId forIdentifier:(id)identifier size:(CGSize)size application:(id)application;

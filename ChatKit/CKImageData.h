@@ -13,7 +13,7 @@
 	NSData* _data;
 }
 @property(readonly, assign, nonatomic) NSData* data;
--(id)initWithData:(id)data;
+-(instancetype)initWithData:(id)data;
 -(void)dealloc;
 -(id)image;
 -(id)imageWithMaxLength:(int)maxLength;

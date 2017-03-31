@@ -15,7 +15,7 @@
 	unsigned _currentVersion;
 	unsigned _compatibilityVersion;
 }
-// inherited: -(id)initWithMemory:(id)memory;
+// inherited: -(instancetype)initWithMemory:(id)memory;
 -(id)path;
 -(id)timestamp;
 -(unsigned)currentVersion;

@@ -21,7 +21,7 @@
 	double ringTime[64];
 }
 -(void)deferOnRunloop_accelerometerEventsEnable;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)accelerometer:(id)accelerometer didAccelerateWithTimeStamp:(double)timeStamp x:(float)x y:(float)y z:(float)z eventType:(int)type;
 -(void)getVector:(float*)vector :(float*)arg2 :(float*)arg3 forTimeStamp:(double)timeStamp;

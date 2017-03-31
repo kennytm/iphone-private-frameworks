@@ -12,8 +12,8 @@
 	float alphaComponent;
 	CGColorRef cachedColor;
 }
--(id)initWithWhite:(float)white alpha:(float)alpha;
--(id)initWithCGColor:(CGColorRef)cgcolor;
+-(instancetype)initWithWhite:(float)white alpha:(float)alpha;
+-(instancetype)initWithCGColor:(CGColorRef)cgcolor;
 -(void)dealloc;
 -(CGColorRef)_createCGColorWithAlpha:(float)alpha;
 -(id)colorWithAlphaComponent:(float)alphaComponent;

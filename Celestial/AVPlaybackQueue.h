@@ -21,7 +21,7 @@
 	int _avQueueTransactionCount;
 	int _repeatMode;
 }
--(id)initWithDelegate:(id)delegate figPlayer:(OpaqueFigPlayer*)player;
+-(instancetype)initWithDelegate:(id)delegate figPlayer:(OpaqueFigPlayer*)player;
 -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)checkQueueConsistency;

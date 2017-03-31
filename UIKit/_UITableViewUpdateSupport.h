@@ -41,7 +41,7 @@
 	id _context;
 	NSMutableArray* viewAnimations;
 }
--(id)initWithTableView:(id)tableView updateItems:(id)items oldRowData:(id)data newRowData:(id)data4 oldRowRange:(NSRange)range newRowRange:(NSRange)range6 context:(id)context;
+-(instancetype)initWithTableView:(id)tableView updateItems:(id)items oldRowData:(id)data newRowData:(id)data4 oldRowRange:(NSRange)range newRowRange:(NSRange)range6 context:(id)context;
 -(void)dealloc;
 @end
 

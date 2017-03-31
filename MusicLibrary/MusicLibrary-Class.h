@@ -71,7 +71,7 @@
 +(id)pathForResourceFileOrFolder:(int)resourceFileOrFolder;
 +(id)pathForResourceFileOrFolder:(int)resourceFileOrFolder basePath:(id)path createParentFolderIfNecessary:(BOOL)necessary;
 +(void)checkForControlDirectoryLocationWithBasePath:(id)basePath;
--(id)initWithBasePath:(id)basePath;
+-(instancetype)initWithBasePath:(id)basePath;
 -(id)basePath;
 -(void)dealloc;
 -(void)_dumpDebuggingInfoAfterInit;

@@ -13,7 +13,7 @@
 @interface MFStreamDistributor : NSObject <MFDataConsumer> {
 	NSMutableSet* _consumers;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)addConsumer:(id)consumer;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;

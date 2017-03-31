@@ -16,7 +16,7 @@
 	unsigned _waitingOutside;
 	unsigned _waitingInside;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)addRequest:(id)request consumer:(id)consumer;
 -(void)willAddRequests:(id)requests consumers:(id)consumers;
 -(void)addRequests:(id)requests consumers:(id)consumers;

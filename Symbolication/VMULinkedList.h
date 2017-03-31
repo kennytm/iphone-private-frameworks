@@ -14,7 +14,7 @@
 	VMULinkedListEntry* _tail;
 }
 +(VMULinkedList*)linkedList;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)head;
 -(id)tail;
 -(void)removeAllObjects;

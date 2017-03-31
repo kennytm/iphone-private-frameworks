@@ -16,7 +16,7 @@
 	NSMutableData* contentData;
 }
 +(id)treeWithXMLData:(id)xmldata;
--(id)initWithXMLData:(id)xmldata;
+-(instancetype)initWithXMLData:(id)xmldata;
 // inherited: -(void)dealloc;
 -(id)root;
 @end

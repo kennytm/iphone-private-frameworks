@@ -13,7 +13,7 @@
 	DADSearchQuery* _query;
 }
 @property(readonly, assign) DADSearchQuery* query;
--(id)initWithQuery:(id)query;
+-(instancetype)initWithQuery:(id)query;
 // inherited: -(void)dealloc;
 // inherited: -(int)commandCode;
 // inherited: -(int)taskStatusForExchangeStatus:(int)exchangeStatus;

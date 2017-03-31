@@ -12,7 +12,7 @@
 	float _edgeInset;
 	UIImage* _imageBackground;
 }
--(id)initWithCornerRadius:(float)cornerRadius size:(float)size inset:(float)inset;
+-(instancetype)initWithCornerRadius:(float)cornerRadius size:(float)size inset:(float)inset;
 -(void)setImageBackground:(id)background;
 -(void)setUseSnapshot:(BOOL)snapshot;
 -(CGPoint)_originForCornerIndex:(int)cornerIndex withBoundsSize:(CGSize)boundsSize;

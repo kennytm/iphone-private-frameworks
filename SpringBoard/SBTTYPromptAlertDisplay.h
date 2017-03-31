@@ -13,7 +13,7 @@
 }
 // inherited: +(id)createTopBarForInstance:(id)instance;
 // inherited: +(id)createBottomBarForInstance:(id)instance;
--(id)initWithSize:(CGSize)size;
+-(instancetype)initWithSize:(CGSize)size;
 -(void)_makeCall;
 -(void)_chooseVoiceMode:(id)mode;
 -(void)_chooseTTYMode:(id)mode;

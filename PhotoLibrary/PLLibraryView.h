@@ -18,7 +18,7 @@
 	UITableView* _tableView;
 	PLEmptyAlbumView* _emptyLibraryView;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)cameraAlbumDidChange;

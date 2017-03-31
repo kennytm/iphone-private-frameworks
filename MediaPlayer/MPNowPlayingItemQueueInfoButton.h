@@ -26,7 +26,7 @@
 @property(assign, nonatomic) unsigned allowedDisplayTypes;
 @property(assign, nonatomic) id<MPNowPlayingItemQueueInfoButtonDelegate> delegate;
 @property(readonly, assign, nonatomic) int infoDisplayType;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(int)buttonType;
 -(int)_infoDisplayTypeForURL:(id)url feederCount:(unsigned)count askDelegate:(BOOL)delegate;

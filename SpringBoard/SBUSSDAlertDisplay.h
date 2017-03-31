@@ -23,7 +23,7 @@
 	UITextField* _responseField;
 	BOOL _allowsResponse;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(id)_notifyView;
 -(id)_replyView;
 // inherited: -(void)dealloc;

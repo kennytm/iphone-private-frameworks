@@ -15,9 +15,9 @@
 	id _delegate;
 }
 +(void)initialize;
-// inherited: -(id)init;
-// in a protocol: -(id)initWithName:(id)name andDelegate:(id)delegate;
--(id)initWithName:(id)name condition:(int)condition andDelegate:(id)delegate;
+// inherited: -(instancetype)init;
+// in a protocol: -(instancetype)initWithName:(id)name andDelegate:(id)delegate;
+-(instancetype)initWithName:(id)name condition:(int)condition andDelegate:(id)delegate;
 // in a protocol: -(BOOL)isLockedByMe;
 // inherited: -(BOOL)lockBeforeDate:(id)date;
 // inherited: -(BOOL)lockWhenCondition:(int)condition beforeDate:(id)date;

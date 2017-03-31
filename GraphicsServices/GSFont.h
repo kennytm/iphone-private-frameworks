@@ -135,7 +135,7 @@ extern "C" {
 	CFArrayRef GSFontCopyFontNamesForFamilyName(const char* familyName);	// an array of CFString, not const char*
 	CFArrayRef GSFontCopyFamilyNames();
 	
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	void GSFontPurgeFontCache();
 #endif
 	void GSFontInitialize();

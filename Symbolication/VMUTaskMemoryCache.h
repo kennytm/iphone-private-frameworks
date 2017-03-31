@@ -18,7 +18,7 @@
 +(BOOL)taskIs64Bit:(unsigned)bit;
 -(void)initMemoryRegions;
 -(void)freeMemoryRegions;
--(id)initWithTask:(unsigned)task;
+-(instancetype)initWithTask:(unsigned)task;
 -(void)flushMemoryCache;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;

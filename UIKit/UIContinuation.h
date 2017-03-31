@@ -21,7 +21,7 @@
 	id _continuationTarget;
 	SEL _continuationSelector;
 }
--(id)initWithTarget:(id)target context:(id)context continuationSelector:(SEL)selector;
+-(instancetype)initWithTarget:(id)target context:(id)context continuationSelector:(SEL)selector;
 -(id)context;
 -(void)dealloc;
 -(void)setValue:(id)value forProperty:(id)property;

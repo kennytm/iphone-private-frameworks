@@ -13,7 +13,7 @@
 	UITextView* _textView;
 }
 +(id)activeItem;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)willShowInAwayItems;
 -(void)didPresentAlertSheet:(id)sheet;

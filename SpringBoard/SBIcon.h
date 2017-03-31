@@ -14,12 +14,13 @@
 @interface SBIcon : UIView {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	UIImageView* _shadow;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	NSString* _filenameSafeDisplayIdentifier;
 #endif
 	SBIconImageView* _image;
 	UIImageView* _reflection;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	UIView* _grayFilterView;
 #endif
 	SBIconBadge* _badge;
@@ -54,7 +55,7 @@
 +(id)dequeueReusableIconImageView;
 +(CAAnimation*)_jitterPositionAnimation;
 +(CAAnimation*)_jitterTransformAnimation;
--(id)initWithDefaultSize;
+-(instancetype)initWithDefaultSize;
 // inherited: -(void)dealloc;
 -(void)localeChanged;
 -(void)showIconAnimationDidStop:(id)showIconAnimation didFinish:(id)finish icon:(id)icon;
@@ -79,8 +80,8 @@
 -(int)badgeValue;
 -(void)setBadge:(NSString*)badge;
 -(id)_automationID;
--(BOOL)pointMostlyInside:(CGPoint)inside withEvent:(id)event;
--(id)darkenedIcon:(id)icon alpha:(float)alpha;
+-(BOOL)pointMostlyInside:(CGPoint)inside withEvent:(UIEvent *)event;
+-(id)darkenedIcon:(id)icon alpha:(CGFloat)alpha;
 -(BOOL)isHighlighted;
 -(void)setHighlighted:(BOOL)highlighted;
 -(void)setHighlighted:(BOOL)highlighted delayUnhighlight:(BOOL)unhighlight;
@@ -93,7 +94,7 @@
 -(BOOL)allowJitter;
 -(void)removeAllIconAnimations;
 -(void)setIconPosition:(CGPoint)position;
--(double)grabDurationForEvent:(id)event;
+-(NSTimeInterval)grabDurationForEvent:(UIEvent *)event;
 -(void)setIsGrabbed:(BOOL)grabbed;
 -(BOOL)_shouldLockItemsInStoreDemoMode;
 -(void)grabTimerFired;
@@ -104,25 +105,25 @@
 // inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 -(NSString*)representation;
 -(void)launch;
--(BOOL)pointInside:(CGPoint)inside withEvent:(id)event;
+-(BOOL)pointInside:(CGPoint)inside withEvent:(UIEvent *)event;
 -(BOOL)allowsCloseBox;
 -(void)hideCloseBoxAnimationDidStop:(id)hideCloseBoxAnimation didFinish:(id)finish closeBox:(id)box;
 -(void)setIsShowingCloseBox:(BOOL)box;
 -(BOOL)isShowingCloseBox;
--(void)closeBoxClicked:(id)clicked;
+-(void)closeBoxClicked:(id)sender;
 -(void)completeUninstall;
 // inherited: -(id)description;
--(id)uninstallAlertTitle;
--(id)uninstallAlertBody;
--(id)uninstallAlertConfirmTitle;
--(id)uninstallAlertCancelTitle;
+-(NSString *)uninstallAlertTitle;
+-(NSString *)uninstallAlertBody;
+-(NSString *)uninstallAlertConfirmTitle;
+-(NSString *)uninstallAlertCancelTitle;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(CGSize)defaultIconImageSize;
-+(id)genericAppIcon:(int)icon;
--(id)generateIconImage:(int)image;
--(id)getIconImage:(int)image;
++(UIImage *)genericAppIcon:(int)icon;
+-(UIImage *)generateIconImage:(int)image;
+-(UIImage *)getIconImage:(int)image;
 -(void)reloadIconImage;
--(id)_shadowImageName;
+-(NSString *)_shadowImageName;
 -(void)_updateShadow;
 -(void)setDisplaysOnWallpaper:(BOOL)wallpaper;
 -(BOOL)showsReflection;
@@ -130,13 +131,14 @@
 -(void)setShadowsHidden:(BOOL)hidden;
 -(void)_updateShadowFrameForShadow:(id)shadow;
 -(void)_updateShadowFrame;
--(id)createShadowImageView;
-#else
+-(UIImageView *)createShadowImageView;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(NSString*)filenameSafeDisplayIndentifier;
 -(NSDate*)modificationDate:(BOOL)date;
 -(UIImage*)icon;
 -(UIImage*)smallIcon;
--(id)_createIconImageDataForSmallIcon:(BOOL)smallIcon;
+-(NSData *)_createIconImageDataForSmallIcon:(BOOL)smallIcon;
 #endif
 @end
 

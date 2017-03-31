@@ -18,7 +18,7 @@
 	NSTimer* _tapHandleTimer;
 }
 @property(assign) unsigned tapCount;
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)_setTapTimerWithDuration:(double)duration;
 -(void)_resetTapTimer;
 -(void)touchesBegan:(id)began withEvent:(id)event;

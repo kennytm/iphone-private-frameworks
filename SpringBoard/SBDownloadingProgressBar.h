@@ -15,7 +15,7 @@
 	float _progress;
 }
 +(float)defaultHeight;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)trackImage;
 -(id)fillImage;

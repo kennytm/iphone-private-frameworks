@@ -17,7 +17,7 @@
 }
 @property(retain, nonatomic) NSString* nameTransform;
 +(id)sharedInstance;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)flushTransformCache;
 -(void)resizeTransformCacheToDefaultSize;

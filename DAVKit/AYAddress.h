@@ -22,10 +22,10 @@
 +(id)addressOfLocalFromSocket:(int)socket;
 +(id)addressesFromDataAddresses:(id)dataAddresses;
 +(id)IPV4AddressesFromDataAddresses:(id)dataAddresses;
--(id)initAddressWithData:(id)data;
--(id)initAddressWithString:(id)string;
--(id)initAddressWithPeerFromSocket:(int)socket;
--(id)initAddressWithLocalFromSocket:(int)socket;
+-(instancetype)initAddressWithData:(id)data;
+-(instancetype)initAddressWithString:(id)string;
+-(instancetype)initAddressWithPeerFromSocket:(int)socket;
+-(instancetype)initAddressWithLocalFromSocket:(int)socket;
 -(id)type;
 -(id)addressAsString;
 -(int)port;

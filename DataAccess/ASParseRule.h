@@ -21,7 +21,7 @@
 	NSDictionary* _callbackDict;
 	NSDictionary* _streamCallbackDict;
 }
--(id)initWithMinimumNumber:(int)minimumNumber maximumNumber:(int)number codePage:(int)page token:(int)token objectClass:(Class)aClass setterMethod:(SEL)method collectionClassType:(int)type callbackDict:(id)dict streamCallbackDict:(id)dict9 subclassRuleSet:(id)set;
+-(instancetype)initWithMinimumNumber:(int)minimumNumber maximumNumber:(int)number codePage:(int)page token:(int)token objectClass:(Class)aClass setterMethod:(SEL)method collectionClassType:(int)type callbackDict:(id)dict streamCallbackDict:(id)dict9 subclassRuleSet:(id)set;
 // inherited: -(void)dealloc;
 -(int)minimumNumber;
 -(int)maximumNumber;

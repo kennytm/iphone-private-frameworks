@@ -15,7 +15,7 @@
 	NSMutableDictionary* _etags;
 	NSMutableDictionary* _calendarData;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)etags;
 -(id)calendarData;

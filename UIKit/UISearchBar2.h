@@ -12,8 +12,8 @@
 @protocol UISearchBarDelegate;
 
 @interface UISearchBar ()
-// -(id)initWithFrame:(CGRect)frame;
-// -(id)initWithCoder:(id)coder;
+// -(instancetype)initWithFrame:(CGRect)frame;
+// -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // -(void)encodeWithCoder:(id)coder;
 // -(void)dealloc;
@@ -25,8 +25,10 @@
 -(void)_updateRightView __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(void)_hideShowAnimationDidFinish;
 -(void)_setShowsCancelButton:(BOOL)button;
--(void)setBackgroundImage:(id)image;
--(id)backgroundImage;
+#ifndef __IPHONE_5_0
+-(void)setBackgroundImage:(UIImage *)image;
+-(UIImage *)backgroundImage;
+#endif
 -(void)setDrawsBackground:(BOOL)background;
 -(BOOL)drawsBackground;
 -(void)setCombinesLandscapeBars:(BOOL)bars;

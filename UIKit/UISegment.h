@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
 @property(assign) int controlSize;
 @property(assign, getter=isHighlighted) BOOL highlighted;
 @property(assign, getter=isSelected) BOOL selected;
--(id)initWithInfo:(id)info style:(int)style size:(int)size barStyle:(int)style4 tintColor:(id)color position:(unsigned)position isDisclosure:(BOOL)disclosure autosizeText:(BOOL)text;
-// inherited: -(id)initWithCoder:(id)coder;
+-(instancetype)initWithInfo:(id)info style:(int)style size:(int)size barStyle:(int)style4 tintColor:(id)color position:(unsigned)position isDisclosure:(BOOL)disclosure autosizeText:(BOOL)text;
+// inherited: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 // inherited: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
@@ -70,7 +70,7 @@ __attribute__((visibility("hidden")))
 -(id)hitTest:(CGPoint)test forEvent:(GSEventRef)event;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(void)_commonInitWithInfo:(id)info position:(unsigned)position autosizeText:(BOOL)text;
--(id)initWithInfo:(id)info appearance:(XXStruct_wXTbsB*)appearance position:(unsigned)position autosizeText:(BOOL)text;
+-(instancetype)initWithInfo:(id)info appearance:(XXStruct_wXTbsB*)appearance position:(unsigned)position autosizeText:(BOOL)text;
 -(id)disabledTextColor;
 -(BOOL)useBlockyMagnificationInClassic;
 #endif

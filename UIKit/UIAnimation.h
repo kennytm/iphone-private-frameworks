@@ -21,7 +21,7 @@
 	double _duration;
 	int _state;
 }
--(id)initWithTarget:(id)target;
+-(instancetype)initWithTarget:(id)target;
 -(void)stopAnimation;
 -(id)target;
 -(void)setDelegate:(id)delegate;

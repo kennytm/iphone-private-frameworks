@@ -18,7 +18,7 @@
 	BOOL _displayHitRects;
 	BOOL _displayChargeMap;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(BOOL)layerRespondsToEvents:(id)events;
 -(void)_addLayerHitRects:(id)rects toPath:(id)path customPath:(id)path3;

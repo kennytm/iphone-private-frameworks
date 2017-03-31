@@ -15,7 +15,7 @@
 	id _delegate;
 	unsigned _expanded : 1;
 }
--(id)initWithLabel:(id)label totalWidth:(float)width addresses:(id)addresses arePhoneNumbers:(id)numbers;
+-(instancetype)initWithLabel:(id)label totalWidth:(float)width addresses:(id)addresses arePhoneNumbers:(id)numbers;
 -(void)dealloc;
 -(id)_newButtonWithTitle:(id)title;
 -(void)_buttonTouchUpEvent:(id)event;

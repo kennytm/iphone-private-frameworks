@@ -25,7 +25,7 @@
 	int _orientation;
 #endif
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(id)_createButtonWithImage:(id)image action:(SEL)action tag:(int)tag;
 -(void)layoutSubviews;

@@ -14,7 +14,7 @@
 	UIImageView* _backgroundView;
 }
 +(float)defaultHeight;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(id)createVolumeSlider;

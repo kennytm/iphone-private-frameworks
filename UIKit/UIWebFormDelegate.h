@@ -24,7 +24,7 @@
 -(void)textFieldDidEndEditing:(id)textField inFrame:(id)frame;
 -(BOOL)textField:(id)field doCommandBySelector:(SEL)selector inFrame:(id)frame;
 -(BOOL)textField:(id)field shouldHandleEvent:(GSEventRef)event inFrame:(id)frame;
--(id)initWithController:(id)controller;
+-(instancetype)initWithController:(id)controller;
 -(void)dataSourceHasChangedForFrame:(id)frame;
 -(BOOL)formWasEdited;
 -(void)formWillHide;

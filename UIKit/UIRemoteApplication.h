@@ -12,8 +12,8 @@
 	NSString* _machServiceName;
 	unsigned _port;
 }
--(id)initWithBundleIdentifier:(id)bundleIdentifier;
--(id)initWithMachServiceName:(id)machServiceName;
+-(instancetype)initWithBundleIdentifier:(id)bundleIdentifier;
+-(instancetype)initWithMachServiceName:(id)machServiceName;
 // inherited: -(void)dealloc;
 -(void)updatePort;
 -(void)hideTopMostMiniAlert:(int)alert;

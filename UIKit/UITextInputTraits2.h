@@ -59,7 +59,7 @@
 +(BOOL)keyboardTypeRequiresASCIICapable:(int)capable;
 -(void)setToSecureValues;
 -(NSDictionary*)dictionaryRepresentation;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setToDefaultValues;
 // in a protocol: -(void)takeTraitsFrom:(id)from;

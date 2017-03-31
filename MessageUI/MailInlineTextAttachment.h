@@ -35,8 +35,8 @@
 -(void)setupForComposition;
 -(void)setDisplayableInline:(BOOL)anInline;
 -(BOOL)isDisplayableInline;
--(id)initWithWrapper:(id)wrapper shouldDownload:(BOOL)download;
--(id)initWithMimeTextAttachment:(id)mimeTextAttachment shouldDownload:(BOOL)download andMessageBody:(id)body;
+-(instancetype)initWithWrapper:(id)wrapper shouldDownload:(BOOL)download;
+-(instancetype)initWithMimeTextAttachment:(id)mimeTextAttachment shouldDownload:(BOOL)download andMessageBody:(id)body;
 // inherited: -(BOOL)allowDownload;
 // inherited: -(void)dealloc;
 @end

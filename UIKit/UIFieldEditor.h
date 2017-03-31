@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 +(id)activeFieldEditor;
 +(id)sharedFieldEditor;
 +(void)releaseSharedInstance;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(void)selectAll;
 // inherited: -(BOOL)canResignFirstResponder;

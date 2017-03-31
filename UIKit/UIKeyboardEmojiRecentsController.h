@@ -14,7 +14,7 @@
 	NSMutableArray* _recents;
 	NSMutableDictionary* _usageHistory;
 }
--(id)initWithController:(id)controller;
+-(instancetype)initWithController:(id)controller;
 -(void)dealloc;
 -(void)readDefaultsDictionary:(id)dictionary;
 -(BOOL)isAncientSequence:(int)sequence;

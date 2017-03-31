@@ -11,15 +11,17 @@
 @class NSArray, UIBarButtonItem, UIColor;
 
 @interface UIToolbar ()
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)_updateOpacity;
 -(void)setMode:(int)mode;
 -(int)mode;
+#ifndef __IPHONE_7_0
 -(void)setDelegate:(id)delegate;
 -(id)delegate;
+#endif
 -(void)setSelectedItem:(id)item;
 -(id)selectedItem;
 -(void)_sendAction:(id)action withEvent:(id)event;
@@ -83,8 +85,8 @@
 @end
 
 @interface UIToolbar (UIButtonBarButtonItem)
--(id)initInView:(id)view withFrame:(CGRect)frame withItems:(XXStruct_b4LybD*)items withCount:(int)count;
--(id)initInView:(id)view withItems:(XXStruct_b4LybD*)items withCount:(int)count;
+-(instancetype)initInView:(id)view withFrame:(CGRect)frame withItems:(XXStruct_b4LybD*)items withCount:(int)count;
+-(instancetype)initInView:(id)view withItems:(XXStruct_b4LybD*)items withCount:(int)count;
 @end
 
 @interface UIToolbar (UIButtonBarPrivate)
@@ -94,8 +96,8 @@
 +(float)defaultHeight;
 +(float)defaultSelectionModeHeight;
 +(float)defaultHeightForBarSize:(int)barSize;
--(id)initInView:(id)view withFrame:(CGRect)frame withItemList:(id)itemList;
--(id)initInView:(id)view withItemList:(id)itemList;
+-(instancetype)initInView:(id)view withFrame:(CGRect)frame withItemList:(id)itemList;
+-(instancetype)initInView:(id)view withItemList:(id)itemList;
 -(id)createButtonWithDescription:(id)description;
 -(void)positionButtons:(id)buttons tags:(int*)tags count:(int)count group:(int)group;
 -(void)_buttonBarFinishedAnimating;

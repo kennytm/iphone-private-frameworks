@@ -53,7 +53,7 @@
     @param frameName The frame name of the resource if the resource represents the contents of an entire HTML frame (can be nil).
     @result An initialized WebResource.
 */
-- (id)initWithData:(NSData *)data URL:(NSURL *)URL MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName frameName:(NSString *)frameName;
+- (instancetype)initWithData:(NSData *)data URL:(NSURL *)URL MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName frameName:(NSString *)frameName;
 
 /*!
     @method data

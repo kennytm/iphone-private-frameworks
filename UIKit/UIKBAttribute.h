@@ -15,9 +15,9 @@
 @property(copy, nonatomic) NSString* name;
 @property(copy, nonatomic) id value;
 +(id)attributeWithName:(id)name value:(id)value;
--(id)initWithName:(id)name value:(id)value;
+-(instancetype)initWithName:(id)name value:(id)value;
 -(void)dealloc;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 @end
 

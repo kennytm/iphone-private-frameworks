@@ -5,7 +5,7 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <UIKit/UIKit.h>
 #import "SpringBoard-Structs.h"
 #import <Availability2.h>
 
@@ -27,7 +27,7 @@
 	unsigned _proximityEventsEnabled : 1;
 	unsigned _showsProgress;
 }
-+(id)_displayStatePath;
++(NSString *)_displayStatePath;
 +(void)loadDisplayStates;
 +(void)purgeOrphanedDisplayStates;
 +(void)saveDisplayStates;
@@ -39,7 +39,7 @@
 +(void)resetDefaultValuesForDisplayIdentifier:(id)displayIdentifier urlScheme:(id)scheme;
 // inherited: -(void)dealloc;
 -(id)copyWithZone:(NSZone*)zone;
--(id)displayIdentifier;
+-(NSString *)displayIdentifier;
 -(id)urlScheme;
 -(void)clearDisplaySettings;
 -(void)setDisplaySetting:(unsigned)setting flag:(BOOL)flag;
@@ -94,16 +94,17 @@
 -(NSString*)descriptionForDeactivationSettings:(unsigned)deactivationSettings;
 -(NSString*)deactivationSettingsDescription;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
--(void)updateStatusBar:(double)bar orientation:(int)orientation fence:(int)fence animation:(int)animation startTime:(double)time;
--(void)updateStatusBar:(double)bar orientation:(int)orientation;
--(int)launchInterfaceOrientationForCurrentOrientation;
--(int)launchInterfaceOrientationForCurrentOrientation:(int)currentOrientation;
+-(void)updateStatusBar:(double)bar orientation:(UIInterfaceOrientation)orientation fence:(int)fence animation:(int)animation startTime:(double)time;
+-(void)updateStatusBar:(double)bar orientation:(UIInterfaceOrientation)orientation;
+-(UIInterfaceOrientation)launchInterfaceOrientationForCurrentOrientation;
+-(UIInterfaceOrientation)launchInterfaceOrientationForCurrentOrientation:(UIInterfaceOrientation)orientation;
 -(BOOL)defaultClassicAppZoomedIn;
 -(BOOL)classicAppZoomedIn;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)updateStatusBar:(double)bar fence:(int)fence animation:(int)animation startTime:(double)time;
--(int)defaultStatusBarOrientation;
--(int)statusBarOrientation;
+-(UIInterfaceOrientation)defaultStatusBarOrientation;
+-(UIInterfaceOrientation)statusBarOrientation;
 #endif
 @end
 

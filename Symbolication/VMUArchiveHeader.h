@@ -14,7 +14,7 @@
 	NSString* _path;
 }
 +(id)archiveHeaderWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
--(id)initWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
+-(instancetype)initWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)isArchive;
 -(id)headers;

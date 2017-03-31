@@ -18,7 +18,7 @@
 	unsigned _needsReflow : 1;
 	unsigned _isChangingFrame : 1;
 }
--(id)initWithLabel:(id)label totalWidth:(float)width firstLineWidth:(float)width3 addresses:(id)addresses arePhoneNumbers:(id)numbers;
+-(instancetype)initWithLabel:(id)label totalWidth:(float)width firstLineWidth:(float)width3 addresses:(id)addresses arePhoneNumbers:(id)numbers;
 // inherited: -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)setFirstLineWidth:(float)width;

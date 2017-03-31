@@ -20,7 +20,7 @@
 	float _fps;
 }
 -(void)_cacheLabel:(id)label size:(CGSize)size;
--(id)initWithLabel:(id)label fontSize:(float)size;
+-(instancetype)initWithLabel:(id)label fontSize:(float)size;
 -(id)label;
 -(void)startAnimation;
 -(void)stopAnimation;

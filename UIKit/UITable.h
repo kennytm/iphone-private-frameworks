@@ -66,7 +66,7 @@
 	} _tableFlags;
 	_UITableReorderingSupport* _reorderingSupport;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(BOOL)validateDataSource;
 -(void)setDataSource:(id)source;

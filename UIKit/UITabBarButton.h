@@ -23,7 +23,7 @@
 +(id)_defaultLabelFont;
 +(id)_defaultLabelColor;
 +(id)_donePushButton;
--(id)initWithImage:(id)image selectedImage:(id)image2 label:(id)label withInsets:(UIEdgeInsets)insets;
+-(instancetype)initWithImage:(id)image selectedImage:(id)image2 label:(id)label withInsets:(UIEdgeInsets)insets;
 -(void)dealloc;
 -(void)setImage:(id)image;
 -(void)_setTabBarHitRect:(CGRect)rect;

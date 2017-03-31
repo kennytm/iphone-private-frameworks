@@ -13,13 +13,13 @@
 @protocol UIAlertViewDelegate;
 
 @interface UIAlertView ()
--(id)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(instancetype)initWithTitle:(NSString *)title buttons:(NSArray *)buttons defaultButtonIndex:(NSInteger)index delegate:(id<UIAlertViewDelegate>)delegate context:(id)context;
 -(void)dealloc;
--(void)setDefaultButtonIndex:(int)index;
+-(void)setDefaultButtonIndex:(NSInteger)index;
 -(int)defaultButtonIndex;
--(void)_setFirstOtherButtonIndex:(int)index;
--(void)dismissWithClickedButtonIndex:(int)clickedButtonIndex animated:(BOOL)animated;
--(id)initWithFrame:(CGRect)frame;
+-(void)_setFirstOtherButtonIndex:(NSInteger)index;
+-(void)dismissWithClickedButtonIndex:(NSInteger)clickedButtonIndex animated:(BOOL)animated;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)showWithAnimationType:(int)animationType;
 -(void)show;
 -(void)_useUndoStyle:(BOOL)style;
@@ -29,7 +29,7 @@
 +(CGSize)minimumSize;
 +(id)_alertWindow;
 +(id)_popupAlertBackground:(BOOL)background;
--(id)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
+-(instancetype)initWithTitle:(id)title buttons:(id)buttons defaultButtonIndex:(int)index delegate:(id)delegate context:(id)context;
 -(BOOL)groupsTextFields;
 -(void)setGroupsTextFields:(BOOL)fields;
 -(BOOL)requiresPortraitOrientation;

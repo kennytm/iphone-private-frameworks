@@ -17,10 +17,10 @@
 	unsigned depth;
 	unsigned* frames;
 }
--(id)initWithLoggingRecord:(XXStruct_qFPbxC*)loggingRecord forTask:(unsigned)task;
--(id)initWithBacktrace:(id)backtrace forTask:(unsigned)task;
--(id)initWithTraceRecord:(id)traceRecord withDepth:(unsigned)depth;
--(id)initWithTraceRecord:(id)traceRecord;
+-(instancetype)initWithLoggingRecord:(XXStruct_qFPbxC*)loggingRecord forTask:(unsigned)task;
+-(instancetype)initWithBacktrace:(id)backtrace forTask:(unsigned)task;
+-(instancetype)initWithTraceRecord:(id)traceRecord withDepth:(unsigned)depth;
+-(instancetype)initWithTraceRecord:(id)traceRecord;
 -(unsigned)seqnum;
 -(unsigned)threadID;
 -(unsigned)type;

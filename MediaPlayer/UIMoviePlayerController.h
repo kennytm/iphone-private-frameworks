@@ -89,8 +89,8 @@
 @property(copy, nonatomic) NSString* moviePath;
 @property(assign, nonatomic) unsigned options;
 +(CGSize)fillSizeForMovieBounds:(CGRect)movieBounds movieNaturalSize:(CGSize)size orientation:(int)orientation destinationTVOut:(BOOL)anOut;
--(id)initWithPlayerSize:(CGSize)playerSize options:(unsigned)options;
--(id)initWithPlayerSize:(CGSize)playerSize;
+-(instancetype)initWithPlayerSize:(CGSize)playerSize options:(unsigned)options;
+-(instancetype)initWithPlayerSize:(CGSize)playerSize;
 -(void)dealloc;
 -(void)unlockMoviePlaybackResources;
 -(void)setAutoPlayWhenLikelyToKeepUp:(BOOL)keepUp;
@@ -183,8 +183,8 @@
 
 @interface UIMoviePlayerController (Deprecated)
 +(Class)preferredWindowClass;
--(id)initWithPlayerSize:(CGSize)playerSize isFullScreen:(BOOL)screen;
--(id)initWithPlayerSize:(CGSize)playerSize isFullScreen:(BOOL)screen options:(unsigned)options;
+-(instancetype)initWithPlayerSize:(CGSize)playerSize isFullScreen:(BOOL)screen;
+-(instancetype)initWithPlayerSize:(CGSize)playerSize isFullScreen:(BOOL)screen options:(unsigned)options;
 -(void)layoutUIInRect:(CGRect)rect fullScreen:(BOOL)screen;
 -(BOOL)isFullScreen;
 -(id)playerView;

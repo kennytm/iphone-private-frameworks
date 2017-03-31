@@ -12,7 +12,7 @@
 	DOMNode* _node;
 }
 +(id)threadSafeNodeWithNode:(id)node;
--(id)initWithNode:(id)node;
+-(instancetype)initWithNode:(id)node;
 -(id)description;
 -(void)dealloc;
 -(BOOL)isKindOfClass:(Class)aClass;

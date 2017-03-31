@@ -24,7 +24,7 @@
 @property(assign, nonatomic) BOOL isBound;
 @property(assign, nonatomic) BOOL convertCommas;
 +(id)decoderWithConsumer:(id)consumer;
--(id)initDecoderWithConsumer:(id)consumer;
+-(instancetype)initDecoderWithConsumer:(id)consumer;
 -(unsigned long)_decodeBytes:(const char*)bytes length:(unsigned long)length into:(char*)into length:(unsigned long)length4 startingAt:(unsigned long)at outEncodedOffset:(unsigned*)offset;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;

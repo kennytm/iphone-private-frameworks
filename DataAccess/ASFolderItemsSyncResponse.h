@@ -21,7 +21,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
--(id)initWithCollectionClassType:(int)collectionClassType;
+-(instancetype)initWithCollectionClassType:(int)collectionClassType;
 -(int)collectionClassType;
 -(void)setCollections:(id)collections;
 -(id)collection;

@@ -17,7 +17,7 @@
 @property(retain) NSString* imageName;
 @property(retain) NSString* codePoint;
 @property(assign) unsigned short unicodeCharacter;
--(id)initWithName:(id)name imageName:(id)name2 codePoint:(unsigned short)point;
+-(instancetype)initWithName:(id)name imageName:(id)name2 codePoint:(unsigned short)point;
 -(id)image;
 -(void)dealloc;
 @end

@@ -18,14 +18,14 @@
 @property(assign, nonatomic) int previousStatusBarMode;
 @property(readonly, assign, nonatomic) PLAlbumView* albumView;
 @property(readonly, assign, nonatomic) MLPhotoAlbum* album;
-// inherited: -(id)init;
--(id)initWithAlbum:(id)album;
+// inherited: -(instancetype)init;
+-(instancetype)initWithAlbum:(MLPhotoAlbum *)album;
 // inherited: -(void)dealloc;
 // inherited: -(void)loadView;
 // inherited: -(void)viewWillAppear:(BOOL)view;
 -(int)_imagePickerStatusBarMode;
 // inherited: -(void)viewWillDisappear:(BOOL)view;
--(void)setAlbum:(id)album;
+-(void)setAlbum:(MLPhotoAlbum *)album;
 // inherited: -(id)contentScrollView;
 @end
 

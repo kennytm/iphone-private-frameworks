@@ -13,7 +13,7 @@
 	UIImageView* _middleImageView;
 	UIImageView* _rightImageView;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
 @end
 

@@ -14,7 +14,7 @@
 	SBResetProgressView* _progressView;
 	NSTimer* _progressTimer;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)_resetStarted:(id)started;
 -(void)_resetFinished:(id)finished;

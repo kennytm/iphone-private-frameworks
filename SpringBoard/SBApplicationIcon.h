@@ -12,7 +12,7 @@
 @interface SBApplicationIcon : SBIcon {
 	SBApplication* _app;
 }
--(id)initWithApplication:(id)application;
+-(instancetype)initWithApplication:(id)application;
 // inherited: -(void)dealloc;
 -(id)application;
 // inherited: -(id)icon;

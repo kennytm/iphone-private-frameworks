@@ -26,7 +26,7 @@
 		unsigned reserved : 28;
 	} _tapInfoFlags;
 }
--(id)initWithDelegate:(id)delegate view:(id)view;
+-(instancetype)initWithDelegate:(id)delegate view:(id)view;
 -(void)releaseAndClearWeakRefs;
 -(void)clearTapState;
 -(void)setDelegate:(id)delegate;

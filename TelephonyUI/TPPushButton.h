@@ -29,7 +29,7 @@
 +(void)preloadImagesForColor:(int)color;
 +(id)answerButtonImage;
 +(id)declineButtonImage;
--(id)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame;
+-(instancetype)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame;
 -(void)setPlusSeparatedTitle:(id)title;
 -(void)setPushButtonColor:(int)color;
 -(int)pushButtonColor;
@@ -44,10 +44,11 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(id)declineVideoButtonImage;
 +(id)acceptVideoButtonImage;
--(id)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame imageIsOptional:(BOOL)optional;
+-(instancetype)initWithTitle:(id)title icon:(id)icon color:(int)color frame:(CGRect)frame imageIsOptional:(BOOL)optional;
 -(void)setImageIsOptional:(BOOL)optional;
 -(BOOL)imageIsOptional;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(XXStruct_SIyEID)_buttonSlices;
 #endif
 @end

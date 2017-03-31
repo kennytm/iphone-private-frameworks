@@ -29,9 +29,9 @@
 +(id)newWithHeaders:(id)headers mixedContent:(id)content textPartsAreHTML:(BOOL)html;
 +(id)newWithHeaders:(id)headers HTML:(id)html plainTextAlternative:(id)alternative other:(id)other;
 +(BOOL)deliverMessage:(id)message;
--(id)initWithMessage:(id)message;
--(id)initWithHeaders:(id)headers mixedContent:(id)content textPartsAreHTML:(BOOL)html;
--(id)initWithHeaders:(id)headers HTML:(id)html plainTextAlternative:(id)alternative other:(id)other;
+-(instancetype)initWithMessage:(id)message;
+-(instancetype)initWithHeaders:(id)headers mixedContent:(id)content textPartsAreHTML:(BOOL)html;
+-(instancetype)initWithHeaders:(id)headers HTML:(id)html plainTextAlternative:(id)alternative other:(id)other;
 // inherited: -(void)dealloc;
 -(id)createMessageWriter;
 -(id)message;

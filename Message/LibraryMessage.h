@@ -21,7 +21,7 @@
 	NSString* _messageID;
 }
 +(id)messageWithLibraryID:(unsigned)libraryID;
--(id)initWithLibraryID:(unsigned)libraryID;
+-(instancetype)initWithLibraryID:(unsigned)libraryID;
 -(MailMessageLibrary*)library;
 -(void)setLibraryID:(unsigned)anId;
 // inherited: -(NSString*)messageID;

@@ -16,7 +16,7 @@
 }
 +(id)copyOffTrack;
 +(id)threeCharCodesForEncodedISO639_2_T:(id)encodedISO639_2_T;
--(id)initWithDictionary:(id)dictionary;
+-(instancetype)initWithDictionary:(id)dictionary;
 -(void)dealloc;
 -(int)compare:(id)compare;
 -(id)humanReadableLanguage;

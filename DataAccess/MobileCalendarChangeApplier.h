@@ -15,7 +15,7 @@
 	int _numChanges;
 }
 @property(readonly, assign) int numChanges;
--(id)initWithCalendar:(id)calendar;
+-(instancetype)initWithCalendar:(id)calendar;
 // inherited: -(void)dealloc;
 -(void)didAbortRefreshInOperation:(id)operation;
 -(void)didCompleteRefreshInOperation:(id)operation;

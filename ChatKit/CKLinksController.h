@@ -15,7 +15,7 @@
 	NSArray* _linkProps;
 	UITableView* _table;
 }
--(id)initWithNavigationController:(id)navigationController;
+-(instancetype)initWithNavigationController:(id)navigationController;
 -(void)dealloc;
 -(void)setDelegate:(id)delegate;
 -(void)setLinkProperties:(id)properties;

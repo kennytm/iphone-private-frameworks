@@ -16,7 +16,7 @@
 }
 +(void)displayForNumber:(id)number addressBookUID:(int)uid;
 +(BOOL)dialNumberPromptingIfNecessary:(id)necessary addressBookUID:(int)uid urlAddition:(id)addition;
--(id)initWithNumber:(id)number addressBookUID:(int)uid;
+-(instancetype)initWithNumber:(id)number addressBookUID:(int)uid;
 // inherited: -(void)dealloc;
 // inherited: -(id)alertDisplayViewWithSize:(CGSize)size;
 -(id)number;

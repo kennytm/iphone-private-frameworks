@@ -14,7 +14,7 @@
 @end
 
 @interface NSArray (UICollectionAdditions_Performance)
--(id)initWithObjectsFromArray:(id)array range:(NSRange)range;
+-(instancetype)initWithObjectsFromArray:(id)array range:(NSRange)range;
 -(void)makeObjectsPerformSelector:(SEL)selector object:(id)object range:(NSRange)range;
 @end
 

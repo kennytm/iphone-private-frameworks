@@ -16,7 +16,7 @@
 	VMUSymbolOwner* _symbolOwner;
 }
 +(id)linkedListEntryWithSymbolOwner:(id)symbolOwner;
--(id)initWithSymbolOwner:(id)symbolOwner;
+-(instancetype)initWithSymbolOwner:(id)symbolOwner;
 -(unsigned)size;
 -(id)symbolOwner;
 -(id)prev;

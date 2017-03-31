@@ -13,10 +13,9 @@
 
 @interface UIImagePickerController ()
 +(BOOL)_loadPhotoLibraryIfNecessary __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA, __MAC_NA, __IPHONE_2_0, __IPHONE_3_1);
-+(BOOL)isSourceTypeAvailable:(unsigned)available;
 +(BOOL)_isMediaTypeAvailable:(id)available forSource:(unsigned)source;
--(id)init;
--(id)initWithCoder:(id)coder;
+-(instancetype)init;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(id)_initWithSourceImage:(id)sourceImage cropRect:(CGRect)rect;
 -(void)dealloc;
 -(void)_populateArchivedChildViewControllers:(id)controllers;

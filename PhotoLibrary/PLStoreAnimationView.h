@@ -14,7 +14,7 @@
 	UIImageView* _imageView;
 }
 -(id)imageView;
--(id)initWithFrame:(CGRect)frame image:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image;
 // inherited: -(void)dealloc;
 @end
 

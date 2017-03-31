@@ -22,7 +22,7 @@
 	} _progressHUDFlags;
 }
 -(id)_progressIndicator;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setText:(id)text;
 -(void)setShowsText:(BOOL)text;
 -(void)setFontSize:(int)size;
@@ -35,7 +35,7 @@
 @end
 
 @interface UIProgressHUD (Deprecated)
--(id)initWithWindow:(id)window;
+-(instancetype)initWithWindow:(id)window;
 -(void)show:(BOOL)show;
 @end
 

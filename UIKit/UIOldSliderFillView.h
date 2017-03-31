@@ -11,7 +11,7 @@
 @interface UIOldSliderFillView : UIView {
 	UIImage* _sliderImage;
 }
--(id)initWithFrame:(CGRect)frame image:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image;
 -(void)drawRect:(CGRect)rect;
 @end
 

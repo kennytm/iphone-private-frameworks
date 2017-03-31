@@ -17,7 +17,7 @@
 @property(readonly, assign, nonatomic) NSIndexPath* indexPath;
 @property(readonly, assign, nonatomic) int animation;
 @property(assign, nonatomic) float offset;
--(id)initWithAction:(int)action forIndexPath:(id)indexPath animation:(int)animation;
+-(instancetype)initWithAction:(int)action forIndexPath:(id)indexPath animation:(int)animation;
 -(void)dealloc;
 -(id)_actionDescription;
 -(BOOL)isSectionOperation;

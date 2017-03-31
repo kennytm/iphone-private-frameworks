@@ -19,8 +19,8 @@
 	CFRunLoopSourceRef _socketSource;
 	NSLock* _countLock;
 }
-// inherited: -(id)init;
--(id)initWithCFRunLoop:(CFRunLoopRef)cfrunLoop;
+// inherited: -(instancetype)init;
+-(instancetype)initWithCFRunLoop:(CFRunLoopRef)cfrunLoop;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)down;

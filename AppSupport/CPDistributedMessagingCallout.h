@@ -17,7 +17,7 @@
 @property(readonly, retain, nonatomic) id target;
 @property(readonly, assign, nonatomic) SEL selector;
 @property(readonly, assign, nonatomic) BOOL returnsVoid;
--(id)initWithTarget:(id)target selector:(SEL)selector;
+-(instancetype)initWithTarget:(id)target selector:(SEL)selector;
 // inherited: -(void)dealloc;
 @end
 

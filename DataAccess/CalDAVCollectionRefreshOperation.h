@@ -17,7 +17,7 @@
 	id _delegate;
 }
 +(id)propertiesForCollection;
--(id)initWithAccount:(id)account calendar:(id)calendar delegate:(id)delegate;
+-(instancetype)initWithAccount:(id)account calendar:(id)calendar delegate:(id)delegate;
 -(void)refresh;
 -(BOOL)validate:(id)validate error:(id*)error;
 -(id)account;

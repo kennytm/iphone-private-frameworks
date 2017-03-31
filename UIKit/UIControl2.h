@@ -10,8 +10,8 @@
 @class NSMutableArray;
 
 @interface UIControl ()
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(BOOL)cancelMouseTracking;
@@ -26,10 +26,6 @@
 -(void)touchesEnded:(id)ended withEvent:(id)event;
 -(void)touchesCancelled:(id)cancelled withEvent:(id)event;
 -(void)_didMoveFromWindow:(id)window toWindow:(id)window2;
--(void)addTarget:(id)target action:(SEL)action forControlEvents:(unsigned)controlEvents;
--(void)removeTarget:(id)target action:(SEL)action forControlEvents:(unsigned)controlEvents;
--(unsigned)allControlEvents;
--(void)sendActionsForControlEvents:(unsigned)controlEvents;
 @end
 
 @interface UIControl (Static)

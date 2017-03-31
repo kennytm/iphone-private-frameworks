@@ -17,7 +17,7 @@
 	unsigned _fileOffset;
 }
 +(VMUSourceInfo*)sourceInfoWithPath:(id)path addressRange:(VMURange)range lineNumber:(unsigned)number fileOffset:(unsigned)offset;
--(id)initWithPath:(id)path addressRange:(VMURange)range lineNumber:(unsigned)number fileOffset:(unsigned)offset;
+-(instancetype)initWithPath:(id)path addressRange:(VMURange)range lineNumber:(unsigned)number fileOffset:(unsigned)offset;
 -(id)path;
 -(id)fileName;
 -(unsigned)lineNumber;

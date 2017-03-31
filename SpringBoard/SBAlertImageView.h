@@ -14,7 +14,7 @@
 	UIImageView* _imageView;
 	UILabel* _labelView;
 }
--(id)initWithFrame:(CGRect)frame errorString:(id)string;
+-(instancetype)initWithFrame:(CGRect)frame errorString:(id)string;
 -(void)layoutSubviews;
 @end
 

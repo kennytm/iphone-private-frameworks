@@ -15,7 +15,7 @@
 	NSString* _address;
 	CTCallRef _call;
 }
--(id)initWithCauseCode:(long)causeCode call:(CTCallRef)call;
+-(instancetype)initWithCauseCode:(long)causeCode call:(CTCallRef)call;
 // inherited: -(void)dealloc;
 -(void)_callback;
 // inherited: -(id)lockLabel;

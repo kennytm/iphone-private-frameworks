@@ -17,7 +17,7 @@
 	NSString* _lastNotificationReceivedBundleIdentifier;
 }
 +(SBRemoteNotificationServer*)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(NSString*)_clientsArchivePath;
 -(void)saveClientState;

@@ -17,10 +17,10 @@
 	BOOL _prefetchProperties;
 }
 @property(readonly, assign, nonatomic) MLQuery* MLQuery;
--(id)initWithMLQuery:(id)mlquery;
+-(instancetype)initWithMLQuery:(id)mlquery;
 -(void)dealloc;
 -(void)setQuery:(id)query;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(id)description;
 -(unsigned)countOfItems;

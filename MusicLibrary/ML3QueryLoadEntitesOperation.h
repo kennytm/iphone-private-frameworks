@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 @property(assign) NSRange loadRange;
 @property(assign) BOOL ordered;
--(id)initWithQuery:(id)query;
--(id)initWithQuery:(id)query loadRange:(NSRange)range ordered:(BOOL)ordered;
+-(instancetype)initWithQuery:(id)query;
+-(instancetype)initWithQuery:(id)query loadRange:(NSRange)range ordered:(BOOL)ordered;
 -(void)dealloc;
 -(void)main;
 @end

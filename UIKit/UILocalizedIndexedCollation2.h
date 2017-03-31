@@ -12,13 +12,11 @@
 @interface UILocalizedIndexedCollation ()
 +(id)currentCollation;
 -(void)dealloc;
--(int)sectionForSectionIndexTitleAtIndex:(int)index;
--(int)sectionForObject:(id)object collationStringSelector:(SEL)selector;
 @end
 
 @interface UILocalizedIndexedCollation (UIKitInternal)
 +(id)collationWithDictionary:(id)dictionary;
--(id)initWithDictionary:(id)dictionary;
+-(instancetype)initWithDictionary:(id)dictionary;
 -(id)transformedCollationStringForString:(id)string __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
 @end
 

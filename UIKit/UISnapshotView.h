@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor* edgePaddingColor;
 @property(assign, nonatomic, getter=isSubviewLayoutEnabled) BOOL subviewLayoutEnabled;
 @property(assign, nonatomic, getter=isEdgeAntialiasingEnabled) BOOL edgeAntialiasingEnabled;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)setBounds:(CGRect)bounds;

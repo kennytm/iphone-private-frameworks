@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @private
 	CGGradientRef _gradient;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

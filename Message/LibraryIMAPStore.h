@@ -36,7 +36,7 @@
 	NSString* _relativePath;
 	id _downloadDelegate;
 }
-// inherited: -(id)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
+// inherited: -(instancetype)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
 // inherited: -(void)dealloc;
 -(void)focusedMessageDidChange:(id)focusedMessage;
 -(int)_fetchMessagesWithArguments:(id)arguments idRange:(id)range onConnection:(id)connection synchronize:(BOOL)synchronize limit:(unsigned)limit topUIDToCompact:(unsigned)compact topKnownUID:(unsigned)uid success:(BOOL*)success examinedRange:(NSRange*)range9 fetchableUIDsFound:(unsigned*)found preserveUID:(unsigned*)uid11;

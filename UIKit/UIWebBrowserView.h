@@ -43,7 +43,7 @@
 +(id)getUIWebBrowserViewForWebFrame:(id)webFrame;
 +(BOOL)isAutoFillAllowed;
 +(id)_PDFPageNumberLabel;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)installGestureRecognizers;
 -(BOOL)_requiresKeyboardWhenFirstResponder;
 -(BOOL)_requiresKeyboardResetOnReload;

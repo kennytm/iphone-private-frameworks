@@ -17,7 +17,7 @@
 	int basePort;
 	DAVChallenge* authChallenge;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // in a protocol: -(BOOL)hasCredentialsForSession:(id)session;
 // in a protocol: -(BOOL)session:(id)session addAuthHeaderToMessage:(CFHTTPMessageRef)message;

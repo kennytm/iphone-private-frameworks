@@ -52,8 +52,8 @@
 +(id)defaultUserAgent;
 +(void)setDefaultAcceptEncoding:(id)encoding;
 +(id)defaultAcceptEncoding;
--(id)initWithScheme:(id)scheme host:(id)host port:(int)port;
--(id)initWithURL:(id)url;
+-(instancetype)initWithScheme:(id)scheme host:(id)host port:(int)port;
+-(instancetype)initWithURL:(id)url;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // in a protocol: -(id)description;

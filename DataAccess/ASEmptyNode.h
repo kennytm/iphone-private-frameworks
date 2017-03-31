@@ -16,7 +16,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
--(id)initWithExpectedClassType:(Class)expectedClassType;
+-(instancetype)initWithExpectedClassType:(Class)expectedClassType;
 // inherited: -(void)parseASParseContext:(id)context root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 account:(id)account;
 // inherited: -(int)parsingState;
 // in a protocol: -(id)commonValue;

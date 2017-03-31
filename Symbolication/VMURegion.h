@@ -18,8 +18,8 @@
 	NSString* _name;
 }
 +(id)regionWithOwner:(id)owner name:(id)name addressRange:(VMURange)range;
--(id)initWithOwner:(id)owner name:(id)name addressRange:(VMURange)range;
-// in a protocol: -(id)initWithCoder:(id)coder;
+-(instancetype)initWithOwner:(id)owner name:(id)name addressRange:(VMURange)range;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 -(id)owner;
 -(id)name;

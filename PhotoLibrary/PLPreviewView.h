@@ -18,7 +18,7 @@
 	unsigned _canShowFocus : 1;
 	unsigned _controlsAreVisible : 1;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_focusAtPoint:(CGPoint)point;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;
 // inherited: -(void)touchesCancelled:(id)cancelled withEvent:(id)event;

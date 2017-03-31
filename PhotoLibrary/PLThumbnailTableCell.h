@@ -34,7 +34,7 @@
 @property(copy, nonatomic) NSIndexSet* selectedPhotoIndexes;
 @property(readonly, assign, nonatomic) NSArray* photos;
 @property(assign, nonatomic) int thumbnailSelectionStyle;
-// inherited: -(id)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
 // inherited: -(void)dealloc;
 -(id)slideImageAtIndex:(unsigned)index;
 -(void)setSlideImage:(id)image atIndex:(unsigned)index;

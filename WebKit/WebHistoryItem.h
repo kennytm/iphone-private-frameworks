@@ -63,7 +63,7 @@ extern NSString *WebHistoryItemChangedNotification;
     'artificial' items to add to a WebBackForwardList.  When first initialized
     the URLString and originalURLString will be the same.
 */
-- (id)initWithURLString:(NSString *)URLString title:(NSString *)title lastVisitedTimeInterval:(NSTimeInterval)time;
+- (instancetype)initWithURLString:(NSString *)URLString title:(NSString *)title lastVisitedTimeInterval:(NSTimeInterval)time;
 
 /*!
     @method originalURLString

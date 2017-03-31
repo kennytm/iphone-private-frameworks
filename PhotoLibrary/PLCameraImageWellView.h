@@ -21,7 +21,7 @@
 	BOOL _watchingOrientationChanges;
 	int _deviceOrientation;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)setFrame:(CGRect)frame;
 -(void)_previewImageDidChange:(id)_previewImage;
 -(void)_irisAnimationWillStart:(id)_irisAnimation;

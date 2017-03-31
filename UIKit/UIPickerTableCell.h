@@ -11,7 +11,7 @@
 	unsigned _checked : 1;
 	unsigned _reserved : 31;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)updateHighlightColors;
 -(void)setChecked:(BOOL)checked;
 -(void)layoutSubviews;

@@ -6,10 +6,8 @@
  */
 
 #import "SpringBoard-Structs.h"
-#import <UIKit/UITableViewCell.h>
+#import <UIKit/UIKit.h>
 #import <Availability2.h>
-
-@class NSString, UIFont, NSArray;
 
 @interface SBSearchTableViewCell : UITableViewCell {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
@@ -44,12 +42,12 @@
 @property(assign, nonatomic, getter=isFirstInSection) BOOL firstInSection;
 @property(assign, nonatomic) float sectionHeaderWidth;
 @property(assign, nonatomic) float edgeInset;
-+(id)backgroundColor;
-+(id)alternateBackgroundColor;
-+(id)lineColor;
-+(id)alternateLineColor;
-+(id)topLineShadowColor;
-// inherited: -(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
++(UIColor *)backgroundColor;
++(UIColor *)alternateBackgroundColor;
++(UIColor *)lineColor;
++(UIColor *)alternateLineColor;
++(UIColor *)topLineShadowColor;
+// inherited: -(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 // inherited: -(void)dealloc;
 -(BOOL)_drawsContent;
 // inherited: -(void)_drawContentInRect:(CGRect)rect selected:(BOOL)selected;

@@ -20,7 +20,7 @@
 @property(retain, nonatomic) UIGradient* reflectionGradient;
 @property(assign, nonatomic) float reflectionHeight;
 @property(assign, nonatomic) BOOL squareImage;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(CGSize)imageSize;
 -(void)setAlbumArtImage:(id)image maxSize:(float)size;

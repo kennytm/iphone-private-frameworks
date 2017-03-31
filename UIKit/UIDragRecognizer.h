@@ -25,7 +25,7 @@
 @property(assign, nonatomic) BOOL restrictsToAngle;
 @property(assign, nonatomic) double angle;
 @property(assign, nonatomic) double startAngle;
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)dealloc;
 -(void)reset;
 -(void)clearTimer;

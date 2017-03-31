@@ -63,7 +63,7 @@
 }
 +(id)sharedAwayController;
 // inherited: +(void)registerForAlerts;
--(id)initWithUIController:(id)uicontroller;
+-(instancetype)initWithUIController:(id)uicontroller;
 -(id)awayModel;
 // inherited: -(CGRect)alertWindowRect;
 // inherited: -(float)finalAlpha;
@@ -205,7 +205,8 @@
 -(BOOL)isAlwaysFullscreenAwayPluginEnabled;
 -(void)enableAlwaysFullscreenAwayPlugin;
 -(void)unlockAlwaysFullscreenAwayView;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)_unlockWithSound:(BOOL)sound;
 -(void)updateNowPlayingInfo:(id)info;
 #endif

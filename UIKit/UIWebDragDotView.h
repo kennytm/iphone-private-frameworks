@@ -13,7 +13,7 @@
 	BOOL m_dotAtTop;
 }
 @property(assign, nonatomic) BOOL showsBall;
--(id)initWithFrame:(CGRect)frame withDotAtTop:(BOOL)top;
+-(instancetype)initWithFrame:(CGRect)frame withDotAtTop:(BOOL)top;
 -(void)dealloc;
 -(void)setFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;

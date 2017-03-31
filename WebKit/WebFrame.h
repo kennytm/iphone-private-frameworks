@@ -60,7 +60,7 @@
     @param webView The WebView that manages the frame.
     @result Returns an initialized WebFrame.
 */
-- (id)initWithName:(NSString *)name webFrameView:(WebFrameView *)view webView:(WebView *)webView;
+- (instancetype)initWithName:(NSString *)name webFrameView:(WebFrameView *)view webView:(WebView *)webView;
 
 /*!
     @method name

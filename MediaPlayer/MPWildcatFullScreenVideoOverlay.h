@@ -32,7 +32,7 @@
 }
 @property(assign, nonatomic) id<MPWildcatFullScreenVideoOverlayDelegate> delegate;
 @property(copy, nonatomic) NSString* title;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(id)hitTest:(CGPoint)test withEvent:(id)event;

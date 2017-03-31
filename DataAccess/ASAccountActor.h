@@ -49,7 +49,7 @@
 // in a protocol: -(oneway void)_foldersThatExternalClientsCareAboutChanged;
 // in a protocol: -(oneway void)_accountPasswordChanged;
 -(void)_findScheduler;
--(id)initWithDAAccount:(id)daaccount;
+-(instancetype)initWithDAAccount:(id)daaccount;
 // inherited: -(void)dealloc;
 @end
 

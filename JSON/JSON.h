@@ -16,7 +16,7 @@
 	NSError** error;
 	unsigned depth;
 }
--(id)initWithOptions:(unsigned)options error:(NSError**)error;
+-(instancetype)initWithOptions:(unsigned)options error:(NSError**)error;
 -(void)setErrorWithCode:(unsigned)code description:(NSString*)description;
 -(void)setErrorWithCode:(unsigned)code string:(NSString*)string;
 @end

@@ -8,7 +8,7 @@
 #import <UIKit/UIView.h>
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 @class UIImageView;
 
@@ -17,8 +17,8 @@
 	UIView* _reflection;
 }
 // inherited: -(void)dealloc;
--(void)setAlbumArtImage:(id)image maxSize:(float)size;
--(id)albumArtImage;
+-(void)setAlbumArtImage:(UIImage *)image maxSize:(CGFloat)size;
+-(UIImage *)albumArtImage;
 -(void)setReflectionVisible:(BOOL)visible withDuration:(float)duration;
 @end
 

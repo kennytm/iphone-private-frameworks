@@ -131,22 +131,57 @@ typedef struct {
 
 typedef struct USet* USetRef;
 
+typedef enum UIKeyDefinitionDownActionFlag {
+        UIKeyFlagActivateKey           = 1,
+        UIKeyFlagSendActionOnTouchDown = 2,
+        UIKeyFlagPlaySound             = 4,
+        UIKeyFlagShiftKey              = 0x10,
+        UIKeyFlagInternationalKey      = 0x20,
+        UIKeyFlagDeleteKey             = 0x40,
+        UIKeyFlagHasLongPressAction    = 0x80,
+        UIKeyFlagRomanAccents          = 0x8000,
+        UIKeyFlagURLDomainVariants     = 0x10000,
+        UIKeyFlagEmailDomainVariants   = 0x20000,
+        UIKeyFlagCurrencyVariants      = 0x40000,       // ?
+        UIKeyFlagFunctionKeysUnknown   = 0x80000
+} UIKeyDefinitionDownActionFlag;
+
+typedef enum UIKeyDefinitionUpActionFlag {
+        UIKeyFlagOutputValue           = 2,             // do not set this field if the value is intended to be invisible, e.g. "shift", "delete", etc.
+        UIKeyFlagDeactivateKey         = 8,
+        UIKeyFlagSwitchPlane           = 0x100,
+        UIKeyFlagToggleShift           = 0x400,
+        UIKeyFlagStopAutoDelete        = 0x800,
+        UIKeyFlagChangeInputMode       = 0x1000,        // effective only for the intl key.
+        UIKeyFlagSkipCandidateList     = 0x10000
+} UIKeyDefinitionUpActionFlag;
+
+typedef enum UIKeyType {
+        UIKeyTypeNormal = 1,
+        UIKeyTypeDelete = 3,
+        UIKeyTypeSpace  = 4,
+        UIKeyTypeReturn = 5,
+        UIKeyTypeShift  = 6,
+        UIKeyTypeInternational = 7
+} UIKeyType;
+
 @class NSString;
 typedef struct {
-	CGRect _field1;
-	CGRect _field2;
-	CGRect _field3;
-	CGRect _field4;
-	CGRect _field5;
-	NSString* _field6;
-	NSString* _field7;
-	unsigned _field8;
-	unsigned _field9;
-	unsigned _field10;
-	id _field11;
+	CGRect bg_area;
+	CGRect pop_bg_area;
+	CGRect pop_char_area;
+	CGRect accent_frame;
+	CGRect pop_padding;
+	NSString* value;
+	NSString* shifted;
+	enum UIKeyDefinitionDownActionFlag down_flags;
+	enum UIKeyDefinitionUpActionFlag up_flags;
+	enum UIKeyType key_type;
+	NSString* pop_type;
 } XXStruct_MMLx8B;
 
 typedef XXStruct_MMLx8B XXStruct_K4qLnD;
+typedef XXStruct_MMLx8B UIKeyDefinition;
 
 typedef struct _WKClassInfo* WKClassInfoRef;
 

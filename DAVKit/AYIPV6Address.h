@@ -12,7 +12,7 @@
 @interface AYIPV6Address : AYAddress {
 	struct sockaddr_in6 _saddr;
 }
--(id)initWithSockaddrBuffer:(struct sockaddr*)sockaddrBuffer;
+-(instancetype)initWithSockaddrBuffer:(struct sockaddr*)sockaddrBuffer;
 // inherited: -(id)type;
 // inherited: -(id)addressAsString;
 // inherited: -(int)port;

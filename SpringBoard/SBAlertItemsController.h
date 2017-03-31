@@ -15,7 +15,7 @@
 	NSTimer* _autoDismissTimer;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)convertAnimatingUnlockedAlertsToLockedAlerts;
 -(void)deactivateAllAlertItems;

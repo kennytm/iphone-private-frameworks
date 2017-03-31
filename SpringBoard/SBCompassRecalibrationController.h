@@ -13,7 +13,7 @@
 
 @interface SBCompassRecalibrationController : NSObject {
 	NSMutableArray* _assertionPorts;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	UIWindow* _recalibrationWindow;
 	SBCompassRecalibrationView* _recalibrationView;
 #endif
@@ -26,9 +26,10 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 // inherited: -(void)dealloc;
 -(BOOL)isCompassCalibrationHUDVisible;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_0
 +(BOOL)isCompassCalibrationWindowVisible;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_createUI;
 -(void)reorientRecalibrationHUDIfNeeded:(BOOL)needed;
 -(void)_animationDidStop:(id)_animation finished:(id)finished context:(void*)context;

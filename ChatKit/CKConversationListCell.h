@@ -19,7 +19,7 @@
 }
 +(id)identifier;
 +(float)cellHeight;
--(id)initWithFrame:(CGRect)frame conversation:(id)conversation;
+-(instancetype)initWithFrame:(CGRect)frame conversation:(id)conversation;
 -(void)setConversation:(id)conversation;
 -(void)dealloc;
 -(void)clearText;

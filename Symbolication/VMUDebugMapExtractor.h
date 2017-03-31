@@ -13,7 +13,7 @@
 @interface VMUDebugMapExtractor : VMUSymbolExtractor {
 }
 +(VMUDebugMapExtractor*)debugMapExtractorWithMachOHeader:(VMUMachOHeader*)machOHeader;
--(id)initWithMachOHeader:(id)machOHeader;
+-(instancetype)initWithMachOHeader:(id)machOHeader;
 -(void)readDebugMapsFromMachOHeader:(id)machOHeader nsyms:(unsigned)nsyms nlist:(id)nlist stringTable:(id)table;
 -(void)readDSymFileForHeader:(id)header;
 @end

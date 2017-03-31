@@ -13,7 +13,7 @@
 }
 +(id)backgroundImage;
 +(float)defaultHeight;
--(id)initInView:(id)view withItems:(XXStruct_b4LybD*)items withCount:(int)count;
+-(instancetype)initInView:(id)view withItems:(XXStruct_b4LybD*)items withCount:(int)count;
 -(void)drawRect:(CGRect)rect;
 @end
 

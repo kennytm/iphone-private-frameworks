@@ -14,10 +14,10 @@
 
 @interface UIView ()
 +(Class)layerClass;
--(id)init;
+-(instancetype)init;
 -(void)_createLayerWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setCharge:(float)charge;
@@ -122,7 +122,7 @@
 
 @interface UIView (Deprecated)
 +(void)setAnimationTransition:(int)transition forView:(id)view;
--(id)initWithSize:(CGSize)size;
+-(instancetype)initWithSize:(CGSize)size;
 -(CGSize)size;
 -(void)setSize:(CGSize)size;
 -(CGPoint)frameOrigin;

@@ -12,7 +12,7 @@
 	id _richContentDelegate;
 }
 @property(assign, nonatomic) id richContentDelegate;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(id)brElement;
 -(void)insertImage:(id)image ID:(id)id URL:(id)url;

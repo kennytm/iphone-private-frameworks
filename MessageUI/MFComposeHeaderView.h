@@ -19,7 +19,7 @@
 }
 +(float)defaultHeight;
 -(CGColorRef)labelColor;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)setLabel:(id)label;
 -(void)setLabelHighlighted:(BOOL)highlighted;
 -(float)maxLabelX;

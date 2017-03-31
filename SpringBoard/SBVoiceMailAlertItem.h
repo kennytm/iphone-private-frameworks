@@ -29,14 +29,15 @@ SBDismissOnlyAlertItem
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 // inherited: -(BOOL)dismissOnLock;
--(id)title;
--(void)setTitle:(id)title;
--(id)bodyText;
--(void)setBodyText:(id)text;
+-(NSString *)title;
+-(void)setTitle:(NSString *)title;
+-(NSString *)bodyText;
+-(void)setBodyText:(NSString *)text;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 -(void)_performAppropriateListenAction;
 -(void)_launchPhoneAndDisplayVoicemailRecord:(int)record;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 +(id)currentInstance;
 +(BOOL)hasCurrentInstance;
 // inherited: -(void)didDeactivateForReason:(int)reason;

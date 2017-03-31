@@ -18,7 +18,7 @@
 	NSMutableArray* _otherAwayItems;
 }
 +(BOOL)shouldHideSMSSender;
--(id)initWithController:(id)controller;
+-(instancetype)initWithController:(id)controller;
 // inherited: -(void)dealloc;
 -(void)markAwayTime;
 -(void)addOtherAwayItem:(id)item;

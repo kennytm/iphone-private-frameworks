@@ -2,17 +2,16 @@
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 
-#import <UIKit/UIView.h>
-@class UIImage;
+#import <UIKit/UIKit.h>
 
 @interface SBBatteryReflectionView : UIView {
 	UIImage* _image;
 	UIImage* _maskImage;
-	float _bottomMargin;
+	CGFloat _bottomMargin;
 }
--(id)initWithImage:(id)image bottomMargin:(float)margin;
+-(instancetype)initWithImage:(UIImage *)image bottomMargin:(CGFloat)margin;
 // inherited: -(void)dealloc;
--(void)setImage:(id)image;
+-(void)setImage:(UIImage *)image;
 -(void)drawRect:(CGRect)rect;
 @end
 

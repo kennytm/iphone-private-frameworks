@@ -29,8 +29,8 @@
 +(NSArray*)filterTypes;
 +(CAFilter*)filterWithType:(NSString*)type;
 +(CAFilter*)filterWithName:(NSString*)name;
--(id)initWithType:(NSString*)type;
--(id)initWithName:(NSString*)name;
+-(instancetype)initWithType:(NSString*)type;
+-(instancetype)initWithName:(NSString*)name;
 -(BOOL)enabled;
 -(void)setValue:(id)value forKey:(id)key;
 -(id)valueForKey:(id)key;

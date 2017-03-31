@@ -15,7 +15,7 @@
 	int _newStatusBarMode;
 	CGAffineTransform _previewViewTransform;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(BOOL)_displaysFullScreen;
 // inherited: -(void)dealloc;
 -(id)_cameraView;

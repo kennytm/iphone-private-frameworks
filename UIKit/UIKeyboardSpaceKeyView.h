@@ -9,7 +9,7 @@
 
 @interface UIKeyboardSpaceKeyView : UIKeyboardKeyView {
 }
--(id)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
 -(id)localizedString;
 -(id)symbolString;
 @end

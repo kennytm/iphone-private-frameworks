@@ -14,7 +14,7 @@
 	DAVSession* _session;
 	NSString* _inboxURI;
 }
--(id)initWithSession:(id)session URI:(id)uri inboxURI:(id)uri3;
+-(instancetype)initWithSession:(id)session URI:(id)uri inboxURI:(id)uri3;
 // inherited: -(void)dealloc;
 -(void)deleteCalendar;
 @end

@@ -32,7 +32,7 @@
 +(id)_navigationImage;
 +(id)sharedFormAssistant;
 +(BOOL)isShowing;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)formDelegateHandleTextChangeInFrame:(id)frame withAutoFillSuggestions:(BOOL)autoFillSuggestions;
 -(void)formDelegateFormElementDidSetValue:(id)formDelegateFormElement inFrame:(id)frame;

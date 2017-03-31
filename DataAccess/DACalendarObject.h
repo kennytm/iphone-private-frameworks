@@ -17,7 +17,7 @@
 @property(readonly, assign, nonatomic) DACalendarDatabase* database;
 @property(readonly, assign, nonatomic) void* ref;
 +(id)NSArrayFromCFArray:(CFArrayRef)cfarray objectClass:(Class)aClass database:(id)database;
--(id)initWithDatabase:(id)database ref:(void*)ref;
+-(instancetype)initWithDatabase:(id)database ref:(void*)ref;
 // inherited: -(void)dealloc;
 @end
 

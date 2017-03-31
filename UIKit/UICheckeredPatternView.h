@@ -12,7 +12,7 @@
 	UIColor* m_patternColor;
 	UIColor* m_checkerColor;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(BOOL)_canDrawContent;
 -(void)updatePatternColor;

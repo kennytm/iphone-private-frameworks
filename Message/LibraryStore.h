@@ -29,10 +29,10 @@
 +(LibraryStore*)sharedInstance;
 // inherited: +(BOOL)createEmptyStoreForPath:(id)path;
 // inherited: +(BOOL)storeAtPathIsWritable:(id)pathIsWritable;
--(id)initWithCriterion:(id)criterion mailbox:(id)mailbox readOnly:(BOOL)only;
--(id)initWithCriterion:(id)criterion;
-// inherited: -(id)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
--(id)initWithMailbox:(id)mailbox;
+-(instancetype)initWithCriterion:(id)criterion mailbox:(id)mailbox readOnly:(BOOL)only;
+-(instancetype)initWithCriterion:(id)criterion;
+// inherited: -(instancetype)initWithMailboxUid:(id)mailboxUid readOnly:(BOOL)only;
+-(instancetype)initWithMailbox:(id)mailbox;
 // inherited: -(void)setLibrary:(id)library;
 -(MessageLibrary*)library;
 -(MailboxUid*)mailbox;

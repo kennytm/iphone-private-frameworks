@@ -14,10 +14,10 @@
 
 @interface UITableView ()
 @property(retain, nonatomic) id scrollTestParameters __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_1);
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_setupTableViewCommon;
 -(void)_populateArchivedSubviews:(id)subviews;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(void)dealloc;
 -(void)reloadData;
@@ -33,11 +33,6 @@
 -(BOOL)tableHeaderViewShouldAutoHide;
 -(BOOL)overlapsSectionHeaderViews;
 -(void)setOverlapsSectionHeaderViews:(BOOL)views;
--(int)numberOfSections;
--(int)numberOfRowsInSection:(int)section;
--(CGRect)rectForSection:(int)section;
--(CGRect)rectForHeaderInSection:(int)section;
--(CGRect)rectForFooterInSection:(int)section;
 -(void)beginUpdates;
 -(void)endUpdatesWithContext:(id)context;
 -(void)endUpdates;
@@ -83,7 +78,9 @@
 // inherited: -(void)setShowsVerticalScrollIndicator:(BOOL)indicator;
 // inherited: -(void)setContentOffset:(CGPoint)offset;
 // inherited: -(void)setContentInset:(UIEdgeInsets)inset;
+#ifndef __IPHONE_9_0
 -(NSArray*)indexPathsForSelectedRows;
+#endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 -(id)rowDataDescription;
 -(void)_selectAllSelectedRows;

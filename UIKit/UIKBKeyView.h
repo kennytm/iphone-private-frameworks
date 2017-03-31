@@ -18,7 +18,7 @@
 @property(readonly, assign, nonatomic) UIKBKey* key;
 @property(readonly, assign, nonatomic) int state;
 @property(assign, nonatomic) CGPoint drawOrigin;
--(id)initWithFrame:(CGRect)frame keyboard:(UIKBKeyboard*)keyboard key:(UIKBKey*)key state:(int)state;
+-(instancetype)initWithFrame:(CGRect)frame keyboard:(UIKBKeyboard*)keyboard key:(UIKBKey*)key state:(int)state;
 //-(void)dealloc;
 //-(void)drawRect:(CGRect)rect;
 @end

@@ -15,7 +15,7 @@
 	NSString* _time;
 	CGRect _textRect;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)updateClockFormat;
 // inherited: -(void)dealloc;
 // inherited: -(void)start;

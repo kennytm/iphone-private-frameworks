@@ -30,10 +30,10 @@
 	} _pushButtonFlags;
 }
 +(id)defaultFont;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithTitle:(id)title;
--(id)initWithTitle:(id)title autosizesToFit:(BOOL)fit;
--(id)initWithImage:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithTitle:(id)title;
+-(instancetype)initWithTitle:(id)title autosizesToFit:(BOOL)fit;
+-(instancetype)initWithImage:(id)image;
 -(void)dealloc;
 -(unsigned)state;
 -(void)setEnabled:(BOOL)enabled;

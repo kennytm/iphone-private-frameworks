@@ -10,6 +10,6 @@
 
 @interface AVControllerRemoteMission : AVController {
 }
--(id)initWithQueue:(id)queue error:(id*)error;
+-(instancetype)initWithQueue:(id)queue error:(id*)error;
 @end
 

@@ -13,7 +13,7 @@
 }
 +(id)alertTitleForStatus:(int)status languageCode:(id)code;
 +(id)alertTitleForStatus:(int)status;
--(id)initWithStatus:(int)status;
+-(instancetype)initWithStatus:(int)status;
 // inherited: -(void)dealloc;
 -(BOOL)canUnlock;
 -(id)alertTitleForLanguageCode:(id)languageCode;

@@ -12,7 +12,7 @@
 }
 +(id)stabsExtractorWithMachOHeader:(id)machOHeader;
 +(id)symbolForAddress:(unsigned long long)address withMachOHeader:(id)machOHeader;
--(id)initWithMachOHeader:(id)machOHeader forAddress:(unsigned long long)address;
+-(instancetype)initWithMachOHeader:(id)machOHeader forAddress:(unsigned long long)address;
 -(void)readIndirectSymbolsFromMachOHeader:(id)machOHeader section:(id)section nsyms:(unsigned)nsyms indirectSymbols:(id)symbols nlist:(id)nlist stringTable:(id)table;
 -(void)readStabsFromMachOHeader:(id)machOHeader nsyms:(unsigned)nsyms nlist:(id)nlist stringTable:(id)table forAddress:(unsigned long long)address;
 @end

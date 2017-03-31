@@ -11,9 +11,9 @@
 @interface PLVideo : PLItem {
 }
 // inherited: +(Class)_internalClass;
-// inherited: -(id)initWithURL:(id)url;
-// inherited: -(id)initWithData:(id)data;
-// inherited: -(id)initWithData:(id)data pathExtension:(id)extension;
+// inherited: -(instancetype)initWithURL:(id)url;
+// inherited: -(instancetype)initWithData:(id)data;
+// inherited: -(instancetype)initWithData:(id)data pathExtension:(id)extension;
 // inherited: -(void)dealloc;
 -(id)_createVideoView;
 // inherited: -(int)itemType;

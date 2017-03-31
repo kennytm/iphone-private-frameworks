@@ -25,7 +25,7 @@
 +(CGRect)entryFieldBalloonFrame:(CGRect)frame;
 +(float)defaultHeight;
 +(float)defaultWidthInPortrait;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)showFakeEntryView:(BOOL)view;
 -(void)fadeToSendingState:(BOOL)sendingState withDuration:(float)duration;
 -(void)dealloc;

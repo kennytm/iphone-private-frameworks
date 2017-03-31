@@ -19,7 +19,7 @@
 // in a protocol: +(BOOL)parsingLeafNode;
 // in a protocol: +(BOOL)parsingWithSubItems;
 // in a protocol: +(BOOL)frontingBasicTypes;
-// in a protocol: -(id)initWithSubclassRuleSet:(id)subclassRuleSet;
+// in a protocol: -(instancetype)initWithSubclassRuleSet:(id)subclassRuleSet;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 // inherited: -(id)asParseRules;

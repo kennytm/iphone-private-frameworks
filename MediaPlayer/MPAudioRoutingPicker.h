@@ -13,7 +13,7 @@
 	MPAudioDeviceController* _audioDeviceController;
 	BOOL _ignoringInteractionEvents;
 }
--(id)initWithAVController:(id)avcontroller;
+-(instancetype)initWithAVController:(id)avcontroller;
 -(void)setAVController:(id)controller;
 -(void)dealloc;
 -(void)pickRoute:(id)route;

@@ -20,8 +20,8 @@
 	} _sectionListFlags;
 }
 +(float)defaultIndexWidth;
--(id)initWithFrame:(CGRect)frame showSectionIndex:(BOOL)index;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame showSectionIndex:(BOOL)index;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)setDataSource:(id)source;
 -(float)marginForIndexControl:(BOOL)indexControl;

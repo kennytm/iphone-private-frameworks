@@ -12,7 +12,7 @@
 @interface ASFolderSyncTask : ASTask {
 	NSString* _previousSyncKey;
 }
--(id)initWithPreviousSyncKey:(id)previousSyncKey;
+-(instancetype)initWithPreviousSyncKey:(id)previousSyncKey;
 // inherited: -(int)commandCode;
 // inherited: -(double)timeoutInterval;
 // inherited: -(id)requestBody;

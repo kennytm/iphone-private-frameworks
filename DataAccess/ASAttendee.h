@@ -32,8 +32,8 @@
 // in a protocol: -(void)setObject:(id)object forCCPT:(int)ccpt;
 // inherited: -(id)asParseRules;
 -(void)saveToCalendarWithParentASEvent:(id)parentASEvent existingRecord:(void*)record treatNullsAsDeletes:(BOOL)deletes;
--(id)initWithCalAttendee:(void*)calAttendee parentEvent:(id)event;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithCalAttendee:(void*)calAttendee parentEvent:(id)event;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)appendActiveSyncDataForTask:(id)task toData:(id)data;
 -(id)fullEmailString;

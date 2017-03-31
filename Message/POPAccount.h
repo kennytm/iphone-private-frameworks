@@ -27,7 +27,7 @@
 }
 // inherited: +(id)accountTypeString;
 // inherited: +(id)saslProfileName;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // inherited: -(int)fetchSynchronously;

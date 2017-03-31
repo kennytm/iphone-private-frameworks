@@ -13,7 +13,7 @@
 @property(retain) id parentController;
 @property(retain) id rootController;
 +(BOOL)isOverlay;
--(id)initForContentSize:(CGSize)contentSize;
+-(instancetype)initForContentSize:(CGSize)contentSize;
 -(id)view;
 -(void)pushNavigationItemWithTitle:(id)title;
 -(void)pushNavigationItem:(id)item;

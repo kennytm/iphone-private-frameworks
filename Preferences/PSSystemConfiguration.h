@@ -14,7 +14,7 @@
 }
 +(id)sharedInstance;
 +(void)releaseSharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(unsigned char)lockAndSynchronize;
 -(CFStringRef)dataServiceID;

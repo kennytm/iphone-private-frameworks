@@ -12,7 +12,7 @@
 	unsigned _reserved;
 }
 +(id)machO64HeaderWithUniverse:(id)universe memory:(id)memory name:(id)name path:(id)path timestamp:(id)timestamp;
--(id)initWithUniverse:(id)universe memory:(id)memory name:(id)name path:(id)path timestamp:(id)timestamp;
+-(instancetype)initWithUniverse:(id)universe memory:(id)memory name:(id)name path:(id)path timestamp:(id)timestamp;
 // inherited: -(BOOL)isMachO64;
 @end
 

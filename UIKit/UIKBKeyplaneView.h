@@ -19,7 +19,7 @@
 }
 @property(retain, nonatomic) UIKBKeyplane* keyplane;
 @property(readonly, assign, nonatomic) NSString* visualStyle;
--(id)initWithFrame:(CGRect)frame keyboard:(id)keyboard keyplane:(id)keyplane;
+-(instancetype)initWithFrame:(CGRect)frame keyboard:(id)keyboard keyplane:(id)keyplane;
 // -(void)dealloc;
 -(BOOL)validForKeyplane:(id)keyplane withVisualStyle:(id)visualStyle;
 // -(void)drawRect:(CGRect)rect;

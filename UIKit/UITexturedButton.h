@@ -9,7 +9,7 @@
 
 @interface UITexturedButton : UIButton {
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(int)buttonType;
 -(void)setHighlighted:(BOOL)highlighted;
 -(CGSize)sizeThatFits:(CGSize)fits;

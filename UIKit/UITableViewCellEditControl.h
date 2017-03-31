@@ -20,7 +20,7 @@
 @property(assign, nonatomic, getter=isHiding) BOOL hiding;
 @property(assign, nonatomic, getter=isRotated) BOOL rotated;
 +(CGSize)defaultSize;
--(id)initWithTableViewCell:(id)tableViewCell editingStyle:(int)style;
+-(instancetype)initWithTableViewCell:(id)tableViewCell editingStyle:(int)style;
 -(void)layoutSubviews;
 -(void)setFrame:(CGRect)frame;
 -(void)setHighlighted:(BOOL)highlighted;

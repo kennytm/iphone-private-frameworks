@@ -22,9 +22,9 @@
 @property(assign, nonatomic) CGRect paddedFrame;
 @property(readonly, assign, nonatomic) unsigned uid;
 +(UIKBShape*)shape;
-//-(id)init;
+//-(instancetype)init;
 //-(void)dealloc;
-//-(id)initWithCoder:(id)coder;
+//-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 //-(void)encodeWithCoder:(id)coder;
 -(void)makeLikeOther:(id)other __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_2);
 -(unsigned)hash;

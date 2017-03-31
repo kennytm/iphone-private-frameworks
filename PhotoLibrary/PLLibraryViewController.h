@@ -22,7 +22,7 @@
 		unsigned reserved : 26;
 	} _libraryControllerFlags;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)iTunesSyncDidFinish;
 -(void)iTunesSyncDidStart;

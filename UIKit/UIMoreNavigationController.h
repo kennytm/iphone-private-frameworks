@@ -16,7 +16,7 @@
 @property(assign, nonatomic) UIViewController* displayedViewController;
 @property(assign, nonatomic) BOOL allowsCustomizing;
 @property(retain, nonatomic) NSArray* moreViewControllers;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)_preparedViewController:(id)controller;
 -(void)_restoreOriginalNavigationController;

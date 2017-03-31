@@ -13,7 +13,7 @@
 }
 +(id)moveRequestWithSession:(id)session path:(id)path toPath:(id)path3;
 -(void)addToHeader:(id)header;
--(id)initMoveWithSession:(id)session path:(id)path toPath:(id)path3;
+-(instancetype)initMoveWithSession:(id)session path:(id)path toPath:(id)path3;
 -(id)dependenciesList;
 @end
 

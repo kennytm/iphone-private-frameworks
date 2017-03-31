@@ -19,7 +19,7 @@
 +(id)_smartTagForTag:(id)tag;
 +(id)namespaceForTag:(id)tag;
 +(void)registerNSTags:(id)tags withNamespace:(id)aNamespace;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)tagForNSTag:(id)nstag;
 -(id)allXMLNSAttributes;

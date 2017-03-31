@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 	CGRect m_originalFrame;
 	CGRect m_baseFrame;
 }
--(id)initWithFrame:(CGRect)frame image:(id)image;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image;
 -(void)dealloc;
 -(id)image;
 -(void)setImage:(id)image;

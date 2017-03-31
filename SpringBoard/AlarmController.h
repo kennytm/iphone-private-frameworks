@@ -25,7 +25,7 @@
 -(void)_saveCountDownTimer;
 -(void)_alarmChanged:(id)changed;
 -(void)_resetCountDownTime;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_significantTimeChanged:(id)changed;
 -(unsigned)addAlarm:(id)alarm;

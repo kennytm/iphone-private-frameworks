@@ -22,8 +22,8 @@
 // inherited: -(BOOL)_displaysFullScreen;
 -(BOOL)_editingForThirdParty;
 -(void)_setupNavigationItemAndTrimTitle:(id)title;
--(id)initWithPhoto:(id)photo trimTitle:(id)title;
--(id)initWithProperties:(id)properties;
+-(instancetype)initWithPhoto:(id)photo trimTitle:(id)title;
+-(instancetype)initWithProperties:(id)properties;
 -(id)navigationItem;
 -(id)delegate;
 -(void)setDelegate:(id)delegate;

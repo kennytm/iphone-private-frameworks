@@ -32,8 +32,8 @@
 	AudioQueueBuffer* _buffers[3];
 	BOOL _bufferUsed[3];
 }
--(id)init;
--(id)initWithAttributes:(id)attributes;
+-(instancetype)init;
+-(instancetype)initWithAttributes:(id)attributes;
 -(void)dealloc;
 -(void)setFilePath:(id)path;
 -(id)filePath;

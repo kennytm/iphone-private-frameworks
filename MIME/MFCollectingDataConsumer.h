@@ -13,7 +13,7 @@
 @interface MFCollectingDataConsumer : NSObject <MFDataConsumer> {
 	NSMutableData* _data;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;
 -(id)data;

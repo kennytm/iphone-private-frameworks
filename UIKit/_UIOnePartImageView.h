@@ -11,7 +11,7 @@
 @interface _UIOnePartImageView : UIView {
 	UIImage* _image;
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setImage:(id)image;
 -(void)drawRect:(CGRect)rect;
 @end

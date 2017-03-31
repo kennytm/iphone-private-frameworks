@@ -31,7 +31,7 @@
 -(void)_goingToSleep:(id)sleep;
 -(void)_wakeUp:(id)up;
 -(BOOL)_listenForChanges;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)addListener:(id)listener;
 -(void)removeListener:(id)listener;
 // inherited: -(void)dealloc;

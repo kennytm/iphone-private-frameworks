@@ -11,7 +11,7 @@
 	NSInvocation* _curry;
 	Protocol* _protocol;
 }
--(id)initWithInvocation:(NSInvocation*)invocation protocol:(Protocol*)protocol;
+-(instancetype)initWithInvocation:(NSInvocation*)invocation protocol:(Protocol*)protocol;
 -(void)dealloc;
 -(void)forwardInvocation:(NSInvocation*)invocation;
 -(NSMethodSignature*)methodSignatureForSelector:(SEL)selector;

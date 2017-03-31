@@ -23,7 +23,7 @@
 @property(assign, nonatomic) CGSize centerToSelectionPointOffset;
 @property(readonly, assign, nonatomic) BOOL hasTextPosition;
 @property(assign, nonatomic) int textPosition;
--(id)initWithPosition:(int)position tintView:(id)view;
+-(instancetype)initWithPosition:(int)position tintView:(id)view;
 -(void)dealloc;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;

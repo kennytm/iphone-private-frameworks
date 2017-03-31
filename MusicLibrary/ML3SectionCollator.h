@@ -16,7 +16,7 @@
 }
 @property(readonly, assign, nonatomic) UCollator* stringICUCollator;
 @property(readonly, assign, nonatomic) UCollator* sectionICUCollator;
--(id)initWithSectionHeadersDictionaries:(id)sectionHeadersDictionaries;
+-(instancetype)initWithSectionHeadersDictionaries:(id)sectionHeadersDictionaries;
 -(void)dealloc;
 -(id)languageForCharacters:(const unsigned short*)characters length:(unsigned)length;
 -(int)compareCharacters:(const unsigned short*)characters length:(unsigned)length toCharacters:(const unsigned short*)characters3 length:(unsigned)length4;

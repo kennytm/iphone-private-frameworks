@@ -60,7 +60,7 @@ typedef enum PSCellType {
 +(PSSpecifier*)emptyGroupSpecifier;
 +(UITextAutocapitalizationType)autoCapsTypeForString:(PSSpecifier*)string;
 +(UITextAutocorrectionType)keyboardTypeForString:(PSSpecifier*)string;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)propertyForKey:(NSString*)key;
 -(void)setProperty:(id)property forKey:(NSString*)key;
 -(void)removePropertyForKey:(NSString*)key;

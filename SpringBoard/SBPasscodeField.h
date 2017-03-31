@@ -15,7 +15,8 @@
 	float _cancelFontSize;
 	float _buttonWidth;
 	BOOL _showsCancelButton;	
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	float _width;
 #endif
 	BOOL _isAlphanumericField;
@@ -26,20 +27,21 @@
 @property(assign, nonatomic) int clearButtonMode;
 @property(assign, nonatomic, getter=isOkayButtonEnabled) BOOL okayButtonEnabled;
 // inherited: +(Class)textFieldClass;
--(id)initWithStyle:(int)style;
+-(instancetype)initWithStyle:(int)style;
 -(id)_entryField;
 // inherited: -(void)setNumberOfEntryFields:(int)entryFields opaqueBackground:(BOOL)background;
 // inherited: -(void)setShowsOKButton:(BOOL)button;
 -(id)textInputTraits;
--(id)_localizedOKString;
--(id)_localizedCancelString;
+-(NSString *)_localizedOKString;
+-(NSString *)_localizedCancelString;
 -(void)_updateButtonMetrics;
 -(void)_updateButtonTitle;
 -(void)_updateButtonFrame;
 // inherited: -(void)_updateFields;
 -(BOOL)textFieldShouldClear:(id)textField;
 // inherited: -(void)_textDidChange;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(id)okButton;
 -(void)setIsAlphanumericField:(BOOL)field;
 // inherited: -(void)_updateFields;

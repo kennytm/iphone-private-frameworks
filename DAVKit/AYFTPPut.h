@@ -20,7 +20,7 @@
 	long long _writeSize;
 }
 +(id)putRequestWithURL:(id)url username:(id)username password:(id)password data:(id)data;
--(id)initPutRequestWithURL:(id)url username:(id)username password:(id)password data:(id)data;
+-(instancetype)initPutRequestWithURL:(id)url username:(id)username password:(id)password data:(id)data;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)dispatch;

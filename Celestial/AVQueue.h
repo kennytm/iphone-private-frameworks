@@ -19,9 +19,9 @@
 }
 +(id)avQueue;
 +(id)queueWithArray:(id)array error:(id*)error;
--(id)initWithError:(id*)error;
--(id)init;
--(id)initWithArray:(id)array error:(id*)error;
+-(instancetype)initWithError:(id*)error;
+-(instancetype)init;
+-(instancetype)initWithArray:(id)array error:(id*)error;
 -(void)dealloc;
 -(int)_instantiateItem;
 -(unsigned)itemCount;

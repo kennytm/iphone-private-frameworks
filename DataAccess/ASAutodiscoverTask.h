@@ -17,7 +17,7 @@
 	NSMutableDictionary* _accountInfo;
 	NSError* _discoveryError;
 }
--(id)initWithURL:(id)url emailAddress:(id)address;
+-(instancetype)initWithURL:(id)url emailAddress:(id)address;
 // inherited: -(void)dealloc;
 // inherited: -(double)timeoutInterval;
 // inherited: -(id)_url;

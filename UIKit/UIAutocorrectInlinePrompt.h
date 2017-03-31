@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 	unsigned m_index;
 	int m_promptTextType;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(int)textEffectsVisibilityLevel;
 // inherited: -(void)dealloc;
 -(void)removePromptSubviews;

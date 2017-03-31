@@ -18,7 +18,7 @@
 	unsigned _reloadingForBoot : 1;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)didWakeFromSleep;
 -(void)reloadAlarms:(BOOL)alarms;

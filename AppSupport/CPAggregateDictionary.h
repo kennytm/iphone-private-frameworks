@@ -21,7 +21,7 @@
 }
 @property(readonly, assign, nonatomic, getter=isEnabled) BOOL enabled;
 +(CPAggregateDictionary*)sharedAggregateDictionary;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)sendMessageName:(NSString*)name key:(NSString*)key arguments:(id)arguments;
 -(void)sendMessageName:(NSString*)name key:(NSString*)key argument:(id)argument;

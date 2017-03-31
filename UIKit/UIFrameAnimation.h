@@ -12,7 +12,7 @@
 	CGRect _endFrame;
 	int _fieldsToChange;
 }
--(id)initWithTarget:(id)target;
+-(instancetype)initWithTarget:(id)target;
 -(void)setStartFrame:(CGRect)frame;
 -(void)setEndFrame:(CGRect)frame;
 -(CGRect)endFrame;

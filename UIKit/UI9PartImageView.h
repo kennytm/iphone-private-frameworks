@@ -22,7 +22,7 @@
 	UIImage* _image;
 	unsigned _dontReflow : 1;
 }
--(id)initWithFrame:(CGRect)frame image:(id)image slices:(XXStruct_4cr1oD)slices;
+-(instancetype)initWithFrame:(CGRect)frame image:(id)image slices:(XXStruct_4cr1oD)slices;
 -(void)dealloc;
 -(void)rebuildTiles;
 -(void)reflowTiles;

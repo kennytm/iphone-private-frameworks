@@ -15,7 +15,7 @@
 }
 +(id)_shadowImage;
 +(float)defaultHeight;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

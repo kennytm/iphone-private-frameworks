@@ -89,7 +89,7 @@
 @property(readonly, assign, nonatomic) MLPhoto* videoCameraImage;
 @property(assign, nonatomic) PLImageTile* imageTile;
 @property(assign, nonatomic) id<PLVideoViewDelegate> delegate;
--(id)initWithFrame:(CGRect)frame videoCameraImage:(id)image orientation:(int)orientation;
+-(instancetype)initWithFrame:(CGRect)frame videoCameraImage:(id)image orientation:(int)orientation;
 // inherited: -(void)dealloc;
 // in a protocol: -(id)description;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;

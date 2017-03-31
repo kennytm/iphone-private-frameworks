@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 	BOOL _captureEnabled;
 	BOOL _inGesture;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame keyboard:(id)keyboard key:(id)key state:(int)state;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame keyboard:(id)keyboard key:(id)key state:(int)state;
 // inherited: -(void)dealloc;
 -(void)updateKeyboard:(id)keyboard key:(id)key;
 -(BOOL)clear;

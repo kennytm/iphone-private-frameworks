@@ -25,7 +25,7 @@
 +(VMUMachOHeader*)headerFromSharedCacheWithPath:(NSString*)path;
 +(id<VMUMemory>)memoryWithPath:(NSString*)path;
 +(id<VMUMemory>)memoryWithPath:(NSString*)path fileRange:(VMURange)range mapToAddress:(unsigned long long)address architecture:(VMUArchitecture*)architecture;
--(id)initWithPath:(id)path fileRange:(VMURange)range mapToAddress:(unsigned long long)address architecture:(id)architecture;
+-(instancetype)initWithPath:(id)path fileRange:(VMURange)range mapToAddress:(unsigned long long)address architecture:(id)architecture;
 -(NSString*)path;
 -(NSDate*)lastModifiedTimestamp;
 -(void)buildSharedCacheMap;

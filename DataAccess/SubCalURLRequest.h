@@ -33,7 +33,7 @@
 @property(retain, nonatomic) NSMutableData* connectionData;
 +(id)_cachedICSFilesDirectory;
 +(void)_initializeFileCache;
--(id)initWithURL:(id)url;
+-(instancetype)initWithURL:(id)url;
 // inherited: -(void)dealloc;
 -(void)_setHeadersOnRequest:(id)request;
 -(void)startConnection;

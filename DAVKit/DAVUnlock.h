@@ -13,7 +13,7 @@
 +(id)unlockRequestWithURL:(id)url lockToken:(id)token;
 +(id)unlockRequestWithSession:(id)session path:(id)path lockToken:(id)token;
 -(void)_initUnlockForToken:(id)token;
--(id)initUnlockWithURL:(id)url lockToken:(id)token;
--(id)initUnlockWithSession:(id)session path:(id)path lockToken:(id)token;
+-(instancetype)initUnlockWithURL:(id)url lockToken:(id)token;
+-(instancetype)initUnlockWithSession:(id)session path:(id)path lockToken:(id)token;
 @end
 

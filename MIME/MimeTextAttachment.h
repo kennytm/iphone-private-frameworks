@@ -13,8 +13,8 @@
 	MimePart* _mimePart;
 }
 // inherited: -(void)dealloc;
--(id)initWithMimePart:(id)mimePart;
--(id)initWithMimePart:(id)mimePart andFileWrapper:(id)wrapper;
+-(instancetype)initWithMimePart:(id)mimePart;
+-(instancetype)initWithMimePart:(id)mimePart andFileWrapper:(id)wrapper;
 // inherited: -(id)mimePart;
 -(id)displayedMimePart;
 -(void)setMimePart:(id)part;

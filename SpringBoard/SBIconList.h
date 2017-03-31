@@ -18,7 +18,8 @@
 	SBIcon* _bouncedIcon;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	NSMutableArray* _icons;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	NSMutableArray* _iconMatrix;
 #endif
 	NSMutableArray* _removedIcons;
@@ -34,27 +35,27 @@
 	UIView* _fadeView;
 #endif
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(NSArray*)icons;
 -(BOOL)isEmpty;
 -(BOOL)needsCompacting;
 -(void)compactIconsInIconList:(BOOL)iconList;
--(void)showIconAnimationDidStop:(id)showIconAnimation didFinish:(id)finish icon:(id)icon;
--(BOOL)containsIcon:(id)icon;
--(BOOL)containsIconForDisplayIdentifier:(id)displayIdentifier;
--(void)removeIcon:(id)icon compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
+-(void)showIconAnimationDidStop:(id)showIconAnimation didFinish:(id)finish icon:(SBIcon *)icon;
+-(BOOL)containsIcon:(SBIcon *)icon;
+-(BOOL)containsIconForDisplayIdentifier:(NSString *)displayIdentifier;
+-(void)removeIcon:(SBIcon *)icon compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
 -(void)removeAllIcons;
 -(BOOL)isScattered;
--(void)setIconAlphaForRow:(int)row column:(int)column alpha:(float)alpha;
+-(void)setIconAlphaForRow:(NSInteger)row column:(NSInteger)column alpha:(CGFloat)alpha;
 -(void)removeAllIconAnimations;
--(float)verticalIconPadding;
--(float)topIconPadding;
--(CGPoint)originForIconAtX:(int)x Y:(int)y;
--(CGPoint)originForIcon:(id)icon;
+-(CGFloat)verticalIconPadding;
+-(CGFloat)topIconPadding;
+-(CGPoint)originForIconAtX:(NSInteger)x Y:(NSInteger)y;
+-(CGPoint)originForIcon:(SBIcon *)icon;
 -(void)setFrame:(CGRect)frame;
 -(void)layoutIconsNow;
--(float)layoutIconsIfNeeded:(float)needed domino:(BOOL)domino;
+-(CGFloat)layoutIconsIfNeeded:(CGFloat)needed domino:(BOOL)domino;
 -(int)columnAtPoint:(CGPoint)point;
 -(int)rowAtPoint:(CGPoint)point;
 -(void)removeInfoAnimation:(id)animation didFinish:(id)finish view:(id)view;
@@ -63,60 +64,61 @@
 -(void)setStateIsDirty:(BOOL)dirty;
 -(BOOL)stateIsDirty;
 -(BOOL)isDock;
--(void)setBouncedIcon:(id)icon;
--(id)bouncedIcon;
+-(void)setBouncedIcon:(SBIcon *)icon;
+-(SBIcon *)bouncedIcon;
 -(void)resetWithRepresentation:(id)representation;
--(id)initWithRepresentation:(id)representation;
+-(instancetype)initWithRepresentation:(id)representation;
 -(NSArray*)representation;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-+(int)iconRowsForInterfaceOrientation:(int)interfaceOrientation;
-+(int)iconColumnsForInterfaceOrientation:(int)interfaceOrientation;
-+(int)maxIcons;
--(int)iconRowsForCurrentOrientation;
--(int)iconColumnsForCurrentOrientation;
--(int)iconsInRowForSpacingCalculation;
--(void)setOrientation:(int)orientation;
++(NSInteger)iconRowsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
++(NSInteger)iconColumnsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
++(NSInteger)maxIcons;
+-(NSInteger)iconRowsForCurrentOrientation;
+-(NSInteger)iconColumnsForCurrentOrientation;
+-(NSInteger)iconsInRowForSpacingCalculation;
+-(void)setOrientation:(UIInterfaceOrientation)interfaceOrientation;
 -(void)setDisplaysOnWallpaper:(BOOL)wallpaper;
--(int)indexForX:(int)x Y:(int)y forOrientation:(int)orientation;
--(void)getX:(int*)x Y:(int*)y forIndex:(int)index forOrientation:(int)orientation;
--(id)iconAtIndex:(int)index;
--(BOOL)firstFreeSlotIndex:(int*)index;
--(id)placeIcon:(id)icon atIndex:(int)index animate:(BOOL)animate moveNow:(BOOL)now;
--(id)insertIcon:(id)icon atIndex:(int)index moveNow:(BOOL)now;
--(BOOL)getIndex:(int*)index forIcon:(id)icon;
--(BOOL)getIndex:(int*)index forDisplayIdentifier:(id)displayIdentifier;
--(void)removeIconAtIndex:(int)index compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
+-(NSInteger)indexForX:(NSInteger)x Y:(NSInteger)y forOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(void)getX:(NSInteger *)x Y:(NSInteger *)y forIndex:(NSInteger)index forOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(SBIcon *)iconAtIndex:(NSInteger)index;
+-(BOOL)firstFreeSlotIndex:(NSInteger *)index;
+-(id)placeIcon:(SBIcon *)icon atIndex:(NSInteger)index animate:(BOOL)animate moveNow:(BOOL)now;
+-(id)insertIcon:(SBIcon *)icon atIndex:(NSInteger)index moveNow:(BOOL)now;
+-(BOOL)getIndex:(NSInteger *)index forIcon:(SBIcon *)icon;
+-(BOOL)getIndex:(NSInteger *)index forDisplayIdentifier:(id)displayIdentifier;
+-(void)removeIconAtIndex:(NSInteger)index compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
 -(void)scatterWithDuration:(double)duration startTime:(double)time;
 -(void)unscatterWithDuration:(double)duration startTime:(double)time;
--(void)fade:(float)fade;
--(float)horizontalIconInset;
--(float)horizontalIconSpace;
--(CGPoint)originForIconAtIndex:(int)index;
+-(void)fade:(CGFloat)fade;
+-(CGFloat)horizontalIconInset;
+-(CGFloat)horizontalIconSpace;
+-(CGPoint)originForIconAtIndex:(NSInteger)index;
 -(void)setIconsNeedLayout;
--(id)iconAtPoint:(CGPoint)point index:(int*)index;
--(id)iconAtPoint:(CGPoint)point index:(int*)index proposedOrder:(int*)order;
--(void)makeColumn:(int)column showImages:(BOOL)images andJitter:(BOOL)jitter;
--(id)rotationIconContainers;
--(void)prepareToRotateToInterfaceOrientation:(int)interfaceOrientation;
--(void)performRotationWithDuration:(double)duration;
+-(SBIcon *)iconAtPoint:(CGPoint)point index:(NSInteger *)index;
+-(SBIcon *)iconAtPoint:(CGPoint)point index:(NSInteger *)index proposedOrder:(int*)order;
+-(void)makeColumn:(NSInteger)column showImages:(BOOL)images andJitter:(BOOL)jitter;
+-(NSArray *)rotationIconContainers;
+-(void)prepareToRotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+-(void)performRotationWithDuration:(NSTimeInterval)duration;
 -(void)cleanupAfterRotation;
-#else
--(float)horizontalIconInset;
--(int)maxIconRows;
--(int)maxIconColumns;
--(SBIcon*)iconAtX:(int)x Y:(int)y;
--(BOOL)firstFreeSlotX:(int*)x Y:(int*)y;
--(id)placeIcon:(id)icon atX:(int)x Y:(int)y animate:(BOOL)animate moveNow:(BOOL)now;
--(id)insertIcon:(id)icon atX:(int)x Y:(int)y moveNow:(BOOL)now;
--(BOOL)getX:(int*)x Y:(int*)y forIcon:(id)icon;
--(BOOL)getX:(int*)x Y:(int*)y forDisplayIdentifier:(id)displayIdentifier;
--(void)removeIconAtX:(int)x Y:(int)y compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+-(CGFloat)horizontalIconInset;
+-(NSInteger)maxIconRows;
+-(NSInteger)maxIconColumns;
+-(SBIcon*)iconAtX:(NSInteger)x Y:(NSInteger)y;
+-(BOOL)firstFreeSlotX:(NSInteger *)x Y:(NSInteger *)y;
+-(id)placeIcon:(SBIcon *)icon atX:(NSInteger)x Y:(NSInteger)y animate:(BOOL)animate moveNow:(BOOL)now;
+-(id)insertIcon:(SBIcon *)icon atX:(NSInteger)x Y:(NSInteger)y moveNow:(BOOL)now;
+-(BOOL)getX:(NSInteger *)x Y:(NSInteger *)y forIcon:(SBIcon *)icon;
+-(BOOL)getX:(NSInteger *)x Y:(NSInteger *)y forDisplayIdentifier:(id)displayIdentifier;
+-(void)removeIconAtX:(NSInteger)x Y:(NSInteger)y compactEmptyLists:(BOOL)lists animate:(BOOL)animate;
 -(void)scatter:(BOOL)scatter startTime:(double)time;
 -(void)unscatter:(BOOL)unscatter startTime:(double)time;
 -(void)setIconsNeedLayout;
 -(int)visibleIconsInRow:(id)row;
--(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y;
--(id)iconAtPoint:(CGPoint)point X:(int*)x Y:(int*)y proposedOrder:(int*)order;
+-(SBIcon *)iconAtPoint:(CGPoint)point X:(NSInteger *)x Y:(NSInteger *)y;
+-(SBIcon *)iconAtPoint:(CGPoint)point X:(NSInteger *)x Y:(NSInteger *)y proposedOrder:(NSInteger *)order;
 #endif
 @end
 

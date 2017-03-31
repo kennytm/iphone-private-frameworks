@@ -7,7 +7,7 @@
 
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 
 #import "PhotoLibrary-Structs.h"
@@ -21,7 +21,7 @@
 // inherited: +(Class)tileClass;
 +(int)tileWidth;
 +(void)setTileSize:(CGSize)size;
--(id)initWithSize:(CGSize)size;
+-(instancetype)initWithSize:(CGSize)size;
 -(CGSize)imageSize;
 -(void)setDelegate:(id)delegate;
 // inherited: -(id)_createTileWithFrame:(CGRect)frame;

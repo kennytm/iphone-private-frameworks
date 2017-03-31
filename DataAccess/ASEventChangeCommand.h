@@ -12,7 +12,7 @@
 @interface ASEventChangeCommand : ASSyncTaskCommand {
 	ASEvent* _event;
 }
--(id)initWithEvent:(id)event;
+-(instancetype)initWithEvent:(id)event;
 // inherited: -(void)appendApplicationDataForTask:(id)task toWBXMLData:(id)wbxmldata;
 -(id)event;
 // inherited: -(void)dealloc;

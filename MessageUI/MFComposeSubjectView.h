@@ -15,7 +15,7 @@
 	UITextField* _textField;
 	unsigned _delegateRespondsToTextChange : 1;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)layoutSubviews;
 // inherited: -(BOOL)becomeFirstResponder;
 -(void)textFieldDidResignFirstResponder:(id)textField;

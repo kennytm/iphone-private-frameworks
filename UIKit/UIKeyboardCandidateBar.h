@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 }
 +(id)sharedInstanceWithFrame:(CGRect)frame;
 +(id)sharedInstance;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 // inherited: -(void)dealloc;
 // in a protocol: -(void)setCandidates:(id)candidates inlineText:(id)text inlineRect:(CGRect)rect maxX:(float)x layout:(BOOL)layout;

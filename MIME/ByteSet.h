@@ -20,9 +20,9 @@
 +(id)suspiciousCodepage1252ByteSet;
 -(BOOL)byteIsMember:(BOOL)member;
 -(id)invertedSet;
--(id)initWithRange:(NSRange)range;
--(id)initWithCString:(const char*)cstring;
--(id)initWithBytes:(const void*)bytes length:(unsigned)length;
+-(instancetype)initWithRange:(NSRange)range;
+-(instancetype)initWithCString:(const char*)cstring;
+-(instancetype)initWithBytes:(const void*)bytes length:(unsigned)length;
 -(id)_initWithSet:(const char*)set;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // in a protocol: -(id)mutableCopyWithZone:(NSZone*)zone;

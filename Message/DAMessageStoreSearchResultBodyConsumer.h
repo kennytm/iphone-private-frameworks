@@ -19,7 +19,7 @@
 }
 @property(retain, nonatomic) MFError* error;
 @property(retain, nonatomic) id<DAMFStreamingContentConsumer> streamConsumer;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)waitUntilDoneBeforeDate:(id)date;
 -(void)waitUntilDone;
 // in a protocol: -(void)actionFailed:(int)failed forTask:(id)task error:(id)error;

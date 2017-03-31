@@ -29,7 +29,7 @@
 }
 +(int)parseStatusString:(id)string;
 +(id)firstPropertyWithType:(int)type inArray:(id)array;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)filenamesToETags;
 -(id)error;

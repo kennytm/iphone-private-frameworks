@@ -15,7 +15,7 @@
 	MailboxUid* _mailbox;
 	NSDate* startDate;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(BOOL)addItem:(id)item;
 // inherited: -(BOOL)handleItems:(id)items;
 // inherited: -(void)dealloc;

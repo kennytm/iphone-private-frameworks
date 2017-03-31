@@ -5,17 +5,15 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 #import <Availability2.h>
-
-@class UIWindow, NSMutableDictionary;
 
 @interface SBSheetController : NSObject {
 	NSMutableDictionary* _appToSheetMap;
 	UIWindow* _presentationWindow;
 }
-+(id)sharedInstance;
-// inherited: -(id)init;
++(SBSheetController *)sharedInstance;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)animateSheetUp:(id)up;
 -(void)animationDidStop:(id)animation finished:(id)finished context:(void*)context;
@@ -29,7 +27,8 @@
 -(BOOL)presentRemoteViewIdentifier:(id)identifier asSheetForApplication:(id)application requireTopApplication:(BOOL)application3;
 -(void)sendDeviceOrientationChangesToSheets;
 -(void)sendStatusBarOrientationWillChangeToSheets:(int)sendStatusBarOrientation duration:(float)duration;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(BOOL)presentRemoteViewIdentifier:(id)identifier asSheetForApplication:(id)application;
 #endif
 @end

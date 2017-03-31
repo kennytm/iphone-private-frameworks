@@ -15,7 +15,7 @@
 @property(readonly, assign, nonatomic) int undoButtonIndex;
 @property(readonly, assign, nonatomic) int redoButtonIndex;
 @property(readonly, assign, nonatomic) NSUndoManager* undoManager;
--(id)initWithDelegate:(id)delegate undoManager:(id)manager;
+-(instancetype)initWithDelegate:(id)delegate undoManager:(id)manager;
 -(void)show;
 -(void)dealloc;
 @end

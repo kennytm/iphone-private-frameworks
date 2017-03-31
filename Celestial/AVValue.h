@@ -12,7 +12,7 @@
 	SEL _selector;
 }
 +(id)valueWithSelector:(SEL)selector;
--(id)initWithSelector:(SEL)selector;
+-(instancetype)initWithSelector:(SEL)selector;
 -(SEL)selectorValue;
 @end
 

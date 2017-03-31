@@ -20,7 +20,7 @@
 	VMUMachOHeader* _hdr;
 }
 +(VMUDwarfExtractor*)dwarfExtractorWithMachOHeader:(id)machOHeader;
--(id)initWithMachOHeader:(id)machOHeader;
+-(instancetype)initWithMachOHeader:(id)machOHeader;
 // inherited: -(void)dealloc;
 -(void)parseCompilationUnitWithMemoryView:(id)memoryView withHeader:(id)header;
 -(id)parseAbbrevDictionaryAtOffset:(unsigned)offset;

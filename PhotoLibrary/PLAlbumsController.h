@@ -166,7 +166,7 @@
 -(id)_navigationController;
 -(void)setRotationDisabled:(BOOL)disabled;
 -(BOOL)isRotationEnabled;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_dismissModalViewControllerAnimated:(BOOL)animated;
 // inherited: -(void)dealloc;
 -(void)_showOverlaysForResume;

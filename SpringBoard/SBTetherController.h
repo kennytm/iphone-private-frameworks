@@ -15,14 +15,14 @@
 	int _lastOrientationCode;
 #endif
 }
-+(id)sharedInstance;
++(SBTetherController *)sharedInstance;
 -(unsigned)_demoCardConnection;
 -(BOOL)isTethered;
 -(void)noteInterfaceOrientationChanged;
 -(void)setDitheringEnabled:(int)enabled;
 -(void)updatePreferencesIfNeeded;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_postDisplayPortNotificationCode:(int)code;
 -(void)_setTetherState:(int)state;
 -(BOOL)usesDisplayPortTethering;

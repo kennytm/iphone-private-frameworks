@@ -31,8 +31,8 @@
 	int _fd;
 	NSString* _name;
 }
-// inherited: -(id)init;
--(id)initWithName:(NSString*)name;
+// inherited: -(instancetype)init;
+-(instancetype)initWithName:(NSString*)name;
 // inherited: -(void)dealloc;
 -(void)lock;
 -(void)unlock;

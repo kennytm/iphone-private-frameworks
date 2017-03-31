@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 	BOOL _assumeFileIsFixedSize;
 }
 +(id)mappedFileWithPath:(id)path fileIsFixedSize:(BOOL)size;
--(id)initWithPath:(id)path fileIsFixedSize:(BOOL)size;
+-(instancetype)initWithPath:(id)path fileIsFixedSize:(BOOL)size;
 -(void)release;
 -(void)dealloc;
 -(id)_segmentAtIndex:(unsigned long)index;

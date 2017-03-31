@@ -15,7 +15,7 @@
 //   { Name = NSTaskDidTerminateNotification; object = task; }
 //
 
-- (id)init;
+- (instancetype)init;
 
 // set parameters
 // these methods can only be done before a launch

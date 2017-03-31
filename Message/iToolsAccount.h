@@ -29,7 +29,7 @@
 +(id)configuredSyncAccountName;
 +(BOOL)isAOSEnabled;
 +(void)setAOSEnabled:(BOOL)enabled;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(id)hostname;
 // inherited: -(BOOL)isHostnameEquivalentTo:(id)to;
 // inherited: -(BOOL)isAccountClassEquivalentTo:(id)to;

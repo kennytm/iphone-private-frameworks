@@ -35,9 +35,9 @@
 +(NSString*)hostname;
 +(BOOL)isSSLEditable;
 +(id)saslProfileName;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)_initializeState;
--(id)initWithBasicAccount:(id)basicAccount;
+-(instancetype)initWithBasicAccount:(id)basicAccount;
 -(id)_initWithProperties:(id)properties;
 // in a protocol: -(void)dealloc;
 -(id)copyWithZone:(NSZone*)zone;

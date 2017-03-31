@@ -16,7 +16,7 @@
 }
 +(id)displayStringForSIMStatus:(id)simstatus;
 +(id)displayStringForRegistrationStatus:(int)registrationStatus;
--(id)initWithErrorString:(id)errorString;
+-(instancetype)initWithErrorString:(id)errorString;
 -(id)errorString;
 // inherited: -(void)dealloc;
 -(void)drawRect:(CGRect)rect;

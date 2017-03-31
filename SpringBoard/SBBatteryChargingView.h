@@ -15,7 +15,7 @@
 	int _type;
 	UIImageView* _topBatteryView;
 	UIImageView* _bottomBatteryView;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	UIImageView* _reflectionView;
 #endif
 	UIImage* _lastBatteryImage;
@@ -31,7 +31,7 @@
 +(CGSize)defaultSizeForType:(int)type;
 +(float)batteryHeightForType:(int)type;
 +(int)redChargeIndexForType:(int)type;
--(id)initWithFrame:(CGRect)frame type:(int)type;
+-(instancetype)initWithFrame:(CGRect)frame type:(int)type;
 // inherited: -(void)dealloc;
 -(void)setShowsReflection:(BOOL)reflection;
 -(int)_currentBatteryIndex;

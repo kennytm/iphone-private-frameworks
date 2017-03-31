@@ -13,7 +13,7 @@
 }
 @property(retain, nonatomic) UIKBKey* key;
 @property(assign, nonatomic) double interval;
--(id)initWithKey:(id)key interval:(double)interval;
+-(instancetype)initWithKey:(id)key interval:(double)interval;
 -(void)dealloc;
 @end
 

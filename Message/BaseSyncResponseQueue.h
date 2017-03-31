@@ -20,7 +20,7 @@
 	BOOL _shouldFetch;
 	BOOL _isSearching;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(unsigned)sizeForItem:(id)item;
 // inherited: -(BOOL)handleItems:(id)items;
 -(unsigned)uidForItem:(id)item;

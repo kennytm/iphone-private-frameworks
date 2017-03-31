@@ -17,7 +17,7 @@
 @property(readonly, assign) int key;
 @property(readonly, assign) int status;
 @property(readonly, assign) id result;
--(id)initWithKey:(int)key status:(int)status result:(id)result;
+-(instancetype)initWithKey:(int)key status:(int)status result:(id)result;
 // inherited: -(void)dealloc;
 @end
 

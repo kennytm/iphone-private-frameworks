@@ -75,9 +75,9 @@
 -(void)tearDownUI;
 -(id)topView;
 -(id)bottomView;
--(id)initForContentSize:(CGSize)contentSize navigationItem:(id)item;
--(id)initForContentSize:(CGSize)contentSize navigationItem:(id)item showKeyboardImmediately:(BOOL)immediately;
-// inherited: -(id)init;
+-(instancetype)initForContentSize:(CGSize)contentSize navigationItem:(id)item;
+-(instancetype)initForContentSize:(CGSize)contentSize navigationItem:(id)item showKeyboardImmediately:(BOOL)immediately;
+// inherited: -(instancetype)init;
 -(void)_pickInitialFirstResponder;
 -(int)composeType;
 -(void)setCompositionContext:(MailCompositionContext*)context;

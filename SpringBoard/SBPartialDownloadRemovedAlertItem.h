@@ -14,7 +14,7 @@
 @interface SBPartialDownloadRemovedAlertItem : SBAlertItem {
 	BOOL _allRemoved;
 }
--(id)initWithAllDownloadsRemoved:(BOOL)allDownloadsRemoved;
+-(instancetype)initWithAllDownloadsRemoved:(BOOL)allDownloadsRemoved;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;
 // inherited: -(BOOL)shouldShowInLockScreen;

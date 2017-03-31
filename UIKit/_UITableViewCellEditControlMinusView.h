@@ -7,7 +7,7 @@
 __attribute__((visibility("hidden")))
 @interface _UITableViewCellEditControlMinusView : UIView {
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 //-(void)drawRect:(CGRect)rect;
 @end
 

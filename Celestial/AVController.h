@@ -21,10 +21,10 @@
 +(BOOL)isNetworkSupportedPath:(id)path;
 +(id)avController;
 +(id)avControllerWithQueue:(id)queue error:(id*)error;
--(id)initWithError:(id*)error;
+-(instancetype)initWithError:(id*)error;
 -(void)setAVItemClass:(Class)aClass;
--(id)init;
--(id)initForStreaming;
+-(instancetype)init;
+-(instancetype)initForStreaming;
 -(void)dealloc;
 -(AVControllerPrivate*)privateStorage;
 -(BOOL)isNewImageAvailableForTime:(const XXStruct_pwHToB*)time willNeverBeAvailable:(BOOL*)available;
@@ -102,9 +102,9 @@
 -(id)delegate;
 -(void)setDelegate:(id)delegate;
 -(void)safeSubtitleCommandPosted:(void*)posted;
--(id)initWithQueue:(id)queue error:(id*)error;
+-(instancetype)initWithQueue:(id)queue error:(id*)error;
 -(BOOL)isValid;
--(id)initWithQueue:(id)queue fmpType:(unsigned)type error:(id*)error;
+-(instancetype)initWithQueue:(id)queue fmpType:(unsigned)type error:(id*)error;
 -(void)logPerformanceDataForCurrentItem;
 -(void)setQueue:(id)queue;
 -(void)updateTimeMarkerObservations;

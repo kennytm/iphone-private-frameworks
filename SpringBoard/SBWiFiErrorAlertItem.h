@@ -15,7 +15,7 @@
 	NSString* _name;
 	int _error;
 }
--(id)initWithNetworkName:(id)networkName error:(int)error;
+-(instancetype)initWithNetworkName:(id)networkName error:(int)error;
 // inherited: -(void)dealloc;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 @property(assign, nonatomic) id delegate;

@@ -26,8 +26,8 @@
 +(CGRect)frameRectForOpaqueContentRect:(CGRect)opaqueContentRect;
 +(CGRect)opaqueContentRectForFrameRect:(CGRect)frameRect;
 -(void)_commonInitValueButton;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithTitle:(id)title;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithTitle:(id)title;
 -(void)dealloc;
 -(id)_titleByCombiningLabelAndValue;
 -(void)setValue:(id)value;

@@ -13,13 +13,15 @@
 @interface UILabel ()
 +(id)defaultFont;
 -(void)_commonInit;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(CGSize)textSize;
--(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(int)lines;
+#ifndef __IPHONE_7_0
+-(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)lines;
+#endif
 -(void)_invalidateTextSize;
 -(void)setActualFontSize:(float)size;
 -(float)actualFontSize;

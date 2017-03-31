@@ -12,7 +12,7 @@
 @interface MessageTextAttachment : NSObject {
 	MessageFileWrapper* _fileWrapper;
 }
--(id)initWithWrapper:(id)wrapper;
+-(instancetype)initWithWrapper:(id)wrapper;
 // inherited: -(void)dealloc;
 -(unsigned)approximateSize;
 -(id)mimePart;

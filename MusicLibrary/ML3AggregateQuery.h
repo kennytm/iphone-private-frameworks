@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 }
 @property(readonly, assign) Class aggregateEntityClass;
 @property(readonly, assign) NSString* foreignPersistentIDProperty;
--(id)initWithUnitQuery:(id)unitQuery aggregateEntityClass:(Class)aClass foreignPersistentIDProperty:(id)property;
+-(instancetype)initWithUnitQuery:(id)unitQuery aggregateEntityClass:(Class)aClass foreignPersistentIDProperty:(id)property;
 -(void)dealloc;
 -(Class)entityClass;
 -(id)persistentIDProperty;

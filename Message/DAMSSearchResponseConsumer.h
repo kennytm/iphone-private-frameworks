@@ -17,7 +17,7 @@
 	unsigned totalCount;
 }
 @property(retain, nonatomic) NSDate* latestDateToAdd;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(BOOL)waitUntilDoneBeforeDate:(id)date;
 -(void)waitUntilDone;
 -(void)resetDoneCondition;

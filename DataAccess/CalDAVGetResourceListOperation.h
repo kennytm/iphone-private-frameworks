@@ -13,7 +13,7 @@
 	NSArray* _list;
 	int _index;
 }
--(id)initWithSession:(id)session URI:(id)uri list:(id)list withIndex:(int)index;
+-(instancetype)initWithSession:(id)session URI:(id)uri list:(id)list withIndex:(int)index;
 // inherited: -(void)dealloc;
 -(int)index;
 -(id)list;

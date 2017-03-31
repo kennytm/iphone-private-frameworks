@@ -23,7 +23,7 @@
 	id _delegate;
 }
 +(double)maximumDurationForTrimMode:(int)trimMode;
--(id)initWithPath:(id)path;
+-(instancetype)initWithPath:(id)path;
 // inherited: -(void)dealloc;
 -(id)progressView;
 -(id)delegate;

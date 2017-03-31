@@ -10,7 +10,7 @@
 @interface UIWebSelectionOutline : UIView {
 	UIView* _lineViews[4];
 }
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFrame:(CGRect)frame;
 -(void)layoutSubviews;
 -(void)dealloc;

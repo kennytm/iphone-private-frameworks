@@ -7,7 +7,7 @@
 
 #import <Availability2.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
 #import "SpringBoard-Structs.h"
 #import <UIKit/UIView.h>
@@ -25,7 +25,7 @@
 }
 +(void)loadImages;
 +(CGSize)controlSize;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)_checkHeadphonesPresent;
 -(void)setMode:(int)mode;
 -(void)setVolume:(float)volume mode:(int)mode;

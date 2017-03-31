@@ -15,7 +15,7 @@
 @private
 	UITextInputTraits* _traits;
 }
--(id)initWithFrame:(CGRect)frame recipient:(id)recipient;
+-(instancetype)initWithFrame:(CGRect)frame recipient:(id)recipient;
 // inherited: -(void)dealloc;
 // inherited: -(id)title;
 -(void)setDelegate:(id)delegate;

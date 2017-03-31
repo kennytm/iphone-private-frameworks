@@ -21,7 +21,7 @@
 	NSMutableData* _readData;
 }
 +(id)getRequestWithURL:(id)url username:(id)username password:(id)password;
--(id)initGetRequestWithURL:(id)url username:(id)username password:(id)password;
+-(instancetype)initGetRequestWithURL:(id)url username:(id)username password:(id)password;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // inherited: -(void)resetOperation;

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface UIWebViewWebViewDelegate : NSObject {
 	UIWebView* uiWebView;
 }
--(id)initWithUIWebView:(id)uiwebView;
+-(instancetype)initWithUIWebView:(id)uiwebView;
 -(void)webView:(id)view decidePolicyForNewWindowAction:(id)newWindowAction request:(id)request newFrameName:(id)name decisionListener:(id)listener;
 -(void)webView:(id)view decidePolicyForNavigationAction:(id)navigationAction request:(id)request frame:(id)frame decisionListener:(id)listener;
 -(void)webView:(id)view unableToImplementPolicyWithError:(id)error frame:(id)frame;

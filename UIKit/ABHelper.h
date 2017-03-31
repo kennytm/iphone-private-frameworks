@@ -11,7 +11,7 @@
 	void* _me;
 }
 +(id)sharedHelper;
--(id)initHelper;
+-(instancetype)initHelper;
 -(void)dealloc;
 -(void*)me;
 @end

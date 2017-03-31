@@ -99,7 +99,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIKBKey* activeKey;
 @property(assign, nonatomic) BOOL shift;
 @property(assign, nonatomic) BOOL didLongPress;
-//-(id)initWithFrame:(CGRect)frame;
+//-(instancetype)initWithFrame:(CGRect)frame;
 //-(void)dealloc;
 -(void)setKeyboardName:(NSString*)name appearance:(UIKeyboardAppearance)appearance;
 -(void)setCurrencyKeysForCurrentLocale:(NSLocale*)currentLocale;

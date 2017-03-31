@@ -14,7 +14,7 @@
 	NSRecursiveLock* _lock;
 	BOOL _isValid;
 }
--(id)initWithPath:(id)path;
+-(instancetype)initWithPath:(id)path;
 -(void)_setupOnMainThread:(id)thread;
 -(void)_validationCompleted:(id)completed;
 -(void)_startValidation;

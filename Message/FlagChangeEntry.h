@@ -16,7 +16,7 @@
 	unsigned connectionTag;
 	double commitTime;
 }
--(id)initWithPath:(id)path UID:(unsigned)uid changes:(id)changes;
+-(instancetype)initWithPath:(id)path UID:(unsigned)uid changes:(id)changes;
 // inherited: -(void)dealloc;
 @end
 

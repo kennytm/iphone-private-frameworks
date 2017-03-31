@@ -6,7 +6,7 @@
 
 @interface SBDeviceLockViewWithKeyboardPhone : SBDeviceLockViewWithKeyboard {
 }
-// inherited: -(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(BOOL)showsEmergencyCallButton;
 // inherited: -(void)setShowsEmergencyCallButton:(BOOL)button;
 // inherited: -(void)returnKeyPressed:(id)pressed;

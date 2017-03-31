@@ -16,7 +16,7 @@
 +(CGSize)defaultSizeForTitle:(id)title;
 +(id)_backgroundImage;
 +(id)_highlightedBackgroundImage;
--(id)initWithTitle:(id)title;
+-(instancetype)initWithTitle:(id)title;
 -(void)dealloc;
 -(void)drawBackgroundInRect:(CGRect)rect;
 -(void)drawRect:(CGRect)rect;

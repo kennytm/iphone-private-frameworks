@@ -17,7 +17,7 @@
 	UIImageView* _wellView;
 	unsigned _didLayout : 1;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)layoutSubviews;
 -(void)_updateProgressWidthForPercent:(float)percent;

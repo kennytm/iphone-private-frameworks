@@ -15,7 +15,7 @@
 	NSArray* _fatArchs;
 }
 +(id)fatHeaderWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
--(id)initWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
+-(instancetype)initWithMemory:(id)memory path:(id)path timestamp:(id)timestamp;
 // inherited: -(BOOL)isFat;
 -(id)path;
 -(id)timestamp;

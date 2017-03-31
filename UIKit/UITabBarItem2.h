@@ -10,8 +10,8 @@
 @class NSSet, UIView, NSString, UIImage;
 
 @interface UITabBarItem ()
--(id)init;
--(id)initWithCoder:(id)coder;
+-(instancetype)init;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
 -(void)setEnabled:(BOOL)enabled;

@@ -20,6 +20,14 @@ from
 #include <IOSurface/IOSurfaceAPI.h>
 #include <IOSurface/IOSurfaceAccelerator.h>
 
+#if __cplusplus
+extern "C" {
+#endif
+
 void IOSurfaceFlushProcessorCaches(IOSurfaceRef surface);
+
+#if __cplusplus
+}
+#endif
 
 #endif

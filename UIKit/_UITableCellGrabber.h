@@ -12,7 +12,7 @@
 	UITableCell* _cell;
 	CGPoint _downPoint;
 }
--(id)initWithCell:(id)cell;
+-(instancetype)initWithCell:(id)cell;
 -(void)drawRect:(CGRect)rect;
 -(BOOL)shouldTrack;
 -(BOOL)beginTrackingAt:(CGPoint)at withEvent:(GSEventRef)event;

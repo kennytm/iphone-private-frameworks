@@ -14,7 +14,7 @@
 	NSArray* _resourceURIs;
 	DAVSession* _session;
 }
--(id)initWithSession:(id)session URI:(id)uri resources:(id)resources;
+-(instancetype)initWithSession:(id)session URI:(id)uri resources:(id)resources;
 // inherited: -(void)dealloc;
 -(id)resourceURIs;
 -(id)resources;

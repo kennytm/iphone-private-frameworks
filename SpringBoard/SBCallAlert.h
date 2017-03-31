@@ -13,7 +13,7 @@
 	BOOL _causedSuspension;
 }
 // inherited: +(void)registerForAlerts;
--(id)initWithCall:(CTCallRef)call;
+-(instancetype)initWithCall:(CTCallRef)call;
 // inherited: -(void)dealloc;
 -(void)_handleCallEvent:(CTCallRef)event;
 -(void)_handleCallerIDEvent:(CTCallRef)event;

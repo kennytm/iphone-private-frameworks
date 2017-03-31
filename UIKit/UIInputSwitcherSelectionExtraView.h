@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 	float m_pointerOffset;
 }
 @property(assign, nonatomic) float pointerOffset;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 //-(void)setFrame:(CGRect)frame;
 //-(void)drawRect:(CGRect)rect;
 @end

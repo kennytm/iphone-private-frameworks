@@ -32,7 +32,7 @@
 @property(readonly, assign, nonatomic) NSMutableArray* failedMessages;
 @property(retain, nonatomic) CKMessageComposition* unsentComposition;
 -(int)groupID;
--(id)initWithGroupID:(int)groupID service:(id)service;
+-(instancetype)initWithGroupID:(int)groupID service:(id)service;
 -(id)recipient;
 -(void)dealloc;
 -(void)setName:(id)name;

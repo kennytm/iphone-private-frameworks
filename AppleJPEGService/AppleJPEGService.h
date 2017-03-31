@@ -22,6 +22,10 @@ struct JPEGDriverArgs {
 	size_t dest_width /*in*/;
 	size_t dest_height /*in*/;
 	int quality /*in*/;
+	int paddingForOS4;
 };
+
+#define JPEGDriverArgsSizeOS3 (sizeof(struct JPEGDriverArgs) - sizeof(int))
+#define JPEGDriverArgsSizeOS4 (sizeof(struct JPEGDriverArgs))
 
 #endif

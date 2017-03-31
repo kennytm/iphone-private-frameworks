@@ -26,7 +26,7 @@
 // in a protocol: +(BOOL)parsingWithSubItems;
 // in a protocol: +(BOOL)frontingBasicTypes;
 // in a protocol: +(BOOL)expectsContent;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(int)_streamYourLittleHeartOutWithContext:(id)context;
 -(BOOL)nextParsedObjectWithContext:(id)context root:(id)root callbackDict:(id)dict streamCallbackDict:(id)dict4 collectionClassType:(int)type outParsedObject:(id*)object outCPTNumber:(int*)number account:(id)account;

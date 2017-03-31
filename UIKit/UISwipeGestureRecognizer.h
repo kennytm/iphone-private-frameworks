@@ -46,7 +46,7 @@
 @property(assign, nonatomic) float rateOfMinimumMovementDecay;
 @property(assign, nonatomic) float rateOfMaximumMovementDecay;
 @property(readonly, assign, nonatomic) CGPoint startPoint;
--(id)initWithTarget:(id)target action:(SEL)action;
+-(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(void)touchesBegan:(id)began withEvent:(id)event;
 -(void)touchesMoved:(id)moved withEvent:(id)event;
 -(void)touchesEnded:(id)ended withEvent:(id)event;

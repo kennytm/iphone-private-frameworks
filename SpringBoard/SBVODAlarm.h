@@ -19,7 +19,7 @@
 }
 +(void)cancelPendingLoads;
 +(void)_rentalInfoThread;
--(id)initWithDictionary:(id)dictionary;
+-(instancetype)initWithDictionary:(id)dictionary;
 // inherited: -(void)dealloc;
 -(int)compare:(id)compare;
 -(id)expirationDate;

@@ -36,7 +36,7 @@
 -(int)read:(char*)read maxLength:(unsigned)length;
 -(BOOL)hasBytesAvailable;
 -(BOOL)getBuffer:(char**)buffer length:(unsigned*)length;
--(id)initWithData:(id)data;
+-(instancetype)initWithData:(id)data;
 // inherited: -(void)dealloc;
 @end
 

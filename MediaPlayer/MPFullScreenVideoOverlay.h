@@ -45,7 +45,7 @@
 @property(assign, nonatomic) unsigned visibleParts;
 @property(assign, nonatomic) BOOL allowsDetailScrubbing;
 @property(assign, nonatomic) BOOL TVOutEnabled;
--(id)initWithFrame:(CGRect)frame interfaceOrientation:(int)orientation;
+-(instancetype)initWithFrame:(CGRect)frame interfaceOrientation:(int)orientation;
 -(void)dealloc;
 -(void)didMoveToSuperview;
 -(void)didMoveToWindow;

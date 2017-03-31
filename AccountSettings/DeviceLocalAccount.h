@@ -17,7 +17,7 @@
 +(id)localizedSyncSourceStringForDataClass:(id)dataClass forBeginningOfSentence:(BOOL)sentence;
 +(id)localizedReferenceToSyncSourceStringForDataClass:(id)dataClass;
 +(BOOL)isTetheredSyncingDataclass:(id)dataclass;
-// in a protocol: -(id)initWithBasicAccount:(id)basicAccount;
+// in a protocol: -(instancetype)initWithBasicAccount:(id)basicAccount;
 // inherited: -(id)identifier;
 // inherited: -(id)displayName;
 // inherited: -(id)syncStoreIdentifier;

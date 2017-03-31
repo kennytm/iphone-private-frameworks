@@ -18,7 +18,7 @@
 // inherited: +(void)initialize;
 +(id)versionString;
 +(id)copyNewMimeBoundary;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)topLevelPart;
 -(void)setTopLevelPart:(id)part;

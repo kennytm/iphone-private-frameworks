@@ -16,7 +16,7 @@
 	CalDAVServerVersion* _serverVersion;
 }
 +(BOOL)privilegeSetIndicatesWriteable:(id)writeable;
--(id)initWithCalendarHomePath:(id)calendarHomePath session:(id)session;
+-(instancetype)initWithCalendarHomePath:(id)calendarHomePath session:(id)session;
 // inherited: -(void)dealloc;
 -(void)getCalendars;
 -(id)paths;

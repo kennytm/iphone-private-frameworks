@@ -15,7 +15,7 @@
 	NSString* _type;
 }
 +(id)classInfoWithClassName:(id)className binaryName:(id)name type:(id)type;
--(id)initWithClassName:(id)className binaryName:(id)name type:(id)type;
+-(instancetype)initWithClassName:(id)className binaryName:(id)name type:(id)type;
 // inherited: -(void)dealloc;
 // inherited: -(unsigned)hash;
 // inherited: -(BOOL)isEqual:(id)equal;

@@ -40,8 +40,8 @@
 }
 +(id)sublayoutWithFrame:(CGRect)frame imagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
 +(id)compositedSublayoutWithFrame:(CGRect)frame compositeImagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
--(id)initWithFrame:(CGRect)frame imagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
--(id)initWithFrame:(CGRect)frame compositeImagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
+-(instancetype)initWithFrame:(CGRect)frame imagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
+-(instancetype)initWithFrame:(CGRect)frame compositeImagePaths:(id)paths keys:(const XXStruct_K4qLnD*)keys keysCount:(unsigned)count;
 -(void)dealloc;
 -(void)setUsesAutoShift:(BOOL)shift;
 -(BOOL)usesAutoShift;

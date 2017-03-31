@@ -12,7 +12,7 @@
 	BOOL _canDragToScroll;
 }
 @property(assign) double delay;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(double)_touchDelayForScrollDetection;
 -(void)setContentOffset:(CGPoint)offset;
 -(void)_stopLookingForScrolling;

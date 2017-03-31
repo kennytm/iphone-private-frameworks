@@ -14,7 +14,7 @@
 	NSMutableDictionary* _defaultsData;
 }
 @property(retain) NSDictionary* defaultsData;
--(id)initWithController:(id)controller;
+-(instancetype)initWithController:(id)controller;
 -(void)dealloc;
 -(id)categoryForKey:(id)key;
 -(void)updateRecents;

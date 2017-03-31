@@ -16,7 +16,7 @@
 }
 +(id)invalidBaseURL;
 // inherited: -(void)dealloc;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)baseURL;
 -(unsigned)uniqueIdentifier;
 -(id)attachmentForURL:(id)url;

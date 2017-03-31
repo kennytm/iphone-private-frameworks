@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSURL* url;
 @property(readonly, assign, nonatomic) int chapterProperty;
 @property(readonly, assign, nonatomic) double comparableTime;
--(id)initWithChapterProperty:(int)chapterProperty;
+-(instancetype)initWithChapterProperty:(int)chapterProperty;
 -(id)description;
 -(void)dealloc;
 @end

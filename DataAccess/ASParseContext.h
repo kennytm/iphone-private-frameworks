@@ -27,7 +27,7 @@
 	int _streamingState;
 }
 @property(assign, nonatomic) int streamingState;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)setShouldLog:(BOOL)log;
 -(void)_moveLogFileContents;
 // inherited: -(void)dealloc;

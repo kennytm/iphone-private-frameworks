@@ -17,7 +17,7 @@
 @property(retain) UITouch* touchState;
 @property(retain) UITouch* savedTouchState;
 @property(retain) UIEvent* event;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 @end
 

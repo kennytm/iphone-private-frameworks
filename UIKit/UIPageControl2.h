@@ -11,8 +11,8 @@
 
 @interface UIPageControl ()
 -(void)_commonPageControlInit;
--(id)initWithFrame:(CGRect)frame;
--(id)initWithCoder:(id)coder;
+-(instancetype)initWithFrame:(CGRect)frame;
+-(nullable instancetype)initWithCoder:(NSCoder *)coder;
 -(void)_populateArchivedSubviews:(id)subviews;
 -(void)encodeWithCoder:(id)coder;
 -(void)dealloc;
@@ -23,7 +23,6 @@
 -(void)endTrackingAt:(CGPoint)at previous:(CGPoint)previous withEvent:(GSEventRef)event;
 -(void)endTrackingWithTouch:(id)touch withEvent:(id)event;
 -(void)updateCurrentPageDisplay;
--(CGSize)sizeForNumberOfPages:(int)pages;
 @end
 
 @interface UIPageControl (Internal)

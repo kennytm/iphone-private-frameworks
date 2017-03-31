@@ -14,7 +14,7 @@
 	NSString* _sourceID;
 	NSString* _destID;
 }
--(id)initWithStatus:(int)status sourceID:(id)anId destID:(id)anId3;
+-(instancetype)initWithStatus:(int)status sourceID:(id)anId destID:(id)anId3;
 -(int)status;
 -(id)sourceID;
 -(id)destID;

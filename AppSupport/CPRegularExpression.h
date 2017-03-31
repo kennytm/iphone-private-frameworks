@@ -57,17 +57,17 @@ typedef NSUInteger CPRegularExpressionOptions;
 +(CPRegularExpression*)regularExpressionWithString:(NSString*)string;
 +(const char*)getBytesForString:(NSString*)string lossByte:(unsigned char)byte;
 // inherited: -(void)dealloc;
--(id)initWithExpressionString:(NSString*)expressionString;
--(id)initWithExpressionString:(NSString*)expressionString options:(CPRegularExpressionOptions)options;
+-(instancetype)initWithExpressionString:(NSString*)expressionString;
+-(instancetype)initWithExpressionString:(NSString*)expressionString options:(CPRegularExpressionOptions)options;
 -(unsigned)numberOfSubexpressions;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(BOOL)isEqual:(id)equal;
 // inherited: -(unsigned)hash;
 -(NSString*)expressionString;
 -(NSRange)matchedRangeForCString:(const char*)cstring range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
 -(NSRange)matchedRangeForString:(NSString*)string range:(NSRange)range subexpressionRanges:(NSRange[])ranges count:(unsigned)count;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 @end
 

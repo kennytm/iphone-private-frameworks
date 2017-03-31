@@ -21,7 +21,7 @@
 +(id)fileGroupRequiredEmptyPrefixes;
 +(id)fileGroupRequiredEmptyExtensions;
 -(id)_lastUsedFileGroupUserInfoKey;
--(id)initWithName:(id)name number:(int)number dcimDirectory:(id)directory;
+-(instancetype)initWithName:(id)name number:(int)number dcimDirectory:(id)directory;
 -(void)dealloc;
 -(id)dcimDirectory;
 -(unsigned)_calculateBaseDirectoryValue;

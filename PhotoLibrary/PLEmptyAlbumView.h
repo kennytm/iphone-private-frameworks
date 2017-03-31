@@ -21,7 +21,7 @@
 -(id)_titleForAlbum:(id)album;
 -(id)_createLabelWithText:(id)text font:(id)font bottom:(float)bottom;
 -(id)_createTextViewWithText:(id)text bottom:(float)bottom;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setAlbum:(id)album;
 -(void)layoutSubviews;

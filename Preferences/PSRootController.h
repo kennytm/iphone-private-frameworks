@@ -35,7 +35,7 @@
 // in a protocol: -(void)setPreferenceValue:(id)value specifier:(id)specifier;
 // in a protocol: -(id)readPreferenceValue:(id)value;
 -(id)lastController;
--(id)initWithTitle:(id)title identifier:(id)identifier;
+-(instancetype)initWithTitle:(id)title identifier:(id)identifier;
 -(void)updateNavButtons;
 -(void)setupRootListForSize:(CGSize)size;
 -(BOOL)taskIsRunning:(id)running;
@@ -45,7 +45,7 @@
 -(id)contentViewForTopController;
 -(id)specifiers;
 -(BOOL)navigationBar:(id)bar shouldPopItem:(id)item;
-// in a protocol: -(id)initForContentSize:(CGSize)contentSize;
+// in a protocol: -(instancetype)initForContentSize:(CGSize)contentSize;
 // in a protocol: -(void)setParentController:(id)controller;
 // in a protocol: -(id)view;
 // in a protocol: -(id)navigationTitle;

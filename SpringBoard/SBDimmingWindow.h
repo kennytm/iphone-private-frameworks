@@ -13,7 +13,7 @@
 }
 // inherited: +(CGRect)constrainFrameToScreen:(CGRect)screen;
 // inherited: -(BOOL)_disableGroupOpacity;
-// inherited: -(id)initWithContentRect:(CGRect)contentRect;
--(id)initWithDimmingImage:(id)dimmingImage;
+// inherited: -(instancetype)initWithContentRect:(CGRect)contentRect;
+-(instancetype)initWithDimmingImage:(id)dimmingImage;
 @end
 

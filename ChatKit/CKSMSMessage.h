@@ -33,9 +33,9 @@
 -(double)_loadDate;
 -(void)permanentlyRemoveMessage;
 -(id)messages;
--(id)initWithCTMessage:(CKSMSRecordRef)ctmessage messageParts:(id)parts;
+-(instancetype)initWithCTMessage:(CKSMSRecordRef)ctmessage messageParts:(id)parts;
 -(BOOL)isEqual:(id)equal;
--(id)initWithCTMessages:(id)ctmessages messageParts:(id)parts;
+-(instancetype)initWithCTMessages:(id)ctmessages messageParts:(id)parts;
 -(int)messageCount;
 -(BOOL)isForward;
 -(void)prepareToResend;

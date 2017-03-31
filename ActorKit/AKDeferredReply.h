@@ -19,8 +19,8 @@
 -(void)setReturnValue:(void*)value;
 -(void)sendReply;
 /// Raise exception.
--(id)init;
--(id)initWithInvocation:(NSInvocation*)invocation andBlockingLock:(NSConditionLock*)lock;
+-(instancetype)init;
+-(instancetype)initWithInvocation:(NSInvocation*)invocation andBlockingLock:(NSConditionLock*)lock;
 -(void)dealloc;
 @end
 

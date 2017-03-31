@@ -18,7 +18,7 @@
 }
 @property(assign, nonatomic) int selectionStyle;
 @property(assign, nonatomic) int sectionLocation;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)_invalidatePaths;
 -(void)setFrame:(CGRect)frame;

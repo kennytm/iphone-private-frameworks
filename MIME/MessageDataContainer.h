@@ -14,8 +14,8 @@
 	BOOL _partial;
 	BOOL _incomplete;
 }
--(id)initWithData:(id)data partial:(BOOL)partial incomplete:(BOOL)incomplete;
--(id)initWithData:(id)data;
+-(instancetype)initWithData:(id)data partial:(BOOL)partial incomplete:(BOOL)incomplete;
+-(instancetype)initWithData:(id)data;
 -(id)data;
 // inherited: -(void)dealloc;
 @end

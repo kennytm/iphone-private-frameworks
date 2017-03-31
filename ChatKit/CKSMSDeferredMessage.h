@@ -10,7 +10,7 @@
 @interface CKSMSDeferredMessage : CKMessage {
 	NSString* _address;
 }
--(id)initWithAddress:(id)address;
+-(instancetype)initWithAddress:(id)address;
 -(void)dealloc;
 -(id)address;
 @end

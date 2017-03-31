@@ -13,8 +13,8 @@
 }
 +(id)getInfosRequestWithURL:(id)url;
 +(id)getInfosRequestWithSession:(id)session path:(id)path;
--(id)initGetInfosWithURL:(id)url;
--(id)initGetInfosWithSession:(id)session path:(id)path;
+-(instancetype)initGetInfosWithURL:(id)url;
+-(instancetype)initGetInfosWithSession:(id)session path:(id)path;
 -(id)infos;
 // inherited: -(void)finalizeOperation;
 @end

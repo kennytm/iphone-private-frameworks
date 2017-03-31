@@ -11,7 +11,7 @@
 	id _default;
 }
 +(id)informalDelegateWithDefaultTarget:(id)defaultTarget;
--(id)initWithDefaultTarget:(id)defaultTarget;
+-(instancetype)initWithDefaultTarget:(id)defaultTarget;
 -(void)dealloc;
 -(void)setTarget:(id)target;
 -(id)target;

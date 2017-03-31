@@ -8,7 +8,7 @@
 
 @interface _UIAlertStackWatcher : NSObject {
 }
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)_appSuspended:(id)suspended;
 -(void)_appResumed:(id)resumed;

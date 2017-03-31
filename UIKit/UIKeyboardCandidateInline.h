@@ -70,7 +70,7 @@ __attribute__((visibility("hidden")))
 }
 +(id)sharedInstance;
 +(void)releaseSharedInstance;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(id)rotatingContentViewForWindow:(id)window;
 -(void)adjustForFrame:(CGRect)frame orientation:(int)orientation;
 -(int)orientation;

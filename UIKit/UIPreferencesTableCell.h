@@ -53,7 +53,7 @@
 -(void)mouseDown:(GSEventRef)down;
 -(void)_createBezierPathWithCornerRadius:(float)cornerRadius bottomRadius:(float)radius animating:(BOOL)animating;
 -(void)setNeedsDisplay;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)removeFromSuperview;
 -(void)_invalidatePaths;

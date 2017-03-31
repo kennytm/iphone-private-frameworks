@@ -12,7 +12,7 @@
 @interface DAMailboxDeleteMessageRequest : DAMailboxRequest {
 	NSString* _messageID;
 }
--(id)initRequestWithMessageID:(id)messageID;
+-(instancetype)initRequestWithMessageID:(id)messageID;
 -(id)messageID;
 // inherited: -(void)dealloc;
 @end

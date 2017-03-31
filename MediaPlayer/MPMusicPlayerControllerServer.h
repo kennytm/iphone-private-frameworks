@@ -16,7 +16,7 @@
 }
 +(void)startMusicPlayerControllerServer;
 +(id)sharedInstance;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(void)forwardInvocation:(id)invocation;
 -(id)methodSignatureForSelector:(SEL)selector;

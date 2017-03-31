@@ -12,20 +12,21 @@
 @class SBEmergencyCallButton, UIImage, UIPushButton;
 
 @interface SBDeviceLockKeypad : TPPhonePad {
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	UIImage* _deleteIcon;
 #endif
 	UIPushButton* _deleteButton;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	UIPushButton* _cancelButton;
 	BOOL _deleteEnabled;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 	SBEmergencyCallButton* _emergencyCallButton;
 	BOOL _showDeleteIcon;
 #endif
 	BOOL _playKeyboardClicks;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)hiddenFromView;
 -(void)willBecomeVisible;
@@ -37,13 +38,14 @@
 @property(readonly, assign, nonatomic) BOOL deleteKeyChar;
 @property(assign, nonatomic) BOOL showsEmergencyCallButton;
 @property(assign, nonatomic) BOOL playsKeyboardClicks;
-+(id)keypadImage;
-+(id)pressedImage;
++(UIImage *)keypadImage;
++(UIImage *)pressedImage;
 +(void)flushPressedImage;
 +(CGSize)defaultSize;
 // inherited: -(id)_pressedImage;
--(id)initWithDefaultSize;
-#else
+-(instancetype)initWithDefaultSize;
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 -(void)setPlaysKeyboardClicks:(BOOL)clicks;
 -(BOOL)showsEmergencyCallButton;
 -(void)setShowsEmergencyCallButton:(BOOL)button;

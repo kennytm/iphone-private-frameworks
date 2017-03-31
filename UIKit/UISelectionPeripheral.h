@@ -26,7 +26,7 @@
 @property(retain, nonatomic) DOMHTMLSelectElement* _selectionNode;
 @property(retain, nonatomic) id<UISelectedItemPrivate> _selectedItem;
 +(id)createPeripheral;
--(id)initFormPeripheral;
+-(instancetype)initFormPeripheral;
 -(void)dealloc;
 -(id)peripheralFormNode;
 -(BOOL)isKeyboard;

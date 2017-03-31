@@ -22,7 +22,7 @@
 	unsigned _onWallpaper : 1;
 #endif
 }
--(id)initWithSize:(CGSize)size label:(id)label;
+-(instancetype)initWithSize:(CGSize)size label:(NSString *)label;
 // inherited: -(void)dealloc;
 -(void)setInDock:(BOOL)dock;
 -(void)setDisplaysOnWallpaper:(BOOL)wallpaper __OSX_AVAILABLE_STARTING( _MAC_NA, __IPHONE_3_2);

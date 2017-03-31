@@ -17,7 +17,7 @@
 	VMUArchitecture* _architecture;
 }
 +(id)memoryWithData:(char*)data addressRange:(VMURange)range architecture:(id)architecture;
--(id)initWithData:(char*)data addressRange:(VMURange)range architecture:(id)architecture;
+-(instancetype)initWithData:(char*)data addressRange:(VMURange)range architecture:(id)architecture;
 // in a protocol: -(VMURange)addressRange;
 // in a protocol: -(id)architecture;
 // in a protocol: -(BOOL)isContiguous;

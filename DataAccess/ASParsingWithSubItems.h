@@ -9,6 +9,6 @@
 
 
 @protocol ASParsingWithSubItems <ASParsing>
--(id)initWithSubclassRuleSet:(id)subclassRuleSet;
+-(instancetype)initWithSubclassRuleSet:(id)subclassRuleSet;
 @end
 

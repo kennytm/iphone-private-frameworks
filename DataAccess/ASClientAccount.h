@@ -15,7 +15,7 @@
 	NSMutableSet* _folderIDsOnRemoteHold;
 }
 // inherited: -(id)_newPolicyManager;
-// inherited: -(id)initWithProperties:(id)properties;
+// inherited: -(instancetype)initWithProperties:(id)properties;
 // inherited: -(void)dealloc;
 -(void)clearFolderHierarchyCache;
 -(void)_folderHierarchyChanged;

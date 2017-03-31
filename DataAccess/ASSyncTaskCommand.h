@@ -13,7 +13,7 @@
 	NSString* _serverID;
 	int _type;
 }
--(id)initWithCommandType:(int)commandType serverID:(id)anId;
+-(instancetype)initWithCommandType:(int)commandType serverID:(id)anId;
 -(int)type;
 -(id)serverID;
 -(id)clientID;

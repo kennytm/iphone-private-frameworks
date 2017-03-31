@@ -38,7 +38,7 @@
 // inherited: +(id)accountTypeString;
 +(void)_deleteQueuedMailboxes:(id)mailboxes;
 -(id)mf_lockOrdering;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(void)messagesAdded:(id)added;
 -(int)greatestInboxUid;
 -(unsigned)minUID;

@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) float duration;
 @property(readonly, assign, nonatomic) int fromOrientation;
 @property(readonly, assign, nonatomic) int toOrientation;
--(id)initWithClient:(id)client toOrientation:(int)orientation duration:(float)duration andWindow:(id)window;
+-(instancetype)initWithClient:(id)client toOrientation:(int)orientation duration:(float)duration andWindow:(id)window;
 -(void)dealloc;
 -(void)_slideHeaderView:(id)view andFooterView:(id)view2 offScreen:(BOOL)screen forInterfaceOrientation:(int)interfaceOrientation;
 -(void)slideHeaderViewAndFooterViewOffScreen:(BOOL)screen forInterfaceOrientation:(int)interfaceOrientation;

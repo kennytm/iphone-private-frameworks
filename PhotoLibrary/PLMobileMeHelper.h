@@ -25,7 +25,7 @@
 +(id)dotMacUsernames;
 +(id)preferredUsername;
 -(id)passwordForUsername:(id)username;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(BOOL)canPostToDotMac;
 -(id)_accountsWeThinkAreValid;

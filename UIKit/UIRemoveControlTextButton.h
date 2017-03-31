@@ -12,7 +12,7 @@
 	UITableCell* _tableCell;
 	NSString* _label;
 }
--(id)initWithRemoveControl:(id)removeControl withTarget:(id)target withLabel:(id)label;
+-(instancetype)initWithRemoveControl:(id)removeControl withTarget:(id)target withLabel:(id)label;
 -(void)_controlMouseDragged:(GSEventRef)dragged;
 -(void)dealloc;
 -(void)_controlMouseDown:(GSEventRef)down;

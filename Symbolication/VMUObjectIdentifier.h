@@ -19,7 +19,7 @@
 	unsigned _objcClassCount;
 	unsigned _cPlusPlusClassCount;
 }
--(id)initWithTask:(unsigned)task symbolicator:(id)symbolicator;
+-(instancetype)initWithTask:(unsigned)task symbolicator:(id)symbolicator;
 // inherited: -(void)dealloc;
 -(unsigned)CFTypeCount;
 -(unsigned)ObjCclassCount;

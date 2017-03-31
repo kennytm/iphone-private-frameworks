@@ -10,7 +10,7 @@
 
 @interface VMUSection32 : VMUSection {
 }
--(id)initWithMemory:(id)memory;
+-(instancetype)initWithMemory:(id)memory;
 // inherited: -(BOOL)isSection32;
 @end
 

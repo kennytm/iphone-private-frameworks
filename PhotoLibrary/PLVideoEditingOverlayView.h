@@ -14,7 +14,7 @@
 	UILabel* _titleLabel;
 	UILabel* _bodyLabel;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 -(void)drawRect:(CGRect)rect;
 -(void)setTitle:(id)title;
 -(void)setBody:(id)body;

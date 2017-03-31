@@ -12,7 +12,7 @@
 	NSString* m_string;
 	UIFont* m_font;
 }
--(id)initWithFrame:(CGRect)frame string:(id)string font:(id)font;
+-(instancetype)initWithFrame:(CGRect)frame string:(id)string font:(id)font;
 -(void)dealloc;
 -(void)drawRect:(CGRect)rect;
 @end

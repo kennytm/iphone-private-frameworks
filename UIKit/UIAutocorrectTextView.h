@@ -20,7 +20,7 @@
 	BOOL m_cancelHighlighted;
 #endif
 }
--(id)initWithFrame:(CGRect)frame string:(id)string type:(int)type edgeType:(int)type4;
+-(instancetype)initWithFrame:(CGRect)frame string:(id)string type:(int)type edgeType:(int)type4;
 -(void)dealloc;
 -(void)setEdgeType:(int)type;
 -(void)setAnimating:(BOOL)animating;

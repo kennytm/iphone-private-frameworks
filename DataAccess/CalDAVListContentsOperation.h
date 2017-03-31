@@ -15,8 +15,8 @@
 	NSDictionary* _propertiesCallbackMap;
 	CalDAVPropertyAdaptor* _adaptor;
 }
--(id)initWithSession:(id)session URI:(id)uri properties:(id)properties;
--(id)initWithSession:(id)session URI:(id)uri properties:(id)properties adaptor:(id)adaptor;
+-(instancetype)initWithSession:(id)session URI:(id)uri properties:(id)properties;
+-(instancetype)initWithSession:(id)session URI:(id)uri properties:(id)properties adaptor:(id)adaptor;
 // inherited: -(void)dealloc;
 -(void)listContents;
 @end

@@ -15,7 +15,7 @@
 	NSString* lockToken;
 	int timeout;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(id)lockToken;
 -(int)lockTimeout;

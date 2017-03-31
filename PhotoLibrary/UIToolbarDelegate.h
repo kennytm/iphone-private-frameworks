@@ -7,13 +7,16 @@
 
 #import "NSObject.h"
 
+#import <UIKit/UIToolbar.h>
+#ifndef __IPHONE_7_0
 
 @protocol UIToolbarDelegate <NSObject>
 @optional
--(id)toolbar:(id)toolbar viewForItem:(id)item;
--(void)toolbar:(id)toolbar willBeginCustomizingItems:(id)items;
--(void)toolbar:(id)toolbar didBeginCustomizingItems:(id)items;
--(void)toolbar:(id)toolbar willEndCustomizingItems:(id)items changed:(BOOL)changed;
--(void)toolbar:(id)toolbar didEndCustomizingItems:(id)items changed:(BOOL)changed;
+-(id)toolbar:(UIToolbar *)toolbar viewForItem:(UIBarItem *)item;
+-(void)toolbar:(UIToolbar *)toolbar willBeginCustomizingItems:(NSArray *)items;
+-(void)toolbar:(UIToolbar *)toolbar didBeginCustomizingItems:(NSArray *)items;
+-(void)toolbar:(UIToolbar *)toolbar willEndCustomizingItems:(NSArray *)items changed:(BOOL)changed;
+-(void)toolbar:(UIToolbar *)toolbar didEndCustomizingItems:(NSArray *)items changed:(BOOL)changed;
 @end
 
+#endif

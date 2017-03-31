@@ -37,7 +37,7 @@
 -(BOOL)writeInviteToCalDBCreateAsRejected:(BOOL)calDBCreateAsRejected defaultCalendar:(void*)calendar account:(id)account;
 // inherited: -(void)parseASParseContext:(id)context root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 account:(id)account;
 // inherited: -(id)description;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)_setReminderSecsBefore:(id)before;
 -(void)takeValuesFromParentEmailForAccount:(id)account;
@@ -45,7 +45,7 @@
 // inherited: -(id)exceptionDate;
 // inherited: -(void)setExceptionDate:(id)date;
 // inherited: -(void)setDTStamp:(id)stamp;
-// in a protocol: -(id)initWithCoder:(id)coder;
+// in a protocol: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
 // in a protocol: -(void)encodeWithCoder:(id)coder;
 // inherited: -(BOOL)cachedOrganizerIsSelf;
 -(id)instanceType;

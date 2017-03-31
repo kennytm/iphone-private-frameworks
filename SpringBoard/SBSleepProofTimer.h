@@ -20,7 +20,7 @@
 	void* _powerAssertion;
 }
 +(id)scheduledTimerWithFireDate:(id)fireDate target:(id)target selector:(SEL)selector identifier:(id)identifier;
--(id)initWithFireDate:(id)fireDate target:(id)target selector:(SEL)selector identifier:(id)identifier;
+-(instancetype)initWithFireDate:(id)fireDate target:(id)target selector:(SEL)selector identifier:(id)identifier;
 // inherited: -(void)dealloc;
 -(void)_invalidateTimers;
 -(void)_scheduleTimers;

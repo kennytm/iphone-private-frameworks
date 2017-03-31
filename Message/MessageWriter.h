@@ -23,7 +23,7 @@
 	unsigned _encodingHint;
 	id _delegate;
 }
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)appendDataForMimePart:(id)mimePart toData:(id)data withPartData:(id)partData;
 -(id)createMessageWithString:(id)string headers:(id)headers;

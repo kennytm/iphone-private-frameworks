@@ -16,7 +16,7 @@
 	Account* _account;
 	int _authenticationState;
 }
--(id)initWithAuthScheme:(id)authScheme account:(id)account connection:(id)connection;
+-(instancetype)initWithAuthScheme:(id)authScheme account:(id)account connection:(id)connection;
 // inherited: -(void)dealloc;
 -(id)authScheme;
 -(id)account;

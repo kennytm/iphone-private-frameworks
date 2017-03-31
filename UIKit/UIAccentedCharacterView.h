@@ -26,7 +26,7 @@
 	BOOL m_dragged;
 	CGPoint m_dragPoint;
 }
--(id)initWithFrame:(CGRect)frame variants:(id)variants expansion:(int)expansion orientation:(int)orientation;
+-(instancetype)initWithFrame:(CGRect)frame variants:(id)variants expansion:(int)expansion orientation:(int)orientation;
 // inherited: -(void)dealloc;
 -(void)setSelectedIndex:(int)index;
 -(void)sendSelectedString;

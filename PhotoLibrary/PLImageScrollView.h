@@ -30,7 +30,7 @@
 }
 @property(assign, nonatomic) id<UIScrollViewDelegate, PLImageScrollViewDelegate> delegate;
 -(CGSize)_contentSizeForView:(id)view;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(BOOL)canHandleSwipes;
 -(void)_adjustPositionOfView:(id)view forContentSize:(CGSize)contentSize offset:(CGPoint)offset;

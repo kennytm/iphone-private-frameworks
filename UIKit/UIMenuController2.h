@@ -9,7 +9,7 @@
 
 
 @interface UIMenuController ()
--(id)init;
+-(instancetype)init;
 -(void)setMenuVisible:(BOOL)visible animated:(BOOL)animated;
 -(void)update;
 @end

@@ -14,7 +14,7 @@
 	int _mode;
 	int _unlockScreenType;
 }
--(id)initWithPasscodeMode:(int)passcodeMode unlockScreenType:(int)type;
+-(instancetype)initWithPasscodeMode:(int)passcodeMode unlockScreenType:(int)type;
 -(void)alertSheet:(id)sheet buttonClicked:(int)clicked;
 -(void)returnKeyPressed:(id)pressed;
 // inherited: -(void)configure:(BOOL)configure requirePasscodeForActions:(BOOL)actions;

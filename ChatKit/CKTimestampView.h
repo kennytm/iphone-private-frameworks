@@ -10,7 +10,7 @@
 @interface CKTimestampView : UITableViewCell {
 	UILabel* _label;
 }
--(id)initWithStyle:(int)style reuseIdentifier:(id)identifier;
+-(instancetype)initWithStyle:(int)style reuseIdentifier:(id)identifier;
 -(void)setDate:(id)date;
 -(void)dealloc;
 @end

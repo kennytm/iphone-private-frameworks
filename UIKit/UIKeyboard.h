@@ -32,8 +32,8 @@
 +(CGSize)defaultSizeForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGRect)defaultFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 +(CGSize)defaultSizeForOrientation:(int)orientation;
-// inherited: -(id)initWithFrame:(CGRect)frame;
--(id)initWithDefaultSize;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithDefaultSize;
 // inherited: -(void)dealloc;
 // inherited: -(void)setFrame:(CGRect)frame;
 -(void)updateLayout;

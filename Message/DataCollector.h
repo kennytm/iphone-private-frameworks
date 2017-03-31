@@ -18,7 +18,7 @@
 	BOOL _partial;
 	BOOL _incomplete;
 }
--(id)initWithLibrary:(id)library message:(id)message part:(id)part partial:(BOOL)partial incomplete:(BOOL)incomplete;
+-(instancetype)initWithLibrary:(id)library message:(id)message part:(id)part partial:(BOOL)partial incomplete:(BOOL)incomplete;
 -(id)pathForStorage;
 // in a protocol: -(void)appendData:(id)data;
 // in a protocol: -(void)done;

@@ -25,7 +25,7 @@
 +(id)displayedShortAccountTypeString;
 -(void)cancelTaskWithID:(int)anId;
 -(id)taskManager;
-// inherited: -(id)initWithProperties:(id)properties;
+// inherited: -(instancetype)initWithProperties:(id)properties;
 // inherited: -(id)propertiesToSave;
 // inherited: -(void)dealloc;
 // inherited: -(id)urlForKeychain;

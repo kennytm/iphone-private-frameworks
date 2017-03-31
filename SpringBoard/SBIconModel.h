@@ -5,10 +5,10 @@
  * Source: (null)
  */
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 #import <Availability2.h>
 
-@class NSMutableDictionary, SBButtonBar, NSString, NSSet, NSMutableArray, NSDictionary, SBIcon, SBIconList;
+@class SBButtonBar, SBIcon, SBIconList, SBApplication;
 
 @interface SBIconModel : NSObject {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_3_2
@@ -23,20 +23,20 @@
 	NSSet* _visibleIconTags;
 }
 +(SBIconModel*)sharedInstance;
-+(int)maxIconListCount;
-// inherited: -(id)init;
++(NSInteger)maxIconListCount;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)localeChanged;
--(void)setVisibilityOfIconsWithVisibleTags:(id)visibleTags hiddenTags:(id)tags;
+-(void)setVisibilityOfIconsWithVisibleTags:(NSArray *)visibleTags hiddenTags:(NSArray *)hiddenTags;
 -(BOOL)isIconVisible:(SBIcon*)icon;
--(void)replaceDownloadingDisplayIdentifiers:(id)identifiers withDisplayIdentifiers:(id)displayIdentifiers;
+-(void)replaceDownloadingDisplayIdentifiers:(NSArray *)identifiers withDisplayIdentifiers:(NSArray *)displayIdentifiers;
 -(void)_completedUninstall:(id)uninstall;
 -(id)addDownloadingIconForDownload:(id)download;
--(id)addDownloadingIconForDisplayIdentifier:(id)displayIdentifier;
--(id)addSpotlightIconForDisplayIdentifier:(id)displayIdentifier spotlightCategory:(id)category iconName:(id)name;
+-(id)addDownloadingIconForDisplayIdentifier:(NSString *)displayIdentifier;
+-(id)addSpotlightIconForDisplayIdentifier:(NSString *)displayIdentifier spotlightCategory:(id)category iconName:(id)name;
 -(void)removeAppForDownloadingIcon:(id)downloadingIcon;
 -(id)addBookmarkIconForWebClip:(id)webClip;
--(void)addIconForApplication:(id)application;
+-(void)addIconForApplication:(SBApplication *)application;
 -(void)loadAllIcons;
 -(NSArray*)visibleIconIdentifiers;
 -(NSArray*)allIcons;
@@ -46,13 +46,13 @@
 -(void)noteIconStateChangedExternally;
 -(SBButtonBar*)buttonBar;
 -(NSArray*)iconLists;
--(int)indexOfIconList:(id)iconList;
+-(int)indexOfIconList:(SBIconList *)iconList;
 -(void)createIconLists;
--(void)uninstallBookmarkIcon:(id)icon;
+-(void)uninstallBookmarkIcon:(SBIcon *)icon;
 -(SBIconList*)iconListContainingIcon:(SBIcon*)icon;
--(id)iconListContainingIconWithDisplayIdentifier:(id)displayIdentifier;
--(id)addEmptyIconList;
--(void)removeEmptyIconList:(id)list;
+-(SBIconList *)iconListContainingIconWithDisplayIdentifier:(NSString *)displayIdentifier;
+-(SBIconList *)addEmptyIconList;
+-(void)removeEmptyIconList:(SBIconList *)list;
 -(void)compactIconLists;
 -(void)clearPreviousIconState;
 -(void)addNewIconToDesignatedLocation:(id)designatedLocation animate:(BOOL)animate scrollToList:(BOOL)list saveIconState:(BOOL)state;
@@ -64,10 +64,10 @@
 -(void)_replaceAppIconsWithDownloadingIcons;
 -(void)_replaceAppIconWithDownloadingIcon:(id)downloadingIcon sourceList:(id)list;
 -(void)relayout;
--(void)uninstallApplicationIcon:(id)icon;
+-(void)uninstallApplicationIcon:(SBIcon *)icon;
 -(NSArray*)exportState;
--(id)_arrayForIconList:(id)iconList;
--(id)_dictionaryForIcon:(id)icon;
+-(NSArray *)_arrayForIconList:(SBIconList *)iconList;
+-(id)_dictionaryForIcon:(SBIcon *)icon;
 -(BOOL)importState:(id)state;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 +(id)modernIconCellForCell:(id)cell;
@@ -75,14 +75,15 @@
 +(id)modernIconStateForState:(id)state;
 -(id)firstAvailableIconListIndex:(int*)index;
 -(BOOL)iconPositionInPlatformState:(id)platformState index:(int*)index inIconListNumber:(int*)iconListNumber;
-#else
+#endif
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 +(void)purgeIconCaches;
 -(void)reloadIconImage:(id)image;
--(void)reloadIconImageForDisplayIdentifier:(id)displayIdentifier;
+-(void)reloadIconImageForDisplayIdentifier:(NSString *)displayIdentifier;
 -(id)pathForCachedIconData:(id)cachedIconData smallIcon:(BOOL)icon;
--(void)cacheImagesForIcon:(id)icon;
--(void)_cacheImagesForIcon:(id)icon smallIcon:(BOOL)icon2;
--(id)getCachedImagedForIcon:(id)icon smallIcon:(BOOL)icon2;
+-(void)cacheImagesForIcon:(SBIcon *)icon;
+-(void)_cacheImagesForIcon:(SBIcon *)icon smallIcon:(BOOL)icon2;
+-(id)getCachedImagedForIcon:(SBIcon *)icon smallIcon:(BOOL)icon2;
 -(id)_imageForDataAtPath:(id)path width:(unsigned)width height:(unsigned)height;
 -(void)_purgeOrphanedImages;
 -(id)firstAvailableIconListX:(int*)x Y:(int*)y;

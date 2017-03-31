@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @private
 	UIBookViewController* _bookViewController;
 }
--(id)initWithBookViewController:(id)bookViewController withView:(id)view;
+-(instancetype)initWithBookViewController:(id)bookViewController withView:(id)view;
 // inherited: -(void)touchesEnded:(id)ended withEvent:(id)event;
 // -(void)layoutSubviews;
 @end

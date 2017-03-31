@@ -57,7 +57,7 @@
 // inherited: +(BOOL)parsingLeafNode;
 // inherited: +(BOOL)parsingWithSubItems;
 // inherited: +(BOOL)frontingBasicTypes;
--(id)initWithServerID:(id)serverID from:(id)from to:(id)to body:(id)body subject:(id)subject date:(id)date isRead:(BOOL)read;
+-(instancetype)initWithServerID:(id)serverID from:(id)from to:(id)to body:(id)body subject:(id)subject date:(id)date isRead:(BOOL)read;
 // inherited: -(id)asParseRules;
 -(void)_processApplicationData:(BOOL)data;
 -(void)processAppDataForStream;

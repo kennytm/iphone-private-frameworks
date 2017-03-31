@@ -17,7 +17,7 @@
 	unsigned _uid;
 }
 // inherited: +(void)initialize;
--(id)initWithFlags:(unsigned long)flags customFlags:(id)flags2 size:(unsigned)size uid:(unsigned long)uid;
+-(instancetype)initWithFlags:(unsigned long)flags customFlags:(id)flags2 size:(unsigned)size uid:(unsigned long)uid;
 // inherited: -(void)dealloc;
 // inherited: -(id)description;
 // inherited: -(unsigned)messageSize;

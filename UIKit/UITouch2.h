@@ -35,7 +35,7 @@
 @property(assign, nonatomic) BOOL sentTouchesEnded;
 @property(assign, nonatomic) BOOL isWarped;
 @property(assign, nonatomic) BOOL isTap;
-@property(assign, nonatomic) unsigned tapCount;
+@property(assign, nonatomic) NSUInteger tapCount;
 @property(assign, nonatomic) int phase;
 @property(assign, nonatomic) double timestamp;
 +(id)_createTouchesWithGSEvent:(GSEventRef)gsevent phase:(int)phase view:(id)view;

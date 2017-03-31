@@ -16,7 +16,7 @@
 	int _titleColor;
 }
 +(id)defaultFont;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)setFont:(id)font;
 -(id)font;
 -(void)dealloc;

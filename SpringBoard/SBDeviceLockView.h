@@ -25,7 +25,7 @@
 @property(readonly, assign, nonatomic) UIView* keypadView;
 @property(readonly, assign, nonatomic) UIView* entryView;
 @property(readonly, assign, nonatomic) UIView* statusView;
--(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+-(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 -(id)protectedInitWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(void)dealloc;
 // inherited: -(void)setUserInteractionEnabled:(BOOL)enabled;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 @private
 	CGColorRef cachedColor;
 }
-// inherited: -(id)initWithCGColor:(CGColorRef)cgcolor;
+// inherited: -(instancetype)initWithCGColor:(CGColorRef)cgcolor;
 // inherited: -(void)dealloc;
 // inherited: -(id)colorWithAlphaComponent:(float)alphaComponent;
 // inherited: -(void)set;

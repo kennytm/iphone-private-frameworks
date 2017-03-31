@@ -28,9 +28,9 @@
 // in a protocol: +(id)getProcessIds;
 // in a protocol: +(BOOL)isProcessRunning:(int)running;
 // in a protocol: +(int)processParentId:(int)anId;
-// inherited: -(id)init;
--(id)initWithPid:(int)pid;
--(id)initWithTask:(unsigned)task;
+// inherited: -(instancetype)init;
+-(instancetype)initWithPid:(int)pid;
+-(instancetype)initWithTask:(unsigned)task;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 // in a protocol: -(timeval)startTime;

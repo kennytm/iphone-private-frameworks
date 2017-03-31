@@ -16,7 +16,7 @@
 	BOOL _showActionButton;
 	BOOL _launched;
 }
--(id)initWithApplication:(id)application body:(id)body showActionButton:(BOOL)button actionLabel:(id)label;
+-(instancetype)initWithApplication:(id)application body:(id)body showActionButton:(BOOL)button actionLabel:(id)label;
 // inherited: -(void)dealloc;
 // inherited: -(Class)alertSheetClass;
 -(void)activateApplication;

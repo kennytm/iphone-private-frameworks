@@ -196,7 +196,7 @@ extern NSString *WebViewProgressFinishedNotification;
     @param groupName The name of the webView set to which this webView will be added.  May be nil.
     @result Returns an initialized WebView.
 */
-- (id)initWithFrame:(CGRect)frame frameName:(NSString *)frameName groupName:(NSString *)groupName;
+- (instancetype)initWithFrame:(CGRect)frame frameName:(NSString *)frameName groupName:(NSString *)groupName;
 
 /*!
     @method close

@@ -17,7 +17,7 @@
 	VMURange _addressRange;
 	VMUArchitecture* _architecture;
 }
--(id)initWithParent:(id)parent addressRange:(VMURange)range architecture:(id)architecture data:(char*)data;
+-(instancetype)initWithParent:(id)parent addressRange:(VMURange)range architecture:(id)architecture data:(char*)data;
 // in a protocol: -(VMURange)addressRange;
 // in a protocol: -(id)architecture;
 // in a protocol: -(BOOL)isContiguous;

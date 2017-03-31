@@ -30,9 +30,9 @@
 +(id)sampleAllThreadsOfPID:(int)pid withSymbolicator:(id)symbolicator;
 +(id)sampleAllThreadsOfTask:(unsigned)task withSymbolicator:(id)symbolicator;
 +(id)sampleAllThreadsOfTask:(unsigned)task withSymbolicator:(id)symbolicator symbolicate:(BOOL)symbolicate;
-// inherited: -(id)init;
--(id)initWithPID:(int)pid;
--(id)initWithTask:(unsigned)task;
+// inherited: -(instancetype)init;
+-(instancetype)initWithPID:(int)pid;
+-(instancetype)initWithTask:(unsigned)task;
 // inherited: -(void)dealloc;
 // inherited: -(void)finalize;
 -(void)_makeHighPriority;

@@ -20,7 +20,7 @@
 -(void)initUserAddressBook;
 -(void)initUserDictionaries;
 -(void)initGlobals;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 -(id)_initWithAsynchronousLoading:(BOOL)asynchronousLoading;
 -(BOOL)_doneLoading;
 // inherited: -(void)dealloc;

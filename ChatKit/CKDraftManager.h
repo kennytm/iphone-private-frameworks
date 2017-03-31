@@ -17,7 +17,7 @@
 +(id)_pendingRecipientFile;
 +(id)_draftSavePath;
 +(void)_createDraftSavePath;
--(id)init;
+-(instancetype)init;
 -(void)dealloc;
 -(id)draftForConversation:(id)conversation;
 -(void)setDraft:(id)draft forConversation:(id)conversation;

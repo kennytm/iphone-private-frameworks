@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, assign, nonatomic) BOOL isArrow;
 @property(assign, nonatomic) BOOL highlighted;
 +(id)font;
--(id)initWithCandidate:(id)candidate tag:(int)tag target:(id)target action:(SEL)action;
+-(instancetype)initWithCandidate:(id)candidate tag:(int)tag target:(id)target action:(SEL)action;
 // inherited: -(void)dealloc;
 // -(void)drawRect:(CGRect)rect;
 // inherited: -(void)touchesBegan:(id)began withEvent:(id)event;

@@ -7,7 +7,7 @@
 __attribute__((visibility("hidden")))
 @interface UIKeyboardAutomatic : UIKeyboard {
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 // inherited: -(void)minimize;
 // inherited: -(void)maximize;

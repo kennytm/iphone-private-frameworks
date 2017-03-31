@@ -23,7 +23,7 @@
 +(id)prototypes;
 +(id)versionWithHeader:(id)header;
 +(id)versionWithPropertyValue:(id)propertyValue;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // in a protocol: -(id)copyWithZone:(NSZone*)zone;
 // inherited: -(BOOL)isEqual:(id)equal;
 // inherited: -(id)description;

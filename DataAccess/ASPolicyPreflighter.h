@@ -27,7 +27,7 @@
 -(void)_invalidate;
 -(void)invalidate;
 // inherited: -(void)dealloc;
--(id)initWithAccount:(id)account policyKey:(id)key;
+-(instancetype)initWithAccount:(id)account policyKey:(id)key;
 -(id)account;
 -(void)_setPolicy:(id)policy;
 -(void)_setAcknowledgedPolicy:(id)policy;

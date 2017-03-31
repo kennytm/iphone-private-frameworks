@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 #endif
 }
 @property(assign, nonatomic) id delegate;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)display:(BOOL)display withAnimationDuration:(float)animationDuration;
 // inherited: -(void)mouseUp:(GSEventRef)up;

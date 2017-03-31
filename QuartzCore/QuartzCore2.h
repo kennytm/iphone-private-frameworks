@@ -36,7 +36,6 @@
 #import "CALayer2.h"
 #import "NSCopying.h"
 #import "CAMediaTimingFunctionBuiltin.h"
-#import "CAAction2.h"
 #import "CAWindowServer.h"
 #import "CAWindowServerDisplay.h"
 #import "CAKeyframeAnimation2.h"

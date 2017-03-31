@@ -23,7 +23,7 @@
 +(BOOL)matchesString:(id)string pattern:(id)pattern ignoreCase:(BOOL)aCase;
 +(id)subexpressionsMatchingString:(id)string pattern:(id)pattern ignoreCase:(BOOL)aCase;
 +(id)regexWithPattern:(id)pattern ignoreCase:(BOOL)aCase;
--(id)initWithPattern:(id)pattern ignoreCase:(BOOL)aCase;
+-(instancetype)initWithPattern:(id)pattern ignoreCase:(BOOL)aCase;
 // inherited: -(void)dealloc;
 -(BOOL)matchesString:(id)string;
 -(id)subexpressionsMatchingString:(id)string;

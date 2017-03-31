@@ -17,7 +17,7 @@
 @property(readonly, assign, nonatomic) UIImage* composeImage;
 @property(readonly, assign, nonatomic) CKMediaObject* mediaObject;
 -(id)detachedCopy;
--(id)initWithMediaObject:(id)mediaObject;
+-(instancetype)initWithMediaObject:(id)mediaObject;
 -(BOOL)isDisplayable;
 -(int)_orientation;
 -(void)setComposeData:(id)data;

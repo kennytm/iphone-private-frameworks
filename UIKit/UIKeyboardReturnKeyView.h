@@ -11,7 +11,7 @@
 	int m_originalStyle;
 	int m_subtype;
 }
--(id)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame orientation:(int)orientation style:(int)style;
 -(CFDataRef)createCacheKey;
 -(int)subtype;
 -(void)setSubtype:(int)subtype;

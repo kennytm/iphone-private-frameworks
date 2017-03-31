@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 +(id)geniusDatabaseFilePath;
 +(id)fallbackGeniusDatabaseFilePath;
 +(id)sharedGeniusDatabase;
--(id)init;
+-(instancetype)init;
 -(CPSqliteDatabase*)_loadedDatabaseAtPath:(id)path;
 -(void)beginTransaction;
 -(void)endTransaction;

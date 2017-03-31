@@ -12,9 +12,9 @@
 +(float)defaultHeight;
 +(float)defaultHeightForOrientation:(int)orientation;
 +(id)backgroundImageName;
--(id)initWithDefaultSizeForOrientation:(int)orientation;
--(id)initWithDefaultSize;
-// inherited: -(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithDefaultSizeForOrientation:(int)orientation;
+-(instancetype)initWithDefaultSize;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(void)setOrientation:(int)orientation;
 -(CGRect)contentStretchRect;

@@ -23,11 +23,11 @@
 +(BOOL)frontingBasicTypes;
 +(id)gmt;
 // in a protocol: +(BOOL)expectsContent;
--(id)initWithTZNameFromCalDB:(id)calDB;
+-(instancetype)initWithTZNameFromCalDB:(id)calDB;
 -(BOOL)_dateIsValidTransitionDate:(id)date inYear:(int)year withTimeZone:(id)timeZone;
 -(id)_bestGuessedNameFromPossibilities:(id)possibilities firstTransitionDate:(SYSTEMTIME*)date secondTransitionDate:(SYSTEMTIME*)date3;
 -(id)_bestGuessAtOlsonTimeZoneForOffsetInMinutes:(int)minutes firstTransitionDate:(SYSTEMTIME*)date secondTransitionDate:(SYSTEMTIME*)date3;
-// in a protocol: -(id)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
+// in a protocol: -(instancetype)initWithASParseContext:(id)asparseContext root:(id)root parent:(id)parent callbackDict:(id)dict streamCallbackDict:(id)dict5 lengthUntilEndOfTerminator:(int)terminator;
 // inherited: -(id)description;
 // inherited: -(void)dealloc;
 // in a protocol: -(int)parsingState;
@@ -42,9 +42,9 @@
 -(id)data;
 -(id)abbreviationForDate:(id)date;
 -(id)nextDaylightSavingTimeTransitionAfterDate:(id)date;
--(id)initWithName:(id)name;
--(id)initWithName:(id)name data:(id)data;
--(id)initWithCodingDict:(id)codingDict;
+-(instancetype)initWithName:(id)name;
+-(instancetype)initWithName:(id)name data:(id)data;
+-(instancetype)initWithCodingDict:(id)codingDict;
 -(id)dictForCoding;
 @end
 

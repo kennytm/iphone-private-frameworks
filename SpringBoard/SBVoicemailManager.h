@@ -16,7 +16,7 @@
 	int _visualVoicemailSubscriptionToken;
 }
 +(id)sharedInstance;
-// inherited: -(id)init;
+// inherited: -(instancetype)init;
 // inherited: -(void)dealloc;
 -(void)setHasVisualVoicemail:(BOOL)voicemail;
 -(void)_updateVisualVoicemailState;

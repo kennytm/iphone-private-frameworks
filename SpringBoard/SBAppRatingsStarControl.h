@@ -14,7 +14,7 @@
 	NSMutableArray* _stars;
 	int _currentIndex;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame;
 // inherited: -(void)dealloc;
 -(float)firstStarOffset;
 -(void)layoutSubviews;

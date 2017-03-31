@@ -17,7 +17,7 @@
 	UILabel* _countLabel;
 	BOOL _textNeedsLayout;
 }
-// inherited: -(id)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
+// inherited: -(instancetype)initWithFrame:(CGRect)frame reuseIdentifier:(id)identifier;
 // inherited: -(void)dealloc;
 -(void)layoutTextInBounds:(CGRect)bounds;
 -(void)setPosterImage:(id)image;

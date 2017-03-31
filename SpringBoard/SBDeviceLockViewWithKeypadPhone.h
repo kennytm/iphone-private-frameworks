@@ -6,7 +6,7 @@
 
 @interface SBDeviceLockViewWithKeypadPhone : SBDeviceLockViewWithKeypad {
 }
-// inherited: -(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 @end
 
 #endif

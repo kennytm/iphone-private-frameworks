@@ -50,9 +50,9 @@
 @property(assign, nonatomic) BOOL allowsDetailScrubbing;
 @property(assign, nonatomic, getter=isActive) BOOL active;
 +(float)defaultHeight;
--(id)initWithFrame:(CGRect)frame style:(int)style maxTrackWidth:(float)width;
--(id)initWithFrame:(CGRect)frame style:(int)style;
--(id)initWithFrame:(CGRect)frame;
+-(instancetype)initWithFrame:(CGRect)frame style:(int)style maxTrackWidth:(float)width;
+-(instancetype)initWithFrame:(CGRect)frame style:(int)style;
+-(instancetype)initWithFrame:(CGRect)frame;
 -(void)dealloc;
 -(void)layoutSubviews;
 -(void)setFrame:(CGRect)frame;

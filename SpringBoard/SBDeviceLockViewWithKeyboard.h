@@ -9,7 +9,7 @@
 	UIKeyboard* _keyboard;
 	BOOL _isAnimating;
 }
-// inherited: -(id)initWithStyle:(int)style interfaceOrientation:(int)orientation;
+// inherited: -(instancetype)initWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(id)protectedInitWithStyle:(int)style interfaceOrientation:(int)orientation;
 // inherited: -(void)dealloc;
 // inherited: -(id)keypadView;

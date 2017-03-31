@@ -44,8 +44,8 @@
 @property(assign, nonatomic) float turnMargin;
 @property(assign, nonatomic) UIEdgeInsets contentInset;
 @property(assign, nonatomic) double turnDuration;
-// inherited: -(id)initWithCoder:(id)coder;
-// inherited: -(id)initWithNibName:(id)nibName bundle:(id)bundle;
+// inherited: -(nullable instancetype)initWithCoder:(NSCoder *)coder;
+// inherited: -(instancetype)initWithNibName:(id)nibName bundle:(id)bundle;
 // inherited: -(void)encodeWithCoder:(id)coder;
 // inherited: -(id)view;
 // inherited: -(void)dealloc;

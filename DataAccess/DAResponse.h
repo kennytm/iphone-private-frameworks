@@ -11,7 +11,7 @@
 @interface DAResponse : DAAction {
 	int _status;
 }
--(id)initWithAction:(int)action context:(id)context status:(int)status;
+-(instancetype)initWithAction:(int)action context:(id)context status:(int)status;
 -(int)status;
 @end
 
